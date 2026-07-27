@@ -196,6 +196,57 @@ the first leaf that adds no year beyond those already collected. Within a series
 the same non-decreasing-subsequence rule as the chronicle: one heading misread
 high on leaf 479 was locking out twenty consecutive years.
 
+## The appendix blocks
+
+At the close of each century the chronicle stops and an appendix runs for six to
+sixty-nine leaves. `scripts/parse_documents.py` delimits them →
+`data/documents/documents.json`: **6 blocks, 27 numbered sections, 187 leaves.**
+
+A block is *not* identifiable by length: leaves 253–280 are twenty-eight leaves
+of continuous Germanía narrative and are chronicle. What every block does have is
+the Jurats list at its head, numbered `I`; so a block runs from a Jurats series
+to the leaf where the chronicle states its next year, and sections run `II`
+onward. Three traps, all measured:
+
+- **Quoted ordinances number their own clauses** — leaf 85 has `III. Item, com
+  sia slat dit al Sr. Rey…` seven times. Excluded by requiring a block's
+  numerals to rise, and by rejecting a title beginning `Item`.
+- **The numeral shares a line with the running head**: leaf 153 opens `126 IV.`.
+- **The numerals are display type, which is the class the engines read worst.**
+  Leaf 482 prints `II.` and the vote returned `XX.`, having been offered `zz.`,
+  `LL.`, `IH.`, `TIT.` and one correct `II.` from Apple Vision. Read the numeral
+  off the panel, exactly as with the year headings. Because that evidence is
+  weaker, a section found that way must be the *next* number, not merely a later
+  one — without that constraint a chronicle entry on leaf 632 became section V.
+
+Three numerals in the 16th-century block are still not found (VII, VIII, X).
+Leaves 333–334 are blank and leaf 332 ends *«haber reducido el tamaño de las tres
+primeras páginas á las dimensiones del original»*: section VII is a **facsimile
+reprint of a 1541 booklet**, leaves 335–367, carrying its own title page in its
+own typography. The gap is explained, not mysterious.
+
+## The non-Spanish material — measured coverage is zero
+
+The book embeds letters, edicts and relations in medieval Catalan and Latin. Two
+things are true and must not be confused:
+
+- The panel is *equipped* for it: Tesseract runs `spa_old+cat+lat`, worth ~1.5
+  points precisely because of these quotations, and the arbitration lexicon is
+  built from this book rather than from a Spanish dictionary.
+- **Nothing on those leaves has ever been measured.** All 550 adjudicated
+  positions fall on twelve leaves — 14, 17, 20, 30, 34, 36, 50, 200, 627, 629,
+  631, 642 — and **none of them is a document leaf**. The 97.6% figure covers
+  chronicle prose, the introduction, one Jurats table and the errata. The 159
+  document leaves are unmeasured.
+
+And one systematic error is already visible on the facsimile reprint: **the long
+s (`ſ`) is read as `f`** throughout. Leaf 340 prints `coſa`, `eſtat`, `moſſen`,
+`boſſer`, `prouiſio`; the transcription has `cofa`, `eftat`, `moffen`, `boffer`,
+`prouifio`. 29 leaves show it at over 5% of their words. This is a real error,
+not 1881 orthography to be preserved — `ſ` and `f` are different letters — but
+the repair belongs in `docs/EDITORIAL.md` as a stated deterministic rule, not as
+a silent fix.
+
 ## Where we left off (27 Jul 2026)
 
 Panel of six is measured and closed pending one open experiment.

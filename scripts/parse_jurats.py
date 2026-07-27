@@ -214,7 +214,8 @@ def main() -> None:
                              "printed": inventory[block["pdf_page"]]["printed"],
                              **({"note": block["note"]} if block["note"] else {})})
         years = [b["year"] for b in blocks]
-        summary.append({"century": century, "leaves": pages,
+        summary.append({"century": century, "title_leaf": start,
+                        "leaves": pages,
                         "years": len(set(years)), "names": filled,
                         "span": [min(years), max(years)] if years else None,
                         "backwards": sum(1 for a, b in zip(years, years[1:])

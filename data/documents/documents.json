@@ -1,0 +1,400 @@
+[
+ {
+  "first_leaf": 58,
+  "last_leaf": 63,
+  "leaves": 6,
+  "sections": [
+   {
+    "number": 1,
+    "numeral": "I",
+    "title": "Jurados de la c. y r. de Mallorca",
+    "pdf_page": 58,
+    "line": 0,
+    "jurats": true,
+    "until": 63,
+    "years": [
+     1249,
+     1282
+    ],
+    "years_stated": 2
+   }
+  ],
+  "numerals_not_found": []
+ },
+ {
+  "first_leaf": 114,
+  "last_leaf": 167,
+  "leaves": 54,
+  "sections": [
+   {
+    "number": 1,
+    "numeral": "I",
+    "title": "Jurados de la c. y r. de Mallorca",
+    "pdf_page": 114,
+    "line": 0,
+    "jurats": true,
+    "until": 122,
+    "years": [
+     1304,
+     1400
+    ],
+    "years_stated": 44
+   },
+   {
+    "number": 2,
+    "numeral": "II",
+    "title": "Cartas del gobernador Gilaberto de Centellas á Pedro IV acerca de la última empresa",
+    "pdf_page": 123,
+    "line": 0,
+    "read_as": "II.",
+    "until": 136
+   },
+   {
+    "number": 3,
+    "numeral": "III",
+    "title": "Historia de los Reyes de Mallorca, que fueron",
+    "pdf_page": 137,
+    "line": 0,
+    "read_as": "III.",
+    "until": 152
+   },
+   {
+    "number": 4,
+    "numeral": "IV",
+    "title": "Fragmentos de las Apuntaciones del Notario",
+    "pdf_page": 153,
+    "line": 0,
+    "read_as": "126 IV.",
+    "until": 158,
+    "years": [
+     1382,
+     1399
+    ],
+    "years_stated": 7
+   },
+   {
+    "number": 5,
+    "numeral": "V",
+    "title": "Algunas noticias é indicaciones curiosas extraídas",
+    "pdf_page": 159,
+    "line": 10,
+    "read_as": "V.",
+    "until": 167,
+    "years": [
+     1307,
+     1706
+    ],
+    "years_stated": 24
+   }
+  ],
+  "numerals_not_found": []
+ },
+ {
+  "first_leaf": 225,
+  "last_leaf": 245,
+  "leaves": 21,
+  "sections": [
+   {
+    "number": 1,
+    "numeral": "I",
+    "title": "Jurados de la c. y r. de Mallorca",
+    "pdf_page": 225,
+    "line": 0,
+    "jurats": true,
+    "until": 228,
+    "years": [
+     1401,
+     1496
+    ],
+    "years_stated": 87
+   },
+   {
+    "number": 2,
+    "numeral": "II",
+    "title": "Fragmentos de las Apuntaciones del Notario",
+    "pdf_page": 229,
+    "line": 10,
+    "read_as": "II.",
+    "until": 232,
+    "years": [
+     1403,
+     1500
+    ],
+    "years_stated": 9
+   },
+   {
+    "number": 3,
+    "numeral": "III",
+    "title": "Documento inédito acerca de la conduccion á esta isla, desde la de Menorca, de Simon Tort Ballester. (1)",
+    "pdf_page": 233,
+    "line": 7,
+    "read_as": "III.",
+    "until": 234
+   },
+   {
+    "number": 4,
+    "numeral": "IV",
+    "title": "Relacion (anónima) del tumulto ocurrido en la Iglesia de",
+    "pdf_page": 235,
+    "line": 0,
+    "read_as": "IV.",
+    "until": 235
+   },
+   {
+    "number": 5,
+    "numeral": "V",
+    "title": "Noticias é indicaciones curiosas extraidas de las que coleccionó el Pavorde Jaume.",
+    "pdf_page": 236,
+    "line": 29,
+    "read_as": "V.",
+    "until": 245,
+    "years": [
+     1401,
+     1500
+    ],
+    "years_stated": 35
+   }
+  ],
+  "numerals_not_found": []
+ },
+ {
+  "first_leaf": 311,
+  "last_leaf": 379,
+  "leaves": 69,
+  "sections": [
+   {
+    "number": 1,
+    "numeral": "I",
+    "title": "Jurados de la c. y r. de Mallorca",
+    "pdf_page": 311,
+    "line": 0,
+    "jurats": true,
+    "until": 314,
+    "years": [
+     1502,
+     1598
+    ],
+    "years_stated": 71
+   },
+   {
+    "number": 2,
+    "numeral": "II",
+    "title": "Memorial fet per mi Antoni Johan Lambías, Frare del convent de Sant Domingo, Procurador de dit convent,",
+    "pdf_page": 315,
+    "line": 5,
+    "read_as": "II.",
+    "until": 315
+   },
+   {
+    "number": 3,
+    "numeral": "III",
+    "title": "«Part de lo ques segui en la Germania.»  (1)",
+    "pdf_page": 316,
+    "line": 23,
+    "read_as": "I XIX.",
+    "until": 320
+   },
+   {
+    "number": 4,
+    "numeral": "IV",
+    "title": "Noticia de lo que sucedió al ejército Real en la rendicion de (Mallorca en tiempo de la Germanía,",
+    "pdf_page": 321,
+    "line": 30,
+    "read_as": "IV.",
+    "until": 322
+   },
+   {
+    "number": 5,
+    "numeral": "V",
+    "title": "Sentencia contra Juanot Colom y otros tres compafieros.  (1)",
+    "pdf_page": 323,
+    "line": 18,
+    "read_as": "V.",
+    "until": 323
+   },
+   {
+    "number": 6,
+    "numeral": "VI",
+    "title": "Nota de varias ejecuciones verificadas en Junio de 1523, redactada por Guillermo Valentí. (1)",
+    "pdf_page": 324,
+    "line": 2,
+    "read_as": "VI.",
+    "until": 367,
+    "years": [
+     1630,
+     1630
+    ],
+    "years_stated": 1
+   },
+   {
+    "number": 9,
+    "numeral": "IX",
+    "title": "Relacion (anónima) de la muerte de Jorge San Juan",
+    "pdf_page": 368,
+    "line": 0,
+    "read_as": "IX.",
+    "until": 372
+   },
+   {
+    "number": 11,
+    "numeral": "XI",
+    "title": "Algunas noticias é indicaciones curiosas extraidas de las",
+    "pdf_page": 373,
+    "line": 27,
+    "read_as": "XI.",
+    "until": 379,
+    "years": [
+     1501,
+     1579
+    ],
+    "years_stated": 14
+   }
+  ],
+  "numerals_not_found": [
+   7,
+   8,
+   10
+  ]
+ },
+ {
+  "first_leaf": 478,
+  "last_leaf": 506,
+  "leaves": 29,
+  "sections": [
+   {
+    "number": 1,
+    "numeral": "I",
+    "title": "Jurados de la c. y r. de Mallorca",
+    "pdf_page": 478,
+    "line": 0,
+    "jurats": true,
+    "until": 481,
+    "years": [
+     1601,
+     1697
+    ],
+    "years_stated": 93
+   },
+   {
+    "number": 2,
+    "numeral": "II",
+    "title": "Relacion de la muerte de Pedro Juan Quint. (1)",
+    "pdf_page": 482,
+    "line": 13,
+    "read_as": "XX.",
+    "until": 482,
+    "years": [
+     1612,
+     1700
+    ],
+    "years_stated": 4
+   },
+   {
+    "number": 3,
+    "numeral": "III",
+    "title": "Declaraciones en la causa criminal sobre asesinato de D. Jaime Juan de Berga. (1)",
+    "pdf_page": 483,
+    "line": 11,
+    "read_as": "III.",
+    "until": 484
+   },
+   {
+    "number": 4,
+    "numeral": "IV",
+    "title": "Toma de posesion del Reino de Mallorca á nombre del Rey Don Felipe IV. (1)",
+    "pdf_page": 485,
+    "line": 26,
+    "read_as": "IV.",
+    "until": 485
+   },
+   {
+    "number": 5,
+    "numeral": "V",
+    "title": "Cas nunca vist succeit en Mallorca á II Juny MDCXXIV. (1)",
+    "pdf_page": 486,
+    "line": 40,
+    "read_as": "V.",
+    "until": 486
+   },
+   {
+    "number": 6,
+    "numeral": "VI",
+    "title": "Fragmentos extraidos del Cuaderno de noticias ó cronicon de Mos. Jaume Viquet, pbro. (1)",
+    "pdf_page": 487,
+    "line": 36,
+    "read_as": "VI",
+    "until": 494,
+    "years": [
+     1636,
+     1645
+    ],
+    "years_stated": 10
+   },
+   {
+    "number": 7,
+    "numeral": "VII",
+    "title": "Fragmentos del «Llibre de memorias de cesas notables &.» del Dr. Cristobal Fiol.",
+    "pdf_page": 495,
+    "line": 0,
+    "read_as": "VII.",
+    "until": 498,
+    "years": [
+     1666,
+     1675
+    ],
+    "years_stated": 2
+   },
+   {
+    "number": 8,
+    "numeral": "VIII",
+    "title": "Noticias é indicaciones curiosas extraidas de los MSS. y obras citadas en el texto del siglo XVII.",
+    "pdf_page": 499,
+    "line": 19,
+    "read_as": "VIII.",
+    "until": 506,
+    "years": [
+     1605,
+     1700
+    ],
+    "years_stated": 40
+   }
+  ],
+  "numerals_not_found": []
+ },
+ {
+  "first_leaf": 631,
+  "last_leaf": 638,
+  "leaves": 8,
+  "sections": [
+   {
+    "number": 1,
+    "numeral": "I",
+    "title": "Jurados de la c. y r. de Mallorca",
+    "pdf_page": 631,
+    "line": 0,
+    "jurats": true,
+    "until": 631,
+    "years": [
+     1702,
+     1715
+    ],
+    "years_stated": 14
+   },
+   {
+    "number": 2,
+    "numeral": "II",
+    "title": "Noticias é indicaciones curiosas extraidas de los MSS. y obras citadas en el texto del siglo XVIII.",
+    "pdf_page": 632,
+    "line": 0,
+    "read_as": "II.",
+    "until": 638,
+    "years": [
+     1706,
+     1800
+    ],
+    "years_stated": 65
+   }
+  ],
+  "numerals_not_found": []
+ }
+]

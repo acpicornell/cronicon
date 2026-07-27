@@ -562,6 +562,10 @@ def main() -> None:
     # lists and the documents Campaner prints in full, both of which want their
     # own parser. Writing the classification down keeps them from being quietly
     # lost between one script and the next.
+    # Where each year of the chronicle is stated. Downstream this is what says
+    # where an appendix block ends and the chronicle resumes.
+    (OUT / "headings.json").write_text(
+        json.dumps(headings, ensure_ascii=False), encoding="utf-8")
     (OUT / "sections.json").write_text(json.dumps({
         "chronicle": chronicle,
         "jurats_tables": skipped_tables,
