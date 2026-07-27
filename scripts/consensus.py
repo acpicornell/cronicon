@@ -81,7 +81,34 @@ def is_running_head(line_text: str, line_bbox: list[float]) -> bool:
     return bool(line_bbox[1] < HEADER_BAND and HEADER_LINE.match(line_text))
 
 
-def tesseract_words(pdf_page: int, geometry=GEOMETRY) -> list[dict]:
+# A gutter, in fractions of the page width. Words inside a line sit about 0.0066
+# apart at this typography; the space between two columns of a Jurats table is
+# five times that. Splitting on it is off by default and exists for the table
+# leaves alone -- see --split-gutter.
+GUTTER_GAP = 0.025
+
+
+def split_gutters(words: list[dict], gap: float) -> list[list[dict]]:
+    """Cut a line where a gap in it is too wide to be a space.
+
+    Tesseract reads the dense Jurats tables as if the columns were one column:
+    leaf 312 opens with `Pedro Descatlar. Alfonso`, one line box running from
+    x 0.10 to 0.81 across the gutter. That is not only wrong text order -- it
+    also hides the column boundary from `layout.find_columns`, which refuses a
+    boundary that more than a tenth of the lines cross, so the merged lines
+    prevent the detection that would have separated them. Cutting on the gap
+    breaks the circle using geometry that is already on disk.
+    """
+    runs = [[words[0]]]
+    for previous, word in zip(words, words[1:]):
+        if word["bbox"][0] - previous["bbox"][2] > gap:
+            runs.append([])
+        runs[-1].append(word)
+    return runs
+
+
+def tesseract_words(pdf_page: int, geometry=GEOMETRY,
+                    gutter: float = 0.0) -> list[dict]:
     """Words with normalised boxes, in the shared layout reading order."""
     scan, dpi, lang, psm = geometry
     tsv = OCR / "tesseract" / f"{scan}_p{pdf_page:04d}_{dpi}_{lang}_{psm}.tsv"
@@ -111,13 +138,18 @@ def tesseract_words(pdf_page: int, geometry=GEOMETRY) -> list[dict]:
             })
 
     line_boxes = []
+    segments: dict[tuple, list[dict]] = {}
     for key, words in by_line.items():
         words.sort(key=lambda w: w["bbox"][0])
-        line_boxes.append((key, layout.Line(
-            " ".join(w["text"] for w in words),
-            min(w["bbox"][0] for w in words), min(w["bbox"][1] for w in words),
-            max(w["bbox"][2] for w in words), max(w["bbox"][3] for w in words))))
+        runs = split_gutters(words, gutter) if gutter else [words]
+        for n, run in enumerate(runs):
+            segments[(*key, n)] = run
+            line_boxes.append(((*key, n), layout.Line(
+                " ".join(w["text"] for w in run),
+                min(w["bbox"][0] for w in run), min(w["bbox"][1] for w in run),
+                max(w["bbox"][2] for w in run), max(w["bbox"][3] for w in run))))
 
+    by_line = segments
     key_by_line = {id(ln): key for key, ln in line_boxes}
     ordered, _ = layout.order([ln for _key, ln in line_boxes])
 
@@ -128,6 +160,58 @@ def tesseract_words(pdf_page: int, geometry=GEOMETRY) -> list[dict]:
             word["line_text"] = ln.text
             out.append(word)
     return out
+
+
+def abbyy_ia_words(pdf_page: int, gutter: float = 0.0) -> list[dict]:
+    """The same, from ABBYY's reading of the Internet Archive scan.
+
+    An alternative source of geometry for leaves where Tesseract's segmentation
+    fails outright. On the annotated Jurats lists it does not merely merge
+    columns: on leaf 115 it returns nothing at all right of x 0.47, so the whole
+    column of notes on which manuscript gives which name is simply absent from
+    the panel. ABBYY reads the same leaf with a box per column.
+
+    This is still not a generative step. It changes which boxes the six
+    recognisers are asked to vote on, and nothing about how they vote.
+    """
+    path = OCR / "abbyy_ia" / f"ia_p{pdf_page:04d}.json"
+    if not path.exists():
+        return []
+    data = json.loads(path.read_text())
+    width = data["page_width"]
+    height = data["page_height"]
+
+    line_boxes = []
+    segments: dict[int, list[dict]] = {}
+    for line in data["lines"]:
+        words = [{"text": w["text"].strip(),
+                  "bbox": [w["bbox"][0] / width, w["bbox"][1] / height,
+                           w["bbox"][2] / width, w["bbox"][3] / height]}
+                 for w in line["words"] if w["text"].strip()]
+        if not words:
+            continue
+        words.sort(key=lambda w: w["bbox"][0])
+        for run in (split_gutters(words, gutter) if gutter else [words]):
+            segments[len(line_boxes)] = run
+            line_boxes.append((len(line_boxes), layout.Line(
+                " ".join(w["text"] for w in run),
+                min(w["bbox"][0] for w in run), min(w["bbox"][1] for w in run),
+                max(w["bbox"][2] for w in run), max(w["bbox"][3] for w in run))))
+
+    key_by_line = {id(ln): key for key, ln in line_boxes}
+    ordered, _ = layout.order([ln for _key, ln in line_boxes])
+
+    out: list[dict] = []
+    for ln in ordered:
+        for word in segments[key_by_line[id(ln)]]:
+            word["line_bbox"] = [ln.x0, ln.y0, ln.x1, ln.y1]
+            word["line_text"] = ln.text
+            out.append(word)
+    return out
+
+
+GEOMETRIES = {"tesseract": (tesseract_words, GEOMETRY_ENGINE),
+              "abbyy-ia": (abbyy_ia_words, "abbyy-ia")}
 
 
 def project(reference: list[str], other: list[str]) -> list[str | None]:
@@ -176,17 +260,19 @@ def grade(stratum: str, panel_size: int) -> str:
     return "contested"
 
 
-def collect(pdf_page: int, panel: list[str] = None) -> list[dict]:
+def collect(pdf_page: int, panel: list[str] = None, gutter: float = 0.0,
+            geometry: str = "tesseract") -> list[dict]:
     """Every token position on the leaf, with what each engine read there."""
     panel = panel or PANEL
-    words = tesseract_words(pdf_page)
+    source, engine = GEOMETRIES[geometry]
+    words = source(pdf_page, gutter=gutter)
     if not words:
         return []
     reference = [w["text"] for w in words]
     readings = available_readings(pdf_page)
     projected = {k: project(reference, text.split())
-                 for k, text in readings.items() if k != GEOMETRY_ENGINE}
-    projected[GEOMETRY_ENGINE] = list(reference)
+                 for k, text in readings.items() if k != engine}
+    projected[engine] = list(reference)
 
     loci = []
     for i, word in enumerate(words):
@@ -223,8 +309,8 @@ def run_one(job) -> tuple[int, Counter, int]:
     once: `--with-kraken` produced a seven-engine banner, an empty consensus7
     directory, and a six-engine result written over the six-engine result.
     """
-    pdf_page, panel, out_dir = job
-    loci = collect(pdf_page, panel)
+    pdf_page, panel, out_dir, gutter, geometry = job
+    loci = collect(pdf_page, panel, gutter, geometry)
     if not loci:
         return pdf_page, Counter(), 0
     grades = Counter(locus["grade"] for locus in loci)
@@ -242,6 +328,15 @@ def main() -> None:
     ap.add_argument("--pages", default="all",
                     help="pilot | all | every | comma-separated page numbers")
     ap.add_argument("--workers", type=int, default=8)
+    ap.add_argument("--split-gutter", action="store_true",
+                    help="cut reference lines at a column gap; for the dense "
+                         "table leaves, and writes to its own directory so the "
+                         "book's consensus and the frozen sample are untouched")
+    ap.add_argument("--geometry", default="tesseract", choices=list(GEOMETRIES),
+                    help="which engine supplies the line and word boxes the "
+                         "panel votes on")
+    ap.add_argument("--out", default=None,
+                    help="output directory, relative to the project")
     ap.add_argument("--swap-kraken", action="store_true",
                     help="replace the weakest ABBYY with the book-specific model")
     ap.add_argument("--swap-paddle", action="store_true",
@@ -275,6 +370,14 @@ def main() -> None:
         panel.append(KRAKEN_ENGINE)
         suffix += "_swapk"
     out_dir = OCR / (f"consensus{len(panel)}{suffix}" if suffix else "consensus")
+    # Changing the geometry changes every stratum on the leaf, which would
+    # renumber the frozen sample and orphan its adjudications. A gutter run
+    # therefore never writes over the book's consensus.
+    gutter = GUTTER_GAP if args.split_gutter else 0.0
+    if args.out:
+        out_dir = PROJECT / args.out
+    elif gutter:
+        out_dir = OCR / f"consensus{len(panel)}{suffix}_gutter"
 
     pages = targets.resolve(args.pages)
     print(f"{len(pages)} leaves, panel of {len(panel)}, {args.workers} workers")
@@ -285,7 +388,8 @@ def main() -> None:
     tokens = 0
     empty: list[int] = []
     with ProcessPoolExecutor(max_workers=args.workers) as pool:
-        futures = [pool.submit(run_one, (page, panel, str(out_dir)))
+        futures = [pool.submit(run_one,
+                               (page, panel, str(out_dir), gutter, args.geometry))
                    for page in pages]
         for n, future in enumerate(as_completed(futures), 1):
             page, grades, count = future.result()

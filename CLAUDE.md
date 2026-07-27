@@ -156,6 +156,46 @@ chronology, and neither is an OCR error:
   perseverando…». Campaner's own error; by this edition's rules it stays.
 - **leaf 74 `1336.»`** is the last line of a footnote quotation, wrapped alone.
 
+## The Jurats lists
+
+Six series, one per century, printed as appendices inside the body:
+XIII at leaf 58, XIV at 114, XV at 225, XVI at 311, XVII at 478, XVIII at 631.
+`scripts/parse_jurats.py` finds them by their own title line and gives
+`data/jurats/jurats.jsonl` — **1 670 names over 282 years**, one row per
+(year, seat, name) with its certainty tier.
+
+Two typographies, and **neither difficulty is in the parser**. What the six
+engines share is a reading order, and it comes from Tesseract's line
+segmentation, which is wrong on these leaves in two different ways.
+
+- **Compact form** (a bare `1418.` and six names, three columns to the leaf) —
+  Tesseract joins a line of column one to a line of column two across the
+  gutter: leaf 312 opens `Pedro Descatlar. Alfonso`, one box from x 0.10 to
+  0.81, and every year heading caught in such a line vanishes. Circular, too:
+  `layout.find_columns` refuses a boundary more than a tenth of the lines cross,
+  so the merged lines hide the boundary that would separate them.
+  **Fixed** by `consensus.py --split-gutter`, which cuts a line where the gap in
+  it exceeds 0.025 of the page width — word spaces here are 0.0066, and leaf 312
+  had 34 gaps over 0.03 against 3 on a clean table leaf. Worth 12 years and 77
+  names. It writes to `consensus…_gutter`, never over the book's consensus:
+  changing geometry changes every stratum and would orphan the frozen sample.
+- **Annotated form** (`AÑO 1312.`, `1.—Guillermo de Montsó` with a dot leader to
+  a brace, and a column of notes on which manuscript gives which name, leaves
+  58–60 and 114–121) — **still open.** Tesseract returns nothing at all right of
+  x 0.47 on leaf 115, so the notes column is absent from the panel entirely.
+  `consensus.py --geometry abbyy-ia` recovers it in full (out to x 0.89) but
+  leaves the name column no better.
+- Not by having a model read the page. Family names of 1300s Mallorca are
+  exactly where a language model silently normalises `Za-flor` to `Zaflor` and
+  invents a plausible surname, with no consensus left to catch it.
+
+Bounding each series: it ends at the next series' title, at a roman-numeral
+section head (`II. Noticias é indicaciones curiosas` starts at 1702 on the leaf
+right after the 18th-century list, rising years, so nothing else stops it), or at
+the first leaf that adds no year beyond those already collected. Within a series
+the same non-decreasing-subsequence rule as the chronicle: one heading misread
+high on leaf 479 was locking out twenty consecutive years.
+
 ## Where we left off (27 Jul 2026)
 
 Panel of six is measured and closed pending one open experiment.

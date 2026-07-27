@@ -1,0 +1,101 @@
+{
+ "parsed": [
+  {
+   "century": 13,
+   "leaves": [],
+   "years": 0,
+   "names": 0,
+   "span": null,
+   "backwards": 0
+  },
+  {
+   "century": 14,
+   "leaves": [
+    122
+   ],
+   "years": 24,
+   "names": 136,
+   "span": [
+    1375,
+    1400
+   ],
+   "backwards": 0
+  },
+  {
+   "century": 15,
+   "leaves": [
+    225,
+    226,
+    227,
+    228,
+    229
+   ],
+   "years": 87,
+   "names": 513,
+   "span": [
+    1401,
+    1500
+   ],
+   "backwards": 0
+  },
+  {
+   "century": 16,
+   "leaves": [
+    311,
+    312,
+    313,
+    314
+   ],
+   "years": 78,
+   "names": 463,
+   "span": [
+    1502,
+    1598
+   ],
+   "backwards": 0
+  },
+  {
+   "century": 17,
+   "leaves": [
+    478,
+    479,
+    480,
+    481,
+    482
+   ],
+   "years": 94,
+   "names": 551,
+   "span": [
+    1601,
+    1700
+   ],
+   "backwards": 0
+  },
+  {
+   "century": 18,
+   "leaves": [
+    631
+   ],
+   "years": 14,
+   "names": 84,
+   "span": [
+    1702,
+    1715
+   ],
+   "backwards": 0
+  }
+ ],
+ "annotated_not_parsed": [
+  58,
+  59,
+  60,
+  114,
+  115,
+  116,
+  117,
+  118,
+  119,
+  120,
+  121
+ ]
+}
