@@ -1,0 +1,1747 @@
+{
+ "pdf_page": 50,
+ "page_class": "body",
+ "reference": "vision-ia-300dpi-corr",
+ "panel": [
+  "abbyy-bne",
+  "abbyy-ia",
+  "tess-bne-400dpi-spa_old-psm3",
+  "tess-ia-300dpi-spa_old-psm3",
+  "vision-bne-400dpi-corr",
+  "vision-ia-300dpi-corr"
+ ],
+ "source_image": "leaf0048_630dpi.png",
+ "lines_total": 110,
+ "lines_agreed": 14,
+ "lines_contested": 96,
+ "contested": [
+  {
+   "line": 0,
+   "bbox": [
+    0.40740740691396055,
+    0.08284883717653546,
+    0.5511982551775427,
+    0.09593023276048007
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "MAYORICENSE.",
+    "abbyy-bne": "",
+    "abbyy-ia": "ie 23",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "MAYORICENSE. 23",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 1,
+   "bbox": [
+    0.13071896625177845,
+    0.11042402832138498,
+    0.46840958249549813,
+    0.12367491171361111
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Los de Santa Margarita prestaron su jura-",
+    "abbyy-bne": "«Los de Santa Margarita prestaron su jura­",
+    "abbyy-ia": "«Los de Santa Margarita prestaron su jura-",
+    "tess-bne-400dpi-spa_old-psm3": "«Los de Santa Margarita prestaron su jura-",
+    "tess-ia-300dpi-spa_old-psm3": "«Los de Santa Margarita prestaron su jura-",
+    "vision-bne-400dpi-corr": "«Los de Santa Margarita prestaron su jura-"
+   }
+  },
+  {
+   "line": 2,
+   "bbox": [
+    0.11328976650093474,
+    0.1235465118772513,
+    0.4684095862768429,
+    0.13810365163000216
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "mento el dia 26 de dicho mes y año, y fueron",
+    "abbyy-bne": "mento el dia 26 de dicho mes y año, y fueron",
+    "abbyy-ia": "mento el dia 26 de dicho mes y año, y fueron",
+    "tess-bne-400dpi-spa_old-psm3": "mento el dia 26 de dicho mes y año, y fueron",
+    "tess-ia-300dpi-spa_old-psm3": "menrto el día 26 de dicho mes y año, y fueron",
+    "vision-bne-400dpi-corr": "mento el dia 26 de dicho mes y año, y fueron"
+   }
+  },
+  {
+   "line": 3,
+   "bbox": [
+    0.11111111874432167,
+    0.13953488433875372,
+    0.4684095754822578,
+    0.15552325559583924
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Estraneo Gaçó, Lúcas Paleti, Pedro Dalmau,",
+    "abbyy-bne": "Estraneo Gaçô, Lúeas Paleti, Pedro Dalmau,",
+    "abbyy-ia": "Estraneo Ga$ó, Lúeas Paletí, Pedro Dalmau,",
+    "tess-bne-400dpi-spa_old-psm3": "Estraneo Gacó, Lúcas Paleti, Pedro Dalmau,",
+    "tess-ia-300dpi-spa_old-psm3": "Estraneo Gagó, Lúcas Paleti, Pedro Dalmau,",
+    "vision-bne-400dpi-corr": "Estraneo Gaçó, Lúcas Paletí, Pedro Dalmau,"
+   }
+  },
+  {
+   "line": 4,
+   "bbox": [
+    0.1111111170365193,
+    0.15400471126110105,
+    0.46623093681242767,
+    0.1687279150302412
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "García Aragonés, Pedro de Lluchroig, Juan",
+    "abbyy-bne": "Garcia Aragonés, Pedro de Lluchroig, Juan",
+    "abbyy-ia": "García Aragonés, Pedro de Lluchroig, Juan",
+    "tess-bne-400dpi-spa_old-psm3": "Garcia Aragonés, Pedro de Lluchroig, Juan",
+    "tess-ia-300dpi-spa_old-psm3": "Garcia Aragones, Pedro de Lluchroig, Juan",
+    "vision-bne-400dpi-corr": "García Aragonés, Pedro de Lluchroig, Juan"
+   }
+  },
+  {
+   "line": 5,
+   "bbox": [
+    0.11111112378789462,
+    0.1671511631359921,
+    0.46840958052583076,
+    0.18315665503747525
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "de Lluchroig, Arnaldo Gassó, Bernardino de",
+    "abbyy-bne": "de Lluchroig, Arnaldo Gassó, Bernardino de",
+    "abbyy-ia": "de Lluchroig, Arnaldo Gassó, Bemardino de",
+    "tess-bne-400dpi-spa_old-psm3": "de Lluchroig, Arnaldo Gasso, Bernardino de",
+    "tess-ia-300dpi-spa_old-psm3": "de Lluchroig, Arnaldo Gassó, Bernardino de",
+    "vision-bne-400dpi-corr": "de Lluchroig, Arnaldo Gassó, Bernardino de"
+   }
+  },
+  {
+   "line": 6,
+   "bbox": [
+    0.11328976011811423,
+    0.18313953465620636,
+    0.4662309429319945,
+    0.1976744186383672
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Font, Pedro Belvey, Arnaldo de Umbert, Gui-",
+    "abbyy-bne": "Font, Pedro Belvey, Arnaldo deUmbert, Gui­",
+    "abbyy-ia": "Font, Pedro Belvey, Arnaldo de Umbert, Gui-",
+    "tess-bne-400dpi-spa_old-psm3": "Font, Pedro Belvey, Arnaldo de Umbert, Guil-",
+    "tess-ia-300dpi-spa_old-psm3": "Font, Pedro Belvey, Arnaldo de Umberr, Gui-",
+    "vision-bne-400dpi-corr": "Font, Pedro Belvey, Arnaldo de Umbert, Gui-"
+   }
+  },
+  {
+   "line": 7,
+   "bbox": [
+    0.11111110815852387,
+    0.19758539431683397,
+    0.4662309279344321,
+    0.21230859808597413
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "llermo Garriga, Guillermo de Çaoliva, Guiller-",
+    "abbyy-bne": "llermo Garriga, Guillermo de Çaoliva, Guiller­",
+    "abbyy-ia": "llermo Garriga, Guillermo de £aoliva, Guiller-",
+    "tess-bne-400dpi-spa_old-psm3": "llermo Garriga, Guillermo de Caoliva, Guiller-",
+    "tess-ia-300dpi-spa_old-psm3": "llermo Garriga, Guillermo de Caoliva, Guiller-",
+    "vision-bne-400dpi-corr": "Ilermo Garriga, Guillermo de Çaoliva, Guiller-"
+   }
+  },
+  {
+   "line": 8,
+   "bbox": [
+    0.11111111762838569,
+    0.2122093026708758,
+    0.4662309374042939,
+    0.2282096583228751
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "mo Castell, Maimón de Femenía, Ferrer Col-",
+    "abbyy-bne": "mo Gastell, Maimón de Femenia, Ferrer Col-",
+    "abbyy-ia": "mo Castell, Maimón de Femenía, Ferrer Col-",
+    "tess-bne-400dpi-spa_old-psm3": "mo Castell, Maimón de Femenia, Ferrer Col-",
+    "tess-ia-300dpi-spa_old-psm3": "mo Castell, Maimón de Femenia, Ferrer Col-",
+    "vision-bne-400dpi-corr": "mo Castell, Maimón de Femenia, Ferrer Col-"
+   }
+  },
+  {
+   "line": 9,
+   "bbox": [
+    0.11328977101954169,
+    0.22819767509188305,
+    0.4662309268744307,
+    0.24273255795075255
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "balica Bernardo Escuder, Miron de Font, Orzet",
+    "abbyy-bne": "balica Bernardo Escuder, Miron de Font, Orzet",
+    "abbyy-ia": "balica Bernardo Escuder, Mirón de Font, Orzet",
+    "tess-bne-400dpi-spa_old-psm3": "balica Bernardo Escuder, Miron de Font, Orzet",
+    "tess-ia-300dpi-spa_old-psm3": "balica Bernardo Escuder, Miron de Font, Orzet",
+    "vision-bne-400dpi-corr": "balica Bernardo Escuder, Miron de Font, Orzet"
+   }
+  },
+  {
+   "line": 11,
+   "bbox": [
+    0.11328976923332382,
+    0.2572674421461467,
+    0.468409589009232,
+    0.2718023250050161
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Guillermo Bordoy, Borrás Lorenzo, Bartolome",
+    "abbyy-bne": "Guillermo Bordoy, Borras Lorenzo, Baitolonié",
+    "abbyy-ia": "Guillermo Bordoy, Borrás Lorenzo, Bartolomé",
+    "tess-bne-400dpi-spa_old-psm3": "Guillermo Bordoy, Borrás Lorenzo, Bartolomé",
+    "tess-ia-300dpi-spa_old-psm3": "Guillermo Bordoy, Borrás Lorenzo, Bartolomé",
+    "vision-bne-400dpi-corr": "Guillermo Bordoy, Borrás Lorenzo, Bartolomé"
+   }
+  },
+  {
+   "line": 12,
+   "bbox": [
+    0.11111112468114073,
+    0.2717903415136075,
+    0.46840958141907685,
+    0.2877906971656068
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Vey, Pedro de Iglesia, Nunis Bartolomé Ca-",
+    "abbyy-bne": "Vey, Pedro de Iglesia, Nunis Bartolomé Ca-",
+    "abbyy-ia": "Vey, Pedro de Iglesia, Nunis Bartolomé Ca-",
+    "tess-bne-400dpi-spa_old-psm3": "Vey, Pedro de Iglesía, Nunis Bartolomé Ca-",
+    "tess-ia-300dpi-spa_old-psm3": "Vey, Pedro de Iglesia, Nunis Bartolomé Ca-",
+    "vision-bne-400dpi-corr": "Vey, Pedro de Iglesia, Nunis Bartolomé Ca-"
+   }
+  },
+  {
+   "line": 13,
+   "bbox": [
+    0.11111111044345195,
+    0.2906976747067942,
+    0.1938997800431131,
+    0.297965116136229
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "sasnovas.»",
+    "abbyy-bne": "sasnovas.»",
+    "abbyy-ia": "sasnovas.»",
+    "tess-bne-400dpi-spa_old-psm3": "SASNOVAS.Y",
+    "tess-ia-300dpi-spa_old-psm3": "SASNOVAS. Y",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 14,
+   "bbox": [
+    0.13071896765882265,
+    0.30087209340583654,
+    0.4684095839025423,
+    0.31540697626470604
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Los de Petra, fueron sus síndicos: Pedro",
+    "abbyy-bne": "«Los de Petra, fueron sus síndicos; Pedro",
+    "abbyy-ia": "«Los de Petra, fueron sus síndicos: Pedro",
+    "tess-bne-400dpi-spa_old-psm3": "«Los de Petra, fueron sus síndicos: Pedro",
+    "tess-ia-300dpi-spa_old-psm3": "«Los de Pertra, fueron sus síndicos: Pedro",
+    "vision-bne-400dpi-corr": "«Los de Petra, fueron sus sindicos: Pedro"
+   }
+  },
+  {
+   "line": 15,
+   "bbox": [
+    0.11111112378789462,
+    0.3168433453497519,
+    0.46840958052583076,
+    0.3328488366895892
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Sobredor, Berenguer Dalmau, Pascual de Ma-",
+    "abbyy-bne": "Sobredor, Berenguer Dalmau, Pascual de Ma­",
+    "abbyy-ia": "Sobredor, Berenguer Dalmau, Pascual de Ma-",
+    "tess-bne-400dpi-spa_old-psm3": "Sobredor, Berenguer Dalmau, Pascual de Ma-",
+    "tess-ia-300dpi-spa_old-psm3": "Sobredor, Berenguer Dalmau, Pascual de Ma-",
+    "vision-bne-400dpi-corr": "Sobredor, Berenguer Dalmau, Pascual de Ma-"
+   }
+  },
+  {
+   "line": 16,
+   "bbox": [
+    0.10893247119530208,
+    0.3312720850838775,
+    0.4662309279332383,
+    0.3474676092299317
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "rió, Arnaldo Fábregues, Pedro Navato y Ber-",
+    "abbyy-bne": "rié, Arnaldo Fábregues, Pedro Navato y Ber­",
+    "abbyy-ia": "rió, Arnaldo Fábregues, Pedro Navato y Ber-",
+    "tess-bne-400dpi-spa_old-psm3": "ri6, Arnaldo Fábregues, Pedro Navato y Ber-",
+    "tess-ia-300dpi-spa_old-psm3": "rió, Arnaldo Fábregues, Pedro Navato y Ber-",
+    "vision-bne-400dpi-corr": "rió, Arnaldo Fábregues, Pedro Navato y Ber-"
+   }
+  },
+  {
+   "line": 17,
+   "bbox": [
+    0.1111111092320594,
+    0.3459302328214946,
+    0.2592592583786887,
+    0.35755813888393184
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "nardino Sobredor.»",
+    "abbyy-bne": "nardino Sobredor.»",
+    "abbyy-ia": "nardino Sobredor.»",
+    "tess-bne-400dpi-spa_old-psm3": "nardino Sobredor.»",
+    "tess-ia-300dpi-spa_old-psm3": "nardino Sobredor. »",
+    "vision-bne-400dpi-corr": "nardino Sobredor.»"
+   }
+  },
+  {
+   "line": 18,
+   "bbox": [
+    0.13057062949198842,
+    0.3597316587145474,
+    0.46852894851908367,
+    0.37374391793840456
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Fueron los síndicos de Sóller: Pedro de",
+    "abbyy-bne": "«Fueron los síndicos de Soller; Pedro de",
+    "abbyy-ia": "«Fueron los síndicos de Sóller: Pedro de",
+    "tess-bne-400dpi-spa_old-psm3": "«Eueron los síndicos de Sóller: Pedro de",
+    "tess-ia-300dpi-spa_old-psm3": "«Fueron los síndicos de Sóller: Pedro de",
+    "vision-bne-400dpi-corr": "«Fueron los síndicos de Sóller: Pedro de"
+   }
+  },
+  {
+   "line": 19,
+   "bbox": [
+    0.11328976775365798,
+    0.3763250881773773,
+    0.4684095875295662,
+    0.38957597156960344
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Masblanch, Ramon Guillem, Arnaldo Alegre,",
+    "abbyy-bne": "Masblanch, Ramon Guillem, Arnaldo Alegre,",
+    "abbyy-ia": "Masblanch, Ramón Guillem, Arnaldo Alegre,",
+    "tess-bne-400dpi-spa_old-psm3": "Masblanch, Ramon Guillem, Arnaldo Alegre,",
+    "tess-ia-300dpi-spa_old-psm3": "Masblanch, Ramon Guillem, Arnaldo Alegre,",
+    "vision-bne-400dpi-corr": "Masblanch, Ramon Guillem, Arnaldo Alegre,"
+   }
+  },
+  {
+   "line": 20,
+   "bbox": [
+    0.11328976775365798,
+    0.39098837244627216,
+    0.4684095875295662,
+    0.40406976690692553
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Berenguer Bernat, Ramon Capero, Juan de",
+    "abbyy-bne": "Berenguer Bernat, Ramon Capeio, Juan de",
+    "abbyy-ia": "Berenguer Bernat, Ramón Caperó, Juan de",
+    "tess-bne-400dpi-spa_old-psm3": "Berenguer Bernat, Ramon Caperó, Juan de",
+    "tess-ia-300dpi-spa_old-psm3": "Berenguer Bernat, Ramon Caperó, Juan de",
+    "vision-bne-400dpi-corr": "Berenguer Bernat, Ramon Caperó, Juan de"
+   }
+  },
+  {
+   "line": 22,
+   "bbox": [
+    0.11328976875011539,
+    0.4200581401476,
+    0.4662309246050044,
+    0.4346289750679193
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Jaime Vidal, Guillermo de Buadella, Ramon",
+    "abbyy-bne": "Jaime Vidal, Guillermo de Buadella, Ramon",
+    "abbyy-ia": "Jaime Vidal, Guillermo de Buadella, Ramón",
+    "tess-bne-400dpi-spa_old-psm3": "Jaime Vidal, Guillermo de Buadella, Ramon",
+    "tess-ia-300dpi-spa_old-psm3": "Jaime Vidal, Guillermo de Buadella, Ramon",
+    "vision-bne-400dpi-corr": "Jaime Vidal, Guillermo de Buadella, Ramon"
+   }
+  },
+  {
+   "line": 23,
+   "bbox": [
+    0.11111112378789462,
+    0.4345930229276037,
+    0.46840958052583076,
+    0.45494699619046697
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "de Paloet, Guillermo Struch, Berhardino Pe-",
+    "abbyy-bne": "de Paloet, Guillermo Struch, Bernardino Pe-",
+    "abbyy-ia": "de Paloet, Guillermo Struch, Berñardino Pe-",
+    "tess-bne-400dpi-spa_old-psm3": "de Paloet, Guillermo Struch, Bernardino Pe-",
+    "tess-ia-300dpi-spa_old-psm3": "de Paloet, Guillermo Struch, Berñardino Pe-",
+    "vision-bne-400dpi-corr": "de Paloet, Guillermo Struch, Bernardino Pe-"
+   }
+  },
+  {
+   "line": 24,
+   "bbox": [
+    0.11310139905756186,
+    0.4500744397973734,
+    0.17230165222405716,
+    0.4612627693974256
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "llisser.»",
+    "abbyy-bne": "llisser.»",
+    "abbyy-ia": "llisser.»",
+    "tess-bne-400dpi-spa_old-psm3": "Ilisser.»",
+    "tess-ia-300dpi-spa_old-psm3": "llisser. » R",
+    "vision-bne-400dpi-corr": "llisser.»"
+   }
+  },
+  {
+   "line": 25,
+   "bbox": [
+    0.1303955142522537,
+    0.4604291011935586,
+    0.46874762326492486,
+    0.4789774151387043
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Los que nombraron los de Santa María del",
+    "abbyy-bne": "«Los que nombraron los de Santa Maria del",
+    "abbyy-ia": "«Los que nombraron los de Santa María del",
+    "tess-bne-400dpi-spa_old-psm3": "«Los que nombraron los de Santa Marla del",
+    "tess-ia-300dpi-spa_old-psm3": "«Los que nombraron los de Santa María del",
+    "vision-bne-400dpi-corr": "«Los que nombraron los de Santa María del"
+   }
+  },
+  {
+   "line": 26,
+   "bbox": [
+    0.11328976865235063,
+    0.47819767460738705,
+    0.46840958842825886,
+    0.49273255746625644
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Camino fueron: Guillermo Figuera, Jaime de",
+    "abbyy-bne": "Camino fueron; Guillermo Figuera, Jaime de",
+    "abbyy-ia": "Camino fueron: Guillermo Figuera, Jaime de",
+    "tess-bne-400dpi-spa_old-psm3": "Camino fueron: Guillermo Figuera, Jaime de",
+    "tess-ia-300dpi-spa_old-psm3": "Camino fueron: Guillermo Figuera, Jaime de",
+    "vision-bne-400dpi-corr": "Camino fueron: Guillermo Figuera, Jaime de"
+   }
+  },
+  {
+   "line": 27,
+   "bbox": [
+    0.11328977337974491,
+    0.49263839793374387,
+    0.46623092923463394,
+    0.507361601702884
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Tarrades, Guillermo de Berga, Bernardino Fer-",
+    "abbyy-bne": "Tarrades, Guillermo de Berga, Bernardino Fer­",
+    "abbyy-ia": "Tarrades, Guillermo de Berga, Berñardino Fer-",
+    "tess-bne-400dpi-spa_old-psm3": "Tarrades, Guillermo de Berga, Bernardino Fer-",
+    "tess-ia-300dpi-spa_old-psm3": "Tarrades, Guillermo de Berga, Bernardino Fer-",
+    "vision-bne-400dpi-corr": "Tarrades, Guillermo de Berga, Bernardino Fer-"
+   }
+  },
+  {
+   "line": 29,
+   "bbox": [
+    0.11075993981559779,
+    0.5214372741384393,
+    0.32498371389321207,
+    0.5400099870939816
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Urgel, Guillermo Babiloni.»",
+    "abbyy-bne": "Urgel, Guillermo Babiloni.»",
+    "abbyy-ia": "Urgel, Guillermo Babiloni.»",
+    "tess-bne-400dpi-spa_old-psm3": "Urgel, Guillermo Babiloni.» -",
+    "tess-ia-300dpi-spa_old-psm3": "Urgel, Guillermo Babiloni.",
+    "vision-bne-400dpi-corr": "Urgel, Guillermo Babiloni.»"
+   }
+  },
+  {
+   "line": 30,
+   "bbox": [
+    0.12200435920860075,
+    0.5376914014023031,
+    0.4684095772184147,
+    0.5538869255483573
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Los de la parroquia de Marratxí, el dia 3o de",
+    "abbyy-bne": "«Los déla parroquia de Marratxi, el dia 30 de",
+    "abbyy-ia": "«Los déla parroquia de Marratxí, el dia 30 de",
+    "tess-bne-400dpi-spa_old-psm3": "«Los dela parroquia de Marratxi, el día 30 de",
+    "tess-ia-300dpi-spa_old-psm3": "» ‘«Los dela parroquia de Marratxi, el día 30 de",
+    "vision-bne-400dpi-corr": "«Los de la parroquia de Marratxí, el dia 3o de"
+   }
+  },
+  {
+   "line": 31,
+   "bbox": [
+    0.11328976923332382,
+    0.55232558172948,
+    0.468409589009232,
+    0.5668604645883495
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Noviembre, eligieron sus síndicos y fueron Ber-",
+    "abbyy-bne": "Noviembre, eligieron sus síndicos y fueion Ber­",
+    "abbyy-ia": "Noviembre, eligieron sus síndicos y fueron Ber-",
+    "tess-bne-400dpi-spa_old-psm3": "Noviembre, eligieron sus síndicos y fueron Ber-",
+    "tess-ia-300dpi-spa_old-psm3": "Noviembre, eligieron sus síndicos y fueron Ber-",
+    "vision-bne-400dpi-corr": "Noviembre, eligieron sus síndicos y fueron Ber-"
+   }
+  },
+  {
+   "line": 32,
+   "bbox": [
+    0.11328976923332382,
+    0.56831395381134,
+    0.468409589009232,
+    0.5813953482719934
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "nardino Babiloni, Guillermo Godor, Juan Ber-",
+    "abbyy-bne": "nardino Babiloni, Guillermo Godoi, Juan Bei-",
+    "abbyy-ia": "nardino Babiloni, Guillermo Godor, Juan Ber-",
+    "tess-bne-400dpi-spa_old-psm3": "nardino Babiloni, Guillermo Godor, Juan Ber-",
+    "tess-ia-300dpi-spa_old-psm3": "nardino Babiloni, Guillermo Godor, Juan Ber-",
+    "vision-bne-400dpi-corr": "nardino Babiloni, Guillermo Godor, Juan Ber-"
+   }
+  },
+  {
+   "line": 33,
+   "bbox": [
+    0.11328975899367276,
+    0.5827444049284778,
+    0.468409578769581,
+    0.597467608697618
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "nardo, Arnaldo Meli, Ramon Desfort, Ber-",
+    "abbyy-bne": "nardo, Arnaldo Meli, Ramon Desfort, Ber­",
+    "abbyy-ia": "nardo, Arnaldo Meli, Ramón Desfort, Ber-",
+    "tess-bne-400dpi-spa_old-psm3": "nardo, Arnaldo Meli, Ramon Desſort, Ber-",
+    "tess-ia-300dpi-spa_old-psm3": "nardo, Arnaldo Meli, Ramon Desſort, Ber-",
+    "vision-bne-400dpi-corr": "nardo, Arnaldo Meli, Ramon Desfort, Ber-"
+   }
+  },
+  {
+   "line": 34,
+   "bbox": [
+    0.1132897634499082,
+    0.5973837213389365,
+    0.25708061171349034,
+    0.6090116274013737
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "nardino Sabadell.»",
+    "abbyy-bne": "nardino Sabadell.»",
+    "abbyy-ia": "nardino Sabadell.»",
+    "tess-bne-400dpi-spa_old-psm3": "nardino Sabadell.»",
+    "tess-ia-300dpi-spa_old-psm3": "nardino Sabadell. »",
+    "vision-bne-400dpi-corr": "nardino Sabadell.»"
+   }
+  },
+  {
+   "line": 36,
+   "bbox": [
+    0.11328976923332382,
+    0.6263250882197705,
+    0.468409589009232,
+    0.6395759716119968
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "2 de Diciembre, fueron: Bernardino Ripoll,",
+    "abbyy-bne": "2 de Diciembre, fueron; Bernardino Ripoll,",
+    "abbyy-ia": "2 de Diciembre, fueron: Berñardino Ripoll,",
+    "tess-bne-400dpi-spa_old-psm3": "2 de Diciembre, fueron: Bernardino Ripoll,",
+    "tess-ia-300dpi-spa_old-psm3": "2 de Diciembre, fueron: Bernardino Ripoll,",
+    "vision-bne-400dpi-corr": "2 de Diciembre, fueron: Bernardino Ripoll,"
+   }
+  },
+  {
+   "line": 37,
+   "bbox": [
+    0.10893247395492438,
+    0.6409883718645597,
+    0.46623093069286053,
+    0.6569767442449366
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Juan de Ripoll, Jaime Villar, Bartolomé Vi-",
+    "abbyy-bne": "Juan de Ripoll, Jaime Villar, Bartolomé Vi­",
+    "abbyy-ia": "Juan de Ripoll, Jaime Villar, Bartolomé Vi-",
+    "tess-bne-400dpi-spa_old-psm3": "Juan de Ripoll, Jaime Villar, Bartolomé V1i-",
+    "tess-ia-300dpi-spa_old-psm3": "Juan de Ripoll, Jaime Villar, Bartolome Vi-",
+    "vision-bne-400dpi-corr": "Juan de Ripoll, Jaime Villar, Bartolomé Vi-"
+   }
+  },
+  {
+   "line": 38,
+   "bbox": [
+    0.10893246738266595,
+    0.6554770318764666,
+    0.4662309241206022,
+    0.6729651160921856
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "llar, Simeon Roig, Guillermo Moragues, Be-",
+    "abbyy-bne": "llar, Simeon Roig, Guillermo Moragues, Be­",
+    "abbyy-ia": "llar, Simeón Roig, Guillermo Moragues, Be-",
+    "tess-bne-400dpi-spa_old-psm3": "llar, Simeon Roig, Guillermo Moragues, Be-",
+    "tess-ia-300dpi-spa_old-psm3": "llar, Simeon Roig, Guillermo Moragues, Be-",
+    "vision-bne-400dpi-corr": "Ilar, Simeon Roig, Guillermo Moragues, Be-"
+   }
+  },
+  {
+   "line": 39,
+   "bbox": [
+    0.1089324591422,
+    0.6686046516767097,
+    0.4684095798011554,
+    0.6861012953721591
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "renguer Granada, Ramon de Lluch, Pedro de",
+    "abbyy-bne": "renguer Granada, Ramon de Lluch, Pedio de",
+    "abbyy-ia": "renguer Granada, Ramón de Lluch, Pedro de",
+    "tess-bne-400dpi-spa_old-psm3": "renguer Granada, Ramon de Lluch, Pedro de",
+    "tess-ia-300dpi-spa_old-psm3": "renguer Granada, Ramon de Lluch, Pedro de",
+    "vision-bne-400dpi-corr": "renguer Granada, Ramon de Lluch, Pedro de"
+   }
+  },
+  {
+   "line": 40,
+   "bbox": [
+    0.11328976796766396,
+    0.686046511981156,
+    0.33986927909115944,
+    0.6991279064418093
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Forn y Guillermo Abeanzer.»",
+    "abbyy-bne": "Forn y Guillermo Abeanzer.»",
+    "abbyy-ia": "Fom y Guillermo Abeanzer.»",
+    "tess-bne-400dpi-spa_old-psm3": "Forn y Guillermo Abeanzer.»",
+    "tess-ia-300dpi-spa_old-psm3": "Forn y Guillermo Abeanzer.»",
+    "vision-bne-400dpi-corr": "Forn y Guillermo Abeanzer.»"
+   }
+  },
+  {
+   "line": 41,
+   "bbox": [
+    0.12636166662724832,
+    0.7005300354226004,
+    0.4684095837540151,
+    0.7152532391917406
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«En Santa María de Ullaró, el dia 2 de Di-",
+    "abbyy-bne": "«En Santa María de Ullaró, el dia 2 de Di­",
+    "abbyy-ia": "«En Santa María de Ullaró, el dia 2 de Di-",
+    "tess-bne-400dpi-spa_old-psm3": "«En Santa María de Ullaró, el dia 2 de Dt-",
+    "tess-ia-300dpi-spa_old-psm3": "«En Santa María de Ullaró, el dia 2 de Di-",
+    "vision-bne-400dpi-corr": "«En Santa María de Ullaró, el dia 2 de Di-"
+   }
+  },
+  {
+   "line": 42,
+   "bbox": [
+    0.11328976923332382,
+    0.7151162794411849,
+    0.468409589009232,
+    0.728209658296752
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "ciembre de dicho año, congregados los de San-",
+    "abbyy-bne": "ciembre de dicho año, congregados los de San-",
+    "abbyy-ia": "ciembre de dicho año, congregados los de San-",
+    "tess-bne-400dpi-spa_old-psm3": "ciembre de dicho año, congregados los de 5an-",
+    "tess-ia-300dpi-spa_old-psm3": "ciembre de dichó año, congregados los de San-",
+    "vision-bne-400dpi-corr": "ciembre de dicho año, congregados los de San-"
+   }
+  },
+  {
+   "line": 43,
+   "bbox": [
+    0.1089324672304351,
+    0.7311046509449661,
+    0.46840958788939047,
+    0.7456395349271269
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "sellas, eligieron sus sindicos: Pedro de Mino-",
+    "abbyy-bne": "sellas, eligieron sus síndicos; Pedro de Mino-",
+    "abbyy-ia": "sellas, eligieron sus síndicos: Pedro de Mino-",
+    "tess-bne-400dpi-spa_old-psm3": "sellas, eligieron sus síndicos: Pedro de Mino-",
+    "tess-ia-300dpi-spa_old-psm3": "sellas, eligieron sus síndicos: Pedro de Mino- *",
+    "vision-bne-400dpi-corr": "sellas, eligieron sus síndicos: Pedro de Mino-"
+   }
+  },
+  {
+   "line": 44,
+   "bbox": [
+    0.11111111851618519,
+    0.7455830388119048,
+    0.4662309382920934,
+    0.7588339222041309
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "rissa, Bernardino Ferrer, Bernardo de Minorissa,",
+    "abbyy-bne": "rissa, Bernardino Ferrer, Bernardo de Minorissa,",
+    "abbyy-ia": "rissa, Berñardino Ferrer, Bernardo de Minorissa,",
+    "tess-bne-400dpi-spa_old-psm3": "rissa, Bernardino Ferrer, Bernardo de Minorissa,",
+    "tess-ia-300dpi-spa_old-psm3": "rissa, Bernardino Ferrer, Bernardo de Minorissa,",
+    "vision-bne-400dpi-corr": "rissa, Bernardino Ferrer, Bernardo de Minorissa,"
+   }
+  },
+  {
+   "line": 45,
+   "bbox": [
+    0.11328976070634951,
+    0.7601744184144231,
+    0.4662309435202298,
+    0.7732626621437977
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Ramon de Comelles, Pedro de Miralles, Ra-",
+    "abbyy-bne": "Ramon de Comelles, Pedro de Miralles, Ra­",
+    "abbyy-ia": "Ramón de Comelles, Pedro de Miralles, Ra-",
+    "tess-bne-400dpi-spa_old-psm3": "Ramon de Comelles, Pedro de Miralles, Ra-",
+    "tess-ia-300dpi-spa_old-psm3": "Ramon de Comelles, Pedro de Miralles, Ra-",
+    "vision-bne-400dpi-corr": "Ramon de Comelles, Pedro de Miralles, Ra-"
+   }
+  },
+  {
+   "line": 46,
+   "bbox": [
+    0.1111111096381898,
+    0.7747093028605163,
+    0.46623092941409805,
+    0.7877906973211697
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "mon de Riera, Pedro de Olivar, Pedro de Re-",
+    "abbyy-bne": "mon de Riera, Pedro de Olivar, Pedro de Re-",
+    "abbyy-ia": "món de Riera, Pedro de Olivar, Pedro de Re-",
+    "tess-bne-400dpi-spa_old-psm3": "mon de Riera, Pedro de Olivar, Pedro de Re-",
+    "tess-ia-300dpi-spa_old-psm3": "mon de Riera, Pedro de Olivar, Pedro de Re-",
+    "vision-bne-400dpi-corr": "mon de Riera, Pedro de Olivar, Pedro de Re-"
+   }
+  },
+  {
+   "line": 47,
+   "bbox": [
+    0.11111111851618519,
+    0.7891637222405921,
+    0.4662309382920934,
+    0.8038869260097322
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "guerau, Guillermo de Monteorgullo, Pedro",
+    "abbyy-bne": "guerau, Guillermo de Monteorgullo, Pedro",
+    "abbyy-ia": "guerau, Guillermo de Monteorgullo, Pedro",
+    "tess-bne-400dpi-spa_old-psm3": "guerau, Guillermo de Monteorgullo, Pedro",
+    "tess-ia-300dpi-spa_old-psm3": "‘guerau, Guillermo de Monteorgullo, Pedro",
+    "vision-bne-400dpi-corr": "guerau, Guillermo de Monteorgullo, Pedro"
+   }
+  },
+  {
+   "line": 48,
+   "bbox": [
+    0.11111112468114073,
+    0.8037790702035793,
+    0.46840958141907685,
+    0.8197879858969546
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Aguiló, Sanchez de Luna, Flaquet Balaguer,",
+    "abbyy-bne": "Aguiló, Sanchez de Luna, Flaquet Balaguer,",
+    "abbyy-ia": "Aguiló, Sánchez de Luna, Flaquet Balaguer,",
+    "tess-bne-400dpi-spa_old-psm3": "Aguiló, Sanchez de Luna, Flaquet Balaguer,",
+    "tess-ia-300dpi-spa_old-psm3": "Aguiló, Sanchez de Luna, Flaquet Balaguer,",
+    "vision-bne-400dpi-corr": "Aguiló, Sanchez de Luna, Flaquet Balaguer,"
+   }
+  },
+  {
+   "line": 51,
+   "bbox": [
+    0.1111111170365193,
+    0.8488372091474855,
+    0.46623093681242767,
+    0.8633720931296464
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Guillermo Cifre, Pedro Sans, Jaime de Canals,",
+    "abbyy-bne": "Guillermo Cifre, Pedro Sans, Jaime de Canals,",
+    "abbyy-ia": "Guillermo Cifre, Pedro Sans, Jaime de Canals,",
+    "tess-bne-400dpi-spa_old-psm3": "Guillermo Ciſre, Pedro Sans, Jaime de Canals,",
+    "tess-ia-300dpi-spa_old-psm3": "Guillermo Ciſre, Pedro Sans, Jaime de Canals,",
+    "vision-bne-400dpi-corr": "Guillermo Cifre, Pedro Sans, Jaime de Canals,"
+   }
+  },
+  {
+   "line": 52,
+   "bbox": [
+    0.10893247114083585,
+    0.8633686688878321,
+    0.4662309278787721,
+    0.8793604644984555
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Jaime Perpinyá, Bernardo Loret de Barberá y",
+    "abbyy-bne": "Jaime Perpinyá, Bernardo Loret de Barbera y",
+    "abbyy-ia": "Jaime Perpinyá, Bernardo Loret de Barberá y",
+    "tess-bne-400dpi-spa_old-psm3": "Jaime Perpinyá, Bernardo Loret de Barberá y",
+    "tess-ia-300dpi-spa_old-psm3": "Jaime Perpinyá, Bernardo Loret de Barberá y",
+    "vision-bne-400dpi-corr": "Jaime Perpinyá, Bernardo Loret de Barberá y"
+   }
+  },
+  {
+   "line": 53,
+   "bbox": [
+    0.11111111590957919,
+    0.8792697293637723,
+    0.2483660128485906,
+    0.8895759720021704
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Romeo Morro.» -",
+    "abbyy-bne": "Romeo Morro.»",
+    "abbyy-ia": "Romeo Morro.» ~",
+    "tess-bne-400dpi-spa_old-psm3": "Romeo Morro.»",
+    "tess-ia-300dpi-spa_old-psm3": "Romeo Morro.» -",
+    "vision-bne-400dpi-corr": "Romeo Morro.»"
+   }
+  },
+  {
+   "line": 54,
+   "bbox": [
+    0.12854030857204007,
+    0.893895349335807,
+    0.46623092481575973,
+    0.9069767437964604
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Los de la parroquia de Guiñent se congre-",
+    "abbyy-bne": "«Los de la parroquia de Guiñent se congre­",
+    "abbyy-ia": "«Los de la parroquia de Guiñent se MAYORICENSE. congre-",
+    "tess-bne-400dpi-spa_old-psm3": "«Los de la parroquia de Guiñent se congre-",
+    "tess-ia-300dpi-spa_old-psm3": "«Los de la parroquia de Guifñient se congre-",
+    "vision-bne-400dpi-corr": "«Los de la parroquia de Guiñent se congre-"
+   }
+  },
+  {
+   "line": 57,
+   "bbox": [
+    0.4901960820827546,
+    0.12354651184602117,
+    0.851851839703738,
+    0.13957597197568605
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "sindicos: Bernardo Carbonell, Bernardo Malia,",
+    "abbyy-bne": "síndicos; Bernardo Carbohell, Bernardo Malia,",
+    "abbyy-ia": "síndicos: Bernardo Carbonell, Bernardo Malia,",
+    "tess-bne-400dpi-spa_old-psm3": "síndicos: Bernardo Carbonell, Bernardo Malia,",
+    "tess-ia-300dpi-spa_old-psm3": "síndicos: Bernardo Carbonell, Bernardo Malia,",
+    "vision-bne-400dpi-corr": "síndicos: Bernardo Carbonell, Bernardo Malia,"
+   }
+  },
+  {
+   "line": 58,
+   "bbox": [
+    0.4923747330256421,
+    0.13953488353217547,
+    0.8518518536845975,
+    0.1540697675143362
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Nicolás Roig, Berenguer Fluxá, Berenguer Fer-",
+    "abbyy-bne": "Nicolás Roig, Berenguer Fluxá, Berenguer Fer­",
+    "abbyy-ia": "Nicolás Roig, Berenguer Fluxá, Berenguer Fer-",
+    "tess-bne-400dpi-spa_old-psm3": "Nicolás Roig, Berenguer Fluxá, Berenguer Fer-",
+    "tess-ia-300dpi-spa_old-psm3": "Nicolás Roig, Berenguer Fluxá, Berenguer Fer-",
+    "vision-bne-400dpi-corr": "Nicolás Roig, Berenguer Fluxá, Berenguer Fer-"
+   }
+  },
+  {
+   "line": 59,
+   "bbox": [
+    0.49019608181042346,
+    0.15400471137521976,
+    0.8518518394314067,
+    0.17020023552127395
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "rer, Arnaldo Axartell, Ramon de Comelles y",
+    "abbyy-bne": "rer, Arnaldo Axartell, Ramort de Comelles y",
+    "abbyy-ia": "rer, Arnaldo Axartell, Ramón de Comelles y",
+    "tess-bne-400dpi-spa_old-psm3": "rer, Arnaldo Axartell, Ramori de Comelles y",
+    "tess-ia-300dpi-spa_old-psm3": "rer, Arnaldo Axartell, Ramon de Comelles y",
+    "vision-bne-400dpi-corr": "rer, Arnaldo Axartell, Ramon de Comelles y"
+   }
+  },
+  {
+   "line": 61,
+   "bbox": [
+    0.5141612237953516,
+    0.18313953507250325,
+    0.8518518400390712,
+    0.19767441793137275
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Los de Valldemosa, domingo dia 2 de Di-",
+    "abbyy-bne": "«Los de Valldemosa, domingo dia 2 de Di­",
+    "abbyy-ia": "«Los de Valldemosa, domingo dia 2 de Di-",
+    "tess-bne-400dpi-spa_old-psm3": "«Los de Valldemosa, domingo dia 2 de Di-",
+    "tess-ia-300dpi-spa_old-psm3": "«Los de Valldemosa, domingo dia 2 de Di-",
+    "vision-bne-400dpi-corr": "«Los de Valldemosa, domingo dia 2 de Di-"
+   }
+  },
+  {
+   "line": 62,
+   "bbox": [
+    0.49673203354886497,
+    0.19905771513937665,
+    0.8518518533247732,
+    0.2123085985316029
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "ciembre, nombraron por síndicos: Pedro Ro-",
+    "abbyy-bne": "ciembre, nombraron por síndicos; Pedro Ro-",
+    "abbyy-ia": "ciembre, nombraron por síndicos: Pedro Ro-",
+    "tess-bne-400dpi-spa_old-psm3": "ciembre, nombraron por síndicos: Pedro Ro-",
+    "tess-ia-300dpi-spa_old-psm3": "ciembre, nombraron por síndicos: Pedro Ro-",
+    "vision-bne-400dpi-corr": "ciembre, nombraron por sindicos: Pedro Ro-"
+   }
+  },
+  {
+   "line": 63,
+   "bbox": [
+    0.49237473319965935,
+    0.21366279059612892,
+    0.8496731899375956,
+    0.22820965841155771
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "buster, Bartolomé Pujol, Guillermo Çerdá, Ar-",
+    "abbyy-bne": "buster, Bartolomé Pujol, Guillermo Çerda, Ar­",
+    "abbyy-ia": "buster, Bartolomé Pujol, Guillermo £erdá, Ar-",
+    "tess-bne-400dpi-spa_old-psm3": "buster, Bartolomé Pujol, Guillermo Cerdá, Ar-",
+    "tess-ia-300dpi-spa_old-psm3": "buster, Bartolomé Pujol, Guillermo Cerdá, Ar-",
+    "vision-bne-400dpi-corr": "buster, Bartolomé Pujol, Guillermo Çerdá, Ar-"
+   }
+  },
+  {
+   "line": 64,
+   "bbox": [
+    0.4945533904763478,
+    0.22819767477696062,
+    0.851851847214284,
+    0.24273255763583013
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "naldo Juan, Berenguer de Monçó, Andrés Pu-",
+    "abbyy-bne": "naldo Juan, Berenguer de Moneó, Andrés Pu­",
+    "abbyy-ia": "naldo Juan, Berenguer de Mon$ó, Andrés Pu-",
+    "tess-bne-400dpi-spa_old-psm3": "naldo Juan, Berenguer de Monco, Andres Pu-",
+    "tess-ia-300dpi-spa_old-psm3": "naldo Juan, Berenguer de Mongó, Andres Pu-",
+    "vision-bne-400dpi-corr": "naldo Juan, Berenguer de Monçó, Andrés Pu-"
+   }
+  },
+  {
+   "line": 65,
+   "bbox": [
+    0.4901960756999342,
+    0.24263839819321142,
+    0.8496731963588896,
+    0.2588339223392655
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "jol, Felipe de Monçó, Ramon Juan, Bernardo",
+    "abbyy-bne": "jol, Felipe de Monçô, Ramon Juan, Bernardo",
+    "abbyy-ia": "jol, Felipe de Mon^ó, Ramón Juan, Bernardo",
+    "tess-bne-400dpi-spa_old-psm3": "jol, Felipe de Mongó, Ramon Juan, Bernardo",
+    "tess-ia-300dpi-spa_old-psm3": "jol, Felipe de Mongó, Ramon Juan, Bernardo",
+    "vision-bne-400dpi-corr": "jol, Felipe de Monçó, Ramon Juan, Bernardo"
+   }
+  },
+  {
+   "line": 66,
+   "bbox": [
+    0.49237473067270093,
+    0.25726744211855024,
+    0.8518518513316563,
+    0.2732626620827113
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "de Ordines, Arnaldo de Fels, Bernardino Sa-",
+    "abbyy-bne": "de Ordines, Arnaldo de Feis, Bernardino Sa-",
+    "abbyy-ia": "de Ordines, Arnaldo de Fels, Berñardino Sa-",
+    "tess-bne-400dpi-spa_old-psm3": "de Ordines, Arnaldo de Fels, Bernardino Sa-",
+    "tess-ia-300dpi-spa_old-psm3": "de Ordines, Arnaldo de Fels, Bernardino Sa-",
+    "vision-bne-400dpi-corr": "de Ordines, Arnaldo de Fels, Bernardino Sa-"
+   }
+  },
+  {
+   "line": 68,
+   "bbox": [
+    0.5141612258820298,
+    0.287691401884694,
+    0.8496732051637216,
+    0.30094228527692013
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Los de Alaró nombraron por sindicos: Ar-",
+    "abbyy-bne": "Los de Alaró nombraron por síndicos; Ar­",
+    "abbyy-ia": "Los de Alaró nombraron por síndicos: Ar-",
+    "tess-bne-400dpi-spa_old-psm3": "Los de Alaró nombraron por síndicos: Ár-",
+    "tess-ia-300dpi-spa_old-psm3": "Los de Alaró nombraron por síndicos: Ar-",
+    "vision-bne-400dpi-corr": "Los de Alaró nombraron por sindicos: Ar-"
+   }
+  },
+  {
+   "line": 69,
+   "bbox": [
+    0.49455337815670836,
+    0.30232558200806525,
+    0.8496731979326165,
+    0.31686046486693475
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "naldo Domingo, Berenguer de Palauet, Pedro",
+    "abbyy-bne": "naldo Domingo, Berenguer de Palau et, Pedro",
+    "abbyy-ia": "naldo Domingo, Berenguer de Palauet, Pedro",
+    "tess-bne-400dpi-spa_old-psm3": "naldo Domingo, Berenguer de Palauet, Pedro",
+    "tess-ia-300dpi-spa_old-psm3": "naldo Domingo, Berenguer de Palauet, Pedro",
+    "vision-bne-400dpi-corr": "naldo Domingo, Berenguer de Palanet, Pedro"
+   }
+  },
+  {
+   "line": 70,
+   "bbox": [
+    0.4923747392236244,
+    0.3168433452516415,
+    0.8496731959615605,
+    0.3328488365914788
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Salent, Ramon Cerda, Bernardino Torrent y",
+    "abbyy-bne": "Salent, Ramon Cerda, Bernardino Torrent y",
+    "abbyy-ia": "Salent, Ramón Cerdá, Berñardino Torrent y",
+    "tess-bne-400dpi-spa_old-psm3": "Salent, Ramon Cerdá, Bernardino Torrent y",
+    "tess-ia-300dpi-spa_old-psm3": "Salent, Ramon Cerdá, Bernardino Torrent y",
+    "vision-bne-400dpi-corr": "Salent, Ramon Cerdá, Bernardino Torrent y"
+   }
+  },
+  {
+   "line": 71,
+   "bbox": [
+    0.4967320269216098,
+    0.33274440517009385,
+    0.6470588265097627,
+    0.3459952885623201
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Domingo Albertí.»",
+    "abbyy-bne": "Domingo Alberti.»",
+    "abbyy-ia": "Domingo Albertí.»",
+    "tess-bne-400dpi-spa_old-psm3": "Domingo Alberti.»",
+    "tess-ia-300dpi-spa_old-psm3": "Domingo Alberti.»",
+    "vision-bne-400dpi-corr": "Domingo Albertí.»"
+   }
+  },
+  {
+   "line": 72,
+   "bbox": [
+    0.5119825814024684,
+    0.3459302323296759,
+    0.849673197646188,
+    0.36191860471005277
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Los de Esporlas, Bañalbufar, valle de Su-",
+    "abbyy-bne": "«Los de Esporlas, Bañalbufar, valle de Su­",
+    "abbyy-ia": "«Los de Esporlas, Bañalbufar, valle de Su-",
+    "tess-bne-400dpi-spa_old-psm3": "«Los de Esporlas, Bañalbufar, valle de Su-",
+    "tess-ia-300dpi-spa_old-psm3": "«Los de Esporlas, Bañalbufar, valle de Su-",
+    "vision-bne-400dpi-corr": "«Los de Esporlas, Bañalbufar, valle de Su-"
+   }
+  },
+  {
+   "line": 73,
+   "bbox": [
+    0.49455338194330506,
+    0.36189634843055996,
+    0.8518518386812413,
+    0.3764534881833107
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "perna y de Buñolí, congregados en la Iglesia de",
+    "abbyy-bne": "perna y de Buñolí, congregados en la Iglesia de",
+    "abbyy-ia": "perna y de Buñolí, congregados en la Iglesia de",
+    "tess-bne-400dpi-spa_old-psm3": "perna y de Buñoli, congregados en la Tglesia de",
+    "tess-ia-300dpi-spa_old-psm3": "perna y de Buñoli, congregados en la Iglesia de",
+    "vision-bne-400dpi-corr": "perna y de Buñolí, congregados en la Iglesia de"
+   }
+  },
+  {
+   "line": 74,
+   "bbox": [
+    0.4923747330256421,
+    0.3763250881534146,
+    0.8518518536845975,
+    0.39104829192255464
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "San Pedro de Esporlas, eligieron sus síndicos,",
+    "abbyy-bne": "San Pedro de Esporlas, eligieron sus síndicos,",
+    "abbyy-ia": "San Pedro de Esporlas, eligieron sus síndicos,",
+    "tess-bne-400dpi-spa_old-psm3": "San Pedro de Esporlas, eligieron sus síndicos,",
+    "tess-ia-300dpi-spa_old-psm3": "San Pedro de Esporlas, eligieron sus síndicos,",
+    "vision-bne-400dpi-corr": "San Pedro de Esporlas, eligieron sus sindicos,"
+   }
+  },
+  {
+   "line": 75,
+   "bbox": [
+    0.4945533904763478,
+    0.39098837241504203,
+    0.851851847214284,
+    0.4055232552739114
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "y fueron: Pedro de Riqueri, Guillermo de Cla-",
+    "abbyy-bne": "y fueron; Pedro de Riqueri, Guillermo de Cla-",
+    "abbyy-ia": "y fueron: Pedro de Riqueri, Guillermo de Cla-",
+    "tess-bne-400dpi-spa_old-psm3": "y fueron: Pedro de Riqueri, Guillermo de Cla-",
+    "tess-ia-300dpi-spa_old-psm3": "y fueron: Pedro de Riqueri, Guillermo de Cla-",
+    "vision-bne-400dpi-corr": "y fueron: Pedro de Riqueri, Guillermo de Cla-"
+   }
+  },
+  {
+   "line": 76,
+   "bbox": [
+    0.4901960923587166,
+    0.4054770316249534,
+    0.8518518499796999,
+    0.41872791501717965
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "romont, Bernardo de Oleça, Bernardo de Riu-",
+    "abbyy-bne": "romont, Bernardo de Oleça, Bernardo de Riu-",
+    "abbyy-ia": "romont, Bernardo de Ole^a, Bernardo de Riu-",
+    "tess-bne-400dpi-spa_old-psm3": "romont, Bernardo de Oleca, Bernardo de Riu-",
+    "tess-ia-300dpi-spa_old-psm3": "romont, Bernardo de Olega, Bernardo de Riu-",
+    "vision-bne-400dpi-corr": "romont, Bernardo de Oleça, Bernardo de Riu-"
+   }
+  },
+  {
+   "line": 77,
+   "bbox": [
+    0.4945533919650913,
+    0.42005813986901486,
+    0.8518518487030274,
+    0.4346289753509798
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "demaya, Jaime Ramis, García de Taust, Arnal-",
+    "abbyy-bne": "demaya, Jaime Ramis, Garcia de Taust, Ainal-",
+    "abbyy-ia": "demaya, Jaime Ramis, García de Taust, Arnal-",
+    "tess-bne-400dpi-spa_old-psm3": "demaya, Jaime Ramis, García de Taust, Arnal-",
+    "tess-ia-300dpi-spa_old-psm3": "demaya, Jaime Ramis, Garcia de Taust, Arnal-",
+    "vision-bne-400dpi-corr": "demaya, Jaime Ramis, García de Taust, Arnal-"
+   }
+  },
+  {
+   "line": 78,
+   "bbox": [
+    0.4923747311066197,
+    0.4360465119186956,
+    0.7603485871395674,
+    0.4520348831757812
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "do Gallard y Bernardo Gamundi.»",
+    "abbyy-bne": "do Gallard y Bernardo Gamundi.»",
+    "abbyy-ia": "do Gallard y Bernardo Gamundí.»",
+    "tess-bne-400dpi-spa_old-psm3": "do Gallard y Bernardo Gamundi.»",
+    "tess-ia-300dpi-spa_old-psm3": "do Gallard y Bernardo Gamundi.»",
+    "vision-bne-400dpi-corr": "do Gallard y Bernardo Gamundí.»"
+   }
+  },
+  {
+   "line": 79,
+   "bbox": [
+    0.5098039177607679,
+    0.44905771469695677,
+    0.8496731979255068,
+    0.46525323884301095
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Los de Calviá, el dia s Diciembre, eligieron",
+    "abbyy-bne": "«Los de Calvia, cl dia 5 Diciembre, eligieron",
+    "abbyy-ia": "«Los de Calviá, el dia 5 Diciembre, eligieron",
+    "tess-bne-400dpi-spa_old-psm3": "«Los de Calviá, el dia 5 Diciembre, eligieron",
+    "tess-ia-300dpi-spa_old-psm3": "«Los de Calviá, el dia 5 Diciembre, eligieron",
+    "vision-bne-400dpi-corr": "«Los de Calviá, el dia 5 Diciembre, eligieron"
+   }
+  },
+  {
+   "line": 80,
+   "bbox": [
+    0.4923747405852802,
+    0.46366279091578866,
+    0.8496731973232163,
+    0.47968197854648587
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "á Bernardino Ferrer, Guillermo Brunet, Pedro",
+    "abbyy-bne": "á Bernardino Ferrer, Guillermo Brunet, Pedro",
+    "abbyy-ia": "á Berñardino Ferrer, Guillermo Brunet, Pedro",
+    "tess-bne-400dpi-spa_old-psm3": "4 Bernardino Ferrer, Guillermo Brunet, Pedro",
+    "tess-ia-300dpi-spa_old-psm3": "á Bernardino Ferrer, Guillermo Brunet, Pedro",
+    "vision-bne-400dpi-corr": "á Bernardino Ferrer, Guillermo Brunet, Pedro"
+   }
+  },
+  {
+   "line": 81,
+   "bbox": [
+    0.4923747403456287,
+    0.479651162572873,
+    0.8496731970835649,
+    0.49418604655503384
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "de Torres, Bernardino Bavili y Guillermo Ba-",
+    "abbyy-bne": "de Torres, Bernardino Bavili y Guillermo Ba-",
+    "abbyy-ia": "de Torres, Berñardino Bavili y Guillermo Ba-",
+    "tess-bne-400dpi-spa_old-psm3": "de Torres, Bernardino Bavili y Guillermo Ba-",
+    "tess-ia-300dpi-spa_old-psm3": "de Torres, Bernardino Bavili y Guillermo Ba-",
+    "vision-bne-400dpi-corr": "de Torres, Bernardino Bavili y Guillermo Ba-"
+   }
+  },
+  {
+   "line": 82,
+   "bbox": [
+    0.49237472687823364,
+    0.4956395348882403,
+    0.5359477121195878,
+    0.5072674420739689
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "vili.»",
+    "abbyy-bne": "vili. »",
+    "abbyy-ia": "vili.»",
+    "tess-bne-400dpi-spa_old-psm3": "VUi »",
+    "tess-ia-300dpi-spa_old-psm3": "vili.»",
+    "vision-bne-400dpi-corr": "vili.»"
+   }
+  },
+  {
+   "line": 83,
+   "bbox": [
+    0.511982574367247,
+    0.508720930767493,
+    0.8496731906109667,
+    0.5218023252281464
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Los de Ascorca, el dia g eligieron por sindi-",
+    "abbyy-bne": "«Los de Ascorca, el dia 9 eligieron por síndi­",
+    "abbyy-ia": "«Los de Ascorca, el dia 9 eligieron por síndi-",
+    "tess-bne-400dpi-spa_old-psm3": "«Los de Ascorca, el día 9 eligieron por síndi-",
+    "tess-ia-300dpi-spa_old-psm3": "«Los de Ascorca, el dia 9 eligieron por síndi-",
+    "vision-bne-400dpi-corr": "«Los de Ascorca, el dia 9 eligieron por sindi-"
+   }
+  },
+  {
+   "line": 84,
+   "bbox": [
+    0.4923747403456287,
+    0.5232558137356638,
+    0.8496731970835649,
+    0.5377906977178245
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "cos: Pedro Malferit, Arnaldo Baldrich, Bernar-",
+    "abbyy-bne": "cos; Pedro Malferit, Arnaldo Baldrich, Bernar­",
+    "abbyy-ia": "cos: Pedro Malferit, Arnaldo Baldrich, Bernar-",
+    "tess-bne-400dpi-spa_old-psm3": "cos: Pedro Malſerit, Arnaldo Baldrich, Bernar-",
+    "tess-ia-300dpi-spa_old-psm3": "cos: Pedro Malſcrit, Arnaldo Baldrich, Bernar-",
+    "vision-bne-400dpi-corr": "cos: Pedro Malferit, Arnaldo Baldrich, Bernar-"
+   }
+  },
+  {
+   "line": 85,
+   "bbox": [
+    0.4923747370994415,
+    0.537691401587623,
+    0.8496731938373777,
+    0.5538869257336771
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "dino Malferit, Guillermo, su hijo, Bernardino y",
+    "abbyy-bne": "dino Malferit, Guillermo, su hijo, Bernardino y",
+    "abbyy-ia": "dino Malferit, Guillermo, su hijo, Berñardino y",
+    "tess-bne-400dpi-spa_old-psm3": "dino Malſerit, Guillermo, su hijo, Bernardino y",
+    "tess-ia-300dpi-spa_old-psm3": "dino Malſcrit, Guillermo, su hijo, Bernardino y",
+    "vision-bne-400dpi-corr": "dino Malferit, Guillermo, su hijo, Bernardino y"
+   }
+  },
+  {
+   "line": 86,
+   "bbox": [
+    0.49455338760779294,
+    0.5523255815841311,
+    0.8518518443457291,
+    0.5668604644430006
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Pedro Salavert, Bernardino Colom y Bernar-",
+    "abbyy-bne": "Pedro Salavert, Bernardino Colom y Bernar­",
+    "abbyy-ia": "Pedro Salavert, Berñardino Colom y Bernar-",
+    "tess-bne-400dpi-spa_old-psm3": "Pedro Salavert, Bernardino Colom y Bernar-",
+    "tess-ia-300dpi-spa_old-psm3": "Pedro Salavert, Bernardino Colom y Bernar-",
+    "vision-bne-400dpi-corr": "Pedro Salavert, Bernardino Colom y Bernar-"
+   }
+  },
+  {
+   "line": 87,
+   "bbox": [
+    0.4945146325738844,
+    0.5681572682332224,
+    0.59916728672971,
+    0.5800985456102578
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "dino Esteva.»",
+    "abbyy-bne": "dino Esteva. »",
+    "abbyy-ia": "dino Esteva.»",
+    "tess-bne-400dpi-spa_old-psm3": "dino Esteva.»",
+    "tess-ia-300dpi-spa_old-psm3": "dino Esteva.»",
+    "vision-bne-400dpi-corr": "dino Esteva.»"
+   }
+  },
+  {
+   "line": 88,
+   "bbox": [
+    0.5141612258820298,
+    0.5827444051700938,
+    0.8496732051637216,
+    0.59599528856232
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Las villas y parroquias de la isla antedi-",
+    "abbyy-bne": "«Las villas y parroquias de la isla antedi­",
+    "abbyy-ia": "«Las villas y parroquias de la isla antedi-",
+    "tess-bne-400dpi-spa_old-psm3": "«Las villas y parroquias de la isla antedi-",
+    "tess-ia-300dpi-spa_old-psm3": "«Las villas y parroquias de la isla antedi-",
+    "vision-bne-400dpi-corr": "«Las villas y parroquias de la isla antedi-"
+   }
+  },
+  {
+   "line": 90,
+   "bbox": [
+    0.49237473372253526,
+    0.6118963483699978,
+    0.8496731904604714,
+    0.6264534881227487
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "habia prestado el juramento y homenage en",
+    "abbyy-bne": "habia prestado el juramento y homenage en",
+    "abbyy-ia": "había prestado el juramento y homenage en",
+    "tess-bne-400dpi-spa_old-psm3": "habia prestado el juramento y homenage en",
+    "tess-ia-300dpi-spa_old-psm3": "habia prestado el juramento y homenage en",
+    "vision-bne-400dpi-corr": "habia prestado el juramento y homenage en"
+   }
+  },
+  {
+   "line": 91,
+   "bbox": [
+    0.49237473081766964,
+    0.6263250883166698,
+    0.8496731875556058,
+    0.6395759717088959
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "nombre del Rey D. Pedro, su padre, y despues",
+    "abbyy-bne": "nombre del ReyD. Pedro, su padre, y despues",
+    "abbyy-ia": "nombre del Rey D. Pedro, su padre, y después",
+    "tess-bne-400dpi-spa_old-psm3": "nombre del Rey D. Pedro, su padre, y despues",
+    "tess-ia-300dpi-spa_old-psm3": "nombre del Rey D. Pedro, su padre, y despues",
+    "vision-bne-400dpi-corr": "nombre del Rey D. Pedro, su padre, y despues"
+   }
+  },
+  {
+   "line": 92,
+   "bbox": [
+    0.4858387831357685,
+    0.6424418611272315,
+    0.8474945407567518,
+    0.6555232555878848
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "llegó la noticia de la muerte del Rey D. Pe-",
+    "abbyy-bne": "llegó la noticia de la muerte del Rey D. Pe­",
+    "abbyy-ia": "llegó la noticia de la muerte del Rey D. Pe-",
+    "tess-bne-400dpi-spa_old-psm3": "llegó la noticia de la muerte del Rey D. Pe-",
+    "tess-ia-300dpi-spa_old-psm3": "llegó la noticia de la muerte del Rey D. Pe-",
+    "vision-bne-400dpi-corr": "llegó la noticia de la muerte del Rey D. Pe-"
+   }
+  },
+  {
+   "line": 95,
+   "bbox": [
+    0.4858387805695314,
+    0.6875000004985976,
+    0.6470588188858065,
+    0.7005813949592511
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "al Rey D. Alonso.»",
+    "abbyy-bne": "al Rey D. Alonso.»",
+    "abbyy-ia": "al Rey D. Alonso.»",
+    "tess-bne-400dpi-spa_old-psm3": "al Rey D. Alonso.» - ;",
+    "tess-ia-300dpi-spa_old-psm3": "al Rey D. Alonso.»",
+    "vision-bne-400dpi-corr": "al Rey D. Alonso.»"
+   }
+  },
+  {
+   "line": 96,
+   "bbox": [
+    0.5054466180273054,
+    0.7005300356042865,
+    0.8496731990750914,
+    0.7152532393734267
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«D. Ponce Çaguardia, que gobernaba Ma-",
+    "abbyy-bne": "«D. Ponce Çaguardia, que gobernaba Ma­",
+    "abbyy-ia": "«D. Ponce Qaguardia, que gobernaba Ma-",
+    "tess-bne-400dpi-spa_old-psm3": "«D. Ponce Caguardia, que gobernaba Ma-",
+    "tess-ia-300dpi-spa_old-psm3": "«D. Ponce Caguardia, que gobernaba Ma-",
+    "vision-bne-400dpi-corr": "«D. Ponce Çaguardia, que gobernaba Ma-"
+   }
+  },
+  {
+   "line": 97,
+   "bbox": [
+    0.48366014107478206,
+    0.7151162794732014,
+    0.8496731995788125,
+    0.7311542990825967
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "llorca, desconfiando de la defensa de la isla,",
+    "abbyy-bne": "llorca, desconñando de la defensa de la isla,",
+    "abbyy-ia": "llorca, desconfiando de la defensa de la isla,",
+    "tess-bne-400dpi-spa_old-psm3": "llorca, desconſiando de la deſensa de la isla,",
+    "tess-ia-300dpi-spa_old-psm3": "llorca, desconſiando de la deſensa de la isla,",
+    "vision-bne-400dpi-corr": "llorca, desconfiando de la defensa de la isla,"
+   }
+  },
+  {
+   "line": 98,
+   "bbox": [
+    0.4858387865783086,
+    0.7311046515714946,
+    0.8496732081203111,
+    0.742732557633932
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "cuando vino sobre ella la armada de D. Alon-",
+    "abbyy-bne": "cuando vino sobre ella la armada de D. Alon­",
+    "abbyy-ia": "cuando vino sobre ella la armada de D. Alon-",
+    "tess-bne-400dpi-spa_old-psm3": "cuando vino sobre ella la armada de D. Alon-",
+    "tess-ia-300dpi-spa_old-psm3": "cuando vino sobre ella la armada de D. Alon-",
+    "vision-bne-400dpi-corr": "cuando vino sobre ella la armada de D. Alon-"
+   }
+  },
+  {
+   "line": 99,
+   "bbox": [
+    0.4878304018139252,
+    0.7432340288740419,
+    0.8476387945576862,
+    0.7589706458376745
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "so, se retiró con los de su familia en el castillo",
+    "abbyy-bne": "so, se retiró con los de su familia en el castillo",
+    "abbyy-ia": "so, se retiró con los de su familia en el castillo",
+    "tess-bne-400dpi-spa_old-psm3": "s0, se retiró con los de su familia en el castillo",
+    "tess-ia-300dpi-spa_old-psm3": "s0, Se retiró con los de su familia en el castillo",
+    "vision-bne-400dpi-corr": "so, se retiró con los de su familia en el castillo"
+   }
+  },
+  {
+   "line": 100,
+   "bbox": [
+    0.48366013495339955,
+    0.7587209304506723,
+    0.8474945564954021,
+    0.7747349823935313
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "del Templo, con algunos que siguieron el ban-",
+    "abbyy-bne": "del Templo, con algunos que siguieron el ban­",
+    "abbyy-ia": "del Templo, con algunos que siguieron el ban-",
+    "tess-bne-400dpi-spa_old-psm3": "del Templo, con algunos que siguieron el ban-",
+    "tess-ia-300dpi-spa_old-psm3": "del Templo, con algunos que síguieron el ban-",
+    "vision-bne-400dpi-corr": "del Templo, con algunos que siguieron el ban-"
+   }
+  },
+  {
+   "line": 101,
+   "bbox": [
+    0.4858387833354779,
+    0.7747093028241792,
+    0.8474945409564613,
+    0.7877906972848325
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "do del Rey D. Jaime; pero despues, se dió á",
+    "abbyy-bne": "do del Rey D. Jaime; pero despues, se dió á",
+    "abbyy-ia": "do del Rey D. Jaime; pero después, se dió á",
+    "tess-bne-400dpi-spa_old-psm3": "do del Rey D. Jaime; pero despues, se dió 4á",
+    "tess-ia-300dpi-spa_old-psm3": "do del Rey D. Jaime; pero despues, se dió á",
+    "vision-bne-400dpi-corr": "do del Rey D. Jaime; pero despues, se dió á"
+   }
+  },
+  {
+   "line": 102,
+   "bbox": [
+    0.485838781828579,
+    0.7891637218969697,
+    0.8474945394495623,
+    0.8038869256661099
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "partido con que le dejasen salir, y irse con to-",
+    "abbyy-bne": "partido con que le dejasen salir, y irse con to­",
+    "abbyy-ia": "partido con que le dejasen salir, y irse con to-",
+    "tess-bne-400dpi-spa_old-psm3": "partido con que le dejasen salir, y irse con to-",
+    "tess-ia-300dpi-spa_old-psm3": "partido con que le dejasen salir, y irse con to-",
+    "vision-bne-400dpi-corr": "partido con que le dejasen salir, y irse con to-"
+   }
+  },
+  {
+   "line": 103,
+   "bbox": [
+    0.48583878506233186,
+    0.8037790701257979,
+    0.8496732066043344,
+    0.818315665442259
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "da su familia y bienes, y se pasó al condado de",
+    "abbyy-bne": "da su familia y bienes, y se paso al condado de Rosellon.»",
+    "abbyy-ia": "da su familia y bienes, y se pasó al condado de Rosellon.»",
+    "tess-bne-400dpi-spa_old-psm3": "da su ſamilia y bienes, y se pasó al condado de Rosellon.»",
+    "tess-ia-300dpi-spa_old-psm3": "da su familia y bienes, y se pasó al condado de Rosellon. »",
+    "vision-bne-400dpi-corr": "da su familia y bienes, y se pasó al condado de Rosellon.»"
+   }
+  },
+  {
+   "line": 104,
+   "bbox": [
+    0.5076252770200269,
+    0.834216725552115,
+    0.8474945571847657,
+    0.8459952885674271
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Retiráronse muchos caballeros, con mu-",
+    "abbyy-bne": "«Retiráronse muchos caballeros, con mu­",
+    "abbyy-ia": "«Retiráronse muchos caballeros, con mu-",
+    "tess-bne-400dpi-spa_old-psm3": "«Retiráronse muchos caballeros, con mu-",
+    "tess-ia-300dpi-spa_old-psm3": "«Retiráronse muchos caballeros, con mu-",
+    "vision-bne-400dpi-corr": "«Retiráronse muchos caballeros, con mu-"
+   }
+  },
+  {
+   "line": 105,
+   "bbox": [
+    0.4858387833194126,
+    0.8473837211795768,
+    0.8496732048614152,
+    0.8619186040384463
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "cha gente mallorquina, en los castillos de Alaró,",
+    "abbyy-bne": "cha gente mallorquína, en los castillos de Alaró,",
+    "abbyy-ia": "cha gente mallorquína, en los castillos de Alaró,",
+    "tess-bne-400dpi-spa_old-psm3": "cha gente mallorquina, en los castillos de Alaro,",
+    "tess-ia-300dpi-spa_old-psm3": "cha gente mallorquina, en los castillos de Alaró,",
+    "vision-bne-400dpi-corr": "cha gente mallorquina, en los castillos de Alaro,"
+   }
+  },
+  {
+   "line": 106,
+   "bbox": [
+    0.48366012896211424,
+    0.861896348380212,
+    0.8474945505041168,
+    0.879360464929395
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Pollensa y Santueri, puestos en defensa, sin",
+    "abbyy-bne": "Pollensa y Santueri, puestos en defensa, sin",
+    "abbyy-ia": "Pollensa y Santueri, puestos en defensa, sin",
+    "tess-bne-400dpi-spa_old-psm3": "Pollensa y Santueri, puestos en deſensa, sín",
+    "tess-ia-300dpi-spa_old-psm3": "Pollensa y Santueri, puestos en deſensa, sín",
+    "vision-bne-400dpi-corr": "Pollensa y Santueri, puestos en defensa, sin"
+   }
+  },
+  {
+   "line": 108,
+   "bbox": [
+    0.48366012763858485,
+    0.8924418609557596,
+    0.8474945491805874,
+    0.9084302322128451
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "fueron requiridos y amonestados. El castellano",
+    "abbyy-bne": "fueron requiridos y amonestados. El castellano",
+    "abbyy-ia": "fueron requiridos y amonestados. El",
+    "tess-bne-400dpi-spa_old-psm3": "fueron requiridos y amonestados. El castellano",
+    "tess-ia-300dpi-spa_old-psm3": "fueron requiridos y amonestados. El castellano",
+    "vision-bne-400dpi-corr": "fueron requiridos y amonestados. El castellano"
+   }
+  },
+  {
+   "line": 109,
+   "bbox": [
+    0.5925925946461928,
+    0.9636627909355299,
+    0.8126361679246132,
+    0.9885159008277111
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Digitized by Google",
+    "abbyy-bne": "",
+    "abbyy-ia": "by",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "",
+    "vision-bne-400dpi-corr": ""
+   }
+  }
+ ]
+}

@@ -1,0 +1,1711 @@
+{
+ "pdf_page": 627,
+ "page_class": "body_late",
+ "reference": "vision-ia-300dpi-corr",
+ "panel": [
+  "abbyy-bne",
+  "abbyy-ia",
+  "tess-bne-400dpi-spa_old-psm3",
+  "tess-ia-300dpi-spa_old-psm3",
+  "vision-bne-400dpi-corr",
+  "vision-ia-300dpi-corr"
+ ],
+ "source_image": "leaf0625_626dpi.png",
+ "lines_total": 109,
+ "lines_agreed": 15,
+ "lines_contested": 94,
+ "contested": [
+  {
+   "line": 0,
+   "bbox": [
+    0.14073737045284845,
+    0.0884120515524931,
+    0.502451548207928,
+    0.10689385799411366
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "hiciese luna, bajo la pena de 1o libs. de multa",
+    "abbyy-bne": "hiciese luna, bajo la pena de 10 libs, de multa",
+    "abbyy-ia": "hiciese luna, bajo la pena de io libs. de multa",
+    "tess-bne-400dpi-spa_old-psm3": "hiciese luna, bajo la pena de o libs. de multa",
+    "tess-ia-300dpi-spa_old-psm3": "hiciese luna, bajo la pena de 0 libs. de multa",
+    "vision-bne-400dpi-corr": "hiciese luna, bajo la pena de io libs. de multa"
+   }
+  },
+  {
+   "line": 1,
+   "bbox": [
+    0.1430780574682389,
+    0.10279595593830815,
+    0.4692916110687524,
+    0.11924774766604551
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "y en su defecto 30 dias de cárcel.—L. V.",
+    "abbyy-bne": "y en su defecto 30 dias de cárcel.—L. V.",
+    "abbyy-ia": "y en su defecto 30 dias de cárcel. — L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "y en su defecto zo dias de cárcel.—L. V.",
+    "tess-ia-300dpi-spa_old-psm3": "y en su defecto 30 dias de cárcel.—L. V.",
+    "vision-bne-400dpi-corr": "y en su defecto 30 dias de cárcel. —L. V."
+   }
+  },
+  {
+   "line": 2,
+   "bbox": [
+    0.1629955970172648,
+    0.11917249396570184,
+    0.5022026295612964,
+    0.1337412585344664
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "—Este mes, por la peste de Argel, Oran etc.",
+    "abbyy-bne": "—Este mes, por la peste de Argel, Oran etc.",
+    "abbyy-ia": "— Este mes, por la peste de Argel, Oran etc.",
+    "tess-bne-400dpi-spa_old-psm3": "—Este mes, por la peste de Argel, Oran etc.",
+    "tess-ia-300dpi-spa_old-psm3": "—Este mes, por la peste de Argel, Oran etc.",
+    "vision-bne-400dpi-corr": "—Este mes, por la peste de Argel, Oran etc."
+   }
+  },
+  {
+   "line": 3,
+   "bbox": [
+    0.14317181140657,
+    0.13372093035855492,
+    0.5022026259649429,
+    0.1483100233067749
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "mandó la ciudad redoblar las guardias de las",
+    "abbyy-bne": "mandó la dudad redoblar las guardias de las",
+    "abbyy-ia": "mandó la ciudad redoblar las guardias de las",
+    "tess-bne-400dpi-spa_old-psm3": "mandó la ciudad redoblar las guardias de las",
+    "tess-ia-300dpi-spa_old-psm3": "mandó la ciudad redoblar las guardias de las -",
+    "vision-bne-400dpi-corr": "mandó la ciudad redoblar las guardias de las"
+   }
+  },
+  {
+   "line": 4,
+   "bbox": [
+    0.14317180750122968,
+    0.14970930258085102,
+    0.5022026490185939,
+    0.16142191149623786
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "torres y vijias, poner en pié las rondas maríti-",
+    "abbyy-bne": "torres y vijías, poner en pié las rondas maríti­",
+    "abbyy-ia": "torres y vijías, poner en pié las rondas maríti-",
+    "tess-bne-400dpi-spa_old-psm3": "torres y vijlas, poner en pié las rondas mariti-",
+    "tess-ia-300dpi-spa_old-psm3": "torres y vijlas, poner en pié las rondas mariti-",
+    "vision-bne-400dpi-corr": "torres y vijías, poner en pié las rondas maríti-"
+   }
+  },
+  {
+   "line": 6,
+   "bbox": [
+    0.14302012610328682,
+    0.1769436095198167,
+    0.5023777375539135,
+    0.19368078717523018
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "costeaba la isla, segun el plan de resguardo",
+    "abbyy-bne": "costeaba la isla, según el plan de resguardo",
+    "abbyy-ia": "costeaba la isla, según el plan de resguardo",
+    "tess-bne-400dpi-spa_old-psm3": "costeaba la isla, segun el plan de resguardo",
+    "tess-ia-300dpi-spa_old-psm3": "costeaba la isla, segun el plan de resguardo",
+    "vision-bne-400dpi-corr": "costeaba la isla, segun el plan de resguardo"
+   }
+  },
+  {
+   "line": 7,
+   "bbox": [
+    0.14317181307634902,
+    0.19318181811557134,
+    0.3546255508003027,
+    0.20639534868049092
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "adoptado en 1787.-L. V.",
+    "abbyy-bne": "adoptado en 1787.—L. V.",
+    "abbyy-ia": "adoptado en 1787. — L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "adoptado en 1787,.—L. V.",
+    "tess-ia-300dpi-spa_old-psm3": "adoptado en 1787.—L. V.",
+    "vision-bne-400dpi-corr": "adoptado en 1787.-L. V."
+   }
+  },
+  {
+   "line": 8,
+   "bbox": [
+    0.15859031204645932,
+    0.20775058254785106,
+    0.5000000020137462,
+    0.22383720926761264
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "JULIO 7.—Marchó á la guerra el segundo",
+    "abbyy-bne": "Julio 7, Marchó a la guerra el segundo",
+    "abbyy-ia": "Julio 7. — Marchó á la guerra el segundo",
+    "tess-bne-400dpi-spa_old-psm3": "JuLio 7.—Marchó 4á la guerra el segundo",
+    "tess-ia-300dpi-spa_old-psm3": "Jurro 7.—Marchó á la guerra el segundo",
+    "vision-bne-400dpi-corr": "JuLIO 7.-Marchó á la guerra el segundo"
+   }
+  },
+  {
+   "line": 9,
+   "bbox": [
+    0.14317180984690592,
+    0.2223193474065982,
+    0.36563876728965794,
+    0.23691860454454594
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "batallon de milicias.—L. V.",
+    "abbyy-bne": "batallón de milicias.—L. V.",
+    "abbyy-ia": "batallón de milicias. — L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "batallon de milicias.—L. V.",
+    "tess-ia-300dpi-spa_old-psm3": "batallon de milicias.—L. V.",
+    "vision-bne-400dpi-corr": "batallon de milicias.-L. V."
+   }
+  },
+  {
+   "line": 10,
+   "bbox": [
+    0.1629955984306275,
+    0.23688811176167446,
+    0.5022026309746591,
+    0.24999999987356258
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "-17—El Ayuntamiento, en cabildo ó sesion",
+    "abbyy-bne": "^7 El Ayuntamiento, en cabildo ó sesión",
+    "abbyy-ia": "— 17 — El Ayuntamiento, en cabildo ó sesión",
+    "tess-bne-400dpi-spa_old-psm3": "—I7—El Ayuntamiento, en cabildo 6 sesíion",
+    "tess-ia-300dpi-spa_old-psm3": "—17—El Ayuntamiento, en cabildo 6 sesíion",
+    "vision-bne-400dpi-corr": "-17—El Ayuntamiento, en cabildo ó sesion"
+   }
+  },
+  {
+   "line": 11,
+   "bbox": [
+    0.14296648596408612,
+    0.25085333670997256,
+    0.5024154075181663,
+    0.2676738597207956
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "de esta fecha, señaló s premios para los que",
+    "abbyy-bne": "de esta fecha, señaló 5 premios para los que",
+    "abbyy-ia": "de esta fecha, señaló 5 premios para los que",
+    "tess-bne-400dpi-spa_old-psm3": "de esta fecha, señaló 5 premios para los que",
+    "tess-ia-300dpi-spa_old-psm3": "de esta fecha, señaló $ premios para los que",
+    "vision-bne-400dpi-corr": "de esta fecha, señaló s premios para los que"
+   }
+  },
+  {
+   "line": 13,
+   "bbox": [
+    0.1385533733637858,
+    0.2804256468802476,
+    0.5024308214558656,
+    0.29863443403806667
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "introdujesen trigo en Mallorca: el primero de",
+    "abbyy-bne": "intiodujesen trigo en Mallorca: el primero de",
+    "abbyy-ia": "introdujesen trigo en Mallorca: el primero de",
+    "tess-bne-400dpi-spa_old-psm3": "introdujesen trigo en Mallorca: el primero de",
+    "tess-ia-300dpi-spa_old-psm3": "introdujesen trigo en Mallorca: el primero de",
+    "vision-bne-400dpi-corr": "introdujesen trigo en Mallorca: el primero de"
+   }
+  },
+  {
+   "line": 14,
+   "bbox": [
+    0.1430000290022906,
+    0.2956710334490069,
+    0.5024472251809291,
+    0.31259535635091273
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "250 pesos al que trajese al ménos 1000 cuarte-",
+    "abbyy-bne": "250 pesos al que trajese al ménos 1000 cuarte­",
+    "abbyy-ia": "250 pesos al que trajese al ménos 1000 cuarte-",
+    "tess-bne-400dpi-spa_old-psm3": "250 pesos al que trajese al ménos rooo cuarte-",
+    "tess-ia-300dpi-spa_old-psm3": "250 pesos al que trajese al ménos 1000 cuarte-",
+    "vision-bne-400dpi-corr": "250 pesos al que trajese al ménos 1000 cuarte-"
+   }
+  },
+  {
+   "line": 15,
+   "bbox": [
+    0.1431718147105347,
+    0.31104651146320594,
+    0.5022026292689076,
+    0.32558139502904204
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "ras: el segundo de soo para el que importara",
+    "abbyy-bne": "ras: el segundo de 500 para el que importara",
+    "abbyy-ia": "ras: el segundo de 500 para el que importara",
+    "tess-bne-400dpi-spa_old-psm3": "ras: el segundo de 500 para el que importara",
+    "tess-ia-300dpi-spa_old-psm3": "ras: el segundo de 500 para el que importara",
+    "vision-bne-400dpi-corr": "ras: el segundo de soo para el que importara"
+   }
+  },
+  {
+   "line": 16,
+   "bbox": [
+    0.14537445866880447,
+    0.3269230770830438,
+    0.5022026427629134,
+    0.3415697672916389
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "2000 cuarteras ó más; el tercero de 1000 pe-",
+    "abbyy-bne": "2000 cuarteras ó más; el tercero de 1000 pe­",
+    "abbyy-ia": "2000 cuarteras ó más; el tercero de 1000 pe-",
+    "tess-bne-400dpi-spa_old-psm3": "2000 cuarteras ó más; el tercero de 1000 pe-",
+    "tess-ia-300dpi-spa_old-psm3": "2000 cuarteras ó más; el tercero de 1000 pe-",
+    "vision-bne-400dpi-corr": "2000 cuarteras ó más; el tercero de 1000 pe-"
+   }
+  },
+  {
+   "line": 17,
+   "bbox": [
+    0.14317182138270768,
+    0.3414918415055088,
+    0.5022026359410806,
+    0.3561046512669297
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "sos para quien introdujera 3000; cuarto I500",
+    "abbyy-bne": "sos para quien introdujera 3000; cuarto ijoo",
+    "abbyy-ia": "sos para quien introdujera 3000; cuarto 1500",
+    "tess-bne-400dpi-spa_old-psm3": "s0s para quien introdujera 3000; cuarto 1 5oo",
+    "tess-ia-300dpi-spa_old-psm3": "$0s para quien introdujera 3000; cuarto 1500",
+    "vision-bne-400dpi-corr": "sos para quien introdujera 3000; cuarto 1500"
+   }
+  },
+  {
+   "line": 19,
+   "bbox": [
+    0.14537444920379997,
+    0.3706293704826996,
+    0.5000000028336449,
+    0.38374125859458774
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "pesos para el introductor de sooo cuarteras ó",
+    "abbyy-bne": "pesos paia el introductor de 5000 cuarteras ó",
+    "abbyy-ia": "pesos paia el introductor de 5000 cuarteras ó",
+    "tess-bne-400dpi-spa_old-psm3": "pesos paza el introductor de 5ooo cuarteras 6",
+    "tess-ia-300dpi-spa_old-psm3": "pesos para el introductor de 5ooo cuarteras ó",
+    "vision-bne-400dpi-corr": "pesos para el introductor de 5000 cuarteras ó"
+   }
+  },
+  {
+   "line": 20,
+   "bbox": [
+    0.14317182139188533,
+    0.3851744190036177,
+    0.5022026359502583,
+    0.3983100233729524
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "más.—Aprobó la Audiencia el acuerdo del",
+    "abbyy-bne": "“^s-T^-^prohó la Audiencia el acuerdo del",
+    "abbyy-ia": "más. — Aprobó la Audiencia el acuerdo del",
+    "tess-bne-400dpi-spa_old-psm3": "más.—Aprobó la Audiencia el acuerdo del",
+    "tess-ia-300dpi-spa_old-psm3": "más.—Aprobó la Audiencia el acuerdo -del",
+    "vision-bne-400dpi-corr": "más.—Aprobó la Audiencia el acuerdo del"
+   }
+  },
+  {
+   "line": 21,
+   "bbox": [
+    0.1431718003206131,
+    0.39970930243219827,
+    0.5022026418379774,
+    0.41433566426133794
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Municipio en 3I de Julio: se publicó en 18 de",
+    "abbyy-bne": "Municipio en 31 de Julio: se publicó en 18 de",
+    "abbyy-ia": "Municipio en 31 de Julio: se publicó en 18 de",
+    "tess-bne-400dpi-spa_old-psm3": "Municipio en 3 r de Julio: se publicó en 18 de",
+    "tess-ia-300dpi-spa_old-psm3": "Municipio en 3 1 de Julio: se publicó en 18 de",
+    "vision-bne-400dpi-corr": "Municipio en 31 de Julio: se publicó en 18 de"
+   }
+  },
+  {
+   "line": 22,
+   "bbox": [
+    0.1453744498031659,
+    0.41424418594237267,
+    0.5022026338972748,
+    0.4289044287744409
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Agosto, y se trajo trigo en abundancia.—L. V.",
+    "abbyy-bne": "■Agosto, y se trajo trigo en abundancia.—L. V.",
+    "abbyy-ia": "Agosto, y se trajo trigo en abundancia.— L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "Agosto, y se trajo trigo en abundancia.—L. V.",
+    "tess-ia-300dpi-spa_old-psm3": "Agosto, y se trajo trigo en abundancia.—L. V.",
+    "vision-bne-400dpi-corr": "Agosto, y se trajo trigo en abundancia.—L. V."
+   }
+  },
+  {
+   "line": 23,
+   "bbox": [
+    0.1629956083241661,
+    0.4302325584238742,
+    0.5022026408681977,
+    0.44186046483193964
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "AGOSTO 17.—Por Real Decreto de esta fe-",
+    "abbyy-bne": "Agosto 17. Por Real Decreto de esta fe­",
+    "abbyy-ia": "Agosto 17* — Por Real Decreto de esta fe-",
+    "tess-bne-400dpi-spa_old-psm3": "AGosTO 17.—Por Real Decreto de esta fe-",
+    "tess-ia-300dpi-spa_old-psm3": "Avosro 17.—Por Real Decreto de esta fe-",
+    "vision-bne-400dpi-corr": "AGOSTO I7.—Por Real Decreto de esta fe-"
+   }
+  },
+  {
+   "line": 24,
+   "bbox": [
+    0.14493969011495111,
+    0.4416452513494351,
+    0.5025522460602498,
+    0.4613908524343955
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "cha se ordenó un descuento de 4 por 100 so-",
+    "abbyy-bne": "cha se ordenó un descuento de 4 por 100 so­",
+    "abbyy-ia": "cha se ordenó un descuento de 4 por 100 so-",
+    "tess-bne-400dpi-spa_old-psm3": "cha se ordenó un descuento de 4 por 100 s0-",
+    "tess-ia-300dpi-spa_old-psm3": "cha se ordenó un descuento de 4 por 100 so-",
+    "vision-bne-400dpi-corr": "cha se ordenó un descuento de 4 por 10o so-"
+   }
+  },
+  {
+   "line": 26,
+   "bbox": [
+    0.14317181367118778,
+    0.47377622381337314,
+    0.3083700420556843,
+    0.48691860449444446
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "800 ducados.—L. V.",
+    "abbyy-bne": "00o ducados.—L. V.",
+    "abbyy-ia": "800 ducados. — L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "800 ducados.—L. V.",
+    "tess-ia-300dpi-spa_old-psm3": "800 ducados.—L. V.",
+    "vision-bne-400dpi-corr": "800 ducados.-L. V."
+   }
+  },
+  {
+   "line": 27,
+   "bbox": [
+    0.16047461504379462,
+    0.48470131094365954,
+    0.5026542268429471,
+    0.5050413556810774
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "—20—Por otro decreto se mando suspen-",
+    "abbyy-bne": "—20—Por otro decreto se mandó suspen­",
+    "abbyy-ia": "—20— Por otro decreto se mandó suspen-",
+    "tess-bne-400dpi-spa_old-psm3": "—20—Por otro decreto se mandd SUsSpen-",
+    "tess-ia-300dpi-spa_old-psm3": "—2o0—Por otro decreto se mandó suspen-",
+    "vision-bne-400dpi-corr": "—20—Por otro decreto se mandò suspen-"
+   }
+  },
+  {
+   "line": 28,
+   "bbox": [
+    0.14287587151406686,
+    0.5017449761526892,
+    0.500267633320811,
+    0.5196778541045357
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "der el pago de un sueldo á los que percibían",
+    "abbyy-bne": "der el pago de un sueldo á los que percibían",
+    "abbyy-ia": "der el pago de un sueldo á los que percibían",
+    "tess-bne-400dpi-spa_old-psm3": "der el pago de un sueldo á los que percibían",
+    "tess-ia-300dpi-spa_old-psm3": "der el pago de un sueldo á los que percibian",
+    "vision-bne-400dpi-corr": "der el pago de un sueldo á los que percibían"
+   }
+  },
+  {
+   "line": 29,
+   "bbox": [
+    0.140924253360274,
+    0.5172955827554461,
+    0.2379303738061455,
+    0.5306695334558281
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "dos. -L. V.",
+    "abbyy-bne": "dos.—L. V.",
+    "abbyy-ia": "dos.— L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "dos.—L. V.",
+    "tess-ia-300dpi-spa_old-psm3": "dos.—L. V.",
+    "vision-bne-400dpi-corr": "dos.-L. V."
+   }
+  },
+  {
+   "line": 30,
+   "bbox": [
+    0.15859031276231822,
+    0.5334302328779348,
+    0.5000000027296051,
+    0.5480769230865299
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "SETIEMBRE 2.—Rogativas públicas por razon",
+    "abbyy-bne": "Setiembre 2.—Rogativas públicas por razon",
+    "abbyy-ia": "Setiembre 2. — Rogativas públicas por razón",
+    "tess-bne-400dpi-spa_old-psm3": "SETIEMBRE 2.—Rogativas públicas por razon",
+    "tess-ia-300dpi-spa_old-psm3": "SETIEMBRE 2.—Rogativas públicas por razon",
+    "vision-bne-400dpi-corr": "SETIEMBRE 2.—Rogativas públicas por razon"
+   }
+  },
+  {
+   "line": 31,
+   "bbox": [
+    0.14303568051950352,
+    0.5464659406707308,
+    0.5001519483943931,
+    0.5612181730600253
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "de la guerra, con asistencia del Comandante",
+    "abbyy-bne": "de la guerra, con asistencia del Comandante",
+    "abbyy-ia": "de la guerra, con asistencia del Comandante",
+    "tess-bne-400dpi-spa_old-psm3": "de la guerra, con asístencia del Comandante",
+    "tess-ia-300dpi-spa_old-psm3": "de la guerra, con asístencia del Comandante",
+    "vision-bne-400dpi-corr": "de la guerra, con asistencia del Comandante"
+   }
+  },
+  {
+   "line": 33,
+   "bbox": [
+    0.14288041094135945,
+    0.5749233108734748,
+    0.5024906281402469,
+    0.593780389825864
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "exposicion del Santísimo Sacramento y des-",
+    "abbyy-bne": "exposición del Santísimo Sacramento y des­",
+    "abbyy-ia": "exposición del Santísimo Sacramento y des-",
+    "tess-bne-400dpi-spa_old-psm3": "exposicion del Santisimo Sacramento y des-",
+    "tess-ia-300dpi-spa_old-psm3": "exposicion del Santisimo Sacramento y des-",
+    "vision-bne-400dpi-corr": "exposicion del Santísimo Sacramento y des-"
+   }
+  },
+  {
+   "line": 34,
+   "bbox": [
+    0.14317181698378234,
+    0.5929487181781108,
+    0.5000000010778912,
+    0.6075581395057862
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "pues turno de oracion del General, Intendente,",
+    "abbyy-bne": "pues turno de oración del General, Intendente,",
+    "abbyy-ia": "pués turno de oración del General, Intendente,",
+    "tess-bne-400dpi-spa_old-psm3": "pues turno de oracion del General, Intendente,",
+    "tess-ia-300dpi-spa_old-psm3": "pues turno de oracion del General, Intendente,",
+    "vision-bne-400dpi-corr": "pues turno de oracion del General, Intendente,"
+   }
+  },
+  {
+   "line": 35,
+   "bbox": [
+    0.1431398222724289,
+    0.6071696819072726,
+    0.49782934958857294,
+    0.6210279924555703
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "etc.—El 6 hubo procesion general de rogativa",
+    "abbyy-bne": "/ ^“^° procesión general de rogativa",
+    "abbyy-ia": "etc. — El 6 hubo procesión general de rogativa",
+    "tess-bne-400dpi-spa_old-psm3": "etc.—El 6 hubo procesion general de rogativa",
+    "tess-ia-300dpi-spa_old-psm3": "etc.—El 6 hubo procesion general de rogativa",
+    "vision-bne-400dpi-corr": "etc.—El 6 hubo procesion general de rogativa"
+   }
+  },
+  {
+   "line": 36,
+   "bbox": [
+    0.1409691573402215,
+    0.6206293707044813,
+    0.39207048605184913,
+    0.6366550117301224
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "desde la Seo á S. Jaime.—L. V.",
+    "abbyy-bne": "desde la Seo á S. Jaime.—L. V.",
+    "abbyy-ia": "desde la Seo á S. Jaime. — L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "desde la Seo 4 $. Jame.—L. V.",
+    "tess-ia-300dpi-spa_old-psm3": "desde la Seo á S. Jaime.—L. V.",
+    "vision-bne-400dpi-corr": "desde la Seo á S. Jaime.—L. V."
+   }
+  },
+  {
+   "line": 37,
+   "bbox": [
+    0.16299560679068653,
+    0.6366279071140828,
+    0.4977973514471988,
+    0.6497668999171629
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "NOVIEMBRE 1.°-Rogativas por razon de la",
+    "abbyy-bne": "Noviembre i.°—Rogativas por razon déla",
+    "abbyy-ia": "Noviembre i.° — Rogativas por razón de la",
+    "tess-bne-400dpi-spa_old-psm3": "NOvVIEMBRE 1.°—Rogativas por razon de la",
+    "tess-ia-300dpi-spa_old-psm3": "NoviEMBRe 1.°—Rogativas por razon de la",
+    "vision-bne-400dpi-corr": "NOVIEMBRE I.°—Rogativas por razon de la"
+   }
+  },
+  {
+   "line": 38,
+   "bbox": [
+    0.1387665306888752,
+    0.6497093029701138,
+    0.49779734524724817,
+    0.6672494171572521
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "guerra y por el Rey, en el Oratorio de Trini-",
+    "abbyy-bne": "guerra y por el Rey, en el Oratorio de Trlni-",
+    "abbyy-ia": "guerra y por el Rey, en el Oratorio de Trini-",
+    "tess-bne-400dpi-spa_old-psm3": "guerra y por el Rey, en el Orartorio de Trini-",
+    "tess-ia-300dpi-spa_old-psm3": "Zuerra y por el Rey, en el Oratorio de Trini-",
+    "vision-bne-400dpi-corr": "guerra y por el Rey, en el Oratorio de Trini-"
+   }
+  },
+  {
+   "line": 39,
+   "bbox": [
+    0.13876652072724763,
+    0.664244185820808,
+    0.49999999270887585,
+    0.6803613051097527
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "tarios del Sto. Espíritu.—Cantose en la misa",
+    "abbyy-bne": "Sto. Espíritu.-Cantose en la misa",
+    "abbyy-ia": "tarios del Sto. Espíritu.— Cantóse en la misa",
+    "tess-bne-400dpi-spa_old-psm3": "tarios del Sto. Espiriru.—Cantose en la misa",
+    "tess-ia-300dpi-spa_old-psm3": "tarios del Sto. Espiriru.—Cantose en la misa",
+    "vision-bne-400dpi-corr": "tarios del Sto. Espiritu. —Cantose en la misa"
+   }
+  },
+  {
+   "line": 40,
+   "bbox": [
+    0.1409691759096292,
+    0.6802325581318545,
+    0.47577092056614145,
+    0.6962209302765758
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "el Stabat Mater del Maestro Haydn.—L. V.",
+    "abbyy-bne": "el Stabat Mater del Maestro Haydn._ L. V .",
+    "abbyy-ia": "el Stabat Mater del Maestro Haydn.—L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "el Stabat Mater del Maestro Haydnu.—L. Y.",
+    "tess-ia-300dpi-spa_old-psm3": "el Stabat Mater del Maestro Haydn.—L. V.",
+    "vision-bne-400dpi-corr": "el Stabat Mater del Maestro Haydn.—L. V."
+   }
+  },
+  {
+   "line": 41,
+   "bbox": [
+    0.16299560193368431,
+    0.6960955709954234,
+    0.5000000040134519,
+    0.7107558138274916
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "—A consecuencia de la Real órden dispo-",
+    "abbyy-bne": "—A consecuencia de la Real órden dispo­",
+    "abbyy-ia": "— A consecuencia de la Real órden dispo-",
+    "tess-bne-400dpi-spa_old-psm3": "—Á consecuencia de la Real órden dispo-",
+    "tess-ia-300dpi-spa_old-psm3": "—A consecuencia de la Real órden dispo-",
+    "vision-bne-400dpi-corr": "—A consecuencia de la Real órden dispo-"
+   }
+  },
+  {
+   "line": 42,
+   "bbox": [
+    0.1406968937620638,
+    0.7081410091915508,
+    0.4981211411532961,
+    0.7261204343417484
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "niendo que los súbditos franceses no pudiesen",
+    "abbyy-bne": "niendo que los súbditos franceses no pudiesen",
+    "abbyy-ia": "niendo que los súbditos franceses no pudiesen",
+    "tess-bne-400dpi-spa_old-psm3": "mendo que los súbditos franceses no pudiesen",
+    "tess-ia-300dpi-spa_old-psm3": "niendo que los súbditos franceses no pudiesen",
+    "vision-bne-400dpi-corr": "niendo que los súbditos franceses no pudiesen"
+   }
+  },
+  {
+   "line": 43,
+   "bbox": [
+    0.14096917043459012,
+    0.7252331001780844,
+    0.497797354528699,
+    0.7398255815600498
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "estar cerca de los puertos de mar, sino á 20 le-",
+    "abbyy-bne": "estar cerca de los puertos de mar, sino á 20 le­",
+    "abbyy-ia": "estar cerca de los puertos de mar, sino á 20 le-",
+    "tess-bne-400dpi-spa_old-psm3": "estar cerca de los puertos de mar, sino á 20 le-",
+    "tess-ia-300dpi-spa_old-psm3": "estar cerca de los puertos de mar, sino á 20 le-",
+    "vision-bne-400dpi-corr": "estar cerca de los puertos de mar, sino á 20 le-"
+   }
+  },
+  {
+   "line": 44,
+   "bbox": [
+    0.14096917870649625,
+    0.7398018647449225,
+    0.4999999932648692,
+    0.7529137528568106
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "guas lo ménos de distancia, se marcharon de",
+    "abbyy-bne": "guas lo ménos de distancia, se marcharon de",
+    "abbyy-ia": "guas lo ménos de distancia, se marcharon de",
+    "tess-bne-400dpi-spa_old-psm3": "guas lo menos de distancia, se marcharon de",
+    "tess-ia-300dpi-spa_old-psm3": "guas lo ménos de distancia, se marcharon de",
+    "vision-bne-400dpi-corr": "guas lo ménos de distancia, se marcharon de"
+   }
+  },
+  {
+   "line": 45,
+   "bbox": [
+    0.1406704546140522,
+    0.7527920154199135,
+    0.46943287300379377,
+    0.7702097125038913
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Palma 8, y se quedaron los otros.—T. A.",
+    "abbyy-bne": "Palma 8, y se quedaron los otros.—T. A.",
+    "abbyy-ia": "Palma 8, y se quedaron los otros. —",
+    "tess-bne-400dpi-spa_old-psm3": "Palma 8, y se quedaron los otros.—T. A.",
+    "tess-ia-300dpi-spa_old-psm3": "Palma 8, y se quedaron los otros.—T. A.",
+    "vision-bne-400dpi-corr": "Palma 8, y se quedaron los otros.—T. A."
+   }
+  },
+  {
+   "line": 46,
+   "bbox": [
+    0.29074890237846096,
+    0.7732558143169991,
+    0.35242290584474023,
+    0.7834302321461792
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "1795•",
+    "abbyy-bne": "Enero",
+    "abbyy-ia": "T.",
+    "tess-bne-400dpi-spa_old-psm3": "?",
+    "tess-ia-300dpi-spa_old-psm3": "I795-.",
+    "vision-bne-400dpi-corr": "1795."
+   }
+  },
+  {
+   "line": 47,
+   "bbox": [
+    0.1563876679899248,
+    0.7848837210642673,
+    0.4977973579572116,
+    0.8009906761634842
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "ENERO 1.°— Llegó el nuevo Obispo D. Ber-",
+    "abbyy-bne": "i.°-—Llegó el nuevo Obispo D. Ber­",
+    "abbyy-ia": "A . 1795- Enero i .° — Llegó el nuevo Obispo D. Ber-",
+    "tess-bne-400dpi-spa_old-psm3": "EZ ExERo r.°—Llegó el nuevo Obispo D. Ber-",
+    "tess-ia-300dpi-spa_old-psm3": "ExERo 1.°—Llegó el nuevo Obispo D. Ber-",
+    "vision-bne-400dpi-corr": "ENERO 1.°—Llegó el nuevo Obispo D. Ber-"
+   }
+  },
+  {
+   "line": 48,
+   "bbox": [
+    0.13876652012152074,
+    0.7979651160533661,
+    0.49999999210314894,
+    0.8139534881980874
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "nardo Nadal y Crespí, y se celebró su solemne",
+    "abbyy-bne": "nardo Nadal y Crespí, y se celebró su solemne",
+    "abbyy-ia": "nardo Nadal y Crespí, y se celebró su solemne",
+    "tess-bne-400dpi-spa_old-psm3": "nardo Nadal y Crespi, y se celebró su solemne",
+    "tess-ia-300dpi-spa_old-psm3": "nardo Nadal y Crespi, y se celebró su solemne",
+    "vision-bne-400dpi-corr": "nardo Nadal y Crespí, y se celebró su solemne"
+   }
+  },
+  {
+   "line": 49,
+   "bbox": [
+    0.1409691714331217,
+    0.8138111886819436,
+    0.4977973555272306,
+    0.8284883720154761
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "entrada en 1.° de Febrero siguiente.—Jn. Br.",
+    "abbyy-bne": "encada en I.° de Febrero siguiente.—J«. Br.",
+    "abbyy-ia": "entrada en i.° de Febrero siguiente. — Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "entrada en 1.° de Febrero siguiente.—Ju. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "entrada en 1.° de Febrero siguiente.—Jn. Br.",
+    "vision-bne-400dpi-corr": "entrada en I.° de Febrero siguiente.—Jn. Br."
+   }
+  },
+  {
+   "line": 50,
+   "bbox": [
+    0.13876652183308552,
+    0.8283799534910299,
+    0.20925110107440345,
+    0.8415697672427486
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "-L. V.",
+    "abbyy-bne": "—2—Resolvió",
+    "abbyy-ia": "-L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "—. V,",
+    "tess-ia-300dpi-spa_old-psm3": "—L. V.",
+    "vision-bne-400dpi-corr": "-L. V."
+   }
+  },
+  {
+   "line": 51,
+   "bbox": [
+    0.158590319080407,
+    0.8444055944762039,
+    0.49779735162443856,
+    0.8604651165047734
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "—2-Resolvió el Ayuntamiento gratificar",
+    "abbyy-bne": "el Ayuntamiento gratificar",
+    "abbyy-ia": "— 2 — Resolvió el Ayuntamiento gratificar",
+    "tess-bne-400dpi-spa_old-psm3": "—2—Resolvió el Ayuntamiento gratificar",
+    "tess-ia-300dpi-spa_old-psm3": "—2—Resolvió el Ayuntamiento gratificar",
+    "vision-bne-400dpi-corr": "—2—Resolvió el Ayuntamiento gratificar"
+   }
+  },
+  {
+   "line": 53,
+   "bbox": [
+    0.13656388394310653,
+    0.8735431232829397,
+    0.4977973559247348,
+    0.8910256407654572
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "de trigo que se introdujeran en la isla, desde",
+    "abbyy-bne": "de trigo que se introdujeran en la isla, desde",
+    "abbyy-ia": "de trigo que se introdujeran en la isla, desde",
+    "tess-bne-400dpi-spa_old-psm3": "de trigo que se introdujeran en la 1sla, desde",
+    "tess-ia-300dpi-spa_old-psm3": "de trigo que se introdujeran en la isla, desde",
+    "vision-bne-400dpi-corr": "de trigo que se introdujeran en la isla, desde"
+   }
+  },
+  {
+   "line": 54,
+   "bbox": [
+    0.5196176194156529,
+    0.09093004265122251,
+    0.887886983735579,
+    0.10878630376452936
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "el 7 de Enero hasta último de Marzo: otros 7",
+    "abbyy-bne": "el / de Enero hasta ultimo de Marzo: otros 7",
+    "abbyy-ia": "el 7 de Enero hasta último de Marzo: otros 7",
+    "tess-bne-400dpi-spa_old-psm3": "el 7 de Enero hasta último de Marzo: otros 7",
+    "tess-ia-300dpi-spa_old-psm3": "el 7 de Enero hasta último de Marzo: otros 7",
+    "vision-bne-400dpi-corr": "el 7 de Enero hasta último de Marzo: otros 7"
+   }
+  },
+  {
+   "line": 55,
+   "bbox": [
+    0.5242290816790364,
+    0.10606060630018499,
+    0.8876651841249286,
+    0.12209302308180836
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "sueldos para retribuir las 20,000 que se impor-",
+    "abbyy-bne": "sueldos para retribuir las 20,000 que se impor­",
+    "abbyy-ia": "sueldos para retribuir las 20,000 que se impor-",
+    "tess-bne-400dpi-spa_old-psm3": "sueldos para retribuir las 20,000 que se impor-",
+    "tess-ia-300dpi-spa_old-psm3": "sueldos para retribuir las 20,000 que se impor-",
+    "vision-bne-400dpi-corr": "sueldos para retribuir las 20,000 que se impor-"
+   }
+  },
+  {
+   "line": 56,
+   "bbox": [
+    0.524229080797979,
+    0.1206293706374224,
+    0.8876651832438713,
+    0.1381118881199399
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "taran despues de aquellas, y 4 ss. por cada",
+    "abbyy-bne": "taran despues de aquellas, y 4 ss. por cada",
+    "abbyy-ia": "taran después de aquellas, y 4 ss. por cada",
+    "tess-bne-400dpi-spa_old-psm3": "taran despues de aquellas, y 4 5$8:°por cada",
+    "tess-ia-300dpi-spa_old-psm3": "taran despues de aquellas, y 4 5s. por cada",
+    "vision-bne-400dpi-corr": "taran despues de aquellas, y 4 ss. por cada"
+   }
+  },
+  {
+   "line": 57,
+   "bbox": [
+    0.5264317224554682,
+    0.13662790723036178,
+    0.8898678249013604,
+    0.14976690003344195
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "una de las primeras 15,000 cuarteras de ceba-",
+    "abbyy-bne": "una de las primeras 15,000 cuarteras de ceba­",
+    "abbyy-ia": "una de las primeras 15,000 cuarteras de ceba-",
+    "tess-bne-400dpi-spa_old-psm3": "una de las primeras 15,000 cuarteras deceba-",
+    "tess-ia-300dpi-spa_old-psm3": "una de las primeras I5,000 cuarteras de ceba-",
+    "vision-bne-400dpi-corr": "una de las primeras 15,000 cuarteras de ceba-"
+   }
+  },
+  {
+   "line": 58,
+   "bbox": [
+    0.5286343619689243,
+    0.15261627919014864,
+    0.8876652034862885,
+    0.16579254087414852
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "da. Aprobó la Audiencia este acuerdo en 5, y",
+    "abbyy-bne": "da. Aprobo la Audiencia este acuerdo en 5, y",
+    "abbyy-ia": "da. Aprobó la Audiencia este acuerdo en 5, y",
+    "tess-bne-400dpi-spa_old-psm3": "da. Aprobó la Audiencia este acuerdo en $5 3",
+    "tess-ia-300dpi-spa_old-psm3": "da. Aprobó la Audiencia este acuerdo en 5, y",
+    "vision-bne-400dpi-corr": "da. Aprobó la Audiencia este acuerdo en 5, y"
+   }
+  },
+  {
+   "line": 59,
+   "bbox": [
+    0.5264317246661155,
+    0.16715116283917508,
+    0.8127753295189064,
+    0.18181818198297983
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "en 7 se publicó en la ciudad.—L. V.",
+    "abbyy-bne": "en 7 se publicó en la ciudad.—L. V.",
+    "abbyy-ia": "en 7 se publicó en la ciudad. — L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "en 7 se publicó en la ciudad.—L. V.-",
+    "tess-ia-300dpi-spa_old-psm3": "en 7 se publicó en la ciudad.—L. V.",
+    "vision-bne-400dpi-corr": "en 7 se publicó en la ciudad.—L. V."
+   }
+  },
+  {
+   "line": 60,
+   "bbox": [
+    0.5484581520833441,
+    0.18168604676524558,
+    0.8876651846273758,
+    0.1947674417521963
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "-17—Fondeó el navio de la Real Armada",
+    "abbyy-bne": "^7 Fondeó el navio de la Real Armada",
+    "abbyy-ia": "— 17 — Fondeó el navio de la Real Armada",
+    "tess-bne-400dpi-spa_old-psm3": "—17—Fondeó el navio de la -Real Armada",
+    "tess-ia-300dpi-spa_old-psm3": "—17—Fondeó el navio de la Real Armada",
+    "vision-bne-400dpi-corr": "—17—Fondeó el navio de la Real Armada"
+   }
+  },
+  {
+   "line": 61,
+   "bbox": [
+    0.5264317164439611,
+    0.19609557110036058,
+    0.8854625579613253,
+    0.2122093025113141
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "S. Cristobal y el 29 el Arrogante y el S. Agustin",
+    "abbyy-bne": "5. Cristobal y el 29 el Arrogante y el 5. Agustin",
+    "abbyy-ia": "S. Cristóbal y el 29 el Arrogante y el S. Agustín",
+    "tess-bne-400dpi-spa_old-psm3": "S. Cristobal y el 29 el ÁArrogante y el $. Agustin",
+    "tess-ia-300dpi-spa_old-psm3": "S. Cristobal y el 29 el Arrogante y el $. Agustin",
+    "vision-bne-400dpi-corr": "S. Cristobal y el 29 el Arrogante y el S. Agustin"
+   }
+  },
+  {
+   "line": 64,
+   "bbox": [
+    0.5264317254188774,
+    0.2398018649521696,
+    0.8876651974005056,
+    0.25582750597781057
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "el Hospital, contagiándose despues la ciudad.",
+    "abbyy-bne": "el Hospital, contagiándose despues la ciudad.",
+    "abbyy-ia": "el Hospital, contagiándose después la ciudad.",
+    "tess-bne-400dpi-spa_old-psm3": "el Hospital, contagiándose despues la ciudad.",
+    "tess-ia-300dpi-spa_old-psm3": "el Hospital, contagiándose despues la ciudad.",
+    "vision-bne-400dpi-corr": "el Hospital, contagiándose despues la ciudad."
+   }
+  },
+  {
+   "line": 65,
+   "bbox": [
+    0.5264317207878585,
+    0.2558139536511468,
+    0.592511012141657,
+    0.2689393938307537
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "-L. V.",
+    "abbyy-bne": "—L. V.",
+    "abbyy-ia": "— L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "a ES",
+    "tess-ia-300dpi-spa_old-psm3": "—L. V.",
+    "vision-bne-400dpi-corr": "-L. V."
+   }
+  },
+  {
+   "line": 66,
+   "bbox": [
+    0.5484581520833441,
+    0.27034883741447036,
+    0.8876651846273758,
+    0.28350815859700584
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "—En este mes se puso en ejecucion en Ma-",
+    "abbyy-bne": "En este mes se puso en ejecución en Ma­",
+    "abbyy-ia": "— En este mes se puso en ejecución en Ma-",
+    "tess-bne-400dpi-spa_old-psm3": "—En este mes se puso en ejecucion en Ma-",
+    "tess-ia-300dpi-spa_old-psm3": "—En este mes se puso en ejecucion en Ma-",
+    "vision-bne-400dpi-corr": "—En este mes se puso en ejecucion en Ma-"
+   }
+  },
+  {
+   "line": 67,
+   "bbox": [
+    0.5242290825994942,
+    0.28488372086077884,
+    0.8854625545811223,
+    0.30099067595999585
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "lorca la Real Cédua de 23 de Julio de 1794",
+    "abbyy-bne": "llorca la Real Cédu’a de 23 de Julio de 1794",
+    "abbyy-ia": "llorca la Real Cédua de 23 de Julio de 1794",
+    "tess-bne-400dpi-spa_old-psm3": "llorca la Real Cedu'a de 23 de Julio de 1794",
+    "tess-ia-300dpi-spa_old-psm3": "llorca la Real Cédu’a de 23 de Julio de 1794",
+    "vision-bne-400dpi-corr": "llorca la Real Cédu'a de 23 de Julio de 1794"
+   }
+  },
+  {
+   "line": 68,
+   "bbox": [
+    0.5242290836780112,
+    0.2994186046996401,
+    0.7973568248682442,
+    0.3139534882654762
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "sobre uso de papel sellado.—L. V.",
+    "abbyy-bne": "sobre uso de papel sellado.—L. V.",
+    "abbyy-ia": "sobre uso de papel sellado. — L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "sobre uso de papel sellado.—L. V.",
+    "tess-ia-300dpi-spa_old-psm3": "sobre uso de papel sellado.—L. V.",
+    "vision-bne-400dpi-corr": "sobre uso de papei sellado. —L. V."
+   }
+  },
+  {
+   "line": 69,
+   "bbox": [
+    0.5440528676815547,
+    0.3138111886238042,
+    0.8854625576488415,
+    0.3284883719573366
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "MARzO 14.-Publicacion de la Real órden",
+    "abbyy-bne": "Marzo 14.—Publicación de la Real órden",
+    "abbyy-ia": "Marzo 14. — Publicación de la Real órden",
+    "tess-bne-400dpi-spa_old-psm3": "Manzo 14.—Publicacion de la Real 6rden",
+    "tess-ia-300dpi-spa_old-psm3": "ManRzo 14.—Publicacion de la Real órden",
+    "vision-bne-400dpi-corr": "MARzO 14.—Publicacion de la Real órden"
+   }
+  },
+  {
+   "line": 71,
+   "bbox": [
+    0.526431721499201,
+    0.344405594646659,
+    0.8832599055933099,
+    0.35755813951745796
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "sortear los I65 hombres correspondientes á",
+    "abbyy-bne": "sortear los 165 hombres correspondientes á .",
+    "abbyy-ia": "sortear los 165 hombres correspondientes á",
+    "tess-bne-400dpi-spa_old-psm3": "sortear los 165 hombres correspondientes 4",
+    "tess-ia-300dpi-spa_old-psm3": "sortear los 165 hombres correspondientes á",
+    "vision-bne-400dpi-corr": "sortear los 165 hombres correspondientes á"
+   }
+  },
+  {
+   "line": 72,
+   "bbox": [
+    0.5264317224903905,
+    0.3575174824608425,
+    0.8832599065844994,
+    0.3735465113644746
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Palma y su término, con destino al refuerzo",
+    "abbyy-bne": "Palma y su termino, con destino al refuerzo",
+    "abbyy-ia": "Palma y su término, con destino al refuerzo",
+    "tess-bne-400dpi-spa_old-psm3": "Palma y su término, con destino al refuerzo",
+    "tess-ia-300dpi-spa_old-psm3": "Palma y su término, con destino al refuerzo",
+    "vision-bne-400dpi-corr": "Palma y su término, con destino al refuerzo"
+   }
+  },
+  {
+   "line": 74,
+   "bbox": [
+    0.5242290773686683,
+    0.3880813956024549,
+    0.6563876600762655,
+    0.4012237762835261
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Rosellon.-L. V.",
+    "abbyy-bne": "Rosellon.—L. V.",
+    "abbyy-ia": "Roseílon. — L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "Rosellon.—L. V.",
+    "tess-ia-300dpi-spa_old-psm3": "Rosellon.—L. V.",
+    "vision-bne-400dpi-corr": "Rosellon.—L. V."
+   }
+  },
+  {
+   "line": 75,
+   "bbox": [
+    0.546255517957059,
+    0.40261627908917497,
+    0.8854625505010906,
+    0.41724941723005127
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "ABRIL 22.—Dispuso el Rey que los quintos",
+    "abbyy-bne": "Abril 22. Dispuso el Rey que los quintos",
+    "abbyy-ia": "Abril 22. — Dispuso el Rey que los quintos",
+    "tess-bne-400dpi-spa_old-psm3": "ABRIL 22.—Dispuso el Rey que los quintos",
+    "tess-ia-300dpi-spa_old-psm3": "ABRIL 22.—Dispuso el Rey que los quintos",
+    "vision-bne-400dpi-corr": "ABRIL 22.—Dispuso el Rey que los quintos"
+   }
+  },
+  {
+   "line": 76,
+   "bbox": [
+    0.5264317273912714,
+    0.4171511627955704,
+    0.8832599114853803,
+    0.43181818193937516
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "sorteados pasasen al servicio de la Marina.—",
+    "abbyy-bne": "sorteados pasasen al servicio de la Marina —",
+    "abbyy-ia": "sorteados pasasen al servicio de la Marina. —",
+    "tess-bne-400dpi-spa_old-psm3": "sorteados pasasen al servicio de la Marina.—",
+    "tess-ia-300dpi-spa_old-psm3": "sorteados pasasen al servicio de la Marina.—",
+    "vision-bne-400dpi-corr": "sorteados pasasen al servicio de la Marina.—"
+   }
+  },
+  {
+   "line": 77,
+   "bbox": [
+    0.5242290751691938,
+    0.4316860466406609,
+    0.5726872250825368,
+    0.4447674416276115
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "L. V.",
+    "abbyy-bne": "L. V.",
+    "abbyy-ia": "L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "Ez:%2 Juxto",
+    "tess-ia-300dpi-spa_old-psm3": "L. V.",
+    "vision-bne-400dpi-corr": "L. V."
+   }
+  },
+  {
+   "line": 78,
+   "bbox": [
+    0.5330396481045352,
+    0.46357808870526873,
+    0.8788546259593414,
+    0.4738372090417702
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "bola, insigne matemático, geógrafo, artista J",
+    "abbyy-bne": "Junio 28. Falleció D. Jerónimo Berard y Sola, insigne matemático, geógrafo, artista y",
+    "abbyy-ia": "Junio 28. — Falleció D. Jerónimo Berard y Solá, insigne matemático, geógrafo, artista y",
+    "tess-bne-400dpi-spa_old-psm3": "28.—-Falleció D. Jerónimo Berard y Solá, insigne matemático, geógrafo, artista y",
+    "tess-ia-300dpi-spa_old-psm3": "Juxio 28.—Falleció D. Jerónimo Berard y Solá, insigne matemático, geógrafo, artista y",
+    "vision-bne-400dpi-corr": "JUNIO 28.-Falleció D. Jerónimo Berard y Solá, insigne matemático, geógrafo, artista y"
+   }
+  },
+  {
+   "line": 79,
+   "bbox": [
+    0.5242290785560388,
+    0.47668997683053604,
+    0.6651982370386746,
+    0.48982558119987063
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "literato.-Jn. Br.",
+    "abbyy-bne": "literato.—J«. Br.",
+    "abbyy-ia": "literato. — Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "literato.—Jnz. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "literato.—Jn. Br.",
+    "vision-bne-400dpi-corr": "literato.-Jn. Br."
+   }
+  },
+  {
+   "line": 80,
+   "bbox": [
+    0.5440528699576191,
+    0.49125874136863434,
+    0.8854625599249061,
+    0.5058275059373989
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "JULIO 4.-Bando del Corregidor y del",
+    "abbyy-bne": "Julio 4. Bando del Corregidor y del",
+    "abbyy-ia": "Julio 4. — Bando del Corregidor y del",
+    "tess-bne-400dpi-spa_old-psm3": "Jurro 4.—Bando del Corregidor y del",
+    "tess-ia-300dpi-spa_old-psm3": "Jurio 4.—Bando del Corregidor y del",
+    "vision-bne-400dpi-corr": "JuLIO 4.—Bando del Corregidor y del"
+   }
+  },
+  {
+   "line": 81,
+   "bbox": [
+    0.5264317233008431,
+    0.5058139536143688,
+    0.885462537859216,
+    0.5203962702508522
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Ayuntamiento disponiendo que se ajustasen",
+    "abbyy-bne": "Ayuntamiento disponiendo que se ajustasen",
+    "abbyy-ia": "Ayuntamiento disponiendo que se ajustasen",
+    "tess-bne-400dpi-spa_old-psm3": "Ayuntamiento disponiendo que 5se ajustasen",
+    "tess-ia-300dpi-spa_old-psm3": "Ayuntamiento disponiendo que se ajustasen",
+    "vision-bne-400dpi-corr": "Ayuntamiento disponiendo que se ajustasen"
+   }
+  },
+  {
+   "line": 83,
+   "bbox": [
+    0.7907160067195727,
+    0.5231514386479372,
+    0.8854954492809615,
+    0.5364415849398878
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "en Castilla.",
+    "abbyy-bne": "en Castilla",
+    "abbyy-ia": "en Castilla.",
+    "tess-bne-400dpi-spa_old-psm3": "en Castilla.",
+    "tess-ia-300dpi-spa_old-psm3": "en Castilla.",
+    "vision-bne-400dpi-corr": "en Castilla."
+   }
+  },
+  {
+   "line": 84,
+   "bbox": [
+    0.526431721091236,
+    0.5363372095615587,
+    0.5903083685012749,
+    0.5509906760818905
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "-L. V.",
+    "abbyy-bne": "—L. V.",
+    "abbyy-ia": "— L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "—L. V.",
+    "tess-ia-300dpi-spa_old-psm3": "—L. Y.",
+    "vision-bne-400dpi-corr": "-L. V."
+   }
+  },
+  {
+   "line": 85,
+   "bbox": [
+    0.5440528685350788,
+    0.5494186047776003,
+    0.8854625585023658,
+    0.562499999764551
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "--7—Bando ofreciendo 6o reales de grati-",
+    "abbyy-bne": "-“7—Bando ofreciendo 60 reales de grati­",
+    "abbyy-ia": "— 7 — Bando ofreciendo 60 reales de grati-",
+    "tess-bne-400dpi-spa_old-psm3": "—-7—Bando ofreciendo 60 reales de grati-",
+    "tess-ia-300dpi-spa_old-psm3": "—-7—Bando ofreciendo 60 reales de grati-",
+    "vision-bne-400dpi-corr": "--7—Bando ofreciendo 6o reales de grati-"
+   }
+  },
+  {
+   "line": 86,
+   "bbox": [
+    0.526431726499201,
+    0.5638111887708049,
+    0.8832599105933099,
+    0.5770348835254522
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "ficacion, además de las tres pagas anticipadas,",
+    "abbyy-bne": "ficación, además de las tres pagas anticipadas,",
+    "abbyy-ia": "ficación, además de las tres pagas anticipadas,",
+    "tess-bne-400dpi-spa_old-psm3": "ficacion, además de las tres pagas anticipadas,",
+    "tess-ia-300dpi-spa_old-psm3": "ficacion, además de las tres pagas anticipadas,",
+    "vision-bne-400dpi-corr": "ficacion, además de las tres pagas anticipadas,"
+   }
+  },
+  {
+   "line": 87,
+   "bbox": [
+    0.5242290850077173,
+    0.5783799534849737,
+    0.8854625569893454,
+    0.5915697672366924
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "y exencion de sorteo de quinta, á los marine-",
+    "abbyy-bne": "y exención de sorteo de quinta, á los marine­",
+    "abbyy-ia": "y exención de sorteo de quinta, á los marine-",
+    "tess-bne-400dpi-spa_old-psm3": "y exencion de sorteo de quinta, á los marine-",
+    "tess-ia-300dpi-spa_old-psm3": "y exencion de sorteo de quinta, á los marine-",
+    "vision-bne-400dpi-corr": "y exencion de sorteo de quinta, á los marine-"
+   }
+  },
+  {
+   "line": 88,
+   "bbox": [
+    0.5242290850077173,
+    0.5944055944104671,
+    0.8854625569893454,
+    0.6075581392812661
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "ros que se matricularan durante la guerra.-.",
+    "abbyy-bne": "ros que se matricularan durante la guerra__",
+    "abbyy-ia": "ros que se matricularan durante la guerra. —",
+    "tess-bne-400dpi-spa_old-psm3": "ros que se matricularan durante la guerra.—-",
+    "tess-ia-300dpi-spa_old-psm3": "ros que se matricularan durante la guerra.—-",
+    "vision-bne-400dpi-corr": "ros que se matricularan durante la guerra.-."
+   }
+  },
+  {
+   "line": 89,
+   "bbox": [
+    0.5220264310455311,
+    0.607517482334103,
+    0.5704845809588741,
+    0.6220930232146041
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "L. V.",
+    "abbyy-bne": "L. V.",
+    "abbyy-ia": "L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "La a",
+    "tess-ia-300dpi-spa_old-psm3": "L. V.",
+    "vision-bne-400dpi-corr": "L. V."
+   }
+  },
+  {
+   "line": 90,
+   "bbox": [
+    0.5440528770466331,
+    0.6235431233508799,
+    0.8832599095906646,
+    0.636655011462768
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "AGOSTO 14.- Bando del Corregidor contra",
+    "abbyy-bne": "Agosto 14. Bando del Corregidor contra",
+    "abbyy-ia": "Agosto 14 — Bando del Corregidor contra",
+    "tess-bne-400dpi-spa_old-psm3": "ÁGosTo I4.—Bando del Corregidor contra",
+    "tess-ia-300dpi-spa_old-psm3": "Avosro 14.—Bando del Corregidor contra",
+    "vision-bne-400dpi-corr": "AGOsTO 14:-Bando del Corregidor contra"
+   }
+  },
+  {
+   "line": 91,
+   "bbox": [
+    0.5220264397403149,
+    0.6380813954263843,
+    0.8964757753845011,
+    0.6526806525643319
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "los que diesen dinero para comprar trigo y al-.",
+    "abbyy-bne": "los que diesen dinero para comprar trigo y al­",
+    "abbyy-ia": "los que diesen dinero para comprar trigo y al- .",
+    "tess-bne-400dpi-spa_old-psm3": "los que diesen dinero para comprar trigo y al-",
+    "tess-ia-300dpi-spa_old-psm3": "los que diesen dinero para comprar trigo y al- .",
+    "vision-bne-400dpi-corr": "los que diesen dinero para comprar trigo y al-"
+   }
+  },
+  {
+   "line": 94,
+   "bbox": [
+    0.5220264366913936,
+    0.6831395350210596,
+    0.8590308387711612,
+    0.6962209300080103
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "se decomisare, á los denunciadores.—L. V.",
+    "abbyy-bne": "se decomisare, á los denunciadores.—L. V.",
+    "abbyy-ia": "se decomisare, á los denunciadores. — L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "se decomisare, á los denunciadores.—L. Mi",
+    "tess-ia-300dpi-spa_old-psm3": "se decomisare, á los denunciadores.—L. V.",
+    "vision-bne-400dpi-corr": "se decomisare, á los denunciadores.—L. V."
+   }
+  },
+  {
+   "line": 95,
+   "bbox": [
+    0.5395642882988371,
+    0.6964591702693338,
+    0.8811606153627312,
+    0.7103955431730109
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "SETIEMBRE 2.—Noticia del tratado de paz",
+    "abbyy-bne": "Setiembre 2.—Noticia del tratado de paz",
+    "abbyy-ia": "Setiembre 2. — Noticia del tratado de paz",
+    "tess-bne-400dpi-spa_old-psm3": "SETIEMBRE 2.—Noticia del tratado de paz",
+    "tess-ia-300dpi-spa_old-psm3": "SETIEMBRE 2.—Noticia del tratado de paz",
+    "vision-bne-400dpi-corr": "SETIEMBRE 2.—Noticia del tratado de paz"
+   }
+  },
+  {
+   "line": 96,
+   "bbox": [
+    0.5220264383955924,
+    0.7106643356124253,
+    0.8832599103772206,
+    0.7267441860204503
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "de Basilea firmado entre España y Francia en",
+    "abbyy-bne": "de Basilea firmado entre España y Francia en",
+    "abbyy-ia": "de Basilea firmado entre España y Francia en",
+    "tess-bne-400dpi-spa_old-psm3": "de Basilea firmado entre España y EFrancia en",
+    "tess-ia-300dpi-spa_old-psm3": "de Basilea firmado entre España y Francia en",
+    "vision-bne-400dpi-corr": "de Basilea firmado entre España y Francia en"
+   }
+  },
+  {
+   "line": 97,
+   "bbox": [
+    0.5198237888742931,
+    0.7237762235516343,
+    0.7334801705420065,
+    0.7412790694136071
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "2 de Julio anterior.—L. V.",
+    "abbyy-bne": "2 de Julio anterior.—L. V.",
+    "abbyy-ia": "2 de Julio anterior. — L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "2 de Julio anterior.—L. V.",
+    "tess-ia-300dpi-spa_old-psm3": "2 de Julio anterior.—L. V.",
+    "vision-bne-400dpi-corr": "2 de Julio anterior.—L. V."
+   }
+  },
+  {
+   "line": 98,
+   "bbox": [
+    0.5418502176815548,
+    0.7412587415236731,
+    0.8832599076488418,
+    0.7558275060924377
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "—Este mes se remató el arbitrio ó Derecho",
+    "abbyy-bne": "Este mes se remato el arbitrio ó Derecho",
+    "abbyy-ia": "— Este mes se remató el arbitrio ó Derecho",
+    "tess-bne-400dpi-spa_old-psm3": "—Este mes se remartó el arbitrio 6 Derecho",
+    "tess-ia-300dpi-spa_old-psm3": "—Este mes se remartó el arbitrio 6 Derecho",
+    "vision-bne-400dpi-corr": "—Este mes se remató el arbitrio ó Derecho"
+   }
+  },
+  {
+   "line": 99,
+   "bbox": [
+    0.5218319906879236,
+    0.7555449370625215,
+    0.8834571768127993,
+    0.7733229735402039
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "del Quinto del vino por tiempo de s años,",
+    "abbyy-bne": "del Quinto del vino por tiempo de 5 años,",
+    "abbyy-ia": "del Quinto del vino por tiempo de 5 años,",
+    "tess-bne-400dpi-spa_old-psm3": "del Quinto del vino por tiempo de 5 años,",
+    "tess-ia-300dpi-spa_old-psm3": "del Quinto del vino por tiempo de 5 años,",
+    "vision-bne-400dpi-corr": "del Quinto del vino por tiempo de 5 años,"
+   }
+  },
+  {
+   "line": 101,
+   "bbox": [
+    0.5220264401555886,
+    0.7863372092038022,
+    0.8788546242496975,
+    0.8024475521810104
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "de 50,000 libras, á favor de Antonio Planas.—",
+    "abbyy-bne": "de 50,000 libras, á favor de Antonio Planas —",
+    "abbyy-ia": "de 50,000 libras, á favor de Antonio Planas. —",
+    "tess-bne-400dpi-spa_old-psm3": "de 50,000 libras, á favor de Antonio Planas.—",
+    "tess-ia-300dpi-spa_old-psm3": "de 50,000 libras, á favor de Antonio Planas.—",
+    "vision-bne-400dpi-corr": "de 50,000 libras, á favor de Antonio Planas.—"
+   }
+  },
+  {
+   "line": 102,
+   "bbox": [
+    0.521949356200517,
+    0.8007648065895353,
+    0.5683590136822193,
+    0.8155142635420372
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "L. V.",
+    "abbyy-bne": "L. V.",
+    "abbyy-ia": "L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "E, OcruBnE",
+    "tess-ia-300dpi-spa_old-psm3": "L. V.",
+    "vision-bne-400dpi-corr": "L. V."
+   }
+  },
+  {
+   "line": 103,
+   "bbox": [
+    0.5418502306442837,
+    0.8152680653117115,
+    0.8810572631883153,
+    0.8313953487903839
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "OCTUBRE 5.- Volvieron de la guerra el Re-",
+    "abbyy-bne": "Octubre 5.—Volvieron de la guerra el Re­",
+    "abbyy-ia": "Octubre 5. — Volvieron de la guerra el Re-",
+    "tess-bne-400dpi-spa_old-psm3": "5.—Volvieron de la guerra el Re-",
+    "tess-ia-300dpi-spa_old-psm3": "OcruBRe 5.—Volyvieron de la guerra el Re-",
+    "vision-bne-400dpi-corr": "OCTUBRE 5.- Volvieron de la guerra el Re-"
+   }
+  },
+  {
+   "line": 105,
+   "bbox": [
+    0.5264317273749729,
+    0.8458624706726636,
+    0.8744493356940432,
+    0.8590116276654715
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "mancia: el primero tan desnudo que inspirab",
+    "abbyy-bne": "mancia: el primero tan desnudo que inspiraba",
+    "abbyy-ia": "mancia: el primero tan desnudo que inspiraba",
+    "tess-bne-400dpi-spa_old-psm3": "mancia: el primero tan desnudo que inspiraba",
+    "tess-ia-300dpi-spa_old-psm3": "mancia: el primero tan desnudo que inspiraba",
+    "vision-bne-400dpi-corr": "mancia: el primero tan desnudo que inspiraba"
+   }
+  },
+  {
+   "line": 106,
+   "bbox": [
+    0.5242290771720357,
+    0.8560606061786201,
+    0.8766519733786252,
+    0.8735465109833745
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "lástima. Habían muerto s ó 6 de balazos y",
+    "abbyy-bne": "lástima. Habían muerto 5 ó 6 de balazos y",
+    "abbyy-ia": "lástima. Habían muerto 5 ó 6 de balazos y",
+    "tess-bne-400dpi-spa_old-psm3": "lástima. Habian muerto 5 Ó 6 de balazos y",
+    "tess-ia-300dpi-spa_old-psm3": "lástima. Habían muerto 5 6 6 de balazos y",
+    "vision-bne-400dpi-corr": "lástima. Habían muerto s ó 6 de balazos y"
+   }
+  },
+  {
+   "line": 107,
+   "bbox": [
+    0.5176211434946012,
+    0.873543123524212,
+    0.8215858998974694,
+    0.8895687645498531
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "5oo de enfermedades.—L. V.-T. A.",
+    "abbyy-bne": "500 de enfermedades.-L. V.—T. A.",
+    "abbyy-ia": "500 de enfermedades. — L.",
+    "tess-bne-400dpi-spa_old-psm3": "5oo de enfermedades.—L. V,.—T. A.",
+    "tess-ia-300dpi-spa_old-psm3": "5oo de enfermedades.—L. V.—T. A.",
+    "vision-bne-400dpi-corr": "soo de enfermedades.-L. V.-T. A."
+   }
+  },
+  {
+   "line": 108,
+   "bbox": [
+    0.5968736020845079,
+    0.960622956894713,
+    0.8040074580053063,
+    0.9899584390318995
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Digilized by Google",
+    "abbyy-bne": "",
+    "abbyy-ia": "V. — T.",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "",
+    "vision-bne-400dpi-corr": ""
+   }
+  }
+ ]
+}

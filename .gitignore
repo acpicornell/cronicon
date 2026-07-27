@@ -1,0 +1,28 @@
+# Raw facsimiles and everything regenerable from them
+data/raw/
+data/ia/
+data/pages/
+data/ocr/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Review sheets are regenerable from the sample manifest
+data/adjudication/sample_sheet_*.png
+data/adjudication/sample_round*_sheet_*.png
+data/adjudication/p0*/
+
+# The readable transcription (data/text/*.txt) is committed; the per-word
+# sidecars carrying every word's box and certainty tier are 100 MB and come
+# straight back out of build_text.py.
+data/text/*.json
+
+# HTR training material: line crops and compiled datasets, both regenerable
+data/htr/
+.venv-htr/
+models/

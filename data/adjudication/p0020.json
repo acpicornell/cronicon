@@ -1,0 +1,1423 @@
+{
+ "pdf_page": 20,
+ "page_class": "intro",
+ "reference": "vision-ia-300dpi-corr",
+ "panel": [
+  "abbyy-bne",
+  "abbyy-ia",
+  "tess-bne-400dpi-spa_old-psm3",
+  "tess-ia-300dpi-spa_old-psm3",
+  "vision-bne-400dpi-corr",
+  "vision-ia-300dpi-corr"
+ ],
+ "source_image": "leaf0018_630dpi.png",
+ "lines_total": 88,
+ "lines_agreed": 10,
+ "lines_contested": 78,
+ "contested": [
+  {
+   "line": 1,
+   "bbox": [
+    0.816993463755021,
+    0.09302325559318225,
+    0.838779956375698,
+    0.10465116277891084
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "XI",
+    "abbyy-bne": "any;per",
+    "abbyy-ia": "XI",
+    "tess-bne-400dpi-spa_old-psm3": "XI",
+    "tess-ia-300dpi-spa_old-psm3": "-",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 2,
+   "bbox": [
+    0.12200436210892825,
+    0.11482558182353186,
+    0.8627450808830835,
+    0.13372092987704953
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "any; per lo any 1759 farem libre nou si Del es servit,» etc... pero no sabemos si cxiste esa conti-",
+    "abbyy-bne": "lo any lyyyfarein. libre non si Den es servil,» etc... pero no sabemos si existe esa conti­",
+    "abbyy-ia": "any; per lo any lyjyfarem libre nou si Den es servil, ,» etc... pero no sabemos si existe esa conti-",
+    "tess-bne-400dpi-spa_old-psm3": "any; per lo any 1759 faren libre nou 51 Deu es servit,» etc... pero no sabemos s1 existe esa conti-",
+    "tess-ia-300dpi-spa_old-psm3": "any; per lo any 1759 farem libre nou sí Deu es servil,» etc... pero no sabemos sí cxiste esa conti-",
+    "vision-bne-400dpi-corr": "any; per lo any 1759 farem libre nou si Deu es servit,» etc... pero no sabemos si existe esa conti-"
+   }
+  },
+  {
+   "line": 3,
+   "bbox": [
+    0.12200436971891998,
+    0.1322143695805411,
+    0.4836601273399033,
+    0.14546525297276713
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "nuacion. Lo poseyó D. Miguel Peña, canónigo.",
+    "abbyy-bne": "nuación. Lo poseyó D. Miguel Peña, canónigo.",
+    "abbyy-ia": "nuación. Lo poseyó D. Miguel Peña, canónigo.",
+    "tess-bne-400dpi-spa_old-psm3": "nuacion. Lo poseyó D. Miguel Peña, canónigo. -",
+    "tess-ia-300dpi-spa_old-psm3": "nuacion. Lo poseyó D. Miguel Peña, canónigo.",
+    "vision-bne-400dpi-corr": "nuacion. Lo poseyó D. Miguel Peña, canónigo."
+   }
+  },
+  {
+   "line": 4,
+   "bbox": [
+    0.15659753271008361,
+    0.14505648179825847,
+    0.8631658429118835,
+    0.1708521589024401
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Anónimo. A continuacion de la copia del «Llibre de Memorias» etc. por Cristóbal Fiol, en el",
+    "abbyy-bne": "Anónimo. A continuación de la copia del <.<.Llibre de Memorias» etc. por Cristóbal Fiol, en el",
+    "abbyy-ia": "Anónimo. A continuación de la copia del « Llibre de Memorias » etc. por Cristóbal Fiol en el",
+    "tess-bne-400dpi-spa_old-psm3": "Anónimo. A continuacion de la copia del «Llibre de Memorias» etc. por Cristóbal Fiol, en el",
+    "tess-ia-300dpi-spa_old-psm3": "Anónimo. A continuacion de la copia del «Llibre de Memorias» etc. por Cristóbal Fiol, en el",
+    "vision-bne-400dpi-corr": "Anónimo. A continuacion de la copia del «Llibre de Memorias» etc. por Cristóbal Fiol, en el"
+   }
+  },
+  {
+   "line": 5,
+   "bbox": [
+    0.11982572098901381,
+    0.16715116323704926,
+    0.8627451036841883,
+    0.18610129533071473
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "tomo primero de las Misceláneas del P. Cayetano de Mallorca. Comprende unos pocos años in-",
+    "abbyy-bne": "tomo primero de las Misceláneas del P. Cayetano de Mallorca. Comprende unos pocos años in­",
+    "abbyy-ia": "tomo primero de las Misceláneas del P. Cayetano de Mallorca. Comprende unos pocos años in-",
+    "tess-bne-400dpi-spa_old-psm3": "tomo primero de las Misceláneas del P. Cayetano de Mallorca. Comprende unos pocos años in-",
+    "tess-ia-300dpi-spa_old-psm3": "tomo primero de las Misceláneas del P. Cayetano de Mallorca. Comprende unos pocos años in-",
+    "vision-bne-400dpi-corr": "tomo primero de las Misceláneas del P. Cayetano de Mallorca. Comprende unos pocos años in-"
+   }
+  },
+  {
+   "line": 6,
+   "bbox": [
+    0.12163436443528479,
+    0.18347994502285392,
+    0.3489375357616154,
+    0.1991854153652316
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "termedios entre 1733 y 1757•",
+    "abbyy-bne": "termedios entre 1733 y 1757-",
+    "abbyy-ia": "termedios entre 1733 y 1757.",
+    "tess-bne-400dpi-spa_old-psm3": "termedios entre 1733 Y 1757-",
+    "tess-ia-300dpi-spa_old-psm3": "termedios entre 1733 y I1757.",
+    "vision-bne-400dpi-corr": "termedios entre 1733 y I757-"
+   }
+  },
+  {
+   "line": 7,
+   "bbox": [
+    0.1587106943211826,
+    0.1976208126060751,
+    0.8631553369441674,
+    0.22254872471271825
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "GABRIEL FERRER: El P. Villafranca encabezó el tomo ó volúmen II de las Misceláneas del Padre",
+    "abbyy-bne": "Gabriel Ferrer: El P. Villafranca encabezó el tomo ó volúmen II de las Misceláneas del Padre",
+    "abbyy-ia": "Gabriel Ferrer: El P. Villafranca encabezó el tomo ó volumen II de las Misceláneas del Padre",
+    "tess-bne-400dpi-spa_old-psm3": "GapRzez, Fennen: El P. Villaſranca encabezó el tomo ó volúmen II de las Misceláneas del Padre",
+    "tess-ia-300dpi-spa_old-psm3": "' GaBR1EL FERnen: El P. Villaſranca encabezó el tomo 6 volúmen II de las Misceláneas del Padre",
+    "vision-bne-400dpi-corr": "GABRIEL FERRER: El P. Villafranca encabezó el tomo ó volúmen II de las Misceláneas del Padre"
+   }
+  },
+  {
+   "line": 8,
+   "bbox": [
+    0.11959299366024105,
+    0.21557548267993543,
+    0.8630132204953503,
+    0.23908092720099128
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Cayetano de Mallorca, con un extracto del «Noticiario de las cosas más notables sucedidas en Mia-",
+    "abbyy-bne": "Cayetano de Mallorca, con un extracto del «Noticiario délas cosas más notables sucedidas en Ma­",
+    "abbyy-ia": "Cayetano de Mallorca, con un extracto del «Noticiario délas cosas más notables sucedidas en Ma-",
+    "tess-bne-400dpi-spa_old-psm3": "Cayetano de Mallorca, con un extracto del «Noticiario delas cosas más notables sucedidas en Ma-",
+    "tess-ia-300dpi-spa_old-psm3": "Cayetano de Mallorca, con un extracto del «Noticiario de las cosas más notables sucedidas en Ma-",
+    "vision-bne-400dpi-corr": "Cayetano de Mallorca, con un extracto del «Noticiario de las cosas más notables sucedidas en Ma-"
+   }
+  },
+  {
+   "line": 10,
+   "bbox": [
+    0.11954005732562474,
+    0.24828721488926653,
+    0.8631426347777283,
+    0.27526922015798805
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Gabriel Ferrer, de casa de Villalonga Mir, desde dicho año hasta el 13 de Abril de 1783;» creyó el",
+    "abbyy-bne": "Gabriel Ferrer, de casa de Villalonga Mir, desde dicho año hasta el 13 de Abril de 1783;» creyó el",
+    "abbyy-ia": "Gabriel Ferrer, de casa de Villalonga Mir, desde dicho año hasta el 13 de Abril de 1783;» creyó el",
+    "tess-bne-400dpi-spa_old-psm3": "Gabriel Ferrer, de casa de Villalonga Mir, desde dicho año hasta el 13 de Abril de 1783;» creyó el S",
+    "tess-ia-300dpi-spa_old-psm3": "Gabriel Ferrer, de casa de Villalonga Mir, desde dicho año hasta el r 3 de Abril de 1783;» creyó el",
+    "vision-bne-400dpi-corr": "Gabriel Ferrer, de casa de Villalonga Mir, desde dicho año hasta el 13 de Abril de 1783;» creyó el"
+   }
+  },
+  {
+   "line": 11,
+   "bbox": [
+    0.11956381117368678,
+    0.26913278033132704,
+    0.8629979488482947,
+    0.2925069289484099
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "P. Villafranca que Ferrer moriria en aquella fecha, segun nota que puso al fin de su extracto.",
+    "abbyy-bne": "P. Villafranca que Ferrer moriria en aquella fecha, según nota que puso al fin de su extracto.",
+    "abbyy-ia": "P. Villafranca que Ferrer moriría en aquella fecha, según nota que puso al fin de su extracto.",
+    "tess-bne-400dpi-spa_old-psm3": "P. Villaſranca que Ferrer moriria en aquella fecha, segun nota que puso al fin de su extracto.",
+    "tess-ia-300dpi-spa_old-psm3": "P. Villaſranca que Ferrer moriria en aquella fecha, segun nota que puso al fin de su extracto.",
+    "vision-bne-400dpi-corr": "P. Villafranca que Ferrer moriria en aquella fecha, segun nota que puso al fin de su extracto."
+   }
+  },
+  {
+   "line": 12,
+   "bbox": [
+    0.11959803810778175,
+    0.286254554242951,
+    0.8607906974116961,
+    0.30845674833100956
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Ocupa éste 56 hojas y, á pesar de su extension, es de muy escaso valor histórico. Como lo hizo",
+    "abbyy-bne": "Ocupa éste 56 hojas y, á pesar de su extension, es de muy escaso valor histórico. Como lo hizo",
+    "abbyy-ia": "Ocupa éste 56 hojas y, á pesar de su extensión, es de muy escaso valor histórico. Como lo hizo",
+    "tess-bne-400dpi-spa_old-psm3": "Ocupa éste 56 hojas y, á pesar de su extension, es de muy escaso valor histórico. Como lo hizo É .",
+    "tess-ia-300dpi-spa_old-psm3": "Ocupa éste 56 hojas y, á pesar de su extension, es de muy escaso valor hustórico. Como lo hizo",
+    "vision-bne-400dpi-corr": "Ocupa éste 56 hojas y, á pesar de su extension, es de muy escaso valor histórico. Como lo hizo"
+   }
+  },
+  {
+   "line": 13,
+   "bbox": [
+    0.11949793046075913,
+    0.3004323851999786,
+    0.8610039610792717,
+    0.326281961190761
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "el transcriptor á continuacion del «Diario» de su compañero el P. Mallorca, prosiguió las noticias",
+    "abbyy-bne": "el transcripto!- á continuación del «Diario» de su compañero el P. Mallorca, prosiguió las noticias",
+    "abbyy-ia": "el transcriptor á continuación del «Diario» de su compañero el P. Mallorca, prosiguió las noticias",
+    "tess-bne-400dpi-spa_old-psm3": "el transcriptor á continuacion del «Diario» de su compañero el P. Mallorca, prosiguió las noticias",
+    "tess-ia-300dpi-spa_old-psm3": "el transcriptor á continuacion del «Diario» de su compañero el P. Mallorca, prosiguió las noticias",
+    "vision-bne-400dpi-corr": "el transcriptor á continuacion del «Diario» de su compañero el P. Mallorca, prosiguió las noticias"
+   }
+  },
+  {
+   "line": 14,
+   "bbox": [
+    0.11733062798535494,
+    0.31694872446044076,
+    0.8610051320261842,
+    0.34458958276355134
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "de Ferrer por su cuenta, desde 1783 á 1810, con esta advertencia «las noticias siguientes las sa-",
+    "abbyy-bne": "de Ferrer por su cuenta, desde 1783 á 1810, con esta advertencia «las noticias siguientes las sa­",
+    "abbyy-ia": "de Ferrer por su cuenta, desde 1783 á 1810, con esta advertencia «las noticias siguientes las sa-",
+    "tess-bne-400dpi-spa_old-psm3": "de Ferrer por su cuenta, desde 1783 á 1810, con esta advertencia «las noticias síguientes las sa- E'.",
+    "tess-ia-300dpi-spa_old-psm3": "de Ferrer por su cuenta, desde 1783 á I810, con esta advertencia «las noticias siguientes las sa-",
+    "vision-bne-400dpi-corr": "de Ferrer por su cuenta, desde 1783 á I81o, con esta advertencia «las noticias siguientes las sa-"
+   }
+  },
+  {
+   "line": 15,
+   "bbox": [
+    0.11764706989424266,
+    0.3386336871895086,
+    0.8605664525894171,
+    0.35901162811890797
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "caré del semanario de Mallorca y de otras parte.» Ignoro los detalles biográficos de Gabriel Fer-",
+    "abbyy-bne": "caré del semanario de Mallorca y de otras partes.» Ignoro los detalles biográficos de Gabriel Fer­",
+    "abbyy-ia": "caré del semanario de Mallorca y de otras partes.» Ignoro los detalles biográficos de Gabriel Fer-",
+    "tess-bne-400dpi-spa_old-psm3": "caré del semanario de Mallorca y de otras partes.» Ignoro los detalles biográficos de Gabriel Fer-",
+    "tess-ia-300dpi-spa_old-psm3": "caré del semanario de Mallorca y de otras partes. » Ignoro los detalles biográficos de Gabriel Fer-",
+    "vision-bne-400dpi-corr": "caré del semanario de Mallorca y de otras partes.» Ignoro los detalles biográficos de Gabriel Fer-"
+   }
+  },
+  {
+   "line": 16,
+   "bbox": [
+    0.11764705936017794,
+    0.35600706732067056,
+    0.6470588335809984,
+    0.37367491184363877
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "rer, el cual, segun el P. Villafranca, nació en 24 de Octubre de 1693.",
+    "abbyy-bne": "rer, el cual, según el P. Villafranca, nació en 24 de Octubre de 1693.",
+    "abbyy-ia": "rer, el cual, según el P. Villafranca, nació en 24 de Octubre de 1693.",
+    "tess-bne-400dpi-spa_old-psm3": "rer, el cual, segun el P. Villaſranca, nació en 24 de Octubre de 1693.",
+    "tess-ia-300dpi-spa_old-psm3": "rer, el cual, segun el P. Villaſranca, nació en 24 de Octubre de 1693.",
+    "vision-bne-400dpi-corr": "rer, el cual, segun el P. Villafranca, nació en 24 de Octubre de I693."
+   }
+  },
+  {
+   "line": 17,
+   "bbox": [
+    0.15438930063022,
+    0.3719482974687103,
+    0.860861690741058,
+    0.39547280311988997
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "CAYETANO FERRER: pbro. «Memoria y relació de lo que succel en esta isla sobre la esterilidat de",
+    "abbyy-bne": "Cayetano Ferrer: pbro. « Memoria y relació de lo qne sncceí en esta isla sobre la esterilidat de",
+    "abbyy-ia": "Cayetano Ferrer: pbro. «Memoria y relució de lo que succel en esta isla sobre la esterilidat de",
+    "tess-bne-400dpi-spa_old-psm3": "CAYETANO FERRER: pbro. «Memoria y relació de lo que succel en esta isla sobre la esterilidat de",
+    "tess-ia-300dpi-spa_old-psm3": "CAYETANO FERRER: pbro. «Memoria y relació de lo que succel en esta isla sobre la esterilidat de",
+    "vision-bne-400dpi-corr": "CAYETANO FERRER: pbro. «Memoria y relació de lo que succei en esta isla sobre la esterilidat de"
+   }
+  },
+  {
+   "line": 18,
+   "bbox": [
+    0.11719615834512831,
+    0.38748028418461766,
+    0.8588524583810161,
+    0.41439034938511776
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "blat, llegums et alías, comensant já en lo mes de Octubre de 1747, per el Dr. Cayetano Ferrer Pre. y",
+    "abbyy-bne": "blat, llegnms et alias, comensant já en lo mes de Octubre de i /4/, per el Dr. Cayetano Ferrer Pre. y",
+    "abbyy-ia": "blat, llegums et alias, comensant já en lo mes de Octubre de 1747, per el Dr. Cayetano Ferrer Pre. y",
+    "tess-bne-400dpi-spa_old-psm3": "blat, legums et alias, comensant já en lo mes de Octubre de 1747, per el Dr. Cayetano Ferrer Pre. y",
+    "tess-ia-300dpi-spa_old-psm3": "blat, llegums et alías, comensant Já en lo mes de Octubre de 1747, per el Dr. Cayetano Ferrer Pre. y",
+    "vision-bne-400dpi-corr": "blat, llegums et alias, comensant já en lo mes de Octubre de 1747, per el Dr. Cayetano Ferrer Pre. y"
+   }
+  },
+  {
+   "line": 19,
+   "bbox": [
+    0.11943893374297218,
+    0.405368037611189,
+    0.8608796157666305,
+    0.43023116950837736
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Vicari de la Parroquial Iglesia de Sta. Eulalia de esta ciutat de Palma, nalural de la vila de Selva.»",
+    "abbyy-bne": "Picari de la Parroquial Iglesia de Sia. Eulalia de esta cintat de Palma, natural de la vila de Selva.»",
+    "abbyy-ia": "Vtcan de la Parroquial Iglesia de Sla. Eulalia de esta ciutat de ‘Palma, natural de la vila de Selva »",
+    "tess-bne-400dpi-spa_old-psm3": "Vicari de la Parroquial Telesia de Sta. Eulalia de esta cmiat de ‘Palma, natural de la vila de Selva.»",
+    "tess-ia-300dpi-spa_old-psm3": "Vicarr de la Parroquial Ielesia de Sta. Eulalia de esía ciutat de Palma, natural de la vila de Selva.»",
+    "vision-bne-400dpi-corr": "Vicari de la Parroquial Iglesia de Sta. Eulalia de esta ciutat de Palma, natural de la vila de Selva.»"
+   }
+  },
+  {
+   "line": 20,
+   "bbox": [
+    0.11724502647377288,
+    0.42233923055718403,
+    0.8587477680953497,
+    0.4484752402138228
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Comprende los años 1747 á 1756, 1760 i 1764, 1767, 1770 y 1771. Copia de este diario en",
+    "abbyy-bne": "Comprende los años 1747 á 1756, 1760 á 1764, 1767, 1770 y 1771. Copia de este diario en",
+    "abbyy-ia": "Comprende los años 1747 á 1736, 1760 á 1764, 1767, I770 y i77I. Copia de este diario en",
+    "tess-bne-400dpi-spa_old-psm3": "Comprende los años 1747 á 1756, 1760 4 1764, 1767, 1770 y 1771. Copia de este diario en",
+    "tess-ia-300dpi-spa_old-psm3": "Comprende los años 1747 á 1756, 1760 á 1764, 1767, 1770 y 1771. Copia de este diario en",
+    "vision-bne-400dpi-corr": "Comprende los años 1747 á 1756, 1760 1764, 1767, 1770 y 1771. Copia de este diario en"
+   }
+  },
+  {
+   "line": 21,
+   "bbox": [
+    0.11728310639545618,
+    0.43943435567386313,
+    0.860903261109872,
+    0.4641683629891674
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "el tomo X de las Misceláneas Históricas del P. Luis de Villafranca, (I) fólios 463 å 558. El original",
+    "abbyy-bne": "el tomo X délas Misceláneas Históricas del P. Luis de Villafranca, (i) fólios 463 á 558. El original",
+    "abbyy-ia": "el tomo X délas Misceláneas Históricas del P. Luis de Villafranca, (1) fólios 463 á 558. El original",
+    "tess-bne-400dpi-spa_old-psm3": "el tomo X delas Misceláneas Históricas del P. Luis de Villaſfranca, (1) ſolios 463 á 558. El original",
+    "tess-ia-300dpi-spa_old-psm3": "el tomo X delas Misceláneas Históricas del P. Luis de Villaſranca, (1) ſólios 463 á 558. El original",
+    "vision-bne-400dpi-corr": "el tomo X de las Misceláneas Históricas del P. Luis de Villafranca, (r) fólios 463 á 558. El original"
+   }
+  },
+  {
+   "line": 22,
+   "bbox": [
+    0.1151284475960623,
+    0.4532179039088857,
+    0.858705198334523,
+    0.47783429251512466
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "ignoro quien lo posea. Es sumamente difuso y minucioso, por cuya razon sólo he aprovechado",
+    "abbyy-bne": "ignoro quien lo posea. Es sumamente difuso y minucioso, por cuya razon sólo he aprovechado",
+    "abbyy-ia": "ignoro quien lo posea. Es sumamente difuso y minucioso, por cuya razón sólo he aprovechado",
+    "tess-bne-400dpi-spa_old-psm3": "ignoro quien lo posea. Es sumamente diſuso y minucioso, por cuya razon sólo he aprovechado",
+    "tess-ia-300dpi-spa_old-psm3": "ignoro quien lo posea. Es sumamente diſuso y minucioso, por cuya razon sólo he aprovechado",
+    "vision-bne-400dpi-corr": "ignoro quien lo posea. Es sumamente difuso y minucioso, por cuya razon sólo he aprovechado"
+   }
+  },
+  {
+   "line": 23,
+   "bbox": [
+    0.11742193896485632,
+    0.4720338470781924,
+    0.37939229723043993,
+    0.4869937620236533
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "sucintos extractos de sus noticias.",
+    "abbyy-bne": "sucintos ' extractos de sus noticias.",
+    "abbyy-ia": "sucintos extractos de sus noticias.",
+    "tess-bne-400dpi-spa_old-psm3": "sucintos extractos de sus noticias.",
+    "tess-ia-300dpi-spa_old-psm3": "sucintos extractos de sus noticias.",
+    "vision-bne-400dpi-corr": "sucintos extractos de sus noticias."
+   }
+  },
+  {
+   "line": 24,
+   "bbox": [
+    0.1565167695623076,
+    0.4897039848027125,
+    0.8587052142053619,
+    0.5114329430044859
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "CAYETANO DE MALLORCA: (El P.) (2) En el tomo I de sus Noticias Misceláneas, tantas veces",
+    "abbyy-bne": "Cayetano de Mallorca: (El P.) (2) En el tomo I de sus Noticias Misceláneas, tantas veces",
+    "abbyy-ia": "Cayetano de Mallorca: (El P.) (2) En el tomo I de sus Noticias Misceláneas, tantas veces",
+    "tess-bne-400dpi-spa_old-psm3": "CAYETANO DE MAaLLORCA: (El P.) (2) En el tomo I de sus Noticias Misceláneas, tantas veces",
+    "tess-ia-300dpi-spa_old-psm3": "CaYETANO DE MaLLORCA: (El P.) (2) En el tomo I de sus Noticias Maisceláneas, tantas veces",
+    "vision-bne-400dpi-corr": "CAYETANO DE MALLORCA: (El P.) (2) En el tomo I de sus Noticias Misceláneas, tantas veces"
+   }
+  },
+  {
+   "line": 26,
+   "bbox": [
+    0.11733854339872023,
+    0.5231460610582734,
+    0.8586828200695739,
+    0.5457623654715825
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Mallorca, empezando desde el año 1750;» concluye en 1766. Es importante, si bien se da en él",
+    "abbyy-bne": "Mallorca, empezando desde el año 1750;» concluye en ryód. Es importante, si bien se da en él",
+    "abbyy-ia": "Mallorca, empezando desde el año 1750;» concluye en 17 66. Es importante, si bien se da en él",
+    "tess-bne-400dpi-spa_old-psm3": "Mallorca, empezando desde el año 1750;» concluye en 1766. Es importante, si bien se da en él",
+    "tess-ia-300dpi-spa_old-psm3": "Mallorca, empezando desde el año x750;» concluye en 1766. Es importante, sí bien se da en él",
+    "vision-bne-400dpi-corr": "Mallorca, empezando desde el año 1750;» concluye en 1766. Es importante, si bien se da en él"
+   }
+  },
+  {
+   "line": 27,
+   "bbox": [
+    0.1173698069148748,
+    0.540330750437086,
+    0.860847348565438,
+    0.5641975296880948
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "gran extension á las noticias internas de la órden religiosa á que pertenecía el autor, á las cues-",
+    "abbyy-bne": "gran extension á las noticias internas de la órden religiosa á que pertenecía el autor, á las cues­",
+    "abbyy-ia": "gran extensión a las noticias internas de la órden religiosa á que pertenecía el autor, á las cues-",
+    "tess-bne-400dpi-spa_old-psm3": "gran extension á las noticias internas de la órden religiosa á que pertenecia el autor, á las cues-",
+    "tess-ia-300dpi-spa_old-psm3": "gran extension á las noticias internas de la órden religiosa á que pertenecia el autor, á las cues-",
+    "vision-bne-400dpi-corr": "gran extension á las noticias internas de la órden religiosa á que pertenecía el autor, á las cues-"
+   }
+  },
+  {
+   "line": 28,
+   "bbox": [
+    0.11727494243850849,
+    0.557321500742097,
+    0.8587713756561266,
+    0.5818372548037745
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "tiones sobre el culto de Ramon Lull y á otros sucesos eclesiásticos de menor interés. A continua-",
+    "abbyy-bne": "tiones sobre el culto de Ramón Lull y á otros sucesos eclesiásticos de menor interés. A continua­",
+    "abbyy-ia": "tiones sobre el culto de llamón Lull y á otros sucesos eclesiásticos de menor interés. A continua-",
+    "tess-bne-400dpi-spa_old-psm3": "tiones sobre el culto de Ramon Lull y á otros sucesos eclesiásticos de menor interés. Á continua-",
+    "tess-ia-300dpi-spa_old-psm3": "tiones sobre el culto de Ramon Lull y á otros sucesos eclesiásticos de menor interés. A continua-",
+    "vision-bne-400dpi-corr": "tiones sobre el culto de Ramon Lull y á otros sucesos eclesiásticos de menor interés. A continua-"
+   }
+  },
+  {
+   "line": 29,
+   "bbox": [
+    0.11733772333862728,
+    0.5738424423194425,
+    0.8608887012814277,
+    0.5987186785329738
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "cion del Diario del P. Mallorca puso el P. Villafranca noticias de los años 1770 y siguientes",
+    "abbyy-bne": "ción del Diario del P. Mallorca p uso el P. Villafranca noticias délos años 1770 y siguientes",
+    "abbyy-ia": "ción del Diario del P. Mallorca p uso el P. Villafranca noticias délos años 1770 y siguientes",
+    "tess-bne-400dpi-spa_old-psm3": "cion del Diario del P. Mallorca puso el P. Villaſranca noticias de los años 1770 y siguientes",
+    "tess-ia-300dpi-spa_old-psm3": "cion del Diario del P. Mallorca p uso el P. Villaſranca noticias de los años I770 y siguientes",
+    "vision-bne-400dpi-corr": "cion del Diario del P. Mallorca puso el P. Villafranca noticias de los años 1770 y siguientes"
+   }
+  },
+  {
+   "line": 30,
+   "bbox": [
+    0.1130015840059434,
+    0.5920372525021076,
+    0.8608897244653073,
+    0.6172812520417199
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "(áunque con lagunas) hasta fines del siglo y principios del actual: son ménos difusas que las de",
+    "abbyy-bne": "(áunque con lagunas) hasta fines del siglo y principios del actual: son niénos difusas que las de",
+    "abbyy-ia": "(aunque con lagunas) hasta fines del siglo y principios del actual: son ménos difusas que las de",
+    "tess-bne-400dpi-spa_old-psm3": "(áunque con lagunas) hasta fines del siglo y principios del actual: son ménos diſusas que las de $U ANtECESOT. '",
+    "tess-ia-300dpi-spa_old-psm3": "(áunque con lagunas) hasta fines del siglo y principios del actual: son meénos diſusas que las de Su antecesor.",
+    "vision-bne-400dpi-corr": "(áunque con lagunas) hasta fines del siglo y principios del actual: son ménos difusas que las de su antecesor."
+   }
+  },
+  {
+   "line": 31,
+   "bbox": [
+    0.1543076389094033,
+    0.6267255815537344,
+    0.858704887625724,
+    0.6501020845893888
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "BUENAVENTURA SERRA y FERRAGUT: abogado, historiador, naturalista etc. (3) En uno",
+    "abbyy-bne": "su antecesor. Buenaventura Serra y Ferragut: abogado, historiador, naturalista etc. (3) En uno",
+    "abbyy-ia": "su antecesor. Buenaventura Serra y Ferragut: abogado, historiador, naturalista etc. (3) En uno",
+    "tess-bne-400dpi-spa_old-psm3": "BUENAVENTURA SERRA Y FERRAGuT: abogad o, historiador, naturalista etc. (3) En uno",
+    "tess-ia-300dpi-spa_old-psm3": "BUENAVENTURA SERRA Y FEnnaGur: abogad o, historiador, naturalista etc. (G3) En uno",
+    "vision-bne-400dpi-corr": "BUENAVENTURA SERRA Y FeRRAGuT: abogado, historiador, naturalista etc. (3) En uno"
+   }
+  },
+  {
+   "line": 32,
+   "bbox": [
+    0.11508279281970425,
+    0.6433073093227828,
+    0.8587306613771524,
+    0.668117682474043
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "de los innumerables tomos MS. de este laborioso y crudito escritor, (si así puede llamarse al que",
+    "abbyy-bne": "de los innumerables tomos MS. de este laborioso y erudito escritor, (si así puede llamarse al que",
+    "abbyy-ia": "de los innumerables tomos MS. de este laborioso y erudito escritor, (si así puede llamarse al que",
+    "tess-bne-400dpi-spa_old-psm3": "de los innumerables tomos MS. de este laborioso y erudito escritor, (si así puede llamarse al que",
+    "tess-ia-300dpi-spa_old-psm3": "de los innumerables tomos MS. de este laborioso y crudito escritor, (si así puede llamarse al que",
+    "vision-bne-400dpi-corr": "de los innumerables tomos MS. de este laborioso y erudito escritor, (si así puede llamarse al que"
+   }
+  },
+  {
+   "line": 33,
+   "bbox": [
+    0.11302263290402488,
+    0.661419944197373,
+    0.8608158777140955,
+    0.6853494615142474
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "pasa su vida trabajando, sin dar á la prensa ninguna obra de alguna importancia), existen unas no-",
+    "abbyy-bne": "pasa su vida trabajando, sin dar á la prensa ninguna obra de alguna importancia), existen unas no-",
+    "abbyy-ia": "pasa su vida trabajando, sin dar á la prensa ninguna obra de alguna importancia), existen unas no-",
+    "tess-bne-400dpi-spa_old-psm3": "pasa su vida trabajando, síin dar á la prensa ninguna obra de alguna importancia), existen unas no-",
+    "tess-ia-300dpi-spa_old-psm3": "pasa su vida trabajando, sín dar á la prensa ninguna obra de alguna importancia), existen unas no-",
+    "vision-bne-400dpi-corr": "pasa su vida trabajando, sin dar á la prensa ninguna obra de alguna importancia), existen unas no-"
+   }
+  },
+  {
+   "line": 34,
+   "bbox": [
+    0.1307189589372383,
+    0.6875000004673675,
+    0.4705882391019771,
+    0.702034883326237
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "(1) El P. Luis de Villafranca, en el siglo, Juan Mes-",
+    "abbyy-bne": "laboriosísimo y diligente investigador de nuestra historia (i) El P. Luis de Villafranca, en el siglo, Juan Mes­",
+    "abbyy-ia": "(1) El P. Luis de \\ íllafranca, en el siglo, Juan Fe",
+    "tess-bne-400dpi-spa_old-psm3": "laboriosísimo",
+    "tess-ia-300dpi-spa_old-psm3": "(1) El P. Luis de Villaſranca, en el siglo, Juan Mes-",
+    "vision-bne-400dpi-corr": "(I) El P. Luis de Villafranca, en el siglo; Juan Mes-"
+   }
+  },
+  {
+   "line": 35,
+   "bbox": [
+    0.4989106712246256,
+    0.6931684335726953,
+    0.8583877918835809,
+    0.7064193169649214
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "laboriosisimo y diligente investigador de nuestra historia",
+    "abbyy-bne": "y antigüedades; dejó varias obras manuscritas y solo, que",
+    "abbyy-ia": "laboriosísimo y diligente investigador de nuestra Me",
+    "tess-bne-400dpi-spa_old-psm3": "y diligente investigador de nuestra historia (1) El P. Luis de Villaſranca, en el siglo; Juan Mes-",
+    "tess-ia-300dpi-spa_old-psm3": "laboriosisimo y diligente investigador de nuestra historiz",
+    "vision-bne-400dpi-corr": "laboriosísimo y diligente investigador de nuestra historia y antigüedades; dejó varias obras manuscritas y solo, que"
+   }
+  },
+  {
+   "line": 36,
+   "bbox": [
+    0.11764707354314363,
+    0.6975853943047216,
+    0.47058822939803263,
+    0.7123085980738617
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "tre: nació en Villafranca de esta isla, en 4 de Novien-",
+    "abbyy-bne": "tre: nació en Villafranca de esta isla, en 4 de Noviem­",
+    "abbyy-ia": "tre. nació en \\ íllafranca de esta isla, en 4 de historia-",
+    "tess-bne-400dpi-spa_old-psm3": "tre: nació en Villafranca de esta isla, cnctÏj, de Noviem-",
+    "tess-ia-300dpi-spa_old-psm3": "tre: nació en Villafranca de esta isla, en 4 de Noviem-",
+    "vision-bne-400dpi-corr": "tre: nació en Villafranca de esta isla, en 4 de Noviem-"
+   }
+  },
+  {
+   "line": 37,
+   "bbox": [
+    0.4989106889512932,
+    0.704941860324287,
+    0.8562091456892293,
+    0.7165697675100156
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "y antigüedades; dejó varias obras manuscritas y solo, que",
+    "abbyy-bne": "yo sepa, dos impresas, falleció en 8 de Enero de 1767-",
+    "abbyy-ia": "y antigüedades; dejó varias obras manuscritas y solo, Novien",
+    "tess-bne-400dpi-spa_old-psm3": "y antigüedades; dejó varias obras manuscritas y solo, que yo sepa, dos impresas, ſalleció en 8 de Enero de 1767.",
+    "tess-ia-300dpi-spa_old-psm3": "y antigüedades; dejó varias obras manuscritas y solo, que",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 38,
+   "bbox": [
+    0.11731995371147515,
+    0.7070113159060045,
+    0.46871940573223486,
+    0.7236303500789343
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "bre de 1770; vistió el hábito capuchino en 1788: fué",
+    "abbyy-bne": "bre de 1770; vistió el hábito capuchino en 1788: fué",
+    "abbyy-ia": "bre de 1770; vistió el hábito capuchino en 1788: que",
+    "tess-bne-400dpi-spa_old-psm3": "bre de 1770; vistió el hábito capuchino en 1788: ſué",
+    "tess-ia-300dpi-spa_old-psm3": "bre de 1770; vistió el hábito capuchino en 1788: ſué",
+    "vision-bne-400dpi-corr": "bre de 1770; vistió el hábito capuchino en 1788: fué"
+   }
+  },
+  {
+   "line": 39,
+   "bbox": [
+    0.5054466404153135,
+    0.716431095378339,
+    0.8540304953871554,
+    0.7267441861621671
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "1o sepa, dos impresas, falleció en 8 de Enero de 1767.",
+    "abbyy-bne": "(5) Buenaventura Serra y Ferragut. Nació, según bibliógrafo",
+    "abbyy-ia": "yo sepa, dos impresas, falleció en 8 de Enero de fi",
+    "tess-bne-400dpi-spa_old-psm3": "(3) Buenaventura Serra y Ferragut. Nació, segun bibliógraſo entendidisimo",
+    "tess-ia-300dpi-spa_old-psm3": "yo sepa, dos impresas, ſalleció en 8 de Enero de 1767..",
+    "vision-bne-400dpi-corr": "yo sepa, dos impresas, falleció en 8 de Enero de 1707."
+   }
+  },
+  {
+   "line": 40,
+   "bbox": [
+    0.11724744864961627,
+    0.7166032557422202,
+    0.4686735900717397,
+    0.733815432654885
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "bibliógraio entendidísimo y tuvo á su cargo la bibliote-",
+    "abbyy-bne": "entendidísimo y tuvo á su cargo la bibliote­",
+    "abbyy-ia": "bibliogralo entendidísimo y tuvo á su cargo la 1767.. (3)",
+    "tess-bne-400dpi-spa_old-psm3": "y tuvo á su cargo la bibliote-",
+    "tess-ia-300dpi-spa_old-psm3": "bibliógraío entendidisimo y tuvo á su cargo la bibliote- (3)",
+    "vision-bne-400dpi-corr": "bibliógrafo entendidisimo y tuvo á su cargo la bibliote- y Ferragut. Nacio, segun"
+   }
+  },
+  {
+   "line": 41,
+   "bbox": [
+    0.5533769077710905,
+    0.725265017741581,
+    0.6775599155404561,
+    0.7326266196261512
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Buenaventura Serra",
+    "abbyy-bne": "dice Bover, en Palma, en 3 de Abril de 1728. Fué cate­",
+    "abbyy-ia": "Buenaventura Serra y Ferragut. Nació, bibliot",
+    "tess-bne-400dpi-spa_old-psm3": "dice Bover, en Palma, en 3 de Abril de 1728. Fue cate-",
+    "tess-ia-300dpi-spa_old-psm3": "Buenaventura Serra y Ferragut. Nació, ségun",
+    "vision-bne-400dpi-corr": "Buenaventura Serra (3) dice Bover, en Palma, en 3 de Abril de 1728. Fué cate-"
+   }
+  },
+  {
+   "line": 42,
+   "bbox": [
+    0.11726443909795674,
+    0.7254234007726194,
+    0.4709882683875852,
+    0.7451757414600779
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "ca de su convento durante largo tiempo, conservándola",
+    "abbyy-bne": "ca de su convento durante largo tiempo, conservándola drático de derecho canónico en la Universidad Litera­",
+    "abbyy-ia": "ca de su convento durante largo tiempo, ségun dice Bover, en Palma, en 3 de Abril de 1728. Fué conservando",
+    "tess-bne-400dpi-spa_old-psm3": "ca de su convento durante largo tiempo, conservándola drático de derecho canónico en la Universidad Litera-",
+    "tess-ia-300dpi-spa_old-psm3": "ca de su convento durante largo tiempo, conservándola dice Bover, en Palma, en 3 de Abril de 1728. Fué cate-",
+    "vision-bne-400dpi-corr": "ca de su convento durante largo tiempo, conservándola drático de derecho canónico en la Universidad Litera-"
+   }
+  },
+  {
+   "line": 45,
+   "bbox": [
+    0.3790849684705757,
+    0.744110718382993,
+    0.4684095826550598,
+    0.7529446406444771
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "justamente la",
+    "abbyy-bne": "justamente la ria;",
+    "abbyy-ia": "cate- drático de derecho canónico",
+    "tess-bne-400dpi-spa_old-psm3": "justamente la",
+    "tess-ia-300dpi-spa_old-psm3": "justamente la drático de derecho canónico",
+    "vision-bne-400dpi-corr": "justamente la"
+   }
+  },
+  {
+   "line": 46,
+   "bbox": [
+    0.688453162659606,
+    0.7455830388319716,
+    0.8562091523004519,
+    0.7558892814703697
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "en la Universidad Litera-",
+    "abbyy-bne": "en 27 de Julio",
+    "abbyy-ia": "en la Universidad justamente",
+    "tess-bne-400dpi-spa_old-psm3": "ria:",
+    "tess-ia-300dpi-spa_old-psm3": "en la Universidad Litera-",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 47,
+   "bbox": [
+    0.11736664252976432,
+    0.7471396946160914,
+    0.46874595618404047,
+    0.7632560800816078
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "atencion de propios y extraños. De memoria prodigiosa,",
+    "abbyy-bne": "de 1759 ^^ nombró el Ayuntamiento atención de propios y extraños. De memoria prodigiosa,",
+    "abbyy-ia": "atención de propios y extraños. De memoria Litera-",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "atencion de propios y extraños. De memoria prodigiosa,",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 48,
+   "bbox": [
+    0.49891068001883154,
+    0.7543604650481242,
+    0.8562091367567677,
+    0.7659883722338527
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "ria; en 27 de Julio de 1759 le nombró el Ayuntamiento",
+    "abbyy-bne": "de’Palma,",
+    "abbyy-ia": "ria; en 27 de Julio de 1759 le nombró el prodigios",
+    "tess-bne-400dpi-spa_old-psm3": "en 27 de Julio de 1759 le nombró el Ayuntamiento",
+    "tess-ia-300dpi-spa_old-psm3": "ria; en 27 de Julio de 1759 le nombró el Ayuntamiento",
+    "vision-bne-400dpi-corr": "ria; en 27 de Julio de 1759 le nombró el Ayuntamiento atencion de propios y extraños. De memoria prodigiosa,"
+   }
+  },
+  {
+   "line": 49,
+   "bbox": [
+    0.1150288966301151,
+    0.7547794186579826,
+    0.4710396571497292,
+    0.7755477426304352
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "é incansable en su aficion casi delirante por las cosas",
+    "abbyy-bne": "",
+    "abbyy-ia": "é incansable en su afición casi delirante por las Ayuntamiento",
+    "tess-bne-400dpi-spa_old-psm3": "atencion de propios y extraños. De memoria prodigiosa,",
+    "tess-ia-300dpi-spa_old-psm3": "É incansable en su aficion casi delirante por las cosas",
+    "vision-bne-400dpi-corr": "é incansable en su aficion casi delirante por las cosas"
+   }
+  },
+  {
+   "line": 50,
+   "bbox": [
+    0.498815510704749,
+    0.762928568063299,
+    0.8585004312684636,
+    0.7762173479342208
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "de Palma, cronista general del reino: en 4 de Marzo",
+    "abbyy-bne": "cronista general del reino: en 4 de Marzo",
+    "abbyy-ia": "de Palma, cronista general del reino: en 4 de eos",
+    "tess-bne-400dpi-spa_old-psm3": "de Palma, cronista general del reino: en 4 de_ Marzo é incansable en su aſicion casí delirante por las cosas de 1772",
+    "tess-ia-300dpi-spa_old-psm3": "de Palma, cronista general del reino: en 4 de Marzo",
+    "vision-bne-400dpi-corr": "de Palma, cronista general del reino: en 4 de Marzo 1772 fué nombrado académico correspondiente de"
+   }
+  },
+  {
+   "line": 51,
+   "bbox": [
+    0.11524709954885648,
+    0.7673813518930379,
+    0.47302464452076737,
+    0.7823470220214908
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "antiguas, reunió una coleccion notabilísima de noticias",
+    "abbyy-bne": "é incansable en su afición casi delirante",
+    "abbyy-ia": "antiguas, reunió una colección notabilísima de Marzo",
+    "tess-bne-400dpi-spa_old-psm3": "ſué nombrado",
+    "tess-ia-300dpi-spa_old-psm3": "antiguas, reunió una coleccion notabilisima de noticias",
+    "vision-bne-400dpi-corr": "antiguas, reunió una coleccion notabilisima de noticias"
+   }
+  },
+  {
+   "line": 52,
+   "bbox": [
+    0.6514161280568201,
+    0.7747093022159822,
+    0.8583877986860992,
+    0.7848837210034948
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "académico correspondiente de",
+    "abbyy-bne": "por las cosas de",
+    "abbyy-ia": "de",
+    "tess-bne-400dpi-spa_old-psm3": "académico correspondiente de",
+    "tess-ia-300dpi-spa_old-psm3": "de",
+    "vision-bne-400dpi-corr": "de"
+   }
+  },
+  {
+   "line": 53,
+   "bbox": [
+    0.5206971698943047,
+    0.7747093026249343,
+    0.6514161155087455,
+    0.7835689047297234
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "1772 fué nombrado",
+    "abbyy-bne": "1772 fué nombrado académico correspondiente de antiguas, reunió una colección notabilísima de noticias la Real de la Historia. Era eruditísimo y apreciado por",
+    "abbyy-ia": "1772 fué nombrado",
+    "tess-bne-400dpi-spa_old-psm3": "antiguas, reuni_Ó una",
+    "tess-ia-300dpi-spa_old-psm3": "1772 fué nombrado académico correspondiente de",
+    "vision-bne-400dpi-corr": "la Real de la Historia. Era eruditísimo y apreciado por"
+   }
+  },
+  {
+   "line": 54,
+   "bbox": [
+    0.11965771814058662,
+    0.7774329211144957,
+    0.3161737483881435,
+    0.7896901646090394
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "y documentos interesantes para",
+    "abbyy-bne": "y documentos interesantes para",
+    "abbyy-ia": "académico correspondiente notici; v documentos interesantes para",
+    "tess-bne-400dpi-spa_old-psm3": "coleccion notabilisima",
+    "tess-ia-300dpi-spa_old-psm3": "y documentos interesantes para",
+    "vision-bne-400dpi-corr": "y documentos interesantes para"
+   }
+  },
+  {
+   "line": 55,
+   "bbox": [
+    0.31760087190732456,
+    0.7792014029651034,
+    0.47123868044758793,
+    0.79379387921567
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "la historia de esta isla,",
+    "abbyy-bne": "la historia de esta isla,",
+    "abbyy-ia": "la historia de esta de",
+    "tess-bne-400dpi-spa_old-psm3": "de noticias",
+    "tess-ia-300dpi-spa_old-psm3": "la historia de esta isla,",
+    "vision-bne-400dpi-corr": "la historia de esta isla,"
+   }
+  },
+  {
+   "line": 56,
+   "bbox": [
+    0.5010893264898936,
+    0.7834302324485403,
+    0.7494553420286247,
+    0.7936046512360528
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "la Real de la Historia. Era eruditisimo",
+    "abbyy-bne": "",
+    "abbyy-ia": "la Real de la Historia. Era eruditísimo",
+    "tess-bne-400dpi-spa_old-psm3": "la Real de la Historia. Era eruditisimo",
+    "tess-ia-300dpi-spa_old-psm3": "la Real de la Historia. Era eruditisimo",
+    "vision-bne-400dpi-corr": "nacionales, con quienes «Misceláneas» que son un muchos sábios extranjeros y"
+   }
+  },
+  {
+   "line": 57,
+   "bbox": [
+    0.11946739279965211,
+    0.7876696667640313,
+    0.28782075324869827,
+    0.7994970513892539
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "ormando trece tomos de",
+    "abbyy-bne": "",
+    "abbyy-ia": "y apreciado isl lormando trece tomos de",
+    "tess-bne-400dpi-spa_old-psm3": "y apreciado. por y documentos interesantes para ’ la historia de esta isla, muchos sábios extranjeros Y nacionales, con quienes formando trece tomos de",
+    "tess-ia-300dpi-spa_old-psm3": "y apreciado por formando trece tomos de",
+    "vision-bne-400dpi-corr": "ormando trece tomos de"
+   }
+  },
+  {
+   "line": 58,
+   "bbox": [
+    0.7516339902417322,
+    0.7876914016924546,
+    0.8540305003356099,
+    0.7950581392648628
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "y apreciado por",
+    "abbyy-bne": "",
+    "abbyy-ia": "«Misceláneas» que son",
+    "tess-bne-400dpi-spa_old-psm3": "«Misceláneas»",
+    "tess-ia-300dpi-spa_old-psm3": "«Misceláneas» que son",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 59,
+   "bbox": [
+    0.29146981018614454,
+    0.7897341632302011,
+    0.39479484185756747,
+    0.8019737182565936
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Miscelaneas»",
+    "abbyy-bne": "",
+    "abbyy-ia": "Dor",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "un",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 60,
+   "bbox": [
+    0.49869900901084413,
+    0.7922600431171157,
+    0.6952409333695221,
+    0.8054788391316208
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "muchos sábios extranjeros y",
+    "abbyy-bne": "muchos sábios extranjeros y nacionales, con quienes formando trece tomos de «Misceláneas»",
+    "abbyy-ia": "muchos sábios extranjeros y",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "muchos sábios extranjeros y",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 62,
+   "bbox": [
+    0.6949891120691681,
+    0.793580683354476,
+    0.8562091503854432,
+    0.8068315667467022
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": ". nacionales, con quienes",
+    "abbyy-bne": "",
+    "abbyy-ia": "nacionales, con 1",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "nacionales, con quienes",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 63,
+   "bbox": [
+    0.1151803210496974,
+    0.7956396270414021,
+    0.414346538759296,
+    0.8119334144640765
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "verdadero arscnal de inapreciables diplomas,",
+    "abbyy-bne": "",
+    "abbyy-ia": "verdadero arsenal de inapreciables diplomas,",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "verdadero arsenal de inapreciables diplomas,",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 64,
+   "bbox": [
+    0.4161220035633255,
+    0.8023255813765926,
+    0.47058823427254964,
+    0.8125000001641052
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "códices,",
+    "abbyy-bne": "",
+    "abbyy-ia": "quienes",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "códices,",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 65,
+   "bbox": [
+    0.4989106871434037,
+    0.8052325580238794,
+    0.8169934628929068,
+    0.815406976811392
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "sostuvo activa correspondencia. A pesar de su",
+    "abbyy-bne": "sostuvo activa correspondencia. A pesar de su vasta verdadero arsenal de inapreciables diplomas, códices, erudición ha dejado muy pocos trabajos impresos, pero",
+    "abbyy-ia": "sostuvo activa correspondencia. A pesar de su",
+    "tess-bne-400dpi-spa_old-psm3": "sostuvo activa correspondencia. A pesar de su vasta verdadero arsenal de inapreciables diplomas, códices, erudicion ha dejado muy pocos trabajos impresos, pero",
+    "tess-ia-300dpi-spa_old-psm3": "sostuvo activa correspondencia. A pesar de su vasta",
+    "vision-bne-400dpi-corr": "sostuvo activa correspondencia. A pesar de su vasta verdadero arsenal de inapreciables diplomas, códices, erudicion ha dejado muy pocos trabajos impresos,"
+   }
+  },
+  {
+   "line": 66,
+   "bbox": [
+    0.11522135262541547,
+    0.8065622761512421,
+    0.4708231722063563,
+    0.8218166343911967
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "diarios y relaciones manuscritas, citas de autores clasi-",
+    "abbyy-bne": "diarios y relaciones manuscritas, citas de autores clási­",
+    "abbyy-ia": "códice díanos y relaciones manuscritas, citas de autores",
+    "tess-bne-400dpi-spa_old-psm3": "diarios y relaciones manuscritas, citas de autores clási-",
+    "tess-ia-300dpi-spa_old-psm3": "diarios y relaciones manuscritas, citas de autores clási-",
+    "vision-bne-400dpi-corr": "diarios y relaciones manuscritas, citas de autores clási-"
+   }
+  },
+  {
+   "line": 67,
+   "bbox": [
+    0.8191721127019873,
+    0.808139535153742,
+    0.8562091499886446,
+    0.8154069765831768
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "vasta",
+    "abbyy-bne": "sí",
+    "abbyy-ia": "vasta",
+    "tess-bne-400dpi-spa_old-psm3": "sí",
+    "tess-ia-300dpi-spa_old-psm3": "erudicion",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 68,
+   "bbox": [
+    0.5008095383563095,
+    0.8108778168893023,
+    0.8564863848099729,
+    0.8287145808351526
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "crudicion ha dejado muy pocos trabajos impresos, pero",
+    "abbyy-bne": "muchísimos manuscritos, de los cuales, triste es decir­",
+    "abbyy-ia": "erudición ha dejado muy pocos trabajos impresos, das",
+    "tess-bne-400dpi-spa_old-psm3": "muchisimos manuscritos, de los cuales, triste es decir-",
+    "tess-ia-300dpi-spa_old-psm3": "ha dejado muy pocos trabajos impresos, pero",
+    "vision-bne-400dpi-corr": "pero sí muchísimos manuscritos, de los cuales, triste es decir-"
+   }
+  },
+  {
+   "line": 69,
+   "bbox": [
+    0.11546841190685307,
+    0.8168433452968821,
+    0.22875816746860078,
+    0.8286219083121943
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "cos, catálogos de",
+    "abbyy-bne": "cos, catálogos de",
+    "abbyy-ia": "eos, catálogos de",
+    "tess-bne-400dpi-spa_old-psm3": "cos, catálogos de",
+    "tess-ia-300dpi-spa_old-psm3": "cos, catálogos de",
+    "vision-bne-400dpi-corr": "cos, catálogos de"
+   }
+  },
+  {
+   "line": 71,
+   "bbox": [
+    0.3681917234933661,
+    0.8212209299715538,
+    0.4705882335872438,
+    0.8313953487590664
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "conozco los Io",
+    "abbyy-bne": "conozco los 10",
+    "abbyy-ia": "conozco los pero",
+    "tess-bne-400dpi-spa_old-psm3": "conozco los 10",
+    "tess-ia-300dpi-spa_old-psm3": "conozco los 10",
+    "vision-bne-400dpi-corr": "conozco los 1o"
+   }
+  },
+  {
+   "line": 72,
+   "bbox": [
+    0.5010549815743176,
+    0.8235683500367764,
+    0.8540648558979704,
+    0.8348618826071199
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "sí muchisimos manuscritos, de los cuales, triste es decir-",
+    "abbyy-bne": "lo, hay muy pocos de alguna importancia para nuestra",
+    "abbyy-ia": "sí muchísimos manuscritos, de los cuales, triste es i",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "sí muchisimios manuscritos, de los cuales, triste es decir-",
+    "vision-bne-400dpi-corr": "lo, hay muy pocos de alguna importancia para nuestra"
+   }
+  },
+  {
+   "line": 73,
+   "bbox": [
+    0.11521089529230541,
+    0.8271415169521101,
+    0.4446897219162288,
+    0.8433657338895674
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "primeros, actualmente en poder del Sr. Marqués",
+    "abbyy-bne": "primeros, actualmente en poder del Sr. Marqués",
+    "abbyy-ia": "primeros, actualmente en poder del Sr. Marqués",
+    "tess-bne-400dpi-spa_old-psm3": "primeros, actualmente en poder del Sr. Marqués",
+    "tess-ia-300dpi-spa_old-psm3": "primeros, actualmente en poder del Sr. Marqués",
+    "vision-bne-400dpi-corr": "actualmente en poder del Sr. Marqués"
+   }
+  },
+  {
+   "line": 74,
+   "bbox": [
+    0.4962353773163146,
+    0.8308477748218501,
+    0.856714509763035,
+    0.8577055631683912
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "historia mispos se luna a estrata ento tiesos,",
+    "abbyy-bne": "de historia. El Sr. Serra se limitó á estudiarla en los",
+    "abbyy-ia": "decir- lo, hay muy pocos",
+    "tess-bne-400dpi-spa_old-psm3": "de lo, hay muy pocos de alguna importancia para nuestra historia. El Sr. Serra se limitó á estudiarla en los",
+    "tess-ia-300dpi-spa_old-psm3": "",
+    "vision-bne-400dpi-corr": "de primeros, Vivot. historia. El Si. Serra se limitó á estudiarla en los"
+   }
+  },
+  {
+   "line": 75,
+   "bbox": [
+    0.4531590413424566,
+    0.8328488374602057,
+    0.4705882347650235,
+    0.8415697672878565
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "de",
+    "abbyy-bne": "libros,",
+    "abbyy-ia": "de alguna importancia para <",
+    "tess-bne-400dpi-spa_old-psm3": "libros,",
+    "tess-ia-300dpi-spa_old-psm3": "de",
+    "vision-bne-400dpi-corr": "libros,"
+   }
+  },
+  {
+   "line": 76,
+   "bbox": [
+    0.11546840925222707,
+    0.8357558139347321,
+    0.15686274405205763,
+    0.8459302327222447
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Vivot.",
+    "abbyy-bne": "Vivot.",
+    "abbyy-ia": "Vivot.",
+    "tess-bne-400dpi-spa_old-psm3": "Vivot.",
+    "tess-ia-300dpi-spa_old-psm3": "lo, hay muy pocos de alguna importancia para nuestra Vivor.",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 77,
+   "bbox": [
+    0.16303016928281605,
+    0.8368662990460464,
+    0.47090548912428853,
+    0.8533867790099084
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Parece que aumentó y continuó los «Anales» y",
+    "abbyy-bne": "Parece que aumentó y continuó los «Anales» y y hay motivo para creer que nunca intentó hacerlo en",
+    "abbyy-ia": "Parece que aumentó y continuó los nuestra historia. El Sr. Serra se limitó á estudiarla en los «Anales»",
+    "tess-bne-400dpi-spa_old-psm3": "Parece que aumentó y continuó los «Anales» y y hay motivo para creer que nunca intentó hacerlo en",
+    "tess-ia-300dpi-spa_old-psm3": "Parece que aumentó y continuó los «Anales» y historta. El Sr. Serra se Iimitó á estudiarla en los libros,",
+    "vision-bne-400dpi-corr": "Parece que aumentó y continuó los «Anales» y creer que nunca intentó hacerlo en"
+   }
+  },
+  {
+   "line": 80,
+   "bbox": [
+    0.26579520762580294,
+    0.8502906976072128,
+    0.4705882278135583,
+    0.8604651163947253
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "pavorde Terrassa. Falleció en",
+    "abbyy-bne": "pavorde Terrassa. Falleció en",
+    "abbyy-ia": "pavorde Terrassa. Falleció libros,",
+    "tess-bne-400dpi-spa_old-psm3": "pavorde Terrassa. Falleció en",
+    "tess-ia-300dpi-spa_old-psm3": "pavorde Terrassa. Falleció en",
+    "vision-bne-400dpi-corr": "pavorde Terrassa. Falleció en"
+   }
+  },
+  {
+   "line": 81,
+   "bbox": [
+    0.4963139233965528,
+    0.8525080299583052,
+    0.8564516741367388,
+    0.8784755638921267
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Yos artosis arecien 47 de Dicetre de serio en",
+    "abbyy-bne": "los archivos. Falleció en 17 de Diciembre de 1784. 15",
+    "abbyy-ia": "V hay motivo para creer que nunca intentó hacerlo",
+    "tess-bne-400dpi-spa_old-psm3": "/ los archivos. Falleció en 17 de Diciembre de 1784. 15",
+    "tess-ia-300dpi-spa_old-psm3": "hay motivo para creer que nunca intentó hacerlo en K)S archivos. Falleció en 17 de Diciembre de r78.. 15",
+    "vision-bne-400dpi-corr": "r hay motivo para los archivos. Falleció en 17 de Diciembre de 1784. I5"
+   }
+  },
+  {
+   "line": 82,
+   "bbox": [
+    0.11546841207283916,
+    0.8574793877609941,
+    0.28758170259673216,
+    0.8677856303993922
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "is de Noviembre de 1847",
+    "abbyy-bne": "de Noviembre de 1847.",
+    "abbyy-ia": "t 15 de Noviembre de en los archivos. Falleció en 17 de Diciembre de 1847.",
+    "tess-bne-400dpi-spa_old-psm3": "de Noviembre de 1847.",
+    "tess-ia-300dpi-spa_old-psm3": "de Noviembre de r847.",
+    "vision-bne-400dpi-corr": "de Noviembre de I847"
+   }
+  },
+  {
+   "line": 83,
+   "bbox": [
+    0.13045714235087436,
+    0.86691140870634,
+    0.4686559625391473,
+    0.8806553540763525
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "(2) Cayetano de Mallorca (El Padre). Dice Bover",
+    "abbyy-bne": "(2) Cayetano de Mallorca (El Padre). Dice Bover",
+    "abbyy-ia": "(2) Cayetano de Mallorca (El Padre). Dice Bov.",
+    "tess-bne-400dpi-spa_old-psm3": "(2) Cayetano de Mallorca (El Padre). Dice Bover",
+    "tess-ia-300dpi-spa_old-psm3": "(2) Cayetano de Mallorca (El Padre). Dice Bover",
+    "vision-bne-400dpi-corr": "(2) Cayetano de Mallorca (El Padre). Dice Bover"
+   }
+  },
+  {
+   "line": 84,
+   "bbox": [
+    0.12183637024360476,
+    0.8761956411226546,
+    0.4643405143797438,
+    0.8910246617407833
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "ue nació en Palma en 1707. Su nombre en el siglo er:",
+    "abbyy-bne": "que nació en Palma en 1707. Su nombre en el siglo era",
+    "abbyy-ia": "oue nació en Palma en 1707. Su nombre en el siglo ei",
+    "tess-bne-400dpi-spa_old-psm3": "que nació en Palma en 1707. Su nombre en el siglo era",
+    "tess-ia-300dpi-spa_old-psm3": "ue nació en Palma en 1707. Su nombre en el siglo era",
+    "vision-bne-400dpi-corr": "jue nacio en Palma en 1707. Su nombre en el siglo era"
+   }
+  },
+  {
+   "line": 85,
+   "bbox": [
+    0.12174537784265,
+    0.8865157046718402,
+    0.4643354942019698,
+    0.900652489722986
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "intonio Deya: en 1725 vistió el habito de religioso ca",
+    "abbyy-bne": "Antonio Deyá: en 1725 vistió el hábito de religioso ca­",
+    "abbyy-ia": "Antonio Deyá: en 1725 vistió el hábito de religioso c:",
+    "tess-bne-400dpi-spa_old-psm3": "Antonio Deyá: en 1725 vistió el hábito de religioso ca-",
+    "tess-ia-300dpi-spa_old-psm3": "tonio Deyá: en 1725 vistió el hábito de religioso ca-",
+    "vision-bne-400dpi-corr": "Antonio Deyá: en 1725 vistió el hábito de religioso ca"
+   }
+  },
+  {
+   "line": 86,
+   "bbox": [
+    0.11526384504488414,
+    0.896863473191422,
+    0.46861739258932983,
+    0.911171215315874
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "puchino, de cuyo convento fué dos veces guardian. Fué",
+    "abbyy-bne": "puchino, de cuyo convento fué dos veces guardian. Fué",
+    "abbyy-ia": "puchino, de cuyo convento fué dos veces guardián",
+    "tess-bne-400dpi-spa_old-psm3": "puchino, de cuyo convento ſué dos veces guardian. Fué",
+    "tess-ia-300dpi-spa_old-psm3": "Ppuchino, de cuyo convento ſué dos veces guardian. Fué",
+    "vision-bne-400dpi-corr": "puchino, de cuyo convento fué dos veces guardian. Fué"
+   }
+  }
+ ]
+}

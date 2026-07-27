@@ -1,0 +1,1603 @@
+{
+ "pdf_page": 34,
+ "page_class": "body_years",
+ "reference": "vision-ia-300dpi-corr",
+ "panel": [
+  "abbyy-bne",
+  "abbyy-ia",
+  "tess-bne-400dpi-spa_old-psm3",
+  "tess-ia-300dpi-spa_old-psm3",
+  "vision-bne-400dpi-corr",
+  "vision-ia-300dpi-corr"
+ ],
+ "source_image": "leaf0032_630dpi.png",
+ "lines_total": 111,
+ "lines_agreed": 23,
+ "lines_contested": 88,
+ "contested": [
+  {
+   "line": 0,
+   "bbox": [
+    0.40305010843901495,
+    0.07558139529089636,
+    0.5468409567025971,
+    0.0901162792730571
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "MAYORICENSE",
+    "abbyy-bne": "",
+    "abbyy-ia": "7",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "MAYORICENSE. 7",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 1,
+   "bbox": [
+    0.10893247294435163,
+    0.10029069748566377,
+    0.8518518556395261,
+    0.11484098965463041
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "gun tiempo. Cuando pasaron al lugar donde nónigos; de que se vé, que aquellos primeros",
+    "abbyy-bne": "gun tiempo. Cuando pasaron al lugar donde",
+    "abbyy-ia": "gun tiempo. Cuando pasaron al lugar donde",
+    "tess-bne-400dpi-spa_old-psm3": "gun tiempo. Cuando pasaron al lugar donde",
+    "tess-ia-300dpi-spa_old-psm3": "gun tiempo. Cuando pasaron al lugar donde",
+    "vision-bne-400dpi-corr": "gun tiempo. Cuando pasaron al lugar donde"
+   }
+  },
+  {
+   "line": 2,
+   "bbox": [
+    0.10675381716372197,
+    0.1162790696658964,
+    0.4204792920301779,
+    0.13081395364805715
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "habitan al presente se dirá en su tiempo.»",
+    "abbyy-bne": "habitan al presente se dirá en su tiempo.»",
+    "abbyy-ia": "habitan al presente se dirá en su tiempo. »",
+    "tess-bne-400dpi-spa_old-psm3": "habitan al presente se dirá en su tiempo.»",
+    "tess-ia-300dpi-spa_old-psm3": "habitan al presente se dirá en su tiempo.»",
+    "vision-bne-400dpi-corr": "habitan al presente se dirá en su tiempo.»"
+   }
+  },
+  {
+   "line": 3,
+   "bbox": [
+    0.12636165933456728,
+    0.13074204933365463,
+    0.46405227557828693,
+    0.14252061234896685
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Este mismo año de 1232, el dia 2 de Abril,",
+    "abbyy-bne": "«Este mismo año de 1232, el dia 2 de Abril,",
+    "abbyy-ia": "«Este mismo año de 1232, el dia 2 de Abril,",
+    "tess-bne-400dpi-spa_old-psm3": "«Este mismo año de 1232, el día 2 de Abril,",
+    "tess-ia-300dpi-spa_old-psm3": "«Este mismo año de 1232, el día 2 de Abril,",
+    "vision-bne-400dpi-corr": "«Este mismo año de 1232, el dia 2 de Abril,"
+   }
+  },
+  {
+   "line": 4,
+   "bbox": [
+    0.10457516677774376,
+    0.14389534934602122,
+    0.4662309243987271,
+    0.15989399310207442
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "concedió el Señor Rey á los mallorquines el",
+    "abbyy-bne": "concedió el Señor Rey á los mallorquines el",
+    "abbyy-ia": "concedió el Señor Rey á los mallorquines el",
+    "tess-bne-400dpi-spa_old-psm3": "concedió el Señor Rey á-los mallorquines el",
+    "tess-ia-300dpi-spa_old-psm3": "concedió el Señor Rey 4 los mallorquines el",
+    "vision-bne-400dpi-corr": "concedió el Señor Rey á los mallorquines el"
+   }
+  },
+  {
+   "line": 7,
+   "bbox": [
+    0.10457516393446531,
+    0.18895348865266748,
+    0.2222222203792602,
+    0.20203488311332085
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "sus dominios.»",
+    "abbyy-bne": "sus dominios.»",
+    "abbyy-ia": "sus dominios.»",
+    "tess-bne-400dpi-spa_old-psm3": "sus dominios.»",
+    "tess-ia-300dpi-spa_old-psm3": "sus dominios.» _",
+    "vision-bne-400dpi-corr": "sus dominios.»"
+   }
+  },
+  {
+   "line": 8,
+   "bbox": [
+    0.11111111133572059,
+    0.20347467635241967,
+    0.46623093111162883,
+    0.2209302322985811
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Queda dicho, que cuando se fué el Rey de",
+    "abbyy-bne": "«Queda dicho, que cuando se fué el Rey de",
+    "abbyy-ia": "«Queda dicho, que cuando se fué el Rey de",
+    "tess-bne-400dpi-spa_old-psm3": "«Queda dicho, que cuando se fué el Rey de 7",
+    "tess-ia-300dpi-spa_old-psm3": "«Queda dicho, que cuando se fué el Rey de",
+    "vision-bne-400dpi-corr": "«Queda dicho, que cuando se fué el Rey de"
+   }
+  },
+  {
+   "line": 9,
+   "bbox": [
+    0.1067538179929623,
+    0.21790341555091497,
+    0.46623093865191767,
+    0.23409893969696915
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Mallorca, despues de la conquista, desembarcó",
+    "abbyy-bne": "Mallorca, despues de la conquista, desembarcó",
+    "abbyy-ia": "Mallorca, después de la conquista, desembarcó",
+    "tess-bne-400dpi-spa_old-psm3": "Mallorca, despues de. la conquista, desembarcó a ai",
+    "tess-ia-300dpi-spa_old-psm3": "Mallorca, despues de la conquista, desembarcó",
+    "vision-bne-400dpi-corr": "Mallorca, despues de la conquista, desembarcó"
+   }
+  },
+  {
+   "line": 11,
+   "bbox": [
+    0.10457516890192667,
+    0.24705535931609834,
+    0.46623092652291,
+    0.2645348834904415
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Poblet, en donde se movió la disputa entre él,",
+    "abbyy-bne": "Poblet, en donde se movió la disputa entre él,",
+    "abbyy-ia": "Poblet, en donde se movió la disputa entre él,",
+    "tess-bne-400dpi-spa_old-psm3": "Poblet, en donde se movió la disputa entre 6l,",
+    "tess-ia-300dpi-spa_old-psm3": "Poblet, en donde se movió la disputa entre él,",
+    "vision-bne-400dpi-corr": "Poblet, en donde se movió la disputa entre él,"
+   }
+  },
+  {
+   "line": 13,
+   "bbox": [
+    0.10457517431223884,
+    0.2776162788413038,
+    0.4662309319332221,
+    0.29360465122168067
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "aquella provincia, que allí convocó para tratar",
+    "abbyy-bne": "aquella provincia, que allí convocó para tratar",
+    "abbyy-ia": "aquella provincia, que allí convocó para tratar",
+    "tess-bne-400dpi-spa_old-psm3": "aquella provincia, que alli convocó para tratar",
+    "tess-ia-300dpi-spa_old-psm3": "aquella provincia, que alli convocó para tratar",
+    "vision-bne-400dpi-corr": "aquella provincia, que allí convocó para tratar"
+   }
+  },
+  {
+   "line": 14,
+   "bbox": [
+    0.10457517016554323,
+    0.29210836260002493,
+    0.46623092778652653,
+    0.3081395346256357
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "del nuevo Obispado que intentaba fundar en Ma-",
+    "abbyy-bne": "del nuevo Obispado que intentaba fundar en Ma­",
+    "abbyy-ia": "del nuevo Obispado que intentaba fundar en Ma-",
+    "tess-bne-400dpi-spa_old-psm3": "del nuevo Obispado que intentaba ſundar en Ma-",
+    "tess-ia-300dpi-spa_old-psm3": "del nuevo Obispado que intentaba ſundar en Ma-",
+    "vision-bne-400dpi-corr": "del nuevo Obispado que intentaba fundar en Ma-"
+   }
+  },
+  {
+   "line": 15,
+   "bbox": [
+    0.10457517431223884,
+    0.3066860462831642,
+    0.4662309319332221,
+    0.322732626495581
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "llorca; oponfanse el Obispo y Cabildo de Bar-",
+    "abbyy-bne": "llorca; oponíanse el Obispo y Cabildo de Bar­",
+    "abbyy-ia": "llorca; oponíanse el Obispo y Cabildo de Bar-",
+    "tess-bne-400dpi-spa_old-psm3": "llorca; oponianse el Obispo y Cabildo de Bar-",
+    "tess-ia-300dpi-spa_old-psm3": "llorca; oponlanse el Obispo y Cabildo de Bar-",
+    "vision-bne-400dpi-corr": "llorca; oponíanse el Obispo y Cabildo de Bar-"
+   }
+  },
+  {
+   "line": 16,
+   "bbox": [
+    0.1045751682846427,
+    0.321220930198842,
+    0.46623092590562604,
+    0.33575581418100287
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "celona con motivo de la referida donacion del",
+    "abbyy-bne": "celona con motivo de la referida donación del",
+    "abbyy-ia": "celona con motivo de la referida donación del",
+    "tess-bne-400dpi-spa_old-psm3": "celona con motivo de la reſerida donacion del",
+    "tess-ia-300dpi-spa_old-psm3": "celona con motivo de la reſerida donacion del",
+    "vision-bne-400dpi-corr": "celona con motivo de la referida donacion del"
+   }
+  },
+  {
+   "line": 17,
+   "bbox": [
+    0.10457517431223884,
+    0.33568904585160897,
+    0.4662309319332221,
+    0.35188456999766315
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "moro Hali, Duque de Dénia y Señor de las islas",
+    "abbyy-bne": "moro Halí, Duque de Dénia y Señor de las islas",
+    "abbyy-ia": "moro Hall, Duque de Dénia y Señor de las islas",
+    "tess-bne-400dpi-spa_old-psm3": "moro Hali, Duque de Deénia y Señor de las islas",
+    "tess-ia-300dpi-spa_old-psm3": "moro Hall, Duque de Dénia y Señor de las islas",
+    "vision-bne-400dpi-corr": "moro Halí, Duque de Dénia y Señor de las islas"
+   }
+  },
+  {
+   "line": 18,
+   "bbox": [
+    0.10457516815636106,
+    0.350290697445955,
+    0.46405228881531646,
+    0.36631330999183565
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "de Mallorca, al Obispo y iglesia de Barcelona",
+    "abbyy-bne": "de Mallorca, al Obispo y iglesia de Barcelona",
+    "abbyy-ia": "de Mallorca, al Obispo y iglesia de Barcelona",
+    "tess-bne-400dpi-spa_old-psm3": "de Mallorca, al Obispo y iglesia de Barcelona",
+    "tess-ia-300dpi-spa_old-psm3": "de Mallorca, al Obispo y iglesía de Barcelona",
+    "vision-bne-400dpi-corr": "de Mallorca, al Obispo y iglesia de Barcelona"
+   }
+  },
+  {
+   "line": 19,
+   "bbox": [
+    0.10675382038947631,
+    0.3648255816921937,
+    0.46623094104843177,
+    0.3808139529492792
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "en 1058. Sin embargo, fué resuelto que se de-",
+    "abbyy-bne": "en 1058. Sin embargo, fué resuelto que se de­",
+    "abbyy-ia": "en 1058. Sin embargo, fué resuelto que se de-",
+    "tess-bne-400dpi-spa_old-psm3": "en 1058. Sin embargo, ſue resuelto que se de-",
+    "tess-ia-300dpi-spa_old-psm3": "en r1058. Sin embargo, ſué resuelto que se de-",
+    "vision-bne-400dpi-corr": "en 1058. Sin embargo, fué resuelto que se de-"
+   }
+  },
+  {
+   "line": 20,
+   "bbox": [
+    0.10665064490695664,
+    0.3792133580111333,
+    0.46415946265382335,
+    0.39588876231153103
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "bía crear Obispo en Mallorca, por la grandeza",
+    "abbyy-bne": "bía crear Obispo en Mallorca, por la grandeza",
+    "abbyy-ia": "bía crear Obispo en Mallorca, por la grandeza",
+    "tess-bne-400dpi-spa_old-psm3": "bía crear Obispo en Mallorca, por la ‘orandeza",
+    "tess-ia-300dpi-spa_old-psm3": "bía crear Obispo en Mallorca, por la grandeza",
+    "vision-bne-400dpi-corr": "bía crear Obispo en Mallorca, por la grandeza"
+   }
+  },
+  {
+   "line": 21,
+   "bbox": [
+    0.10675382038947631,
+    0.39534883754343353,
+    0.46623094104843177,
+    0.4098939929012706
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "del reino y por quedar separado del continen-",
+    "abbyy-bne": "del reino y por quedar separado del continen",
+    "abbyy-ia": "del reino y por quedar separado del continen-",
+    "tess-bne-400dpi-spa_old-psm3": "del reino y por quedar separado del continen-",
+    "tess-ia-300dpi-spa_old-psm3": "del reino y por quedar separado del continen-",
+    "vision-bne-400dpi-corr": "del reino y por quedar separado del continen-"
+   }
+  },
+  {
+   "line": 22,
+   "bbox": [
+    0.10457517491499847,
+    0.40988372127552697,
+    0.4662309325359818,
+    0.4258720925326125
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "te de España, y que S. M. eligiese el primer",
+    "abbyy-bne": "te de España, y que S. M. eligiese el primer",
+    "abbyy-ia": "te de España, y que S. M. eligiese el primer",
+    "tess-bne-400dpi-spa_old-psm3": "te de España, y que 5. M..eligiese el primer",
+    "tess-ia-300dpi-spa_old-psm3": "te de España, y que S. M. eligiese el primer",
+    "vision-bne-400dpi-corr": "te de España, y que S. M. eligiese el primer"
+   }
+  },
+  {
+   "line": 23,
+   "bbox": [
+    0.10893246839091293,
+    0.4243227326439025,
+    0.4640522881668212,
+    0.4390459364130427
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Obispo, y los sucesores los debiese nombrar",
+    "abbyy-bne": "Obispo, y los sucesores los debiese nombrar",
+    "abbyy-ia": "Obispo, y los sucesores los debiese nombrar",
+    "tess-bne-400dpi-spa_old-psm3": "Obispoz. y los sucesores los debiese nombrar",
+    "tess-ia-300dpi-spa_old-psm3": "Obispo, y los sucesores los debiese nombrar",
+    "vision-bne-400dpi-corr": "Obispo, y los sucesores los debiese nombrar"
+   }
+  },
+  {
+   "line": 25,
+   "bbox": [
+    0.10675382326501877,
+    0.4534746759137963,
+    0.46405228000295495,
+    0.4680232556251712
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "nombrado debiese ser de la iglesia de Barcelona",
+    "abbyy-bne": "nombrado debiese ser de la iglesia de Barcelona",
+    "abbyy-ia": "nombrado debiese ser de la iglesia de Barcelona",
+    "tess-bne-400dpi-spa_old-psm3": "nombrado debiese ser de la iglesía de Barcelona",
+    "tess-ia-300dpi-spa_old-psm3": "nombrado debiese ser de la iglesía de Barcelona",
+    "vision-bne-400dpi-corr": "nombrado debiese ser de la iglesia de Barcelona"
+   }
+  },
+  {
+   "line": 27,
+   "bbox": [
+    0.12200435223209839,
+    0.48255814004369557,
+    0.4662309332798844,
+    0.4985465113007812
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«En seguida de lo dicho, el Señor Rey, en di-",
+    "abbyy-bne": "«En seguida de lo dicho, el Señor Rey, en di­",
+    "abbyy-ia": "«En seguida de lo dicho, el Señor Rey, en di-",
+    "tess-bne-400dpi-spa_old-psm3": "«En seguida de lo dicho, el Señor Rey, en di-",
+    "tess-ia-300dpi-spa_old-psm3": "«En seguida de lo dicho, el Señor Rey, en di-",
+    "vision-bne-400dpi-corr": "«En seguida de lo dicho, el Señor Rey, en di-"
+   }
+  },
+  {
+   "line": 28,
+   "bbox": [
+    0.10675381889165508,
+    0.49852767944081233,
+    0.4662309395506104,
+    0.5116279064418093
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "cho año de 1232, postuló para Obispo de Ma-",
+    "abbyy-bne": "cho año de 1232, postuló para Obispo de Ma­",
+    "abbyy-ia": "cho año de 1232, postuló para Obispo de Ma-",
+    "tess-bne-400dpi-spa_old-psm3": "cho año de 1232, postuló para Obispo de Ma-",
+    "tess-ia-300dpi-spa_old-psm3": "cho año de 1232, postuló para Obispo de Ma-",
+    "vision-bne-400dpi-corr": "cho año de 1232, postuló para Obispo de Ma-"
+   }
+  },
+  {
+   "line": 29,
+   "bbox": [
+    0.10675381472498854,
+    0.5129564191822055,
+    0.466230935383944,
+    0.5262073025744316
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "llorca al Padre Bernardo, Abad de San Felio de",
+    "abbyy-bne": "llorca al Padre Bernardo, Abad de San Felio de",
+    "abbyy-ia": "llorca al Padre Bernardo, Abad de San Felio de",
+    "tess-bne-400dpi-spa_old-psm3": "llorca al Padre Bernardo, Abad de San Felio de",
+    "tess-ia-300dpi-spa_old-psm3": "UYorca al Padre Bernardo, Abad de San Felio de",
+    "vision-bne-400dpi-corr": "llorca al Padre Bernardo, Abad de San Felio de"
+   }
+  },
+  {
+   "line": 30,
+   "bbox": [
+    0.10675381977918007,
+    0.52761627964762,
+    0.4640522765171162,
+    0.5436046509047056
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Guixols, y en s de Abril del propio año, con",
+    "abbyy-bne": "Guixols, y en 5 de Abril del propio año, con",
+    "abbyy-ia": "Guixols, y en 5 de Abril del propio año, con",
+    "tess-bne-400dpi-spa_old-psm3": "Guixols, y en 5 de Abril del propio año, con",
+    "tess-ia-300dpi-spa_old-psm3": "Guixols, y en 5 de Abril del propio año, con",
+    "vision-bne-400dpi-corr": "Guixols, y en s de Abril del propio año, con"
+   }
+  },
+  {
+   "line": 31,
+   "bbox": [
+    0.1067538179929623,
+    0.542108363013375,
+    0.46623093865191767,
+    0.5553592464056011
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "instrumento ante Guillermo de Sala, notario,",
+    "abbyy-bne": "instrumento ante Guillermo de Sala, notario,",
+    "abbyy-ia": "instrumento ante Guillermo de Sala, notario,",
+    "tess-bne-400dpi-spa_old-psm3": "¡nstrumento ante Guillermo de Sala, notario,",
+    "tess-ia-300dpi-spa_old-psm3": "instrumento ante Guillermo de Sala, notario,",
+    "vision-bne-400dpi-corr": "instrumento ante Guillermo de Sala, notario,"
+   }
+  },
+  {
+   "line": 32,
+   "bbox": [
+    0.10893247544366792,
+    0.5566860468699839,
+    0.46623093218160416,
+    0.5712603061438409
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "otorgó donacion d el y á sus sucesores Obis-",
+    "abbyy-bne": "otorgó donación a él y a sus sucesores Obis­",
+    "abbyy-ia": "otorgó donación á él y á sus sucesores Obis-",
+    "tess-bne-400dpi-spa_old-psm3": "otorgó donacion á él y 4 sus sucesores Obis-",
+    "tess-ia-300dpi-spa_old-psm3": "otorgó donacion 4 él y 4 sus sucesores Obis-",
+    "vision-bne-400dpi-corr": "otorgó donacion á él y á sus sucesores Obis-"
+   }
+  },
+  {
+   "line": 34,
+   "bbox": [
+    0.10893246808045541,
+    0.5856890461311434,
+    0.46405228785636365,
+    0.6004122499002835
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "de los frutos de todas las tierras de su porcion",
+    "abbyy-bne": "de los frutos de todas las tierras de su porción",
+    "abbyy-ia": "de los frutos de todas las tierras de su porción",
+    "tess-bne-400dpi-spa_old-psm3": "de los ſrutos de todas las tierras de su porcion",
+    "tess-ia-300dpi-spa_old-psm3": "de los ſrutos de todas las tierras de su porcion",
+    "vision-bne-400dpi-corr": "de los frutos de todas las tierras de su porcion"
+   }
+  },
+  {
+   "line": 36,
+   "bbox": [
+    0.10675381889165508,
+    0.6148255817588119,
+    0.4662309395506104,
+    0.6308139530158975
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Ibiza, la que ni fué aceptada, ni tuvo efecto",
+    "abbyy-bne": "Ibiza, la que ni fué aceptada, ni tuvo efecto",
+    "abbyy-ia": "Ibiza, la que ni fué aceptada, ni tuvo efecto",
+    "tess-bne-400dpi-spa_old-psm3": "Ibiza, la- que ni ſué aceptada, ni tuvo eſecto",
+    "tess-ia-300dpi-spa_old-psm3": "Ibiza, la que ni ſué aceptada, ni tuvo eſecto",
+    "vision-bne-400dpi-corr": "Ibiza, la que ni fué aceptada, ni tuvo efecto"
+   }
+  },
+  {
+   "line": 38,
+   "bbox": [
+    0.10675381080341993,
+    0.6453488371658963,
+    0.4662309314623753,
+    0.659893993085379
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "trataremos del concordato de 13I5 del Rey",
+    "abbyy-bne": "trataremos del concordato de 1315 ^®^ R^y",
+    "abbyy-ia": "trataremos del concordato de 1315 del Rey",
+    "tess-bne-400dpi-spa_old-psm3": "trataremos del concordato .de 1315 del Rey",
+    "tess-ia-300dpi-spa_old-psm3": "trataremos del concordato de 1315 del Rey",
+    "vision-bne-400dpi-corr": "trataremos del concordato de 13I5 del Rey"
+   }
+  },
+  {
+   "line": 39,
+   "bbox": [
+    0.10675381949557088,
+    0.6613372099150419,
+    0.4117646925959325,
+    0.6758720927739114
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "D. Sancho de Mallorca sobre diezmos.»",
+    "abbyy-bne": "D. Sancho de Mallorca sobre diezmos.»",
+    "abbyy-ia": "D. Sancho de Mallorca sobre diezmos.»",
+    "tess-bne-400dpi-spa_old-psm3": "D. Sancho de Mallorca sobre diezmos.»",
+    "tess-ia-300dpi-spa_old-psm3": "D. Sancho de Mallorca sobre diezmos.",
+    "vision-bne-400dpi-corr": "D. Sancho de Mallorca sobre diezmos.»"
+   }
+  },
+  {
+   "line": 40,
+   "bbox": [
+    0.2636165591036224,
+    0.6773255812545195,
+    0.31590413937132306,
+    0.6889534884402481
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "I233.",
+    "abbyy-bne": "1233-",
+    "abbyy-ia": "1233.",
+    "tess-bne-400dpi-spa_old-psm3": "L23:3)",
+    "tess-ia-300dpi-spa_old-psm3": "» 1233-",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 41,
+   "bbox": [
+    0.12854030969976551,
+    0.6918604654746351,
+    0.4684095898645043,
+    0.706419317123332
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«En el año de 1233 tuvo el Gobierno de",
+    "abbyy-bne": "«En el año de 1233 tuvo el Gobierno de",
+    "abbyy-ia": "«En el año de 1233 tuvo el Gobierno de",
+    "tess-bne-400dpi-spa_old-psm3": "«En el.año de 1233 tuvo el Gobierno de",
+    "tess-ia-300dpi-spa_old-psm3": "«En el año de 1233 tuvo el Gobierno de",
+    "vision-bne-400dpi-corr": "«En el año de 1233 tuvo el Gobierno de"
+   }
+  },
+  {
+   "line": 42,
+   "bbox": [
+    0.10675382376591795,
+    0.7078488370311866,
+    0.39215685637206305,
+    0.7209302326151313
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Mallorca el Sr. Infante D. Pedro...»",
+    "abbyy-bne": "Mallorca el Sr. Infante D. Pedro...»",
+    "abbyy-ia": "Mallorca el Sr. Infante D. Pedro...»",
+    "tess-bne-400dpi-spa_old-psm3": "Mallorca el Sr. Inſante D. Pedro...»",
+    "tess-ia-300dpi-spa_old-psm3": "Mallorca el Sr. Inſante D. Pedro...»",
+    "vision-bne-400dpi-corr": "Mallorca el Sr. Infante D. Pedro...»"
+   }
+  },
+  {
+   "line": 43,
+   "bbox": [
+    0.12854031111588743,
+    0.7223203766957671,
+    0.46840959128062626,
+    0.7340989397110792
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Este mismo año con instrumento ante Ber-",
+    "abbyy-bne": "«Este mismo año con instrumento ante Ber­",
+    "abbyy-ia": "«Este mismo año con instrumento ante Ber-",
+    "tess-bne-400dpi-spa_old-psm3": "«Este mismo año con instrumento ante Ber-",
+    "tess-ia-300dpi-spa_old-psm3": "«Este mismo año con instrumento ante Ber-",
+    "vision-bne-400dpi-corr": "«Este mismo año con instrumento ante Ber-"
+   }
+  },
+  {
+   "line": 45,
+   "bbox": [
+    0.10893246812912784,
+    0.7514534887616792,
+    0.46840958878808325,
+    0.7645348832223325
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "maestro Juan, notario del Señor D. Nuño Sans",
+    "abbyy-bne": "maestro Juan, notario del Señor D. Ñuño Sans",
+    "abbyy-ia": "maestro Juan, notario del Señor D. Ñuño Sans",
+    "tess-bne-400dpi-spa_old-psm3": "maestro Juan, notario del Señor D. Nuño Sans",
+    "tess-ia-300dpi-spa_old-psm3": "maestro Juan, notario del Señor D. Nuño Sans",
+    "vision-bne-400dpi-corr": "maestro Juan, notario del Señor D. Nuño Sans"
+   }
+  },
+  {
+   "line": 46,
+   "bbox": [
+    0.1089324591422,
+    0.7659010603182527,
+    0.4684095798011554,
+    0.7791519437104788
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "conde de Rosellon y Cerdaña, de las nonas de",
+    "abbyy-bne": "conde de Rosellon y Cerdaña, de las nonas de",
+    "abbyy-ia": "conde de Rosellon y Cerdaña, de las nonas de",
+    "tess-bne-400dpi-spa_old-psm3": "conde de Rosellon y Cerdaña; de las nonas de",
+    "tess-ia-300dpi-spa_old-psm3": "conde de Rosellon y Cerdaña, de las nonas de",
+    "vision-bne-400dpi-corr": "conde de Rosellon y Cerdaña, de las nonas de"
+   }
+  },
+  {
+   "line": 47,
+   "bbox": [
+    0.10893247395492438,
+    0.7805232556097148,
+    0.46623093069286053,
+    0.7965253237193057
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Julio, fundó dicho Señor Conde un perpétuo",
+    "abbyy-bne": "Juho, fundó dicho Señor Conde un perpétuo",
+    "abbyy-ia": "Julio, fundó dicho Señor Conde un perpétuo",
+    "tess-bne-400dpi-spa_old-psm3": "Julio, fundó dicho Señor Conde un perpétuo",
+    "tess-ia-300dpi-spa_old-psm3": "Julio, fundó dicho Señor Conde un perpétuo",
+    "vision-bne-400dpi-corr": "Julio, fundó dicho Señor Conde un perpétuo"
+   }
+  },
+  {
+   "line": 48,
+   "bbox": [
+    0.1111111260972627,
+    0.7950530033970328,
+    0.4684095828351989,
+    0.8095930230670317
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "eclesiástico beneficio en la Seo de Mallorca;",
+    "abbyy-bne": "eclesiástico beneficio en la Seo de Mallorca;",
+    "abbyy-ia": "eclesiástico beneficio en la Seo de Mallorca;",
+    "tess-bne-400dpi-spa_old-psm3": "eclesiástico beneſicio en la Seo de Mallorca;",
+    "tess-ia-300dpi-spa_old-psm3": "eclesiástico beneficio en la Seo de Mallorca;",
+    "vision-bne-400dpi-corr": "eclesiástico beneficio en la Seo de Mallorca;"
+   }
+  },
+  {
+   "line": 49,
+   "bbox": [
+    0.10675382415247123,
+    0.8094817430922909,
+    0.4684095817734546,
+    0.8256772672383451
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "aceptaron la dicha fundacion, Jaime de Sta. Eu-",
+    "abbyy-bne": "aceptaron la dicha fundación, Jaime de Sta. Eu­",
+    "abbyy-ia": "aceptaron la dicha fundación, Jaime de Sta. Eu-",
+    "tess-bne-400dpi-spa_old-psm3": "aceptaron la dicha fundacion, Jaime de Sta. En-",
+    "tess-ia-300dpi-spa_old-psm3": "aceptaron la dicha fundacion, Jaime de Sta. Eu-",
+    "vision-bne-400dpi-corr": "aceptaron la dicha fundacion, Jaime de Sta. Eu-"
+   }
+  },
+  {
+   "line": 50,
+   "bbox": [
+    0.1111111260972627,
+    0.8255813960221158,
+    0.4684095828351989,
+    0.8401162788809852
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "genia primer canónigo y rector de dicha Seo,",
+    "abbyy-bne": "genia primer canónigo y rector de dicha Seo,",
+    "abbyy-ia": "genia primer canónigo y rector de dicha Seo,",
+    "tess-bne-400dpi-spa_old-psm3": "genia primer canónigo y rector dedicha Seo,",
+    "tess-ia-300dpi-spa_old-psm3": "genia primer canónigo y rector de dicha Seo, .",
+    "vision-bne-400dpi-corr": "genia primer canónigo y rector de dicha Seo,"
+   }
+  },
+  {
+   "line": 52,
+   "bbox": [
+    0.1089324672304351,
+    0.8545347469102667,
+    0.46840958788939047,
+    0.8707302710563208
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "se intitulan en dicho instrumento, siendo cier-",
+    "abbyy-bne": "se intitulan en dicho instrumento, siendo cier­",
+    "abbyy-ia": "se intitulan en dicho instrumento, siendo cier-",
+    "tess-bne-400dpi-spa_old-psm3": "se intitulan en dicho instrumento, siendo cier-",
+    "tess-ia-300dpi-spa_old-psm3": "se intitulan en dicho instrumento, siendo cier-",
+    "vision-bne-400dpi-corr": "se intitulan en dicho instrumento, siendo cier-"
+   }
+  },
+  {
+   "line": 53,
+   "bbox": [
+    0.10893246663130657,
+    0.869186046307389,
+    0.46840958729026194,
+    0.8851744186877659
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "to que no había obispo confirmado por la San-",
+    "abbyy-bne": "to que no había obispo confirmado por la San­",
+    "abbyy-ia": "to que no había obispo confirmado por la San-",
+    "tess-bne-400dpi-spa_old-psm3": "to que no habla obispo conſirmado por la San-",
+    "tess-ia-300dpi-spa_old-psm3": "to que no había obispo conſirmado por la San-",
+    "vision-bne-400dpi-corr": "to que no había obispo confirmado por la San-"
+   }
+  },
+  {
+   "line": 54,
+   "bbox": [
+    0.10893247429408345,
+    0.8836866904305174,
+    0.4705882319150668,
+    0.8997093018531067
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "ta Sede, y por consiguiente no podía haber ca-",
+    "abbyy-bne": "ta Sede, y por consiguiente no podía haber ca­",
+    "abbyy-ia": "to Sede, y por consiguiente no podía haber MAYORICENSE. ca-",
+    "tess-bne-400dpi-spa_old-psm3": "ta Sede, y por consiguiente no podía haber ca-",
+    "tess-ia-300dpi-spa_old-psm3": "ta Sede, y por consiguiente no podía haber ca-",
+    "vision-bne-400dpi-corr": "ta Sede, y por consiguiente no podía haber ca-"
+   }
+  },
+  {
+   "line": 55,
+   "bbox": [
+    0.8082788674265955,
+    0.07994186111606816,
+    0.8213507624935206,
+    0.09156976717850551
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "7",
+    "abbyy-bne": "nónigos; de que se vé, que aquellos primeros-",
+    "abbyy-ia": "nónigos; de que se vé, que aquellos primeros",
+    "tess-bne-400dpi-spa_old-psm3": "nónigos; de que se vé, que aquellos primeros",
+    "tess-ia-300dpi-spa_old-psm3": "nónigos; de que se vé, que aquellos primeros",
+    "vision-bne-400dpi-corr": "nónigos; de que se vé, que aquellos primeros"
+   }
+  },
+  {
+   "line": 56,
+   "bbox": [
+    0.49019608994767816,
+    0.11627906957868706,
+    0.8518518475686615,
+    0.1308139535608479
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "eclesiásticos que sirvieron en dicha iglesia, des-",
+    "abbyy-bne": "eclesiásticos que sirvieron en dicha iglesia, des­",
+    "abbyy-ia": "eclesiásticos que sirvieron en dicha iglesia, des-",
+    "tess-bne-400dpi-spa_old-psm3": "eclesiásticos que sirvieron en dicha iglesía, des-",
+    "tess-ia-300dpi-spa_old-psm3": "eclesiásticos que sirvieron en dicha iglesia, des-",
+    "vision-bne-400dpi-corr": "eclesiásticos que sirvieron en dicha iglesia, des-"
+   }
+  },
+  {
+   "line": 57,
+   "bbox": [
+    0.49003244007439456,
+    0.1287880457186008,
+    0.8519671423781158,
+    0.1454743392048915
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "pues de el año 1232 en que quedó concluida",
+    "abbyy-bne": "pues de el año 1232 en que quedó concluida",
+    "abbyy-ia": "pués de el año 1232 en que quedó concluida",
+    "tess-bne-400dpi-spa_old-psm3": "pues de el año 1232 en que quedó concluida",
+    "tess-ia-300dpi-spa_old-psm3": "pues de el año 1232 en que quedó concluida",
+    "vision-bne-400dpi-corr": "pues de el año 1232 en que quedó concluida"
+   }
+  },
+  {
+   "line": 58,
+   "bbox": [
+    0.4858387830791395,
+    0.14389534909529444,
+    0.85185184158317,
+    0.15989399285134764
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "la capilla Real, como dice Dameto en su histo-",
+    "abbyy-bne": "la capilla Real, como dice Dameto en su histo­",
+    "abbyy-ia": "la capilla Real, como dice Dameto en su histo-",
+    "tess-bne-400dpi-spa_old-psm3": "la capilla Real, como dice Dameto en su histo-",
+    "tess-ia-300dpi-spa_old-psm3": "la capilla Real, como dice Dameto en su histo-",
+    "vision-bne-400dpi-corr": "la capilla Real, como dice Dameto en su histo-"
+   }
+  },
+  {
+   "line": 59,
+   "bbox": [
+    0.4858387820769609,
+    0.1598837213976001,
+    0.8518518405809914,
+    0.1744186042564696
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "ria, se apellidaron canónigos, pero lo eran de",
+    "abbyy-bne": "ria, se apelhdaron canónigos, pero lo eran de",
+    "abbyy-ia": "ria, se apellidaron canónigos, pero lo eran de",
+    "tess-bne-400dpi-spa_old-psm3": "ria, se apellidaron canónigos, pero lo eran de",
+    "tess-ia-300dpi-spa_old-psm3": "ria, se apellidaron canónigos, pero lo eran de",
+    "vision-bne-400dpi-corr": "ria, se apellidaron canónigos, pero lo eran de"
+   }
+  },
+  {
+   "line": 60,
+   "bbox": [
+    0.4836601408402301,
+    0.17432273266354437,
+    0.8540305002273078,
+    0.19051825680959855
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "solo nombre, sin prebenda, autoridad, institu-",
+    "abbyy-bne": "solo nombre, sin prebenda, autoridad, institu­",
+    "abbyy-ia": "solo nombre, sin prebenda, autoridad, institu-",
+    "tess-bne-400dpi-spa_old-psm3": "solo nombre,.-sin prebenda, autoridad, institu-",
+    "tess-ia-300dpi-spa_old-psm3": "solo nombre, sín prebenda, autoridad, institu-",
+    "vision-bne-400dpi-corr": "solo nombre, sin prebenda, autoridad, institu-"
+   }
+  },
+  {
+   "line": 61,
+   "bbox": [
+    0.48801742520394437,
+    0.19040697721155364,
+    0.8518518467459469,
+    0.20494699631990687
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "cion ni ordinacion, pues esta no se hizo hasta",
+    "abbyy-bne": "ción ni ordinacion, pues ésta no se hizo hasta",
+    "abbyy-ia": "ción ni ordinacion, pues ésta no se hizo hasta",
+    "tess-bne-400dpi-spa_old-psm3": "cion ni ordinacion, pues ésta no se hizo hasta",
+    "tess-ia-300dpi-spa_old-psm3": "cion ni ordinacion, pues ésta no se hizo hasta",
+    "vision-bne-400dpi-corr": "cion ni ordinacion, pues ésta no se hizo hasta"
+   }
+  },
+  {
+   "line": 62,
+   "bbox": [
+    0.48801742368796774,
+    0.20347467623319382,
+    0.8518518452299703,
+    0.2180232553829231
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "los años de 1244 como en su tiempo se refe-",
+    "abbyy-bne": "los años de 1244 como en su tiempo se refe­",
+    "abbyy-ia": "los años de 1244 como en su tiempo se refe-",
+    "tess-bne-400dpi-spa_old-psm3": "los años de 1244 como en su tiempo se reſe-",
+    "tess-ia-300dpi-spa_old-psm3": "los años de 1244 como en su tiempo se reſe-",
+    "vision-bne-400dpi-corr": "los años de 1244 como en su tiempo se refe-"
+   }
+  },
+  {
+   "line": 64,
+   "bbox": [
+    0.647058824324037,
+    0.23401162776104023,
+    0.7015250550332612,
+    0.2441860465485528
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "I234.",
+    "abbyy-bne": "1234-",
+    "abbyy-ia": "1234.",
+    "tess-bne-400dpi-spa_old-psm3": "‘ ' 12345",
+    "tess-ia-300dpi-spa_old-psm3": "; 1234.",
+    "vision-bne-400dpi-corr": "I234."
+   }
+  },
+  {
+   "line": 65,
+   "bbox": [
+    0.5098039177607679,
+    0.24852767958616107,
+    0.8496731979255068,
+    0.26162790658715807
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«En el año de I234, perseverando en el Go-",
+    "abbyy-bne": "«En el año de 1234, perseverando en el Go­",
+    "abbyy-ia": "«En el año de 1234, perseverando en el Go-",
+    "tess-bne-400dpi-spa_old-psm3": "«En el año de 1234, perseverando en el Go-",
+    "tess-ia-300dpi-spa_old-psm3": "«En el año de 1234, perseverando en el Go-",
+    "vision-bne-400dpi-corr": "«En el año de 1234, perseverando en el Go-"
+   }
+  },
+  {
+   "line": 66,
+   "bbox": [
+    0.4836601408402301,
+    0.2629564195178733,
+    0.8540305002273078,
+    0.2791519436639276
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "bierno de la isla el Señor Infante D. Pedro,",
+    "abbyy-bne": "bierno de lá isla el Señor Infante D. Pedro,",
+    "abbyy-ia": "bierno de la isla el Señor Infante D. Pedro,",
+    "tess-bne-400dpi-spa_old-psm3": "bierno de la isla el Señor Inſante D. Pedro,",
+    "tess-ia-300dpi-spa_old-psm3": "bierno de la isla el Señor Inſante D. Pedro,",
+    "vision-bne-400dpi-corr": "bierno de la isla el Señor Infante D. Pedro,"
+   }
+  },
+  {
+   "line": 67,
+   "bbox": [
+    0.49019608271456283,
+    0.27761627953134094,
+    0.8518518403355462,
+    0.29360465078842646
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "D. Ramon de Torrella, (quien fué poco des-",
+    "abbyy-bne": "D. Ramon de Torrella, (quien fué poco des­",
+    "abbyy-ia": "D. Ramón de Torrella, (quien fué poco des-",
+    "tess-bne-400dpi-spa_old-psm3": "D. Ramon de Torrella, (quien ſué poco des-",
+    "tess-ia-300dpi-spa_old-psm3": "D. Ramon de Torrella, (quien ſué poco des-",
+    "vision-bne-400dpi-corr": "D. Ramon de Torrella, (quien fué poco des-"
+   }
+  },
+  {
+   "line": 68,
+   "bbox": [
+    0.4880174333902187,
+    0.29210836292911246,
+    0.8518518549322213,
+    0.30813953439307773
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "pues Obispo de Mallorca) adquirió ciertas ca-",
+    "abbyy-bne": "pues Obispo de Mallorca) adquirió ciertas ca­",
+    "abbyy-ia": "pués Obispo de Mallorca) adquirió ciertas ca-",
+    "tess-bne-400dpi-spa_old-psm3": "pues Obispo de Mallorca) adquirió ciertas ca-",
+    "tess-ia-300dpi-spa_old-psm3": "pues Obispo de Mallorca) adquirió ciertas ca-",
+    "vision-bne-400dpi-corr": "pues Obispo de Mallorca) adquirió ciertas ca-"
+   }
+  },
+  {
+   "line": 69,
+   "bbox": [
+    0.4858387759664716,
+    0.30668604701533275,
+    0.8496731975084741,
+    0.32126030628918967
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "sas, dentro de esta capital, delante la fuente del",
+    "abbyy-bne": "sas, dentro de esta capital, delante la fuente del",
+    "abbyy-ia": "sas, dentro de esta capital, delante la fuente del",
+    "tess-bne-400dpi-spa_old-psm3": "sas, dentro de esta capital, delante la ſuente del",
+    "tess-ia-300dpi-spa_old-psm3": "sas, dentro de esta capital, delante la ſuente del",
+    "vision-bne-400dpi-corr": "sas, dentro de esta capital, delante la fuente del"
+   }
+  },
+  {
+   "line": 72,
+   "bbox": [
+    0.48583878200433933,
+    0.350290697863201,
+    0.8518518405083698,
+    0.3648409894705219
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "grí, Sacrista de Gerona, de la porcion que le",
+    "abbyy-bne": "grí. Sacrista de Gerona, de la porción que le",
+    "abbyy-ia": "grí. Sacrista de Gerona, de la porción que le",
+    "tess-bne-400dpi-spa_old-psm3": "grl, Sacrista de Gerona, de la porcion que le",
+    "tess-ia-300dpi-spa_old-psm3": "grl, Sacrista de Gerona, de la porcion que le",
+    "vision-bne-400dpi-corr": "grí, Sacrista de Gerona, de la porcion que le"
+   }
+  },
+  {
+   "line": 73,
+   "bbox": [
+    0.48551005889548565,
+    0.3641805483541627,
+    0.6843588371787026,
+    0.3796388058698261
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "perteneció en Mallorca.»",
+    "abbyy-bne": "perteneció en Mallorca.»",
+    "abbyy-ia": "perteneció en Mallorca.»",
+    "tess-bne-400dpi-spa_old-psm3": "perteneció en Mallorca.»",
+    "tess-ia-300dpi-spa_old-psm3": "perteneció en Mallorca. »",
+    "vision-bne-400dpi-corr": "perteneció en Mallorca.»"
+   }
+  },
+  {
+   "line": 74,
+   "bbox": [
+    0.5206971734368432,
+    0.3807420494165432,
+    0.8518518518354878,
+    0.3954652531856834
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Gobernaba en dicha era la silla apostóli-",
+    "abbyy-bne": "«Gobernaba en dicha era la silla apostóli­",
+    "abbyy-ia": "«Gobernaba en dicha era la silla apostóli-",
+    "tess-bne-400dpi-spa_old-psm3": "«Gobernaba en dicha era la silla apostóli-",
+    "tess-ia-300dpi-spa_old-psm3": "«Gobernaba en dicha era la silla apostóli--",
+    "vision-bne-400dpi-corr": "«Gobernaba en dicha era la silla apostóli-"
+   }
+  },
+  {
+   "line": 79,
+   "bbox": [
+    0.49019608468686204,
+    0.45494186085470223,
+    0.8496732053458174,
+    0.4680232553153557
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "de 1232, con el motivo de no quedar suficiente-",
+    "abbyy-bne": "de 1232, con el motivo de no quedar suficiente­",
+    "abbyy-ia": "de 123 2, con el motivo de no quedar suficiente-",
+    "tess-bne-400dpi-spa_old-psm3": "de 1232,con el motivo de no quedar suficiente-",
+    "tess-ia-300dpi-spa_old-psm3": "de 1232,con el motivo de no quedar suficiente-",
+    "vision-bne-400dpi-corr": "de I232, con el motivo de no quedar suficiente-"
+   }
+  },
+  {
+   "line": 81,
+   "bbox": [
+    0.6448801755306377,
+    0.48691860451612745,
+    0.6971677557983383,
+    0.4970930233036399
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "I235.",
+    "abbyy-bne": "1235.",
+    "abbyy-ia": "í235.",
+    "tess-bne-400dpi-spa_old-psm3": "EI",
+    "tess-ia-300dpi-spa_old-psm3": "1235-. '",
+    "vision-bne-400dpi-corr": "I23"
+   }
+  },
+  {
+   "line": 82,
+   "bbox": [
+    0.5098039163446461,
+    0.501453488851573,
+    0.8496731965093849,
+    0.5159883717104424
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«En el año de 1235 el dia II de Enero, año",
+    "abbyy-bne": "«En el año de 1233 ^^ ^^ ii de Enero, año",
+    "abbyy-ia": "«En el año de 1235 el dia n de Enero, año",
+    "tess-bne-400dpi-spa_old-psm3": "«En el año de 1235 el dia 11 de Enero, año",
+    "tess-ia-300dpi-spa_old-psm3": "«En el año de 1235 el día 11 de Enero, año",
+    "vision-bne-400dpi-corr": "5. •«En el año de I235 el dia ir de Enero, año"
+   }
+  },
+  {
+   "line": 83,
+   "bbox": [
+    0.4923747403456287,
+    0.5159010601271389,
+    0.8496731970835649,
+    0.530624263896279
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "octavo de su Pontificado, que corresponde al",
+    "abbyy-bne": "octavo de su Pontificado, que corresponde al",
+    "abbyy-ia": "octavo de su Pontificado, que corresponde al",
+    "tess-bne-400dpi-spa_old-psm3": "octavo de su Pontificado, que corresponde al",
+    "tess-ia-300dpi-spa_old-psm3": "octavo de su Pontiſicado, que corresponde al",
+    "vision-bne-400dpi-corr": "octavo de su Pontificado, que corresponde al"
+   }
+  },
+  {
+   "line": 84,
+   "bbox": [
+    0.49019608030352446,
+    0.5305232562449839,
+    0.8518518379245078,
+    0.5450581391038534
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "de Cristo 1235, desde Perosa, donde se halla-",
+    "abbyy-bne": "de Cristo 1235, desde Perosa, donde se halla­",
+    "abbyy-ia": "de Cristo 1235, desde Perosa, donde se halla-",
+    "tess-bne-400dpi-spa_old-psm3": "de Cristo 123 5, desde Perosa, donde se halla-",
+    "tess-ia-300dpi-spa_old-psm3": "de Cristo 123 5, desde Perosa, donde se halla-",
+    "vision-bne-400dpi-corr": "de Cristo 1235, desde Perosa, donde se halla-"
+   }
+  },
+  {
+   "line": 86,
+   "bbox": [
+    0.49237473081766964,
+    0.5609540634885848,
+    0.8496731875556058,
+    0.5742049468808109
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Tarragona, para qué advirtiese al Señor Rey",
+    "abbyy-bne": "Tarragona, para que advirtiese al Señor Rey",
+    "abbyy-ia": "Tarragona, para que advirtiese al Señor Rey",
+    "tess-bne-400dpi-spa_old-psm3": "Tarragona, para que advirtiese al Señor Rey",
+    "tess-ia-300dpi-spa_old-psm3": "Tarragona, para que advirtiese al Señor Rey",
+    "vision-bne-400dpi-corr": "Tarragona, para que advirtiese al Señor Rey"
+   }
+  },
+  {
+   "line": 88,
+   "bbox": [
+    0.5751634144637798,
+    0.5755813957687043,
+    0.8518518453038306,
+    0.5886627902293576
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "á los obispos y á los barones y no-",
+    "abbyy-bne": "á los obispos y á los barones y no­",
+    "abbyy-ia": "á los obispos y á los barones y no-",
+    "tess-bne-400dpi-spa_old-psm3": "á los obispos y á los barones y no-",
+    "tess-ia-300dpi-spa_old-psm3": "á los obispos y 4á los barones y no-",
+    "vision-bne-400dpi-corr": "á los obispos y á los barones y no-"
+   }
+  },
+  {
+   "line": 89,
+   "bbox": [
+    0.4880174310660518,
+    0.5901060070391165,
+    0.8496731886870351,
+    0.6031976739987375
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "bles de su Reino, y al Infante D. Pedro de Por-",
+    "abbyy-bne": "bles de su Reino, y al Infante D. Pedro de Por­",
+    "abbyy-ia": "bles de su Reino, y al Infante D. Pedro de Por-",
+    "tess-bne-400dpi-spa_old-psm3": "bles de su Reino, y al Inſante D. Pedro de Por-",
+    "tess-ia-300dpi-spa_old-psm3": "bles de su Reino, y al Inſante D. Pedro de Por-",
+    "vision-bne-400dpi-corr": "bles de su Reino, y al Infante D. Pedro de Por-"
+   }
+  },
+  {
+   "line": 90,
+   "bbox": [
+    0.49019608030352446,
+    0.6045347464828067,
+    0.8518518379245078,
+    0.6192579502519469
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "tugal, quien dominaba este reino de Mallorca, y",
+    "abbyy-bne": "tugal, quien dominaba este reino de Mallorca, y",
+    "abbyy-ia": "tugal, quien dominaba este reino de Mallorca, y",
+    "tess-bne-400dpi-spa_old-psm3": "tugal, quien dominaba este reïino de Mallorca, y",
+    "tess-ia-300dpi-spa_old-psm3": "tugal, quien dominaba este reino de Mallorca, y",
+    "vision-bne-400dpi-corr": "tugal, quien dominaba este reino de Mallorca, y"
+   }
+  },
+  {
+   "line": 91,
+   "bbox": [
+    0.4901960730706837,
+    0.6191860467376966,
+    0.8540304946126862,
+    0.63226744119835
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "á todos los porcioneros y particípes de las tier-",
+    "abbyy-bne": "á todos los porcioneros y participes de las tier­",
+    "abbyy-ia": "á todos los porcioneros y participes de las tier-",
+    "tess-bne-400dpi-spa_old-psm3": "á todos los porcioneros y participes de las tier-",
+    "tess-ia-300dpi-spa_old-psm3": "á todos los porcioneros y participes de las tier-",
+    "vision-bne-400dpi-corr": "á todos los porcioneros y participes de las tier-"
+   }
+  },
+  {
+   "line": 92,
+   "bbox": [
+    0.49019609085181753,
+    0.6351590108801058,
+    0.8518518484728008,
+    0.648255813527565
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "ras del mismo o á sus herederos y sucesores,",
+    "abbyy-bne": "ras del mismo ó á sus herederos y sucesores,",
+    "abbyy-ia": "ras del mismo ó á sus herederos y sucesores,",
+    "tess-bne-400dpi-spa_old-psm3": "ras del mismo 6 á sus herederos y sucesores,",
+    "tess-ia-300dpi-spa_old-psm3": "ras del mismo ó á sus herederos y sucesores,",
+    "vision-bne-400dpi-corr": "ras del mismo ó á sus herederos y sucesores,"
+   }
+  },
+  {
+   "line": 93,
+   "bbox": [
+    0.4901960893449186,
+    0.6495877502087282,
+    0.8518518469659019,
+    0.6643109539778683
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "para que entregasen á la iglesia de Mallorca la",
+    "abbyy-bne": "para que entregasen á la iglesia de Mallorca la",
+    "abbyy-ia": "para que entregasen á la iglesia de Mallorca la",
+    "tess-bne-400dpi-spa_old-psm3": "para que entregasen á la iglesía de Mallorca la",
+    "tess-ia-300dpi-spa_old-psm3": "para que entregasen á la iglesíia de Mallorca la",
+    "vision-bne-400dpi-corr": "para que entregasen á la iglesia de Mallorca la"
+   }
+  },
+  {
+   "line": 94,
+   "bbox": [
+    0.49019608994767816,
+    0.6642441858577569,
+    0.8518518475686615,
+    0.6787790698399176
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "dote y dominicaturas á que unánimes se obli-",
+    "abbyy-bne": "dote y dominicaturas á que unánimes se obli­",
+    "abbyy-ia": "dote y dominicaturas á que unánimes se obli-",
+    "tess-bne-400dpi-spa_old-psm3": "dote y dominicaturas á que unánimes se obli-",
+    "tess-ia-300dpi-spa_old-psm3": "dote y dominicaturas 4 que unánimes se obli-",
+    "vision-bne-400dpi-corr": "dote y dominicaturas á que unánimes se obli-"
+   }
+  },
+  {
+   "line": 96,
+   "bbox": [
+    0.4901960819090843,
+    0.6931684333976975,
+    0.8496732025680397,
+    0.7078916371668377
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "fué resuelta la conquista y reparticion de el",
+    "abbyy-bne": "fué resuelta la conquista y repartición de el",
+    "abbyy-ia": "fué resuelta la conquista y repartición de el",
+    "tess-bne-400dpi-spa_old-psm3": "ſué resuelta la conquista y reparticion de el",
+    "tess-ia-300dpi-spa_old-psm3": "ſué resuelta la conquista y reparticion de el",
+    "vision-bne-400dpi-corr": "fue resuelta la conquista y reparticion de el"
+   }
+  },
+  {
+   "line": 97,
+   "bbox": [
+    0.4880174310660518,
+    0.707848837737232,
+    0.8496731886870351,
+    0.7223837205961015
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "reino de Mallorca, por deber servir para la ne-",
+    "abbyy-bne": "reino de Mallorca, por deber servir parala ne­",
+    "abbyy-ia": "reino de Mallorca, por deber servir para la ne-",
+    "tess-bne-400dpi-spa_old-psm3": "reino de Mallorca, por deber servir para la ne-",
+    "tess-ia-300dpi-spa_old-psm3": "reino de Mallorca, por deber servir para la ne-",
+    "vision-bne-400dpi-corr": "reino de Mallorca, por deber servir para la ne-"
+   }
+  },
+  {
+   "line": 98,
+   "bbox": [
+    0.4901960923587166,
+    0.7237926975709174,
+    0.8518518499796999,
+    0.7370435809631435
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "cesaria y decente sustentacion de los eclesiás-",
+    "abbyy-bne": "cesaria y decente sustentación de los eclesiás­",
+    "abbyy-ia": "cesaria y decente sustentación de los eclesiás-",
+    "tess-bne-400dpi-spa_old-psm3": "cesaria y decente sustentacion de los eclesiás-",
+    "tess-ia-300dpi-spa_old-psm3": "cesaria y decente sustentacion de los eclesiás-",
+    "vision-bne-400dpi-corr": "cesaria y decente sustentacion de los eclesiás-"
+   }
+  },
+  {
+   "line": 99,
+   "bbox": [
+    0.4858387820769609,
+    0.7383720934855162,
+    0.8518518405809914,
+    0.7514723204865132
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "ticos, tan necesarios en la iglesia de Mallorca,",
+    "abbyy-bne": "ticos, tan necesarios en la iglesia de Mallorca,",
+    "abbyy-ia": "ticos, tan necesarios en la iglesia de Mallorca,",
+    "tess-bne-400dpi-spa_old-psm3": "ticos, tan necesarios. en la iglesia de Mallorca,",
+    "tess-ia-300dpi-spa_old-psm3": "ticos, tan necesarios en la iglesia de Mallorca,",
+    "vision-bne-400dpi-corr": "ticos, tan necesarios en la iglesia de Mallorca,"
+   }
+  },
+  {
+   "line": 100,
+   "bbox": [
+    0.4901960742021129,
+    0.7529069772609525,
+    0.8496731948610683,
+    0.7659883717216058
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "mandándole viniese á esta isla para recibir la",
+    "abbyy-bne": "mandándole viniese a esta isla para recibir la",
+    "abbyy-ia": "mandándole viniese á esta isla para recibir la",
+    "tess-bne-400dpi-spa_old-psm3": "mandándole viniese á esta isla para recibir la",
+    "tess-ia-300dpi-spa_old-psm3": "mandándole viniese 4 esta isla para recibir la",
+    "vision-bne-400dpi-corr": "mandándole viniese á esta isla para recibir la"
+   }
+  },
+  {
+   "line": 101,
+   "bbox": [
+    0.49019608271456283,
+    0.7673733805666124,
+    0.8518518403355462,
+    0.7835689047126666
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "dicha dote y entregarla despues al Obispo que",
+    "abbyy-bne": "dicha dote y entregarla despues al Obispo que",
+    "abbyy-ia": "dicha dote y entregarla después al Obispo que",
+    "tess-bne-400dpi-spa_old-psm3": "dicha dote y entregarla despues al Obispo que",
+    "tess-ia-300dpi-spa_old-psm3": "dicha dote y entregarla despues al Obispo que",
+    "vision-bne-400dpi-corr": "dicha dote y entregarla despues al Obispo que"
+   }
+  },
+  {
+   "line": 102,
+   "bbox": [
+    0.4923747330256421,
+    0.7819767439972918,
+    0.8518518536845975,
+    0.7965253237086667
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "hubiere de presidir en esta iglesia, y interin",
+    "abbyy-bne": "hubiere de presidir en esta iglesia, y Ínterin",
+    "abbyy-ia": "hubiere de presidir en esta iglesia, y Ínterin",
+    "tess-bne-400dpi-spa_old-psm3": "hubiere de presidir en esta iglesía, y interin",
+    "tess-ia-300dpi-spa_old-psm3": "hubiere de presidir en esta iglesia, y interin",
+    "vision-bne-400dpi-corr": "hubiere de presidir en esta iglesia, y interin"
+   }
+  },
+  {
+   "line": 103,
+   "bbox": [
+    0.49237472503726176,
+    0.7965116280957591,
+    0.8518518456962172,
+    0.8110465109546287
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "tratar lo conveniente para el divino culto y ho-",
+    "abbyy-bne": "tratar lo conveniente para el divino culto y ho­",
+    "abbyy-ia": "tratar lo conveniente para el divino culto y ho-",
+    "tess-bne-400dpi-spa_old-psm3": "tratar lo conveniente para el divino culto y ho-",
+    "tess-ia-300dpi-spa_old-psm3": "tratar lo conveniente para el divino culto y ho-",
+    "vision-bne-400dpi-corr": "tratar lo conveniente para el divino culto y ho-"
+   }
+  },
+  {
+   "line": 104,
+   "bbox": [
+    0.49019608015651234,
+    0.812426384032225,
+    0.7254901930461021,
+    0.8271495878013652
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "nor de la iglesia de Mallorca.»",
+    "abbyy-bne": "nor de la iglesia de Mallorca.»",
+    "abbyy-ia": "nor de la iglesia de Mallorca.»",
+    "tess-bne-400dpi-spa_old-psm3": "nor de’la iglesía de Mallorca.»",
+    "tess-ia-300dpi-spa_old-psm3": "nor de la iglesía de Mallorca.»",
+    "vision-bne-400dpi-corr": "nor de la iglesia de Mallorca.»"
+   }
+  },
+  {
+   "line": 105,
+   "bbox": [
+    0.5119825724085528,
+    0.8270348843942087,
+    0.8518518525732917,
+    0.8415783272944541
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Notificado este Breve Apostólico al Señor",
+    "abbyy-bne": "«Notificado este Breve Apostolice al Señor",
+    "abbyy-ia": "«Notificado este Breve Apostólico al Señor",
+    "tess-bne-400dpi-spa_old-psm3": "«Notificado este Breve Apostólico al Señor",
+    "tess-ia-300dpi-spa_old-psm3": "«Notificado este Breve Apostólico al Señor",
+    "vision-bne-400dpi-corr": "«Notificado este Breve Apostólico al Señor"
+   }
+  },
+  {
+   "line": 106,
+   "bbox": [
+    0.48801742611353044,
+    0.8415697678743642,
+    0.851851847655533,
+    0.8575581391314497
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Infante D. Pedro, al Rey y á los demás, el Se-",
+    "abbyy-bne": "Infante D. Pedro, al Rey y á los demás, el Se­",
+    "abbyy-ia": "Infante D* Pedro, al Rey y á los demás, el Se-",
+    "tess-bne-400dpi-spa_old-psm3": "Inſante D. Pedro, al Rey y á los demás, el Se-",
+    "tess-ia-300dpi-spa_old-psm3": "Inſante D. Pedro, al Rey y á los demás, el Se-",
+    "vision-bne-400dpi-corr": "Infante D. Pedro, al Rey y a los demás, el Se-"
+   }
+  },
+  {
+   "line": 107,
+   "bbox": [
+    0.4858387866533181,
+    0.8560070673467935,
+    0.8540304821193765,
+    0.8707302711159337
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "nor Infante D. Pedro, para obedecer á lo man-",
+    "abbyy-bne": "ñor Infante D. Pedro, para obedecer á lo man­",
+    "abbyy-ia": "ñor Infante D. Pedro, para obedecer á lo man-",
+    "tess-bne-400dpi-spa_old-psm3": "ñor Inſante D:Pedro, para obedecer á lo man-",
+    "tess-ia-300dpi-spa_old-psm3": "ñor Inſante D. Pedro, para obedecer á lo man-",
+    "vision-bne-400dpi-corr": "for Infante D. Pedro, para obedecer á lo man-"
+   }
+  },
+  {
+   "line": 108,
+   "bbox": [
+    0.49237474008929044,
+    0.8706395352784141,
+    0.8540304977102737,
+    0.8851744181372836
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "dado por el Papa, con instrumento en Barcelo-",
+    "abbyy-bne": "dado por el Papa, con instrumento en Barcelo­",
+    "abbyy-ia": "dado por el Papa, con instrumento en Barcelo-",
+    "tess-bne-400dpi-spa_old-psm3": "dado por el Papa, con instrumento en Barcelo-",
+    "tess-ia-300dpi-spa_old-psm3": "dado por el Papa, con instrumento en Barcelo-",
+    "vision-bne-400dpi-corr": "dado por el Papa, con instrumento en Barcelo-"
+   }
+  },
+  {
+   "line": 109,
+   "bbox": [
+    0.48572378245398073,
+    0.8847385825422382,
+    0.8563570459239868,
+    0.9026646621878333
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "na que pasó ante Ramon de Vilanova, notario,",
+    "abbyy-bne": "na que pasó ante Ramon de Vilanova, notario»",
+    "abbyy-ia": "na que pasó ante Ramón de Vilanova,",
+    "tess-bne-400dpi-spa_old-psm3": "na que pasó ante Ramon de Vilanova, notario,",
+    "tess-ia-300dpi-spa_old-psm3": "na que pasó ante Ramon de Vilanova, notario,",
+    "vision-bne-400dpi-corr": "na que pasó ante Ramon de Vilanova, notario,"
+   }
+  }
+ ]
+}

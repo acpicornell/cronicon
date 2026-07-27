@@ -1,0 +1,1099 @@
+{
+ "pdf_page": 642,
+ "page_class": "errata",
+ "reference": "vision-ia-300dpi-corr",
+ "panel": [
+  "abbyy-bne",
+  "abbyy-ia",
+  "tess-bne-400dpi-spa_old-psm3",
+  "tess-ia-300dpi-spa_old-psm3",
+  "vision-bne-400dpi-corr",
+  "vision-ia-300dpi-corr"
+ ],
+ "source_image": "leaf0640_626dpi.png",
+ "lines_total": 66,
+ "lines_agreed": 6,
+ "lines_contested": 60,
+ "contested": [
+  {
+   "line": 1,
+   "bbox": [
+    0.143171829197228,
+    0.18459302328491145,
+    0.8480176216104072,
+    0.19912790685074744
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Aunque no es corto el número de pequeños descuidos tipográficos que, bajo el título ante-",
+    "abbyy-bne": "Aunque no es corto el número de pequeños descuidos tipográficos que, bajo el título ante­",
+    "abbyy-ia": "Aunque no es corto el número de pequeños descuidos tipográficos que, bajo el título ante-",
+    "tess-bne-400dpi-spa_old-psm3": "Aunque no es corto el número de pequeños descuidos tipográficos que, bajo el título ante-",
+    "tess-ia-300dpi-spa_old-psm3": "Aunque n0 es corto el número de pequeños descuidos tipográficos que, bajo el título ante-",
+    "vision-bne-400dpi-corr": "Aunque no es corto el número de pequeños descuidos tipográficos que, bajo el título ante-"
+   }
+  },
+  {
+   "line": 2,
+   "bbox": [
+    0.10572687900544765,
+    0.19900932411102656,
+    0.8458149745187813,
+    0.21656976723337462
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "rior, podrían incluirse, considero más breve prescindir por completo de la denuncia de aquellas",
+    "abbyy-bne": "rior, podrían incluirse, considero más breve prescindir por completo de la denuncia de aquellas",
+    "abbyy-ia": "rior, podrían incluirse, considero más breve prescindir por completo de la denuncia de aquellas",
+    "tess-bne-400dpi-spa_old-psm3": "rior, podrían incluirse, considero más breve prescindir por completo de la denuncia de aquellas",
+    "tess-ia-300dpi-spa_old-psm3": "rior, podriían incluirse, considero más breve prescindir por completo de la denuncia de aquellas",
+    "vision-bne-400dpi-corr": "rior, podrían incluirse, considero más breve prescindir por completo de la denuncia de aquellas"
+   }
+  },
+  {
+   "line": 3,
+   "bbox": [
+    0.10352425619536851,
+    0.2135780885441877,
+    0.8480176126372303,
+    0.2311046506636072
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "faltas, que el lector subsanará facilmente sin necesidad del auxilio de esta Fe de Erratas, y limitar-",
+    "abbyy-bne": "faltas, que el lector subsanará fácilmente sin necesidad del auxilio de esta Fe de Erralas, y limitar­",
+    "abbyy-ia": "faltas, que el lector subsanará fácilmente sin necesidad del auxilio de esta Fe de Erratas , y limitar-",
+    "tess-bne-400dpi-spa_old-psm3": "faltas, que el lector subsanará facilmente sín necesidad del auxilio de esta Fe de Erratas, y limitar-",
+    "tess-ia-300dpi-spa_old-psm3": "faltas, que el Jector subsanará facilmente sín necesidad del auxilio de esta Fe de Erratas, y limitar-",
+    "vision-bne-400dpi-corr": "faltas, que el lector subsanará facilmente sin necesidad del auxilio de esta fe de Erratas, y limitar-"
+   }
+  },
+  {
+   "line": 4,
+   "bbox": [
+    0.10572687765064813,
+    0.22960372962152686,
+    0.8480176305872371,
+    0.2456395348368956
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "me a consignar los tropiezos ú omisiones que serían difíciles de corregir, sin la oportuna expli-",
+    "abbyy-bne": "me á consignar los tropiezos ú omisiones que serían difíciles de corregir, sin la oportuna expli­",
+    "abbyy-ia": "me á consignar los tropiezos ú omisiones que serían difíciles de corregir, sin la oportuna expli-",
+    "tess-bne-400dpi-spa_old-psm3": "me 4 consignar los tropiezos ú omisiones que serían difíciles de corregir, sín la oportuna expl-",
+    "tess-ia-300dpi-spa_old-psm3": "me á consignar los tropiezos ú omisiones que serían difíciles de corregir, sín la oportuna expli-",
+    "vision-bne-400dpi-corr": "me á consignar los tropiezos ú omisiones que serían difíciles de corregir, sin la oportuna expli-"
+   }
+  },
+  {
+   "line": 5,
+   "bbox": [
+    0.10572686280483334,
+    0.2441724940529112,
+    0.8480176157414223,
+    0.25874125862167574
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "cacion requerida por cada caso. Hecha esta advertencia preliminar, véanse á continuacion las",
+    "abbyy-bne": "cación requerida por cada caso. Hecha esta advertencia preliminar, véanse á continuación las",
+    "abbyy-ia": "cación requerida por cada caso. Hecha esta advertencia preliminar, véanse á continuación las",
+    "tess-bne-400dpi-spa_old-psm3": "cacion requerida por cada caso. Hecha esta advertencia preliminar, véanse á continuacion las",
+    "tess-ia-300dpi-spa_old-psm3": "cacion requerida por cada caso. Hecha esta advertencia preliminar, véanse á continuacion las",
+    "vision-bne-400dpi-corr": "cacion requerida por cada caso. Hecha esta advertencia preliminar, véanse á continuacion las"
+   }
+  },
+  {
+   "line": 6,
+   "bbox": [
+    0.10572687201738828,
+    0.25872093012841924,
+    0.8480176249539773,
+    0.2733100230766392
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "equivocaciones y huecos que el autor ha encontrado en el texto, lo que no significa de ningun",
+    "abbyy-bne": "equivocaciones y huecos que el autor ha encontrado en el texto, lo. que no significa de ningún",
+    "abbyy-ia": "equivocaciones y huecos que el autor ha encontrado en el texto, lo que no significa de ningún",
+    "tess-bne-400dpi-spa_old-psm3": "equivocaciones y huecos que el autor ha encontrado en el texto, lo. que no significa de ningun",
+    "tess-ia-300dpi-spa_old-psm3": "equivocaciones y huecos que el autor ha encontrado en el texto, lo que no significa de ningun",
+    "vision-bne-400dpi-corr": "equivocaciones y huecos que el autor ha encontrado en el texto, lo, que no significa de ningun"
+   }
+  },
+  {
+   "line": 7,
+   "bbox": [
+    0.10792952082245427,
+    0.2747093024338503,
+    0.8502202737590432,
+    0.2878787878061134
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "modo que no existan otros, escapados á su perspicacia ó á su deseo de purgarlo del mayor nú-",
+    "abbyy-bne": "modo que no existan otros, escapados á su perspi cacia ó á su deseo de purgarlo del mayor nú­",
+    "abbyy-ia": "modo que no existan otros, escapados á su perspicacia ó á su deseo de purgarlo del mayor nú-",
+    "tess-bne-400dpi-spa_old-psm3": "modo que no existan otros, escapados á su perspicacia ó á su deseo de purgarlo del mayor nú-",
+    "tess-ia-300dpi-spa_old-psm3": "modo que no existan otros, escapados á su perspicacia Ó á su deseo de purgarlo del mayor nú-",
+    "vision-bne-400dpi-corr": "modo que no existan otros, escapados á su perspicacia ó á su deseo de purgarlo del mayor nú-"
+   }
+  },
+  {
+   "line": 8,
+   "bbox": [
+    0.10792951915436558,
+    0.2892441861729491,
+    0.41629956344475316,
+    0.30244755254814093
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "mero posible de inexactitudes y lagunas.",
+    "abbyy-bne": "mero posible de inexactitudes y lagunas.",
+    "abbyy-ia": "mero posible de inexactitudes y lagunas.",
+    "tess-bne-400dpi-spa_old-psm3": "mero posible de inexactitudes y lagunas.",
+    "tess-ia-300dpi-spa_old-psm3": "mero posible de inexactitudes y lagunas,",
+    "vision-bne-400dpi-corr": "mero posible de inexactitudes y lagunas."
+   }
+  },
+  {
+   "line": 9,
+   "bbox": [
+    0.12114539577184953,
+    0.3037790700864942,
+    0.8414096823118506,
+    0.3313953486392809
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "scritores cenos e majos han servido de matorniles al terco del o era mimito de sea",
+    "abbyy-bne": "Pero téngase muy en cuenta que el autor no se refiere aquí á las erratas cometidas por los escritores cuyos trabajos han servido de manantiales al texto del Cronicón. El número de éstas",
+    "abbyy-ia": "Pero téngase muy en cuenta que el autor no se refiere aquí á las erratas cometidas por los escritores cuyos trabajos han servido de manantiales al texto del Cronicón. El número de éstas",
+    "tess-bne-400dpi-spa_old-psm3": "Pero téngase muy en cuenta que el autor no se refiere aqui á las erratas cometidas por los escritores cuyos trabajos han servido de manantiales al texto del Ckoxicox. El número de éstas",
+    "tess-ia-300dpi-spa_old-psm3": "Pero téngase muy en cuenta que el autor no se refiere aqui á las erratas cometidas por los escritores cuyos trabajos han servido de manantiales al texto del Ckoxicox. El número de éstas",
+    "vision-bne-400dpi-corr": "Pero téngase muy en cuenta que el autor no se refiere aquí á las erratas cometidas por los escritores cuyos trabajos han servido de manantiales al texto del CRoNIcoN. El número de éstas"
+   }
+  },
+  {
+   "line": 11,
+   "bbox": [
+    0.10568865476584308,
+    0.33194058097424284,
+    0.8502584669069649,
+    0.3482919773615165
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "puede ser considerable, especialmente en lo que concierne á nombres, fechas, y aun a algunos",
+    "abbyy-bne": "puede ser considerable, especialmente en lo que concierne á nombres, fechas, y aun á algunos",
+    "abbyy-ia": "puede ser considerable, especialmente en lo que concierne á nombres, fechas, y aun á algunos",
+    "tess-bne-400dpi-spa_old-psm3": "puede ser considerable, especialmente en lo que conciernec á nombres, fechas, y aun á algunos",
+    "tess-ia-300dpi-spa_old-psm3": "puede ser considerable, especialmente en lo que concierne á nombres, fechas, y aun á algunos",
+    "vision-bne-400dpi-corr": "puede ser considerable, especialmente en lo que concierne á nombres, fechas, y aun á algunos"
+   }
+  },
+  {
+   "line": 13,
+   "bbox": [
+    0.10792953445059018,
+    0.3618881120125259,
+    0.6453744410560176,
+    0.377913753038167
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "á cuyo nombre pertenecen las iniciales puestas al pié de cada noticia:",
+    "abbyy-bne": "á cuyo nombre pertenecen las iniciales puestas al pié de cada noticia: Léase. Dice. Columna.",
+    "abbyy-ia": "á cuyo nombre pertenecen las iniciales puestas al pié de cada Columna. PÁGINA. 9 noticia:",
+    "tess-bne-400dpi-spa_old-psm3": "á cuyo nombre pertenecen las iniciales puestas al pié de cada noticia:",
+    "tess-ia-300dpi-spa_old-psm3": "á cuyo nombre pertenecen las iniciales puestas al pié de cada noticia:",
+    "vision-bne-400dpi-corr": "á cuyo nombre pertenecen las iniciales puestas al pié de cada noticia:"
+   }
+  },
+  {
+   "line": 14,
+   "bbox": [
+    0.11453744486513051,
+    0.38808139527107777,
+    0.2753303988416033,
+    0.40413752886590193
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "PÁGINA. COLUMNA.",
+    "abbyy-bne": "PÁGINA.",
+    "abbyy-ia": "Léase.",
+    "tess-bne-400dpi-spa_old-psm3": "PAGINA. COLUMNA.,",
+    "tess-ia-300dpi-spa_old-psm3": "PÁAGINA. CoLUMNA.",
+    "vision-bne-400dpi-corr": "LÉASE. COLUMNA."
+   }
+  },
+  {
+   "line": 15,
+   "bbox": [
+    0.3436123364560919,
+    0.38808139540215947,
+    0.3942731269433207,
+    0.40261627896799546
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "DICE.",
+    "abbyy-bne": "",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "Drcx.",
+    "tess-ia-300dpi-spa_old-psm3": "Di1ce. ]",
+    "vision-bne-400dpi-corr": "DICE."
+   }
+  },
+  {
+   "line": 16,
+   "bbox": [
+    0.6428874948669587,
+    0.38899480863930136,
+    0.6985221956555847,
+    0.4031563542749603
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "LÉASE.",
+    "abbyy-bne": "",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "í LEASE. XII.—nota 2.©= Fué pavorde de esta ca- |",
+    "tess-ia-300dpi-spa_old-psm3": "LÉASE. KIl.—nota 2.* Fue pavorde de esta ca- .",
+    "vision-bne-400dpi-corr": "PÁGINA."
+   }
+  },
+  {
+   "line": 17,
+   "bbox": [
+    0.5022026459614363,
+    0.4142441860368494,
+    0.8524229117037618,
+    0.42890442886891766
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Fué pavorde de esta catedral y amigo inti-",
+    "abbyy-bne": "Fué pavorde de esta catedral y amigo ínti-",
+    "abbyy-ia": "Fué pavorde de esta catedral y amigo 2.a",
+    "tess-bne-400dpi-spa_old-psm3": "Fué pavorde de esta catedral y amigo Ínti-",
+    "tess-ia-300dpi-spa_old-psm3": "Fué pavorde de esta catedral y amigo inti-",
+    "vision-bne-400dpi-corr": "Fué pavorde de esta catedral y amigo inti-"
+   }
+  },
+  {
+   "line": 18,
+   "bbox": [
+    0.1255506590681291,
+    0.4142441860639374,
+    0.24449339159266392,
+    0.42744755243912913
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "XII.—nota 2.%",
+    "abbyy-bne": "",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "]",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 19,
+   "bbox": [
+    0.27312775020033286,
+    0.4142441861603958,
+    0.4691629937974646,
+    0.42890442899246417
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Fué pavorde de esta ca-",
+    "abbyy-bne": "Fué pavorde de esta ca- : XII.—nota 2.^ mo del archivero",
+    "abbyy-ia": "Fué pavorde de esta Dice. XII.— nota ca-",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "",
+    "vision-bne-400dpi-corr": "Fué pavorde de esta ca- XII.—nota 2.a mo del archivero"
+   }
+  },
+  {
+   "line": 20,
+   "bbox": [
+    0.27304299560835465,
+    0.42558430227126176,
+    0.41858696011565644,
+    0.4450552329265034
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "tedral y archivero",
+    "abbyy-bne": "tedral y archivero",
+    "abbyy-ia": "tedral y ínti-",
+    "tess-bne-400dpi-spa_old-psm3": "tedral y archivero |",
+    "tess-ia-300dpi-spa_old-psm3": "tedral y archivero -",
+    "vision-bne-400dpi-corr": "tedral y archivero"
+   }
+  },
+  {
+   "line": 22,
+   "bbox": [
+    0.5109469208740204,
+    0.44306515275395697,
+    0.6344275256051725,
+    0.4580976375687942
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Año I290 (1)",
+    "abbyy-bne": "",
+    "abbyy-ia": "Año 1290 » Año archivero 33 (1)",
+    "tess-bne-400dpi-spa_old-psm3": "33 »",
+    "tess-ia-300dpi-spa_old-psm3": "33 »",
+    "vision-bne-400dpi-corr": "Año 1290 (1)"
+   }
+  },
+  {
+   "line": 23,
+   "bbox": [
+    0.2752506764499368,
+    0.4431062777215564,
+    0.36131319877198154,
+    0.458056513128392
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Año 1290",
+    "abbyy-bne": "Año 1290 (i) Año 1290 » ;",
+    "abbyy-ia": "I 1314 . 40 2.a 1290",
+    "tess-bne-400dpi-spa_old-psm3": "Año 1290",
+    "tess-ia-300dpi-spa_old-psm3": "Año 1290",
+    "vision-bne-400dpi-corr": "Año 1290"
+   }
+  },
+  {
+   "line": 24,
+   "bbox": [
+    0.12334801782397094,
+    0.4447674420349115,
+    0.14977973503946515,
+    0.4593023256007476
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "33",
+    "abbyy-bne": "33",
+    "abbyy-ia": ".",
+    "tess-bne-400dpi-spa_old-psm3": ":",
+    "tess-ia-300dpi-spa_old-psm3": "Año",
+    "vision-bne-400dpi-corr": "33"
+   }
+  },
+  {
+   "line": 25,
+   "bbox": [
+    0.22246696061130947,
+    0.44622093055482437,
+    0.2334801761177654,
+    0.45494186036087336
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "»",
+    "abbyy-bne": "2.“",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "Año",
+    "tess-ia-300dpi-spa_old-psm3": "1290",
+    "vision-bne-400dpi-corr": "2.a"
+   }
+  },
+  {
+   "line": 26,
+   "bbox": [
+    0.2180616743322673,
+    0.4578488371996401,
+    0.2466960354915212,
+    0.4723837207654761
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "2.°",
+    "abbyy-bne": "1314",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "1290",
+    "tess-ia-300dpi-spa_old-psm3": "(1)",
+    "vision-bne-400dpi-corr": "I3I4"
+   }
+  },
+  {
+   "line": 27,
+   "bbox": [
+    0.2775330401079888,
+    0.4578488372399778,
+    0.32158590213381244,
+    0.4738372093846992
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "1313",
+    "abbyy-bne": "1313",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "(1)",
+    "tess-ia-300dpi-spa_old-psm3": "",
+    "vision-bne-400dpi-corr": "1313"
+   }
+  },
+  {
+   "line": 28,
+   "bbox": [
+    0.12555066138123966,
+    0.45930232558626793,
+    0.15198237859673389,
+    0.4738372091521039
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "40",
+    "abbyy-bne": "4«",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "40",
+    "tess-ia-300dpi-spa_old-psm3": "40 23 7313 —",
+    "vision-bne-400dpi-corr": "40"
+   }
+  },
+  {
+   "line": 29,
+   "bbox": [
+    0.511013216068586,
+    0.4593023255988211,
+    0.5550660780944097,
+    0.47238372058577194
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "1314",
+    "abbyy-bne": "",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "22 ————IDTZ A= UJES —ric cci - — 221 25",
+    "tess-ia-300dpi-spa_old-psm3": "1314 221 21",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 30,
+   "bbox": [
+    0.27753304078506164,
+    0.47231934753212645,
+    0.46916299649467397,
+    0.48837209324895947
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "No vió su obispado ni",
+    "abbyy-bne": "",
+    "abbyy-ia": "No vio",
+    "tess-bne-400dpi-spa_old-psm3": "No vió su obispado ni ——",
+    "tess-ia-300dpi-spa_old-psm3": "No vió su obispado ni —",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 31,
+   "bbox": [
+    0.5110132155064446,
+    0.47231934753212645,
+    0.8524229054737316,
+    0.48837209324895947
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "No vió su obispado ni estuvo en la isla (2)",
+    "abbyy-bne": "No vió su obispado ni estuvo en la isla (2) No vió su obispado ni 2.“",
+    "abbyy-ia": "su obispado ni estuvo en la isla 2.a No vió su obispado",
+    "tess-bne-400dpi-spa_old-psm3": "No vió su obispado ni estuvo en la isla (2)",
+    "tess-ia-300dpi-spa_old-psm3": "No vió su obispado ni estuvo en la isla (2)",
+    "vision-bne-400dpi-corr": "No vió su obispado ni estuvo en la isla (2) No vió su obispado ni 2.\""
+   }
+  },
+  {
+   "line": 32,
+   "bbox": [
+    0.12334801774473661,
+    0.4752906980314324,
+    0.15859030736539556,
+    0.48691860443949786
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "221",
+    "abbyy-bne": "221",
+    "abbyy-ia": "221 1313 ni",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "",
+    "vision-bne-400dpi-corr": "221"
+   }
+  },
+  {
+   "line": 33,
+   "bbox": [
+    0.2751535483780969,
+    0.48487278443890647,
+    0.4054631891074821,
+    0.5034993087350245
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "estuvo en la isla",
+    "abbyy-bne": "estuvo en la isla | Para atajar los progresos",
+    "abbyy-ia": "estuvo en la (2) Para atajar los 2.a",
+    "tess-bne-400dpi-spa_old-psm3": "estuvo en la isla \\ 222 2",
+    "tess-ia-300dpi-spa_old-psm3": "estuvo en la isla ! 222 24",
+    "vision-bne-400dpi-corr": "estuvo en la isla"
+   }
+  },
+  {
+   "line": 34,
+   "bbox": [
+    0.27753303858741085,
+    0.49854312332832107,
+    0.4713656382407829,
+    0.517482517267715
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Para atacar los progre-",
+    "abbyy-bne": "Para atacar los progre-",
+    "abbyy-ia": "Para atacar los 222 isla progre-",
+    "tess-bne-400dpi-spa_old-psm3": "Para atacar los progre-",
+    "tess-ia-300dpi-spa_old-psm3": "Para atacar los progre-",
+    "vision-bne-400dpi-corr": "Para atajar los progresos Para atacar los progre-"
+   }
+  },
+  {
+   "line": 35,
+   "bbox": [
+    0.22026431720199674,
+    0.5014534882320414,
+    0.24889867836125062,
+    0.5174418603767627
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "2.°",
+    "abbyy-bne": "! 2.“",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "|",
+    "tess-ia-300dpi-spa_old-psm3": "",
+    "vision-bne-400dpi-corr": "2.2"
+   }
+  },
+  {
+   "line": 37,
+   "bbox": [
+    0.5132158611865297,
+    0.502906976955851,
+    0.7070484608399018,
+    0.514568764366845
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Para atajar los progresos",
+    "abbyy-bne": "sos",
+    "abbyy-ia": "progresos",
+    "tess-bne-400dpi-spa_old-psm3": "Para atajar los progresos",
+    "tess-ia-300dpi-spa_old-psm3": "Para atajar los progresos",
+    "vision-bne-400dpi-corr": "SOS que entre los de"
+   }
+  },
+  {
+   "line": 38,
+   "bbox": [
+    0.27533039581853724,
+    0.5188953492087579,
+    0.3061674009215508,
+    0.5305232556168233
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "SOS",
+    "abbyy-bne": "",
+    "abbyy-ia": ";",
+    "tess-bne-400dpi-spa_old-psm3": "s08 | ori Bpado eic — Amdió: o",
+    "tess-ia-300dpi-spa_old-psm3": "$0S",
+    "vision-bne-400dpi-corr": "la"
+   }
+  },
+  {
+   "line": 39,
+   "bbox": [
+    0.12775330445545613,
+    0.530523255612034,
+    0.1629955940761151,
+    0.5479651163356406
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "246",
+    "abbyy-bne": "",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "246",
+    "tess-ia-300dpi-spa_old-psm3": "246 T:A",
+    "vision-bne-400dpi-corr": "Trecena"
+   }
+  },
+  {
+   "line": 40,
+   "bbox": [
+    0.27533039386222713,
+    0.5305232563276719,
+    0.47136563745935883,
+    0.5480769231382834
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "que entre los de la Tre-",
+    "abbyy-bne": "",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "T.2 — queentre los de la Tre- '",
+    "tess-ia-300dpi-spa_old-psm3": "que entre los de la Tre- |",
+    "vision-bne-400dpi-corr": "que entre los de la Tre-"
+   }
+  },
+  {
+   "line": 41,
+   "bbox": [
+    0.5132158584726998,
+    0.531976744468734,
+    0.7709251055361108,
+    0.5451631703424614
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "que entre los de la Trecena (3)",
+    "abbyy-bne": "que entre los de la Trecena (3) que entre los de la Tre- i.^ 246",
+    "abbyy-ia": "que entre los de la Trecena 1.a que entre los de la sos 246 Tre- (3)",
+    "tess-bne-400dpi-spa_old-psm3": "que entre los de la Trecena (3)",
+    "tess-ia-300dpi-spa_old-psm3": "que entre los de la Trecena (3)",
+    "vision-bne-400dpi-corr": "(3) 246"
+   }
+  },
+  {
+   "line": 43,
+   "bbox": [
+    0.22026431708872815,
+    0.5610465114930463,
+    0.2511013221917417,
+    0.5770348836377677
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "2.:",
+    "abbyy-bne": "D. Juan Francisco Zebrian",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "} 427 2s D.- Juan- Erancisco Fe- ;",
+    "tess-ia-300dpi-spa_old-psm3": "¡ 427 2.",
+    "vision-bne-400dpi-corr": "D. Juan Francisco Zebrian"
+   }
+  },
+  {
+   "line": 44,
+   "bbox": [
+    0.2797356856919634,
+    0.5610465115475523,
+    0.46916299745781614,
+    0.5770348836922735
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "D. Juan Francisco Fe-",
+    "abbyy-bne": "D. Juan Francisco Fe-",
+    "abbyy-ia": "D. Juan Francisco 2.a",
+    "tess-bne-400dpi-spa_old-psm3": "D. Juan Erancisco",
+    "tess-ia-300dpi-spa_old-psm3": "D. Juan Francisco Fe- ,",
+    "vision-bne-400dpi-corr": "D. Juan Francisco Fe-"
+   }
+  },
+  {
+   "line": 45,
+   "bbox": [
+    0.5132158656481562,
+    0.5610465116327796,
+    0.7158590275970713,
+    0.5755813951986156
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "D. Juan Francisco Zebrian",
+    "abbyy-bne": "2.“",
+    "abbyy-ia": "D. Juan Francisco 427 cena Zebrian",
+    "tess-bne-400dpi-spa_old-psm3": "Zebrian",
+    "tess-ia-300dpi-spa_old-psm3": "D. Juan Francisco Zebrian",
+    "vision-bne-400dpi-corr": "2.3"
+   }
+  },
+  {
+   "line": 46,
+   "bbox": [
+    0.12775330474914187,
+    0.5624999998923922,
+    0.16299559436980082,
+    0.5784883720371136
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "427",
+    "abbyy-bne": "427",
+    "abbyy-ia": "Fe-",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "",
+    "vision-bne-400dpi-corr": "427"
+   }
+  },
+  {
+   "line": 47,
+   "bbox": [
+    0.2775330393972198,
+    0.5741279068176587,
+    0.3259911893105628,
+    0.59011627896238
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "brian",
+    "abbyy-bne": "brian",
+    "abbyy-ia": "1",
+    "tess-bne-400dpi-spa_old-psm3": "brian | y AI RS ia",
+    "tess-ia-300dpi-spa_old-psm3": "brian ' ] 432 T.2",
+    "vision-bne-400dpi-corr": "brian"
+   }
+  },
+  {
+   "line": 48,
+   "bbox": [
+    0.2749241404333203,
+    0.5872067455488194,
+    0.407895240179,
+    0.6075606963694221
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "En 28 de litigio",
+    "abbyy-bne": "",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "En 28 de litigio \\",
+    "tess-ia-300dpi-spa_old-psm3": "En 28 de litigio '",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 49,
+   "bbox": [
+    0.5132158590575049,
+    0.590034965015599,
+    0.6762114569777373,
+    0.6046511626550111
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "En 28 años de litigio",
+    "abbyy-bne": "En 28 años de litigio",
+    "abbyy-ia": "En 28 años de 1.a En 28 de 432 brian litigio",
+    "tess-bne-400dpi-spa_old-psm3": "En 28 años de litigio",
+    "tess-ia-300dpi-spa_old-psm3": "En 28 años de litigio",
+    "vision-bne-400dpi-corr": "En 28 años de litigio"
+   }
+  },
+  {
+   "line": 50,
+   "bbox": [
+    0.12775330458894968,
+    0.5915697674886858,
+    0.16299559420960863,
+    0.6075581396334071
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "432",
+    "abbyy-bne": "En",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "32 — T.\" —",
+    "tess-ia-300dpi-spa_old-psm3": "432 1.\"",
+    "vision-bne-400dpi-corr": "En"
+   }
+  },
+  {
+   "line": 51,
+   "bbox": [
+    0.27533040221590077,
+    0.6060606058534425,
+    0.44713656243167627,
+    0.62209302319082
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "que para ser mayores",
+    "abbyy-bne": "28 de litigio i.“",
+    "abbyy-ia": "que para ser",
+    "tess-bne-400dpi-spa_old-psm3": "que para ser mayores",
+    "tess-ia-300dpi-spa_old-psm3": "que para ser mayors",
+    "vision-bne-400dpi-corr": "28 de litigio I.a"
+   }
+  },
+  {
+   "line": 52,
+   "bbox": [
+    0.1277533045655883,
+    0.6061046510037051,
+    0.16299559418624726,
+    0.6220930231484265
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "432",
+    "abbyy-bne": "432",
+    "abbyy-ia": "432 1.a",
+    "tess-bne-400dpi-spa_old-psm3": "| —",
+    "tess-ia-300dpi-spa_old-psm3": "|",
+    "vision-bne-400dpi-corr": "432"
+   }
+  },
+  {
+   "line": 53,
+   "bbox": [
+    0.517265116991279,
+    0.6070546830847992,
+    0.6721053369809612,
+    0.6207581371535676
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "que para ser mejores",
+    "abbyy-bne": "que para ser mejores",
+    "abbyy-ia": "que para ser litigio mejores",
+    "tess-bne-400dpi-spa_old-psm3": "que para ser mejores",
+    "tess-ia-300dpi-spa_old-psm3": "que para ser mejores",
+    "vision-bne-400dpi-corr": "que para ser mejores"
+   }
+  },
+  {
+   "line": 54,
+   "bbox": [
+    0.2224669598200057,
+    0.6162790693773393,
+    0.2533039649230192,
+    0.6351744186798313
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "2.°",
+    "abbyy-bne": "que",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "464",
+    "tess-ia-300dpi-spa_old-psm3": "464",
+    "vision-bne-400dpi-corr": "que"
+   }
+  },
+  {
+   "line": 55,
+   "bbox": [
+    0.2797356806138426,
+    0.6177156175669649,
+    0.47356828026721465,
+    0.6351981350494824
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Ý 1o Sr. Virrey nol vol",
+    "abbyy-bne": "para ser mayores I.\" 432",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "2. Y loSr. Virrey nol vol",
+    "tess-ia-300dpi-spa_old-psm3": "2 Y loSr. Virrey nol vol",
+    "vision-bne-400dpi-corr": "para ser mayores I.\" 432"
+   }
+  },
+  {
+   "line": 56,
+   "bbox": [
+    0.12775330405112403,
+    0.6191860462370339,
+    0.16519823761554264,
+    0.6366279069606405
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "464",
+    "abbyy-bne": "",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "l",
+    "tess-ia-300dpi-spa_old-psm3": "",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 57,
+   "bbox": [
+    0.5198237865844232,
+    0.6206293705679272,
+    0.7533039637459735,
+    0.6322843822229389
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Y lo Sr. Bisbe nol vol absoldre",
+    "abbyy-bne": "Y lo Sr. Bisbe nol vol absoldre Y lo Sr. Virrey nol vol 2.^ 464",
+    "abbyy-ia": "Y lo Sr. Bisbe nol vol 2.a Y' lo Sr. Virrey nol mayores 464 vol",
+    "tess-bne-400dpi-spa_old-psm3": "Y lo Sr. Bisbe nol vol absoldre",
+    "tess-ia-300dpi-spa_old-psm3": "Y lo Sr. Bisbe nol vol absoldre",
+    "vision-bne-400dpi-corr": "Y lo Sr. Bisbe nol vol absoldre Y lo Sr. Virrey nol vol 464 2.2"
+   }
+  },
+  {
+   "line": 58,
+   "bbox": [
+    0.2775330397841132,
+    0.6337209303827798,
+    0.3502202629691908,
+    0.6482558139486158
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "absoldre",
+    "abbyy-bne": "absoldre",
+    "abbyy-ia": "absoldre",
+    "tess-bne-400dpi-spa_old-psm3": "absoldre 481 ¡",
+    "tess-ia-300dpi-spa_old-psm3": "absoldre 481 1,x",
+    "vision-bne-400dpi-corr": "absoldre"
+   }
+  },
+  {
+   "line": 59,
+   "bbox": [
+    0.2795508058599054,
+    0.6477117144373339,
+    0.39445800654177376,
+    0.6662417736871407
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Noviembre 9",
+    "abbyy-bne": "Noviembre 19 Noviembre 9 1.“^",
+    "abbyy-ia": "Noviembre 1.a Noviembre absoldre",
+    "tess-bne-400dpi-spa_old-psm3": "Noviembre 9",
+    "tess-ia-300dpi-spa_old-psm3": "Noviembre 9",
+    "vision-bne-400dpi-corr": "Noviembre 19 Noviembre 9"
+   }
+  },
+  {
+   "line": 60,
+   "bbox": [
+    0.12775330440301225,
+    0.6482558136996586,
+    0.16299559402367123,
+    0.6656976744232652
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "481",
+    "abbyy-bne": "481",
+    "abbyy-ia": "481",
+    "tess-bne-400dpi-spa_old-psm3": "- ‘",
+    "tess-ia-300dpi-spa_old-psm3": "",
+    "vision-bne-400dpi-corr": "48I"
+   }
+  },
+  {
+   "line": 61,
+   "bbox": [
+    0.5065131783768007,
+    0.6493379234611036,
+    0.6344559814260567,
+    0.6646155648197348
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Noviembre 19",
+    "abbyy-bne": "(^i) Entiéndase",
+    "abbyy-ia": "19",
+    "tess-bne-400dpi-spa_old-psm3": "Noviembre 19",
+    "tess-ia-300dpi-spa_old-psm3": "Noviembre 19",
+    "vision-bne-400dpi-corr": "I.2 (1)"
+   }
+  },
+  {
+   "line": 62,
+   "bbox": [
+    0.11013216839399287,
+    0.6787790700752632,
+    0.8590308396823653,
+    0.7034883714702793
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Trados superiores de la Cilidad y eino se notaron Cónse la y no Juradn aragonesa desde 1286 4 12g8 los magis-",
+    "abbyy-bne": "añadida la siguiente nota.—Durante la dorninacion aragonesa desde 1286 a 1298 los magis trados superiores de la Ciudad y Reino se titularon Cónsules y no Jurados. (2) Añádase la nota que sigue.—El Pavosde Terrassa se olvidó aquí de que había descrito la entrada del Obispo Rojas en la fecha de 30 de Octubre de 1497: entónces estuvo en lo cierto. (3) Debe sobreentenderse la nota siguiente—Falta aquí una cláusula en que se diga una de dos cosas «había uno» ó bien «estaba, fulano de tal.iy",
+    "abbyy-ia": "(1) Entiéndase añadida la siguiente nota.— Durante la dominación aragonesa desde 1286 á 1298 los magis- trados superiores de la Ciudad y Reino se titularon Cónsules y no Jurados. (2) Añádase la nota que sigue.— El",
+    "tess-bne-400dpi-spa_old-psm3": "(1) Entiéndase añadida la siguiente nota.—Durante la dominacion aragonesa desde 1286 á 1298 los magis- trados superiores de la Ciudad y Reino se titularon Cónsules y no Jurados. (2) Añádase la nota que sigue.—El Pavosde",
+    "tess-ia-300dpi-spa_old-psm3": "(1) Entiéndase añadida la siguiente nota.—Durante la dominacion araſigonesa desde 1286 á 1298 los magis- trados superiores de la Ciudad y Reino se titularon Cónsules y no Jurados. (2) Añádase la nota que sigue.—El Pavorde Terrassa se olvidó aquí de que había descrito la entrada del Obispo Rojas en la fecha de zo de Octubre de 1497: entónces estuvo en lo cierto. (3) Debe sobreentenderse la nota siguiente—Falta aquí una cláusula en que se diga una de dos cosas «había uno» Ó bien «estaba fulano de tal.»",
+    "vision-bne-400dpi-corr": "Entiéndase añadida la siguiente nota.— Durante la dominacion aragonesa desde 1286 á 1298 los magis- trados superiores de la Ciudad y Reino se titularon Cónsules y no Jurados. Añadase la nota que sigue.— El Pavorde Terrassa se olvidó agul de que había descrito la entrada del (2) Obispo Rojas en la fecha de 3o de Octubre de 1497: entónces estuvo en Debe sobreentenderse la nota siguiente—Falta aquí una cláusula en que se diga una de dos cosas «había uno» o bien restaba fulano de tal.»"
+   }
+  },
+  {
+   "line": 63,
+   "bbox": [
+    0.4647577107607301,
+    0.7718023257478038,
+    0.506607928842794,
+    0.7848837207347545
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "FIN.",
+    "abbyy-bne": "FIN.",
+    "abbyy-ia": "Pavorde",
+    "tess-bne-400dpi-spa_old-psm3": "Terrassa",
+    "tess-ia-300dpi-spa_old-psm3": "FIN.",
+    "vision-bne-400dpi-corr": "FIN."
+   }
+  },
+  {
+   "line": 64,
+   "bbox": [
+    0.8502202646036002,
+    0.864825581952658,
+    0.8612334801100561,
+    0.8749999997818382
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": ":",
+    "abbyy-bne": "",
+    "abbyy-ia": "Terrassa",
+    "tess-bne-400dpi-spa_old-psm3": "se",
+    "tess-ia-300dpi-spa_old-psm3": "",
+    "vision-bne-400dpi-corr": "-01"
+   }
+  },
+  {
+   "line": 65,
+   "bbox": [
+    0.596785518730856,
+    0.9603451781082712,
+    0.8040955381801506,
+    0.9902362166605799
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Diğilized by Google",
+    "abbyy-bne": "",
+    "abbyy-ia": "se olvidó aquí de que había descrito la entrada del Obispo Rojas en la fecha de 30 de Octubre de 1497: entónces estuvo en lo cierto. (3) Debe sobreentenderse la nota siguiente— Falta aquí una cláusula en que se diga una de dos cosas «había uno» ó bien «restaba fulano de tal.»",
+    "tess-bne-400dpi-spa_old-psm3": "olvidó- aquí de que había descrito la entrada del Obispo Rojas en la fecha de zo de Octubre de 1497: entónces estuvo en lo cierte. (3) Debe sobreentenderse la nota siguiente—Falta aquí una cláusula en que se diga una de dos cosas «había — uno» ó bien «estaba fulano de tal.» FIN,",
+    "tess-ia-300dpi-spa_old-psm3": "",
+    "vision-bne-400dpi-corr": "03 ORSON"
+   }
+  }
+ ]
+}

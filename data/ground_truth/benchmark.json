@@ -1,0 +1,71 @@
+{
+ "population": {
+  "unanimous": 5807,
+  "one-dissent": 1264,
+  "two-dissent": 645,
+  "contested": 536
+ },
+ "engines": {
+  "abbyy-bne": {
+   "strict": 0.8831775269487339,
+   "lenient": 0.8831775269487339
+  },
+  "abbyy-ia": {
+   "strict": 0.9052238418392078,
+   "lenient": 0.9052238418392078
+  },
+  "tess-bne-200dpi-spa_old-psm3": {
+   "strict": 0.8961021474351576,
+   "lenient": 0.8971847132777816
+  },
+  "tess-bne-400dpi-spa-psm3": {
+   "strict": 0.8981039228585278,
+   "lenient": 0.8991864887011518
+  },
+  "tess-bne-400dpi-spa_old-psm3": {
+   "strict": 0.8852050296609191,
+   "lenient": 0.8862875955035431
+  },
+  "tess-bne-600dpi-spa_old-psm3": {
+   "strict": 0.8697899114404204,
+   "lenient": 0.8697899114404204
+  },
+  "tess-ia-300dpi-spa-psm3": {
+   "strict": 0.9328747143549616,
+   "lenient": 0.9350398460402097
+  },
+  "tess-ia-300dpi-spa_old-cat-lat-psm3": {
+   "strict": 0.9450820964999345,
+   "lenient": 0.9483297940278066
+  },
+  "tess-ia-300dpi-spa_old-psm1": {
+   "strict": 0.9307198254968493,
+   "lenient": 0.9328849571820973
+  },
+  "tess-ia-300dpi-spa_old-psm3": {
+   "strict": 0.9307198254968493,
+   "lenient": 0.9328849571820973
+  },
+  "vision-bne-400dpi-corr": {
+   "strict": 0.9214681000854049,
+   "lenient": 0.9257983634559009
+  },
+  "vision-bne-400dpi-raw": {
+   "strict": 0.9184077068377843,
+   "lenient": 0.9216554043656563
+  },
+  "vision-ia-300dpi-corr": {
+   "strict": 0.9017280082173441,
+   "lenient": 0.9060582715878401
+  },
+  "vision-ia-300dpi-raw": {
+   "strict": 0.8925699109018305,
+   "lenient": 0.8969001742723265
+  }
+ },
+ "consensus": {
+  "strict": 0.9724724742053874,
+  "lenient": 0.9724724742053874
+ },
+ "unanimous_wrong": []
+}

@@ -1,0 +1,16 @@
+[project]
+name = "cronicon"
+version = "0.1.0"
+description = "OCR pilot for Alvaro Campaner's Cronicon Mayoricense (Palma, 1881)"
+requires-python = ">=3.12"
+dependencies = [
+    "pymupdf>=1.24",
+    "rapidfuzz>=3.0",
+    "lxml>=5.0",
+    "pillow>=10.0",
+    "pyobjc-framework-Vision>=10.0",
+    "pyobjc-framework-Quartz>=10.0",
+]
+
+[tool.uv]
+package = false

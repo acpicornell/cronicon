@@ -1,0 +1,3 @@
+# Kraken pulls PyTorch, so it lives in its own environment rather than the
+# main lock:  uv venv .venv-htr && VIRTUAL_ENV=.venv-htr uv pip install -r htr-requirements.txt
+kraken==7.0.3

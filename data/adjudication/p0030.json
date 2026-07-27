@@ -1,0 +1,1513 @@
+{
+ "pdf_page": 30,
+ "page_class": "body",
+ "reference": "vision-ia-300dpi-corr",
+ "panel": [
+  "abbyy-bne",
+  "abbyy-ia",
+  "tess-bne-400dpi-spa_old-psm3",
+  "tess-ia-300dpi-spa_old-psm3",
+  "vision-bne-400dpi-corr",
+  "vision-ia-300dpi-corr"
+ ],
+ "source_image": "leaf0028_630dpi.png",
+ "lines_total": 110,
+ "lines_agreed": 27,
+ "lines_contested": 83,
+ "contested": [
+  {
+   "line": 0,
+   "bbox": [
+    0.42047930439472375,
+    0.07703488359031496,
+    0.5664488030998295,
+    0.0915697675724757
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "MAYORICENSE.",
+    "abbyy-bne": "",
+    "abbyy-ia": "MAYORICENSE.",
+    "tess-bne-400dpi-spa_old-psm3": "—",
+    "tess-ia-300dpi-spa_old-psm3": "MAYORICENSE. , z",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 1,
+   "bbox": [
+    0.11982571898034193,
+    0.104534746676605,
+    0.4771241757182781,
+    0.11925795044574516
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "treinta caballeros ó soldados, y os haremos",
+    "abbyy-bne": "treinta caballeros ó soldados, y os haremos",
+    "abbyy-ia": "treinta caballeros 6 soldados, y os haremos",
+    "tess-bne-400dpi-spa_old-psm3": "treinta caballeros ó soldados, y 05 haremos",
+    "tess-ia-300dpi-spa_old-psm3": "treinta caballeros 6 soldados, y os haremos",
+    "vision-bne-400dpi-corr": "treinta caballeros ó soldados, y os haremos"
+   }
+  },
+  {
+   "line": 2,
+   "bbox": [
+    0.11745135059870325,
+    0.11700789854801219,
+    0.4773018263278469,
+    0.13512020865876262
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "anotar en el libro con los otros, y os daremos",
+    "abbyy-bne": "anotar en el libro con los otros, y os daremos <",
+    "abbyy-ia": "anotar en el libro con los otros, y os daremos",
+    "tess-bne-400dpi-spa_old-psm3": "anotar en el libro con los otros, y 0s daremos",
+    "tess-ia-300dpi-spa_old-psm3": "anotar en el libro con los otros, y os daremos",
+    "vision-bne-400dpi-corr": "anotar en el libro con los otros, y os daremos"
+   }
+  },
+  {
+   "line": 3,
+   "bbox": [
+    0.11764706507901897,
+    0.13368669042541037,
+    0.4771241857379743,
+    0.14825581344978356
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "una alquería buena y pingüe, y los otros os",
+    "abbyy-bne": "una alquería buena y pingüe, y los otros os",
+    "abbyy-ia": "una alquería buena y pingüe, y los otros os",
+    "tess-bne-400dpi-spa_old-psm3": "una alquería buena y pingüe, y los otros 05",
+    "tess-ia-300dpi-spa_old-psm3": "una alquería buena y pingüe, y los otros os",
+    "vision-bne-400dpi-corr": "una alquería buena y pingüe, y los otros os"
+   }
+  },
+  {
+   "line": 5,
+   "bbox": [
+    0.11982572195782915,
+    0.162790697863201,
+    0.4771241786957653,
+    0.1773255807220704
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "tienen. Os haremos grande honor, dandoos",
+    "abbyy-bne": "tienen. Os haremos grande honor, dándoos",
+    "abbyy-ia": "tienen. Os haremos grande honor, dándoos",
+    "tess-bne-400dpi-spa_old-psm3": "tienen. Os haremos grande honor, dandoos",
+    "tess-ia-300dpi-spa_old-psm3": "tienen. Os haremos grande honor, dandoos",
+    "vision-bne-400dpi-corr": "tienen. Os haremos grande honor, dandoos"
+   }
+  },
+  {
+   "line": 6,
+   "bbox": [
+    0.11764706507901897,
+    0.17873969374204035,
+    0.4771241857379743,
+    0.19199057713426648
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "igual parte como á los Templarios. El Maestre",
+    "abbyy-bne": "igu^^P^^^^ á los Templarios. El Maestre",
+    "abbyy-ia": "igual pane como á los Templarios. El Maestre",
+    "tess-bne-400dpi-spa_old-psm3": "igual parte como á los Templarios. El Maestre",
+    "tess-ia-300dpi-spa_old-psm3": "igual parte como á los Templarios. El Maestre",
+    "vision-bne-400dpi-corr": "igual parte como á los Templarios. El Maestre"
+   }
+  },
+  {
+   "line": 7,
+   "bbox": [
+    0.11764706213239592,
+    0.19316843336136036,
+    0.4771241827913514,
+    0.20789163713050052
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "luego se echó á besarle la mano, en accion de",
+    "abbyy-bne": "luego se echó á besarle la mano, en acción de",
+    "abbyy-ia": "luego se echó á besarle la mano, en acción de",
+    "tess-bne-400dpi-spa_old-psm3": "luego se echó á besarle la mano, en accion de",
+    "tess-ia-300dpi-spa_old-psm3": "luego se echó á besarle la mano, en accion de",
+    "vision-bne-400dpi-corr": "luego se echó á besarle la mano, en accion de"
+   }
+  },
+  {
+   "line": 9,
+   "bbox": [
+    0.11730407533426719,
+    0.22166902153899692,
+    0.47735620431815906,
+    0.24108894438452055
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Dijo despues el Maestre: Señor, ya que tanta",
+    "abbyy-bne": "Dijo despues el Maestre: Señor, ya que tanta",
+    "abbyy-ia": "Dijo después el Maestre: Señor, ya que tanta",
+    "tess-bne-400dpi-spa_old-psm3": "Dijo despues el Maestre: Señor, ya que tanta",
+    "tess-ia-300dpi-spa_old-psm3": "Dijo despues el Maestre: Señor, ya que tanta",
+    "vision-bne-400dpi-corr": "Dijo despues el Maestre: Señor, ya que tanta"
+   }
+  },
+  {
+   "line": 10,
+   "bbox": [
+    0.11764705749913536,
+    0.23837209321203812,
+    0.4771241781580908,
+    0.25294464058994914
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "gracia nos habeis hecho, sea de vuestro agrado",
+    "abbyy-bne": "gracia nos habéis hecho, sea de vuestro agrado",
+    "abbyy-ia": "gracia nos habéis hecho, sea de vuestro agrado",
+    "tess-bne-400dpi-spa_old-psm3": "gracia nos habeis hecho, sea de vuestro agrado",
+    "tess-ia-300dpi-spa_old-psm3": "gracia nos habeis hecho, sea de vuestro agrado",
+    "vision-bne-400dpi-corr": "gracia nos habeis hecho, sea de vuestro agrado"
+   }
+  },
+  {
+   "line": 11,
+   "bbox": [
+    0.11957528311028238,
+    0.2529953801738476,
+    0.4774036188217582,
+    0.2689834189367073
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "darnos parte de los muebles y algunas casas,",
+    "abbyy-bne": "darnos parte de los muebles y algunas casas,",
+    "abbyy-ia": "damos parte de los muebles y algunas casas,",
+    "tess-bne-400dpi-spa_old-psm3": "darnos parte de los muebles y algunas casas,",
+    "tess-ia-300dpi-spa_old-psm3": "darnos parte de los muebles y algunas casas,",
+    "vision-bne-400dpi-corr": "darnos parte de los muebles y algunas casas,"
+   }
+  },
+  {
+   "line": 13,
+   "bbox": [
+    0.11982571341779892,
+    0.2834302323679114,
+    0.47930283407675434,
+    0.2965253236810702
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Rey, y volviéndose á los circunstantes dijo:",
+    "abbyy-bne": "E.eyj y volviéndose á los circunstantes dijo,",
+    "abbyy-ia": "Rey, y volviéndose á los circunstantes dijo:",
+    "tess-bne-400dpi-spa_old-psm3": "Rey, y volviéndose 4 los circunstantes dijo:",
+    "tess-ia-300dpi-spa_old-psm3": "Rey, y volviéndose á los circunstantes dijo:",
+    "vision-bne-400dpi-corr": "Rey, y volviéndose á los circunstantes dijo:"
+   }
+  },
+  {
+   "line": 14,
+   "bbox": [
+    0.1198257216310318,
+    0.29796511663742564,
+    0.4771241783689679,
+    0.31249999949629514
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "qué sentís vosotros de esto que se pide. Res-",
+    "abbyy-bne": "qué sentís vosotros de esto que se pide. Res­",
+    "abbyy-ia": "qué sentís vosotros de esto que se pide. Res-",
+    "tess-bne-400dpi-spa_old-psm3": "qué sentis vosotros de esto que se pide. Res-",
+    "tess-ia-300dpi-spa_old-psm3": "qué sentís vosotros de esto que se pide. Res-",
+    "vision-bne-400dpi-corr": "qué sentís vosotros de esto que se pide. Res-"
+   }
+  },
+  {
+   "line": 15,
+   "bbox": [
+    0.1110102498598234,
+    0.3122380599755814,
+    0.4772377671394584,
+    0.3290782320142045
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "• pondieron ellos: Señor no es posible; ¿cómo",
+    "abbyy-bne": "pondieron ellos: Señor no es posible; ¿como",
+    "abbyy-ia": "pondieron ellos: Señor no es posible; ¿cómo",
+    "tess-bne-400dpi-spa_old-psm3": "pondieron ellos: Señor no es posiblez; ¿cómo",
+    "tess-ia-300dpi-spa_old-psm3": "- pondieron ellos: Señor no es posible; ¿cómo",
+    "vision-bne-400dpi-corr": "pondieron ellos: Señor no es posible; ¿cómo"
+   }
+  },
+  {
+   "line": 16,
+   "bbox": [
+    0.11764707275087341,
+    0.3270348840662247,
+    0.4793028303718567,
+    0.3430506479050297
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "han de volverlos los que ya los tienen?, en cuan-",
+    "abbyy-bne": "han de volverlos los que ya los tienen?, en cuan",
+    "abbyy-ia": "han de volverlos los que ya los tienen?, en cuan-",
+    "tess-bne-400dpi-spa_old-psm3": "han de volverlos los que ya los tienen?, en cuan-",
+    "tess-ia-300dpi-spa_old-psm3": "han de volverlos los que ya los tienen?, en cuan-",
+    "vision-bne-400dpi-corr": "han de volverlos los que ya los tienen?, en cuan-"
+   }
+  },
+  {
+   "line": 17,
+   "bbox": [
+    0.11546841134228843,
+    0.34156976767234926,
+    0.479302832884291,
+    0.3590116273276509
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "to pero d las casas, se podrán buscar, ó lugar",
+    "abbyy-bne": "to pero á las casas, se podran buscar, o lugar",
+    "abbyy-ia": "to pero á las casas, se podrán buscar, ó lugar",
+    "tess-bne-400dpi-spa_old-psm3": "to pero á las casas, se podrán buscar, Ó lugar",
+    "tess-ia-300dpi-spa_old-psm3": "to pero á las casas, se podrán buscar, 6 lugar",
+    "vision-bne-400dpi-corr": "to pero á las casas, se podrán buscar, ó lugar"
+   }
+  },
+  {
+   "line": 19,
+   "bbox": [
+    0.11982571119557676,
+    0.37209302326907423,
+    0.47930283185453215,
+    0.38517441885301884
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "hallase medio sin costaros nada, convendríais?",
+    "abbyy-bne": "hallase medio sin costares nada, convendríais?",
+    "abbyy-ia": "hallase medio sin costaros nada, convendríais ?",
+    "tess-bne-400dpi-spa_old-psm3": "hallase medio sín costaros nada, convendriaïs ?",
+    "tess-ia-300dpi-spa_old-psm3": "hallase medio sín costaros nada, convendriais ? —",
+    "vision-bne-400dpi-corr": "hallase medio sin costaros nada, convendríais?"
+   }
+  },
+  {
+   "line": 21,
+   "bbox": [
+    0.1198257131706108,
+    0.4010600708856049,
+    0.47712416990854695,
+    0.417255595031659
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "el Rey, demosles aquel lugar, en que se guar-",
+    "abbyy-bne": "el Rey, démosles aquel lugar, en que se guar­",
+    "abbyy-ia": "el Rey, démosles aquel lugar, en que se guar-",
+    "tess-bne-400dpi-spa_old-psm3": "el Rey, demosles aquel lugar, en que se guar",
+    "tess-ia-300dpi-spa_old-psm3": "el Rey, demosles aquel lugar, en que se guar-",
+    "vision-bne-400dpi-corr": "el Rey, demosles aquel lugar, en que se guar-"
+   }
+  },
+  {
+   "line": 23,
+   "bbox": [
+    0.11982571581431295,
+    0.431684334436617,
+    0.4793028364732683,
+    0.44622092975307814
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "zana, donde hay las paredes, y allí podrán",
+    "abbyy-bne": "zana, donde hay las paredes, y allí podrán",
+    "abbyy-ia": "zana, donde hay las paredes, y allí podrán",
+    "tess-bne-400dpi-spa_old-psm3": "zana, donde hay las paredes, y alli podrán",
+    "tess-ia-300dpi-spa_old-psm3": "zana, donde hay las paredes, y alli podrán",
+    "vision-bne-400dpi-corr": "zana, donde hay las paredes, y allí podrán"
+   }
+  },
+  {
+   "line": 25,
+   "bbox": [
+    0.11982571341779892,
+    0.4607558137647336,
+    0.47930283407675434,
+    0.47529069774689425
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "demosles cuatro galeras que allí se hallan, que",
+    "abbyy-bne": "démosles cuatro galeras que allí se hallan, que",
+    "abbyy-ia": "démosles cuatro galeras que allí se hallan, que",
+    "tess-bne-400dpi-spa_old-psm3": "demosles cuatro galeras que alli se hallan, que",
+    "tess-ia-300dpi-spa_old-psm3": "demosles cuatro galeras que allí se hallan, que",
+    "vision-bne-400dpi-corr": "demosles cuatro galeras que allí se hallan, que"
+   }
+  },
+  {
+   "line": 28,
+   "bbox": [
+    0.11982571341779892,
+    0.5058139533577568,
+    0.47930283407675434,
+    0.5203488373399175
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "subvenido á los freiles sin perjuicio de ellos,",
+    "abbyy-bne": "subvenido á los freiles sin perjuicio de ellos,",
+    "abbyy-ia": "subvenido á los freiles sin perjuicio de ellos,",
+    "tess-bne-400dpi-spa_old-psm3": "cubvenido 4 los freiles sín perjuicio de ellos,",
+    "tess-ia-300dpi-spa_old-psm3": "subvenido á los freiles sín perjuicio de ellos,",
+    "vision-bne-400dpi-corr": "subvenido á los freiles sin perjuicio de ellos,"
+   }
+  },
+  {
+   "line": 29,
+   "bbox": [
+    0.11982571431649167,
+    0.5203180212252767,
+    0.4793028349754471,
+    0.533568904617503
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "y los freiles se enternecieron y lloraron de ale-",
+    "abbyy-bne": "y los freiles se enternecieron y lloraron de ale­",
+    "abbyy-ia": "y los freiles se enternecieron y lloraron de ale-",
+    "tess-bne-400dpi-spa_old-psm3": "y los freiles se enternecieron y lloraron de ale-",
+    "tess-ia-300dpi-spa_old-psm3": "y los freiles se enternecieron y lloraron de ale-",
+    "vision-bne-400dpi-corr": "y los freiles se enternecieron y lloraron de ale-"
+   }
+  },
+  {
+   "line": 30,
+   "bbox": [
+    0.11982570652782087,
+    0.5347467610792076,
+    0.47930282718677625,
+    0.5494699648483478
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "gría, viendo la bondad de aquel generoso y li-",
+    "abbyy-bne": "gría, viendo la bondad de aquel generoso y li­",
+    "abbyy-ia": "gría, viendo la bondad de aquel generoso y li-",
+    "tess-bne-400dpi-spa_old-psm3": "gría, viendo la bondad de aquel generoso y li-",
+    "tess-ia-300dpi-spa_old-psm3": "gría, viendo la bondad de aquel generoso y li-",
+    "vision-bne-400dpi-corr": "gría, viendo la bondad de aquel generoso y li-"
+   }
+  },
+  {
+   "line": 31,
+   "bbox": [
+    0.1175931201862108,
+    0.5492074961092235,
+    0.2440626548006929,
+    0.5641645972099698
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "beral Principe.»",
+    "abbyy-bne": "beral Príncipe.»",
+    "abbyy-ia": "beral Príncipe.»",
+    "tess-bne-400dpi-spa_old-psm3": "beral Principe.»",
+    "tess-ia-300dpi-spa_old-psm3": "beral Principe.»",
+    "vision-bne-400dpi-corr": "beral Principe.»"
+   }
+  },
+  {
+   "line": 32,
+   "bbox": [
+    0.13943354771719488,
+    0.5638987045812897,
+    0.4793028278819337,
+    0.5786219083504298
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Conquistó el Rey en aquellos montes y dé-",
+    "abbyy-bne": "«Conquistó el Rey en aquellos montes y de­",
+    "abbyy-ia": "«Conquistó el Rey en aquellos montes y dé-",
+    "tess-bne-400dpi-spa_old-psm3": "«Conquistó el Rey en aquellos montes y de-",
+    "tess-ia-300dpi-spa_old-psm3": "«Conquistó el Rey en aquellos montes y dé-",
+    "vision-bne-400dpi-corr": "«Conquistó el Rey en aquellos montes y dé-"
+   }
+  },
+  {
+   "line": 33,
+   "bbox": [
+    0.11982570390436413,
+    0.5784883723190919,
+    0.4793028245633195,
+    0.5915783273827669
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "belo á quinientos moros. Tomó diez mil bue-",
+    "abbyy-bne": "belo á quinientos moros. Tomo diez mil bue­",
+    "abbyy-ia": "belo á quinientos moros. Tomó diez mil bue-",
+    "tess-bne-400dpi-spa_old-psm3": "belo á quinientos moros. 'Tomó diez mil bue-",
+    "tess-ia-300dpi-spa_old-psm3": "belo á quinientos moros. Tomó diez mil bue-",
+    "vision-bne-400dpi-corr": "belo á quinientos moros. Tomó diez mil bue-"
+   }
+  },
+  {
+   "line": 34,
+   "bbox": [
+    0.11982572073778569,
+    0.5944767439972918,
+    0.47712417747572183,
+    0.6090116279794526
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "yes, treinta mil ovejas, y despues se entregaron",
+    "abbyy-bne": "yes, treinta mil ovejas, y despues se entregaron",
+    "abbyy-ia": "yes, treinta mil ovejas, y después se entregaron",
+    "tess-bne-400dpi-spa_old-psm3": "yes, treinta mil ovejas, y despues se entregaron",
+    "tess-ia-300dpi-spa_old-psm3": "yes, treinta mil ovejas, y despues se entregaron",
+    "vision-bne-400dpi-corr": "yes, treinta mil ovejas, y despues se entregaron"
+   }
+  },
+  {
+   "line": 35,
+   "bbox": [
+    0.11982572157656557,
+    0.608951707668416,
+    0.47712417831450177,
+    0.6236749114375562
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "al Rey mil y quinientos moros. Volvió el Rey",
+    "abbyy-bne": "al Rey mil y quinientos moros. Volvio el Rey",
+    "abbyy-ia": "al Rey mil y quinientos moros. Volvió el Rey",
+    "tess-bne-400dpi-spa_old-psm3": "al Rey mil y quinientos moros. Volvió el Rey",
+    "tess-ia-300dpi-spa_old-psm3": "al Rey mil y quinientos moros. Volvió el Rey",
+    "vision-bne-400dpi-corr": "al Rey mil y quinientos moros. Volvió el Rey"
+   }
+  },
+  {
+   "line": 36,
+   "bbox": [
+    0.11982571431649167,
+    0.6235465120226001,
+    0.4793028349754471,
+    0.6381036512137053
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "á la ciudad, glorioso, con los dos mil cautivos y",
+    "abbyy-bne": "á la ciudad, glorioso, con los dos mil cautivos y",
+    "abbyy-ia": "á la ciudad, glorioso, con los dos mil cautivos y",
+    "tess-bne-400dpi-spa_old-psm3": "4 la ciudad, glorioso, con los dos mil cautivos y",
+    "tess-ia-300dpi-spa_old-psm3": "á la ciudad, glorioso, con los dos mil cautivos y",
+    "vision-bne-400dpi-corr": "á la ciudad, glorioso, con los dos mil cautivos y"
+   }
+  },
+  {
+   "line": 37,
+   "bbox": [
+    0.11982571341779892,
+    0.639534883530702,
+    0.47930283407675434,
+    0.6526162791146467
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "tanta multitud de ganado, que ocupaba el es-",
+    "abbyy-bne": "tanta multitud de ganado, que ocupaba el es­",
+    "abbyy-ia": "tanta multitud de ganado, que ocupaba el es-",
+    "tess-bne-400dpi-spa_old-psm3": "tanta multitud de ganado, que ocupaba el es-",
+    "tess-ia-300dpi-spa_old-psm3": "tanta multitud de ganado, que ocupaba el es-",
+    "vision-bne-400dpi-corr": "tanta multitud de ganado, que ocupaba el es-"
+   }
+  },
+  {
+   "line": 40,
+   "bbox": [
+    0.13943355583266315,
+    0.6831395354964374,
+    0.4793028359974019,
+    0.6976744183553067
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Llegaron en aquellos dias Ato de Foces y",
+    "abbyy-bne": "«Llegaron en aquellos dias Ato de Poces y",
+    "abbyy-ia": "«Llegaron en aquellos dias Ato de Foces y",
+    "tess-bne-400dpi-spa_old-psm3": "«Llegaron en aquellos dias Ato de Foces y",
+    "tess-ia-300dpi-spa_old-psm3": "«Llegaron en aquellos dias Ato de Foces y",
+    "vision-bne-400dpi-corr": "«Llegaron en aquellos dias Ato de Foces y"
+   }
+  },
+  {
+   "line": 41,
+   "bbox": [
+    0.1176470703398351,
+    0.6975853947718905,
+    0.47930282796081847,
+    0.7123085985410307
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Rodrigo de Lizana, volviendo de Aragon; ale-",
+    "abbyy-bne": "Rodrigo de Lizana, volviendo d-e Aragon, ale­",
+    "abbyy-ia": "Rodrigo de Lizana, volviendo de Aragón; ale-",
+    "tess-bne-400dpi-spa_old-psm3": "Rodrigo de Lizana, volviendo de Áragon; ale-",
+    "tess-ia-300dpi-spa_old-psm3": "Rodrigo de Lizana, volviendo de Aragon; ale-",
+    "vision-bne-400dpi-corr": "Rodrigo de Lizana, volviendo de Aragon; ale-"
+   }
+  },
+  {
+   "line": 42,
+   "bbox": [
+    0.1176470703398351,
+    0.7122093021368265,
+    0.47930282796081847,
+    0.7267441861189873
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "gróse el Rey de verles, por haber quedado con",
+    "abbyy-bne": "gróse el Rey de verles, por haber quedado con",
+    "abbyy-ia": "gróse el Rey de verles, por haber quedado con",
+    "tess-bne-400dpi-spa_old-psm3": "oróse el Rey de verles, por haber quedado con",
+    "tess-ia-300dpi-spa_old-psm3": "gróse el Rey de verles, por haber quedado con",
+    "vision-bne-400dpi-corr": "gróse el Rey de verles, por haber quedado con"
+   }
+  },
+  {
+   "line": 46,
+   "bbox": [
+    0.11764706973707542,
+    0.7703180212415471,
+    0.47930282735805874,
+    0.78633720943389
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "haciendo agua su barco, hubo de volver atrás,",
+    "abbyy-bne": "haciendo agua su barco, hubo de volver atrás,",
+    "abbyy-ia": "haciendo agua su barco, hubo de volver atrás,",
+    "tess-bne-400dpi-spa_old-psm3": "haciendo agua su barco, hubo de volver atrás, aai or a ec raná",
+    "tess-ia-300dpi-spa_old-psm3": "haciendo agua su barco, hubo de volver atrás,",
+    "vision-bne-400dpi-corr": "haciendo agua su barco, hubo de volver atrás,"
+   }
+  },
+  {
+   "line": 47,
+   "bbox": [
+    0.1198257216310318,
+    0.7862190810085946,
+    0.4771241783689679,
+    0.7994699644008207
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "y asi quedó en Tarragona con Blasco de Maza",
+    "abbyy-bne": "y así quedó en Tarragona con Blasco de Maza",
+    "abbyy-ia": "y asi quedó en Tarragona con Blasco de Maza",
+    "tess-bne-400dpi-spa_old-psm3": "y así quedó en Tarragona con Blasco de Maza",
+    "tess-ia-300dpi-spa_old-psm3": "y así quedó en Tarragona con Blasco de Maza",
+    "vision-bne-400dpi-corr": "y así quedó en Tarragona con Blasco de Maza"
+   }
+  },
+  {
+   "line": 48,
+   "bbox": [
+    0.11764705459426975,
+    0.8008720935884718,
+    0.47712417525322515,
+    0.8139534880491252
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "y buena partida de caballeros que venian á",
+    "abbyy-bne": "y buena partida de caballeros que venían á",
+    "abbyy-ia": "y buena partida de caballeros que venían á",
+    "tess-bne-400dpi-spa_old-psm3": "y buena partida de caballeros que venian 4á",
+    "tess-ia-300dpi-spa_old-psm3": "y buena partida de caballeros que venian 4á",
+    "vision-bne-400dpi-corr": "y buena partida de caballeros que venian á"
+   }
+  },
+  {
+   "line": 50,
+   "bbox": [
+    0.13507626272201959,
+    0.8297997644605576,
+    0.4771241798487863,
+    0.8459952886066118
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Como queda dicho, quedaba la division",
+    "abbyy-bne": "«Como queda dicho, quedaba la division",
+    "abbyy-ia": "«Como queda dicho, quedaba la división",
+    "tess-bne-400dpi-spa_old-psm3": "«Como queda dicho, quedaba la division",
+    "tess-ia-300dpi-spa_old-psm3": "«Como queda dicho, quedaba la division",
+    "vision-bne-400dpi-corr": "«Como queda dicho, quedaba la division"
+   }
+  },
+  {
+   "line": 51,
+   "bbox": [
+    0.11982572195782915,
+    0.844476744859325,
+    0.4771241786957653,
+    0.8590116277181945
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "del Reino é Isla ya hecha entre S. M. y los",
+    "abbyy-bne": "del Reino é Isla ya hecha entre S. M. y los",
+    "abbyy-ia": "del Reino é Isla ya hecha entre S. M. y los",
+    "tess-bne-400dpi-spa_old-psm3": "del Reino ¿& Isla ya hecha entre S. M. y los",
+    "tess-ia-300dpi-spa_old-psm3": "del Reino ¿ Isla ya hecha entre S. M. y los",
+    "vision-bne-400dpi-corr": "del Reino é Isla ya hecha entre S. M. y los"
+   }
+  },
+  {
+   "line": 52,
+   "bbox": [
+    0.11764705459426975,
+    0.8589517080483755,
+    0.47712417525322515,
+    0.8736749118175157
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "barones, y de ellos, con sus porcioneros, y se",
+    "abbyy-bne": "barones, y de ellos, con sus porcioneros, y se",
+    "abbyy-ia": "barones, y’ de ellos, con sus porcioneros, y se",
+    "tess-bne-400dpi-spa_old-psm3": "barones, y de ellos, con sus porcioneros, y 5Se",
+    "tess-ia-300dpi-spa_old-psm3": "barones, y' de ellos, con sus porcioneros, y se",
+    "vision-bne-400dpi-corr": "barones, y de ellos, con sus porcioneros, y se"
+   }
+  },
+  {
+   "line": 53,
+   "bbox": [
+    0.11546841966445383,
+    0.8735465122457305,
+    0.4771241772854371,
+    0.8895759718137497
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "redujo á un libro público el dia I5 de Setiem-",
+    "abbyy-bne": "redujo á un libro público el dia 15 de Setiem­",
+    "abbyy-ia": "redujo á un libro público el dia 1 5 de Setiem-",
+    "tess-bne-400dpi-spa_old-psm3": "redujo á un libro público el día 15 de Setiem-",
+    "tess-ia-300dpi-spa_old-psm3": "redujo á un libro público el dia 15 de Setiem-",
+    "vision-bne-400dpi-corr": "redujo á un libro público el dia IS de Setiem-"
+   }
+  },
+  {
+   "line": 58,
+   "bbox": [
+    0.5032679716603554,
+    0.11918604718490633,
+    0.8627450923193108,
+    0.13372093004377583
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "el dia primero de Marzo de dicho año 1230,",
+    "abbyy-bne": "el dia primero de Marzo de dicho año 1230?",
+    "abbyy-ia": "el dia primero de Marzo de dicho año 1230,",
+    "tess-bne-400dpi-spa_old-psm3": "el dia primero de Marzo de dicho año 1230,",
+    "tess-ia-300dpi-spa_old-psm3": "el día primero de Marzo de dicho año 1230,",
+    "vision-bne-400dpi-corr": "el dia primero de Marzo de dicho año 1230,"
+   }
+  },
+  {
+   "line": 60,
+   "bbox": [
+    0.5032679801116986,
+    0.1495877502399583,
+    0.862745100770654,
+    0.16283863363218443
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "político y económico. Tráelo nuestro cronista",
+    "abbyy-bne": "político y económico. Tráelo nuestro cronista",
+    "abbyy-ia": "político y económico. Tráelo nuestro cronista",
+    "tess-bne-400dpi-spa_old-psm3": "político y económico. 'Tráelo nuestro cronista",
+    "tess-ia-300dpi-spa_old-psm3": "político y económico. Tráelo nuestro cronista",
+    "vision-bne-400dpi-corr": "político y económico. Tráelo nuestro cronista"
+   }
+  },
+  {
+   "line": 61,
+   "bbox": [
+    0.5032679853725148,
+    0.16424418585628353,
+    0.8649237429934981,
+    0.17732558144022814
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Dameto en fól. 26s. Y despues de catorce",
+    "abbyy-bne": "Dameto en fól. 265. Y despues de catorce",
+    "abbyy-ia": "Dameto en fól. 265. Y después de catorce",
+    "tess-bne-400dpi-spa_old-psm3": "Dameto en ſ61. 265. Y despues de catorce",
+    "tess-ia-300dpi-spa_old-psm3": "Dameto en ſól. 265. Y despues de catorce",
+    "vision-bne-400dpi-corr": "Dameto en fól. 265. Y despues de catorce"
+   }
+  },
+  {
+   "line": 63,
+   "bbox": [
+    0.5010893351017399,
+    0.19316843371536474,
+    0.8627450927227233,
+    0.207891637484505
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "dia 28 de Octubre de dicho año 1230, dejando",
+    "abbyy-bne": "dia 28 de Octubre de dicho año 1230, dejando",
+    "abbyy-ia": "dia 28 de Octubre de dicho año 1230, dejando",
+    "tess-bne-400dpi-spa_old-psm3": "día 28 de Octubre de dicho año 1230, dejando",
+    "tess-ia-300dpi-spa_old-psm3": "dia 28 de Octubre de dicho año. 1230, dejando",
+    "vision-bne-400dpi-corr": "dia 28 de Octubre de dicho año 1230, dejando"
+   }
+  },
+  {
+   "line": 64,
+   "bbox": [
+    0.5032679858953905,
+    0.20784883739808468,
+    0.8649237435163738,
+    0.22238372025695408
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "por su Lugarteniente y Gobernador de este",
+    "abbyy-bne": "por su Lugarteniente y Gobernador de este",
+    "abbyy-ia": "por su Lugarreniente y Gobernador de este",
+    "tess-bne-400dpi-spa_old-psm3": "por su Lugarteniente y Gobernador de este",
+    "tess-ia-300dpi-spa_old-psm3": "por su Lugarteniente y Gobernador de este",
+    "vision-bne-400dpi-corr": "por su Lugarteniente y Gobernador de este"
+   }
+  },
+  {
+   "line": 65,
+   "bbox": [
+    0.5032679853870392,
+    0.2223203770374912,
+    0.8649237430080225,
+    0.23704358080663135
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Reino á D. Bernardo de Santa Eugenia, Señor",
+    "abbyy-bne": "Reino á D. Bernardo de Santa Eugenia, Señor",
+    "abbyy-ia": "Reino á D. Bernardo de Santa Eugenia, Señor",
+    "tess-bne-400dpi-spa_old-psm3": "Reino 4 D. Bernardo de Santa Eugenia, Señor",
+    "tess-ia-300dpi-spa_old-psm3": "Reino 4 D. Bernardo de Santa Eugenia, Señor",
+    "vision-bne-400dpi-corr": "Reino á D. Bernardo de Santa Eugenia, Señor"
+   }
+  },
+  {
+   "line": 66,
+   "bbox": [
+    0.5032325776596772,
+    0.23824533274414517,
+    0.6078785325061706,
+    0.25158024843547144
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "de Torrella.»",
+    "abbyy-bne": "de Torrella.»",
+    "abbyy-ia": "de Torrella.»",
+    "tess-bne-400dpi-spa_old-psm3": "de Torrella.»",
+    "tess-ia-300dpi-spa_old-psm3": "de Torrella.» ]",
+    "vision-bne-400dpi-corr": "de Torrella.»"
+   }
+  },
+  {
+   "line": 67,
+   "bbox": [
+    0.5206971714838207,
+    0.2529069766610712,
+    0.8627450886105874,
+    0.2688953490414481
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Queda dicho que despues de Pascua de",
+    "abbyy-bne": "«Queda dicho que despues de Pascua de",
+    "abbyy-ia": "«Queda dicho que después de Pascua de",
+    "tess-bne-400dpi-spa_old-psm3": "«Queda dicho que despues de Pascua de",
+    "tess-ia-300dpi-spa_old-psm3": "«Queda dicho que despues de Pascua de",
+    "vision-bne-400dpi-corr": "«Queda dicho que despues de Pascua de"
+   }
+  },
+  {
+   "line": 68,
+   "bbox": [
+    0.5032679757283611,
+    0.26884570100166605,
+    0.8649237333493445,
+    0.2820965843938922
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "1230 padecio Mallorca una terrible peste, de la",
+    "abbyy-bne": "1230 padeció Mallorca una terrible peste, de la",
+    "abbyy-ia": "1230 padeció Mallorca una terrible peste, de la",
+    "tess-bne-400dpi-spa_old-psm3": "1230 padeció Mallorca una terrible peste, de la",
+    "tess-ia-300dpi-spa_old-psm3": "1230 padeció Mallorca una terrible peste, de la",
+    "vision-bne-400dpi-corr": "1230 padeció Mallorca una terrible peste, de la"
+   }
+  },
+  {
+   "line": 69,
+   "bbox": [
+    0.5054466308469927,
+    0.28343023292955705,
+    0.8649237515059481,
+    0.2965253236810702
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "que, entre la mucha gente que murió, acabaron",
+    "abbyy-bne": "que, entre la mucha gente que murió, acabaron",
+    "abbyy-ia": "que, éntrela mucha gente que murió, acabaron",
+    "tess-bne-400dpi-spa_old-psm3": "que, entre la mucha gente que murió , acabaron",
+    "tess-ia-300dpi-spa_old-psm3": "que, entre la mucha gente que murió, acabaron",
+    "vision-bne-400dpi-corr": "que, entre la mucha gente que murió, acabaron"
+   }
+  },
+  {
+   "line": 70,
+   "bbox": [
+    0.5032679801116986,
+    0.2979651166686559,
+    0.862745100770654,
+    0.31104651112930926
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "sus dias muchos caballeros, cuyos cuerpos fue-",
+    "abbyy-bne": "sus dias muchos caballeros, cuyos cuerpos fue­",
+    "abbyy-ia": "sus dias muchos caballeros, cuyos cuerpos fue-",
+    "tess-bne-400dpi-spa_old-psm3": "cus dias muchos caballeros, cuyos cuerpos ſue-",
+    "tess-ia-300dpi-spa_old-psm3": "sus dias muchos caballeros, cuyos cuerpos ſue-",
+    "vision-bne-400dpi-corr": "sus dias muchos caballeros, cuyos cuerpos fue-"
+   }
+  },
+  {
+   "line": 72,
+   "bbox": [
+    0.5032679847697552,
+    0.32848837188973357,
+    0.8649237423907385,
+    0.34305064789196815
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "de la Victoria, ó fueron despues allí trasladados",
+    "abbyy-bne": "de la Victoria, ó fueron despues allí trasladados",
+    "abbyy-ia": "de la Victoria, ó fueron después allí trasladados",
+    "tess-bne-400dpi-spa_old-psm3": "de la Victoria, 6 ſueron despues alli trasladados",
+    "tess-ia-300dpi-spa_old-psm3": "de la Victoria, ó ſueron despues alli trasladados",
+    "vision-bne-400dpi-corr": "de la Victoria, ó fueron despues allí trasladados"
+   }
+  },
+  {
+   "line": 74,
+   "bbox": [
+    0.5053445478350073,
+    0.35863487491727586,
+    0.5992306166037276,
+    0.37101628815576526
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "su tiempo.»",
+    "abbyy-bne": "su tiempo.»",
+    "abbyy-ia": "su tiempo.»",
+    "tess-bne-400dpi-spa_old-psm3": "su tilempo.»",
+    "tess-ia-300dpi-spa_old-psm3": "su tiempo.»",
+    "vision-bne-400dpi-corr": "su tiempo.»"
+   }
+  },
+  {
+   "line": 75,
+   "bbox": [
+    0.5205953186325288,
+    0.3717643489397642,
+    0.8629045223027475,
+    0.3857914108964148
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Fundóse en dicho año de 1230 la casa y",
+    "abbyy-bne": "«Fundóse en dicho año de 1230 la casa y",
+    "abbyy-ia": "«Fundóse en dicho año de 1230 la casa y",
+    "tess-bne-400dpi-spa_old-psm3": "«Fundeóse en dicho año de 1230 la casa y",
+    "tess-ia-300dpi-spa_old-psm3": "«Fundóse en dicho año de 1230 la casa y",
+    "vision-bne-400dpi-corr": "«Fundóse en dicho año de 1230 la casa y"
+   }
+  },
+  {
+   "line": 77,
+   "bbox": [
+    0.5032679804780907,
+    0.4025323908749219,
+    0.8671024020200933,
+    0.4157832742671481
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "regulares de San Agustin, con la donacion que",
+    "abbyy-bne": "regulares de San Agustin, con la donación que",
+    "abbyy-ia": "regulares de San Agustín, con la donación que",
+    "tess-bne-400dpi-spa_old-psm3": "regulares de San Agustin, con la donacion que",
+    "tess-ia-300dpi-spa_old-psm3": "regulares de San Agustin, con la donacion que",
+    "vision-bne-400dpi-corr": "regulares de San Agustin, con la donacion que"
+   }
+  },
+  {
+   "line": 78,
+   "bbox": [
+    0.5032679786138774,
+    0.41715116258740803,
+    0.8627450992728327,
+    0.43168604656956866
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "otorgó el Señor Rey D. Jaime á favor de Pedro",
+    "abbyy-bne": "otorgó el Señor Rey D. Jaime á favor de Pedro",
+    "abbyy-ia": "otorgó el Señor Rey D. Jaime á favor de Pedro",
+    "tess-bne-400dpi-spa_old-psm3": "otorgó el Señor Rey D. Jaime á ſavor de Pedro",
+    "tess-ia-300dpi-spa_old-psm3": "otorgó el Señor Rey D. Jaime á ſavor de Pedro",
+    "vision-bne-400dpi-corr": "otorgó el Señor Rey D. Jaime á favor de Pedro"
+   }
+  },
+  {
+   "line": 79,
+   "bbox": [
+    0.5054466287794431,
+    0.43168433442545373,
+    0.7690631839293437,
+    0.44476744134369883
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "de Teça, en 13 Setiembre 1230.»",
+    "abbyy-bne": "deTeça, en 13 Setiembre 1230.»",
+    "abbyy-ia": "de Te$a, en 13 Setiembre 1230.»",
+    "tess-bne-400dpi-spa_old-psm3": "de Teca, en 13 Setiembre 1230.»",
+    "tess-ia-300dpi-spa_old-psm3": "de Tevca, en 13 Setiembre 1230.»",
+    "vision-bne-400dpi-corr": "de Teça, en 13 Setiembre 1230.»"
+   }
+  },
+  {
+   "line": 80,
+   "bbox": [
+    0.5206971704347126,
+    0.4461130744210995,
+    0.8649237514824986,
+    0.46083627819023976
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Se fundó tambien en Mallorca la religion",
+    "abbyy-bne": "«Se fundó también en Mallorca la religion",
+    "abbyy-ia": "«Se fundó también en Mallorca la religión",
+    "tess-bne-400dpi-spa_old-psm3": "«Se ſundó tambien en Mallorca la religion",
+    "tess-ia-300dpi-spa_old-psm3": "«Se ſundó tambien en Mallorca la religion",
+    "vision-bne-400dpi-corr": "«Se fundó tambien en Mallorca la religion"
+   }
+  },
+  {
+   "line": 81,
+   "bbox": [
+    0.5032679847697552,
+    0.46075581372597396,
+    0.8649237423907385,
+    0.4752906977081346
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "de los Templarios en dicho año de 1230, á",
+    "abbyy-bne": "délos Templarios en dicho año de 1230, a",
+    "abbyy-ia": "délos Templarios en dicho año de 1230, á",
+    "tess-bne-400dpi-spa_old-psm3": "de los Templarios en dicho año de 1230,4",
+    "tess-ia-300dpi-spa_old-psm3": "de los Templarios en dicho año de 1230, á",
+    "vision-bne-400dpi-corr": "de los Templarios en dicho año de 1230, a"
+   }
+  },
+  {
+   "line": 82,
+   "bbox": [
+    0.5031617687540686,
+    0.4751614876696859,
+    0.8650277256300348,
+    0.49162728974442826
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "quienes, por haber concurrido a la conquista, les",
+    "abbyy-bne": "quienes, por haber concurrido á la conquista, les",
+    "abbyy-ia": "quienes, por haber concurrido á la conquista, les",
+    "tess-bne-400dpi-spa_old-psm3": "quienes, por haber concurrido á la conquista, les",
+    "tess-ia-300dpi-spa_old-psm3": "quienes, por haber concurrido á la conquista, les",
+    "vision-bne-400dpi-corr": "quienes, por haber concurrido á la conquista, les"
+   }
+  },
+  {
+   "line": 83,
+   "bbox": [
+    0.5032679843703362,
+    0.4896937572009319,
+    0.8649237419913195,
+    0.5058892813469861
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "perteneció en la citada division de la isla, la",
+    "abbyy-bne": "perteneció en la citada division de la isla, la",
+    "abbyy-ia": "perteneció en la citada división de la isla, la",
+    "tess-bne-400dpi-spa_old-psm3": "perteneció en la citada division de la isla, la",
+    "tess-ia-300dpi-spa_old-psm3": "perteneció en la citada division de la isla, la",
+    "vision-bne-400dpi-corr": "perteneció en la citada division de la isla, la"
+   }
+  },
+  {
+   "line": 84,
+   "bbox": [
+    0.5054466222050177,
+    0.5058139541504872,
+    0.864923742863973,
+    0.5188953486111406
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "duodécima parte de los bienes raices, con un",
+    "abbyy-bne": "duodécima parte de los bienes raíces, con un",
+    "abbyy-ia": "duodécima parte de los bienes raíces, con un",
+    "tess-bne-400dpi-spa_old-psm3": "duodécima parte de los bienes raices, con Un",
+    "tess-ia-300dpi-spa_old-psm3": "duodécima parte de los bienes raices, con un",
+    "vision-bne-400dpi-corr": "duodécima parte de los bienes raices, con un"
+   }
+  },
+  {
+   "line": 86,
+   "bbox": [
+    0.5054466203622436,
+    0.5347467608031523,
+    0.864923741021199,
+    0.5479976441953784
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "en que ejecutaron su fundacion, y muchas otras",
+    "abbyy-bne": "en que ejecutaron su fundación, y muchas otras",
+    "abbyy-ia": "en que ejecutaron su fundación, y muchas otras",
+    "tess-bne-400dpi-spa_old-psm3": "en que ejecutaron su ſundacion, y muchas otras",
+    "tess-ia-300dpi-spa_old-psm3": "en que ejecutaron su ſundacion, y muchas otras",
+    "vision-bne-400dpi-corr": "en que ejecutaron su fundacion, y muchas otras"
+   }
+  },
+  {
+   "line": 87,
+   "bbox": [
+    0.5054466188644223,
+    0.5494186051679292,
+    0.8649237395233778,
+    0.5624999996285825
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "casas en la ciudad, como se ve en dicho libro",
+    "abbyy-bne": "casas en la ciudad, como se ve en dicho libro",
+    "abbyy-ia": "casas en la ciudad, como se ve en dicho libro",
+    "tess-bne-400dpi-spa_old-psm3": "casas ‘en la ciudad, como se ve en dicho libro",
+    "tess-ia-300dpi-spa_old-psm3": "casas en la ciudad, como se ve en dicho libro",
+    "vision-bne-400dpi-corr": "casas en la ciudad, como se ve en dicho libro"
+   }
+  },
+  {
+   "line": 89,
+   "bbox": [
+    0.5227162032318747,
+    0.5770596223229658,
+    0.8651845727865899,
+    0.5931391329432268
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Fundaron tambien en esta capital su casa y",
+    "abbyy-bne": "«Fundaron también en esta capital su casa y",
+    "abbyy-ia": "«Fundaron también en esta capital su casa y",
+    "tess-bne-400dpi-spa_old-psm3": "«Fundaron tambien en esta capital su casa y",
+    "tess-ia-300dpi-spa_old-psm3": "«Fundaron tambien en esta capital su casa y",
+    "vision-bne-400dpi-corr": "«Fundaron tambien en esta capital su casa y"
+   }
+  },
+  {
+   "line": 90,
+   "bbox": [
+    0.5009652934560685,
+    0.5928851112954185,
+    0.8672541424408576,
+    0.6097266992427293
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Iglesia los caballeros de la religion de San Juan,",
+    "abbyy-bne": "Iglesia los caballeros de la religion de San Juan,",
+    "abbyy-ia": "Iglesia los caballeros de la religión de San Juan,",
+    "tess-bne-400dpi-spa_old-psm3": "Tglesía los caballeros de la religion de San Juan,",
+    "tess-ia-300dpi-spa_old-psm3": "Iglesia los caballeros de la religion de San Juan,",
+    "vision-bne-400dpi-corr": "Iglesia los caballeros de la religion de San Juan,"
+   }
+  },
+  {
+   "line": 92,
+   "bbox": [
+    0.5054466264727329,
+    0.6235465121265047,
+    0.8671023840937162,
+    0.6366313309406958
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "efecto el Señor Rey D. Jaime, sin embargo de",
+    "abbyy-bne": "efecto el Señor Rey D. Jaime, sin embargo de",
+    "abbyy-ia": "efecto el Señor Rey D. Jaime , sin embargo de",
+    "tess-bne-400dpi-spa_old-psm3": "eſecto el Señor Rey D. Jaime, sín embargo de",
+    "tess-ia-300dpi-spa_old-psm3": "eſecto el Señor Rey D. Jaime, sín embargo de",
+    "vision-bne-400dpi-corr": "efecto el Señor Rey D. Jaime, sin embargo de"
+   }
+  },
+  {
+   "line": 93,
+   "bbox": [
+    0.5054466355141269,
+    0.6380813957384233,
+    0.8671023931351103,
+    0.6511627901990766
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "no haber llegado á tiempo de asistir á la con-",
+    "abbyy-bne": "no haber llegado á tiempo de asistir á la con­",
+    "abbyy-ia": "no haber llegado á tiempo de asistir á la con-",
+    "tess-bne-400dpi-spa_old-psm3": "no haber llegado á tiempo de asístir á la con-",
+    "tess-ia-300dpi-spa_old-psm3": "no haber llegado á tiempo de asistir á la con-",
+    "vision-bne-400dpi-corr": "no haber llegado á tiempo de asistir á la con-"
+   }
+  },
+  {
+   "line": 94,
+   "bbox": [
+    0.5054466355141269,
+    0.6525323909415401,
+    0.8671023931351103,
+    0.6657832743337663
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "quista, con algunas alquerías para su manuten-",
+    "abbyy-bne": "quista, con algunas alquerías para su manuten­ ción.»",
+    "abbyy-ia": "quista, con algunas alquerías para su manuten- ción.»",
+    "tess-bne-400dpi-spa_old-psm3": "quista, con algunas alquerias para 5u manuten- CLON.Y»",
+    "tess-ia-300dpi-spa_old-psm3": "quista, con algunas alquerías para su manuten- Ccion.»",
+    "vision-bne-400dpi-corr": "quista, con algunas alquerias para su manuten- cion.»"
+   }
+  },
+  {
+   "line": 95,
+   "bbox": [
+    0.5228758219670292,
+    0.6816843345335162,
+    0.8671024030148151,
+    0.6962209298499773
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«Los religiosos claustrales de San Francisco,",
+    "abbyy-bne": "«Los religiosos claustrales de San Francisco,",
+    "abbyy-ia": "«Los religiosos claustrales de San Francisco,",
+    "tess-bne-400dpi-spa_old-psm3": "«Los religiosos claustrales de San Erancisco,",
+    "tess-ia-300dpi-spa_old-psm3": "«Los religiosos claustrales de San Francisco,",
+    "vision-bne-400dpi-corr": "«Los religiosos claustrales de San Francisco,"
+   }
+  },
+  {
+   "line": 96,
+   "bbox": [
+    0.49891067597674316,
+    0.6961130740144926,
+    0.8649237344807736,
+    0.7108362777836328
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "asistieron tambien á la conquista y les dió el",
+    "abbyy-bne": "asistieron también á la conquista y les dió el",
+    "abbyy-ia": "asistieron también á la conquista y les dió el",
+    "tess-bne-400dpi-spa_old-psm3": "asistieron tambien á la conquista y les dió el",
+    "tess-ia-300dpi-spa_old-psm3": "asistieron tambien 4 la conquista y les dió el",
+    "vision-bne-400dpi-corr": "asistieron tambien á la conquista y les dió el"
+   }
+  },
+  {
+   "line": 97,
+   "bbox": [
+    0.4901960874030638,
+    0.7107558143481816,
+    0.8649237476731886,
+    0.725290697207051
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Rey, este mismo año de 1230, un huerto de su",
+    "abbyy-bne": "Rey, este mismo año de 1230, un huerto de su",
+    "abbyy-ia": "Rey, este mismo año de 1230, un huerto de su",
+    "tess-bne-400dpi-spa_old-psm3": "Rey, este mismo año de 1230, un huerto de su",
+    "tess-ia-300dpi-spa_old-psm3": "Rey, este mismo año de 1230, un huerto de su",
+    "vision-bne-400dpi-corr": "Rey, este mismo año de t230, un huerto de su"
+   }
+  },
+  {
+   "line": 98,
+   "bbox": [
+    0.4923747211618558,
+    0.726737337874371,
+    0.8649237444699527,
+    0.7398255810421
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "porcion, dentro de esta ciudad, llamado Riat",
+    "abbyy-bne": "porción, dentro de esta ciudad, llamado Riat",
+    "abbyy-ia": "porción, dentro de esta ciudad, llamado Riat",
+    "tess-bne-400dpi-spa_old-psm3": "porcion, dentro de esta ciudad, llamado Riat",
+    "tess-ia-300dpi-spa_old-psm3": "porcion, dentro de esta ciudad, llamado Riat",
+    "vision-bne-400dpi-corr": "porcion, dentro de esta ciudad, llamado Riat"
+   }
+  },
+  {
+   "line": 99,
+   "bbox": [
+    0.503267975209738,
+    0.7411660779514321,
+    0.8627450958686934,
+    0.7573616020974863
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Aboabdille Abnazac, donde fundaron su con-",
+    "abbyy-bne": "Aboabdille Abnazac, donde fundaron su con­",
+    "abbyy-ia": "Aboabdille Abnazac, donde fundaron su con-",
+    "tess-bne-400dpi-spa_old-psm3": "Aboabdille Abnazac, donde fundaron su con-",
+    "tess-ia-300dpi-spa_old-psm3": "Aboabdille Abnazac, donde ſundaron su con-",
+    "vision-bne-400dpi-corr": "Aboabdille Abnazac, donde fundaron su con-"
+   }
+  },
+  {
+   "line": 100,
+   "bbox": [
+    0.5032679770050336,
+    0.7558139540051384,
+    0.8605664337429697,
+    0.7688953484657919
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "vento, como se ve en el libro del general re-",
+    "abbyy-bne": "vento, como se ve en el fibro del general re­",
+    "abbyy-ia": "vento, como se ve en el libro del general re-",
+    "tess-bne-400dpi-spa_old-psm3": "vento, como se ve en el libro del general re-",
+    "tess-ia-300dpi-spa_old-psm3": "vento, como se ve en el libro del general re-",
+    "vision-bne-400dpi-corr": "vento, como se ve en el libro del general re-"
+   }
+  },
+  {
+   "line": 101,
+   "bbox": [
+    0.5032679713426357,
+    0.7703180214535142,
+    0.862745092001591,
+    0.7863372090842113
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "partimiento, y no fuéra de la ciudad, como dice",
+    "abbyy-bne": "partimiento, y no fuera de la ciudad, como dice",
+    "abbyy-ia": "partimiento, y no fuéra de la ciudad, como dice",
+    "tess-bne-400dpi-spa_old-psm3": "partimiento, y no fuéra de la ciudad, como dice",
+    "tess-ia-300dpi-spa_old-psm3": "partimiento, y no fuéra de la ciudad, como dice",
+    "vision-bne-400dpi-corr": "partimiento, y no fuéra de la ciudad, como dice"
+   }
+  },
+  {
+   "line": 102,
+   "bbox": [
+    0.5032679801116986,
+    0.7847467606578037,
+    0.862745100770654,
+    0.7979976440500298
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "nuestro cronista Dameto, el cual convento am-",
+    "abbyy-bne": "nuestro cronista Dameto, el cual convento am­",
+    "abbyy-ia": "nuestro cronista Dameto, el cual convento am-",
+    "tess-bne-400dpi-spa_old-psm3": "nuestro cronista Dameto, el cual convento am-",
+    "tess-ia-300dpi-spa_old-psm3": "nuestro cronista Dameto, el cual convento am-",
+    "vision-bne-400dpi-corr": "nuestro cronista Dameto, el cual convento am-"
+   }
+  },
+  {
+   "line": 103,
+   "bbox": [
+    0.5032679770050336,
+    0.7994186051790925,
+    0.8605664337429697,
+    0.8139534880379619
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "pliaron despues en 1238, con una jaboneria",
+    "abbyy-bne": "pliaron despues en 1238, con una jabonería",
+    "abbyy-ia": "pliaron después en 1238, con una jabonería",
+    "tess-bne-400dpi-spa_old-psm3": "pharon despues en 1238, con una jaboneria",
+    "tess-ia-300dpi-spa_old-psm3": "pliaron despues en 1238, con una jaboneria",
+    "vision-bne-400dpi-corr": "pliaron despues en 1238, con una jaboneria"
+   }
+  },
+  {
+   "line": 104,
+   "bbox": [
+    0.5010893369384001,
+    0.8138987041446638,
+    0.8344226522990725,
+    0.8299418600035428
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "junto á dicho huerto que les dió el Rey...»",
+    "abbyy-bne": "junto á dicho huerto que les dio el Rey...»",
+    "abbyy-ia": "junto á dicho huerto que les dió el Rey...»",
+    "tess-bne-400dpi-spa_old-psm3": "junto á dicho huerto que les dió el Rey...»",
+    "tess-ia-300dpi-spa_old-psm3": "junto á dicho huerto que les dió el Rey...»",
+    "vision-bne-400dpi-corr": "junto á dicho huerto que les dió el Rey...»"
+   }
+  },
+  {
+   "line": 105,
+   "bbox": [
+    0.5206971647978049,
+    0.8297997646320294,
+    0.8605664449625438,
+    0.8430506480242556
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "«El noble D. Nuño Sans, este mismo año de",
+    "abbyy-bne": "«El noble D. Ñuño Sans, este mismo año de",
+    "abbyy-ia": "«El noble D. Ñuño Sans, este mismo año de",
+    "tess-bne-400dpi-spa_old-psm3": "«El noble D. Nuño 5ans, este mismo año de",
+    "tess-ia-300dpi-spa_old-psm3": "«El noble D. Nuño Sans, este mismo año de",
+    "vision-bne-400dpi-corr": "«El noble D. Nuño Sans, este mismo año de"
+   }
+  },
+  {
+   "line": 106,
+   "bbox": [
+    0.4967320221538355,
+    0.8444767446897512,
+    0.860566443695838,
+    0.8590116275486207
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "1230, fundó en Mallorca el Hospital de San",
+    "abbyy-bne": "1230, fundó en Mallorca el Hospital de San ; >",
+    "abbyy-ia": "1230, fundó en Mallorca el Hospital de San",
+    "tess-bne-400dpi-spa_old-psm3": "1230, ſundó en Mallorca el Hospital de San",
+    "tess-ia-300dpi-spa_old-psm3": "1230, ſundó en Mallorca el Hospital de San",
+    "vision-bne-400dpi-corr": "1230, fundó en Mallorca el Hospital de San"
+   }
+  },
+  {
+   "line": 107,
+   "bbox": [
+    0.49891067876031464,
+    0.85895170812105,
+    0.8605664363812979,
+    0.8736749118901902
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Andrés en la plaza de Corte, el cual dotó de un",
+    "abbyy-bne": "Andrés en la plaza de Córte, el cual dotó de un",
+    "abbyy-ia": "Andrés en la plaza de Córte, el cual dotó de un",
+    "tess-bne-400dpi-spa_old-psm3": "Andrés en’la plaza de Córte, el cual dotó de un",
+    "tess-ia-300dpi-spa_old-psm3": "Andres en la plaza de Córte, el cual dotó de un",
+    "vision-bne-400dpi-corr": "Andrés en la plaza de Córte, el cual dotó de un"
+   }
+  },
+  {
+   "line": 108,
+   "bbox": [
+    0.4989106767743873,
+    0.8735465123011853,
+    0.8627450983163898,
+    0.8881036514922905
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "beneficio y una escolanía, con muchos censos",
+    "abbyy-bne": "beneficio y una escolanía, con muchos censos",
+    "abbyy-ia": "beneficio y una escolanía, con muchos censos",
+    "tess-bne-400dpi-spa_old-psm3": "beneficio y una escolania, con muchos censos",
+    "tess-ia-300dpi-spa_old-psm3": "beneficio y una escolania, con muchos censos",
+    "vision-bne-400dpi-corr": "beneficio y una escolanía, con muchos censos"
+   }
+  },
+  {
+   "line": 109,
+   "bbox": [
+    0.5925925983483881,
+    0.9636627919128932,
+    0.7973856185361434,
+    0.9898255808341999
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Digitized by Google",
+    "abbyy-bne": ": y la alquería llamada Santa Eulalia, del término",
+    "abbyy-ia": "1 y la alquería llamada Santa Eulalia, del",
+    "tess-bne-400dpi-spa_old-psm3": "y la alqueria llamada Santa Eulalia, del término",
+    "tess-ia-300dpi-spa_old-psm3": "y la alquerla llamada Santa Eulalia, del término",
+    "vision-bne-400dpi-corr": "y la alquería llamada Santa Eulalia, del término"
+   }
+  }
+ ]
+}

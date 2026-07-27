@@ -1,0 +1,1153 @@
+{
+ "pdf_page": 631,
+ "page_class": "appendix_list",
+ "reference": "vision-ia-300dpi-corr",
+ "panel": [
+  "abbyy-bne",
+  "abbyy-ia",
+  "tess-bne-400dpi-spa_old-psm3",
+  "tess-ia-300dpi-spa_old-psm3",
+  "vision-bne-400dpi-corr",
+  "vision-ia-300dpi-corr"
+ ],
+ "source_image": "leaf0629_626dpi.png",
+ "lines_total": 83,
+ "lines_agreed": 20,
+ "lines_contested": 63,
+ "contested": [
+  {
+   "line": 0,
+   "bbox": [
+    0.2885462615943782,
+    0.19040697694080855,
+    0.7334801764798823,
+    0.21947674407248052
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "APÉNDICHS",
+    "abbyy-bne": "Juiados",
+    "abbyy-ia": "ie",
+    "tess-bne-400dpi-spa_old-psm3": "- a —e LA PANDICHES.",
+    "tess-ia-300dpi-spa_old-psm3": "A PÉNDICRES.",
+    "vision-bne-400dpi-corr": "APENDICHS."
+   }
+  },
+  {
+   "line": 1,
+   "bbox": [
+    0.13876652448675345,
+    0.284883721429416,
+    0.8678413868017932,
+    0.3024475524297552
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Jurados de la c. y r. de Mallorca durante el siglo X VIll.",
+    "abbyy-bne": "de la c. y r. de Mallorca durante el sigdo XVIÎI. lyor.",
+    "abbyy-ia": "Jurados de la c. y r. de Mallorca durante el siglo XVIII. 1701",
+    "tess-bne-400dpi-spa_old-psm3": "Jurados de la c. y r. de Mallorca durante el síglo XVIIT. E",
+    "tess-ia-300dpi-spa_old-psm3": "Jurados de la c. y r. de Mallorca durante el siglo XVIL. I7OI.",
+    "vision-bne-400dpi-corr": "Jurados de la c. y r. de Mallorca durante el siglo XVIII."
+   }
+  },
+  {
+   "line": 2,
+   "bbox": [
+    0.22907489042033546,
+    0.36191860520847197,
+    0.2819383248513239,
+    0.372093023037652
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "170I.",
+    "abbyy-bne": "",
+    "abbyy-ia": ".",
+    "tess-bne-400dpi-spa_old-psm3": "TOT-",
+    "tess-ia-300dpi-spa_old-psm3": "",
+    "vision-bne-400dpi-corr": "170I."
+   }
+  },
+  {
+   "line": 5,
+   "bbox": [
+    0.13215859348261746,
+    0.398255814334727,
+    0.2731277519652533,
+    0.40996503481636837
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Nicolas Armengol.",
+    "abbyy-bne": "Nicolas Armengol.",
+    "abbyy-ia": "Nicolás Armengol.",
+    "tess-bne-400dpi-spa_old-psm3": "Nicolás Armengol.",
+    "tess-ia-300dpi-spa_old-psm3": "Nicolás Armengol.",
+    "vision-bne-400dpi-corr": "Nicolás Armengol."
+   }
+  },
+  {
+   "line": 6,
+   "bbox": [
+    0.1299559486345489,
+    0.4084302328173727,
+    0.310572684625363,
+    0.4230769230259678
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Pedro Ignacio Prohens.",
+    "abbyy-bne": "Pedro Ignacio Prohens.",
+    "abbyy-ia": "Pedro Ignacio Prohens.",
+    "tess-bne-400dpi-spa_old-psm3": "Pedro Tenacio Prohens.",
+    "tess-ia-300dpi-spa_old-psm3": "Pedro Tgnacio Prohens.",
+    "vision-bne-400dpi-corr": "Pedro Ignacio Prohens."
+   }
+  },
+  {
+   "line": 8,
+   "bbox": [
+    0.12995595281408873,
+    0.43313953510661685,
+    0.3325991147630038,
+    0.44767441867245283
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Antoiio Prohens, velluter.",
+    "abbyy-bne": "Antonio Prohens, velluter.",
+    "abbyy-ia": "Antonio Prohens, velluter.",
+    "tess-bne-400dpi-spa_old-psm3": "Ántoz.io Prohens, velluter,",
+    "tess-ia-300dpi-spa_old-psm3": "Anto.z.io Prohens, velluter.",
+    "vision-bne-400dpi-corr": "Antorio Prohens, velluter."
+   }
+  },
+  {
+   "line": 9,
+   "bbox": [
+    0.22907489124581243,
+    0.44767441896816185,
+    0.2841409696205605,
+    0.457848836797342
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "1702.",
+    "abbyy-bne": "1702.",
+    "abbyy-ia": "1702.",
+    "tess-bne-400dpi-spa_old-psm3": "1012",
+    "tess-ia-300dpi-spa_old-psm3": "1702.",
+    "vision-bne-400dpi-corr": "1702."
+   }
+  },
+  {
+   "line": 11,
+   "bbox": [
+    0.13436123929098867,
+    0.4708624705934924,
+    0.2643171780548262,
+    0.4854651161651855
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Antonio Garriga.",
+    "abbyy-bne": "AntonioGarriga, Nicolas",
+    "abbyy-ia": "AntonioGarriga.",
+    "tess-bne-400dpi-spa_old-psm3": "AntonioGarriga. Micolás",
+    "tess-ia-300dpi-spa_old-psm3": "AntonioGarriga. MNicolás",
+    "vision-bne-400dpi-corr": "Antonio Garriga."
+   }
+  },
+  {
+   "line": 12,
+   "bbox": [
+    0.12995595046570277,
+    0.4825174823542533,
+    0.34361233213341613,
+    0.4985465118136396
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Nicolás Rossinyol de Defla.",
+    "abbyy-bne": "Rossinyol de Defla.",
+    "abbyy-ia": "Nicolás Rossinyol de Defla.",
+    "tess-bne-400dpi-spa_old-psm3": "Rossinyol de Defla.",
+    "tess-ia-300dpi-spa_old-psm3": "Rossinyol de Defla.",
+    "vision-bne-400dpi-corr": "Nicolás Rossinyol de Defla."
+   }
+  },
+  {
+   "line": 13,
+   "bbox": [
+    0.12995594844783848,
+    0.49562937036113486,
+    0.3083700404948929,
+    0.5101981349298994
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Miguel Bibiloni, notari.",
+    "abbyy-bne": "Miguel Bibiloni, notari.",
+    "abbyy-ia": "Miguel Bibiloni, notari.",
+    "tess-bne-400dpi-spa_old-psm3": "Miguel Bibiloni, notari.",
+    "tess-ia-300dpi-spa_old-psm3": "Miguel Bibiloni, notar:.",
+    "vision-bne-400dpi-corr": "Miguel Bibiloni, notari."
+   }
+  },
+  {
+   "line": 14,
+   "bbox": [
+    0.13215859069898825,
+    0.5087209304296882,
+    0.29295154467546103,
+    0.5203962704641553
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Miguel Andrés Capó",
+    "abbyy-bne": "Miguel Andrés Capó.",
+    "abbyy-ia": "Miguel Andrés Capó.",
+    "tess-bne-400dpi-spa_old-psm3": "Miguel Andres Capó,",
+    "tess-ia-300dpi-spa_old-psm3": "Miguel Andrés Capó.",
+    "vision-bne-400dpi-corr": "Miguel Andres Capo"
+   }
+  },
+  {
+   "line": 15,
+   "bbox": [
+    0.13436123749877013,
+    0.521802325914625,
+    0.27533039598140596,
+    0.5320512820613987
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Pablo Juan, sucrer.",
+    "abbyy-bne": "Pablo Juan, sucrer.",
+    "abbyy-ia": "Pablo Juan, sucrcr.",
+    "tess-bne-400dpi-spa_old-psm3": "Pablo Juan, sucrer.",
+    "tess-ia-300dpi-spa_old-psm3": "Pablo Juan, sucrer.",
+    "vision-bne-400dpi-corr": "Pablo Juan, sucrer."
+   }
+  },
+  {
+   "line": 16,
+   "bbox": [
+    0.23127753441761859,
+    0.5348837212937433,
+    0.2863436127923667,
+    0.5450581391229234
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "1703.",
+    "abbyy-bne": "1703-",
+    "abbyy-ia": "1703.",
+    "tess-bne-400dpi-spa_old-psm3": "703%",
+    "tess-ia-300dpi-spa_old-psm3": "1703.",
+    "vision-bne-400dpi-corr": "1703."
+   }
+  },
+  {
+   "line": 19,
+   "bbox": [
+    0.13436123599054547,
+    0.5696386945724478,
+    0.28854625813573925,
+    0.5799418601016055
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Francisco Comellas.",
+    "abbyy-bne": "Francisco Comellas.",
+    "abbyy-ia": "Francisco Comellas.",
+    "tess-bne-400dpi-spa_old-psm3": "Erancisco Comellas.",
+    "tess-ia-300dpi-spa_old-psm3": "Francisco Comellas.",
+    "vision-bne-400dpi-corr": "Francisco Comellas."
+   }
+  },
+  {
+   "line": 20,
+   "bbox": [
+    0.1299559493254459,
+    0.582750582508196,
+    0.2995594655974617,
+    0.5944767440470559
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Juan Antonio Estada.",
+    "abbyy-bne": "Juan /'.iitonio Estada.",
+    "abbyy-ia": "Juan Antonio Estada.",
+    "tess-bne-400dpi-spa_old-psm3": "Juan a ntonio Estada.",
+    "tess-ia-300dpi-spa_old-psm3": "Juan 4. ntonio Estada.",
+    "vision-bne-400dpi-corr": "Juan Antonio Estada."
+   }
+  },
+  {
+   "line": 21,
+   "bbox": [
+    0.12995594585329845,
+    0.5958624707513943,
+    0.24449339049031396,
+    0.6090116277442021
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Jorge Barcelo.",
+    "abbyy-bne": "Jorge Barceló.",
+    "abbyy-ia": "Jorge Barceló.",
+    "tess-bne-400dpi-spa_old-psm3": "Jorge Barcelo.",
+    "tess-ia-300dpi-spa_old-psm3": "Jorge Barcelo.",
+    "vision-bne-400dpi-corr": "Jorge Barcelo"
+   }
+  },
+  {
+   "line": 23,
+   "bbox": [
+    0.23127753406835252,
+    0.6220930235708751,
+    0.28854625638686027,
+    0.6322674414000552
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "1704.",
+    "abbyy-bne": "^704-",
+    "abbyy-ia": "1704.",
+    "tess-bne-400dpi-spa_old-psm3": "BrA",
+    "tess-ia-300dpi-spa_old-psm3": "I1704.",
+    "vision-bne-400dpi-corr": "1704"
+   }
+  },
+  {
+   "line": 24,
+   "bbox": [
+    0.13215859556636428,
+    0.6293604648905754,
+    0.33920704540279867,
+    0.6453962706616985
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Tomás Burgués Zaforteza.",
+    "abbyy-bne": "Tomás Burgués Zaforteza. Juan Conrado. Juan Amer de las Puntas. Juan Mesquida, menor. Juan Antonio Arsis. Juan Mas, sastre. ^705.",
+    "abbyy-ia": "Tomás Burgués Zaforteza. Juan Conrado. Juan Amer de las Puntas. Juan Mesquida, menor. Juan Antonio Arsis. Juan Mas, sastre . I7<>5-",
+    "tess-bne-400dpi-spa_old-psm3": "Tomás Burgués Zaforteza, Juan Conrado. Juan Amer de las Puntas, Juan Mesquida, menor. Juan Antonio Arsíis, Juan Mas, sastre, 705",
+    "tess-ia-300dpi-spa_old-psm3": "Tomás Burgues Zaforteza. Juan Conrado. Juan Amer de las Puntas. Juan Mesquida, menor. Juan Antonio Arsis. Juan Mas, sastre. ] I1705-.",
+    "vision-bne-400dpi-corr": "Tomás Burgués Zaforteza."
+   }
+  },
+  {
+   "line": 25,
+   "bbox": [
+    0.13436123803332464,
+    0.7048368297965291,
+    0.34140968786975906,
+    0.7296511620783219
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Salvador Sureda Sanmart.",
+    "abbyy-bne": "Salvador Sureda Sanmartí.",
+    "abbyy-ia": "Salvador Sureda Sanmarti.",
+    "tess-bne-400dpi-spa_old-psm3": "Salvador Sureda Sanmartí.",
+    "tess-ia-300dpi-spa_old-psm3": "Salvador Sureda Sanmarti.",
+    "vision-bne-400dpi-corr": "Juan Conrado. Juan Amer de las Puntas. Juan Mesquida, menor. Juan Antonio Arsis. Juan Mas, sastre. 1705 alvador Sureda Sanmarti"
+   }
+  },
+  {
+   "line": 26,
+   "bbox": [
+    0.13436123506034686,
+    0.7296037298464877,
+    0.24889867969736237,
+    0.7427325579040859
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Gerardo Pont.",
+    "abbyy-bne": "Gerardo Pont.",
+    "abbyy-ia": "Gerardc Pont.",
+    "tess-bne-400dpi-spa_old-psm3": "Gerarde Pont.",
+    "tess-ia-300dpi-spa_old-psm3": "Gerardc Pont.",
+    "vision-bne-400dpi-corr": "Gerardo Pont."
+   }
+  },
+  {
+   "line": 27,
+   "bbox": [
+    0.1387665211176156,
+    0.7427156177463394,
+    0.2533039657546311,
+    0.7558275058582276
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Tomás Garriga",
+    "abbyy-bne": "Tomás Garriga.",
+    "abbyy-ia": "Tomás Garriga.",
+    "tess-bne-400dpi-spa_old-psm3": "Tomás Garriga.",
+    "tess-ia-300dpi-spa_old-psm3": "Tomás Garriga.",
+    "vision-bne-400dpi-corr": "Tomás Garriga."
+   }
+  },
+  {
+   "line": 30,
+   "bbox": [
+    0.13656387780302667,
+    0.7805232561471832,
+    0.29515418783573977,
+    0.7907925406734123
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Jaime Marti, leixidor",
+    "abbyy-bne": "Jaime Martí, teixidor.",
+    "abbyy-ia": "Jaime Martí, teixidor",
+    "tess-bne-400dpi-spa_old-psm3": "Jaime Martí, teixidor.",
+    "tess-ia-300dpi-spa_old-psm3": "Jaime Marti, teixidor.",
+    "vision-bne-400dpi-corr": "Jaime Martí, teixidor."
+   }
+  },
+  {
+   "line": 31,
+   "bbox": [
+    0.4889867849987748,
+    0.25436046496280906,
+    0.5242290746194338,
+    0.2718023256864157
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "I.",
+    "abbyy-bne": "X.",
+    "abbyy-ia": ".",
+    "tess-bne-400dpi-spa_old-psm3": "E-",
+    "tess-ia-300dpi-spa_old-psm3": "2",
+    "vision-bne-400dpi-corr": "I."
+   }
+  },
+  {
+   "line": 32,
+   "bbox": [
+    0.39207048845872644,
+    0.3066860466522081,
+    0.6167400898452381,
+    0.3154069764582571
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "mmmmmmmmm",
+    "abbyy-bne": "",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "A",
+    "tess-ia-300dpi-spa_old-psm3": "a S SASAC AA SISSVAAALS",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 33,
+   "bbox": [
+    0.47797356889632636,
+    0.35901162772124406,
+    0.5330396472710744,
+    0.3749999998659653
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "1706.",
+    "abbyy-bne": "1706.",
+    "abbyy-ia": "1706.",
+    "tess-bne-400dpi-spa_old-psm3": "OAS AS AS III NA N AS SANSALDAL SODSSDASAIDAN I706.",
+    "tess-ia-300dpi-spa_old-psm3": "1706.",
+    "vision-bne-400dpi-corr": "1706."
+   }
+  },
+  {
+   "line": 34,
+   "bbox": [
+    0.3876652044060126,
+    0.3691724943397702,
+    0.588105722411168,
+    0.3837412589085347
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Marcos Antonio Cotoner.",
+    "abbyy-bne": "Marcos Antonio Cotoner.",
+    "abbyy-ia": "Marcos Antonio Cotoner.",
+    "tess-bne-400dpi-spa_old-psm3": "Marcos Antonio Cotoner,",
+    "tess-ia-300dpi-spa_old-psm3": "Marcos Antonio Cotoner.",
+    "vision-bne-400dpi-corr": "Marcos Antonio Cotoner."
+   }
+  },
+  {
+   "line": 35,
+   "bbox": [
+    0.3876652013369003,
+    0.38372093038277966,
+    0.5506607857776371,
+    0.39831002333099974
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Geronimo Alemany.",
+    "abbyy-bne": "Gerónimo Alemany.",
+    "abbyy-ia": "Gerónimo Alemany.",
+    "tess-bne-400dpi-spa_old-psm3": "Geronimo Alemany.",
+    "tess-ia-300dpi-spa_old-psm3": "Geronimo Alemany.",
+    "vision-bne-400dpi-corr": "Gerònimo Alemany."
+   }
+  },
+  {
+   "line": 36,
+   "bbox": [
+    0.3898678442163177,
+    0.39680232578006647,
+    0.5330396466427132,
+    0.4114219112974695
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Nicolás Armengol",
+    "abbyy-bne": "Nicolás Armengol.",
+    "abbyy-ia": "Nicolás Armengol",
+    "tess-bne-400dpi-spa_old-psm3": "Nicolás Armengol.",
+    "tess-ia-300dpi-spa_old-psm3": "Nicolás Armengol",
+    "vision-bne-400dpi-corr": "Nicolás Armengol"
+   }
+  },
+  {
+   "line": 38,
+   "bbox": [
+    0.38735253465515,
+    0.42138189276221727,
+    0.5553309898920096,
+    0.4350336566826789
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Jaime Mateo Sunyer.",
+    "abbyy-bne": "Jaime Mateo Sunyer.",
+    "abbyy-ia": "Jaime Mateo Sunyer.",
+    "tess-bne-400dpi-spa_old-psm3": "Jaime Mateo Sunyer.",
+    "tess-ia-300dpi-spa_old-psm3": "Jaime Mateo Sunyer.",
+    "vision-bne-400dpi-corr": "Jaime Mateo Sunyer:"
+   }
+  },
+  {
+   "line": 39,
+   "bbox": [
+    0.3920397633816381,
+    0.43439218058523776,
+    0.5639073766180284,
+    0.4464217722812056
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Antonio Brotat. fuster.",
+    "abbyy-bne": "Antonio Brotat,/z/W. 1707-",
+    "abbyy-ia": "Antonio Brotat. fuster.",
+    "tess-bne-400dpi-spa_old-psm3": "Ántonio Brorat, fuster.",
+    "tess-ia-300dpi-spa_old-psm3": "Antonio Brotat. fuster.",
+    "vision-bne-400dpi-corr": "Antonio Brotat, fuster."
+   }
+  },
+  {
+   "line": 40,
+   "bbox": [
+    0.48458149888745505,
+    0.44912790718999873,
+    0.5308370048570384,
+    0.45784883699604784
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "1707.",
+    "abbyy-bne": "",
+    "abbyy-ia": "1707.",
+    "tess-bne-400dpi-spa_old-psm3": "L 7-OY",
+    "tess-ia-300dpi-spa_old-psm3": "I1707.",
+    "vision-bne-400dpi-corr": "1707."
+   }
+  },
+  {
+   "line": 41,
+   "bbox": [
+    0.3942731279546651,
+    0.4577505826516879,
+    0.5859030836642776,
+    0.4709302322136788
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Juan B.^ Bordils y Sureda",
+    "abbyy-bne": "Juan B.^ Bordiis y Sureda.",
+    "abbyy-ia": "Juan B.a Bordils y Sureda.",
+    "tess-bne-400dpi-spa_old-psm3": "Juan B.* Bordils y Sureda.",
+    "tess-ia-300dpi-spa_old-psm3": "Juan B. Bordils y Sureda.",
+    "vision-bne-400dpi-corr": "Juan B.\" Bordils y Sureda."
+   }
+  },
+  {
+   "line": 44,
+   "bbox": [
+    0.39207048497211605,
+    0.4970862471412075,
+    0.5528634389485888,
+    0.5087412587962191
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Miguel Andres Capo.",
+    "abbyy-bne": "Miguel Andrés Capó.",
+    "abbyy-ia": "Miguel Andrés Capó.",
+    "tess-bne-400dpi-spa_old-psm3": "Miguel Andres Capó,.",
+    "tess-ia-300dpi-spa_old-psm3": "Miguel Andres Capó.",
+    "vision-bne-400dpi-corr": "Miguel Andrés Capó."
+   }
+  },
+  {
+   "line": 45,
+   "bbox": [
+    0.3920704904447047,
+    0.5087209303408269,
+    0.6013215842248988,
+    0.5218531468321704
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Antonio José Mulet, notar.",
+    "abbyy-bne": "Antonio José Mulet, notari.",
+    "abbyy-ia": "Antonio José Mulet, notari.",
+    "tess-bne-400dpi-spa_old-psm3": "Antonio José Mulet, notari.",
+    "tess-ia-300dpi-spa_old-psm3": "Antonio Jose Mulet, notari.",
+    "vision-bne-400dpi-corr": "Antonio José Mulet, notari."
+   }
+  },
+  {
+   "line": 46,
+   "bbox": [
+    0.3898678467913778,
+    0.5203488373357398,
+    0.5638766509509129,
+    0.5335081585182753
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Jaime Feliu, chirurgiá.",
+    "abbyy-bne": "Jaime Feliu, chirurgia.",
+    "abbyy-ia": "Jaime Feliu, chirurgid.",
+    "tess-bne-400dpi-spa_old-psm3": "Jaime Feliu, chirurgiá,",
+    "tess-ia-300dpi-spa_old-psm3": "Jaime Feliu, chirurgiá.",
+    "vision-bne-400dpi-corr": "Jaime Feliu, chirurgiá."
+   }
+  },
+  {
+   "line": 47,
+   "bbox": [
+    0.47577092554177375,
+    0.5334302326845769,
+    0.5352422918040411,
+    0.5465116276715276
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "1708.",
+    "abbyy-bne": "1708.",
+    "abbyy-ia": "1708.",
+    "tess-bne-400dpi-spa_old-psm3": ":",
+    "tess-ia-300dpi-spa_old-psm3": "1708.",
+    "vision-bne-400dpi-corr": "1708"
+   }
+  },
+  {
+   "line": 48,
+   "bbox": [
+    0.3898678457315626,
+    0.5450581396738742,
+    0.596916295567997,
+    0.5568181816599084
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Salvador Sureda Sanmartí.",
+    "abbyy-bne": "Salvador Sureda Sanmartí.",
+    "abbyy-ia": "Salvador Sureda Sanmarti.",
+    "tess-bne-400dpi-spa_old-psm3": "I 70:8. valvador Sureda Sanmarti,",
+    "tess-ia-300dpi-spa_old-psm3": "Salvador Sureda Sanmarti.",
+    "vision-bne-400dpi-corr": "Salvador Sureda Sanmartí."
+   }
+  },
+  {
+   "line": 51,
+   "bbox": [
+    0.38986784635290594,
+    0.5812937062800391,
+    0.5550660747374024,
+    0.5959302322989064
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Juan Antonio Estada.",
+    "abbyy-bne": "Juan Antonio Estada.",
+    "abbyy-ia": "Juan Antonio Estada.",
+    "tess-bne-400dpi-spa_old-psm3": "Juan Antonio Estada.",
+    "tess-ia-300dpi-spa_old-psm3": "Juan Antonio Esrada.",
+    "vision-bne-400dpi-corr": "Juan Antonio Estada."
+   }
+  },
+  {
+   "line": 52,
+   "bbox": [
+    0.3898678428802443,
+    0.5944055944468043,
+    0.5022026435735001,
+    0.6075581393176033
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Jorge Barceló.",
+    "abbyy-bne": "Jorge Barceló.",
+    "abbyy-ia": "Jorge Barceló.",
+    "tess-bne-400dpi-spa_old-psm3": "Jorge Barceloó,",
+    "tess-ia-300dpi-spa_old-psm3": "Jorge Barcelo.",
+    "vision-bne-400dpi-corr": "Jorge Barcelo."
+   }
+  },
+  {
+   "line": 53,
+   "bbox": [
+    0.3913823056917498,
+    0.6038963145070732,
+    0.540341839598828,
+    0.621318096940643
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Martin Pou, sucrer.",
+    "abbyy-bne": "Martin Pou, sucrer.",
+    "abbyy-ia": "Martin Pou, sucrer.",
+    "tess-bne-400dpi-spa_old-psm3": "Martin Pou, sucrer.",
+    "tess-ia-300dpi-spa_old-psm3": "Martn Pou, sucrer.",
+    "vision-bne-400dpi-corr": "Martin Pou, sucrer."
+   }
+  },
+  {
+   "line": 54,
+   "bbox": [
+    0.48237885577407974,
+    0.6206395350953859,
+    0.5374449341488278,
+    0.6322674415034514
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "1709.",
+    "abbyy-bne": "Antonio",
+    "abbyy-ia": "1709.",
+    "tess-bne-400dpi-spa_old-psm3": "I709.",
+    "tess-ia-300dpi-spa_old-psm3": "1709.",
+    "vision-bne-400dpi-corr": "1709."
+   }
+  },
+  {
+   "line": 55,
+   "bbox": [
+    0.3920704904044335,
+    0.6773255815867801,
+    0.5969162962971082,
+    0.7063953487184522
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "francisco usasa, guixer.",
+    "abbyy-bne": "Dameto, menor. Francisco Mora y Mulet. Juan Antonio Dureta. Miguel Vidal. Antonio Busquets. Francisco Rebassa, guixer. 1710.",
+    "abbyy-ia": "Antonio Dameto, menor. Francisco Mora y Mulet. Juan Antonio Dureta.",
+    "tess-bne-400dpi-spa_old-psm3": "Antonio Dameto, menor. Francisco Mora y Mulet. Juan Antonio Dureta.",
+    "tess-ia-300dpi-spa_old-psm3": "Antonio Dameto, menor. Francisco Mora y Mulet. Juan Antonio Dureta. Miguel Vidal. Antonio Busquets. Francisco Rebassa, guixer. I710.",
+    "vision-bne-400dpi-corr": "Antonio Dameto, menor. Francisco Mora y Mulet. Juan Antonio Dureta."
+   }
+  },
+  {
+   "line": 56,
+   "bbox": [
+    0.39195392092074055,
+    0.7046823968488156,
+    0.5397641391117189,
+    0.7342710917436018
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Miguel Desclares:",
+    "abbyy-bne": "Miguel Desclapés.",
+    "abbyy-ia": "Miguel Vidal.",
+    "tess-bne-400dpi-spa_old-psm3": "Miguel Vidal,.",
+    "tess-ia-300dpi-spa_old-psm3": "Miguel Desclapes.",
+    "vision-bne-400dpi-corr": "Miguel Vidal."
+   }
+  },
+  {
+   "line": 57,
+   "bbox": [
+    0.5968572431478254,
+    0.9605619391401443,
+    0.8040238138045378,
+    0.9885659674426727
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Diğilized by Google",
+    "abbyy-bne": "Antonio Garriga. Francisco Cornelias. Miguel Bibiloni, notari. Antonio Roca y Amer. Gerónimo Torres, chirurgia. I 7 11.",
+    "abbyy-ia": "Antonio Busauets. Francisco Reoassa, guixer . 1710. Miguel Desclapés. Antonio Garriga. Francisco Comellas. Miguel Bibiloni, notari . Antonio Roca y Amer. Gerónimo Torres, cbirurgih . 17 1 1.",
+    "tess-bne-400dpi-spa_old-psm3": "Antonio Busquets. Francisco Rebassa, gurxer. ESIO: Miguel Desclapes. Antonio Garriga. Francisco Comellas, Miguel Bibiloni, notari. Antonio Roca y Amer. Gerónimo Torres, chirurgia. TT T.",
+    "tess-ia-300dpi-spa_old-psm3": "Antonio Garriga. Francisco Comellas. Miguel Bibiloni, notar!. Antonio Roca y Amer. Gerónimo Torres, chirurgia. I711.",
+    "vision-bne-400dpi-corr": "intonio busquet rancisco Rebassa, guixer I710. Miguel Desclapés. Antonio Garriga. Francisco Comellas. Miguel Bibiloni, notari. Antonio Roca y Amer. Gerónimo Torres, chirurgia. ITII."
+   }
+  },
+  {
+   "line": 58,
+   "bbox": [
+    0.6387132082695294,
+    0.3616985678377277,
+    0.8436656504521983,
+    0.38394096720014503
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "Juan B. Bordils y Sureda.",
+    "abbyy-bne": "Juan B.“ Bordiis y Sureda.",
+    "abbyy-ia": "Juan B.a Bordils y Sureda.",
+    "tess-bne-400dpi-spa_old-psm3": "Juan B.* Bordils y Sureda.",
+    "tess-ia-300dpi-spa_old-psm3": "Juan B.* Bordils y Sureda.",
+    "vision-bne-400dpi-corr": "Juan B.\" Bordils y Sureda."
+   }
+  },
+  {
+   "line": 59,
+   "bbox": [
+    0.6409691659388576,
+    0.3851744188163162,
+    0.7885462562527724,
+    0.39685314672877436
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "Miguel Santandreu",
+    "abbyy-bne": "Miguel Santandreu.",
+    "abbyy-ia": "Miguel Santandreu.",
+    "tess-bne-400dpi-spa_old-psm3": "Miguel Santandreu.",
+    "tess-ia-300dpi-spa_old-psm3": "Miguel Santandreu.",
+    "vision-bne-400dpi-corr": "Miguel Santandreu."
+   }
+  },
+  {
+   "line": 60,
+   "bbox": [
+    0.6409691655804138,
+    0.3968023257930604,
+    0.7907488998380883,
+    0.4085081583967105
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "Antonio Armengol.",
+    "abbyy-bne": "Antonio Armengol.",
+    "abbyy-ia": "Antonio Armengol.",
+    "tess-bne-400dpi-spa_old-psm3": "ÁAntonio Armengol.",
+    "tess-ia-300dpi-spa_old-psm3": "‘Antonio Armengol.",
+    "vision-bne-400dpi-corr": "Antonio Armengol."
+   }
+  },
+  {
+   "line": 61,
+   "bbox": [
+    0.6427206913773399,
+    0.406809764827364,
+    0.8483203919815663,
+    0.4230296041768573
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "Bartolomé Talladas, notarz",
+    "abbyy-bne": "Bartolomé Talladas, notari.",
+    "abbyy-ia": "Bartolomé Talladas, notari.",
+    "tess-bne-400dpi-spa_old-psm3": "Bartolome Talladas, notari.",
+    "tess-ia-300dpi-spa_old-psm3": "Bartolome Talladas, notarz.",
+    "vision-bne-400dpi-corr": "Bartolomé Talladas, notari."
+   }
+  },
+  {
+   "line": 63,
+   "bbox": [
+    0.6387665188147245,
+    0.4316860462859242,
+    0.8259911866368176,
+    0.4476744184306456
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "Miguel Barceló, scultor.",
+    "abbyy-bne": "xMiguel Barceló, scultor.",
+    "abbyy-ia": "Miguel Barceló, scultor",
+    "tess-bne-400dpi-spa_old-psm3": "Miguel Barceló, scultor.",
+    "tess-ia-300dpi-spa_old-psm3": "Miguel Barceló, scultor.",
+    "vision-bne-400dpi-corr": "Miguel Barceló, scultor."
+   }
+  },
+  {
+   "line": 64,
+   "bbox": [
+    0.6365638797314473,
+    0.44609557184095716,
+    0.8414096856241221,
+    0.4840116286006647
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "Petro France Lati",
+    "abbyy-bne": "1712. Antonio de Veri y Oleza. Pedro Francisco Llabrés.",
+    "abbyy-ia": ". 1712. Antonio de Veri y Oleza. Pedro Francisco Llabrés.",
+    "tess-bne-400dpi-spa_old-psm3": "É Antonio de Veri y Oleza. Pedro Francisco Llabres.",
+    "tess-ia-300dpi-spa_old-psm3": "I712. Antonio de Veri y Oleza. Pedro Francisco Llabrés.",
+    "vision-bne-400dpi-corr": "1712. Intonio de Verí y Oleza Pedro Francisco Llabrés"
+   }
+  },
+  {
+   "line": 66,
+   "bbox": [
+    0.6409691644790922,
+    0.49417249402714525,
+    0.7907488987367667,
+    0.505827505682157
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "Juan Bautista Rubí.",
+    "abbyy-bne": "Juan Bautista Rubí.",
+    "abbyy-ia": "Juan Bautista RubL",
+    "tess-bne-400dpi-spa_old-psm3": "Juan Bautista Rubi.",
+    "tess-ia-300dpi-spa_old-psm3": "Juan Bautista Rubi.",
+    "vision-bne-400dpi-corr": "Juan Bautista Rubí."
+   }
+  },
+  {
+   "line": 67,
+   "bbox": [
+    0.6387665217624029,
+    0.5087209304442231,
+    0.7511013224556587,
+    0.5203962704786902
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "Jorge Barcelo.",
+    "abbyy-bne": "Jorge Barceló,",
+    "abbyy-ia": "Jorge Barceló.",
+    "tess-bne-400dpi-spa_old-psm3": "Jorge Barcelo.",
+    "tess-ia-300dpi-spa_old-psm3": "Jorge Barceló.",
+    "vision-bne-400dpi-corr": "Jorge Barceló"
+   }
+  },
+  {
+   "line": 68,
+   "bbox": [
+    0.6405154787825876,
+    0.5186990745326614,
+    0.8308019196824399,
+    0.5333506614920734
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "Tacinto Sancho, esparter.",
+    "abbyy-bne": "Jacinto Sancho, esparter.",
+    "abbyy-ia": "Jacinto Sancho, esparter .",
+    "tess-bne-400dpi-spa_old-psm3": "Jacinto Sancho, esparter.",
+    "tess-ia-300dpi-spa_old-psm3": "Jacinto Sancho, esparter.",
+    "vision-bne-400dpi-corr": "Jacinto Sancho, esparter."
+   }
+  },
+  {
+   "line": 69,
+   "bbox": [
+    0.7312775351161506,
+    0.5348837212937433,
+    0.7819383256033794,
+    0.5450581391229234
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "1713.",
+    "abbyy-bne": "1.713.",
+    "abbyy-ia": "1713.",
+    "tess-bne-400dpi-spa_old-psm3": "EST3",
+    "tess-ia-300dpi-spa_old-psm3": "I713.",
+    "vision-bne-400dpi-corr": "1.713"
+   }
+  },
+  {
+   "line": 70,
+   "bbox": [
+    0.6431718113300188,
+    0.5436046513679588,
+    0.8656387687727708,
+    0.5568181819328782
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "Ramon Fortuny de Ruescas.",
+    "abbyy-bne": "Ramon Fortuny de Ruescas.",
+    "abbyy-ia": "Ramón Fortuny de Ruescas.",
+    "tess-bne-400dpi-spa_old-psm3": "Ramon Fortuny de Ruescas,",
+    "tess-ia-300dpi-spa_old-psm3": "Ramon Fortuny de Ruescas.",
+    "vision-bne-400dpi-corr": "Ramon Fortuny de Ruescas."
+   }
+  },
+  {
+   "line": 71,
+   "bbox": [
+    0.6431718090270362,
+    0.5581395351680603,
+    0.7951541872284703,
+    0.5697674415761256
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "Jeronimo Alemany.",
+    "abbyy-bne": "Jerónimo Alemany.",
+    "abbyy-ia": "Jerónimo Alemany.",
+    "tess-bne-400dpi-spa_old-psm3": "Jerónimo Alemany.",
+    "tess-ia-300dpi-spa_old-psm3": "Jeronimo Alemany.",
+    "vision-bne-400dpi-corr": "Jeronimo Alemany."
+   }
+  },
+  {
+   "line": 72,
+   "bbox": [
+    0.6475770944107594,
+    0.5681818180009442,
+    0.8370044061766122,
+    0.5799418599869784
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "Juan Amer de las Puntas.",
+    "abbyy-bne": "Juan Amer de las Puntas.",
+    "abbyy-ia": "Juan Amer de las Puntas.",
+    "tess-bne-400dpi-spa_old-psm3": "Juan Amer de las Puntas,",
+    "tess-ia-300dpi-spa_old-psm3": "Juan Amer de las Puntas.",
+    "vision-bne-400dpi-corr": "Juan Amer de las Puntas."
+   }
+  },
+  {
+   "line": 76,
+   "bbox": [
+    0.7861218129075045,
+    0.6082950559753106,
+    0.8570499956105294,
+    0.6199026184428013
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "esparter.",
+    "abbyy-bne": "esparter.",
+    "abbyy-ia": "esparter",
+    "tess-bne-400dpi-spa_old-psm3": "esharter.",
+    "tess-ia-300dpi-spa_old-psm3": "esparter.",
+    "vision-bne-400dpi-corr": "esparter."
+   }
+  },
+  {
+   "line": 77,
+   "bbox": [
+    0.7818184218635214,
+    0.6305455159987727,
+    0.8481375269242201,
+    0.6441637862770275
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "• Sureda.",
+    "abbyy-bne": "1714- Juan B.\" Bordiis y Sureda.",
+    "abbyy-ia": ". 1714.",
+    "tess-bne-400dpi-spa_old-psm3": "E TA",
+    "tess-ia-300dpi-spa_old-psm3": "I7I4.",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 78,
+   "bbox": [
+    0.6453744540746884,
+    0.6322674421448045,
+    0.781938324669805,
+    0.6439393937455261
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "Juan B.* Bordils y",
+    "abbyy-bne": "",
+    "abbyy-ia": "Juan B.* Bordils y Sureda.",
+    "tess-bne-400dpi-spa_old-psm3": "Juan B.* Bordils y Sureda.",
+    "tess-ia-300dpi-spa_old-psm3": "Juan B.\" Bordils y Sureda.",
+    "vision-bne-400dpi-corr": "Juan B.a Bordils y Sureda"
+   }
+  },
+  {
+   "line": 79,
+   "bbox": [
+    0.6475770987381704,
+    0.6409883720526394,
+    0.8546255485746047,
+    0.6570512819592
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "Nicolás Rossiryol de Defla.",
+    "abbyy-bne": "Nicolás Rossinyol de Defla. Jaime Morell. Bartolomé Custurer. Pedio Antonio Sancho. Juan Antonio Mateu, chirurgia, ^715-",
+    "abbyy-ia": "Nicolás Rossinyol de Defla. Jaime Morell. Bartolomé Custurer. Pedro Antonio Sancho. Juan Antonio Mateu, chirurgiá . 1 7 1 5 •",
+    "tess-bne-400dpi-spa_old-psm3": "Nicolás Rossinyol de Defla. Jaime Morell. Bartolomé Custurer, Pedro Antonio Sancho. Juan Antonio Mateu, chirurgiá. G ER A",
+    "tess-ia-300dpi-spa_old-psm3": "Nicolás Rossir.yol de Defla. Jaime Morell. Bartolomé Custurer. Pedro Antonio Sancho. Juan Antonio Mateu, chirurgiá. I7I5-.",
+    "vision-bne-400dpi-corr": "Nicolás Rossinyol de Defla. Jaime Morell. Bartolomé Custurer. Pedro Antonio Sancho Juan Antonio Mateu, chirurgiá. 1715"
+   }
+  },
+  {
+   "line": 81,
+   "bbox": [
+    0.7290748911545497,
+    0.7092074592115197,
+    0.7819383255855381,
+    0.7194767442935032
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "11 71 5_",
+    "abbyy-bne": "",
+    "abbyy-ia": "",
+    "tess-bne-400dpi-spa_old-psm3": "uan",
+    "tess-ia-300dpi-spa_old-psm3": "",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 82,
+   "bbox": [
+    0.6452810378297668,
+    0.7264787236095911,
+    0.7578026643325687,
+    0.7444515080520926
+   ],
+   "column": 2,
+   "variants": {
+    "vision-ia-300dpi-corr": "Juan Conrado.",
+    "abbyy-bne": "Juan Conrado. Jeiónimo Alemany, menor. F Seriñosa. Palet y Ferrer. Onofre Mateu, chirurgia.",
+    "abbyy-ia": "Juan Conrado. Jerónimo Alemany, menor. José Totosaus y Seriñosa. Miguel Palet y Ferrer. Onofre Mateu,",
+    "tess-bne-400dpi-spa_old-psm3": "Conrado. Jerónimo Alemany, menor, José Totosaus y Seriñosa. Miguel Palet y Eerrer. Onofre Mateu, chirurgid.",
+    "tess-ia-300dpi-spa_old-psm3": "Juan Conrado. Jerónimo Alemany, menor. José Totosaus y Seriñosa. Miguel Palet y Ferrer. Onofre Mateu, chirurgiá.",
+    "vision-bne-400dpi-corr": "Juan Conrado. Jerónimo Alemany, menor. José Totosaus y Seriñosa. Miguel Palet y Ferrer. Onofre Mateu, chirurgia."
+   }
+  }
+ ]
+}

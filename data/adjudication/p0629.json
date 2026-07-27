@@ -1,0 +1,1693 @@
+{
+ "pdf_page": 629,
+ "page_class": "body_late",
+ "reference": "vision-ia-300dpi-corr",
+ "panel": [
+  "abbyy-bne",
+  "abbyy-ia",
+  "tess-bne-400dpi-spa_old-psm3",
+  "tess-ia-300dpi-spa_old-psm3",
+  "vision-bne-400dpi-corr",
+  "vision-ia-300dpi-corr"
+ ],
+ "source_image": "leaf0627_626dpi.png",
+ "lines_total": 109,
+ "lines_agreed": 16,
+ "lines_contested": 93,
+ "contested": [
+  {
+   "line": 0,
+   "bbox": [
+    0.1321585980179964,
+    0.08566433559166131,
+    0.49339206999962465,
+    0.10174418599968627
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "del Capitan General, Obispo, Comisario y Re-",
+    "abbyy-bne": "del Capitan General, Obispo, Comisario y Re­",
+    "abbyy-ia": "del Capitán General, Obispo, Comisario y Re-",
+    "tess-bne-400dpi-spa_old-psm3": "del Capitan General, Obispo, Comisario y Re-",
+    "tess-ia-300dpi-spa_old-psm3": "del Capitan General, Obispo, Comisario y Re-",
+    "vision-bne-400dpi-corr": "del Capitan General, Obispo, Comisario y Re-"
+   }
+  },
+  {
+   "line": 1,
+   "bbox": [
+    0.1321585984162406,
+    0.10168997674167479,
+    0.3722466939295743,
+    0.11627906968989477
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "gidor Montis. —L. V.-Jn. Br.",
+    "abbyy-bne": "gidor Montis.—L. V.—Jn. Br.",
+    "abbyy-ia": "gidor Montis. — L. V. — Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "gidor Montis.—L. V.—Jn. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "gidor Montis.—L. V.—Jn. Br.",
+    "vision-bne-400dpi-corr": "gidor Montis. —L. V.-Jn. Br."
+   }
+  },
+  {
+   "line": 2,
+   "bbox": [
+    0.14757709540096473,
+    0.1162587409824537,
+    0.49118941583251563,
+    0.13082750555121825
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "JUNIO 19.—El Obispo D. Bernardo Nadal,",
+    "abbyy-bne": "Junio 19.—El Obispo D. Bernardo Nadal,",
+    "abbyy-ia": "Junio 19. — El Obispo D. Bernardo Nadal,",
+    "tess-bne-400dpi-spa_old-psm3": "JuNio 19.—El Obispo D. Bernardo Nadal,",
+    "tess-ia-300dpi-spa_old-psm3": "Juxio 19.—El Obispo D. Bernardo Nadal,",
+    "vision-bne-400dpi-corr": "JUNIO I9.—El Obispo D. Bernardo Nadal,"
+   }
+  },
+  {
+   "line": 4,
+   "bbox": [
+    0.13436123642343903,
+    0.14534883728684944,
+    0.28193832673735386,
+    0.15996503492626135
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Courten.-Jn. Br.",
+    "abbyy-bne": "Courten.—]n. Br.",
+    "abbyy-ia": "Courten. — Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "Courten.—Jr. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "Courten.—]Jn. Br.",
+    "vision-bne-400dpi-corr": "Courten.-Jn. Br."
+   }
+  },
+  {
+   "line": 5,
+   "bbox": [
+    0.14757709705294705,
+    0.1598837211042381,
+    0.49118941748449796,
+    0.1759906762034551
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "JULIO 4.—Los moradores del barrio de La",
+    "abbyy-bne": "Julio 4.—Los moradores del barrio de La",
+    "abbyy-ia": "Julio 4. — Los moradores del barrio de La",
+    "tess-bne-400dpi-spa_old-psm3": "JuLto 4.—Los moradores del barrio de La",
+    "tess-ia-300dpi-spa_old-psm3": "JuLio 4.—Los moradores del barrio de La",
+    "vision-bne-400dpi-corr": "JULIO 4.—Los moradores del barrio de La"
+   }
+  },
+  {
+   "line": 6,
+   "bbox": [
+    0.13203475920371502,
+    0.17436820899894212,
+    0.4934975982831237,
+    0.1892864218451068
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Peletería celebraron su fiesta anua! al Beato",
+    "abbyy-bne": "Peletería celebraron su fiesta anua’ al Beato",
+    "abbyy-ia": "Peletería celebraron su fiesta anua' al Beato",
+    "tess-bne-400dpi-spa_old-psm3": "Peletería celebraron su flesta anua! al Beato",
+    "tess-ia-300dpi-spa_old-psm3": "Peleteria celebraron su flesta anua! al Beato",
+    "vision-bne-400dpi-corr": "Peletería celebraron su fiesta anual al Beato"
+   }
+  },
+  {
+   "line": 8,
+   "bbox": [
+    0.13436124359802565,
+    0.2048368295589873,
+    0.49559471557965384,
+    0.2194767440116001
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "unos 40 ó más disfrazados, los cuales, monta-",
+    "abbyy-bne": "unos 40 o más disfrazados, los cuales, monta­",
+    "abbyy-ia": "unos 40 ó más disfrazados, los cuales, monta-",
+    "tess-bne-400dpi-spa_old-psm3": "unos 40 ó más disfrazados, los cuales, monta-",
+    "tess-ia-300dpi-spa_old-psm3": "unos 40 Ó más disfrazados, los cuales, monta-",
+    "vision-bne-400dpi-corr": "unos 4o ó más disfrazados, los cuales, monta-"
+   }
+  },
+  {
+   "line": 11,
+   "bbox": [
+    0.1343400161102911,
+    0.2484997445124726,
+    0.20046174765610672,
+    0.2616746740535024
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "-L. V.",
+    "abbyy-bne": "—L. V.",
+    "abbyy-ia": "— L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "—L.- V,",
+    "tess-ia-300dpi-spa_old-psm3": "—L. V.",
+    "vision-bne-400dpi-corr": "-L. V."
+   }
+  },
+  {
+   "line": 12,
+   "bbox": [
+    0.1541850313050767,
+    0.2630813953117572,
+    0.4933920638491083,
+    0.27622377599282855
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "—12—Llegaron el Obispo de Menorea Don",
+    "abbyy-bne": "—12—Llegaron el Obispo de Menorca Don",
+    "abbyy-ia": "— 12 — Llegaron el Obispo de Menorea Don",
+    "tess-bne-400dpi-spa_old-psm3": "—I2—Llegaron el Obispo de Menorea Don",
+    "tess-ia-300dpi-spa_old-psm3": "—12—Llegaron el Obispo de Menorea Don",
+    "vision-bne-400dpi-corr": "-12—Llegaron el Obispo de Menorea Don"
+   }
+  },
+  {
+   "line": 13,
+   "bbox": [
+    0.13215859748936198,
+    0.2776162788440637,
+    0.4933920694709902,
+    0.2937062934418164
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Antonio Vila, el Arzobispo francés de Tolosa,",
+    "abbyy-bne": "Antonio Vila, el Arzobispo francés de Tolosa,",
+    "abbyy-ia": "Antonio Vila, el Arzobispo francés de Tolosa,",
+    "tess-bne-400dpi-spa_old-psm3": "Antonio Vila, el Arzobispo francés de Tolosa,",
+    "tess-ia-300dpi-spa_old-psm3": "Antonio Vila, el Arzobispo frances de Tolosa,",
+    "vision-bne-400dpi-corr": "Antonio Vila, el Arzobispo francés de Tolosa,"
+   }
+  },
+  {
+   "line": 14,
+   "bbox": [
+    0.1319769759557164,
+    0.29144028995440363,
+    0.4935711861996155,
+    0.3086957984928521
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "emigrado, y el Teniente General D. Bernardo",
+    "abbyy-bne": "emigrado, y el Teniente General D, Bernardo",
+    "abbyy-ia": "emigrado, y el Teniente General D. Bernardo",
+    "tess-bne-400dpi-spa_old-psm3": "emigrado, y el Teniente General D. Bernardo",
+    "tess-ia-300dpi-spa_old-psm3": "emigrado, y el Teniente General D. Bernardo",
+    "vision-bne-400dpi-corr": "emigrado, y el Teniente General D. Bernardo"
+   }
+  },
+  {
+   "line": 15,
+   "bbox": [
+    0.1321585957607388,
+    0.306686046589175,
+    0.26431717846833597,
+    0.3212209301550111
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Tortosa.—L. V.",
+    "abbyy-bne": "Tortosa.—L. V.",
+    "abbyy-ia": "Tortosa. — L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "Tortosa.—L. V, '",
+    "tess-ia-300dpi-spa_old-psm3": "Tortosa.—L. V.",
+    "vision-bne-400dpi-corr": "Tortosa. L. V."
+   }
+  },
+  {
+   "line": 16,
+   "bbox": [
+    0.1541850257434028,
+    0.3225524473666316,
+    0.4933920582874344,
+    0.33720930232070867
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "—13—Llegó por Alcudia el nuevo Coman-",
+    "abbyy-bne": "—13—Llegó por Alcudia el nuevo Coman­",
+    "abbyy-ia": "— 13 — Llegó por Alcudia el nuevo Coman-",
+    "tess-bne-400dpi-spa_old-psm3": "—13—Llegó por Alcudia el nuevo Coman-",
+    "tess-ia-300dpi-spa_old-psm3": "—rz—Llegó por Alcudia el nuevo Coman-",
+    "vision-bne-400dpi-corr": "o so mito D. repeto de la Che Come -13—Llegó por Alcudia el nuevo Coman-"
+   }
+  },
+  {
+   "line": 18,
+   "bbox": [
+    0.13436123901303107,
+    0.3531468533131783,
+    0.49339205357140403,
+    0.36627906980452185
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "30 se embarcó D. Antonio Cornel para Valen-",
+    "abbyy-bne": "30 se embarcó D. Antonio Cornel para Valen­",
+    "abbyy-ia": "30 se embarcó D. Antonio Cornel para Valen-",
+    "tess-bne-400dpi-spa_old-psm3": "zo se embarcó D. Antonio Cornel para Valen-",
+    "tess-ia-300dpi-spa_old-psm3": "zo se embarcó D. Antonio Cornel para Valen-",
+    "vision-bne-400dpi-corr": ""
+   }
+  },
+  {
+   "line": 19,
+   "bbox": [
+    0.13436124280977363,
+    0.36771561788607277,
+    0.4911894269038825,
+    0.37937062954108436
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "cia, cuya Comandancia iba á desempeñar.",
+    "abbyy-bne": "cia, cuya Comandancia iba á desempeñar.",
+    "abbyy-ia": "cia, cuya Comandancia iba á desempeñar.",
+    "tess-bne-400dpi-spa_old-psm3": "cia, cuya Comandancia iba 4á desempeñar,",
+    "tess-ia-300dpi-spa_old-psm3": "cia, cuya Comandancia iba á desempeñar.",
+    "vision-bne-400dpi-corr": "cia, cuya Comandancia iba á desempeñar."
+   }
+  },
+  {
+   "line": 20,
+   "bbox": [
+    0.13436125068703947,
+    0.38226744196873397,
+    0.4933920652454124,
+    0.3953962705820864
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Tambien se fué á su diócesis el Obispo de Me-",
+    "abbyy-bne": "También se fué a su diócesis el Obispo de Me­",
+    "abbyy-ia": "También se fué á su diócesis el Obispo de Me-",
+    "tess-bne-400dpi-spa_old-psm3": "Tambien se fue á su diócesis el Obispo de Me-",
+    "tess-ia-300dpi-spa_old-psm3": "Tambien se fué á su diócesis el Obispo de Me-",
+    "vision-bne-400dpi-corr": "Tambien se fué á su diócesis el Obispo de Me-"
+   }
+  },
+  {
+   "line": 21,
+   "bbox": [
+    0.13436123623611823,
+    0.3982558143169992,
+    0.2444933929856144,
+    0.408508158341764
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "norca.—L. V.",
+    "abbyy-bne": "norca.—L. V.",
+    "abbyy-ia": "norca.— L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "» U",
+    "tess-ia-300dpi-spa_old-psm3": "norca.—L. V.",
+    "vision-bne-400dpi-corr": "norca.—L. V."
+   }
+  },
+  {
+   "line": 22,
+   "bbox": [
+    0.15198238395358107,
+    0.41133720942876306,
+    0.49339207392086804,
+    0.42453379949221826
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "OCTUBRE 17.—El Regimiento de Borbon pa-",
+    "abbyy-bne": "Octubre 17.—El Regimiento de Borbon pa­",
+    "abbyy-ia": "Octubre 17. — El Regimiento de Borbon pa-",
+    "tess-bne-400dpi-spa_old-psm3": "- DOTCA: —2Ñ . Ocrusne 17.—El Regimiento de Borben pa-",
+    "tess-ia-300dpi-spa_old-psm3": "OcrusRe 17.—El Regimiento de Borbon pa-",
+    "vision-bne-400dpi-corr": "OCTUBRE 17:—El Regimiento de Borbon pa-"
+   }
+  },
+  {
+   "line": 23,
+   "bbox": [
+    0.13215859892108003,
+    0.42587209302812856,
+    0.4933920709027083,
+    0.44040697659396466
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "só por las armas á un sargento por haber muerto",
+    "abbyy-bne": "só por las armas á un sargento por haber muerto",
+    "abbyy-ia": "só por las armas á un sargento por haber muerto",
+    "tess-bne-400dpi-spa_old-psm3": "- \\ s por las armas á un sargento por haber muerto",
+    "tess-ia-300dpi-spa_old-psm3": "só por las armas á un sargento por haber muerto",
+    "vision-bne-400dpi-corr": "só por las armas á un sargento por haber muerto"
+   }
+  },
+  {
+   "line": 24,
+   "bbox": [
+    0.13215859892108003,
+    0.4417249417867566,
+    0.4933920709027083,
+    0.4549418602296672
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "á otro en desafio, en Agosto anterior.—Jn. Br.",
+    "abbyy-bne": "á otro en desafío, en Agosto anterior.—Jii. Br.",
+    "abbyy-ia": "á otro en desafío, en Agosto anterior. — Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "á otro en desafío, en Agosto anterior.—Ju. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "á otro en desafío, en Agosto anterior.—Jnu. Br.",
+    "vision-bne-400dpi-corr": "á otro en desafío, en Agosto anterior.—Jn. Br."
+   }
+  },
+  {
+   "line": 25,
+   "bbox": [
+    0.15418503337556122,
+    0.4562937064924467,
+    0.49339206591959284,
+    0.4694767439324288
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "NOVIEMBRE 12. —Llegó la noticia de que",
+    "abbyy-bne": "Noviembre 12.—Llegó la noticia de que",
+    "abbyy-ia": "Noviembre 12. — Llegó la noticia de que",
+    "tess-bne-400dpi-spa_old-psm3": "NovIrtMBRE 12.—Llegó la noticia de que",
+    "tess-ia-300dpi-spa_old-psm3": "NoviEMBuE I12.—Llegó la noticia de que",
+    "vision-bne-400dpi-corr": "NOVIEMBRE 12.—Llegó la noticia de que"
+   }
+  },
+  {
+   "line": 26,
+   "bbox": [
+    0.13215858933958252,
+    0.4694055941374973,
+    0.4933920613212107,
+    0.4840116275871815
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "los ingleses se habían vuelto á apoderar de la",
+    "abbyy-bne": "los ingleses se habían vuelto á apoderar de la",
+    "abbyy-ia": "los ingleses se habían vuelto á apoderar de la",
+    "tess-bne-400dpi-spa_old-psm3": "los ingleses se habian vuelto á apoderar de- la",
+    "tess-ia-300dpi-spa_old-psm3": "los ingleses se habian vuelto á apoderar de la",
+    "vision-bne-400dpi-corr": "los ingleses se habían vuelto á apoderar de la"
+   }
+  },
+  {
+   "line": 27,
+   "bbox": [
+    0.13215860751523326,
+    0.4854312354328596,
+    0.49118942207360616,
+    0.498546511422739
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "isla de Menorca que poseíamos desde 1782.",
+    "abbyy-bne": "isla de Menorca que poseíamos desde 1782.",
+    "abbyy-ia": "isla de Menorca que poseíamos desde 1782.",
+    "tess-bne-400dpi-spa_old-psm3": "isla de Menorca que poselamos desde 1782.",
+    "tess-ia-300dpi-spa_old-psm3": "isla de Menorca que poselamos desde 1782.",
+    "vision-bne-400dpi-corr": "isla de Menorca que poseíamos desde 1782."
+   }
+  },
+  {
+   "line": 28,
+   "bbox": [
+    0.1343612491910777,
+    0.5000000001264374,
+    0.49339206374945066,
+    0.5131118882383255
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Estaban de guarnicion el Regimiento de Valen-",
+    "abbyy-bne": "Estaban de guarnición el Regimiento de Valen­",
+    "abbyy-ia": "Estaban de guarnición el Regimiento de Valen-",
+    "tess-bne-400dpi-spa_old-psm3": "Estaban de guarnicion el Regimiento de Valen-",
+    "tess-ia-300dpi-spa_old-psm3": "Estaban de guarnicion el Regimiento de Valen-",
+    "vision-bne-400dpi-corr": "Estaban de guarnicion el Regimiento de Valen-"
+   }
+  },
+  {
+   "line": 29,
+   "bbox": [
+    0.13215860042621944,
+    0.5159883722012921,
+    0.49339207240784766,
+    0.5291375291941
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "cia y uno de suizos, de los cuales todos, ó la",
+    "abbyy-bne": "cia y uno de suizos, de los cuales todos, ó la",
+    "abbyy-ia": "cia y uno de suizos, de los cuales todos, ó la",
+    "tess-bne-400dpi-spa_old-psm3": "cia y uno de suizos, de los cuales todos, 6 la",
+    "tess-ia-300dpi-spa_old-psm3": "cia y uno de suizos, de los cuales todos, ó la",
+    "vision-bne-400dpi-corr": "cia y uno de suizos, de los cuales todos, ó la"
+   }
+  },
+  {
+   "line": 30,
+   "bbox": [
+    0.13215859965913956,
+    0.5290697674047805,
+    0.49118941421751244,
+    0.5422494175225256
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "mayor parte de los soldados, se pasaron á los",
+    "abbyy-bne": "mayor parte de los soldados, se pasaron á los",
+    "abbyy-ia": "mayor parte de los soldados, se pasaron á los",
+    "tess-bne-400dpi-spa_old-psm3": "mayor parte de los soldados, se pasaron 4 los",
+    "tess-ia-300dpi-spa_old-psm3": "mayor parte de los soldados, se pasaron á los",
+    "vision-bne-400dpi-corr": "mayor parte de los soldados, se pasaron á los"
+   }
+  },
+  {
+   "line": 31,
+   "bbox": [
+    0.12995595165999735,
+    0.5450581396976585,
+    0.3920704866109277,
+    0.5582750581405691
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "ingleses.-L. V.-T. A.-Jn. Br.",
+    "abbyy-bne": "ingleses,—L. V.—T. Á.—Jn. Br.",
+    "abbyy-ia": "ingleses. — L. V. — T. A. — Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "ingleses.—L. V.—T. A.—ln. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "ingleses.—L. V.—T. A.—]n. Br.",
+    "vision-bne-400dpi-corr": "ingleses. —L. V.-T. A.-Jn. Br."
+   }
+  },
+  {
+   "line": 32,
+   "bbox": [
+    0.1541850356369414,
+    0.5595930234125324,
+    0.49339206818097303,
+    0.5726744183994831
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "—20 — Llegó el nuevo Capitan General Don",
+    "abbyy-bne": "20—Llegó el nuevo Capitan General Don",
+    "abbyy-ia": "— 20— Llegó el nuevo Capitán General Don",
+    "tess-bne-400dpi-spa_old-psm3": "—20—Llegó el nuevo Capitan General Don",
+    "tess-ia-300dpi-spa_old-psm3": "—2o —Llegó el nuevo Capitan General Don",
+    "vision-bne-400dpi-corr": "-20 — Llegó el nuevo Capitan General Don"
+   }
+  },
+  {
+   "line": 33,
+   "bbox": [
+    0.1299559508294028,
+    0.5740093241886569,
+    0.4339207072322711,
+    0.5872093021301033
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "Joaquin de Oquendo.-L. V.-Jn. Br.",
+    "abbyy-bne": "Joaquin de Oquendo.—L. V.—Jn. Br.",
+    "abbyy-ia": "Joaquín de Oquendo. — L. V. — Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "Joaquin de Oquendo.—L. V.—Jn. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "Joaquin de Oquendo.—L. V.—Jn. Br.",
+    "vision-bne-400dpi-corr": "Joaquin de Oquendo.—L. V.-Jn. Br."
+   }
+  },
+  {
+   "line": 34,
+   "bbox": [
+    0.15198238395358107,
+    0.5885780883167905,
+    0.49339207392086804,
+    0.6017441858110626
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "DIcIEMBRE: g.—Por la noche, un hombre",
+    "abbyy-bne": "Diciembre 9.—Por la noche, un hombre",
+    "abbyy-ia": "Diciembre 9. — Por la noche, un hombre",
+    "tess-bne-400dpi-spa_old-psm3": "DrcremBRe 9.—Por la noche, un hombre",
+    "tess-ia-300dpi-spa_old-psm3": "DrcimBRi: 9.—Por la noche, un hombre",
+    "vision-bne-400dpi-corr": "DICIEMBRE 9.—Por la noche, un hombre"
+   }
+  },
+  {
+   "line": 35,
+   "bbox": [
+    0.1321585883851039,
+    0.6031468532954505,
+    0.4933920603667321,
+    0.6148255812079086
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "mató á un marinero: se le condenó á Io años",
+    "abbyy-bne": "mató á un marinero: se le condenó á 10 años",
+    "abbyy-ia": "mató á un marinero: se le condenó á 10 años",
+    "tess-bne-400dpi-spa_old-psm3": "mató á un marinero: se le condenó á-ro años",
+    "tess-ia-300dpi-spa_old-psm3": "mató á un marinero: se le condenó á 10 años",
+    "vision-bne-400dpi-corr": "mató á un marinero: se le condenó á ro años"
+   }
+  },
+  {
+   "line": 36,
+   "bbox": [
+    0.13215859781215697,
+    0.6177156177947891,
+    0.29735682619665343,
+    0.6308275059066771
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "de presidio. --Jn. Br.",
+    "abbyy-bne": "de presidio.—Jn. Br.",
+    "abbyy-ia": "de presidio. — Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "de presidio.—Ju. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "de presidio. —Ju. Br.",
+    "vision-bne-400dpi-corr": "de presidio. - Jn. Br."
+   }
+  },
+  {
+   "line": 37,
+   "bbox": [
+    0.15399223752825408,
+    0.6289533232681607,
+    0.49152266344580875,
+    0.6473062747492306
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "-En este año se fundó en Palma, á expen-",
+    "abbyy-bne": "—En este año se fundó en Palma, á expen­",
+    "abbyy-ia": "— En este año se fundó en Palma, á expen-",
+    "tess-bne-400dpi-spa_old-psm3": "—En este año se fundó en Palma, á expen-",
+    "tess-ia-300dpi-spa_old-psm3": "—En este año se fundó en Palma, á expen-",
+    "vision-bne-400dpi-corr": "—En este año se fundó en Palma, á expen-"
+   }
+  },
+  {
+   "line": 38,
+   "bbox": [
+    0.13215860042621944,
+    0.6468023256104929,
+    0.49339207240784766,
+    0.6614219116836503
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "sas de algunos bienhechores, la Inclusa ó Ca-",
+    "abbyy-bne": "sas de algunos bienhechores, la Inclusa ó Ca­",
+    "abbyy-ia": "sas de algunos bienhechores, la Inclusa ó Ca-",
+    "tess-bne-400dpi-spa_old-psm3": "sas de algunos bienhechores, la Inclusa 6 Ca-",
+    "tess-ia-300dpi-spa_old-psm3": "sas de algunos bienhechores, la Inclusa 6 Ca-",
+    "vision-bne-400dpi-corr": "sas de algunos bienhechores, la Inclusa ó Ca-"
+   }
+  },
+  {
+   "line": 39,
+   "bbox": [
+    0.1321585921056191,
+    0.6613372094651003,
+    0.32819383570275085,
+    0.6745337995285555
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "sa de Expósitos.-Jn. Br.",
+    "abbyy-bne": "sa de Expósitos.—Jn. Br.",
+    "abbyy-ia": "sa de Expósitos.— Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "sa de Expósitos.—Jn. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "sa de Expósitos.—Jn. Br.",
+    "vision-bne-400dpi-corr": "sa de Expósitos.- Jn. Br."
+   }
+  },
+  {
+   "line": 40,
+   "bbox": [
+    0.15187923083996718,
+    0.6755650560305456,
+    0.493534517217783,
+    0.689470412288769
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "-Fué nombrado Ministro de Hacienda el",
+    "abbyy-bne": "—Fué nombrado Ministro de Hacienda el",
+    "abbyy-ia": "— Fue nombrado Ministro de Hacienda el",
+    "tess-bne-400dpi-spa_old-psm3": "—kFué nombrado Ministro de Hacienda el",
+    "tess-ia-300dpi-spa_old-psm3": "—Fué nombrado Ministro de Hacienda el",
+    "vision-bne-400dpi-corr": "-Fué nombrado Ministro de Hacienda el"
+   }
+  },
+  {
+   "line": 41,
+   "bbox": [
+    0.12995595484619024,
+    0.6917249417087965,
+    0.4911894268278185,
+    0.7063953487305924
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "mallorquin D. Miguel Cayetano Soler.—L. V.",
+    "abbyy-bne": "mallorquin D. Miguel Cayetano Soler.—L. V.",
+    "abbyy-ia": "mallorquín D. Miguel Cayetano Soler. — L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "mallorquin D. Miguel Cayetano Soler.—L. V.",
+    "tess-ia-300dpi-spa_old-psm3": "mallorquin D. Miguel Cayetano Soler.—L. V.",
+    "vision-bne-400dpi-corr": "mallorquin D. Miguel Cayetano Soler. —L. V."
+   }
+  },
+  {
+   "line": 42,
+   "bbox": [
+    0.1343612330109855,
+    0.7048368298319572,
+    0.20704845619606305,
+    0.7180232557056847
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "—Jn. Br.",
+    "abbyy-bne": "—Jn. Br.",
+    "abbyy-ia": "— Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "—hn. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "—Jha. Br.",
+    "vision-bne-400dpi-corr": "-/n. Br."
+   }
+  },
+  {
+   "line": 43,
+   "bbox": [
+    0.1541850257434028,
+    0.7208624707877315,
+    0.4933920582874344,
+    0.7340116277805393
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "—Se publicó un pregon declarando libre el",
+    "abbyy-bne": "—Se publicó un pregón declarando libre el",
+    "abbyy-ia": "— Se publicó un pregón declarando libre el",
+    "tess-bne-400dpi-spa_old-psm3": "—sSe publicó un pregon declarando libre el",
+    "tess-ia-300dpi-spa_old-psm3": "; —sSe publicó un pregon declarando libre el",
+    "vision-bne-400dpi-corr": "—Se publicó un pregon declarando libre el"
+   }
+  },
+  {
+   "line": 45,
+   "bbox": [
+    0.13215859892108003,
+    0.7500000001264375,
+    0.4933920709027083,
+    0.7631118882383257
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "título de arbitrio un duro por persona; dos du-",
+    "abbyy-bne": "título de arbitrio un duro por persona; dos du­",
+    "abbyy-ia": "título de arbitrio un duro por persona; dos du-",
+    "tess-bne-400dpi-spa_old-psm3": "título de arbitrio un duro por persona; dos du-",
+    "tess-ia-300dpi-spa_old-psm3": "titulo de arbitrio un duro por persona; dos du-",
+    "vision-bne-400dpi-corr": "título de arbitrio un duro por persona; dos du-"
+   }
+  },
+  {
+   "line": 46,
+   "bbox": [
+    0.13215859892108003,
+    0.7645348838473676,
+    0.4933920709027083,
+    0.7776806524064299
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "ros los sacerdotes; tres duros los Mosons; cua-",
+    "abbyy-bne": "ros los sacerdotes; tres duros los Mosons-, cua­",
+    "abbyy-ia": "ros los sacerdotes; tres duros los Mosons ; cua-",
+    "tess-bne-400dpi-spa_old-psm3": "ros los sacerdotes; tres duros los Mosous; cua-",
+    "tess-ia-300dpi-spa_old-psm3": "ros los sacerdotes; tres duros los Mosons; cua-",
+    "vision-bne-400dpi-corr": "ros los sacerdotes; tres duros los Mosons; cua-"
+   }
+  },
+  {
+   "line": 49,
+   "bbox": [
+    0.1321585980179964,
+    0.8095930233640829,
+    0.49339206999962465,
+    0.8226744183510336
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "hoja y Brasil para fumar. Esta disposicion se",
+    "abbyy-bne": "hoja y Brasil para fumar. Esta disposición se",
+    "abbyy-ia": "hoja y Brasil para fumar. Esta disposición se",
+    "tess-bne-400dpi-spa_old-psm3": "hoja y Brasil para fumar. Esta disposicion se",
+    "tess-ia-300dpi-spa_old-psm3": "hoja y Brasi! para fumar. Esta disposicion se",
+    "vision-bne-400dpi-corr": "hoja y Brasil para fumar. Esta disposicion se"
+   }
+  },
+  {
+   "line": 51,
+   "bbox": [
+    0.12995595228520404,
+    0.8385780886766536,
+    0.4251101329130337,
+    0.8546511627729421
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "D. N. Ferrandell, mallorquin.—-T. A.",
+    "abbyy-bne": "D. N. Ferrandell, mallorquin.—T. A.",
+    "abbyy-ia": "D. N. Ferrandell, mallorquín. — T. A.",
+    "tess-bne-400dpi-spa_old-psm3": "D. N. Eerrandell, mallorquin.—\"T. A.",
+    "tess-ia-300dpi-spa_old-psm3": "D. N. Ferrandell, mallorquin.—T. 4.",
+    "vision-bne-400dpi-corr": "D. N. Ferrandell, mallorquin.--T. A."
+   }
+  },
+  {
+   "line": 52,
+   "bbox": [
+    0.14731623123584092,
+    0.8502480379323256,
+    0.4915488510976728,
+    0.8704999656082264
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "—Vinieron á la isla muchos emigrados fran-",
+    "abbyy-bne": "Vinieron ala isla muchos emigrados fran­",
+    "abbyy-ia": "— Vinieron á la isla muchos emigrados fran-",
+    "tess-bne-400dpi-spa_old-psm3": "—Vinieron á la isla muchos emigrados fran-",
+    "tess-ia-300dpi-spa_old-psm3": "—Vinieron á la isla muchos emigrados fran-",
+    "vision-bne-400dpi-corr": "—Vinieron á la isla muchos emigrados fran-"
+   }
+  },
+  {
+   "line": 53,
+   "bbox": [
+    0.12988967515440958,
+    0.8689122506472267,
+    0.23795173184075707,
+    0.8810877495118162
+   ],
+   "column": 0,
+   "variants": {
+    "vision-ia-300dpi-corr": "ceses. -L. V.",
+    "abbyy-bne": "ceses.—L. V.",
+    "abbyy-ia": "ceses.— L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "ceses.—L. Y, I799.",
+    "tess-ia-300dpi-spa_old-psm3": "ceses.—L. V.",
+    "vision-bne-400dpi-corr": "ceses. -L. V."
+   }
+  },
+  {
+   "line": 54,
+   "bbox": [
+    0.6762114547731984,
+    0.09011627938482858,
+    0.7334801770917062,
+    0.10029069721400863
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "1799.",
+    "abbyy-bne": "1799-",
+    "abbyy-ia": "Í799.",
+    "tess-bne-400dpi-spa_old-psm3": "Manzo",
+    "tess-ia-300dpi-spa_old-psm3": "1799-",
+    "vision-bne-400dpi-corr": "1799."
+   }
+  },
+  {
+   "line": 55,
+   "bbox": [
+    0.5440528698652567,
+    0.10314685363319531,
+    0.8722466961699856,
+    0.12209302332857153
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "MARZO 13. A soldado del Regimiento de",
+    "abbyy-bne": "Marzo 13.—Un soldado del Regimiento de",
+    "abbyy-ia": "Marzo 13. — Un soldado del Regimiento de",
+    "tess-bne-400dpi-spa_old-psm3": "13.—Un soldado del Regimiento de",
+    "tess-ia-300dpi-spa_old-psm3": "Manzo 13.—Un soldado del Regimiento de",
+    "vision-bne-400dpi-corr": "MARZO 13.—Un soldado del Regimiento de"
+   }
+  },
+  {
+   "line": 56,
+   "bbox": [
+    0.5286343727137399,
+    0.11771561781498796,
+    0.8722466931452908,
+    0.1264568765562467
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "suardias Españolas mato a un artillero.—/n",
+    "abbyy-bne": "Guardias Españolas mató á un artillero.—Jn.",
+    "abbyy-ia": "Guardias Españolas mató á un artillero. — Jn.",
+    "tess-bne-400dpi-spa_old-psm3": "Guardias Españolas mató á un artillero.—Jn.",
+    "tess-ia-300dpi-spa_old-psm3": "Guardias Españolas mató á un artillero.—Jn.",
+    "vision-bne-400dpi-corr": "Guardias Españolas mató á un artillero.—Jn."
+   }
+  },
+  {
+   "line": 58,
+   "bbox": [
+    0.5396475722336843,
+    0.14534883746291993,
+    0.8810572622009711,
+    0.15850815864545553
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "—22—Un soldado del de Dragones mató á",
+    "abbyy-bne": "22—Un soldado del de Dragones mató á",
+    "abbyy-ia": "— 22 — Un soldado del de Dragones mató á",
+    "tess-bne-400dpi-spa_old-psm3": "—22—Un soldado del de Dragones martó á",
+    "tess-ia-300dpi-spa_old-psm3": "—22—Un soldado del de Dragones mató á",
+    "vision-bne-400dpi-corr": "—22—Un soldado del de Dragones mató á"
+   }
+  },
+  {
+   "line": 59,
+   "bbox": [
+    0.5176211440911839,
+    0.1613372096593394,
+    0.6321585887281994,
+    0.17307692326591817
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "otro.--/n. Br.",
+    "abbyy-bne": "otro.—Jn. Br.",
+    "abbyy-ia": "otro. — Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "otro.——Jn. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "otro.—-Jn. Br.",
+    "vision-bne-400dpi-corr": "otro.--Jn. Br."
+   }
+  },
+  {
+   "line": 60,
+   "bbox": [
+    0.5396475857460452,
+    0.17441860497095796,
+    0.8832599061775962,
+    0.18895348853679395
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "—- 23—Salieron de Palma para las villas de",
+    "abbyy-bne": "—23—Salieron de Palma para las villas de",
+    "abbyy-ia": "— 23 — Salieron de Palma para las villas de",
+    "tess-bne-400dpi-spa_old-psm3": "—23—Saleron de Palma para las villas de",
+    "tess-ia-300dpi-spa_old-psm3": "--23 —Salieron de Palma para las villas de",
+    "vision-bne-400dpi-corr": "- 23—Salieron de Palma para las villas de"
+   }
+  },
+  {
+   "line": 61,
+   "bbox": [
+    0.5198238050545867,
+    0.19026806551850384,
+    0.8832599075004789,
+    0.2034883718394056
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Sineu, Sansellas, Costitx y Algaida, 2000 sol-",
+    "abbyy-bne": "Sineu, Sansellas, Costitx y Algaida, 2000 sol­",
+    "abbyy-ia": "Sineu, Sansellas, Costitx y Algaida, 2000 sol-",
+    "tess-bne-400dpi-spa_old-psm3": "Sineu, Sansellas, Costitx y Algaida, 2000 sol-",
+    "tess-ia-300dpi-spa_old-psm3": "Sineu, Sansellas, Costitx y Algaida, 2000 sol-",
+    "vision-bne-400dpi-corr": "Sineu, Sansellas, Costitx y Algaida, 2000 sol-"
+   }
+  },
+  {
+   "line": 62,
+   "bbox": [
+    0.519823804257157,
+    0.20483682966843975,
+    0.87885461881553,
+    0.21802325554216728
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "dados, por temor de una invasion inglesa.—",
+    "abbyy-bne": "dados, por temor de una invasion inglesa.—",
+    "abbyy-ia": "dados, por temor de una invasión inglesa. —",
+    "tess-bne-400dpi-spa_old-psm3": "dados, por temor de una invasion inglesa.—",
+    "tess-ia-300dpi-spa_old-psm3": "dados, por temor de una invasion inglesa.—",
+    "vision-bne-400dpi-corr": "dados, por temor de una invasion inglesa.—"
+   }
+  },
+  {
+   "line": 63,
+   "bbox": [
+    0.5176211459403757,
+    0.21940559446860664,
+    0.6365638784649105,
+    0.2325581393394056
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "L. V.-Jn. Br.",
+    "abbyy-bne": "L. V.—Jn. Br.",
+    "abbyy-ia": "L. V.— Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "L. V.—]Jn. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "L. V.—]Jn. Br.",
+    "vision-bne-400dpi-corr": "L. V.-Jn. Br."
+   }
+  },
+  {
+   "line": 64,
+   "bbox": [
+    0.5374449383027731,
+    0.23397435915249443,
+    0.8832599161575793,
+    0.24709302302036484
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "JUNIO 8.—Sacose á la vergüenza á una an-",
+    "abbyy-bne": "Junio 8.—Sacóse á la vergüenza á una an­",
+    "abbyy-ia": "Junio 8. — Sacóse á la vergüenza á una an-",
+    "tess-bne-400dpi-spa_old-psm3": "Juxio 8.—Sacose á la vergüenza á una an-",
+    "tess-ia-300dpi-spa_old-psm3": ". Juxio 8.—Sacose á la vergüenza á una an-",
+    "vision-bne-400dpi-corr": "JUNIo 8.—Sacose á la vergüenza á una an-"
+   }
+  },
+  {
+   "line": 66,
+   "bbox": [
+    0.5176211503951877,
+    0.2630813954263843,
+    0.8259911946855754,
+    0.27768065256433205
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "espalda que decia per alcabota.—Jn. Br.",
+    "abbyy-bne": "espalda que decía per alcabota.—Jn. Br.",
+    "abbyy-ia": "espalda que decía per alcabota. — Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "espalda que decía per alcabota.—Jn. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "espalda que decía per alcabota.—Jn. Br.",
+    "vision-bne-400dpi-corr": "espalda que decia per alcabota.—Jn. Br."
+   }
+  },
+  {
+   "line": 67,
+   "bbox": [
+    0.5352422850446968,
+    0.2790697676954781,
+    0.881057262899503,
+    0.292249417257469
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "-17—Llegò el Teniente General D. Pedro",
+    "abbyy-bne": "—17—Llegó el Teniente General D. Pedro",
+    "abbyy-ia": "— 17 — Llegó el Teniente General D. Pedro",
+    "tess-bne-400dpi-spa_old-psm3": "—1r7—Llego el Teniente General D. Pedro",
+    "tess-ia-300dpi-spa_old-psm3": "—r7—Llegó el Teniente General D. Pedro",
+    "vision-bne-400dpi-corr": "—17—Llegò el Teniente General D. Pedro"
+   }
+  },
+  {
+   "line": 68,
+   "bbox": [
+    0.5198237949640581,
+    0.2936046513195092,
+    0.819383263479407,
+    0.30681818188442866
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Caro, Marqués de la Romana.—L. V.",
+    "abbyy-bne": "Caro. Marqués de la Romana.—L. V.",
+    "abbyy-ia": "Caro, Marqués de la Romana. — L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "Caro, Marqués de la Romana.—L. V.",
+    "tess-ia-300dpi-spa_old-psm3": "Caro, Marqués de la Romana.—L. V.",
+    "vision-bne-400dpi-corr": "Caro, Marqués de la Romana.—L. V."
+   }
+  },
+  {
+   "line": 69,
+   "bbox": [
+    0.5351505549891565,
+    0.3080186271598415,
+    0.8811359136688303,
+    0.32155386441658296
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "JULIO 13.—A las seis de la mañana el Re-",
+    "abbyy-bne": "Julio 13.—A las seis de la mañana el Re­",
+    "abbyy-ia": "Julio 13. — A las seis de la mañana el Re-",
+    "tess-bne-400dpi-spa_old-psm3": "JuLio I3.—A las seïs de la mañana el Re-",
+    "tess-ia-300dpi-spa_old-psm3": "Jucio I3.—A las seis de la mañana el Re-",
+    "vision-bne-400dpi-corr": "JULIO 13.—A las seis de la mañana el Re-"
+   }
+  },
+  {
+   "line": 70,
+   "bbox": [
+    0.5196033998805909,
+    0.3212035700148608,
+    0.8811959386670308,
+    0.33730047207520264
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "gimiento suizo de Courten arcabuceó á un",
+    "abbyy-bne": "gimiento suizo de Courten arcabuceó á un",
+    "abbyy-ia": "gimiento suizo de Courten arcabuceó á un",
+    "tess-bne-400dpi-spa_old-psm3": "gimiento suizo de Courten arcabuceó á un",
+    "tess-ia-300dpi-spa_old-psm3": "gimiento suizo de Courten arcabuceó 4á un",
+    "vision-bne-400dpi-corr": "gimiento suizo de Courten arcabuceó á un"
+   }
+  },
+  {
+   "line": 72,
+   "bbox": [
+    0.5198237971589655,
+    0.3531468530406492,
+    0.8810572691405937,
+    0.36627906953199285
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "baquetas á otros compañeros suyos.—Jn. Br.",
+    "abbyy-bne": "baquetas á otros compañeros suyos.—Jn. Br.",
+    "abbyy-ia": "baquetas á otros compañeros suyos. — Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "baquetas á otros compañeros suyos.—Jn. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "baquetas á otros compañeros suyos.—Jn. Br.",
+    "vision-bne-400dpi-corr": "baquetas á otros compañeros suyos.—Jn. Br."
+   }
+  },
+  {
+   "line": 73,
+   "bbox": [
+    0.5373219732088977,
+    0.3668143834119246,
+    0.8790331725346211,
+    0.3849226990909458
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "—20—El General y otros Sres. costearon",
+    "abbyy-bne": "28—El General y otros Sres. costearon",
+    "abbyy-ia": "— 28 — El General y otros Sres. costearon",
+    "tess-bne-400dpi-spa_old-psm3": "—28—El General y otros Sres. costearon",
+    "tess-ia-300dpi-spa_old-psm3": "—28—El General y otros Sres. costearon",
+    "vision-bne-400dpi-corr": "-28—El General y otros Sres. costearon"
+   }
+  },
+  {
+   "line": 74,
+   "bbox": [
+    0.517621153270272,
+    0.3822674418653378,
+    0.8832599131394195,
+    0.3968531469355667
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "diversiones públicas de regadio (sic), ilumina-",
+    "abbyy-bne": "diversiones públicas de regadío (sic), ilumina­",
+    "abbyy-ia": "diversiones públicas de regadío (sic), ilumina-",
+    "tess-bne-400dpi-spa_old-psm3": "diversiones públicas de regadio (sic), ilumina-",
+    "tess-ia-300dpi-spa_old-psm3": "diversiones públicas de regadio (Sic), ilumina-",
+    "vision-bne-400dpi-corr": "diversiones públicas de regadío (sic), ilumina-"
+   }
+  },
+  {
+   "line": 75,
+   "bbox": [
+    0.5198237971589655,
+    0.3968023257078328,
+    0.8810572691405937,
+    0.40996503476835944
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "ciones por la noche y coros de música; siguie-",
+    "abbyy-bne": "ciones por la noche y coros de música; siguie­",
+    "abbyy-ia": "ciones por la noche y coros de música; siguie- ¡",
+    "tess-bne-400dpi-spa_old-psm3": "ciones por la noche y coros de música; siguie-",
+    "tess-ia-300dpi-spa_old-psm3": "ciones por la noche y coros de música; siguie-",
+    "vision-bne-400dpi-corr": "ciones por la noche y coros de música; siguie-"
+   }
+  },
+  {
+   "line": 76,
+   "bbox": [
+    0.5176211512825605,
+    0.41133720945254715,
+    0.8810572537284528,
+    0.42599067597287876
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "ron durante los meses de Agosto y Setiembre:",
+    "abbyy-bne": "ron durante los meses de Agosto y Setiembre:",
+    "abbyy-ia": "ron durante los meses de Agosto y Setiembre: ¡",
+    "tess-bne-400dpi-spa_old-psm3": "ron durante los meses de Agosto y Setiembre:",
+    "tess-ia-300dpi-spa_old-psm3": "ron durante los meses de Agosto y Setiembre:",
+    "vision-bne-400dpi-corr": "ron durante los meses de Agosto y Setiembre:"
+   }
+  },
+  {
+   "line": 77,
+   "bbox": [
+    0.5198237985927403,
+    0.4258720931860305,
+    0.8722466947993298,
+    0.4389534881729812
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "no se indica la causa de estos festejos.—L. V.",
+    "abbyy-bne": "no se indica la ca usa de estos festejos.—L. V.",
+    "abbyy-ia": "no se indica la causa de estos festejos. — L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "no se indica la ca usa de estos festejos.—L. V.",
+    "tess-ia-300dpi-spa_old-psm3": "no se indica la causa de estos festejos.—L. V.",
+    "vision-bne-400dpi-corr": "no se indica la ca usa de estos festejos.—L. V."
+   }
+  },
+  {
+   "line": 78,
+   "bbox": [
+    0.5374449454009645,
+    0.44172494199354895,
+    0.8810572658325154,
+    0.4520348832786889
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "AGOSTO 22.—Fué ahorcado un soldado sui-",
+    "abbyy-bne": "Agosto 22.—Fué ahorcado un soldado sui­",
+    "abbyy-ia": "Agosto 22. — Fué ahorcado un soldado sui-",
+    "tess-bne-400dpi-spa_old-psm3": "AGOSTO 22.—Fuée ahorcado un soldado sui-",
+    "tess-ia-300dpi-spa_old-psm3": "AGOSTO 22.—Fuéc ahorcado un soldado sui-",
+    "vision-bne-400dpi-corr": "AGOsTo 22.—Fué ahorcado un soldado sui-"
+   }
+  },
+  {
+   "line": 79,
+   "bbox": [
+    0.5176211497682435,
+    0.45629370608204134,
+    0.8810572522141358,
+    0.4694767440777776
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "zo de Courten por haber muerto á otro cerca",
+    "abbyy-bne": "zo de Courten por haber muerto á otro cerca",
+    "abbyy-ia": "zo de Courten por haber muerto á otro cerca ,",
+    "tess-bne-400dpi-spa_old-psm3": "zo de Courten por haber muerto á otro cerca",
+    "tess-ia-300dpi-spa_old-psm3": "zo de Courten por haber muerto á otro cerca",
+    "vision-bne-400dpi-corr": "zo de Courten por haber muerto á otro cerca"
+   }
+  },
+  {
+   "line": 80,
+   "bbox": [
+    0.5198237962558818,
+    0.47086247068962095,
+    0.8810572682375101,
+    0.4840116276824289
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "de Son Moix, para robarle 3 pesetas. —Jn. Br.",
+    "abbyy-bne": "de Son Moix, para robarle 3 pesetas.—^J?;. Br.",
+    "abbyy-ia": "de Son Moix, para robarle 3 pesetas. — J n. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "de Son Moix, para robarle 3 pesetas.—Jn. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "de Son Moix, para robarle 3 pesetas.—Jz. Br.",
+    "vision-bne-400dpi-corr": "de Son Moix, para robarle 3 pesetas. —Jn. Br."
+   }
+  },
+  {
+   "line": 81,
+   "bbox": [
+    0.5395691959227668,
+    0.4854230642878534,
+    0.8811732602171573,
+    0.4991044782540346
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "-26—El Regimiento de Borbon celebró",
+    "abbyy-bne": "—26—El Regimiento de Borbon celebró",
+    "abbyy-ia": "— 26 — El Regimiento de Borbon celebró |",
+    "tess-bne-400dpi-spa_old-psm3": "—26—El Regimiento de Borbon celebró",
+    "tess-ia-300dpi-spa_old-psm3": "—26—El Regimiento de Borbon celebró",
+    "vision-bne-400dpi-corr": "-26—El Regimiento de Borbon celebró"
+   }
+  },
+  {
+   "line": 82,
+   "bbox": [
+    0.5197060262863388,
+    0.4997269675583422,
+    0.8811891385271874,
+    0.5150265567643532
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "una solemne fiesta en Sto. Domingo á S. Luis,",
+    "abbyy-bne": "una solemne fiesta en Sto. Domingo á S. Luis,",
+    "abbyy-ia": "una solemne fiesta en Sto. Domingo á S. Luis, 1",
+    "tess-bne-400dpi-spa_old-psm3": "una solemne fiesta en Sto. Domingo á S. Luis,",
+    "tess-ia-300dpi-spa_old-psm3": "una solemne flesta en Sto. Domingo á S. Luis,",
+    "vision-bne-400dpi-corr": "una solemne fiesta en Sto. Domingo á S. Luis,"
+   }
+  },
+  {
+   "line": 84,
+   "bbox": [
+    0.517621152774543,
+    0.530523256098293,
+    0.6409691597071016,
+    0.5422494170813986
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "funeral.—L. V.",
+    "abbyy-bne": "funeral.—L. V.",
+    "abbyy-ia": "funeral. — L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "tuneral.—L. V.",
+    "tess-ia-300dpi-spa_old-psm3": "tuneral.—L. V.",
+    "vision-bne-400dpi-corr": "funeral.—L. V."
+   }
+  },
+  {
+   "line": 85,
+   "bbox": [
+    0.5352422850446968,
+    0.5450581397400518,
+    0.881057262899503,
+    0.5582750581829624
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "SETIEMBRE: 17.—Llegó el nuevo Capitan",
+    "abbyy-bne": "Setiembre 17.—Llegó el nuevo Capitan",
+    "abbyy-ia": "I Setiembre 17. — Llegó el nuevo Capitán 1",
+    "tess-bne-400dpi-spa_old-psm3": "SETIEMBRE I7.—Llegó el nuevo ’ Capitan",
+    "tess-ia-300dpi-spa_old-psm3": "SETIEMBRE 17.—Llegó el nuevo Capitan",
+    "vision-bne-400dpi-corr": "SETIEMBRE 17.—Llegó el nuevo Capitan"
+   }
+  },
+  {
+   "line": 86,
+   "bbox": [
+    0.5220264425344432,
+    0.5595930233640828,
+    0.8788546266285521,
+    0.5726744183510335
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "General D. Juan Miguel de Vives.—L. V.-",
+    "abbyy-bne": "General D. Juan Miguel de Vives.—L. V.—",
+    "abbyy-ia": "General D. Juan Miguel de Vives. —",
+    "tess-bne-400dpi-spa_old-psm3": "General D. Juan Miguel de Vives.—L. V.—",
+    "tess-ia-300dpi-spa_old-psm3": "General D. Juan Miguel de Vives.—L. V.—",
+    "vision-bne-400dpi-corr": "General D. Juan Miguel de Vives.—L. V.-"
+   }
+  },
+  {
+   "line": 87,
+   "bbox": [
+    0.5152507093589637,
+    0.5751816799013035,
+    0.5772603050884006,
+    0.5876090171431988
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Jn. Br.",
+    "abbyy-bne": "Jn. Br.",
+    "abbyy-ia": "L. V.",
+    "tess-bne-400dpi-spa_old-psm3": "Ja. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "Jn. Br.",
+    "vision-bne-400dpi-corr": "Jn. Br."
+   }
+  },
+  {
+   "line": 88,
+   "bbox": [
+    0.539647580809482,
+    0.5885780884621393,
+    0.8788546133535137,
+    0.6017441859564114
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "—I9—Se publicó la guerra contra el Em-",
+    "abbyy-bne": "—19—Se publicó la guerra contra el Em­",
+    "abbyy-ia": "— í -Br. — 19 — Se publicó la guerra contra el Em- ■",
+    "tess-bne-400dpi-spa_old-psm3": "—19—sSe publicó la guerra contra el Em-",
+    "tess-ia-300dpi-spa_old-psm3": "—19—Se publicó la guerra contra el Em-",
+    "vision-bne-400dpi-corr": "—19—Se publicó la guerra contra el Em-"
+   }
+  },
+  {
+   "line": 89,
+   "bbox": [
+    0.5176211510164079,
+    0.6031468533052652,
+    0.8810572534623001,
+    0.6177325578197397
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "perador de Rusia, por no querer España rom-",
+    "abbyy-bne": "perador de Rusia, por no querer España rom­",
+    "abbyy-ia": "perador de Rusia, por no querer España rom- ¡",
+    "tess-bne-400dpi-spa_old-psm3": "perador de Rusia, por no querer España rom-",
+    "tess-ia-300dpi-spa_old-psm3": "perador de Rusía, por no querer España rom-",
+    "vision-bne-400dpi-corr": "perador de Rusia, por no querer España rom-"
+   }
+  },
+  {
+   "line": 90,
+   "bbox": [
+    0.5176211489693718,
+    0.619172494317843,
+    0.8149779600614655,
+    0.6308275059728548
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "per su amistad con la Francia.—T. A.",
+    "abbyy-bne": "per su amistad con la Francia.—T. A.",
+    "abbyy-ia": "per su amistad con la Francia — T. A.",
+    "tess-bne-400dpi-spa_old-psm3": "per su amistad con la Erancia —T. A.",
+    "tess-ia-300dpi-spa_old-psm3": "per su amistad con la Erancia.—T. A.",
+    "vision-bne-400dpi-corr": "per su amistad con la Francia.—T. A."
+   }
+  },
+  {
+   "line": 91,
+   "bbox": [
+    0.5396475813379423,
+    0.6337209303408269,
+    0.8810572713052293,
+    0.6468531468321704
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "OCTUBRE 19.-Fué degollada y robada una",
+    "abbyy-bne": "Octubre 19.—Fué degollada y robada una",
+    "abbyy-ia": "Octubre 19. — Fué degollada y robada una j",
+    "tess-bne-400dpi-spa_old-psm3": "OcTuBRz I9.—Fué degollada y robada una",
+    "tess-ia-300dpi-spa_old-psm3": "OcTuBRs 19.—Fué degollada y robada una",
+    "vision-bne-400dpi-corr": "OCTUBRE 19.—Fué degollada y robada una"
+   }
+  },
+  {
+   "line": 92,
+   "bbox": [
+    0.5154185072837348,
+    0.6482558141037098,
+    0.8832598976171464,
+    0.6628787880548583
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "muger en su casi de la calle del Vino.—Jn. Br.",
+    "abbyy-bne": "muger en su casa de la calle del Vino.—J«. Br.",
+    "abbyy-ia": "muger en su casa de la calle del Vino. — Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "muger en su casa de la calle del Vino.—Jn. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "muger en su casa de la calle del Vino.—Jn. Br.",
+    "vision-bne-400dpi-corr": "muger en su casa de la calle del Vino.—Jn. Br."
+   }
+  },
+  {
+   "line": 93,
+   "bbox": [
+    0.5374449397436686,
+    0.6627906979103085,
+    0.8832599175984749,
+    0.6745337993948785
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "DICIEMBRE II.—A las tres de la tarde el Re-",
+    "abbyy-bne": "Diciembre i i .—A las tres de la tarde el Re­",
+    "abbyy-ia": "Diciembre i i . — A las tres de la tarde el Re-",
+    "tess-bne-400dpi-spa_old-psm3": "DICIEMBRE II.—A las tres de la tarde el Re-",
+    "tess-ia-300dpi-spa_old-psm3": "DicrEMBRE 11I.—A las tres de la tarde el Re-",
+    "vision-bne-400dpi-corr": "DICIEMBRE II.—A las tres de la tarde el Re-"
+   }
+  },
+  {
+   "line": 95,
+   "bbox": [
+    0.5154185057510624,
+    0.6917249417863159,
+    0.883259896084474,
+    0.7063953488081118
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "soldado. por haber desobedecido á un sargento,",
+    "abbyy-bne": "soldado, por hab er desobedecido á un sargento,",
+    "abbyy-ia": "soldado, por haber desobedecido á un sargento,",
+    "tess-bne-400dpi-spa_old-psm3": "soldado, por hab er desobedecido á un sargento,",
+    "tess-ia-300dpi-spa_old-psm3": "soldado. por haber desobedecido á un sargento,",
+    "vision-bne-400dpi-corr": "soldado, por hab er desobedecido á un sargento,"
+   }
+  },
+  {
+   "line": 96,
+   "bbox": [
+    0.5154185068017,
+    0.706293706280039,
+    0.8502202514582122,
+    0.7209302322989064
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "hallándose de guardia en Palacio.—Jn. Br.",
+    "abbyy-bne": "hallándose de guardia en Palacio.—J«. Br.",
+    "abbyy-ia": "hallándose de guardia en Palacio. — Jn. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "halláindose de guardia en Palacio.—Jn. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "hallándose de guardia en Palacio.—Jn. Br.",
+    "vision-bne-400dpi-corr": "hallándose de guardia en Palacio.—Jn. Br."
+   }
+  },
+  {
+   "line": 98,
+   "bbox": [
+    0.5374449445419337,
+    0.7368881116344943,
+    0.8810572649734846,
+    0.7499999997463824
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "FEBRERO 13, I5, 16, 18, 20, 23 y 24.—Bai-",
+    "abbyy-bne": "Febrero 13, 15, 16, 18, 20, 23 y 24.—Bai­",
+    "abbyy-ia": "Febrero 13, 15, 16, 18, 20, 23 y 24. — Bai-",
+    "tess-bne-400dpi-spa_old-psm3": "PEBRERO EZ 5:T53 16; ES 20723 Y 24--—Baiz",
+    "tess-ia-300dpi-spa_old-psm3": "FEBRERO I3, I5, I6, I8, 20, 23 y 24.—-Bai-",
+    "vision-bne-400dpi-corr": "FEBRERO 13, IS, I6, 18, 20, 23 y 24.—Bai-"
+   }
+  },
+  {
+   "line": 100,
+   "bbox": [
+    0.5198237962558818,
+    0.765988372230362,
+    0.8810572682375101,
+    0.7791375292231698
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Lonja, por concesion de S. M. Primera vez",
+    "abbyy-bne": "Lonja, por concesión de S. M. Primera vez",
+    "abbyy-ia": "Lonja, por concesión de S. M. Primera vez",
+    "tess-bne-400dpi-spa_old-psm3": "Lonja, por concesion de S. M. Primera vez",
+    "tess-ia-300dpi-spa_old-psm3": "Lonja, por concesion de S. M. Primera vez",
+    "vision-bne-400dpi-corr": "Lonja, por concesion de S. M. Primera vez"
+   }
+  },
+  {
+   "line": 101,
+   "bbox": [
+    0.519823788403459,
+    0.7805232560731865,
+    0.8810572603850872,
+    0.7951631699700451
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "que se vió en Mallorca este género de diver-",
+    "abbyy-bne": "que se vió en Mallorca este género de diver­",
+    "abbyy-ia": "que se vió en Mallorca este género de diver-",
+    "tess-bne-400dpi-spa_old-psm3": "que se vió en Mallorca este género de diver-",
+    "tess-ia-300dpi-spa_old-psm3": "que se vió en Mallorca este género de diver-",
+    "vision-bne-400dpi-corr": "que se vió en Mallorca este género de diver-"
+   }
+  },
+  {
+   "line": 102,
+   "bbox": [
+    0.5154185030659264,
+    0.7965116280334141,
+    0.6343612355904613,
+    0.8097319349100702
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "sion. -Jn. Br.",
+    "abbyy-bne": "sion.—Jw. Br.",
+    "abbyy-ia": "sión.— J n. Br.",
+    "tess-bne-400dpi-spa_old-psm3": "sion.—Jn. Br.",
+    "tess-ia-300dpi-spa_old-psm3": "sion.—]Jn. Br.",
+    "vision-bne-400dpi-corr": "sion.-Jn. Br."
+   }
+  },
+  {
+   "line": 103,
+   "bbox": [
+    0.5374449313379425,
+    0.8110465115325627,
+    0.8788546213052293,
+    0.8212209304732513
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "MAYO.—En este mes se establecieron en la",
+    "abbyy-bne": "Mayo.—En este mes se establecieron en la",
+    "abbyy-ia": "Mayo. — En este mes se establecieron en la",
+    "tess-bne-400dpi-spa_old-psm3": "Mayo.—En este mes se establecieron en la",
+    "tess-ia-300dpi-spa_old-psm3": "Maro.—En este mes se establecieron en la",
+    "vision-bne-400dpi-corr": "MAYO.—En este mes se establecieron en la"
+   }
+  },
+  {
+   "line": 104,
+   "bbox": [
+    0.5176211547937667,
+    0.8254662003806015,
+    0.8832599146629142,
+    0.8386627904440567
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "isla varios campamentos de tropas, por temo-",
+    "abbyy-bne": "isla varios campamentos de tropas, por temo­",
+    "abbyy-ia": "isla varios campamentos de tropas, por temo-",
+    "tess-bne-400dpi-spa_old-psm3": "isla varios campamentos de tropas, por temo-",
+    "tess-ia-300dpi-spa_old-psm3": "isla varios campa mentos de tropas, por temo-",
+    "vision-bne-400dpi-corr": "isla varios campamentos de tropas, por temo-"
+   }
+  },
+  {
+   "line": 105,
+   "bbox": [
+    0.5176211504734048,
+    0.840034965122629,
+    0.8590308404406918,
+    0.8531976741831556
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "res de invasion de rusos é ingleses. —T. A.",
+    "abbyy-bne": "res de invasion de rusos é ingleses.—T. A.",
+    "abbyy-ia": "res de invasión de rusos é ingleses. — T. A.",
+    "tess-bne-400dpi-spa_old-psm3": "res de invasion de rusos ¿ ingleses.—T. A.",
+    "tess-ia-300dpi-spa_old-psm3": "res de invasion de rusos é ingleses.—T. A.",
+    "vision-bne-400dpi-corr": "res de invasion de rusos é ingleses.—T. A."
+   }
+  },
+  {
+   "line": 106,
+   "bbox": [
+    0.5352423015122709,
+    0.8546037298464877,
+    0.8832599098313412,
+    0.8677325579040859
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "JUNIO I.°-El cuerpo de Milicias Urbanas",
+    "abbyy-bne": "Junio i.°—El cuerpo de Milicias Urbanas",
+    "abbyy-ia": "Junio i.° — El cuerpo de Milicias Urbanas",
+    "tess-bne-400dpi-spa_old-psm3": "Juxio 1.°—El cuerpo de Milicias Urbanas",
+    "tess-ia-300dpi-spa_old-psm3": "Juxro 1.°—El cuerpo de Milicias Urbanas",
+    "vision-bne-400dpi-corr": "JUNIO I.°—El cuerpo de Milicias Urbanas"
+   }
+  },
+  {
+   "line": 107,
+   "bbox": [
+    0.5176211547040468,
+    0.8691724940509294,
+    0.8744493387981557,
+    0.8822843821628176
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "empezó á hacer ejercicios militares.—Jn. Br.",
+    "abbyy-bne": "empezó á hacer ejercicio.s militares.—J«. Br.",
+    "abbyy-ia": "empezó á hacer ejercicios militares. —",
+    "tess-bne-400dpi-spa_old-psm3": "empezó á hacer ejercicios militares.—Jn. Br,",
+    "tess-ia-300dpi-spa_old-psm3": "empezó á hacer ejercicios militares.—Jn. Br.",
+    "vision-bne-400dpi-corr": "empezó á hacer ejercicios militares.—Jn. Br."
+   }
+  },
+  {
+   "line": 108,
+   "bbox": [
+    0.596595190211452,
+    0.9625213509652503,
+    0.8020832266738112,
+    0.990967021619974
+   ],
+   "column": 1,
+   "variants": {
+    "vision-ia-300dpi-corr": "Diğlized by Google",
+    "abbyy-bne": "",
+    "abbyy-ia": "Jn.",
+    "tess-bne-400dpi-spa_old-psm3": "",
+    "tess-ia-300dpi-spa_old-psm3": "",
+    "vision-bne-400dpi-corr": ""
+   }
+  }
+ ]
+}
