@@ -239,13 +239,37 @@ things are true and must not be confused:
   chronicle prose, the introduction, one Jurats table and the errata. The 159
   document leaves are unmeasured.
 
-And one systematic error is already visible on the facsimile reprint: **the long
-s (`ſ`) is read as `f`** throughout. Leaf 340 prints `coſa`, `eſtat`, `moſſen`,
-`boſſer`, `prouiſio`; the transcription has `cofa`, `eftat`, `moffen`, `boffer`,
-`prouifio`. 29 leaves show it at over 5% of their words. This is a real error,
-not 1881 orthography to be preserved — `ſ` and `f` are different letters — but
-the repair belongs in `docs/EDITORIAL.md` as a stated deterministic rule, not as
-a silent fix.
+## The long s — fixed, and the shape of the fix
+
+Leaves 335–367 reproduce a 1541 booklet in its own typography, which uses `ſ`.
+Five of six engines read it as `f`. `scripts/editorial.py` repairs **1 481
+tokens**; the rule is written up in `docs/EDITORIAL.md` and applied in
+`build_text.py`, and every word it touches keeps the panel's reading under
+`printed`.
+
+The lesson worth keeping is the veto. Tesseract `spa_old` does read the long s —
+`coſa`, `moſſen`, `boſſer`, `eſtigueſſen` — and is outvoted, so preferring its
+reading recovers most of it. **But an engine reading `ſ` is evidence, not
+proof:** leaf 342 prints `fonch` and leaf 362 `fins` with a full crossbar (real
+`f`, both real Catalan words) and Tesseract offers `ſonch` and `ſins` anyway.
+Repairing on the panel alone would have corrupted 47 tokens of good text. So a
+repair is refused whenever the printed form is a word the book uses elsewhere,
+outside the reprint:
+
+| outcome | tokens |
+|---|---|
+| repaired, an engine read it | 1 292 |
+| repaired, attested on the reprint | 189 |
+| ambiguous — real word, `f` stands, sent to review | 465 |
+| untouched — no engine ever read `ſ` | 542 |
+
+`fe`, `fa` and `fi` are knowingly left wrong: they are `ſe`, `ſa`, `ſi` on the
+page *and* real words. Leaving a real reading unrepaired is recoverable;
+corrupting a real word is not.
+
+Also: **derive the affected leaves from the consensus, never from
+`data/text/`** — that is the rule's own output, and reading the signal from it
+made the detection vanish the moment the repair had run once.
 
 ## Where we left off (27 Jul 2026)
 
@@ -286,8 +310,9 @@ Panel of six is measured and closed pending one open experiment.
 - [ ] Keyboard-driven review tool: native-resolution crop on screen, variants as
       numbered choices, decisions to an append-only file keyed so re-runs replay
       them.
-- [ ] Deterministic normalisation with the rules written down (hyphen stitching,
-      small caps, running heads) — `docs/EDITORIAL.md`.
+- [x] Deterministic normalisation with the rules written down — `docs/EDITORIAL.md`.
+      One rule so far (the long s), plus the two typographic transforms that were
+      already happening (hyphen stitching, running heads).
 - [ ] Parse into the chronicle structure; sigla glossary from the introduction.
 - [ ] Static SPA on Cloudflare Workers, Catalan UI, `cronicon.corpusbalear.org`,
       plus a card in `../portal/web/index.html` and its JSON-LD `hasPart`.

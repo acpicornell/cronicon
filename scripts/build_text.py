@@ -9,8 +9,12 @@ point of the pipeline and the edition should not throw it away. `.txt` is for
 reading and grepping; `.json` carries the tiers so the site can shade doubtful
 words and offer the facsimile crop.
 
-What this deliberately does *not* do: correct anything. 1881 orthography stands as
-printed, and so do Campaner's own errors.
+What this deliberately does *not* do: tidy the book. 1881 orthography stands as
+printed, and so do Campaner's own errors. The one thing it does change is the
+long s of the 1541 facsimile on leaves 335-367, which five of the six engines
+read as `f`; the rule lives in `editorial.py`, is documented in
+`docs/EDITORIAL.md`, and every word it touches keeps what the panel voted for
+under `printed`.
 
 Usage:
   python scripts/build_text.py --consensus consensus6_swap_swapk
@@ -25,6 +29,7 @@ import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
+import editorial
 import targets
 
 PROJECT = Path(__file__).resolve().parent.parent
@@ -41,8 +46,14 @@ TIER_MARK = {"unanimous": " ", "one-dissent": "·", "two-dissent": ":",
              "contested": "?"}
 
 
-def assemble(loci: list[dict]) -> tuple[str, list[dict]]:
-    """Reading-order text, plus one record per word with its tier and box."""
+def assemble(loci: list[dict], repairs: dict | None = None
+             ) -> tuple[str, list[dict]]:
+    """Reading-order text, plus one record per word with its tier and box.
+
+    `repairs` carries the editorial rules from `editorial.py`, keyed by (leaf,
+    index). Where one applies, the word record keeps what the panel voted for
+    under `printed` so that nothing is changed silently.
+    """
     lines: dict[tuple, list[dict]] = defaultdict(list)
     order: list[tuple] = []
     for locus in loci:
@@ -51,14 +62,20 @@ def assemble(loci: list[dict]) -> tuple[str, list[dict]]:
             order.append(key)
         lines[key].append(locus)
 
+    repairs = repairs or {}
     words: list[dict] = []
     pieces: list[str] = []
     for key in order:
         row = sorted(lines[key], key=lambda x: x["index"])
-        text = " ".join(w["winner"] for w in row).strip()
-        for w in row:
-            words.append({"text": w["winner"], "tier": w["grade"],
-                          "bbox": w["bbox"], "line": list(key)})
+        chosen = [repairs.get((w["pdf_page"], w["index"]), w["winner"])
+                  for w in row]
+        text = " ".join(chosen).strip()
+        for w, reading in zip(row, chosen):
+            record = {"text": reading, "tier": w["grade"],
+                      "bbox": w["bbox"], "line": list(key)}
+            if reading != w["winner"]:
+                record["printed"] = w["winner"]
+            words.append(record)
         if not text:
             continue
         if BREAK_HYPHEN.search(text):
@@ -85,6 +102,9 @@ def main() -> None:
         raise SystemExit(f"{source} missing -- run scripts/consensus.py first")
 
     pages = targets.resolve(args.pages)
+    # The editorial rules, applied here and nowhere else, and reported.
+    repairs, applied, _ambiguous = editorial.long_s_repairs(
+        source, editorial.long_s_leaves(source))
     if not args.show:
         OUT.mkdir(parents=True, exist_ok=True)
 
@@ -95,7 +115,7 @@ def main() -> None:
         path = source / f"p{pdf_page:04d}.json"
         if not path.exists():
             continue
-        prose, words = assemble(json.loads(path.read_text())["loci"])
+        prose, words = assemble(json.loads(path.read_text())["loci"], repairs)
         total_words += len(words)
         for w in words:
             tiers[w["tier"]] += 1
@@ -114,6 +134,9 @@ def main() -> None:
     if args.show:
         return
     print(f"{written} leaves assembled, {total_words:,} words")
+    print(f"  long s repaired  {len(repairs):,}  "
+          f"({applied['panel']:,} from the panel, {applied['attested']:,} by "
+          f"attestation; {applied['ambiguous']:,} ambiguous left as printed)")
     for tier in ("unanimous", "one-dissent", "two-dissent", "contested"):
         print(f"  {tier:12} {tiers[tier]:8,}  {tiers[tier]/total_words:5.1%}")
     print(f"\n-> {OUT}")
