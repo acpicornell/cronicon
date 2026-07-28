@@ -445,6 +445,31 @@ python scripts/consensus.py --pages all --swap-paddle --swap-kraken \
   rules, so it finds one cell on leaf 631. The script is kept and nothing consumes
   it; it would serve as an independent check on `find_columns` for prose.
 
+## The review tool
+
+`scripts/review.py` serves a page at `127.0.0.1:8000`; decisions append to
+`data/review/decisions.jsonl`. **34 761 positions** — the 23 647 contested plus
+the 11 114 held back on the line-aligned leaves — ordered figures first (8 986),
+then capitalised words (10 474), then the rest. `--stats` reports without serving.
+
+Four properties, each of them a lesson rather than a preference:
+
+- **Crops are never resized.** They are cut from the largest scan held of that
+  leaf and shown at native resolution, because the pilot's one recorded shared
+  error was `asi` for `así` and it was the *adjudication* that was wrong: at 78
+  pixels the accent is not there to see. `c` widens to three lines of context.
+- **The readings are numbered choices**, with the engines that gave each one, so
+  that four engines agreeing is visible — and so is the fact that all four read
+  the same scan.
+- **Typing what is printed is allowed**, and recorded as `source: "typed"`. A
+  person with the facsimile on screen outranks the panel; the point of recording
+  it is that the share of the edition resting on a reading no engine produced
+  can be counted instead of assumed.
+- **Keyed by `(leaf, word box)`, never by index.** An index renumbers whenever a
+  leaf's geometry changes — which happened four times this week — and the queue
+  is re-filtered against the decisions on every request, so reloading the page
+  does not bring back settled work.
+
 ## Backlog
 
 - [x] Tighten the shared-error bound — 360 unanimous positions adjudicated, none

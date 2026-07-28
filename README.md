@@ -406,6 +406,7 @@ scripts/
   parse_jurats.py          the six Jurats series -> (year, seat, name)
   parse_documents.py       the appendix blocks and their numbered sections
   build_documents.py       each of those sections assembled as one document
+  review.py                the review tool: crops at native resolution, keyboard
   parse_sigla.py           the glossary the introduction prints
 
 data/inventory.json        the 671-leaf survey (committed)
@@ -448,15 +449,20 @@ importantly, the veto that stops it corrupting 47 tokens of perfectly good Catal
 
 ## What remains
 
-1. **Measure the 159 document leaves.** The medieval Catalan and Latin have never
+1. **Do the review.** `scripts/review.py` is built and waiting: 34 761 positions,
+   of which 8 986 carry a figure and 10 474 are capitalised, which is the order it
+   serves them in. It is the same tool for the 23 647 contested words and for the
+   adjudication round below.
+2. **Measure the 159 document leaves.** The medieval Catalan and Latin have never
    been adjudicated. Their conflict rate is *lower* than the chronicle's (3.77%
    against 5.59%), which is not reassurance — it is exactly what correlated
    failure looks like. No reliability figure should be published for the edition
    until a round of adjudication covers them.
-2. **The review tool** — native-resolution crops, keyboard-driven, decisions to an
-   append-only file keyed by `(leaf, box)` so re-runs replay them, ordered by what
-   matters. The same tool serves both the 23 647 decisions and the round above.
-3. **The site** — static SPA, Catalan UI, Cloudflare Worker, and a card on the
+3. **Split the documents into their individual pieces.** The sections are
+   assembled; the letters inside them are not separated. The Centellas section
+   holds 20 salutations against 3 numbered pieces, so this needs a measured rule,
+   not a guess.
+4. **The site** — static SPA, Catalan UI, Cloudflare Worker, and a card on the
    Corpus Balear portal.
 
 ## Conventions

@@ -26,3 +26,6 @@ data/text/*.json
 data/htr/
 .venv-htr/
 models/
+
+# Review decisions are data -- they are the human's work and are committed.
+# Nothing under data/review/ is regenerable.
