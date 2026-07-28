@@ -33,7 +33,7 @@
      1304,
      1400
     ],
-    "years_stated": 33
+    "years_stated": 26
    },
    {
     "number": 2,
@@ -84,7 +84,7 @@
      1307,
      1706
     ],
-    "years_stated": 25
+    "years_stated": 24
    }
   ],
   "numerals_not_found": []
@@ -104,9 +104,9 @@
     "until": 228,
     "years": [
      1401,
-     1496
+     1497
     ],
-    "years_stated": 87
+    "years_stated": 84
    },
    {
     "number": 2,
@@ -152,7 +152,7 @@
      1401,
      1500
     ],
-    "years_stated": 35
+    "years_stated": 36
    }
   ],
   "numerals_not_found": []
@@ -174,7 +174,7 @@
      1502,
      1598
     ],
-    "years_stated": 84
+    "years_stated": 83
    },
    {
     "number": 2,
@@ -188,7 +188,7 @@
    {
     "number": 3,
     "numeral": "III",
-    "title": "«Part de lo ques segui en la Germania.»  (1)",
+    "title": "«Part de lo ques segui en la Germania.» (1)",
     "pdf_page": 316,
     "line": 23,
     "read_as": "I XIX.",
@@ -206,7 +206,7 @@
    {
     "number": 5,
     "numeral": "V",
-    "title": "Sentencia contra Juanot Colom y otros tres compafieros.  (1)",
+    "title": "Sentencia contra Juanot Colom y otros tres compafieros. (1)",
     "pdf_page": 323,
     "line": 18,
     "read_as": "V.",
@@ -219,7 +219,12 @@
     "pdf_page": 324,
     "line": 2,
     "read_as": "VI.",
-    "until": 367
+    "until": 367,
+    "years": [
+     1630,
+     1630
+    ],
+    "years_stated": 1
    },
    {
     "number": 9,
@@ -268,7 +273,7 @@
      1601,
      1697
     ],
-    "years_stated": 93
+    "years_stated": 92
    },
    {
     "number": 2,

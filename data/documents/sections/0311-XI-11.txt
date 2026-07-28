@@ -64,9 +64,9 @@ A Moss. Juan Aymerich,
 Lugarteniente General, por la
 alcaidia de Cervera; asignacion
 del Rey D. Fernando.
-200 » »
+200 » » »
 A Tomás Barbará, bombardero; asignacion del Rey don
-132 » »
+132 » » »
 A Moss. Luis Gonzalez, secretario del Rey, por la vida de
 éste. 488 » 6 » 6 »
 A Juan Angelats, secretario
@@ -77,7 +77,7 @@ A Miguel de San Juan. . 25 » » »
 A Arnaldo de Santa Cilia.
 50 » » »
 A los herederos de Gilibert
-Roig. . .
+Roig. . . .
 » » »
 *
 * *
@@ -288,7 +288,7 @@ Por caballos armados:
 A Moss. Gabriel Montornes, hijo de Ramon. ... 35 » » »
 D. Joanot Miralles. . 35 » » »
 D. Huguet Jordi de San Juan.
-25 » »
+25 » » »
 D. Gabriel Miralles, per Gaspar Miralles. .
 » » »
 1579.

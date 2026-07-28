@@ -5,37 +5,37 @@
    "siglum": "A.",
    "expansion": "Anónimo.",
    "source": "adjudicated",
-   "attributions": 10
+   "attributions": 41
   },
   {
    "siglum": "A. G.",
    "expansion": "Antonio Gelabert.",
    "source": "parsed",
-   "attributions": 26
+   "attributions": 47
   },
   {
    "siglum": "A. T.",
    "expansion": "Agustin de Torrella.",
    "source": "parsed",
-   "attributions": 11
+   "attributions": 25
   },
   {
    "siglum": "B. J.",
    "expansion": "Bartolomé Jaume.",
    "source": "parsed",
-   "attributions": 211
+   "attributions": 381
   },
   {
    "siglum": "B. S.",
    "expansion": "Buenaventura Serra.",
    "source": "parsed",
-   "attributions": 6
+   "attributions": 15
   },
   {
    "siglum": "C. M.",
    "expansion": "Cayetano de Mallorca.",
    "source": "parsed",
-   "attributions": 21
+   "attributions": 60
   },
   {
    "siglum": "C. y R.",
@@ -47,37 +47,37 @@
    "siglum": "Cl. Fl.",
    "expansion": "Cristóbal Fiol.",
    "source": "parsed",
-   "attributions": 53
+   "attributions": 77
   },
   {
    "siglum": "Co. Fr.",
    "expansion": "Cayetano Ferrer.",
    "source": "parsed",
-   "attributions": 17
+   "attributions": 34
   },
   {
    "siglum": "F. S.",
    "expansion": "Francisco Sanceloni.",
    "source": "parsed",
-   "attributions": 4
+   "attributions": 15
   },
   {
    "siglum": "G. F.",
    "expansion": "Gabriel Ferrer.",
    "source": "parsed",
-   "attributions": 88
+   "attributions": 212
   },
   {
    "siglum": "G. T.",
    "expansion": "Guillermo Terrassa.",
    "source": "parsed",
-   "attributions": 447
+   "attributions": 751
   },
   {
    "siglum": "G. V.",
    "expansion": "Guillermo Vidal.",
    "source": "parsed",
-   "attributions": 114
+   "attributions": 307
   },
   {
    "siglum": "G. y G.",
@@ -89,73 +89,73 @@
    "siglum": "J. A.",
    "expansion": "Jerónimo Alemany.",
    "source": "parsed",
-   "attributions": 5
+   "attributions": 11
   },
   {
    "siglum": "J. F.",
    "expansion": "Juan Fé.",
    "source": "adjudicated",
-   "attributions": 99
+   "attributions": 192
   },
   {
    "siglum": "J. M.",
    "expansion": "Juan Antonio Mateu.",
    "source": "adjudicated",
-   "attributions": 42
+   "attributions": 59
   },
   {
    "siglum": "J. P.",
    "expansion": "Jaime Pujol.",
    "source": "parsed",
-   "attributions": 29
+   "attributions": 68
   },
   {
    "siglum": "J. Q.",
    "expansion": "José M. Quadrado.",
    "source": "parsed",
-   "attributions": 4
+   "attributions": 9
   },
   {
    "siglum": "J. V.",
    "expansion": "Jaime Viquet.",
    "source": "adjudicated",
-   "attributions": 97
+   "attributions": 169
   },
   {
    "siglum": "Jn. Br.",
    "expansion": "Joaquin M. Bover.",
    "source": "parsed",
-   "attributions": 41
+   "attributions": 115
   },
   {
    "siglum": "Jn. Bs.",
    "expansion": "Juan Binimelis.",
    "source": "parsed",
-   "attributions": 2
+   "attributions": 10
   },
   {
    "siglum": "L. C.",
    "expansion": "Lorenzo Coch.",
    "source": "parsed",
-   "attributions": 9
+   "attributions": 11
   },
   {
    "siglum": "M. C.",
    "expansion": "Maestro de Ceremonias.",
    "source": "adjudicated",
-   "attributions": 40
+   "attributions": 59
   },
   {
    "siglum": "M. M.",
    "expansion": "Matías Mut.",
    "source": "adjudicated",
-   "attributions": 195
+   "attributions": 332
   },
   {
    "siglum": "M. S.",
    "expansion": "Mateo Salcet.",
    "source": "parsed",
-   "attributions": 68
+   "attributions": 98
   },
   {
    "siglum": "MS. y MSS.",
@@ -167,13 +167,13 @@
    "siglum": "N. C.",
    "expansion": "N. Cañellas.",
    "source": "adjudicated",
-   "attributions": 6
+   "attributions": 12
   },
   {
    "siglum": "V.",
    "expansion": "Jaime Viquet.",
    "source": "parsed",
-   "attributions": 1
+   "attributions": 0
   },
   {
    "siglum": "ds.",
@@ -197,118 +197,38 @@
  "unglossed": [
   {
    "siglum": "L. V.",
-   "attributions": 49
+   "attributions": 108
   },
   {
    "siglum": "N. F.",
-   "attributions": 34
+   "attributions": 74
   },
   {
    "siglum": "T. A.",
-   "attributions": 28
-  },
-  {
-   "siglum": "J.",
-   "attributions": 13
-  },
-  {
-   "siglum": "T.",
-   "attributions": 7
+   "attributions": 53
   },
   {
    "siglum": "M.",
+   "attributions": 6
+  },
+  {
+   "siglum": "G.",
+   "attributions": 4
+  },
+  {
+   "siglum": "J.",
    "attributions": 4
   },
   {
    "siglum": "Fl.",
-   "attributions": 4
+   "attributions": 3
+  },
+  {
+   "siglum": "T.",
+   "attributions": 2
   },
   {
    "siglum": "Br.",
-   "attributions": 4
-  },
-  {
-   "siglum": "G.",
-   "attributions": 3
-  },
-  {
-   "siglum": "Ju. Br.",
-   "attributions": 3
-  },
-  {
-   "siglum": "C. F.",
-   "attributions": 3
-  },
-  {
-   "siglum": "M. S. M.",
-   "attributions": 2
-  },
-  {
-   "siglum": "S.",
-   "attributions": 2
-  },
-  {
-   "siglum": "Cl.",
-   "attributions": 2
-  },
-  {
-   "siglum": "G. G.",
-   "attributions": 2
-  },
-  {
-   "siglum": "In. Bs.",
-   "attributions": 1
-  },
-  {
-   "siglum": "J. V. P.",
-   "attributions": 1
-  },
-  {
-   "siglum": "P.",
-   "attributions": 1
-  },
-  {
-   "siglum": "Cl. F.",
-   "attributions": 1
-  },
-  {
-   "siglum": "Fl. Cl. Fl.",
-   "attributions": 1
-  },
-  {
-   "siglum": "C. Fl.",
-   "attributions": 1
-  },
-  {
-   "siglum": "Cl. H.",
-   "attributions": 1
-  },
-  {
-   "siglum": "A. M.",
-   "attributions": 1
-  },
-  {
-   "siglum": "Co. G. T.",
-   "attributions": 1
-  },
-  {
-   "siglum": "C. G. F.",
-   "attributions": 1
-  },
-  {
-   "siglum": "G. M.",
-   "attributions": 1
-  },
-  {
-   "siglum": "Fr.",
-   "attributions": 1
-  },
-  {
-   "siglum": "F.",
-   "attributions": 1
-  },
-  {
-   "siglum": "C.",
    "attributions": 1
   }
  ],
@@ -341,7 +261,7 @@
   {
    "century": "XVIII",
    "pdf_page": 506,
-   "sources": "i)—Llibre de Memorias de cosas notables, etc., por Cristóbal FIOL.—Noticias extraidas de las Memorias diarias de J. A. Alemany.— Id. del Diario MS. de MATíAs Mur.—Ocios del Dr. en ambos derechos D. GUILLERMO ViDAL etc. (2)—Sucesos de Mallorca en los años de 1706 y 1715 por Agustín DE TORRELLA. —Diario de Torrell GELABERT.—Noticias de varios años por el MAESTRO DE CEREMONIAS DE LA CIUDAD.— Anotaciones mensuales del Rvdo. Lorenzo Coch.— Memorias diarias de N. Cabellas.— Llibre de cosas memorables que han succeit en Mallorca etc., por FERRER DE ST. de algunas curiositats escritas, comensant lo any 1740, etc., por TomAs Amorós. (3)—Noticiario de las cosas más notables sucedidas en Mallorca, etc. por GABRIEL FERRER. — y relació de lo que succei en esta isla sobre la esterilidad de blat, etc., por CAYETANO FERRER.—Diario de varios acontecimientos que sucedieron en Mallorca etc., por el P. CAYETANO DE MALLORCA.—Noticias diarias por D. BUENAVENTURA SERRA.—Apuntes del Doctor D. José Barberí, recogidos por D. JoAQuIN M. Bover.— Noticias puestas á continuacion de los trabajos de Gabriel Ferrer y el P. Cayetano de Mallorca, por el P. LUIS DE VILLANUE- (1) Durante la impresion de esta obra, prolongada con exceso por causas agenas á la voluntad del editor, he descubierto en la Biblioteca del Excmo. Sr. Conde de Peralada, (Peralada; provincia de Gerona"
+   "sources": "i)—Llibre de Memorias de cosas notables, etc., por Cristóbal FIOL.—Noticias extraidas de las Memorias diarias de J. A. Alemany.— Id. del Diario MS. de MATíAs Mur.—Ocios del Dr. en ambos derechos D. GUILLERMO ViDAL etc. (2)—Sucesos de Mallorca en los años de 1706 y 1715 por Agustín DE TORRELLA. —Diario de Torrell GELABERT.—Noticias de varios años por el MAESTRO DE CEREMONIAS DE LA CIUDAD.— Anotaciones mensuales del Rvdo. Lorenzo Coch.— Memorias diarias de N. Cabellas.— Llibre de cosas memorables que han succeit en Mallorca etc., por FERRER DE ST. de algunas curiositats escritas, comensant lo any 1740, etc., por TomAs Amorós. (3)—Noticiario de las cosas más notables sucedidas en Mallorca, etc. por GABRIEL FERRER. — Memoria y relació de lo que succei en esta isla sobre la esterilidad de blat, etc., por CAYETANO FERRER.—Diario de varios acontecimientos que sucedieron en Mallorca etc., por el P. CAYETANO DE MALLORCA.—Noticias diarias por D. BUENAVENTURA SERRA.—Apuntes del Doctor D. José Barberí, recogidos por D. JoAQuIN M. Bover.— Noticias puestas á continuacion de los trabajos de Gabriel Ferrer y el P. Cayetano de Mallorca, por el P. LUIS DE VILLANUE- (1) Durante la impresion de esta obra, prolongada con exceso por causas agenas á la voluntad del editor, he descubierto en la Biblioteca del Excmo. Sr. Conde de Peralada, (Peralada; provincia de Gerona"
   }
  ]
 }

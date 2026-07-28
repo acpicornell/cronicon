@@ -44,6 +44,7 @@ import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
 
+import spans
 import targets
 
 PROJECT = Path(__file__).resolve().parent.parent
@@ -104,10 +105,27 @@ MONTH_ALT = "|".join(sorted(MONTHS, key=len, reverse=True))
 # `—El 24 se publicó un edicto…` is Campaner's other way of opening a day, 153
 # of them, and was not a marker at all. A digit is required after `El` so that
 # `—El Marqués de Rubí` and `—El mismo dia` stay where they belong.
+# The em dash comes back as `--` from some engines on some leaves -- 11
+# markers -- and a day can be a range Campaner writes two ways, `17 al 21` and
+# `28 y 29`, 27 of them. Neither was accepted and each one cost a split.
+DASH = r"(?:—|--)"
+# `Marzo 20, 21 y 22.—` and `FEBRERO 14, 15 y 16.—`: the book lists the days of
+# a three-day feast, and the entry takes the first.
+RANGE = r"(?:\s*,\s*\d{1,2})*(?:\s*(?:y|al|á)\s*\d{1,2})?"
+# The day of a month heading is display type, and the engines read it as
+# letters: `ENERO IS.`, `ABRIL II.`, `Mayo II.`, `Marzo i i.`, `ENERO i.°`.
+# Same glyph confusion `DIGIT_LOOKALIKE` already resolves for the years, and
+# admissible for the same reason: it is only accepted where a month name stands
+# immediately before it and a dash immediately after, so there is no doubt that
+# a heading is what is being read. `1.°` is how the book writes the first of the
+# month.
+DAY_GLYPH = r"[0-9IilJ|/SO]"
+DAY_TOKEN = rf"(?:\d{{1,2}}|{DAY_GLYPH}\s?{DAY_GLYPH}?)"
 ENTRY_START = re.compile(
     rf"(?:"
-    rf"(?<![a-záéíóúñA-ZÁÉÍÓÚÑ])(?P<month>{MONTH_ALT})\s*(?P<day1>\d{{1,2}})?\s*\.?\s*—"
-    rf"|—\s*(?P<day2>\d{{1,2}})(?:\s*[yá]\s*\d{{1,2}})?\s*[.,]?\s*—"
+    rf"(?<![a-záéíóúñA-ZÁÉÍÓÚÑ])(?P<month>{MONTH_ALT})\s*(?P<day1>{DAY_TOKEN})?"
+    rf"{RANGE}\s*[.,]?\s*[°ºo]?\s*[.,]?\s*{DASH}"
+    rf"|{DASH}\s*(?P<day2>\d{{1,2}}){RANGE}\s*[.,]?\s*{DASH}"
     rf"|—\s*El\s+(?P<day3>\d{{1,2}})\s*,?\s+(?=[a-záéíóúñ])"
     rf"|—\s*En\s+(?P<day5>\d{{1,2}})\s+de\s+(?P<month2>{MONTH_ALT})\b"
     # `Este año` was the assumed form and matches nothing at all: what Campaner
@@ -115,6 +133,12 @@ ENTRY_START = re.compile(
     # optional so both spellings pass, and the phrase itself stays in the entry
     # -- it is the text, not a label.
     rf"|—\s*(?=(?:En\s+)?Este\s+(?:año|mes|dia|día))"
+    # `…no produjo ningun resultado.—J. V. —El mismo día se recibieron cartas
+    # de Don Fr. Tomás de Rocamora…` is two notices of the same day, 60 of them,
+    # and nothing but the phrase says so. The date carries over untouched --
+    # the book itself says it is the same day -- and the phrase stays in the
+    # text, because it is what Campaner wrote and not a label.
+    rf"|—\s*(?=E(?:l|ste)\s+mismo\s+(?:d[ií]a|mes))"
     rf")",
     re.IGNORECASE)
 
@@ -126,10 +150,12 @@ ENTRY_START = re.compile(
 # genuine splits disappeared. Two passes, merged by position, cannot interfere.
 NEAR_MONTH = re.compile(
     r"(?<![a-záéíóúñA-ZÁÉÍÓÚÑ])(?P<near>[A-Za-zÁÉÍÓÚÑáéíóúñ]{4,11})"
-    r"\s*(?P<day4>\d{1,2})?\s*\.\s*—")
+    rf"\s*(?P<day4>{DAY_TOKEN})?\s*[.,]?\s*[°ºo]?\s*\.?\s*—")
 
 # `—El 14 de Julio otro pregon…` states its own month, and taking the month
 # carried forward instead would date it to whatever month was running.
+SAME_DAY = re.compile(r"E(?:l|ste)\s+mismo\s+d[ií]a", re.IGNORECASE)
+
 MONTH_AFTER_DAY = re.compile(rf"^\s*de\s+(?P<month>{MONTH_ALT})\b", re.IGNORECASE)
 
 # A month name after one of these belongs to the sentence running into it, not
@@ -190,6 +216,18 @@ def near_month(token: str, day: str | None, before: str = "") -> int | None:
     for name, number in MONTHS.items():
         if edit_distance_1(folded, name):
             return number
+    # Two wrong letters, and only where a day follows. `Acosro 3.—` is August
+    # on leaf 430 and `Agosto` sits in the slot before it, on the previous
+    # line, so neither the doubling check nor a one-letter distance reaches it.
+    # The licence comes from this function's own measurement quoted above: of
+    # the 71 near-miss tokens, the 58 that are followed by a day are genuine
+    # without exception, so position is doing the work and the distance is only
+    # naming which month.
+    if day:
+        for name, number in MONTHS.items():
+            if (len(folded) == len(name)
+                    and sum(x != y for x, y in zip(folded, name)) == 2):
+                return number
     return None
 
 # A year heading the layout missed and left inline, sitting immediately before a
@@ -199,11 +237,53 @@ def near_month(token: str, day: str | None, before: str = "") -> int | None:
 INLINE_YEAR = re.compile(r"(?<!\d)(1[2-8]\d\d)\s*[.,\-—]\s*$")
 
 # Sigla trailing an entry: —G. T. / —B. J. / —L. V. / —Jn. Br. / —T. A.
-SIGLA = re.compile(r"—\s*((?:[A-ZÁÉÍÓÚ][a-z]?\.\s*){1,3})\s*$")
+#
+# This used to be a *shape* -- a dash, then one to three capital-and-full-stop
+# groups -- and the shape is wrong twice over. It insists on an em dash, when
+# the engines read the book's em dash as `-` about as often (`»-J. V.`), and it
+# takes only one siglum, when Campaner routinely credits two or three
+# (`—J. V.-J. P.—CI. Fl.`). 205 entries book-wide kept their attribution stuck
+# in the prose because of it.
+#
+# What a source attribution actually is: one of the sigla Campaner declares in
+# his introduction. So the glossary does the work here too, and the shape only
+# says where to look -- at the end, after a dash.
+#
+# Excluded from the list: `ds.`, `ls.`, `ss.` and `MS. y MSS.` are in the
+# glossary but abbreviate dineros, libras and sueldos. An entry ending `…y 30
+# ls.` is a sum of money, not an attribution.
+NOT_A_SOURCE = {"ds.", "ls.", "ss.", "MS. y MSS."}
+# Sources Campaner cites but forgot to gloss, named in his own text: Luis de
+# Villafranca (49 attributions), `N. F.` (34) and `T. A.` (28). Deliberately
+# *not* the single letters the counts also throw up -- `J.`, `T.`, `M.`, `G.` --
+# which are two-part sigla the alignment truncated, and admitting them would
+# match the last initial of any name at the foot of an entry.
+UNGLOSSED = ("L. V.", "N. F.", "T. A.", "Jn. Bs.",
+             # Two-part sigla the alignment truncated to their first initial.
+             # They are recorded as printed rather than guessed at: `—J.` at
+             # the foot of a notice on leaf 430 is a source whose second
+             # initial no engine placed, and calling it prose leaves visible
+             # rubbish at the end of the entry. Admissible only because the
+             # tail has to be dashes and sigla all the way to the end, so an
+             # ordinary sentence cannot end in one.
+             "J.", "T.", "M.", "G.", "Fl.", "Br.")
+# Glyphs this typeface's engines swap freely. Folding them lets `CI. Fl.` and
+# `/. V.` be recognised as `Cl. Fl.` and `J. V.` -- an identification of which
+# manuscript is being credited, not a rewrite: the transcription keeps whatever
+# was printed, and only the `sources` index gets the canonical form.
+SIGLUM_GLYPH = str.maketrans({"l": "I", "1": "I", "|": "I", "/": "J", ",": "."})
+
+
+def fold_siglum(text: str) -> str:
+    return re.sub(r"\s+", "", text).translate(SIGLUM_GLYPH).upper()
 
 
 # A footnote opens with its own number on a fresh line: `(1)`, `(2)`, `[3]`.
-NOTE_START = re.compile(r"^\s*[\(\[]\s*(\d{1,2})\s*[\)\]]")
+# `(1)`, and once `(1.)` -- leaf 429, where missing it cost more than a note:
+# the line above ends `…y el 24 falle-`, so the hyphen stitch joined the word to
+# the note instead of to its own tail at the top of the next column, and the
+# entry read `el 24 falle(1.) «A hora de vespres…» ció.`
+NOTE_START = re.compile(r"^\s*[\(\[]\s*(\d{1,2})\s*[.,]?\s*[\)\]]")
 # and never in the upper half of the leaf. The same `(1)` appears inside an entry
 # as the reference to it, mid-sentence, and that one is not a note.
 NOTE_BAND = 0.55
@@ -293,26 +373,57 @@ def strip_accents(text: str) -> str:
 
 
 def page_lines(path: Path) -> list[dict]:
-    """Lines with text, box, column and the worst certainty tier they contain."""
+    """Lines with text, box, column and the worst certainty tier they contain.
+
+    The text is assembled by `spans.layout`, the same call `build_text.py`
+    publishes with, so the notices are cut out of exactly the prose the edition
+    shows. Joining the winners here independently is what let the two drift:
+    the entries kept `Te-Deum Te-Deum` and lost `—30.—Mataron` for as long as
+    the published text had been repaired of both.
+
+    `row` therefore holds the assembled *groups*, not raw loci, and each carries
+    the loci it covers so `month_votes` can still ask the whole panel.
+    """
+    leaf = json.loads(path.read_text())
     grouped: dict[tuple, list[dict]] = defaultdict(list)
     order: list[tuple] = []
-    for locus in json.loads(path.read_text())["loci"]:
+    for locus in leaf["loci"]:
         key = tuple(locus["line_bbox"])
         if key not in grouped:
             order.append(key)
         grouped[key].append(locus)
 
-    rank = {"unanimous": 0, "one-dissent": 1, "two-dissent": 2, "contested": 3}
+    rank = {"unanimous": 0, "one-dissent": 1, "two-dissent": 2, "contested": 3,
+            "adjudicated": 0}
+    # Assemble every line first, then run the doubling check over the leaf as a
+    # whole -- the same order `build_text.py` uses, and necessary because a
+    # doubled display heading straddles the line break as often as not.
+    per_line = {key: spans.layout(sorted(grouped[key],
+                                         key=lambda x: x["index"]),
+                                  leaf["panel"], [None] * len(grouped[key]))
+                for key in order}
+    spans.dedupe([g for key in order for g in per_line[key]], leaf["panel"])
+
     lines = []
     for key in order:
-        row = sorted(grouped[key], key=lambda x: x["index"])
+        groups = per_line[key]
+        # Every reading, not just the panel's six. `heading_votes` counts a
+        # year across all eight -- the two engines outside the panel are what
+        # carry leaf 101's `1383.`, which the winner lost -- so restricting
+        # this to the panel silently cost year headings.
+        engines = {e for g in groups for x in g["loci"] for e in x["variants"]}
+        parts = [{"winner": g["text"], "grade": g["grade"],
+                  "loci": g["loci"],
+                  "variants": {engine: spans.joined(g["loci"], engine)
+                               for engine in engines}}
+                 for g in groups if g["text"]]
         lines.append({
-            "text": " ".join(w["winner"] for w in row).strip(),
+            "text": " ".join(p["winner"] for p in parts).strip(),
             "bbox": list(key),
-            "row": row,
-            "worst_tier": max((w["grade"] for w in row),
+            "row": parts,
+            "worst_tier": max((p["grade"] for p in parts),
                               key=lambda g: rank[g], default="unanimous"),
-            "tiers": Counter(w["grade"] for w in row),
+            "tiers": Counter(p["grade"] for p in parts),
         })
     return lines
 
@@ -522,7 +633,11 @@ ANCHOR = 48
 SIGLA_FILE = PROJECT / "data" / "sigla" / "sigla.json"
 # Prose after the closing siglum, long enough to be a notice rather than a
 # second siglum or a stray fragment.
-SIGLUM_TAIL = r"\s+(?=[A-ZÁÉÍÓÚ«¿][^.]{25,})"
+# The dash the book puts between the attribution and the next notice --
+# `…hubo 7000 bajas entre muertos y prisioneros.—J. V. —Llegó la noticia de
+# que Lorenzo Bareno…` is two notices, and requiring the prose to follow the
+# siglum across nothing but whitespace missed 103 of them.
+SIGLUM_TAIL = r"(?:\s*[\-—–]+\s*|\s+)(?=[A-ZÁÉÍÓÚ«¿][^.]{25,})"
 
 
 def sigla_pattern(path: Path = SIGLA_FILE) -> re.Pattern | None:
@@ -596,6 +711,39 @@ def read_edits(path: Path) -> dict[tuple[int, str], dict]:
     return out
 
 
+def split_by_hand(entry: dict, edit: dict) -> list[dict]:
+    """Cut one entry into several where the marker the parser needed was lost.
+
+    `Mavo I.°—Tiraron un arcabuzazo…` is 1 May and opens a notice, but the day
+    is printed `I.°` and no rule can see a digit there. Each cut names the
+    literal string it follows, so the marker is consumed exactly as a parsed one
+    would be, and carries the date the panel supports.
+
+    The sigla are lifted again per piece: the attribution the parser found
+    belongs to whichever notice actually ends the entry, and after a cut that is
+    no longer the same notice.
+    """
+    pieces, dates, rest = [], [(entry["month"], entry["day"])], entry["text"]
+    for cut in edit["cuts"]:
+        at = rest.find(cut["after"])
+        if at < 0:
+            return [{**entry, "edited": f"split failed: {cut['after']!r} absent"}]
+        pieces.append(rest[:at + len(cut["after"])])
+        rest = rest[at + len(cut["after"]):]
+        dates.append((cut.get("month"), cut.get("day")))
+    pieces.append(rest)
+
+    out = []
+    for n, (piece, (month, day)) in enumerate(zip(pieces, dates)):
+        body, sigla = lift_sigla(piece.strip().strip("—-").strip())
+        if not sigla and n == len(pieces) - 1:
+            sigla = entry["sources"]
+        out.append({**entry, "text": body, "sources": sigla,
+                    "month": month, "day": day,
+                    "edited": edit.get("why", "split")})
+    return [e for e in out if e["text"]]
+
+
 def apply_edits(entries: list[dict], edits: dict) -> tuple[list[dict], list[str]]:
     """Apply the hand edits and say what happened to every one of them.
 
@@ -617,6 +765,9 @@ def apply_edits(entries: list[dict], edits: dict) -> tuple[list[dict], list[str]
             continue
         if edit["op"] == "date":
             entry = {**entry, "month": edit.get("month"), "day": edit.get("day")}
+        elif edit["op"] == "split":
+            kept.extend(split_by_hand(entry, edit))
+            continue
         kept.append({**entry, "edited": edit.get("why", edit["op"])})
 
     missed = [f"p{leaf}: {edit['op']} {edit['anchor']!r} matched nothing"
@@ -625,7 +776,90 @@ def apply_edits(entries: list[dict], edits: dict) -> tuple[list[dict], list[str]
     return kept, missed
 
 
-def date_marks(text: str) -> list[dict]:
+# How many of the eight readings must name the month. Same threshold, and the
+# same reasoning, as MIN_YEAR_VOTES.
+MIN_MONTH_VOTES = 3
+# What follows the month word in a heading the winner mangled: an optional day,
+# then the dash that opens the notice. `M. 6.—Díjose` -- where `M.` is what the
+# vote made of `JULIO`.
+AFTER_MONTH = re.compile(r"\S+\s*(?:(?P<day>\d{1,2})(?:\s*(?:y|al|á)\s*\d{1,2})?\s*[.,]?\s*)?(?:—|--)")
+
+
+def month_votes(word: dict) -> int | None:
+    """The month this token prints, counted across the panel rather than taken
+    from the winner.
+
+    A month heading is five or six characters of display type, which is the
+    class the engines read worst, and the vote has almost nothing to work with:
+    on leaf 465 `JULIO` won as `M.` -- voting with the siglum `M. M.` beside it
+    -- while kraken read `Jutxo`, paddle `JuLIo`, tess `JuLio` and vision
+    `JULIO`. Leaf 69 has a heading whose winner is a bare `.` and which six of
+    the eight readings call June.
+
+    This is the rule `heading_votes` already applies to years, which
+    CLAUDE.md states as "ask the panel, not the winner", applied to the months,
+    where it had never been. It recovers what the recognisers actually returned;
+    it does not substitute characters, and it does not change the published
+    text -- the winner still prints as the consensus gave it.
+    """
+    votes: Counter = Counter()
+    for reading in list(word["variants"].values()) + [word["winner"]]:
+        folded = strip_accents(str(reading)).lower()
+        for name, number in MONTHS.items():
+            if name in folded:
+                votes[number] += 1
+                break
+    if not votes:
+        return None
+    month, count = votes.most_common(1)[0]
+    if count < MIN_MONTH_VOTES:
+        return None
+    # Nothing to recover when the winner already says it.
+    winner = strip_accents(str(word["winner"])).lower()
+    if any(n in winner for n, v in MONTHS.items() if v == month):
+        return None
+    return month
+
+
+def as_day(token: str | None) -> int | None:
+    """A day of the month, whether the engines printed it in digits or in the
+    letters they mistake for digits: `IS.` is 15, `II.` is 11, `i i.` is 11.
+
+    Only reached from a heading -- a month name immediately before, a dash
+    immediately after -- so there is no other thing this could be reading.
+    """
+    if not token:
+        return None
+    digits = re.sub(r"\D", "", token.translate(DIGIT_LOOKALIKE))
+    if not digits:
+        return None
+    day = int(digits)
+    return day if 1 <= day <= 31 else None
+
+
+def line_months(line: dict) -> list[tuple[int, int]]:
+    """(offset within this line's text, month) for headings the winner lost.
+
+    Skipped where the line's text is not the plain join of its tokens -- a year
+    heading that came glued to its entry is rewritten before it gets here, and
+    the offsets would no longer mean anything.
+    """
+    row = line.get("row") or []
+    parts = [str(w["winner"]) for w in row]
+    raw = " ".join(parts)
+    if raw.strip() != line["text"]:
+        return []
+    lead = len(raw) - len(raw.lstrip())
+    out, at = [], 0
+    for part, word in zip(parts, row):
+        month = month_votes(word)
+        if month is not None:
+            out.append((at - lead, month))
+        at += len(part) + 1
+    return [(o, m) for o, m in out if o >= 0]
+
+
+def date_marks(text: str, months: list[tuple[int, int]] = ()) -> list[dict]:
     """Every place an entry opens, from both passes, merged by position.
 
     A mangled-month candidate is dropped when it overlaps a marker the strict
@@ -636,9 +870,11 @@ def date_marks(text: str) -> list[dict]:
               "month": (MONTHS[strip_accents(
                             m.group("month") or m.group("month2")).lower()]
                         if (m.group("month") or m.group("month2")) else None),
-              "day": next((int(d) for d in (m.group("day1"), m.group("day2"),
-                                            m.group("day3"), m.group("day5"))
-                            if d), None)}
+              "day": next((n for n in (as_day(m.group("day1")),
+                                       as_day(m.group("day2")),
+                                       as_day(m.group("day3")),
+                                       as_day(m.group("day5")))
+                            if n), None)}
              for m in ENTRY_START.finditer(text)
              if not (m.group("month") and FUNCTION_WORD.search(text[:m.start()]))]
     taken = [(m["start"], m["end"]) for m in marks]
@@ -649,7 +885,7 @@ def date_marks(text: str) -> list[dict]:
         if any(a < m.end() and m.start() < b for a, b in taken):
             continue
         marks.append({"start": m.start(), "end": m.end(), "month": month,
-                      "day": int(m.group("day4")) if m.group("day4") else None})
+                      "day": as_day(m.group("day4"))})
     for m in (SIGLA_BREAK.finditer(text) if SIGLA_BREAK else ()):
         # start == end: the siglum stays with the notice it closes, and the new
         # one begins at the capital after it.
@@ -657,18 +893,29 @@ def date_marks(text: str) -> list[dict]:
             continue
         marks.append({"start": m.end(), "end": m.end(),
                       "month": None, "day": None})
+    for at, month in months:
+        found = AFTER_MONTH.match(text, at)
+        if not found:
+            continue
+        if any(a < found.end() and at < b for a, b in taken):
+            continue
+        day = found.group("day")
+        marks.append({"start": at, "end": found.end(), "month": month,
+                      "day": int(day) if day else None})
+        taken.append((at, found.end()))
     marks.sort(key=lambda m: m["start"])
     return marks
 
 
-def split_entries(text: str, year: int | None) -> list[dict]:
+def split_entries(text: str, year: int | None,
+                  months: list[tuple[int, int]] = ()) -> list[dict]:
     """Cut a run of prose into dated entries, carrying the month forward.
 
     Campaner writes the month once and then gives bare days until it changes, so
     a `—20.—` inherits whatever month was last stated. The year does the same
     when the layout missed its display heading.
     """
-    marks = date_marks(text)
+    marks = date_marks(text, months)
     if not marks:
         return ([{"month": None, "day": None, "year": year,
                   "text": text.strip()}] if text.strip() else [])
@@ -679,7 +926,12 @@ def split_entries(text: str, year: int | None) -> list[dict]:
         entries.append({"month": None, "day": None, "year": year,
                         "text": preamble})
 
+    # `El mismo día` states its own date by referring to the one before it, so
+    # the day carries forward as well as the month -- but only for that phrase.
+    # Everywhere else a notice with no day printed has no day, and inventing one
+    # would claim a precision the book does not give.
     current_month = None
+    current_day = None
     for n, mark in enumerate(marks):
         end = marks[n + 1]["start"] if n + 1 < len(marks) else len(text)
         body = text[mark["end"]:end].strip()
@@ -693,6 +945,10 @@ def split_entries(text: str, year: int | None) -> list[dict]:
         if mark["month"]:
             current_month = mark["month"]
         day = mark["day"]
+        if day is None and SAME_DAY.match(text[mark["end"]:end].lstrip()):
+            day = current_day
+        elif day is not None:
+            current_day = day
         # `—El 14 de Julio…` names its own month; believe it over the one being
         # carried forward.
         if day is None and WHOLE_YEAR.match(body):
@@ -737,16 +993,116 @@ def collapse_repeat(siglum: str) -> str:
     return siglum
 
 
+def siglum_key(text: str) -> tuple[str, ...]:
+    """A siglum reduced to its initials, which is all a siglum really is.
+
+    Matching the literal string was too strict by a wide margin: 130 notices
+    kept their attribution in the prose because the engines scatter the stops
+    and spaces. `G. G. T.` doubles an initial, `M M.` drops a stop, `G. T`
+    drops the last one, `G . T.` inserts a space, `B. J. .` adds a stop. All
+    five are the same two or three letters, and comparing letters instead of
+    characters resolves every one of them.
+    """
+    groups = re.findall(r"[A-Za-zÁÉÍÓÚÑ]{1,2}", text.translate(SIGLUM_GLYPH))
+    return tuple(g.upper() for g in groups)
+
+
+def collapse_key(key: tuple[str, ...]) -> tuple[str, ...]:
+    """`G. G. T.` is `G. T.` counted twice; `M. M.` is Matías Mut and stands."""
+    if len(key) == 3:
+        for n in (0, 1):
+            if key[n] == key[n + 1]:
+                return key[:n] + key[n + 1:]
+    return key
+
+
+def source_sigla(path: Path = SIGLA_FILE) -> dict[tuple[str, ...], str]:
+    """Initials -> the canonical form Campaner prints.
+
+    `UNGLOSSED` is written out here rather than read from the `unglossed` list
+    `parse_sigla.py` produces, and that is not laziness. That list is built by
+    counting attributions in `entries.jsonl`, so reading it would make this file
+    depend on its own output -- the cycle CLAUDE.md says the glossary route
+    avoids. The glossary comes off the introduction leaf and depends on nothing.
+    """
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    names = [s["siglum"] for s in data["glossary"]] + list(UNGLOSSED)
+    out: dict[tuple[str, ...], str] = {}
+    for name in sorted(set(names) - NOT_A_SOURCE, key=len, reverse=True):
+        out.setdefault(siglum_key(name), name)
+    return out
+
+
+SOURCES = source_sigla()
+# The *shape* of an attribution: a dash, then one to four groups of one or two
+# letters, each optionally followed by a stop. Deliberately loose, because the
+# guard is not the pattern -- it is that every group of initials it captures
+# has to resolve against Campaner's glossary before anything is lifted.
+_GROUP = r"[A-Za-zÁÉÍÓÚÑ]{1,2}\s*[.,]?\s*"
+SIGLA = re.compile(rf"(?:\s*[-—–]+\s*[.,]?\s*(?:{_GROUP}){{1,4}})+[\s.,]*$")
+
+
+def resolve(chunk: str) -> list[str] | None:
+    """The sources named in one dash-separated chunk, or None if it is prose.
+
+    A chunk of four initials with no dash between them is two sigla the engines
+    ran together -- `—M. S. B. J.` -- so a failed lookup is retried as a pair
+    before it is given up on.
+    """
+    key = collapse_key(siglum_key(chunk))
+    if not key:
+        return None
+    if key in SOURCES:
+        return [SOURCES[key]]
+    if len(key) == 4 and key[:2] in SOURCES and key[2:] in SOURCES:
+        return [SOURCES[key[:2]], SOURCES[key[2:]]]
+    return None
+
+
+# A dash left hanging at the end of a notice is the residue of the marker that
+# opened the next one, or of a siglum the engines lost: `…embarcado en dos naves
+# inglesas. —`. It is punctuation belonging to something else, and 17 notices
+# ended on one.
+TRAILING_DASH = re.compile(r"\s+[-—–]+\s*$")
+
+
+# `…las corts en Inca.—J. V. (2)`: the reference to the footnote is printed
+# after the attribution, and it kept 73 sigla stuck in the prose. It is put
+# back into the text afterwards, because `parse_entries` finds a notice's notes
+# by the numbers printed in it.
+FOOTNOTE_REF = re.compile(r"\s*([\(\[]\s*[\dIil]{1,2}\s*[\)\]])\s*$")
+
+
 def lift_sigla(text: str) -> tuple[str, list[str]]:
-    sigla = []
-    while True:
-        match = SIGLA.search(text)
-        if not match:
-            break
-        sigla.insert(0, collapse_repeat(
-            re.sub(r"\s+", " ", match.group(1)).strip()))
-        text = text[:match.start()].rstrip()
-    return text, sigla
+    """Split an entry into its prose and the sources credited at its foot."""
+    text = TRAILING_DASH.sub("", text).rstrip()
+    ref = FOOTNOTE_REF.search(text)
+    if ref:
+        text = text[:ref.start()].rstrip()
+    if SIGLA is None:
+        return (text + (" " + ref.group(1) if ref else "")), []
+    match = SIGLA.search(text)
+    if not match:
+        return (text + (" " + ref.group(1) if ref else "")), []
+    tail = match.group(0)
+    sigla: list[str] = []
+    for part in re.split(r"[-—–]+", tail):
+        if not part.strip():
+            continue
+        found = resolve(part)
+        if found is None:
+            # One chunk that is not a source means the tail is prose that
+            # merely looks like one. Nothing is lifted rather than half of it.
+            return (text + (" " + ref.group(1) if ref else "")), []
+        sigla += found
+    # `—J. — J.` is one attribution the alignment split in two, the same
+    # doubling a repeated initial gets inside a siglum. Campaner never credits
+    # the same manuscript twice in a row.
+    kept = [x for n, x in enumerate(sigla) if n == 0 or x != sigla[n - 1]]
+    body = text[:match.start()].rstrip()
+    return (body + (" " + ref.group(1) if ref else "")), kept
 
 
 def report_gaps(missing: list[int], headings: list[tuple[int, int]],
@@ -924,16 +1280,22 @@ def main() -> None:
         if not buffer:
             return
         text = ""
+        # Offsets of the month headings the vote lost, carried into the joined
+        # text so `date_marks` can cut at them.
+        months: list[tuple[int, int]] = []
         for ln in buffer:
             if text.endswith("-"):
+                base = len(text) - 1
                 text = text[:-1] + ln["text"]
             else:
+                base = len(text) + 1 if text else 0
                 text = (text + " " + ln["text"]).strip()
+            months += [(base + at, m) for at, m in line_months(ln)]
         # An entry belongs to the leaf it *opens* on, and may refer to a note
         # printed on any leaf it runs across.
         spanned = list(dict.fromkeys(ln["leaf"] for ln in buffer))
         opened = spanned[0]
-        for entry in split_entries(text, year):
+        for entry in split_entries(text, year, months):
             body, sigla = lift_sigla(entry["text"])
             # The notes this entry refers to, by the number printed in it.
             wanted = {int(m.group(1))

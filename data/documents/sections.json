@@ -8,15 +8,15 @@
   "first_leaf": 123,
   "last_leaf": 137,
   "leaves": 15,
-  "words": 12652,
+  "words": 12624,
   "footnotes": 3,
   "certainty": {
    "unanimous": 11269,
-   "one-dissent": 878,
-   "two-dissent": 267,
-   "contested": 238
+   "one-dissent": 864,
+   "two-dissent": 258,
+   "contested": 233
   },
-  "contested_share": 0.0188
+  "contested_share": 0.0185
  },
  {
   "id": "0114-III-03",
@@ -27,15 +27,15 @@
   "first_leaf": 137,
   "last_leaf": 153,
   "leaves": 17,
-  "words": 12368,
+  "words": 12308,
   "footnotes": 7,
   "certainty": {
    "unanimous": 10451,
-   "one-dissent": 1224,
-   "two-dissent": 455,
-   "contested": 238
+   "one-dissent": 1197,
+   "two-dissent": 437,
+   "contested": 223
   },
-  "contested_share": 0.0192
+  "contested_share": 0.0181
  },
  {
   "id": "0114-IV-04",
@@ -46,15 +46,15 @@
   "first_leaf": 153,
   "last_leaf": 159,
   "leaves": 7,
-  "words": 4930,
+  "words": 4895,
   "footnotes": 7,
   "certainty": {
    "unanimous": 4316,
-   "one-dissent": 418,
-   "two-dissent": 89,
-   "contested": 107
+   "one-dissent": 405,
+   "two-dissent": 77,
+   "contested": 97
   },
-  "contested_share": 0.0217
+  "contested_share": 0.0198
  },
  {
   "id": "0114-V-05",
@@ -65,15 +65,15 @@
   "first_leaf": 159,
   "last_leaf": 168,
   "leaves": 10,
-  "words": 3862,
+  "words": 3521,
   "footnotes": 6,
   "certainty": {
    "unanimous": 2392,
-   "one-dissent": 632,
-   "two-dissent": 344,
-   "contested": 494
+   "one-dissent": 545,
+   "two-dissent": 233,
+   "contested": 351
   },
-  "contested_share": 0.1279
+  "contested_share": 0.0997
  },
  {
   "id": "0225-II-02",
@@ -84,15 +84,15 @@
   "first_leaf": 229,
   "last_leaf": 233,
   "leaves": 5,
-  "words": 3346,
+  "words": 3304,
   "footnotes": 1,
   "certainty": {
    "unanimous": 2857,
-   "one-dissent": 305,
-   "two-dissent": 86,
-   "contested": 98
+   "one-dissent": 299,
+   "two-dissent": 74,
+   "contested": 74
   },
-  "contested_share": 0.0293
+  "contested_share": 0.0224
  },
  {
   "id": "0225-III-03",
@@ -103,15 +103,15 @@
   "first_leaf": 233,
   "last_leaf": 235,
   "leaves": 3,
-  "words": 1085,
+  "words": 1082,
   "footnotes": 1,
   "certainty": {
    "unanimous": 954,
-   "one-dissent": 87,
+   "one-dissent": 85,
    "two-dissent": 30,
-   "contested": 14
+   "contested": 13
   },
-  "contested_share": 0.0129
+  "contested_share": 0.012
  },
  {
   "id": "0225-IV-04",
@@ -122,15 +122,15 @@
   "first_leaf": 235,
   "last_leaf": 236,
   "leaves": 2,
-  "words": 1019,
+  "words": 1017,
   "footnotes": 2,
   "certainty": {
    "unanimous": 823,
    "one-dissent": 170,
-   "two-dissent": 18,
-   "contested": 8
+   "two-dissent": 17,
+   "contested": 7
   },
-  "contested_share": 0.0079
+  "contested_share": 0.0069
  },
  {
   "id": "0225-V-05",
@@ -141,15 +141,15 @@
   "first_leaf": 236,
   "last_leaf": 246,
   "leaves": 11,
-  "words": 5084,
+  "words": 5054,
   "footnotes": 6,
   "certainty": {
    "unanimous": 4196,
-   "one-dissent": 517,
-   "two-dissent": 200,
-   "contested": 171
+   "one-dissent": 514,
+   "two-dissent": 195,
+   "contested": 149
   },
-  "contested_share": 0.0336
+  "contested_share": 0.0295
  },
  {
   "id": "0311-II-02",
@@ -160,34 +160,34 @@
   "first_leaf": 315,
   "last_leaf": 316,
   "leaves": 2,
-  "words": 796,
+  "words": 784,
   "footnotes": 3,
   "certainty": {
    "unanimous": 642,
-   "one-dissent": 94,
-   "two-dissent": 29,
-   "contested": 31
+   "one-dissent": 86,
+   "two-dissent": 28,
+   "contested": 28
   },
-  "contested_share": 0.0389
+  "contested_share": 0.0357
  },
  {
   "id": "0311-III-03",
   "block_leaf": 311,
   "numeral": "III",
-  "title": "«Part de lo ques segui en la Germania.»  (1)",
+  "title": "«Part de lo ques segui en la Germania.» (1)",
   "genre": "Part",
   "first_leaf": 316,
   "last_leaf": 321,
   "leaves": 6,
-  "words": 4473,
+  "words": 4451,
   "footnotes": 2,
   "certainty": {
    "unanimous": 3078,
-   "one-dissent": 1053,
-   "two-dissent": 247,
-   "contested": 95
+   "one-dissent": 1042,
+   "two-dissent": 241,
+   "contested": 90
   },
-  "contested_share": 0.0212
+  "contested_share": 0.0202
  },
  {
   "id": "0311-IV-04",
@@ -198,30 +198,30 @@
   "first_leaf": 321,
   "last_leaf": 323,
   "leaves": 3,
-  "words": 1540,
+  "words": 1529,
   "footnotes": 2,
   "certainty": {
    "unanimous": 1299,
-   "one-dissent": 178,
-   "two-dissent": 45,
-   "contested": 18
+   "one-dissent": 177,
+   "two-dissent": 36,
+   "contested": 17
   },
-  "contested_share": 0.0117
+  "contested_share": 0.0111
  },
  {
   "id": "0311-V-05",
   "block_leaf": 311,
   "numeral": "V",
-  "title": "Sentencia contra Juanot Colom y otros tres compafieros.  (1)",
+  "title": "Sentencia contra Juanot Colom y otros tres compafieros. (1)",
   "genre": "Sentencia",
   "first_leaf": 323,
   "last_leaf": 324,
   "leaves": 2,
-  "words": 607,
+  "words": 605,
   "footnotes": 2,
   "certainty": {
    "unanimous": 506,
-   "one-dissent": 74,
+   "one-dissent": 72,
    "two-dissent": 17,
    "contested": 10
   },
@@ -236,15 +236,15 @@
   "first_leaf": 324,
   "last_leaf": 368,
   "leaves": 45,
-  "words": 18089,
+  "words": 17806,
   "footnotes": 3,
   "certainty": {
    "unanimous": 13906,
-   "one-dissent": 2689,
-   "two-dissent": 837,
-   "contested": 657
+   "one-dissent": 2601,
+   "two-dissent": 753,
+   "contested": 546
   },
-  "contested_share": 0.0363
+  "contested_share": 0.0307
  },
  {
   "id": "0311-IX-09",
@@ -255,15 +255,15 @@
   "first_leaf": 368,
   "last_leaf": 373,
   "leaves": 6,
-  "words": 4069,
+  "words": 4047,
   "footnotes": 2,
   "certainty": {
    "unanimous": 3385,
-   "one-dissent": 502,
-   "two-dissent": 111,
-   "contested": 71
+   "one-dissent": 499,
+   "two-dissent": 110,
+   "contested": 53
   },
-  "contested_share": 0.0174
+  "contested_share": 0.0131
  },
  {
   "id": "0311-XI-11",
@@ -274,15 +274,15 @@
   "first_leaf": 373,
   "last_leaf": 380,
   "leaves": 8,
-  "words": 2897,
+  "words": 2830,
   "footnotes": 0,
   "certainty": {
    "unanimous": 2156,
-   "one-dissent": 366,
-   "two-dissent": 186,
-   "contested": 189
+   "one-dissent": 362,
+   "two-dissent": 169,
+   "contested": 143
   },
-  "contested_share": 0.0652
+  "contested_share": 0.0505
  },
  {
   "id": "0478-II-02",
@@ -293,15 +293,15 @@
   "first_leaf": 482,
   "last_leaf": 483,
   "leaves": 2,
-  "words": 805,
+  "words": 803,
   "footnotes": 2,
   "certainty": {
    "unanimous": 653,
-   "one-dissent": 105,
+   "one-dissent": 104,
    "two-dissent": 30,
-   "contested": 17
+   "contested": 16
   },
-  "contested_share": 0.0211
+  "contested_share": 0.0199
  },
  {
   "id": "0478-III-03",
@@ -312,15 +312,15 @@
   "first_leaf": 483,
   "last_leaf": 485,
   "leaves": 3,
-  "words": 1911,
+  "words": 1907,
   "footnotes": 2,
   "certainty": {
    "unanimous": 1672,
-   "one-dissent": 165,
+   "one-dissent": 164,
    "two-dissent": 47,
-   "contested": 27
+   "contested": 24
   },
-  "contested_share": 0.0141
+  "contested_share": 0.0126
  },
  {
   "id": "0478-IV-04",
@@ -331,15 +331,15 @@
   "first_leaf": 485,
   "last_leaf": 486,
   "leaves": 2,
-  "words": 946,
+  "words": 942,
   "footnotes": 2,
   "certainty": {
    "unanimous": 823,
-   "one-dissent": 81,
-   "two-dissent": 26,
+   "one-dissent": 78,
+   "two-dissent": 25,
    "contested": 16
   },
-  "contested_share": 0.0169
+  "contested_share": 0.017
  },
  {
   "id": "0478-V-05",
@@ -350,15 +350,15 @@
   "first_leaf": 486,
   "last_leaf": 487,
   "leaves": 2,
-  "words": 751,
+  "words": 750,
   "footnotes": 2,
   "certainty": {
    "unanimous": 613,
    "one-dissent": 98,
    "two-dissent": 26,
-   "contested": 14
+   "contested": 13
   },
-  "contested_share": 0.0186
+  "contested_share": 0.0173
  },
  {
   "id": "0478-VI-06",
@@ -369,15 +369,15 @@
   "first_leaf": 487,
   "last_leaf": 495,
   "leaves": 9,
-  "words": 6296,
+  "words": 6275,
   "footnotes": 1,
   "certainty": {
    "unanimous": 5349,
-   "one-dissent": 638,
-   "two-dissent": 209,
-   "contested": 100
+   "one-dissent": 629,
+   "two-dissent": 200,
+   "contested": 97
   },
-  "contested_share": 0.0159
+  "contested_share": 0.0155
  },
  {
   "id": "0478-VII-07",
@@ -388,15 +388,15 @@
   "first_leaf": 495,
   "last_leaf": 499,
   "leaves": 5,
-  "words": 3526,
+  "words": 3512,
   "footnotes": 1,
   "certainty": {
    "unanimous": 2862,
-   "one-dissent": 468,
-   "two-dissent": 119,
-   "contested": 77
+   "one-dissent": 464,
+   "two-dissent": 116,
+   "contested": 70
   },
-  "contested_share": 0.0218
+  "contested_share": 0.0199
  },
  {
   "id": "0478-VIII-08",
@@ -407,15 +407,15 @@
   "first_leaf": 499,
   "last_leaf": 507,
   "leaves": 9,
-  "words": 2446,
+  "words": 2405,
   "footnotes": 3,
   "certainty": {
    "unanimous": 1710,
-   "one-dissent": 329,
-   "two-dissent": 145,
-   "contested": 262
+   "one-dissent": 327,
+   "two-dissent": 133,
+   "contested": 235
   },
-  "contested_share": 0.1071
+  "contested_share": 0.0977
  },
  {
   "id": "0631-II-02",
@@ -426,14 +426,14 @@
   "first_leaf": 632,
   "last_leaf": 639,
   "leaves": 8,
-  "words": 4182,
+  "words": 4137,
   "footnotes": 2,
   "certainty": {
    "unanimous": 3301,
-   "one-dissent": 382,
-   "two-dissent": 195,
-   "contested": 304
+   "one-dissent": 378,
+   "two-dissent": 185,
+   "contested": 273
   },
-  "contested_share": 0.0727
+  "contested_share": 0.066
  }
 ]
