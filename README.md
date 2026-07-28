@@ -314,6 +314,17 @@ Every one of these was hit during development.
   returns them *empty*, because a page-wide token alignment drops them into the
   notes column's slots. The whole 13th-century series was missing for this reason
   and for no other.
+- **Two scripts that know different things and do not talk.** `parse_documents.py`
+  had the letters, edicts and reprinted booklets correctly delimited while
+  `parse_entries.py` emitted 96 leaves of them as dated chronicle entries — 60 303
+  words, one in six of the text, a medieval Catalan letter filed under 1400. Each
+  script was right about what it measured. Nothing compared them.
+- **A signature that separates two things on average may separate nothing.** The
+  natural guard here — a document runs ten times longer than an entry, states no
+  month, names no source, is alone on its leaf — is true of the medians and
+  useless as a test: at every threshold there are *more* such entries outside the
+  documents than inside, because twenty-eight leaves of continuous Germanía
+  narrative look exactly the same. Measured before it was believed, and dropped.
 - **The same class of bug, caught the same way.** Adding the rounds mechanism
   changed round 1's RNG seed. The benchmark cheerfully reported 6.75% accuracy — a
   plausible-looking number produced by scoring every engine against the wrong
@@ -394,6 +405,7 @@ scripts/
   parse_entries.py         years, dated entries, sigla, footnotes
   parse_jurats.py          the six Jurats series -> (year, seat, name)
   parse_documents.py       the appendix blocks and their numbered sections
+  build_documents.py       each of those sections assembled as one document
   parse_sigla.py           the glossary the introduction prints
 
 data/inventory.json        the 671-leaf survey (committed)
@@ -420,9 +432,9 @@ Everything is idempotent and skips work already on disk.
 
 | | |
 |---|---|
-| `data/entries/` | the chronicle: 521 of 572 years found, entries as `Mes día.—texto—SIGLA`, with **244 footnotes** separated from the text they interrupt |
+| `data/entries/` | the chronicle: 521 of 572 years found, **2 503 entries** as `Mes día.—texto—SIGLA`, with **244 footnotes** separated from the text they interrupt |
 | `data/jurats/` | **1 949 names over 356 years**, one row per (year, seat, name) with its certainty tier |
-| `data/documents/` | the 6 appendix blocks Campaner prints between the centuries, 29 numbered sections over 187 leaves |
+| `data/documents/` | the 6 appendix blocks Campaner prints between the centuries, 29 numbered sections over 187 leaves — and **23 of them assembled as documents**, 97 595 words, each with its certainty carried through |
 | `data/sigla/` | the glossary of manuscript sigla, resolving **1 632 of 1 804** attributions |
 | `data/text/` | the readable transcription, with every editorially repaired word keeping the panel's reading under `printed` |
 

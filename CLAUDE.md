@@ -119,11 +119,46 @@ writes the split to `data/entries/sections.json`:
   content — numbered names, `AÑO 1332.` labels — and a table run also **spills
   onto the leaf after it** (229, 242, 482, 502 open with the last names of the
   table before them).
-- **41 leaves of documents printed in full** — `II. Cartas del gobernador
+- **160 leaves of documents printed in full** — `II. Cartas del gobernador
   Gilaberto de Centellas`, `IV. Fragmentos de las Apuntaciones del Notario Mateo
-  Salcet`, and a dozen more. Each dates its own material, so leaf 153 runs 1382,
-  1384, 1387 in the middle of the 1340s. They are found by the fact that no year
-  they state can be true where they sit.
+  Salcet`, and a dozen more.
+
+  Two rules find them and **only together**. Some date their own material, so
+  leaf 153 runs 1382, 1384, 1387 in the middle of the 1340s, and no year they
+  state can be true where they sit: that catches 41 leaves. The rest state no
+  year at all — the letters of Centellas are 14 leaves of medieval Catalan that
+  name no date — so nothing fires, and they came through as chronicle entries
+  glued to whatever heading preceded them, dated 1400. **96 leaves, 60 303 words,
+  one word in six of what this file called the chronicle.**
+
+  They are found by reading `data/documents/documents.json`, which
+  `parse_documents.py` had delimited correctly all along. The two scripts knew
+  different things and did not talk. Because that file is built *from*
+  `headings.json`, the build is a second pass:
+
+  ```sh
+  python scripts/parse_entries.py --bootstrap   # first build only
+  python scripts/parse_documents.py
+  python scripts/parse_entries.py               # converges here
+  ```
+
+  Without `--bootstrap` a missing document list is a hard stop, not a fallback:
+  the failure it guards against is silent, and ran for weeks.
+
+**The shape of an entry cannot be used to find them, and it was measured before
+being believed.** A document printed in full runs ten times longer than an entry,
+states no month, names no source and is the only "entry" on its leaf — all true
+of the averages and useless as a test:
+
+| | inside a document | elsewhere |
+|---|---:|---:|
+| ≥300 words, no month, no siglum | 81 | **123** |
+| the same, and the sole entry on its leaf | 80 | **66** |
+
+There are more of them *outside* the documents than inside, at every threshold.
+Leaves 253–280 are twenty-eight leaves of continuous Germanía narrative and are
+chronicle; by shape they are indistinguishable from Centellas' letters. The
+separation has to come from Campaner's own numbering, and it does.
 
 Beware the inverse: a long stretch with no year heading is **not** evidence of an
 appendix. Leaves 253–280 are 28 leaves of continuous Germanía narrative, real
@@ -270,6 +305,36 @@ onward. Three traps, all measured:
   off the panel, exactly as with the year headings. Because that evidence is
   weaker, a section found that way must be the *next* number, not merely a later
   one — without that constraint a chronicle entry on leaf 632 became section V.
+
+`scripts/build_documents.py` then assembles each one as a text →
+`data/documents/sections/*.txt` and `sections.json`: **23 documents, 97 595
+words, 3.3% contested**, footnotes separated as in the chronicle and the
+certainty tiers carried through, because these are the leaves nothing has
+measured and a mostly-contested document must say so on its face.
+
+Two details that are not obvious:
+
+- **A section can start in the middle of a leaf.** `until` is the leaf *before*
+  the next section, so ending there drops the top of the shared leaf — section
+  III opens at line 7 of leaf 137 while II is still running down it. The end
+  taken is the next section's first line, so the leaf is split where the book
+  splits it: II closes `…anno. Dni. m.ccc.xl.ix »` and III opens `Historia de los
+  Reyes de Mallorca`.
+- **The `.txt` is what the book prints and nothing else.** No title is prepended:
+  the printed title already stands at the head, and the recorded one is a
+  truncation of it.
+
+**Campaner names the genre himself**, in the first word of each title — `Cartas`,
+`Sentencia`, `Relacion`, `Memorial`, `Declaraciones`, `Toma de posesion`,
+`Fragmentos`, `Historia`, `Nota`, `Cas nunca vist`. That is surfaced as `genre`
+rather than mapped onto categories the book does not use.
+
+**Splitting a section into its individual pieces is still open, and it is
+philology rather than parsing.** The Centellas section holds 20 salutations
+`«Molt alt e molt poderos princep e Senyor»` against only 3 numbered pieces and 3
+`Dat.` closings, so neither the numbering nor the formula alone delimits a
+letter. It wants the same treatment the year headings got: a rule, measured,
+with the exceptions counted.
 
 Three numerals in the 16th-century block are still not found (VII, VIII, X).
 Leaves 333–334 are blank and leaf 332 ends *«haber reducido el tamaño de las tres

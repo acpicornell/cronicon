@@ -1,0 +1,439 @@
+[
+ {
+  "id": "0114-II-02",
+  "block_leaf": 114,
+  "numeral": "II",
+  "title": "Cartas del gobernador Gilaberto de Centellas á Pedro IV acerca de la última empresa",
+  "genre": "Cartas",
+  "first_leaf": 123,
+  "last_leaf": 137,
+  "leaves": 15,
+  "words": 12652,
+  "footnotes": 3,
+  "certainty": {
+   "unanimous": 11269,
+   "one-dissent": 878,
+   "two-dissent": 267,
+   "contested": 238
+  },
+  "contested_share": 0.0188
+ },
+ {
+  "id": "0114-III-03",
+  "block_leaf": 114,
+  "numeral": "III",
+  "title": "Historia de los Reyes de Mallorca, que fueron",
+  "genre": "Historia",
+  "first_leaf": 137,
+  "last_leaf": 153,
+  "leaves": 17,
+  "words": 12283,
+  "footnotes": 7,
+  "certainty": {
+   "unanimous": 10226,
+   "one-dissent": 1298,
+   "two-dissent": 511,
+   "contested": 248
+  },
+  "contested_share": 0.0202
+ },
+ {
+  "id": "0114-IV-04",
+  "block_leaf": 114,
+  "numeral": "IV",
+  "title": "Fragmentos de las Apuntaciones del Notario",
+  "genre": "Fragmentos",
+  "first_leaf": 153,
+  "last_leaf": 159,
+  "leaves": 7,
+  "words": 4930,
+  "footnotes": 7,
+  "certainty": {
+   "unanimous": 4316,
+   "one-dissent": 418,
+   "two-dissent": 89,
+   "contested": 107
+  },
+  "contested_share": 0.0217
+ },
+ {
+  "id": "0114-V-05",
+  "block_leaf": 114,
+  "numeral": "V",
+  "title": "Algunas noticias é indicaciones curiosas extraídas",
+  "genre": "Algunas",
+  "first_leaf": 159,
+  "last_leaf": 168,
+  "leaves": 10,
+  "words": 3862,
+  "footnotes": 6,
+  "certainty": {
+   "unanimous": 2392,
+   "one-dissent": 632,
+   "two-dissent": 344,
+   "contested": 494
+  },
+  "contested_share": 0.1279
+ },
+ {
+  "id": "0225-II-02",
+  "block_leaf": 225,
+  "numeral": "II",
+  "title": "Fragmentos de las Apuntaciones del Notario",
+  "genre": "Fragmentos",
+  "first_leaf": 229,
+  "last_leaf": 233,
+  "leaves": 5,
+  "words": 3346,
+  "footnotes": 1,
+  "certainty": {
+   "unanimous": 2857,
+   "one-dissent": 305,
+   "two-dissent": 86,
+   "contested": 98
+  },
+  "contested_share": 0.0293
+ },
+ {
+  "id": "0225-III-03",
+  "block_leaf": 225,
+  "numeral": "III",
+  "title": "Documento inédito acerca de la conduccion á esta isla, desde la de Menorca, de Simon Tort Ballester. (1)",
+  "genre": "Documento",
+  "first_leaf": 233,
+  "last_leaf": 235,
+  "leaves": 3,
+  "words": 1085,
+  "footnotes": 1,
+  "certainty": {
+   "unanimous": 954,
+   "one-dissent": 87,
+   "two-dissent": 30,
+   "contested": 14
+  },
+  "contested_share": 0.0129
+ },
+ {
+  "id": "0225-IV-04",
+  "block_leaf": 225,
+  "numeral": "IV",
+  "title": "Relacion (anónima) del tumulto ocurrido en la Iglesia de",
+  "genre": "Relacion",
+  "first_leaf": 235,
+  "last_leaf": 236,
+  "leaves": 2,
+  "words": 1019,
+  "footnotes": 2,
+  "certainty": {
+   "unanimous": 823,
+   "one-dissent": 170,
+   "two-dissent": 18,
+   "contested": 8
+  },
+  "contested_share": 0.0079
+ },
+ {
+  "id": "0225-V-05",
+  "block_leaf": 225,
+  "numeral": "V",
+  "title": "Noticias é indicaciones curiosas extraidas de las que coleccionó el Pavorde Jaume.",
+  "genre": "Noticias",
+  "first_leaf": 236,
+  "last_leaf": 246,
+  "leaves": 11,
+  "words": 5084,
+  "footnotes": 6,
+  "certainty": {
+   "unanimous": 4196,
+   "one-dissent": 517,
+   "two-dissent": 200,
+   "contested": 171
+  },
+  "contested_share": 0.0336
+ },
+ {
+  "id": "0311-II-02",
+  "block_leaf": 311,
+  "numeral": "II",
+  "title": "Memorial fet per mi Antoni Johan Lambías, Frare del convent de Sant Domingo, Procurador de dit convent,",
+  "genre": "Memorial",
+  "first_leaf": 315,
+  "last_leaf": 316,
+  "leaves": 2,
+  "words": 796,
+  "footnotes": 3,
+  "certainty": {
+   "unanimous": 642,
+   "one-dissent": 94,
+   "two-dissent": 29,
+   "contested": 31
+  },
+  "contested_share": 0.0389
+ },
+ {
+  "id": "0311-III-03",
+  "block_leaf": 311,
+  "numeral": "III",
+  "title": "«Part de lo ques segui en la Germania.»  (1)",
+  "genre": "Part",
+  "first_leaf": 316,
+  "last_leaf": 321,
+  "leaves": 6,
+  "words": 4473,
+  "footnotes": 2,
+  "certainty": {
+   "unanimous": 3078,
+   "one-dissent": 1053,
+   "two-dissent": 247,
+   "contested": 95
+  },
+  "contested_share": 0.0212
+ },
+ {
+  "id": "0311-IV-04",
+  "block_leaf": 311,
+  "numeral": "IV",
+  "title": "Noticia de lo que sucedió al ejército Real en la rendicion de (Mallorca en tiempo de la Germanía,",
+  "genre": "Noticia",
+  "first_leaf": 321,
+  "last_leaf": 323,
+  "leaves": 3,
+  "words": 1540,
+  "footnotes": 2,
+  "certainty": {
+   "unanimous": 1299,
+   "one-dissent": 178,
+   "two-dissent": 45,
+   "contested": 18
+  },
+  "contested_share": 0.0117
+ },
+ {
+  "id": "0311-V-05",
+  "block_leaf": 311,
+  "numeral": "V",
+  "title": "Sentencia contra Juanot Colom y otros tres compafieros.  (1)",
+  "genre": "Sentencia",
+  "first_leaf": 323,
+  "last_leaf": 324,
+  "leaves": 2,
+  "words": 607,
+  "footnotes": 2,
+  "certainty": {
+   "unanimous": 506,
+   "one-dissent": 74,
+   "two-dissent": 17,
+   "contested": 10
+  },
+  "contested_share": 0.0165
+ },
+ {
+  "id": "0311-VI-06",
+  "block_leaf": 311,
+  "numeral": "VI",
+  "title": "Nota de varias ejecuciones verificadas en Junio de 1523, redactada por Guillermo Valentí. (1)",
+  "genre": "Nota",
+  "first_leaf": 324,
+  "last_leaf": 368,
+  "leaves": 45,
+  "words": 18089,
+  "footnotes": 3,
+  "certainty": {
+   "unanimous": 13906,
+   "one-dissent": 2689,
+   "two-dissent": 837,
+   "contested": 657
+  },
+  "contested_share": 0.0363
+ },
+ {
+  "id": "0311-IX-09",
+  "block_leaf": 311,
+  "numeral": "IX",
+  "title": "Relacion (anónima) de la muerte de Jorge San Juan",
+  "genre": "Relacion",
+  "first_leaf": 368,
+  "last_leaf": 373,
+  "leaves": 6,
+  "words": 4069,
+  "footnotes": 2,
+  "certainty": {
+   "unanimous": 3385,
+   "one-dissent": 502,
+   "two-dissent": 111,
+   "contested": 71
+  },
+  "contested_share": 0.0174
+ },
+ {
+  "id": "0311-XI-11",
+  "block_leaf": 311,
+  "numeral": "XI",
+  "title": "Algunas noticias é indicaciones curiosas extraidas de las",
+  "genre": "Algunas",
+  "first_leaf": 373,
+  "last_leaf": 380,
+  "leaves": 8,
+  "words": 2897,
+  "footnotes": 0,
+  "certainty": {
+   "unanimous": 2156,
+   "one-dissent": 366,
+   "two-dissent": 186,
+   "contested": 189
+  },
+  "contested_share": 0.0652
+ },
+ {
+  "id": "0478-II-02",
+  "block_leaf": 478,
+  "numeral": "II",
+  "title": "Relacion de la muerte de Pedro Juan Quint. (1)",
+  "genre": "Relacion",
+  "first_leaf": 482,
+  "last_leaf": 483,
+  "leaves": 2,
+  "words": 805,
+  "footnotes": 2,
+  "certainty": {
+   "unanimous": 653,
+   "one-dissent": 105,
+   "two-dissent": 30,
+   "contested": 17
+  },
+  "contested_share": 0.0211
+ },
+ {
+  "id": "0478-III-03",
+  "block_leaf": 478,
+  "numeral": "III",
+  "title": "Declaraciones en la causa criminal sobre asesinato de D. Jaime Juan de Berga. (1)",
+  "genre": "Declaraciones",
+  "first_leaf": 483,
+  "last_leaf": 485,
+  "leaves": 3,
+  "words": 1911,
+  "footnotes": 2,
+  "certainty": {
+   "unanimous": 1672,
+   "one-dissent": 165,
+   "two-dissent": 47,
+   "contested": 27
+  },
+  "contested_share": 0.0141
+ },
+ {
+  "id": "0478-IV-04",
+  "block_leaf": 478,
+  "numeral": "IV",
+  "title": "Toma de posesion del Reino de Mallorca á nombre del Rey Don Felipe IV. (1)",
+  "genre": "Toma",
+  "first_leaf": 485,
+  "last_leaf": 486,
+  "leaves": 2,
+  "words": 946,
+  "footnotes": 2,
+  "certainty": {
+   "unanimous": 823,
+   "one-dissent": 81,
+   "two-dissent": 26,
+   "contested": 16
+  },
+  "contested_share": 0.0169
+ },
+ {
+  "id": "0478-V-05",
+  "block_leaf": 478,
+  "numeral": "V",
+  "title": "Cas nunca vist succeit en Mallorca á II Juny MDCXXIV. (1)",
+  "genre": "Cas",
+  "first_leaf": 486,
+  "last_leaf": 487,
+  "leaves": 2,
+  "words": 751,
+  "footnotes": 2,
+  "certainty": {
+   "unanimous": 613,
+   "one-dissent": 98,
+   "two-dissent": 26,
+   "contested": 14
+  },
+  "contested_share": 0.0186
+ },
+ {
+  "id": "0478-VI-06",
+  "block_leaf": 478,
+  "numeral": "VI",
+  "title": "Fragmentos extraidos del Cuaderno de noticias ó cronicon de Mos. Jaume Viquet, pbro. (1)",
+  "genre": "Fragmentos",
+  "first_leaf": 487,
+  "last_leaf": 495,
+  "leaves": 9,
+  "words": 6296,
+  "footnotes": 1,
+  "certainty": {
+   "unanimous": 5349,
+   "one-dissent": 638,
+   "two-dissent": 209,
+   "contested": 100
+  },
+  "contested_share": 0.0159
+ },
+ {
+  "id": "0478-VII-07",
+  "block_leaf": 478,
+  "numeral": "VII",
+  "title": "Fragmentos del «Llibre de memorias de cesas notables &.» del Dr. Cristobal Fiol.",
+  "genre": "Fragmentos",
+  "first_leaf": 495,
+  "last_leaf": 499,
+  "leaves": 5,
+  "words": 3526,
+  "footnotes": 1,
+  "certainty": {
+   "unanimous": 2862,
+   "one-dissent": 468,
+   "two-dissent": 119,
+   "contested": 77
+  },
+  "contested_share": 0.0218
+ },
+ {
+  "id": "0478-VIII-08",
+  "block_leaf": 478,
+  "numeral": "VIII",
+  "title": "Noticias é indicaciones curiosas extraidas de los MSS. y obras citadas en el texto del siglo XVII.",
+  "genre": "Noticias",
+  "first_leaf": 499,
+  "last_leaf": 507,
+  "leaves": 9,
+  "words": 2446,
+  "footnotes": 3,
+  "certainty": {
+   "unanimous": 1710,
+   "one-dissent": 329,
+   "two-dissent": 145,
+   "contested": 262
+  },
+  "contested_share": 0.1071
+ },
+ {
+  "id": "0631-II-02",
+  "block_leaf": 631,
+  "numeral": "II",
+  "title": "Noticias é indicaciones curiosas extraidas de los MSS. y obras citadas en el texto del siglo XVIII.",
+  "genre": "Noticias",
+  "first_leaf": 632,
+  "last_leaf": 639,
+  "leaves": 8,
+  "words": 4182,
+  "footnotes": 2,
+  "certainty": {
+   "unanimous": 3301,
+   "one-dissent": 382,
+   "two-dissent": 195,
+   "contested": 304
+  },
+  "contested_share": 0.0727
+ }
+]

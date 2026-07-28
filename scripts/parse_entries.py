@@ -122,6 +122,41 @@ NOTE_BAND = 0.55
 COLUMN_BREAK = 0.2
 
 
+def known_documents(path: Path | None) -> set[int]:
+    """Leaves inside a numbered document section, as parse_documents delimited them.
+
+    The Jurats lists are excluded: they open every block as section `I`, have
+    their own parser, and `is_table_leaf` already sets them aside here.
+    """
+    if path is None or not path.exists():
+        return set()
+    pages: set[int] = set()
+    for block in json.loads(path.read_text()):
+        for section in block["sections"]:
+            if section.get("jurats"):
+                continue
+            pages.update(range(section["pdf_page"],
+                               section.get("until", section["pdf_page"]) + 1))
+    return pages
+
+
+# A document printed in full does not look like a chronicle entry -- it runs ten
+# times longer, states no month, names no manuscript source and is the only
+# "entry" on its leaf. That is all true of the averages and **useless as a test**,
+# which was measured rather than assumed:
+#
+#   >=300 words, no month, no siglum      inside a document  81   elsewhere 123
+#   the same, and the sole entry on its leaf                 80   elsewhere  66
+#
+# There are more of them outside the documents than inside, at every threshold.
+# Leaves 253-280 are twenty-eight leaves of continuous Germanía narrative with no
+# year heading between 1520 and 1525, and they are chronicle; by shape they are
+# indistinguishable from the letters of Gilaberto de Centellas. So the separation
+# cannot come from what an entry looks like. It comes from Campaner's own
+# numbering, via parse_documents.py, and the check below is that the two files
+# agree rather than that the text has a particular shape.
+
+
 def split_notes(lines: list[dict]) -> tuple[list[dict], list[dict]]:
     """Separate a leaf's footnotes from its body.
 
@@ -510,12 +545,39 @@ def report_gaps(missing: list[int], headings: list[tuple[int, int]],
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--consensus", default="consensus6_swap_swapk")
+    ap.add_argument("--documents",
+                    default=str(PROJECT / "data" / "documents" / "documents.json"),
+                    help="the numbered document sections, from parse_documents.py; "
+                         "their leaves are excluded from the chronicle")
+    ap.add_argument("--bootstrap", action="store_true",
+                    help="run without the document list. Only for the first pass "
+                         "of a fresh build, since parse_documents.py reads this "
+                         "script's output and so cannot exist yet")
     ap.add_argument("--report", action="store_true")
     args = ap.parse_args()
 
     source = OCR / args.consensus
     if not source.exists():
         raise SystemExit(f"{source} missing -- run scripts/consensus.py first")
+
+    # Without this list the chronicle silently swallows 160 leaves of letters,
+    # edicts and the 1541 reprint -- 60 303 words, one in six of the text, dated
+    # to whatever year heading happened to precede them. It went unnoticed for a
+    # long time precisely because it is silent, so a missing file is a hard stop
+    # rather than a fallback.
+    documents = Path(args.documents)
+    if args.bootstrap:
+        documents = None
+        print("bootstrap: no document list, so the documents Campaner prints in "
+              "full will be\n  parsed as chronicle. Run parse_documents.py and "
+              "then this script again.\n")
+    elif not documents.exists():
+        raise SystemExit(
+            f"{documents} not found.\nThe chronicle cannot be separated from the "
+            f"documents without it. Run:\n"
+            f"  python scripts/parse_entries.py --bootstrap\n"
+            f"  python scripts/parse_documents.py\n"
+            f"  python scripts/parse_entries.py")
 
     inventory = {leaf["pdf_page"]: leaf for leaf in
                  json.loads((PROJECT / "data" / "inventory.json").read_text())["leaves"]}
@@ -558,7 +620,20 @@ def main() -> None:
     # Removing them changes the sequence, so the chronology is recomputed until
     # it stops moving: an excursus twelve leaves long can otherwise outvote the
     # chronicle around it and get itself accepted instead.
-    excursus: set[int] = set()
+    # `parse_documents.py` has already delimited these blocks by their own
+    # numerals, and it finds what the chronology test cannot. The test asks
+    # whether a leaf states a year that can be true where it sits; the letters of
+    # Gilaberto de Centellas state no year at all, so nothing fires and fourteen
+    # leaves of medieval Catalan came through as chronicle entries dated 1400.
+    # Ninety-six leaves arrived that way -- 60 303 words, one word in six of what
+    # this file called the chronicle.
+    #
+    # The dependency runs both ways (parse_documents reads headings.json, which
+    # this script writes), so it is a second pass: run this, run that, run this
+    # again. Idempotent from the second pass on, and the first pass simply has no
+    # document list to read.
+    excursus: set[int] = set(known_documents(documents))
+    chronicle = [p for p in chronicle if p not in excursus]
     for _round in range(4):
         candidates = [
             {"page": pdf_page, "position": position, "year": year,
@@ -640,6 +715,15 @@ def main() -> None:
                 continue
             buffer.append(line)
         flush()
+
+    # A leaf inside a numbered document section is a document leaf, whatever its
+    # typography: leaves 161-163 are 4- and 6-column tables and also sit inside
+    # section V of the second block, and Campaner's own numbering is the better
+    # authority on what they are. Stated as a precedence so the three sets really
+    # are a partition, rather than leaving three leaves in two of them.
+    known = known_documents(documents)
+    skipped_tables = sorted(tables - known)
+
 
     OUT.mkdir(parents=True, exist_ok=True)
     with (OUT / "entries.jsonl").open("w", encoding="utf-8") as fh:
