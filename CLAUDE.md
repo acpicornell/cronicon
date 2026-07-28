@@ -445,6 +445,32 @@ python scripts/consensus.py --pages all --swap-paddle --swap-kraken \
   rules, so it finds one cell on leaf 631. The script is kept and nothing consumes
   it; it would serve as an independent check on `find_columns` for prose.
 
+## Two sample families, and why they must not be merged
+
+- **`sample*.json` — frozen.** Rounds 1 and 2, 550 adjudications, the twelve
+  pilot leaves, the panel and geometry of the day. `sample_loci.py` now refuses
+  `--from-consensus` or a different `--pages` on this family outright, rather
+  than merely discouraging it.
+- **`documents.json` — round 3, drawn, not yet adjudicated.** 320 positions
+  (200 unanimous, 50 one-dissent, 30 two-dissent, 40 contested) over 127 of the
+  164 document leaves, ids 551–870, drawn from the **production** consensus
+  because there is no legacy adjudication there to protect. 44 of them fall on
+  the 1541 long-s reprint. Adjudicate with
+  `python scripts/review.py --sample documents.json`, then
+  `--export-truth` to get `id<TAB>text`.
+
+They are separate files with separate populations because their strata shares
+differ — 78.7% unanimous on the document leaves against 70.4% on the pilot ones.
+`benchmark.py` globs `sample*.json`, so the new family is invisible to it until
+it is scored deliberately; merging them would weight medieval Catalan by the
+chronicle's proportions and quietly corrupt every figure resting on them.
+
+**The contact sheets are not the adjudication surface any more.** `build_sheets`
+scales every crop to a constant 78-pixel line, and the single shared error round 2
+recorded turned out to be the *adjudication* being wrong, because at that size the
+acute accent on `así` is not there to see. Sheets are now opt-in (`--sheets`) and
+exist only so the frozen family stays reproducible.
+
 ## The review tool
 
 `scripts/review.py` serves a page at `127.0.0.1:8000`; decisions append to

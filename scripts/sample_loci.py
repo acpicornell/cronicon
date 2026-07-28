@@ -14,8 +14,28 @@ weighting each stratum by its true share of the corpus.
 Geometry comes from Tesseract's TSV, which is the only reading in the panel that
 gives a box per word, so every sampled position can be cropped from the facsimile.
 
+## Two families, and why they must not be merged
+
+The first family -- `sample*.json`, rounds 1 and 2 -- is drawn from the twelve
+pilot leaves and is **frozen**: the strata come from the panel as it stood then,
+the geometry from the plain `spa_old` Tesseract, and 550 adjudications are keyed
+to its ids. Nothing about it may move.
+
+The second -- `documents*.json` -- is drawn from the leaves Campaner prints
+documents on, which the first family does not touch at all: not one of its 550
+positions falls on a document leaf, so everything the benchmark says about this
+book is a statement about Spanish chronicle prose. That family is drawn from the
+production consensus, because there is no legacy adjudication on those leaves to
+protect and every reason to measure the panel that actually ships.
+
+They are separate files with separate populations because their strata shares are
+different. Merging them would weight medieval Catalan by the chronicle's
+proportions and quietly corrupt every figure that depends on them.
+
 Usage:
   python scripts/sample_loci.py --per-stratum 100 60 50 50
+  python scripts/sample_loci.py --family documents --from-consensus \\
+      consensus6_swap_swapk --pages documents --per-stratum 200 50 30 40
 """
 from __future__ import annotations
 
@@ -100,6 +120,42 @@ def collect(pdf_page: int) -> list[dict]:
     return loci
 
 
+def collect_from_consensus(pdf_page: int, consensus: Path) -> list[dict]:
+    """Every position on a leaf, taken from a consensus already built.
+
+    `collect` recomputes the vote with a fixed panel and geometry, which is what
+    keeps the frozen sample frozen. For a new family that is the wrong thing: the
+    production consensus chooses its scan and its alignment per leaf, and a sample
+    drawn any other way would measure a pipeline nobody runs.
+    """
+    path = consensus / f"p{pdf_page:04d}.json"
+    if not path.exists():
+        return []
+    leaf = json.loads(path.read_text())
+    return [{
+        "pdf_page": pdf_page,
+        "page_class": CLASS_OF.get(pdf_page, "document"),
+        "index": locus["index"],
+        "stratum": locus["stratum"],
+        "grade": locus["grade"],
+        "bbox": locus["bbox"],
+        "line_bbox": locus["line_bbox"],
+        "context": locus["context"],
+        "variants": locus["variants"],
+    } for locus in leaf["loci"]]
+
+
+def document_leaves() -> list[int]:
+    """The leaves the documents occupy, from build_documents.py's catalogue."""
+    path = PROJECT / "data" / "documents" / "sections.json"
+    if not path.exists():
+        raise SystemExit(f"{path} missing -- run scripts/build_documents.py")
+    pages: set[int] = set()
+    for section in json.loads(path.read_text()):
+        pages.update(range(section["first_leaf"], section["last_leaf"] + 1))
+    return sorted(pages)
+
+
 def crop(image: Image.Image, locus: dict) -> Image.Image:
     """The whole printed line, with the sampled word boxed."""
     w, h = image.size
@@ -157,19 +213,26 @@ def build_sheets(sample: list[dict], per_sheet: int,
     return sheets
 
 
-def previous_rounds() -> tuple[set[tuple[int, int]], int]:
-    """Positions already drawn, and the highest id issued so far.
+def previous_rounds(family: str = "sample") -> tuple[set[tuple[int, int]], int]:
+    """Positions already drawn in this family, and the highest id issued so far.
 
     Rounds must be disjoint: re-adjudicating a position we have already settled
     would inflate the sample size without adding any information about the book.
+    Ids run on across families as well, so that a truth file keyed by id alone
+    can never confuse a chronicle position with a document one.
     """
     taken: set[tuple[int, int]] = set()
     highest = 0
-    for path in sorted(OUT.glob("sample*.json")):
+    for path in sorted(OUT.glob("*.json")):
+        if not path.name.startswith(("sample", "documents")):
+            continue
         data = json.loads(path.read_text())
+        if "sample" not in data:
+            continue
         for locus in data["sample"]:
-            taken.add((locus["pdf_page"], locus["index"]))
             highest = max(highest, locus["id"])
+            if path.name.startswith(family):
+                taken.add((locus["pdf_page"], locus["index"]))
     return taken, highest
 
 
@@ -178,21 +241,62 @@ def main() -> None:
     ap.add_argument("--per-stratum", type=int, nargs="*", default=None,
                     help="sample sizes for [unanimous, 5of6, 4of6, rest]")
     ap.add_argument("--per-sheet", type=int, default=12)
+    ap.add_argument("--sheets", action="store_true",
+                    help="also build the old contact sheets. They scale every "
+                         "crop to 78 pixels, which is not enough to see a "
+                         "diacritic -- kept only because the frozen family was "
+                         "adjudicated from them")
     ap.add_argument("--round", type=int, default=1,
                     help="Round 1 writes sample.json. Later rounds write "
                          "sample_roundN.json, draw only positions no earlier "
                          "round used, and number ids on from the last one.")
+    ap.add_argument("--family", default="sample",
+                    help="which sample family: 'sample' is the frozen chronicle "
+                         "one, 'documents' the leaves Campaner prints documents "
+                         "on. Separate files, separate populations")
+    ap.add_argument("--from-consensus", default=None,
+                    help="draw from a consensus already built, using its own "
+                         "panel and per-leaf choices, instead of recomputing the "
+                         "vote with the frozen geometry")
+    ap.add_argument("--pages", default="pilot",
+                    help="pilot | documents | comma-separated leaves")
     ap.add_argument("--force", action="store_true",
                     help="overwrite an existing sample; invalidates the "
                          "adjudications keyed to it")
     args = ap.parse_args()
 
+    # The frozen family exists to be scored against 550 adjudications keyed to
+    # its ids. Anything that changes how it is drawn renumbers it, so those two
+    # options are refused there rather than merely discouraged.
+    if args.family == "sample" and (args.from_consensus or args.pages != "pilot"):
+        raise SystemExit(
+            "the 'sample' family is frozen: it is drawn from the pilot leaves "
+            "with the panel and geometry of the day, and 550 adjudications are "
+            "keyed to its ids.\nUse --family documents for a new population.")
+
+    if args.pages == "pilot":
+        pages = [p for p, _, _, _ in PILOT]
+    elif args.pages == "documents":
+        pages = document_leaves()
+    else:
+        pages = [int(p) for p in args.pages.split(",")]
+
     all_loci: list[dict] = []
-    for pdf_page, _, _, _ in PILOT:
-        all_loci.extend(collect(pdf_page))
+    if args.from_consensus:
+        consensus = OCR / args.from_consensus
+        if not consensus.exists():
+            raise SystemExit(f"{consensus} missing -- run consensus.py first")
+        for pdf_page in pages:
+            all_loci.extend(collect_from_consensus(pdf_page, consensus))
+        panel_used = json.loads(
+            next(iter(sorted(consensus.glob("p*.json")))).read_text())["panel"]
+    else:
+        for pdf_page in pages:
+            all_loci.extend(collect(pdf_page))
+        panel_used = PANEL
 
     counts = Counter(locus["stratum"] for locus in all_loci)
-    panel = len(PANEL)
+    panel = len(panel_used)
     groups = {
         "unanimous": [x for x in all_loci if x["stratum"] == f"{panel}of{panel}"],
         "one-dissent": [x for x in all_loci if x["stratum"] == f"{panel-1}of{panel}"],
@@ -203,19 +307,20 @@ def main() -> None:
                                           f"{panel-5}of{panel}"}],
     }
 
-    print(f"{len(all_loci)} token positions over {len(PILOT)} pages")
+    print(f"{len(all_loci):,} token positions over {len(pages)} leaves "
+          f"[{args.family}]")
     for name, items in groups.items():
-        print(f"  {name:12s} {len(items):5d}  {len(items)/len(all_loci):6.1%}")
+        print(f"  {name:12s} {len(items):6,}  {len(items)/len(all_loci):6.1%}")
     print(f"  raw strata: {dict(counts.most_common())}")
 
     OUT.mkdir(parents=True, exist_ok=True)
     taken: set[tuple[int, int]] = set()
     first_id = 1
-    if args.round > 1:
-        taken, highest = previous_rounds()
+    if args.round > 1 or args.family != "sample":
+        taken, highest = previous_rounds(args.family)
         first_id = highest + 1
-        print(f"  round {args.round}: {len(taken)} positions already drawn, "
-              f"ids continue from {first_id}")
+        print(f"  round {args.round}: {len(taken)} positions already drawn in "
+              f"this family, ids continue from {first_id}")
 
     sizes = args.per_stratum or [100, 60, 50, 50]
     # Round 1 was drawn before rounds existed and keeps the bare seed; later
@@ -234,8 +339,9 @@ def main() -> None:
                                                             x["index"])), first_id):
         locus["id"] = n
 
-    name = "sample.json" if args.round == 1 else f"sample_round{args.round}.json"
-    prefix = "sample" if args.round == 1 else f"sample_round{args.round}"
+    stem = (args.family if args.round == 1
+            else f"{args.family}_round{args.round}")
+    name, prefix = f"{stem}.json", stem
     if (OUT / name).exists() and not args.force:
         raise SystemExit(
             f"{name} already exists.\n"
@@ -247,15 +353,30 @@ def main() -> None:
             "scratch, and delete data/ground_truth/sample_fingerprint.txt too.")
     (OUT / name).write_text(json.dumps({
         "seed": SEED if args.round == 1 else SEED + args.round,
-        "round": args.round, "panel": PANEL,
-        "population": {name: len(items) for name, items in groups.items()},
+        "round": args.round, "family": args.family, "panel": panel_used,
+        "consensus": args.from_consensus,
+        "leaves": pages,
+        "population": {group: len(items) for group, items in groups.items()},
         "population_total": len(all_loci),
         "sample": sorted(sample, key=lambda x: x["id"]),
     }, ensure_ascii=False, indent=1))
 
-    sheets = build_sheets(sample, args.per_sheet, prefix)
-    print(f"\nsampled {len(sample)} positions (ids {first_id}-{first_id+len(sample)-1})"
-          f" -> {len(sheets)} review sheets in {OUT}")
+    span = f"ids {first_id}-{first_id + len(sample) - 1}"
+    # The contact sheets scale every crop to a constant 78-pixel line, which is
+    # comfortable for reading words and *not enough to tell an acute accent from
+    # the dot of an i* -- the one shared error round 2 recorded turned out to be
+    # the adjudication being wrong for exactly that reason. They are kept for the
+    # frozen family, which was adjudicated from them and must stay reproducible,
+    # and refused for anything new: scripts/review.py shows the same positions at
+    # native resolution.
+    if args.sheets:
+        sheets = build_sheets(sample, args.per_sheet, prefix)
+        print(f"\nsampled {len(sample)} positions ({span}) -> {len(sheets)} "
+              f"review sheets in {OUT}")
+    else:
+        print(f"\nsampled {len(sample)} positions ({span}) -> {OUT / name}")
+        print(f"\nAdjudicate them at native resolution:\n"
+              f"  python scripts/review.py --sample {name}")
 
 
 if __name__ == "__main__":

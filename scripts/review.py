@@ -46,6 +46,7 @@ import io
 import json
 import re
 import unicodedata
+from collections import Counter
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -104,6 +105,46 @@ def decided() -> dict[str, dict]:
                 row = json.loads(line)
                 out[row["key"]] = row
     return out
+
+
+def queue_from_sample(path: Path, consensus: Path) -> list[dict]:
+    """A drawn sample as the queue, so a round is adjudicated at full resolution.
+
+    The contact sheets `sample_loci.py` used to build scale every crop to 78
+    pixels, and the one shared error round 2 recorded turned out to be the
+    adjudication being wrong because at that size the acute accent on `así` is
+    not visible. Same positions, same ids, shown properly.
+    """
+    data = json.loads(path.read_text())
+    panel = data.get("panel", [])
+    done = decided()
+    queue: list[dict] = []
+    for locus in data["sample"]:
+        key = key_of(locus["pdf_page"], locus["bbox"])
+        if key in done:
+            continue
+        queue.append({
+            "key": key,
+            "sample_id": locus["id"],
+            "pdf_page": locus["pdf_page"],
+            "index": locus["index"],
+            "bbox": locus["bbox"],
+            "line_bbox": locus["line_bbox"],
+            "grade": locus.get("group", locus.get("grade", "")),
+            "held": False,
+            "winner": Counter(
+                v for e, v in locus["variants"].items()
+                if e in panel and v is not None).most_common(1)[0][0]
+            if panel else "",
+            "context": locus["context"],
+            "variants": locus["variants"],
+            "panel": panel,
+            "priority": 0,
+        })
+    # Adjudication is a sample, not a queue: it is drawn to be representative and
+    # reordering it by what looks interesting would undo that. Kept as drawn.
+    queue.sort(key=lambda x: x["sample_id"])
+    return queue
 
 
 def build_queue(consensus: Path, pages: list[int], include_held: bool
@@ -386,6 +427,13 @@ def main() -> None:
     ap.add_argument("--no-held", action="store_true",
                     help="only the contested positions, leaving out the leaves "
                          "held back for want of an adjudication")
+    ap.add_argument("--sample", default=None,
+                    help="adjudicate a drawn sample instead of the review queue, "
+                         "e.g. documents.json. Same positions and ids as the "
+                         "contact sheets, shown at native resolution")
+    ap.add_argument("--export-truth", type=Path, default=None,
+                    help="write the adjudicated sample positions as id<TAB>text "
+                         "and exit")
     ap.add_argument("--stats", action="store_true",
                     help="report the queue and exit")
     args = ap.parse_args()
@@ -394,6 +442,28 @@ def main() -> None:
     if not consensus.exists():
         raise SystemExit(f"{consensus} missing -- run scripts/consensus.py first")
     pages = targets.resolve(args.pages)
+
+    if args.export_truth:
+        rows = sorted(((r["sample_id"], r["chose"]) for r in decided().values()
+                       if r.get("sample_id") is not None))
+        args.export_truth.write_text(
+            "id\ttext\n" + "".join(f"{i}\t{t}\n" for i, t in rows),
+            encoding="utf-8")
+        print(f"{len(rows)} adjudicated positions -> {args.export_truth}")
+        return
+
+    if args.sample:
+        path = PROJECT / "data" / "adjudication" / args.sample
+        if not path.exists():
+            raise SystemExit(f"{path} not found -- draw it with sample_loci.py")
+        Handler.queue = queue_from_sample(path, consensus)
+        drawn = len(json.loads(path.read_text())["sample"])
+        Handler.total = drawn
+        print(f"adjudicating {args.sample}: {len(Handler.queue)} of {drawn} left")
+        print(f"decisions append to {DECISIONS}\n")
+        print(f"  http://127.0.0.1:{args.port}\n")
+        return ThreadingHTTPServer(("127.0.0.1", args.port),
+                                   Handler).serve_forever()
 
     if args.stats:
         return report(consensus, pages)
