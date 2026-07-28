@@ -34,3 +34,9 @@ models/
 # data/review/decisions.jsonl is not -- it is the adjudication itself.
 data/review/batch*.png
 data/review/batch*.json
+
+# The database is derived: scripts/build_db.py rebuilds it from data/ in
+# seconds. db/schema.sql is the part that is not derived and is committed,
+# as in the sibling projects.
+db/*.duckdb
+db/*.duckdb.wal

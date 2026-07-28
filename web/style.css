@@ -1,0 +1,159 @@
+/* Cronicón Mayoricense — same academic palette as the sibling editions. */
+:root {
+  --bg: #fdfaf3;
+  --surface: #ffffff;
+  --border: #e0d9c5;
+  --text: #1a1a1a;
+  --text-muted: #6b6258;
+  --accent: #8b3a2f;          /* subdued terracotta */
+  --accent-light: #f4e8e2;
+  --accent-dark: #5e2620;
+  --num-bg: #f7f3eb;
+  --doubt: #c98a00;           /* the colour of an unsettled reading */
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  background: var(--bg); color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+  font-size: 16px; line-height: 1.6;
+}
+a { color: var(--accent); }
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* --- masthead --- */
+header {
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, #fbf6e9 0%, var(--bg) 100%);
+  padding: 1.6rem 0 1.1rem;
+}
+.eyebrow { margin: 0 0 .35rem; font-size: .8rem; letter-spacing: .08em;
+           text-transform: uppercase; color: var(--text-muted); }
+.eyebrow a { color: inherit; text-decoration: none; }
+.eyebrow a:hover { color: var(--accent); }
+h1 { font-family: Georgia, "Times New Roman", serif; font-size: 1.9rem;
+     margin: 0 0 .2rem; letter-spacing: .3px; }
+h1 a { color: inherit; text-decoration: none; }
+.sub { margin: 0; color: var(--text-muted); font-style: italic; font-size: .95rem; }
+
+main { padding: 2rem 0 3rem; }
+
+/* --- the reading text --- */
+.entry {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 4px; padding: 1rem 1.2rem; margin: 0 0 1rem;
+}
+.entry h3 { margin: 0 0 .4rem; font-size: .9rem; font-weight: 700;
+            color: var(--accent-dark); letter-spacing: .03em; }
+.entry p { margin: 0; font-family: Georgia, "Times New Roman", serif;
+           font-size: 1.05rem; }
+.prov { margin-top: .7rem !important; font-size: .82rem;
+        font-family: inherit !important; color: var(--text-muted); }
+/* Sigla on the left, leaf link on the right. Flex rather than a float: most
+   entries carry no siglum, so the line had no inline content to give the float
+   a line box, `.prov` collapsed to zero height and the link fell out through
+   the bottom of the entry's border. */
+.entry .prov { display: flex; flex-wrap: wrap; align-items: baseline;
+               gap: .2rem .35rem; }
+.facs { margin-left: auto; white-space: nowrap; }
+
+/* A word the panel argued about. Dotted, not loud: it is a caveat, not an
+   error, and most of them turn out to be right. */
+.d { border-bottom: 1px dotted var(--doubt); cursor: help; }
+body.plain .d { border-bottom: none; }
+
+abbr.sig {
+  background: var(--accent-light); border-radius: 3px; padding: .05rem .35rem;
+  font-size: .8rem; text-decoration: none;
+  color: var(--accent-dark); font-variant-numeric: tabular-nums;
+}
+.empty { color: var(--text-muted); font-style: italic; }
+
+/* --- year navigation --- */
+.yearnav { display: flex; align-items: baseline; justify-content: space-between;
+           gap: 1rem; margin: 0 0 1.5rem; }
+.yearnav h2 { font-family: Georgia, serif; font-size: 2.4rem; margin: 0;
+              color: var(--accent-dark); font-variant-numeric: tabular-nums; }
+
+/* --- index --- */
+.stats { display: flex; flex-wrap: wrap; gap: 1.6rem; padding: .8rem 1.1rem;
+         background: var(--num-bg); border: 1px solid var(--border);
+         border-radius: 4px; font-size: .88rem; color: var(--text-muted); }
+.stats strong { display: block; color: var(--accent-dark); font-size: 1.35rem;
+                font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.tools { display: flex; gap: .8rem; align-items: center; margin: 1.6rem 0 1rem;
+         flex-wrap: wrap; }
+input[type=search] {
+  flex: 1 1 18rem; padding: .55rem .8rem; font-size: 1rem;
+  border: 1px solid var(--border); border-radius: 4px; background: var(--surface);
+}
+label.toggle { font-size: .85rem; color: var(--text-muted); user-select: none; }
+.hint { margin: -.4rem 0 0; font-size: .82rem; color: var(--text-muted); }
+.hint em { font-style: normal; font-family: Georgia, serif; }
+
+/* --- search results --- */
+#results:not(:empty) { margin: 1.2rem 0 0; }
+.quick { margin: 1.2rem 0 .4rem; font-size: .9rem; }
+.quick small { color: var(--text-muted); font-weight: 400; }
+.tally { margin: 1rem 0 0; font-size: .85rem; color: var(--text-muted); }
+.loading { color: var(--text-muted); font-style: italic; }
+ol.hits { list-style: none; margin: .3rem 0 0; padding: 0; }
+ol.hits li { border-left: 2px solid var(--border); padding: .35rem 0 .35rem .8rem;
+             margin: 0 0 .5rem; }
+ol.hits li > a { font-variant-numeric: tabular-nums; font-weight: 600;
+                 text-decoration: none; }
+ol.hits li > a:hover { text-decoration: underline; }
+.leaf { color: var(--text-muted); font-size: .78rem; margin-left: .5rem; }
+ol.hits q { display: block; margin-top: .2rem; quotes: none;
+            font-family: Georgia, "Times New Roman", serif; font-size: .95rem;
+            color: var(--text-muted); }
+mark { background: #fdf0c4; color: var(--text); padding: 0 .1rem;
+       border-radius: 2px; }
+
+/* --- document pages --- */
+.doctitle { font-family: Georgia, serif; font-size: 1.5rem !important;
+            line-height: 1.3; }
+.caveat { background: var(--accent-light); border: 1px solid #e6cec4;
+          border-radius: 4px; padding: .7rem .9rem; font-size: .85rem;
+          color: var(--accent-dark); }
+.doc { background: var(--surface); border: 1px solid var(--border);
+       border-radius: 4px; padding: 1.2rem 1.4rem; }
+.doc p { font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem;
+         margin: 0 0 .9rem; }
+.doc p:last-child { margin-bottom: 0; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(5.2rem, 1fr));
+        gap: .4rem; }
+.grid a {
+  display: block; text-align: center; padding: .45rem .2rem; border-radius: 3px;
+  background: var(--surface); border: 1px solid var(--border);
+  text-decoration: none; font-variant-numeric: tabular-nums; font-size: .95rem;
+}
+.grid a:hover { background: var(--accent-light); border-color: var(--accent); }
+.grid a .n { display: block; font-size: .72rem; color: var(--text-muted); }
+.grid a.void { opacity: .45; }
+
+h2.section { font-family: Georgia, serif; font-size: 1.3rem;
+             margin: 2.4rem 0 .8rem; color: var(--accent-dark); }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+th, td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--border); }
+th { color: var(--text-muted); font-weight: 600; font-size: .8rem;
+     text-transform: uppercase; letter-spacing: .04em; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+footer { border-top: 1px solid var(--border); padding: 1.6rem 0 2.4rem;
+         color: var(--text-muted); font-size: .85rem; background: #fbf8f0; }
+footer p { margin: .3rem 0; }
+
+pre { background: var(--surface); border: 1px solid var(--border);
+      border-radius: 4px; padding: .9rem 1rem; overflow-x: auto; font-size: .85rem; }
+
+@media (max-width: 560px) {
+  .yearnav h2 { font-size: 1.8rem; }
+  /* Too narrow to sit the link beside the sigla; let it wrap to its own line. */
+  .entry .prov { flex-wrap: wrap; }
+  .facs { margin-left: 0; flex-basis: 100%; }
+}

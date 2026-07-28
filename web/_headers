@@ -1,0 +1,29 @@
+# Cloudflare headers. Everything revalidates: Cloudflare attaches an ETag, so
+# an unchanged file comes back 304 with no payload and a new deploy propagates
+# at once -- no stale data.json after a rebuild.
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+/*.json
+  Cache-Control: public, max-age=0, must-revalidate
+/*.js
+  Cache-Control: public, max-age=0, must-revalidate
+/*.css
+  Cache-Control: public, max-age=0, must-revalidate
+
+# The parquet files are the corpus, and they are meant to be queried from
+# elsewhere: DuckDB reads them over HTTP with range requests. CORS is what makes
+# that work from another origin, and Accept-Ranges is what keeps it from
+# downloading 4.7 MB to answer a question about one year.
+/data/*
+  Cache-Control: public, max-age=3600, must-revalidate
+  Access-Control-Allow-Origin: *
+  Access-Control-Expose-Headers: Content-Length, Content-Range, Accept-Ranges
+
+# The site is read-only and static: no auth, no forms, no third-party anything.
+# script-src 'self' with no inline scripts kills the main XSS vector outright.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
