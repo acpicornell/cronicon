@@ -298,3 +298,38 @@ h3.month:first-of-type { margin-top: 1.4rem; }
 
 .readmode { margin: .6rem 0 0; text-align: right; font-size: .82rem;
             color: var(--text-muted); }
+
+
+/* --- who reports what, decade by decade -------------------------------- */
+.chart { margin: 1.4rem 0 1rem; }
+.chart svg { display: block; width: 100%; }
+.chart svg.volume { height: 46px; }
+.chart svg.stack { height: 320px; }
+/* the last tick sits on the right edge and must not fall off it */
+.chart .axis span:last-child { transform: translateX(-100%); }
+.chart .band { shape-rendering: crispEdges; transition: opacity .12s; }
+.chart svg:hover .band { opacity: .45; }
+.chart svg .band:hover { opacity: 1; }
+
+.chart figcaption { margin-top: .7rem; font-size: .82rem;
+                    color: var(--text-muted); max-width: 68ch; }
+.keys { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin: 0 0 1.6rem; }
+.key { display: inline-flex; align-items: baseline; gap: .4rem;
+       font-size: .85rem; color: var(--text); text-decoration: none; }
+a.key:hover { color: var(--accent); }
+.key span { width: .72rem; height: .72rem; border-radius: 2px;
+            display: inline-block; flex: none; align-self: center; }
+.key small { color: var(--text-muted); }
+
+/* the years one source is cited in */
+.yeargrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+            gap: .35rem; margin-top: 1.2rem; }
+.yeargrid a { display: flex; align-items: baseline; justify-content: center;
+              gap: .3rem; padding: .35rem .2rem; border: 1px solid var(--border);
+              border-radius: 3px; background: var(--surface);
+              text-decoration: none; font-size: .88rem;
+              font-variant-numeric: tabular-nums; }
+.yeargrid a:hover { border-color: var(--accent); }
+.yeargrid small { color: var(--text-muted); font-size: .72rem; }
+
+@media (max-width: 620px) { .chart svg.stack { height: 240px; } }

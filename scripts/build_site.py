@@ -570,6 +570,151 @@ def documents_page(con) -> str:
 """ + tail(1))
 
 
+# Twelve sigla carry 84% of the attributions; the rest are pooled. Nine was
+# the first cut and it was wrong: `M. S.` alone has 98 attributions, most of
+# them in the fifteenth century, and pooling it drew a large anonymous grey
+# block over exactly the stretch the chart is meant to explain. Colours are
+# chosen to sit on the cream and to survive being next to each other.
+BANDS = (("G. T.", "#8b3a2f"), ("B. J.", "#b5714a"), ("M. M.", "#d9a05b"),
+         ("G. V.", "#7a8b5a"), ("G. F.", "#4a7a68"), ("J. F.", "#3f6b8a"),
+         ("J. V.", "#6b5b95"), ("Jn. Br.", "#a05a7a"), ("L. V.", "#8a6f4e"),
+         ("M. S.", "#c08552"), ("Cl. Fl.", "#5b7f9c"), ("N. F.", "#6e8f74"))
+OTHER = "#c3b9a8"
+CHART_W, CHART_H, VOL_H = 1020, 300, 46
+
+
+def slug(siglum: str) -> str:
+    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", siglum.lower())).strip("-")
+
+
+def sources_by_decade(con) -> tuple[list[int], dict, dict]:
+    rows = con.execute("""
+        SELECT (year//10)*10 AS decade, s, count(*) AS n
+        FROM (SELECT year, unnest(sources) AS s FROM entry WHERE year IS NOT NULL)
+        GROUP BY 1, 2""").fetchall()
+    per: dict[int, dict[str, int]] = {}
+    total: dict[str, int] = {}
+    for decade, siglum, n in rows:
+        per.setdefault(int(decade), {})[siglum] = n
+        total[siglum] = total.get(siglum, 0) + n
+    return sorted(per), per, total
+
+
+def sources_chart(con, sigla: dict[str, str]) -> str:
+    """Who reports each stretch of the book, decade by decade.
+
+    The most interesting thing in the database and the least visible: Campaner
+    names his manuscript for 3 365 of the notices, so the edition can show the
+    hand-over of the witnesses across five centuries -- Terrassa carrying the
+    14th and 15th, Jaume the 16th, Mut the 18th.
+
+    Two charts and not one, deliberately. The shares alone would say that the
+    1300s rest on Terrassa as confidently as the 1700s rest on Mut, and they do
+    not: that decade has six attributions against 265. The volume strip above
+    is linear precisely so a thin decade *looks* thin -- the square root that
+    keeps the year bars legible would hide the one thing this strip is for.
+    """
+    decades, per, total = sources_by_decade(con)
+    shown = [b for b, _ in BANDS]
+    colour = dict(BANDS)
+    peak = max(sum(per[d].values()) for d in decades)
+    step = CHART_W / len(decades)
+
+    cells, bars, ticks = [], [], []
+    for i, decade in enumerate(decades):
+        counts = per[decade]
+        volume = sum(counts.values())
+        x = i * step
+        height = max(1.0, VOL_H * volume / peak)
+        bars.append(f'<rect x="{x:.2f}" y="{VOL_H - height:.2f}" width="{step:.2f}" '
+                    f'height="{height:.2f}" fill="var(--accent)" opacity=".55">'
+                    f"<title>{decade}s · {num(volume)} atribucions</title></rect>")
+        y = 0.0
+        order = shown + [b for b in counts if b not in shown]
+        for band in order:
+            n = counts.get(band, 0) if band in shown else 0
+            if band not in shown:
+                n = sum(v for k, v in counts.items() if k not in shown)
+                if not n:
+                    continue
+            if not n:
+                continue
+            h = CHART_H * n / volume
+            name = sigla.get(band, band) if band in shown else "altres fonts"
+            cells.append(
+                f'<rect class="band" data-band="{esc(slug(band) if band in shown else "altres")}" '
+                f'x="{x:.2f}" y="{y:.2f}" width="{step:.2f}" height="{h:.2f}" '
+                f'fill="{colour.get(band, OTHER)}">'
+                f"<title>{decade}s · {esc(name)} · {num(n)} de {num(volume)} "
+                f"({pct(100 * n / volume)}%)</title></rect>")
+            y += h
+            if band not in shown:
+                break
+        if decade % 100 == 0:
+            # The axis is HTML, not SVG text: the chart is stretched to the
+            # width of the page with preserveAspectRatio="none", which would
+            # stretch the lettering with it.
+            ticks.append(f'<span style="left:{100 * x / CHART_W:.3f}%">{decade}</span>')
+
+    legend = "".join(
+        f'<a class="key" href="{slug(band)}/"><span style="background:{col}"></span>'
+        f"{esc(band)} <small>{esc(sigla.get(band, ''))}</small></a>"
+        for band, col in BANDS)
+    rest = sum(n for b, n in total.items() if b not in shown)
+    legend += (f'<span class="key"><span style="background:{OTHER}"></span>'
+               f"altres <small>{num(rest)} atribucions</small></span>")
+
+    return f"""
+  <figure class="chart">
+    <svg viewBox="0 0 {CHART_W} {VOL_H + 6}" preserveAspectRatio="none"
+         class="volume" role="img"
+         aria-label="Quantes atribucions duu cada dècada">
+      {''.join(bars)}
+      <rect x="0" y="{VOL_H}" width="{CHART_W}" height="1" fill="var(--border)"/>
+    </svg>
+    <svg viewBox="0 0 {CHART_W} {CHART_H}" preserveAspectRatio="none"
+         class="stack" role="img"
+         aria-label="Quina font reporta cada dècada, de 1300 a 1800">
+      {''.join(cells)}
+    </svg>
+    <div class="axis">{''.join(ticks)}</div>
+    <figcaption>A dalt, quantes atribucions duu cada dècada — {num(peak)} a la
+      més densa i sis a la més prima. A baix, de qui són. Passant per sobre es
+      veuen les xifres; clicant una font, on la fa servir.</figcaption>
+  </figure>
+  <div class="keys">{legend}</div>"""
+
+
+def source_page(con, siglum: str, expansion: str) -> str:
+    """Where one manuscript is cited, year by year.
+
+    `expansion` is empty for the sigla the introduction never glosses -- `L. V.`
+    and `N. F.` between them attribute 182 notices -- and the page says so
+    rather than printing the abbreviation twice.
+    """
+    named = expansion or "font no glossada a la introducció"
+    rows = con.execute(
+        "SELECT year, count(*) n FROM entry WHERE year IS NOT NULL "
+        "AND list_contains(sources, ?) GROUP BY 1 ORDER BY 1", [siglum]).fetchall()
+    total = sum(n for _, n in rows)
+    years = "".join(f'<a href="../../anys/{y}/">{y}<small>{n}</small></a>'
+                    for y, n in rows)
+    first, last = (rows[0][0], rows[-1][0]) if rows else (0, 0)
+    return (head(f"{siglum} · {named} · Cronicón Mayoricense",
+                 f"Les {num(total)} notícies que Campaner atribueix a "
+                 f"{named} al Cronicón Mayoricense.",
+                 f"{SITE}/abreviatures/{slug(siglum)}/", depth=2)
+            + masthead(depth=2, here="abreviatures/") + f"""
+<main class="wrap">
+  <nav class="yearnav"><h2 class="doctitle">{esc(siglum)} · {esc(named)}</h2></nav>
+  <p class="hint">Campaner atribueix <strong>{num(total)}</strong> notícies a
+     aquesta font, repartides en {num(len(rows))} anys entre {first} i {last}.
+     Cada any enllaça amb la seva pàgina.</p>
+  <div class="yeargrid">{years}</div>
+</main>
+""" + tail(2))
+
+
 def abbreviations_page(con) -> str:
     used = dict(con.execute(
         "SELECT s, count(*) FROM (SELECT unnest(sources) AS s FROM entry) "
@@ -583,6 +728,7 @@ def abbreviations_page(con) -> str:
     bare = sorted(((g, n) for g, n in used.items()
                    if g not in {x[0] for x in glossed}), key=lambda r: -r[1])
     missing = ", ".join(f"<code>{esc(g)}</code> ({num(n)})" for g, n in bare)
+    chart = sources_chart(con, dict(glossed))
     return (head("Les abreviatures · Cronicón Mayoricense",
                  "Les sigles amb què Campaner atribueix cada notícia al "
                  "manuscrit d'on la treu, amb el nom que en dona la introducció.",
@@ -593,6 +739,13 @@ def abbreviations_page(con) -> str:
      les glossa a la introducció — la part del llibre que aquesta edició no
      publica. Sense això les sigles del cos no volen dir res. A les pàgines
      d'any es pot clicar qualsevol sigla per veure'n el nom.</p>
+
+  <h2 class="section">Qui ho explica, segle a segle</h2>
+  <p class="hint">La crònica no descansa sempre sobre els mateixos testimonis.
+     Terrassa duu el gruix del segle XIV i del XV, Jaume el XVI, Mut el
+     XVIII — i allà on una dècada penja d'una sola font és on convé
+     desconfiar.</p>
+  {chart}
   <div class="scroll">
   <table>
     <thead><tr><th>sigla</th><th>font</th><th class="num">notícies</th></tr></thead>
@@ -834,6 +987,16 @@ def main() -> None:
     (WEB / "abreviatures").mkdir(exist_ok=True)
     (WEB / "abreviatures" / "index.html").write_text(
         abbreviations_page(con), encoding="utf-8")
+    # One page per source in the chart: where that manuscript is cited, year by
+    # year. Years and counts only -- listing the notices themselves would put a
+    # second copy of the corpus on the site.
+    for band, _colour in BANDS:
+        row = con.execute("SELECT expansion FROM siglum WHERE siglum = ?",
+                          [band]).fetchone()
+        target = WEB / "abreviatures" / slug(band)
+        target.mkdir(exist_ok=True)
+        (target / "index.html").write_text(
+            source_page(con, band, row[0] if row else ""), encoding="utf-8")
 
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -843,6 +1006,8 @@ def main() -> None:
                f"<url><loc>{SITE}/documents/</loc></url>",
                f"<url><loc>{SITE}/abreviatures/</loc></url>"]
     sitemap += [f"<url><loc>{SITE}/anys/{y}/</loc></url>" for y in years]
+    sitemap += [f"<url><loc>{SITE}/abreviatures/{slug(b)}/</loc></url>"
+                for b, _c in BANDS]
     sitemap += [f"<url><loc>{SITE}/documents/{d[0]}/</loc></url>"
                 for d in documents]
     sitemap.append("</urlset>")
