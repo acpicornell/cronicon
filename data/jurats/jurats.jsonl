@@ -55,14 +55,10 @@
 {"century": 13, "year": 1299, "seat": 5, "name": "Guillermo  Sa Coma", "tier": "contested", "pdf_page": 60, "printed": "33"}
 {"century": 13, "year": 1299, "seat": 6, "name": "Guillermo Oller", "tier": "contested", "pdf_page": 60, "printed": "33"}
 {"century": 13, "year": 1300, "seat": 5, "name": "Bernardo de Hultcina. 6.—Guillermo Muntseré", "tier": "contested", "pdf_page": 60, "printed": "33"}
-{"century": 14, "year": 1302, "seat": 2, "name": "Guillermo Dalfi", "tier": "contested", "pdf_page": 114, "printed": null}
-{"century": 14, "year": 1302, "seat": 3, "name": "Ramon Desclergue", "tier": "contested", "pdf_page": 114, "printed": null}
-{"century": 14, "year": 1302, "seat": 4, "name": "Renovard  de Malbosch", "tier": "contested", "pdf_page": 114, "printed": null}
 {"century": 14, "year": 1302, "seat": 5, "name": "Arnaldo  de Olives", "tier": "contested", "pdf_page": 114, "printed": null}
 {"century": 14, "year": 1302, "seat": 6, "name": "Guillermo de Codines", "tier": "contested", "pdf_page": 114, "printed": null}
-{"century": 14, "year": 1304, "seat": 3, "name": "Ramon  de Costa", "tier": "contested", "pdf_page": 114, "printed": null}
 {"century": 14, "year": 1304, "seat": 6, "name": "Simon  de Puigmalver", "tier": "contested", "pdf_page": 114, "printed": null}
-{"century": 14, "year": 1309, "seat": 1, "name": "Bernardo  de Torrella, caballero", "tier": "contested", "pdf_page": 114, "printed": null}
+{"century": 14, "year": 1309, "seat": 1, "name": "Bernardo  Villafranca se encuentran en el privi-", "tier": "contested", "pdf_page": 114, "printed": null}
 {"century": 14, "year": 1309, "seat": 6, "name": "Pedro  de Sarriá j", "tier": "contested", "pdf_page": 114, "printed": null}
 {"century": 14, "year": 1310, "seat": 1, "name": "Gil  Garcés, miles", "tier": "contested", "pdf_page": 114, "printed": null}
 {"century": 14, "year": 1310, "seat": 3, "name": "Ramon Sa", "tier": "contested", "pdf_page": 114, "printed": null}
@@ -155,11 +151,17 @@
 {"century": 14, "year": 1347, "seat": 4, "name": "Jaime de Font", "tier": "contested", "pdf_page": 119, "printed": "92"}
 {"century": 14, "year": 1348, "seat": 3, "name": "Francisco Umbert", "tier": "contested", "pdf_page": 119, "printed": "92"}
 {"century": 14, "year": 1349, "seat": 2, "name": "Arnaldo Burguet", "tier": "contested", "pdf_page": 119, "printed": "92"}
-{"century": 14, "year": 1349, "seat": 6, "name": "Guillermo — Guillermo Balleró y el órden del 2.0 y 3 .°", "tier": "contested", "pdf_page": 119, "printed": "92"}
+{"century": 14, "year": 1349, "seat": 3, "name": "Bernardo Valentí", "tier": "contested", "pdf_page": 119, "printed": "92"}
+{"century": 14, "year": 1349, "seat": 4, "name": "Ramon Zaforteza", "tier": "contested", "pdf_page": 119, "printed": "92"}
+{"century": 14, "year": 1349, "seat": 5, "name": "Guillermo Miró", "tier": "contested", "pdf_page": 119, "printed": "92"}
+{"century": 14, "year": 1349, "seat": 6, "name": "Guillermo Balleró", "tier": "contested", "pdf_page": 119, "printed": "92"}
 {"century": 14, "year": 1350, "seat": 1, "name": "Berenguer  de Tornamira, doncel", "tier": "contested", "pdf_page": 119, "printed": "92"}
 {"century": 14, "year": 1350, "seat": 2, "name": "Francisco Francisco", "tier": "contested", "pdf_page": 119, "printed": "92"}
-{"century": 14, "year": 1350, "seat": 5, "name": "Ferrer Saserra.. mos de Villafranca", "tier": "contested", "pdf_page": 119, "printed": "92"}
+{"century": 14, "year": 1350, "seat": 5, "name": "Ferrer Saserra", "tier": "contested", "pdf_page": 119, "printed": "92"}
 {"century": 14, "year": 1350, "seat": 6, "name": "Arnaldo Rotger", "tier": "contested", "pdf_page": 119, "printed": "92"}
+{"century": 14, "year": 1351, "seat": 4, "name": "Guillermo de Termens", "tier": "contested", "pdf_page": 119, "printed": "92"}
+{"century": 14, "year": 1351, "seat": 5, "name": "Lúcas Cirera. :", "tier": "contested", "pdf_page": 119, "printed": "92"}
+{"century": 14, "year": 1351, "seat": 6, "name": "Miguel Rauselli ó R", "tier": "contested", "pdf_page": 119, "printed": "92"}
 {"century": 14, "year": 1353, "seat": 1, "name": "Berenguer  de Tornamira, doncel", "tier": "contested", "pdf_page": 119, "printed": "92"}
 {"century": 14, "year": 1353, "seat": 2, "name": "Jaime  de Buadella", "tier": "contested", "pdf_page": 119, "printed": "92"}
 {"century": 14, "year": 1353, "seat": 3, "name": "Bernardo Mateu", "tier": "contested", "pdf_page": 119, "printed": "92"}
@@ -943,78 +945,90 @@
 {"century": 16, "year": 1519, "seat": 4, "name": "Bautista Benet.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1519, "seat": 5, "name": "Jaime Garau.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1519, "seat": 6, "name": "Bartolomé Palou, perayre.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1521, "seat": 1, "name": "Juanot de Puigdorfila.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1521, "seat": 2, "name": "Guillermo Desmas.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1521, "seat": 3, "name": "Jaime Martí.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1521, "seat": 4, "name": "Miguel Suñer.", "tier": "contested", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1521, "seat": 1, "name": "Juanot de Puigdorfila.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1521, "seat": 2, "name": "Guillermo Desmas.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1521, "seat": 3, "name": "Jaime Martí.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1521, "seat": 4, "name": "Miguel Suñer.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1521, "seat": 5, "name": "Jorge Arquer. Rafael", "tier": "two-dissent", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1521, "seat": 6, "name": "Arnau, flassader.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1522, "seat": 1, "name": "Pelayo Fuster.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1522, "seat": 1, "name": "Pelayo Fuster.", "tier": "unanimous", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1522, "seat": 2, "name": "Juanot Salas.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1522, "seat": 3, "name": "Sebastian Armadans.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1522, "seat": 4, "name": "Bartolomé Pajés.", "tier": "contested", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1522, "seat": 3, "name": "Sebastian Armadans.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1522, "seat": 4, "name": "Bartolomé Pajés.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1522, "seat": 5, "name": "Juan Paretó.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1522, "seat": 6, "name": "Guillermo Colom, perayre.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1523, "seat": 1, "name": "Priamo de Vilalonga.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1523, "seat": 2, "name": "Baltasar Serralta.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1523, "seat": 3, "name": "Jaime Montanyans.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1523, "seat": 4, "name": "Gabriel Mir.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1523, "seat": 5, "name": "Bautista Benet.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1523, "seat": 6, "name": "Bartolomé Palou, perayre.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1522, "seat": 6, "name": "Guillermo Colom, perayre.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1523, "seat": 1, "name": "Priamo de Vilalonga.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1523, "seat": 2, "name": "Baltasar Serralta.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1523, "seat": 3, "name": "Jaime Montanyans.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1523, "seat": 4, "name": "Gabriel Mir.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1523, "seat": 5, "name": "Bautista Benet.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1523, "seat": 6, "name": "Bartolomé Palou, perayre.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1524, "seat": 1, "name": "Juan Palou.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1524, "seat": 2, "name": "Miguel de Térmens.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1524, "seat": 3, "name": "Juanot de Soldevila.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1524, "seat": 4, "name": "Gaspar Casas.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1524, "seat": 2, "name": "Miguel de Térmens.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1524, "seat": 3, "name": "Juanot de Soldevila.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1524, "seat": 4, "name": "Gaspar Casas.", "tier": "unanimous", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1524, "seat": 5, "name": "Miguel García.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1524, "seat": 6, "name": "Antonio Blanch, perayre.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1525, "seat": 1, "name": "Hugo de Sant Joan.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1524, "seat": 6, "name": "Antonio Blanch, perayre.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1525, "seat": 1, "name": "Hugo de Sant Joan.", "tier": "unanimous", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1525, "seat": 2, "name": "Jaime Marcer.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1525, "seat": 3, "name": "Juanot Salas de Soldevila.", "tier": "unanimous", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1525, "seat": 4, "name": "Juanot Ribas.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1525, "seat": 5, "name": "Juan Axartell.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1525, "seat": 6, "name": "Bartolomé Canyellas, apotecari.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1526, "seat": 1, "name": "Pedro Abri Descatlar.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1526, "seat": 2, "name": "Juan Antonio Barthomeu.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1526, "seat": 3, "name": "Jaime de Campfullós.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1526, "seat": 4, "name": "Miguel Pizá.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1526, "seat": 5, "name": "Miguel Garau.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1526, "seat": 6, "name": "Pedro Domenge, perayre.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1527, "seat": 1, "name": "Berenguer Vivot.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1527, "seat": 2, "name": "Juan García.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1527, "seat": 3, "name": "Nicolas Berga.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1527, "seat": 4, "name": "Arnaldo Font.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1527, "seat": 5, "name": "Juanot Casas.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1527, "seat": 6, "name": "Domingo Janer, perayre.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1529, "seat": 1, "name": "Miguel Sureda Zanglada.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1529, "seat": 2, "name": "Francisco de Oleza, mayor.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1529, "seat": 3, "name": "Sant Martí Despuig.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1529, "seat": 4, "name": "Juanot Ribas.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1529, "seat": 5, "name": "Gaspar Casas.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1529, "seat": 6, "name": "Bartolomé Cavaller, apotecari.", "tier": "contested", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1525, "seat": 4, "name": "Juanot Ribas.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1525, "seat": 5, "name": "Juan Axartell.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1525, "seat": 6, "name": "Bartolomé Canyellas, apotecari.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1526, "seat": 1, "name": "Pedro Abri Descatlar.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1526, "seat": 2, "name": "Juan Antonio Barthomeu.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1526, "seat": 3, "name": "Jaime de Campfullós.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1526, "seat": 4, "name": "Miguel Pizá.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1526, "seat": 5, "name": "Miguel Garau.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1526, "seat": 6, "name": "Pedro Domenge, perayre.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1527, "seat": 1, "name": "Berenguer Vivot.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1527, "seat": 2, "name": "Juan García.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1527, "seat": 3, "name": "Nicolas Berga.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1527, "seat": 4, "name": "Arnaldo Font.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1527, "seat": 5, "name": "Juanot Casas.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1527, "seat": 6, "name": "Domingo Janer, perayre.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1529, "seat": 1, "name": "Miguel Sureda Zanglada.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1529, "seat": 2, "name": "Francisco de Oleza, mayor.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1529, "seat": 3, "name": "Sant Martí Despuig.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1529, "seat": 4, "name": "Juanot Ribas.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1529, "seat": 5, "name": "Gaspar Casas.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1529, "seat": 6, "name": "Bartolomé Cavaller, apotecari.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1530, "seat": 1, "name": "Felipe Fuster.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1530, "seat": 2, "name": "Bernardo de juny¿", "tier": "contested", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1530, "seat": 3, "name": "Jaime Campfullós.", "tier": "contested", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1530, "seat": 4, "name": "Gabriel Seguí.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1530, "seat": 5, "name": "Pedro Ferrandell.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1530, "seat": 6, "name": "Francisco Rossell, aésdhonádot ,", "tier": "contested", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1532, "seat": 1, "name": "Juanot de Caulellas,", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1532, "seat": 2, "name": "Juanot Riera.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1532, "seat": 3, "name": "Berenguer Sbert.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1532, "seat": 4, "name": "Gabriel Ribas.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1532, "seat": 5, "name": "Miguel García.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1532, "seat": 6, "name": "Antonio Palmer, sucrer.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1535, "seat": 1, "name": "Pedro de Puigdorfila.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1532, "seat": 2, "name": "Juanot Riera.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1532, "seat": 3, "name": "Berenguer Sbert.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1532, "seat": 4, "name": "Gabriel Ribas.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1532, "seat": 5, "name": "Miguel García.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1532, "seat": 6, "name": "Antonio Palmer, sucrer.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1533, "seat": 1, "name": "Juan Mig. Ballester de Togores.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1533, "seat": 2, "name": "Miguel Angelats.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1533, "seat": 3, "name": "Nicolás Sampol ó Spanyol.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1533, "seat": 4, "name": "Bartolomé Pagés.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1533, "seat": 5, "name": "Rafael Morlá.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1533, "seat": 6, "name": "Pedro Domenech, perayre.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1534, "seat": 1, "name": "Antonio Gual Desmur.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1534, "seat": 2, "name": "Juan García.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1534, "seat": 3, "name": "Francisco de Milia.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1534, "seat": 4, "name": "Gaspar Casas.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1534, "seat": 5, "name": "Jorge Pastor.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1534, "seat": 6, "name": "Tomás Cañellas, perayre.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1535, "seat": 1, "name": "Pedro de Puigdorfila.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1535, "seat": 2, "name": "Martin Truyols.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1535, "seat": 3, "name": "Pedro Sampol ó Spanyol.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1535, "seat": 4, "name": "Bartolomé Calvó.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1535, "seat": 5, "name": "Juan Miguel Pagés.", "tier": "contested", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1535, "seat": 3, "name": "Pedro Sampol ó Spanyol.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1535, "seat": 4, "name": "Bartolomé Calvó.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1535, "seat": 5, "name": "Juan Miguel Pagés.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1535, "seat": 6, "name": "Pedro Gradolí, perayre.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1536, "seat": 1, "name": "Pedro Malferit.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1536, "seat": 2, "name": "Hugo Desmas.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1536, "seat": 3, "name": "Gaspar Bordils.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1536, "seat": 4, "name": "Pedro Cabrer.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1536, "seat": 1, "name": "Pedro Malferit.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1536, "seat": 2, "name": "Hugo Desmas.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1536, "seat": 3, "name": "Gaspar Bordils.", "tier": "unanimous", "pdf_page": 312, "printed": null}
+{"century": 16, "year": 1536, "seat": 4, "name": "Pedro Cabrer.", "tier": "unanimous", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1536, "seat": 5, "name": "Juanot Milia.", "tier": "contested", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1536, "seat": 6, "name": "Antonio Solivellas, perayre.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1537, "seat": 1, "name": "Ramon", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1537, "seat": 2, "name": "Jaime Desmas.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1537, "seat": 3, "name": "Pedro Net.", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1537, "seat": 4, "name": "Gabriel Mir.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1537, "seat": 5, "name": "Miguel García..", "tier": "contested", "pdf_page": 312, "printed": null}
-{"century": 16, "year": 1537, "seat": 6, "name": "Lorenzo Vives, perayre.", "tier": "contested", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1539, "seat": 1, "name": "Pedro Nicolás Descatlar.", "tier": "two-dissent", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1539, "seat": 2, "name": "Juanot Barthomeu.", "tier": "one-dissent", "pdf_page": 312, "printed": null}
 {"century": 16, "year": 1539, "seat": 3, "name": "Jaime Juan Desmas.", "tier": "unanimous", "pdf_page": 312, "printed": null}

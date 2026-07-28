@@ -24,6 +24,17 @@ from dataclasses import dataclass
 COLUMN_EDGE_TOLERANCE = 0.021
 MIN_COLUMN_LINES = 8
 MAX_BOUNDARY_CROSSING = 0.10
+# A line this wide is laid *across* the columns rather than sitting in one --
+# `SIGLO XIII. / DE 1229 Á 1300.` and the source note beneath it, which open
+# every century. Such a line crosses every boundary by definition, and counting
+# it as text that crosses meant four heading lines could veto a gutter the
+# other thirty lines respected. Leaf 28 -- the first leaf of the chronicle --
+# was read as one column and its two columns interleaved line by line.
+SPANNING_WIDTH = 0.55
+# But on a single wide column almost every line is that wide, and discounting
+# them all leaves a handful of short ones to invent a boundary that is not
+# there. Only discount the wide lines when the narrow ones carry the page.
+NARROW_SHARE = 0.6
 HEADER_BAND = 0.09   # top of the leaf: running head
 FOOTER_BAND = 0.965  # bottom: the BNE watermark strip
 
@@ -80,15 +91,26 @@ def find_columns(lines: list[Line]) -> list[float]:
         before = [ln for ln in lines if ln.x0 < left - COLUMN_EDGE_TOLERANCE]
         if not before:
             continue
-        crossing = sum(1 for ln in before if ln.x1 > left + COLUMN_EDGE_TOLERANCE)
-        if crossing / len(before) <= MAX_BOUNDARY_CROSSING:
+        narrow = [ln for ln in before if (ln.x1 - ln.x0) < SPANNING_WIDTH]
+        body = narrow if len(narrow) >= NARROW_SHARE * len(before) else before
+        if not body:
+            continue
+        crossing = sum(1 for ln in body if ln.x1 > left + COLUMN_EDGE_TOLERANCE)
+        if crossing / len(body) <= MAX_BOUNDARY_CROSSING:
             lefts.append(left)
     return lefts
 
 
-def order(lines: list[Line], strip_furniture: bool = True
-          ) -> tuple[list[Line], list[Line]]:
-    """Sort into reading order. Returns (body lines, stripped furniture lines)."""
+def order(lines: list[Line], strip_furniture: bool = True,
+          single_column: bool = False) -> tuple[list[Line], list[Line]]:
+    """Sort into reading order. Returns (body lines, stripped furniture lines).
+
+    `single_column` reads straight down the page instead of column by column.
+    That is wrong for prose and right for the annotated Jurats lists, where the
+    year label `AÑO 1282.` is centred *between* the column of names and the
+    column of notes: splitting the leaf into columns puts every label after
+    every name it heads, and the names are then filed under no year at all.
+    """
     furniture: list[Line] = []
     body = lines
     if strip_furniture:
@@ -96,6 +118,12 @@ def order(lines: list[Line], strip_furniture: bool = True
                      if ln.y1 <= HEADER_BAND or ln.y0 >= FOOTER_BAND]
         body = [ln for ln in lines
                 if ln.y1 > HEADER_BAND and ln.y0 < FOOTER_BAND]
+
+    if single_column:
+        for ln in body:
+            ln.column = 0
+        body.sort(key=lambda ln: (ln.y0, ln.x0))
+        return body, furniture
 
     lefts = find_columns(body)
     for ln in body:

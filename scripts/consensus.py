@@ -167,7 +167,8 @@ def tesseract_words(pdf_page: int, geometry=GEOMETRY,
     return out
 
 
-def abbyy_words(path: Path, gutter: float = 0.0) -> list[dict]:
+def abbyy_words(path: Path, gutter: float = 0.0,
+                single_column: bool = False) -> list[dict]:
     """Word geometry from either ABBYY layer, both of which store it the same way.
 
     An alternative source of geometry for leaves where Tesseract's segmentation
@@ -204,7 +205,8 @@ def abbyy_words(path: Path, gutter: float = 0.0) -> list[dict]:
                 max(w["bbox"][2] for w in run), max(w["bbox"][3] for w in run))))
 
     key_by_line = {id(ln): key for key, ln in line_boxes}
-    ordered, _ = layout.order([ln for _key, ln in line_boxes])
+    ordered, _ = layout.order([ln for _key, ln in line_boxes],
+                              single_column=single_column)
 
     out: list[dict] = []
     for ln in ordered:
@@ -225,7 +227,10 @@ def abbyy_ia_words(pdf_page: int, gutter: float = 0.0) -> list[dict]:
 
 
 def abbyy_bne_words(pdf_page: int, gutter: float = 0.0) -> list[dict]:
-    return abbyy_words(OCR / "abbyy_bne" / f"bne_p{pdf_page:04d}.json", gutter)
+    # Always read straight down the page: this geometry exists for the annotated
+    # Jurats lists, whose year labels sit between the two columns.
+    return abbyy_words(OCR / "abbyy_bne" / f"bne_p{pdf_page:04d}.json", gutter,
+                       single_column=True)
 
 
 GEOMETRIES = {"tesseract": (tesseract_words, GEOMETRY_ENGINE),

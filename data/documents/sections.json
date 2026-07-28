@@ -27,15 +27,15 @@
   "first_leaf": 137,
   "last_leaf": 153,
   "leaves": 17,
-  "words": 12283,
+  "words": 12368,
   "footnotes": 7,
   "certainty": {
-   "unanimous": 10226,
-   "one-dissent": 1298,
-   "two-dissent": 511,
-   "contested": 248
+   "unanimous": 10451,
+   "one-dissent": 1224,
+   "two-dissent": 455,
+   "contested": 238
   },
-  "contested_share": 0.0202
+  "contested_share": 0.0192
  },
  {
   "id": "0114-IV-04",
