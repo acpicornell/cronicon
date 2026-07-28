@@ -95,13 +95,102 @@ MONTH_ALT = "|".join(sorted(MONTHS, key=len, reverse=True))
 #
 # An earlier version required the dash before the month and matched almost
 # nothing: 16% of entries came out dated where it should be most of them.
+# `—20.—` was wrong about the punctuation and cost 410 splits. The form the
+# book actually prints is `—20—`, with no full stop, and the one this pattern
+# required occurs **zero** times in 2 499 entries: every bare-day marker in the
+# chronicle was being swallowed into the entry above it. The period is optional
+# now, and a range (`—28 y 29—`, 4 of them) takes the first day.
+#
+# `—El 24 se publicó un edicto…` is Campaner's other way of opening a day, 153
+# of them, and was not a marker at all. A digit is required after `El` so that
+# `—El Marqués de Rubí` and `—El mismo dia` stay where they belong.
 ENTRY_START = re.compile(
     rf"(?:"
     rf"(?<![a-záéíóúñA-ZÁÉÍÓÚÑ])(?P<month>{MONTH_ALT})\s*(?P<day1>\d{{1,2}})?\s*\.?\s*—"
-    rf"|—\s*(?P<day2>\d{{1,2}})\s*\.\s*—"
-    rf"|—\s*(?=Este\s+(?:año|mes|dia|día))"
+    rf"|—\s*(?P<day2>\d{{1,2}})(?:\s*[yá]\s*\d{{1,2}})?\s*[.,]?\s*—"
+    rf"|—\s*El\s+(?P<day3>\d{{1,2}})\s*,?\s+(?=[a-záéíóúñ])"
+    rf"|—\s*En\s+(?P<day5>\d{{1,2}})\s+de\s+(?P<month2>{MONTH_ALT})\b"
+    # `Este año` was the assumed form and matches nothing at all: what Campaner
+    # writes is `—En este año se sufrió una peste…`, 59 times. The `En` is
+    # optional so both spellings pass, and the phrase itself stays in the entry
+    # -- it is the text, not a label.
+    rf"|—\s*(?=(?:En\s+)?Este\s+(?:año|mes|dia|día))"
     rf")",
     re.IGNORECASE)
+
+# The mangled months are matched *separately*, and that is not a stylistic
+# choice. Folded into the alternation above, this pattern matches any word
+# before a dash -- which is most sentence ends in the book -- and `re` consumes
+# what it matches even when the result is later discarded. `…de la isla.—El 24
+# se publicó…` matched as `isla.—`, ate the dash that `—El 24` needed, and 140
+# genuine splits disappeared. Two passes, merged by position, cannot interfere.
+NEAR_MONTH = re.compile(
+    r"(?<![a-záéíóúñA-ZÁÉÍÓÚÑ])(?P<near>[A-Za-zÁÉÍÓÚÑáéíóúñ]{4,11})"
+    r"\s*(?P<day4>\d{1,2})?\s*\.\s*—")
+
+# `—El 14 de Julio otro pregon…` states its own month, and taking the month
+# carried forward instead would date it to whatever month was running.
+MONTH_AFTER_DAY = re.compile(rf"^\s*de\s+(?P<month>{MONTH_ALT})\b", re.IGNORECASE)
+
+# A month name after one of these belongs to the sentence running into it, not
+# to a heading: `…desde el 25 de Abril hasta el 7 de Julio.—Sucedió que…` opens
+# a new notice at the dash, and `Julio` is the last word of the old one. Taking
+# it as the marker ate the word and left 59 entries ending on a dangling
+# preposition, `…llegaron á Mallorca en 3 de`. A real heading follows a full
+# stop or a siglum, never a preposition.
+FUNCTION_WORD = re.compile(
+    r"(?:^|\s)(?:de|del|en|á|a|hasta|desde|para|entre|sobre|y|e|ó|o)\s+$",
+    re.IGNORECASE)
+
+
+def edit_distance_1(a: str, b: str) -> bool:
+    """True if one substitution, insertion or deletion turns `a` into `b`."""
+    if abs(len(a) - len(b)) > 1:
+        return False
+    if len(a) == len(b):
+        return sum(x != y for x, y in zip(a, b)) <= 1
+    short, long = (a, b) if len(a) < len(b) else (b, a)
+    for i in range(len(long)):
+        if long[:i] + long[i + 1:] == short:
+            return True
+    return short == long[:-1]
+
+
+def near_month(token: str, day: str | None, before: str = "") -> int | None:
+    """The month a mangled heading was printing, or None.
+
+    `Mavo 9.—` is `Mayo`, misread 38 times; `Juxio`, `Manzo`, `DICIEMBEE`,
+    `FNERO` and eighteen more are the same accident on display type, which is
+    the class the engines read worst. Recovering the month is a *parsing*
+    decision and changes nothing in the text -- the entry still prints `Mavo`,
+    exactly as the book's scan gives it. Only the date deduced from that
+    position is recovered, which is what the year headings already do.
+
+    Being one letter from a month name is not enough on its own: `Raimundo
+    Lulio.—`, `el Alcalde Mayor.—` and `fondos de dicho género.—` are ordinary
+    words ending a sentence, one edit from `Julio`, `Mayo` and `Enero`. What
+    separates them is position, and there are two ways to be in one:
+
+    * a day number follows -- `Mavo 9.—`. Of 71 near-miss tokens the 58 with a
+      day are all genuine, and none of the false positives has one.
+    * nothing follows, but a full stop or a dash comes *before* it, so the token
+      opens rather than closes a sentence: `…el dia 27.—G. F. Mavo.—A
+      principios de este mes…`. The three false positives are all mid-phrase --
+      `Raimundo Lulio`, `Alcalde Mayor`, `dicho género` -- and fail it. So does
+      `—Fr. ABRIL y Mavo`, which is prose naming two months and not a heading
+      at all.
+    """
+    folded = strip_accents(token).lower()
+    if not day:
+        tail = before.rstrip()
+        if not (tail[-1:] in (".", "—") and token[:1].isupper()):
+            return None
+    if folded in MONTHS:
+        return MONTHS[folded]
+    for name, number in MONTHS.items():
+        if edit_distance_1(folded, name):
+            return number
+    return None
 
 # A year heading the layout missed and left inline, sitting immediately before a
 # date marker: `—B. J. 1459. Mayo 2.—`. Anchored to the end of the run so that a
@@ -427,6 +516,35 @@ def monotone_subsequence(years: list[int]) -> list[int]:
     return out[::-1]
 
 
+def date_marks(text: str) -> list[dict]:
+    """Every place an entry opens, from both passes, merged by position.
+
+    A mangled-month candidate is dropped when it overlaps a marker the strict
+    pattern already found: `Mayo 2.—` is matched by both, and the strict one
+    knows the month for certain.
+    """
+    marks = [{"start": m.start(), "end": m.end(),
+              "month": (MONTHS[strip_accents(
+                            m.group("month") or m.group("month2")).lower()]
+                        if (m.group("month") or m.group("month2")) else None),
+              "day": next((int(d) for d in (m.group("day1"), m.group("day2"),
+                                            m.group("day3"), m.group("day5"))
+                            if d), None)}
+             for m in ENTRY_START.finditer(text)
+             if not (m.group("month") and FUNCTION_WORD.search(text[:m.start()]))]
+    taken = [(m["start"], m["end"]) for m in marks]
+    for m in NEAR_MONTH.finditer(text):
+        month = near_month(m.group("near"), m.group("day4"), text[:m.start()])
+        if month is None:
+            continue
+        if any(a < m.end() and m.start() < b for a, b in taken):
+            continue
+        marks.append({"start": m.start(), "end": m.end(), "month": month,
+                      "day": int(m.group("day4")) if m.group("day4") else None})
+    marks.sort(key=lambda m: m["start"])
+    return marks
+
+
 def split_entries(text: str, year: int | None) -> list[dict]:
     """Cut a run of prose into dated entries, carrying the month forward.
 
@@ -434,32 +552,36 @@ def split_entries(text: str, year: int | None) -> list[dict]:
     a `—20.—` inherits whatever month was last stated. The year does the same
     when the layout missed its display heading.
     """
-    marks = list(ENTRY_START.finditer(text))
+    marks = date_marks(text)
     if not marks:
         return ([{"month": None, "day": None, "year": year,
                   "text": text.strip()}] if text.strip() else [])
 
     entries = []
-    preamble = text[:marks[0].start()].strip()
+    preamble = text[:marks[0]["start"]].strip()
     if preamble:
         entries.append({"month": None, "day": None, "year": year,
                         "text": preamble})
 
     current_month = None
     for n, mark in enumerate(marks):
-        end = marks[n + 1].start() if n + 1 < len(marks) else len(text)
-        body = text[mark.end():end].strip()
+        end = marks[n + 1]["start"] if n + 1 < len(marks) else len(text)
+        body = text[mark["end"]:end].strip()
 
         # a year heading the layout missed, sitting just before this marker
-        head = text[marks[n - 1].end() if n else 0:mark.start()]
+        head = text[marks[n - 1]["end"] if n else 0:mark["start"]]
         found = INLINE_YEAR.search(head.rstrip())
         if found and FIRST_YEAR <= int(found.group(1)) <= LAST_YEAR:
             year = int(found.group(1))
 
-        month = mark.group("month")
-        if month:
-            current_month = MONTHS[strip_accents(month).lower()]
-        day = mark.group("day1") or mark.group("day2")
+        if mark["month"]:
+            current_month = mark["month"]
+        day = mark["day"]
+        # `—El 14 de Julio…` names its own month; believe it over the one being
+        # carried forward.
+        stated = MONTH_AFTER_DAY.match(body)
+        if stated:
+            current_month = MONTHS[strip_accents(stated.group("month")).lower()]
         if not body:
             continue
         # An "entry" consisting of nothing but a sigla is the tail of the one
@@ -665,36 +787,48 @@ def main() -> None:
                  for c in rejected]
     skipped_tables = sorted(tables)
 
-    for pdf_page in chronicle:
-        lines = leaves[pdf_page]
+    # The buffer lives outside the leaf loop, and that is the whole of the fix
+    # for entries cut in half by a page turn. Flushing at the end of every leaf
+    # made 285 of them: a notice that ran over the foot of leaf 595 came out as
+    # two entries, the second undated and opening mid-word -- `juró-` on one and
+    # `el Obispo en manos del Comandante General` on the next. The hyphen
+    # stitching was already there; it only ever saw one leaf at a time.
+    #
+    # It is carried only to the *consecutive* leaf. `chronicle` has holes in it
+    # where the Jurats tables and the documents were lifted out, and running the
+    # buffer across one of those would weld the text on either side of an
+    # appendix sixty leaves long.
+    buffer: list[dict] = []
 
-        buffer: list[dict] = []
+    def flush():
+        if not buffer:
+            return
+        text = ""
+        for ln in buffer:
+            if text.endswith("-"):
+                text = text[:-1] + ln["text"]
+            else:
+                text = (text + " " + ln["text"]).strip()
+        # An entry belongs to the leaf it *opens* on, and may refer to a note
+        # printed on any leaf it runs across.
+        spanned = list(dict.fromkeys(ln["leaf"] for ln in buffer))
+        opened = spanned[0]
+        for entry in split_entries(text, year):
+            body, sigla = lift_sigla(entry["text"])
+            # The notes this entry refers to, by the number printed in it.
+            wanted = {int(m.group(1))
+                      for m in re.finditer(r"[\(\[]\s*(\d{1,2})\s*[\)\]]", body)}
+            notes = [n for leaf in spanned for n in footnotes.get(leaf, [])
+                     if n["number"] in wanted]
+            entries.append({**entry, "text": body, "sources": sigla,
+                            "pdf_page": opened,
+                            "printed": inventory[opened]["printed"],
+                            "ia_leaf": inventory[opened]["ia_leaf"],
+                            **({"notes": notes} if notes else {})})
+        buffer.clear()
 
-        def flush():
-            if not buffer:
-                return
-            text = ""
-            for ln in buffer:
-                if text.endswith("-"):
-                    text = text[:-1] + ln["text"]
-                else:
-                    text = (text + " " + ln["text"]).strip()
-            nonlocal_year = year
-            for entry in split_entries(text, nonlocal_year):
-                body, sigla = lift_sigla(entry["text"])
-                # The notes this entry refers to, by the number printed in it.
-                wanted = {int(m.group(1))
-                          for m in re.finditer(r"[\(\[]\s*(\d{1,2})\s*[\)\]]", body)}
-                notes = [n for n in footnotes.get(pdf_page, [])
-                         if n["number"] in wanted]
-                entries.append({**entry, "text": body, "sources": sigla,
-                                "pdf_page": pdf_page,
-                                "printed": inventory[pdf_page]["printed"],
-                                "ia_leaf": inventory[pdf_page]["ia_leaf"],
-                                **({"notes": notes} if notes else {})})
-            buffer.clear()
-
-        for position, line in enumerate(lines):
+    for n, pdf_page in enumerate(chronicle):
+        for position, line in enumerate(leaves[pdf_page]):
             if not line["text"]:
                 continue
             if CENTURY_LINE.match(line["text"]):
@@ -707,14 +841,18 @@ def main() -> None:
                 headings.append((pdf_page, year))
                 # …and if the heading came glued to its entry, the entry stays.
                 if candidate["rest"]:
-                    buffer.append({**line, "text": candidate["rest"]})
+                    buffer.append({**line, "text": candidate["rest"],
+                                   "leaf": pdf_page})
                 continue
             # A rejected candidate is still not prose: dropping it keeps a stray
             # `1449.` out of the middle of an entry.
             if year_of_line(line)[0] is not None:
                 continue
-            buffer.append(line)
-        flush()
+            buffer.append({**line, "leaf": pdf_page})
+        following = chronicle[n + 1] if n + 1 < len(chronicle) else None
+        if following != pdf_page + 1:
+            flush()
+    flush()
 
     # A leaf inside a numbered document section is a document leaf, whatever its
     # typography: leaves 161-163 are 4- and 6-column tables and also sit inside
