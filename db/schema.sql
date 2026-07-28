@@ -40,6 +40,9 @@ CREATE TABLE IF NOT EXISTS leaf (
 -- One row per word position, in reading order. `text` is what the edition
 -- publishes; `printed` is what the panel voted for where an editorial rule
 -- changed it, so every change is reversible from the database alone.
+-- `variants` holds the readings the panel rejected, on the 18% of positions
+-- where it was not unanimous: a doubtful word can then show what it was
+-- argued about instead of only that it was.
 -- The box is normalised to the scan named in leaf.scan, which is what makes a
 -- facsimile crop reproducible -- and getting that wrong once put every
 -- highlight two words off.
@@ -49,6 +52,7 @@ CREATE TABLE IF NOT EXISTS word (
     text      VARCHAR  NOT NULL,
     tier      VARCHAR  NOT NULL,   -- unanimous | one-dissent | two-dissent | contested
     printed   VARCHAR,             -- the panel's reading, when an editorial rule differs
+    variants  VARCHAR[],           -- what the engines read here and the edition did not
     x0 REAL, y0 REAL, x1 REAL, y1 REAL,
     PRIMARY KEY (pdf_page, idx)
 );

@@ -130,6 +130,12 @@ def assemble(loci: list[dict], panel: list[str],
                            if x["winner"]).strip()
         if printed != group["text"]:
             record["printed"] = printed
+        # What the engines read here and the edition did not print, so the site
+        # can show a doubtful word's rivals rather than a bare question mark.
+        if group["grade"] not in ("unanimous", "adjudicated"):
+            rivals = spans.alternatives(group["loci"], panel, group["text"])
+            if rivals:
+                record["variants"] = rivals
         if record["text"]:
             words.append(record)
         by_line.setdefault(group["line"], []).append(group["text"])

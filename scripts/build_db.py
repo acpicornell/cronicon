@@ -79,7 +79,7 @@ def load_words(con: duckdb.DuckDBPyConnection) -> None:
         INSERT INTO word
         SELECT pdf_page,
                CAST(pos - 1 AS INTEGER)                AS idx,
-               w.text, w.tier, w.printed,
+               w.text, w.tier, w.printed, w.variants,
                w.bbox[1], w.bbox[2], w.bbox[3], w.bbox[4]
         FROM (
             SELECT pdf_page,
@@ -89,8 +89,8 @@ def load_words(con: duckdb.DuckDBPyConnection) -> None:
                            columns = {{
                              pdf_page: 'SMALLINT',
                              words: 'STRUCT(text VARCHAR, tier VARCHAR,
-                                            printed VARCHAR, bbox DOUBLE[],
-                                            line DOUBLE[])[]'
+                                            printed VARCHAR, variants VARCHAR[],
+                                            bbox DOUBLE[], line DOUBLE[])[]'
                            }})
         )
     """)

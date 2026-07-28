@@ -128,20 +128,51 @@ FOOT = """<footer>
 """
 
 
-def mark_doubt(text: str, doubtful: set[str]) -> str:
+DOUBT_NOTE = "lectura discutida pel panell"
+
+
+def doubtful_words(con, pages) -> dict[str, list[str]]:
+    """Doubtful word -> the readings the panel rejected, where it can be sure.
+
+    Marking is by the word as published rather than by position, because the
+    entry text has been hyphen-stitched and re-joined and the word index no
+    longer lines up with the leaf's. That approximation is fine for drawing a
+    dotted underline -- the word really was doubtful somewhere on the leaf --
+    and it is *not* fine for naming the rivals: the same word can be doubtful
+    twice on one leaf and have been argued about differently each time. 9% of
+    them are.
+
+    So the variants are offered only where every doubtful occurrence of that
+    word agrees on them, and elsewhere the mark stays as it was. Showing the
+    union would be telling the reader that engines read something here that
+    they read somewhere else.
+    """
+    rows = con.execute(
+        "SELECT text, variants FROM word WHERE pdf_page IN "
+        f"({','.join(str(p) for p in pages)}) AND tier IN {DOUBTFUL}"
+    ).fetchall()
+    seen: dict[str, set] = {}
+    for word, variants in rows:
+        seen.setdefault(word, set()).add(tuple(variants or ()))
+    return {w: list(v.pop()) if len(v) == 1 else []
+            for w, v in ((w, set(s)) for w, s in seen.items())}
+
+
+def mark_doubt(text: str, doubtful: dict[str, list[str]]) -> str:
     """Underline the words the panel argued about, leaving the rest clean.
 
-    Matched on the word as published, not on position: the entry text has been
-    hyphen-stitched and re-joined, so the word index no longer lines up with the
-    leaf's. Approximate, and honest about it -- it can only ever mark a word that
-    really was doubtful somewhere on that leaf.
+    The title names what it read instead, when that is known: a reader hovering
+    a dotted word wants to know what the argument was, and `?` alone tells them
+    only that there was one.
     """
     out = []
     for token in text.split(" "):
         bare = token.strip(".,;:»«()¿?¡!—-")
         if bare and bare in doubtful:
-            out.append(f'<span class="d" title="lectura discutida pel panell">'
-                       f'{esc(token)}</span>')
+            rivals = doubtful[bare]
+            note = (f"{DOUBT_NOTE}. També s'hi llegia: "
+                    + " · ".join(rivals)) if rivals else DOUBT_NOTE
+            out.append(f'<span class="d" title="{esc(note)}">{esc(token)}</span>')
         else:
             out.append(esc(token))
     return " ".join(out)
@@ -242,12 +273,9 @@ def year_page(con, year: int, years: list[int], sigla: dict[str, str]) -> str:
         FROM entry WHERE year = ? ORDER BY id
     """, [year]).fetchall()
     pages = {e[5] for e in entries}
-    doubtful = set()
+    doubtful: dict[str, list[str]] = {}
     if pages:
-        doubtful = {r[0] for r in con.execute(
-            f"SELECT DISTINCT text FROM word WHERE pdf_page IN "
-            f"({','.join(str(p) for p in pages)}) AND tier IN {DOUBTFUL}"
-        ).fetchall()}
+        doubtful = doubtful_words(con, pages)
 
     i = years.index(year)
     prev_y = years[i - 1] if i else None
@@ -310,9 +338,7 @@ def document_page(con, doc) -> str:
     at the top rather than leaving the reader to assume the two are alike.
     """
     _id, numeral, title, genre, first, last, words, contested, text = doc
-    doubtful = {r[0] for r in con.execute(
-        "SELECT DISTINCT text FROM word WHERE pdf_page BETWEEN ? AND ? "
-        f"AND tier IN {DOUBTFUL}", [first, last]).fetchall()}
+    doubtful = doubtful_words(con, range(first, last + 1))
 
     paras = [p for p in text.split("\n") if p.strip()]
     body = "".join(f'<p id="p{i}">{mark_doubt(p, doubtful)}</p>'

@@ -314,6 +314,25 @@ def best_reading(before: dict, after: dict, panel: list[str],
         WORDISH.sub("", r.lower()) in exact, counts[r], len(r), r))
 
 
+def alternatives(loci: list[dict], panel: list[str], chosen: str) -> list[str]:
+    """What the engines read here that the edition did not print.
+
+    Kept so the site can show a doubtful word's rivals instead of a bare
+    question mark: the reader is being told the panel argued, and the argument
+    is the useful part. Blanks are dropped -- an engine that placed nothing in
+    this slot is not offering a reading of it, which is the whole lesson of the
+    span re-vote above.
+    """
+    seen: list[str] = []
+    for engine in panel:
+        read = " ".join(locus["variants"].get(engine, "") or ""
+                        for locus in loci).strip()
+        read = SPACE.sub(" ", read)
+        if read and read != chosen and read not in seen:
+            seen.append(read)
+    return seen
+
+
 def union(boxes: list[list[float]]) -> list[float]:
     """One box covering the whole span, so a crop of it shows what was voted on."""
     return [min(b[0] for b in boxes), min(b[1] for b in boxes),
