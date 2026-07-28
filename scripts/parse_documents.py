@@ -176,11 +176,14 @@ def main() -> None:
 
     inventory = {leaf["pdf_page"]: leaf for leaf in
                  json.loads((PROJECT / "data" / "inventory.json").read_text())["leaves"]}
+    # Where each Jurats list stops, and so where the numbered sections may start.
+    # This used to need patching from `annotated_not_parsed`, because the two
+    # annotated series contributed no leaves and the scan for section numerals
+    # then began inside the list's own prose -- leaf 58 says «...ejercieron
+    # aquella magistratura, siglo XIV», and `XIV` became a section. Now that
+    # those leaves are parsed, `leaves` covers them and the patch would undo it.
     jurats_end = {s["title_leaf"]: max(s["leaves"] + [s["title_leaf"]])
                   for s in series["parsed"]}
-    jurats_end.update({p: max(q for q in series["annotated_not_parsed"] + [p]
-                              if q - p < 12 and q >= p)
-                       for p in jurats if p in (58, 114)})
 
     blocks = []
     for first, last in block_bounds(jurats, chronicle):
