@@ -145,6 +145,60 @@ Both scans are needed: either one alone costs about 2 points and doubles the
 ties. The weak `abbyy-bne` layer still earns its seat — dropping it *lowers*
 accuracy, because its errors are uncorrelated with the others'.
 
+### 3b. The panel that actually builds the edition, scored at last
+
+Everything under `data/text/`, `data/entries/`, `data/jurats/`,
+`data/documents/` and `data/sigla/` is built from **`consensus6_swap_swapk`** —
+`abbyy-ia`, `tess-ia-300dpi-spa_old-cat-lat`, `vision-bne`, `vision-ia`,
+`paddle-ppocrv6`, `kraken-cronicon` — and not from the panel recommended in §8.
+Until now that panel had never been scored: `benchmark.py` read one hard-coded
+directory, and PaddleOCR and Kraken were drawn after the sample was frozen, so
+the sample had no column for them.
+
+It can be scored without re-adjudicating anything. Their readings are already on
+disk in the consensus, and a position is identified by its **word box**, which
+does not renumber when a leaf's geometry changes — an index does. Joining on the
+box recovers 495 of the 550 adjudicated positions; the other 55 are refused
+because some engine the two records share reads them differently, which means the
+box has been re-tokenised and they are no longer the same word. Every row below
+is scored on those same 495, so the ordering is meaningful even though the
+absolute values sit above the §3 figures (the 55 excluded positions are the hard
+ones).
+
+| panel | engines | accuracy | ties | unanimous and wrong |
+|---|---:|---:|---:|---:|
+| all eight | 8 | 99.07% | 7 | 0 / 315 |
+| **`consensus6_swap_swapk` — production** | **6** | **99.04%** | **4** | **0 / 348** |
+| `consensus7` (+kraken) | 7 | 98.87% | 6 | 0 / 333 |
+| `consensus7_paddle` | 7 | 98.68% | 7 | 0 / 324 |
+| `consensus6_swap` (paddle for tess-bne) | 6 | 98.49% | 11 | 0 / 342 |
+| the panel recommended in §8 | 6 | 98.32% | 11 | 0 / 352 |
+| IA scan only | 5 | 99.43% | 9 | 0 / 355 |
+| BNE scan only | 3 | 95.78% | 22 | **2 / 386** |
+
+**The drift was an improvement, and it is now evidence rather than habit.** The
+production panel is the best six, ties four times where the documented panel ties
+eleven, and shows no shared error in 348 unanimous positions. The eight-engine
+panel matches it to within noise and is not adopted: over the whole book it
+*raises* the queue (see §4c), and three more voters buy 0.03 points.
+
+Two rows are worth reading against each other:
+
+- **`BNE scan only` is the one panel in the table with a measured shared error** —
+  two positions where all three agreed and all three were wrong. It is the reason
+  a three-engine fallback is not an option anywhere in this pipeline, however
+  attractive its numbers look on a particular leaf.
+- **`IA scan only` scores highest and must not be believed.** Five engines over
+  one image vote together; that is unanimity without independence, and §8 already
+  warns about it. It is also the configuration that collapses on the leaves where
+  that image is defective — see §4d.
+
+A caveat that this exercise turned up: **the sample was drawn with Tesseract
+`spa_old`, while every consensus since has been built with `spa_old+cat+lat`.**
+The strata, and therefore the weighting, still come from the drawing panel, so
+the comparison holds — but a number produced this way is not the 97.25% of §3,
+and `benchmark.py` now says so on every run where the two panels differ.
+
 ---
 
 ## 4. How much human review, and for what gain
@@ -214,6 +268,29 @@ further halving of the error rate.
 
 The recommended target is the middle row: **review the contested words, ship at
 ~1 error in 200, and let the two-dissent tier be a later refinement.**
+
+### 4c. A seventh engine makes the queue bigger, twice
+
+Each candidate panel has been run over all 614 leaves, so this is counted:
+
+| panel | unanimous | contested | vs. the six |
+|---|---:|---:|---:|
+| `consensus6_swap_swapk` (production, 6) | 77.7% | **24 607** | −6% |
+| the panel of §8 (6) | 71.3% | 26 298 | — |
+| `consensus7_paddle` (7) | 70.3% | 32 040 | **+22%** |
+| `consensus7` (+kraken, 7) | 69.6% | 35 328 | **+34%** |
+
+Both seventh voters are *more accurate* than several sitting members — Kraken
+reads body pages at 96.7%, better than any panel engine, and PaddleOCR gets 73%
+of the contested tier where the best panel engine manages 48%. Neither helps.
+Accuracy and complementarity are different properties: a seventh voice breaks
+agreements that were already right more often than it settles ones that were
+wrong.
+
+**The panel is saturated at six.** Adding engines is not the lever, and this is
+now the second independent measurement saying so. What did work was *swapping* —
+replacing the two weakest readings with Kraken and PaddleOCR keeps six voters and
+takes the queue down.
 
 ---
 

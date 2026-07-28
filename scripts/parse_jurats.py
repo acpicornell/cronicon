@@ -5,19 +5,20 @@ the city and kingdom year by year -- `Jurados de la c. y r. de Mallorca durante
 el siglo XV.` and its five siblings. Six seats a year, five centuries: it is the
 single most queryable thing in the book, and as running text it is unusable.
 
-The lists come in two typographies and only one of them is tractable here.
+The lists come in two typographies, and the difficulty in both is the reading
+order rather than the parsing.
 
   compact     a bare `1418.` and six names under it, three such columns to the
-              leaf. Regular enough to parse outright, and this is what the
-              script does.
+              leaf.
 
-  annotated   `AÑO 1312.`, then `1.—Guillermo de Montsó` with a dot leader
-              running to a brace, and beside it a column of notes on which
-              manuscript gives which name. Leaves 58-60 and 114-121.
+  annotated   `AÑO 1312.` centred over the pair of columns, then
+              `1.—Guillermo de Montsó` with a dot leader running to a brace, and
+              beside it a column of notes on which manuscript gives which name.
+              Leaves 58-60 and 114-121.
 
-Neither difficulty is in the parsing. What the six engines are made to share is a
-reading order, and it comes from Tesseract's line segmentation; on these leaves
-that segmentation is wrong, in two different ways.
+What the six engines are made to share is a reading order, and it comes from
+Tesseract's line segmentation. On these leaves that segmentation is wrong, in two
+different ways, and each needed its own consensus.
 
 On the compact leaves it fails quietly. Tesseract joins a line of column one to a
 line of column two across the gutter -- leaf 312 opens with `Pedro Descatlar.
@@ -25,18 +26,27 @@ Alfonso`, one box from x 0.10 to 0.81 -- and every year heading caught in such a
 line disappears. Worse, `layout.find_columns` refuses a boundary that more than a
 tenth of the lines cross, so the merged lines hide the very boundary that would
 have separated them. `consensus.py --split-gutter` cuts a line where the gap in
-it is four times a word space, which breaks the circle; this script reads those
-leaves from the result. It is worth twelve years and seventy-seven names, most of
-them in the 16th-century list.
+it is four times a word space, which breaks the circle. Worth twelve years and
+seventy-seven names, most of them in the 16th-century list.
 
-On the annotated leaves it fails outright: Tesseract returns nothing at all right
-of x 0.47 on leaf 115, so the whole column of notes is absent from the panel, and
-what it does return of the names is broken (`Domingo.` where the page reads
-`3.—Berenguer Domingo`). `--geometry abbyy-ia` recovers the notes column in full
--- `Limitase Villafranca á decir que no están en` and the rest, out to x 0.89 --
-but leaves the name column no better. Those eleven leaves are therefore still not
-parsed, and this script counts what it is leaving behind rather than guessing at
-it.
+On the annotated leaves it fails outright, and no single change fixes it.
+Tesseract returns nothing at all right of x 0.47 on leaf 115, so the notes column
+is absent from the panel; ABBYY on the BNE scan reads all three regions, but
+under a page-wide token alignment the engines' readings land in the wrong slots
+and the names come back *empty*, because each engine walks the leaf in a
+different order. Two changes together make it legible:
+
+    consensus.py --geometry abbyy-bne --align line
+
+the first so the boxes exist, the second so the reading order stops mattering --
+a printed line competes only with the engine text that overlaps it on the page.
+Leaf 115 then reads `AÑO 1312.`, `2.—Guillermo de Montsó`, and the note
+`Limítase Villafranca á decir que no están en...`, all off the same leaf.
+
+That recovered the whole 13th-century series, which was empty, and took the 14th
+back from 1375 to 1302: **+279 names, +59 years**. The names arrive at low
+certainty -- these are the hardest leaves in the book -- and go to review as
+such.
 
 Usage:
   python scripts/parse_jurats.py
@@ -64,8 +74,18 @@ SERIES = re.compile(
     re.IGNORECASE)
 ROMAN = {"XIII": 13, "XIV": 14, "XV": 15, "XVI": 16, "XVII": 17, "XVIII": 18}
 
-# The annotated form, which this script does not attempt.
-ANNOTATED = re.compile(r"^\s*(A[ÑN]O|ANO)[ .]*1[2-8]")
+# The annotated form: `AÑO 1312.` centred over the pair of columns.
+ANNOTATED = re.compile(r"^\s*(A[ÑN]O|ANO)[ .]*(1[2-8]\d\d)")
+
+# `2.—Guillermo de Montsó. . . .` -- the seat number is printed, so it is read
+# rather than counted, and a year that names only its 1st and 4th seats keeps
+# them in the right places. `I` and `l` for 1 are the usual misreads of the
+# figure in this face.
+NUMBERED_SEAT = re.compile(r"^\s*([1-6IilJ])\s*[.,]\s*[—–\-]+\s*(.*)$")
+SEAT_DIGIT = {"I": 1, "i": 1, "l": 1, "J": 1}
+# The brace sits about here; everything to its right is the notes column, which
+# is commentary on the sources rather than the list itself.
+NAME_COLUMN = 0.50
 
 # The numeral that opens the next appendix. The 18th-century list ends when the
 # Jurats themselves did, and `II. Noticias é indicaciones curiosas` starts on the
@@ -128,12 +148,60 @@ def read_leaf(page: int, lines: list[dict], century: int) -> list[dict]:
     return blocks
 
 
+def read_annotated_leaf(page: int, lines: list[dict], century: int) -> list[dict]:
+    """The year blocks an annotated leaf holds.
+
+    Different from the compact form in three ways, all of them helpful once the
+    leaf can be read at all: the year is labelled (`AÑO 1312.`) rather than bare,
+    the seat number is printed beside each name, and a column of notes on the
+    manuscript sources runs alongside. The notes are skipped here -- they are
+    commentary on where a name comes from, not the list -- and the printed seat
+    number is trusted over counting, so a year that names only its 1st and 4th
+    keeps them in the right seats instead of sliding them up.
+    """
+    blocks: list[dict] = []
+    current: dict | None = None
+    for line in lines:
+        text = line["text"].strip()
+        if not text:
+            continue
+
+        label = ANNOTATED.match(text)
+        if label:
+            year = int(label.group(2))
+            if (year - 1) // 100 + 1 != century:
+                continue
+            current = {"year": year, "note": "", "seats": [None] * SEATS,
+                       "readings": 0, "pdf_page": page}
+            blocks.append(current)
+            continue
+
+        if current is None or line["bbox"][0] >= NAME_COLUMN:
+            continue                    # the notes column, or text before a year
+        seat = NUMBERED_SEAT.match(text)
+        if not seat:
+            continue
+        n = SEAT_DIGIT.get(seat.group(1), None)
+        if n is None:
+            n = int(seat.group(1))
+        name = seat.group(2).strip(" .·•")
+        if not name or len(name) > NAME_MAX:
+            continue
+        current["seats"][n - 1] = {"name": name, "tier": line["worst_tier"]}
+    return blocks
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--consensus", default="consensus6_swap_swapk")
     ap.add_argument("--tables", default="consensus6_swap_swapk_gutter",
                     help="consensus built with --split-gutter, used for the "
                          "leaves it covers")
+    ap.add_argument("--annotated", default="consensus6_swap_swapk_annotated",
+                    help="consensus for the annotated leaves, built with "
+                         "--geometry abbyy-bne --align line; it is the only "
+                         "combination that reads the names, the year labels and "
+                         "the notes column off the same leaf")
     ap.add_argument("--report", action="store_true")
     args = ap.parse_args()
 
@@ -148,9 +216,16 @@ def main() -> None:
     # is a separate directory on purpose: changing the geometry changes every
     # stratum, and the frozen sample is keyed to the book's own consensus.
     tables = OCR / args.tables
+    annotated_dir = OCR / args.annotated
     leaves = {}
     regeometried = []
+    annotated_leaves: set[int] = set()
     for page in targets.resolve("all"):
+        special = annotated_dir / f"p{page:04d}.json"
+        if special.exists():
+            leaves[page] = page_lines(special)
+            annotated_leaves.add(page)
+            continue
         special = tables / f"p{page:04d}.json"
         plain = source / f"p{page:04d}.json"
         if special.exists():
@@ -176,12 +251,17 @@ def main() -> None:
             if blocks and any(SECTION_HEAD.match(ln["text"])
                               for ln in leaves[page][:4]):
                 break
-            if any(ANNOTATED.match(ln["text"]) for ln in leaves[page]):
+            if page in annotated_leaves:
+                found = read_annotated_leaf(page, leaves[page], century)
+            elif any(ANNOTATED.match(ln["text"]) for ln in leaves[page]):
+                # Annotated, but no consensus was built for it in the geometry
+                # that can read it. Counted, not guessed at.
                 annotated.append(page)
                 if blocks:
                     break
                 continue
-            found = read_leaf(page, leaves[page], century)
+            else:
+                found = read_leaf(page, leaves[page], century)
             # A list runs forwards. A leaf that adds no year beyond the ones
             # already collected is not the next leaf of it: leaf 230 continues a
             # document dated 1403 while the list above has reached 1500, and
@@ -246,8 +326,13 @@ def main() -> None:
 
     left = sorted(set(annotated))
     print(f"\n{len(regeometried)} leaves read from the gutter-split consensus")
-    print(f"\nannotated form, not parsed: {len(left)} leaves {left}")
-    print("  the panel's line boxes lose their text; they need re-detecting")
+    print(f"{len(annotated_leaves)} leaves read from the annotated consensus "
+          f"(--geometry abbyy-bne --align line)")
+    if left:
+        print(f"\nannotated form, still not parsed: {len(left)} leaves {left}")
+        print(f"  build them with: python scripts/consensus.py --pages "
+              f"{','.join(str(p) for p in left)} --swap-paddle --swap-kraken "
+              f"--geometry abbyy-bne --align line --out data/ocr/{args.annotated}")
 
     if args.report:
         by_year: Counter = Counter((r["century"], r["year"]) for r in rows)

@@ -42,9 +42,24 @@ Measured, not assumed — see `docs/OCR_BENCHMARK.md`:
   and the cedilla in Mallorcan surnames needs the Catalan model.
 - Six-engine majority vote: 97.25%. Where all six agree (70% of tokens) they were
   right 360/360, bounding shared errors at ≤0.83% (95%, one-sided).
+- **The panel that builds the edition is `consensus6_swap_swapk`** — `abbyy-ia`,
+  `tess-ia-300dpi-spa_old-cat-lat`, `vision-bne`, `vision-ia`, `paddle-ppocrv6`,
+  `kraken-cronicon` — and it is the default of every parser. It is the best six
+  measured (99.04% on the 495 positions all panels can be scored on, 4 ties
+  against 11, no shared error in 348 unanimous positions), and 24 607 contested
+  against 26 298. `benchmark.py --consensus <dir>` scores any panel; it recovers
+  the engines the sample predates **by word box**, because an index renumbers
+  when a leaf's geometry changes and a box does not.
+- **A seventh engine has been tried twice and made the queue worse both times**:
+  Kraken 26 298 → 35 328 (+34%), PaddleOCR → 32 040 (+22%), despite both being
+  more accurate than several sitting members. Accuracy and complementarity are
+  not the same thing. What worked was *swapping*, not adding.
 - **Do not stack two Tesseract variants on the same image in the panel.** It
   scores higher (97.51%) but only by voting with itself; unanimity is the
   guarantee and near-clones corrupt it. One engine per scan.
+- **A three-engine fallback is not available.** The BNE-only trio is the one
+  panel with a *measured* shared error — 2 wrong in 386 unanimous positions —
+  so however good it looks on a particular leaf, it cannot carry the accept rule.
 - Upscaling is not resolution: Tesseract on the BNE scan interpolated to 600 dpi
   scores *worse* than the same engine at native 200 dpi.
 - Reviewing the contested ~3% of words (~16 000 decisions) reaches ~1 error in
@@ -179,15 +194,46 @@ segmentation, which is wrong on these leaves in two different ways.
   had 34 gaps over 0.03 against 3 on a clean table leaf. Worth 12 years and 77
   names. It writes to `consensus…_gutter`, never over the book's consensus:
   changing geometry changes every stratum and would orphan the frozen sample.
-- **Annotated form** (`AÑO 1312.`, `1.—Guillermo de Montsó` with a dot leader to
-  a brace, and a column of notes on which manuscript gives which name, leaves
-  58–60 and 114–121) — **still open.** Tesseract returns nothing at all right of
-  x 0.47 on leaf 115, so the notes column is absent from the panel entirely.
-  `consensus.py --geometry abbyy-ia` recovers it in full (out to x 0.89) but
-  leaves the name column no better.
+- **Annotated form** (`AÑO 1312.` centred over the pair of columns,
+  `1.—Guillermo de Montsó` with a dot leader to a brace, and a column of notes on
+  which manuscript gives which name, leaves 58–60 and 114–121) — **fixed, and it
+  took two changes at once.** Tesseract returns nothing at all right of x 0.47 on
+  leaf 115, so the notes column is absent from the panel entirely; ABBYY on the
+  BNE scan reads all three regions, but under the page-wide token alignment the
+  engines' readings land in the notes column's slots and **the names come back
+  empty**, because each engine walks the leaf in a different order. The pair that
+  works is
+
+  ```sh
+  consensus.py --pages 58,59,60,114,115,116,117,118,119,120,121 \
+      --swap-paddle --swap-kraken --geometry abbyy-bne --align line \
+      --out data/ocr/consensus6_swap_swapk_annotated
+  ```
+
+  the geometry so the boxes exist, `--align line` so the reading order stops
+  mattering. It recovered the **entire 13th-century series**, which was empty,
+  and took the 14th back from 1375 to 1302: 1 747 → 1 949 names, 297 → 356 years,
+  0 leaves left unread. The new names are mostly one-dissent or worse and go to
+  review as such; `AÑO 1240.` really is what leaf 58 prints, four years before
+  the Jurats were instituted, and under it five rows of leader dots and
+  `6.—Pedro Ferrer.` — checked against the facsimile.
 - Not by having a model read the page. Family names of 1300s Mallorca are
   exactly where a language model silently normalises `Za-flor` to `Zaflor` and
   invents a plausible surname, with no consensus left to catch it.
+
+**`--align line` is the general form of that fix and is not the default.**
+`project()` matches two flat token streams over the whole leaf, which works only
+while the engines agree what order the leaf is read in. Aligning by geometry
+instead — a printed line competes only with the engine text overlapping it —
+is dramatically better where the layout is contested (leaf 453 36.1% → 6.4%
+contested, leaf 312 38.7% → 11.1%) and **worse on ordinary prose**, where the
+page-wide match already works and this one costs unanimity (leaf 200: 86.1% →
+7.4% unanimous). Unanimity is the accept rule, so it stays opt-in until a round
+of adjudication on those leaves says what unanimity is worth under it. A fitted
+vertical *scale* was tried first and was ten times worse than doing nothing: the
+two scans differ by where the page was cropped, not by how much it was
+stretched, so the offset is a constant and fitting a slope turns it into an
+error that grows down the leaf.
 
 Bounding each series: it ends at the next series' title, at a roman-numeral
 section head (`II. Noticias é indicaciones curiosas` starts at 1702 on the leaf
@@ -271,25 +317,40 @@ Also: **derive the affected leaves from the consensus, never from
 `data/text/`** — that is the rule's own output, and reading the signal from it
 made the detection vanish the moment the repair had run once.
 
-## Where we left off (27 Jul 2026)
+## Where we left off (28 Jul 2026)
 
-Panel of six is measured and closed pending one open experiment.
+The panel is closed at six, ratified against the adjudications, and the engine
+question is settled: **the marginal engine is not the lever.** Kraken and
+PaddleOCR are *in* the panel, having replaced the two weakest readings; adding
+either as a seventh was measured and rejected. See §Toolchain above and
+`docs/OCR_BENCHMARK.md` §3b and §4c.
 
-- **Kraken fine-tune: rejected.** 96.7% on body pages — better than any panel
-  engine — yet the seven-engine consensus made the queue *worse*: 26 298 -> 35 328
-  contested (+34%). Accuracy and complementarity are different things. Model kept
-  at `models/cronicon/best_0.9985.safetensors` for reference.
-- **PaddleOCR PP-OCRv6: in progress.** 96.2% on body pages and, unusually, 73% on
-  the *contested* tier where the best panel engine manages 48%. That profile is
-  what a seventh vote actually needs. Its full-book run was interrupted partway;
-  `scripts/ocr_paddle.py --pages all` is idempotent and resumes.
-- **Next command:** finish that run, then
-  `consensus.py --pages all --with-paddle` and compare its contested count against
-  the 26 298 of the six-engine panel. That single number decides whether the panel
-  opens to seven.
+What the ratification exposed, and what is now the work:
+
+- **The IA scan is defective on a short run of leaves, and the panel puts five of
+  its six votes there.** Comparing each recogniser against itself on the two
+  scans isolates leaves **93, 94, 97, 98** (and marginally 57, 60): the
+  IA-reading engines' malformed-token rate jumps 5–13 points while the BNE ones
+  stay at 0.6–2%. The facsimile confirms it — IA leaf 96 is smeared, BNE p98 is
+  pristine. Those four leaves carry **1 909 contested positions, 7.8% of the
+  whole queue**. Changing the *geometry* does not help; changing the *scan* does.
+- **Two thirds of the review queue is a segmentation artefact.** Of 24 607
+  contested positions, 46.6% have some engine returning an empty string and 27.8%
+  have a multi-word variant; only 34.8% are a genuine disagreement about
+  characters. On **25 leaves the engines do not even agree how many columns there
+  are**, and there the contested rate is 21.96% against 4.70% everywhere else.
 - **Scope decision:** the introduction (12 leaves) is dropped from the edition, but
   its glossary of manuscript sigla must still be extracted by hand — the body's
   source attributions are meaningless without it.
+
+### Negative results worth not repeating
+
+- Anchoring the token alignment on a folded key (lowercase, accents and
+  punctuation stripped) instead of exact equality: **no gain** (leaf 98
+  66.7% → 61.9%, leaf 163 worse). The alignment is not failing for want of
+  anchors; the readings genuinely diverge.
+- Swapping the geometry engine on the blurred leaves (`tess-bne`, `abbyy-ia` as
+  the box source): **no gain**. The boxes were never the problem there.
 
 ## Backlog
 

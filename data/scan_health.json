@@ -1,0 +1,143 @@
+{
+ "threshold": 0.03,
+ "pairs": [
+  [
+   "abbyy-ia",
+   "abbyy-bne"
+  ],
+  [
+   "tess-ia-300dpi-spa_old-cat-lat-psm3",
+   "tess-bne-400dpi-spa_old-psm3"
+  ],
+  [
+   "vision-ia-300dpi-corr",
+   "vision-bne-400dpi-corr"
+  ]
+ ],
+ "leaves_measured": 611,
+ "prefer": {
+  "93": "bne",
+  "94": "bne",
+  "97": "bne",
+  "98": "bne",
+  "117": "ia",
+  "118": "ia",
+  "121": "ia",
+  "122": "ia",
+  "209": "ia",
+  "383": "ia",
+  "384": "ia"
+ },
+ "detail": [
+  {
+   "pdf_page": 93,
+   "delta": 0.0491,
+   "per_pair": {
+    "abbyy": 0.0491,
+    "tess": 0.0614,
+    "vision": 0.0152
+   },
+   "prefer": "bne"
+  },
+  {
+   "pdf_page": 94,
+   "delta": 0.0507,
+   "per_pair": {
+    "abbyy": 0.0507,
+    "tess": 0.0742,
+    "vision": 0.0094
+   },
+   "prefer": "bne"
+  },
+  {
+   "pdf_page": 97,
+   "delta": 0.0689,
+   "per_pair": {
+    "abbyy": 0.0689,
+    "tess": 0.0805,
+    "vision": 0.0013
+   },
+   "prefer": "bne"
+  },
+  {
+   "pdf_page": 98,
+   "delta": 0.1334,
+   "per_pair": {
+    "abbyy": 0.1481,
+    "tess": 0.1334,
+    "vision": 0.0141
+   },
+   "prefer": "bne"
+  },
+  {
+   "pdf_page": 117,
+   "delta": -0.0309,
+   "per_pair": {
+    "abbyy": -0.155,
+    "tess": -0.0309,
+    "vision": 0.0249
+   },
+   "prefer": "ia"
+  },
+  {
+   "pdf_page": 118,
+   "delta": -0.0357,
+   "per_pair": {
+    "abbyy": -0.0943,
+    "tess": -0.0357,
+    "vision": 0.0037
+   },
+   "prefer": "ia"
+  },
+  {
+   "pdf_page": 121,
+   "delta": -0.0458,
+   "per_pair": {
+    "abbyy": -0.1916,
+    "tess": -0.0458,
+    "vision": -0.011
+   },
+   "prefer": "ia"
+  },
+  {
+   "pdf_page": 122,
+   "delta": -0.148,
+   "per_pair": {
+    "abbyy": -0.2041,
+    "tess": -0.148,
+    "vision": -0.0217
+   },
+   "prefer": "ia"
+  },
+  {
+   "pdf_page": 209,
+   "delta": -0.0415,
+   "per_pair": {
+    "abbyy": -0.105,
+    "tess": -0.0415,
+    "vision": 0.012
+   },
+   "prefer": "ia"
+  },
+  {
+   "pdf_page": 383,
+   "delta": -0.0372,
+   "per_pair": {
+    "abbyy": -0.0387,
+    "tess": -0.0372,
+    "vision": 0.0026
+   },
+   "prefer": "ia"
+  },
+  {
+   "pdf_page": 384,
+   "delta": -0.0398,
+   "per_pair": {
+    "abbyy": -0.0398,
+    "tess": -0.0425,
+    "vision": 0.0038
+   },
+   "prefer": "ia"
+  }
+ ]
+}

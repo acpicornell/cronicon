@@ -3,22 +3,37 @@
   {
    "century": 13,
    "title_leaf": 58,
-   "leaves": [],
-   "years": 0,
-   "names": 0,
-   "span": null,
+   "leaves": [
+    58,
+    59,
+    60
+   ],
+   "years": 19,
+   "names": 57,
+   "span": [
+    1240,
+    1300
+   ],
    "backwards": 0
   },
   {
    "century": 14,
    "title_leaf": 114,
    "leaves": [
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
     122
    ],
-   "years": 24,
-   "names": 136,
+   "years": 74,
+   "names": 281,
    "span": [
-    1375,
+    1302,
     1400
    ],
    "backwards": 0
@@ -91,17 +106,5 @@
    "backwards": 0
   }
  ],
- "annotated_not_parsed": [
-  58,
-  59,
-  60,
-  114,
-  115,
-  116,
-  117,
-  118,
-  119,
-  120,
-  121
- ]
+ "annotated_not_parsed": []
 }

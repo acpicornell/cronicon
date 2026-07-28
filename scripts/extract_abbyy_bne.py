@@ -28,7 +28,15 @@ OUT = PROJECT / "data" / "ocr" / "abbyy_bne"
 
 
 def page_lines(page: fitz.Page) -> list[dict]:
-    """Lines with their boxes, in PDF points, unordered."""
+    """Lines with their boxes, in PDF points, unordered.
+
+    The per-word boxes are kept as well as the line they compose. They cost
+    nothing -- PyMuPDF returns them and an earlier version threw them away when
+    grouping -- and they make this engine usable as a source of *geometry*, not
+    only of text. That matters on the annotated Jurats leaves, where Tesseract
+    returns nothing at all right of x 0.47 and the whole column of notes on which
+    manuscript gives which name is absent from the panel; ABBYY read it.
+    """
     words = page.get_text("words")  # x0, y0, x1, y1, word, block, line, word_no
     grouped: dict[tuple[int, int], list] = {}
     for w in words:
@@ -41,6 +49,8 @@ def page_lines(page: fitz.Page) -> list[dict]:
             "text": " ".join(w[4] for w in ws),
             "bbox": [min(w[0] for w in ws), min(w[1] for w in ws),
                      max(w[2] for w in ws), max(w[3] for w in ws)],
+            "words": [{"text": w[4], "bbox": [w[0], w[1], w[2], w[3]]}
+                      for w in ws],
         })
     return lines
 
