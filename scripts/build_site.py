@@ -132,20 +132,74 @@ def masthead(depth: int = 0, here: str = "") -> str:
 """
 
 
-FOOT = """<footer>
+GITHUB = "https://github.com/acpicornell/corpusbalear"
+GH_ICON = ('<svg class="gh" viewBox="0 0 16 16" width="15" height="15" '
+           'aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 '
+           '8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49'
+           '-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01'
+           '-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51'
+           '-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02'
+           '.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27'
+           '1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15'
+           ' 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2'
+           ' 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>')
+
+
+def foot(depth: int = 0) -> str:
+    """The foot, in the shape the portal and poblacio use.
+
+    Two paragraphs of links was not a footer. What belongs here is what a
+    reader needs when they have finished reading: who made it, how to cite it,
+    what they may do with it, and where the sources are.
+    """
+    up = "../" * depth
+    return f"""<footer>
   <div class="wrap">
-    <p>Transcripció obtinguda pel consens de sis reconeixedors independents.
-       <strong>Cap model generatiu ha escrit ni un caràcter del text.</strong>
-       Cada paraula duu el seu grau de certesa; les dubtoses van marcades.</p>
-    <p><a href="metode.html">El mètode i les xifres</a> ·
-       <a href="https://archive.org/details/CroniconMayoricenseCampaner">Facsímil
-       a l'Internet Archive</a> ·
-       <a href="data/">Dades en parquet</a></p>
+    <div class="footer-grid">
+      <div class="footer-about">
+        <p class="footer-brand">Cronicón Mayoricense</p>
+        <p>Transcripció obtinguda pel consens de sis reconeixedors
+           independents. <strong>Cap model generatiu ha escrit ni un caràcter
+           del text.</strong> Cada paraula duu el seu grau de certesa i les
+           dubtoses van marcades.</p>
+      </div>
+      <div class="footer-col">
+        <h3>L'edició</h3>
+        <a href="{up}anys/">Els anys</a>
+        <a href="{up}documents/">Els documents</a>
+        <a href="{up}abreviatures/">Les abreviatures</a>
+        <a href="{up}metode.html">El mètode i les xifres</a>
+      </div>
+      <div class="footer-col">
+        <h3>Les fonts</h3>
+        <a href="https://archive.org/details/CroniconMayoricenseCampaner"
+           rel="noopener">Facsímil a l'Internet Archive</a>
+        <a href="https://bdh.bne.es/" rel="noopener">Biblioteca Nacional</a>
+        <a href="{up}data/">Dades en parquet</a>
+        <a href="{GITHUB}" rel="noopener">{GH_ICON}Codi al repositori</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Antoni C. Picornell Company ·
+         <a href="https://creativecommons.org/licenses/by-nc/4.0/"
+            rel="noopener">CC BY-NC 4.0</a>
+         (reutilització no comercial amb atribució).</p>
+      <p>Com citar: Picornell Company, A. C. <em>Cronicón Mayoricense</em>,
+         edició digital del text d'Álvaro Campaner (Palma, 1881).
+         cronicon.corpusbalear.org</p>
+    </div>
   </div>
 </footer>
 </body>
 </html>
 """
+
+
+def tail(depth: int = 0) -> str:
+    """The foot with the script that hides the uncertainty marks, at any depth."""
+    up = "../" * depth
+    return foot(depth).replace(
+        "</body>", f'<script src="{up}app.js"></script>\n</body>')
 
 
 DOUBT_NOTE = "lectura discutida pel panell"
@@ -306,7 +360,7 @@ def year_page(con, year: int, years: list[int], sigla: dict[str, str]) -> str:
                   f"Mayoricense de Campaner (1881).",
                   f"{SITE}/anys/{year}/", depth=2),
              masthead(depth=2, here="anys/"),
-             '<main class="wrap">',
+             '<main class="wrap read">',
              f'<nav class="yearnav">',
              f'<a href="../{prev_y}/">← {prev_y}</a>' if prev_y else "<span></span>",
              f'<h2>{year}</h2>',
@@ -370,8 +424,7 @@ def year_page(con, year: int, years: list[int], sigla: dict[str, str]) -> str:
     # The year pages are where the uncertainty marks actually are, so they are
     # the pages that most need the script that hides them. They shipped without
     # it: the preference was stored on the index and then never applied.
-    parts.append(FOOT.replace("</body>",
-                              '<script src="../../app.js"></script>\n</body>'))
+    parts.append(tail(2))
     return "\n".join(parts)
 
 
@@ -397,7 +450,7 @@ def document_page(con, doc) -> str:
                  f"Mayoricense de Campaner (1881), fulls {first}–{last}.",
                  f"{SITE}/documents/{_id}/", depth=2)
             + masthead(depth=2, here="documents/") + f"""
-<main class="wrap">
+<main class="wrap read">
   <nav class="yearnav"><h2 class="doctitle">{esc(title)}</h2></nav>
   <p class="readmode"><label class="toggle">
      <input type="checkbox" id="plain"> amaga la incertesa</label></p>
@@ -410,7 +463,7 @@ def document_page(con, doc) -> str:
      <a href="../../metode.html">Com se sap</a>.</p>
   <div class="doc">{body}</div>
 </main>
-""" + FOOT.replace("</body>", '<script src="../../app.js"></script>\n</body>'))
+""" + tail(2))
 
 
 CENTURIES = ((1229, 1300, "XIII"), (1301, 1400, "XIV"), (1401, 1500, "XV"),
@@ -480,7 +533,7 @@ def years_page(con, years: list[int], counts: dict) -> str:
      dada.</p>
   {"".join(blocks)}
 </main>
-""" + FOOT.replace("</body>", '<script src="../app.js"></script>\n</body>'))
+""" + tail(1))
 
 
 def documents_page(con) -> str:
@@ -514,7 +567,7 @@ def documents_page(con) -> str:
   </table>
   </div>
 </main>
-""" + FOOT.replace("</body>", '<script src="../app.js"></script>\n</body>'))
+""" + tail(1))
 
 
 def abbreviations_page(con) -> str:
@@ -550,7 +603,7 @@ def abbreviations_page(con) -> str:
      glossa: {missing}. Les d'una sola inicial són sigles de dues que el
      facsímil no deixa llegir senceres.</p>
 </main>
-""" + FOOT.replace("</body>", '<script src="../app.js"></script>\n</body>'))
+""" + tail(1))
 
 
 def index_page(con, years: list[int], counts: dict) -> str:
@@ -627,7 +680,7 @@ def index_page(con, years: list[int], counts: dict) -> str:
     </section>
   </div>
 </main>
-""" + FOOT.replace("</body>", '<script src="app.js"></script>\n</body>'))
+""" + tail(0))
 
 
 def method_page(con) -> str:
@@ -657,7 +710,7 @@ def method_page(con) -> str:
     return (head("El mètode · Cronicón Mayoricense",
                  "Com s'ha obtingut aquesta transcripció i què se n'ha mesurat.",
                  f"{SITE}/metode.html") + masthead(here="metode.html") + f"""
-<main class="wrap">
+<main class="wrap read">
   <h2 class="section">Com s'ha fet</h2>
   <p>Sis reconeixedors independents llegeixen cada full de <strong>dos
      escanejos diferents</strong> del mateix exemplar, i cada posició s'adjudica
@@ -694,7 +747,7 @@ GROUP BY 1 ORDER BY 2 DESC LIMIT 10;</pre>
      <code>leaf</code> i <code>adjudication</code> —les 870 lectures
      verificades—. Són <a href="data/">5,7 MB en total</a>.</p>
 </main>
-""" + FOOT)
+""" + foot(0))
 
 
 def main() -> None:

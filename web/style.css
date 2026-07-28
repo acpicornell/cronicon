@@ -21,7 +21,17 @@ html, body {
   font-size: 16px; line-height: 1.6;
 }
 a { color: var(--accent); }
-.wrap { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+/* The family measure: 1320px with 2em of gutter, as in poblacio and the
+   nomenclator. This site is different from its siblings in one way that
+   matters, though -- most of it is prose to be read, and a 1250px line is
+   about 150 characters, which nobody reads. So the chrome and the data run
+   wide and only the reading column is held to a measure. */
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 2em; }
+.wrap.read { max-width: 900px; }
+/* On a data page the container is wide because the tables want it, but a
+   paragraph in it must still be readable: prose gets a measure of its own
+   wherever it appears. */
+.hint, .caveat, .doors p, .footer-about p, .century h2 { max-width: 68ch; }
 
 /* --- masthead --- */
 header {
@@ -38,7 +48,10 @@ h1 { font-family: Georgia, "Times New Roman", serif; font-size: 1.9rem;
 h1 a { color: inherit; text-decoration: none; }
 .sub { margin: 0; color: var(--text-muted); font-style: italic; font-size: .95rem; }
 
-main { padding: 2rem 0 3rem; }
+/* `main` also carries `.wrap`, and a class beats an element selector, so
+   `.wrap { padding: 0 2em }` was wiping the vertical padding out entirely --
+   which is why the stats block sat flush against the tab rule. */
+main.wrap { padding-top: 2.6rem; padding-bottom: 3.5rem; }
 
 /* --- the reading text --- */
 .entry {
@@ -155,9 +168,28 @@ th { color: var(--text-muted); font-weight: 600; font-size: .8rem;
      text-transform: uppercase; letter-spacing: .04em; }
 td.num { text-align: right; font-variant-numeric: tabular-nums; }
 
-footer { border-top: 1px solid var(--border); padding: 1.6rem 0 2.4rem;
-         color: var(--text-muted); font-size: .85rem; background: #fbf8f0; }
-footer p { margin: .3rem 0; }
+/* --- the foot, as in the portal ---------------------------------------- */
+footer { border-top: 1px solid var(--border); margin-top: 3rem;
+         padding: 1.8rem 0 2rem; background: #fbf8f0;
+         color: var(--text-muted); font-size: .85rem; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr;
+               gap: 1.6rem 2.6rem; }
+.footer-brand { margin: 0 0 .5rem; font-size: 1.05rem; font-weight: 600;
+                color: var(--text); font-family: Georgia, "Times New Roman", serif; }
+.footer-about p { margin: 0 0 .6rem; max-width: 46ch; line-height: 1.55; }
+.footer-col h3 { margin: 0 0 .7rem; font-size: .74rem; text-transform: uppercase;
+                 letter-spacing: .1em; color: var(--text-muted); font-weight: 700; }
+.footer-col a { display: block; padding: .18rem 0; font-size: .88rem;
+                color: var(--text-muted); text-decoration: none; }
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom { margin-top: 1.6rem; padding-top: 1.1rem;
+                 border-top: 1px solid var(--border); }
+.footer-bottom p { margin: .25rem 0; }
+.footer-bottom a { color: var(--accent); }
+.gh { vertical-align: -.15em; margin-right: .35rem; }
+@media (max-width: 760px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+}
 
 pre { background: var(--surface); border: 1px solid var(--border);
       border-radius: 4px; padding: .9rem 1rem; overflow-x: auto; font-size: .85rem; }
@@ -234,8 +266,11 @@ h3.month:first-of-type { margin-top: 1.4rem; }
 .leafmark a { color: var(--text-muted); }
 
 /* --- the way in --------------------------------------------------------- */
-.doors { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem 2.4rem;
-         margin-top: 2.6rem; padding-top: 1.8rem;
+/* Four across on a wide screen: at two columns the short door left a ragged
+   hole beside the long one, because a grid row is as tall as its tallest cell. */
+.doors { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+         gap: 1.8rem 2.4rem; align-items: start;
+         margin-top: 2.8rem; padding-top: 2rem;
          border-top: 1px solid var(--border); }
 .doors h2 { font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem;
             margin: 0 0 .4rem; color: var(--accent-dark); }
