@@ -45,6 +45,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import math
 import re
 import shutil
 from pathlib import Path
@@ -99,8 +100,26 @@ def head(title: str, description: str, canonical: str, depth: int = 0) -> str:
 """
 
 
-def masthead(depth: int = 0) -> str:
+# The five places the edition has. The index used to be all of them at once --
+# search, 572 year boxes, the documents table and the glossary stacked into a
+# 7 500px scroll -- which made every one of them hard to find.
+# Two labels each: the articles read better on a wide screen and are what push
+# the bar past the width of a phone, where the five have to fit without the
+# type shrinking.
+TABS = (("", "Inici", "Inici"),
+        ("anys/", "Els anys", "Anys"),
+        ("documents/", "Els documents", "Documents"),
+        ("abreviatures/", "Les abreviatures", "Sigles"),
+        ("metode.html", "El mètode", "Mètode"))
+
+
+def masthead(depth: int = 0, here: str = "") -> str:
     up = "../" * depth
+    tabs = "".join(
+        f'<a href="{up}{href}"{" class=\'on\'" if href == here else ""}>'
+        f'<span class="wide">{label}</span>'
+        f'<span class="narrow">{short}</span></a>'
+        for href, label, short in TABS)
     return f"""<header>
   <div class="wrap">
     <p class="eyebrow"><a href="https://corpusbalear.org/">Corpus Balear</a></p>
@@ -109,6 +128,7 @@ def masthead(depth: int = 0) -> str:
        de 1229 a 1800</p>
   </div>
 </header>
+<nav class="tabs"><div class="wrap">{tabs}</div></nav>
 """
 
 
@@ -285,13 +305,18 @@ def year_page(con, year: int, years: list[int], sigla: dict[str, str]) -> str:
                   f"Notícies de Mallorca de l'any {year} segons el Cronicón "
                   f"Mayoricense de Campaner (1881).",
                   f"{SITE}/anys/{year}/", depth=2),
-             masthead(depth=2),
+             masthead(depth=2, here="anys/"),
              '<main class="wrap">',
              f'<nav class="yearnav">',
              f'<a href="../{prev_y}/">← {prev_y}</a>' if prev_y else "<span></span>",
              f'<h2>{year}</h2>',
              f'<a href="../{next_y}/">{next_y} →</a>' if next_y else "<span></span>",
-             "</nav>"]
+             "</nav>",
+             # The switch belongs on the page that carries the marks, not only
+             # on the index where there are none to hide.
+             '<p class="readmode"><label class="toggle">'
+             '<input type="checkbox" id="plain"> amaga la incertesa'
+             "</label></p>"]
 
     if not entries:
         # A silence is information, not a hole. 49 years carry no dated entry;
@@ -304,21 +329,43 @@ def year_page(con, year: int, years: list[int], sigla: dict[str, str]) -> str:
                      "d'aquest any. Pot ser que no en tingués, o que l'any caigui "
                      "dins d'un relat seguit que no s'atura a datar-se —com els "
                      "vint-i-vuit fulls de la Germania, entre 1520 i 1525.</p>")
+    # Read as a chronicle rather than as a stack of forty identical cards: the
+    # month rules a section, the day sits in the margin like the marginal date
+    # of a manuscript, and the leaf is named once per run instead of on every
+    # notice. The month heading is emitted whenever the month *changes* in
+    # reading order, never by sorting -- so where Campaner's own months run out
+    # of order, the page says so twice rather than tidying it.
+    running_month = object()
+    running_leaf = None
+
+    def leafmark(page: int) -> str:
+        url = ("https://archive.org/details/CroniconMayoricenseCampaner/"
+               f"page/n{page - 2}/mode/2up")
+        return (f'<p class="leafmark"><a href="{url}" rel="noopener">'
+                f"full {page} al facsímil</a></p>")
+
     for _id, month, day, text, sources, page, printed in entries:
-        when = MONTHS.get(month, "")
-        if day:
-            when = f"{day} {when.lower()}" if when else str(day)
+        if month != running_month:
+            parts.append('<h3 class="month">'
+                         f'{esc(MONTHS.get(month) or "sense mes")}</h3>')
+            running_month = month
+        # The leaf is named once per run of notices that share it, and the run
+        # is *not* broken by a month heading: 1644 sits entirely on leaf 429,
+        # and flushing on the month printed "full 429" under every month.
+        if running_leaf is not None and page != running_leaf:
+            parts.append(leafmark(running_leaf))
+        running_leaf = page
         cites = " ".join(cite(s, sigla) for s in (sources or []))
-        leaf_url = ("https://archive.org/details/CroniconMayoricenseCampaner/"
-                    f"page/n{page - 2}/mode/2up")
         parts.append(
-            '<article class="entry">'
-            + (f"<h3>{esc(when)}</h3>" if when else "")
+            '<article class="notice">'
+            f'<p class="when">{day or "&mdash;"}</p>'
+            '<div class="said">'
             + "".join(f"<p>{mark_doubt(para, doubtful)}</p>"
                       for para in paragraphs(text))
-            + f'<p class="prov">{cites}'
-            + f'<a class="facs" href="{leaf_url}" rel="noopener">full {page}</a>'
-            + "</p></article>")
+            + (f'<p class="prov">{cites}</p>' if cites else "")
+            + "</div></article>")
+    if running_leaf is not None:
+        parts.append(leafmark(running_leaf))
     parts.append("</main>")
     # The year pages are where the uncertainty marks actually are, so they are
     # the pages that most need the script that hides them. They shipped without
@@ -349,9 +396,11 @@ def document_page(con, doc) -> str:
                  f"{title} — {genre or 'document'} reproduït sencer al Cronicón "
                  f"Mayoricense de Campaner (1881), fulls {first}–{last}.",
                  f"{SITE}/documents/{_id}/", depth=2)
-            + masthead(depth=2) + f"""
+            + masthead(depth=2, here="documents/") + f"""
 <main class="wrap">
   <nav class="yearnav"><h2 class="doctitle">{esc(title)}</h2></nav>
+  <p class="readmode"><label class="toggle">
+     <input type="checkbox" id="plain"> amaga la incertesa</label></p>
   <p class="prov">{esc(genre or '')} · secció {esc(numeral)} ·
      {num(words)} mots · {pct(100*contested/words if words else 0)}% discutits ·
      <a href="{leaf_url}" rel="noopener">fulls {first}–{last} al facsímil</a></p>
@@ -364,53 +413,177 @@ def document_page(con, doc) -> str:
 """ + FOOT.replace("</body>", '<script src="../../app.js"></script>\n</body>'))
 
 
+CENTURIES = ((1229, 1300, "XIII"), (1301, 1400, "XIV"), (1401, 1500, "XV"),
+             (1501, 1600, "XVI"), (1601, 1700, "XVII"), (1701, 1800, "XVIII"))
+BAR_MIN, BAR_MAX = 4, 52
+
+
+def density(counts: dict, first: int, last: int, peak: int) -> str:
+    """One century as a strip of bars, a year each, height by how much news.
+
+    Replaces 572 identical boxes that filled a 7 500px page and said nothing:
+    every year looked the same, and the only signal -- the count -- was six
+    points of type underneath. As bars the same data becomes the shape of the
+    chronicle, and the eye lands on 1715 without being told.
+
+    **Square root, not linear.** The distribution is savage: median 4 notices,
+    peak 108 in 1715. Scaled linearly the median year is a 2px stub against a
+    52px spike and half the book reads as empty, which is false -- it is a
+    chronicle of ordinary years with a few violent ones.
+
+    A year with no news keeps a stub rather than vanishing: it is still a fact
+    about the book, and it still has a page saying so.
+    """
+    out = []
+    for year in range(first, last + 1):
+        n = counts.get(year, 0)
+        height = (BAR_MIN + round((BAR_MAX - BAR_MIN) * math.sqrt(n / peak))
+                  if n else 2)
+        label = (f"{year} · {num(n)} notícies" if n != 1 else f"{year} · 1 notícia")
+        if not n:
+            label = f"{year} · cap notícia"
+        out.append(f'<a class="bar{"" if n else " void"}" href="../anys/{year}/"'
+                   f' style="height:{height}px" title="{esc(label)}"'
+                   f' aria-label="{esc(label)}"></a>')
+    return "".join(out)
+
+
+def years_page(con, years: list[int], counts: dict) -> str:
+    peak = max(counts.values()) or 1
+    blocks = []
+    for first, last, roman in CENTURIES:
+        span = [y for y in range(first, last + 1)]
+        told = sum(counts.get(y, 0) for y in span)
+        silent = sum(1 for y in span if not counts.get(y))
+        ticks = "".join(
+            f'<span style="left:{100 * (y - first) / (last - first):.4f}%">{y}</span>'
+            for y in range(first if first % 10 == 0 else (first // 10 + 1) * 10,
+                           last + 1, 20))
+        blocks.append(f"""
+  <section class="century">
+    <h2>Segle {roman} <small>{first}–{last} · {num(told)} notícies ·
+        {num(silent)} anys sense cap</small></h2>
+    <div class="strip">{density(counts, first, last, peak)}</div>
+    <div class="axis">{ticks}</div>
+  </section>""")
+
+    return (head("Els anys · Cronicón Mayoricense",
+                 "Els 572 anys del Cronicón Mayoricense, segle a segle, amb "
+                 "quantes notícies dona Campaner de cadascun.",
+                 f"{SITE}/anys/", depth=1)
+            + masthead(depth=1, here="anys/") + f"""
+<main class="wrap">
+  <p class="hint">Cada barra és un any i l'alçada diu quantes notícies en dona
+     Campaner. L'escala és d'arrel quadrada: 1715 en té {num(peak)} i la
+     majoria d'anys en tenen quatre, i amb escala lineal mig llibre semblaria
+     buit. Els anys sense cap notícia queden com un traç, perquè també són una
+     dada.</p>
+  {"".join(blocks)}
+</main>
+""" + FOOT.replace("</body>", '<script src="../app.js"></script>\n</body>'))
+
+
+def documents_page(con) -> str:
+    docs = con.execute("SELECT id, numeral, title, genre, first_leaf, last_leaf, "
+                       "words, contested FROM document "
+                       "ORDER BY block_leaf, number").fetchall()
+    rows = "".join(
+        f"<tr><td>{esc(n)}</td>"
+        f'<td><a href="{esc(i)}/">{esc(t)}</a></td><td>{esc(g or "")}</td>'
+        f'<td class="num">{a}–{b}</td><td class="num">{num(w)}</td>'
+        f'<td class="num">{pct(100 * c / w if w else 0)}%</td></tr>'
+        for i, n, t, g, a, b, w, c in docs)
+    total = num(sum(d[6] for d in docs))
+    return (head("Els documents · Cronicón Mayoricense",
+                 "Els 23 documents que Campaner reprodueix sencers dins el "
+                 "Cronicón Mayoricense: cartes, sentències, relacions i "
+                 "fragments en castellà, català medieval i llatí.",
+                 f"{SITE}/documents/", depth=1)
+            + masthead(depth=1, here="documents/") + f"""
+<main class="wrap">
+  <p class="hint">Al final de cada segle la crònica s'atura i Campaner
+     reprodueix documents sencers: {len(docs)} peces, {total} mots, una cinquena
+     part del llibre. Són en castellà, català medieval i llatí, i és la part
+     pitjor mesurada — <a href="../metode.html">un mot errat de cada 96</a>,
+     contra un de cada 706 a la crònica.</p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>núm.</th><th>títol</th><th>gènere</th><th>fulls</th>
+      <th class="num">mots</th><th class="num">discutits</th></tr></thead>
+    <tbody>{rows}</tbody>
+  </table>
+  </div>
+</main>
+""" + FOOT.replace("</body>", '<script src="../app.js"></script>\n</body>'))
+
+
+def abbreviations_page(con) -> str:
+    used = dict(con.execute(
+        "SELECT s, count(*) FROM (SELECT unnest(sources) AS s FROM entry) "
+        "GROUP BY 1").fetchall())
+    glossed = con.execute(
+        "SELECT siglum, expansion FROM siglum ORDER BY siglum").fetchall()
+    rows = "".join(
+        f"<tr><td><code>{esc(g)}</code></td><td>{esc(x)}</td>"
+        f'<td class="num">{num(used.get(g, 0))}</td></tr>'
+        for g, x in glossed if used.get(g))
+    bare = sorted(((g, n) for g, n in used.items()
+                   if g not in {x[0] for x in glossed}), key=lambda r: -r[1])
+    missing = ", ".join(f"<code>{esc(g)}</code> ({num(n)})" for g, n in bare)
+    return (head("Les abreviatures · Cronicón Mayoricense",
+                 "Les sigles amb què Campaner atribueix cada notícia al "
+                 "manuscrit d'on la treu, amb el nom que en dona la introducció.",
+                 f"{SITE}/abreviatures/", depth=1)
+            + masthead(depth=1, here="abreviatures/") + f"""
+<main class="wrap">
+  <p class="hint">Campaner atribueix cada notícia al manuscrit d'on la treu, i
+     les glossa a la introducció — la part del llibre que aquesta edició no
+     publica. Sense això les sigles del cos no volen dir res. A les pàgines
+     d'any es pot clicar qualsevol sigla per veure'n el nom.</p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>sigla</th><th>font</th><th class="num">notícies</th></tr></thead>
+    <tbody>{rows}</tbody>
+  </table>
+  </div>
+  <p class="hint">La crònica en cita {len(bare)} més que la introducció no
+     glossa: {missing}. Les d'una sola inicial són sigles de dues que el
+     facsímil no deixa llegir senceres.</p>
+</main>
+""" + FOOT.replace("</body>", '<script src="../app.js"></script>\n</body>'))
+
+
 def index_page(con, years: list[int], counts: dict) -> str:
+    """The way in, and nothing else.
+
+    This page used to carry the search box, 572 year boxes, the documents table
+    and the sigla glossary one after another, 7 500px of it. Each of those now
+    has a tab of its own; what stays here is the search and a handful of places
+    worth starting from.
+    """
     stats = con.execute("""SELECT (SELECT count(*) FROM entry),
                                   (SELECT count(DISTINCT year) FROM entry
                                    WHERE year IS NOT NULL),
                                   (SELECT count(*) FROM jurat),
                                   (SELECT count(*) FROM document),
                                   (SELECT count(*) FROM word)""").fetchone()
-    first, last = years[0], years[-1]
-    grid = "".join(
-        f'<a href="anys/{y}/" class="{"" if counts.get(y) else "void"}">{y}'
-        f'<span class="n">{counts.get(y, 0) or "—"}</span></a>'
-        for y in range(first, last + 1) if y in counts or True)
-
-    docs = con.execute("SELECT id, numeral, title, genre, first_leaf, last_leaf, "
-                       "words FROM document ORDER BY block_leaf, number").fetchall()
-    rows = "".join(
-        f"<tr><td>{esc(n)}</td>"
-        f'<td><a href="documents/{esc(i)}/">{esc(t)}</a></td><td>{esc(g or "")}</td>'
-        f'<td class="num">{a}–{b}</td><td class="num">{num(w)}</td></tr>'
-        for i, n, t, g, a, b, w in docs)
-
-    # The sigla, browsable at last. They were reachable only by guessing a
-    # search term that happened to trigger the quick answer, which is no way to
-    # offer the one key the chronicle cannot be read without: the introduction
-    # that glosses them is the section this edition drops.
-    used = dict(con.execute(
-        "SELECT s, count(*) FROM (SELECT unnest(sources) AS s FROM entry) "
-        "GROUP BY 1").fetchall())
-    glossed = con.execute(
-        "SELECT siglum, expansion FROM siglum ORDER BY siglum").fetchall()
-    fonts = "".join(
-        f"<tr><td><code>{esc(g)}</code></td><td>{esc(x)}</td>"
-        f'<td class="num">{num(used.get(g, 0))}</td></tr>'
-        for g, x in glossed if used.get(g))
-    # Cited but never glossed. Named, with their counts, rather than left out:
-    # `L. V.` alone attributes 102 notices, and a reader who meets it on a year
-    # page and finds no entry here would reasonably think the list is broken.
-    bare = sorted(((g, n) for g, n in used.items()
-                   if g not in {x[0] for x in glossed}),
-                  key=lambda r: -r[1])
-    missing = ", ".join(f"<code>{esc(g)}</code> ({num(n)})" for g, n in bare)
+    busiest = con.execute(
+        "SELECT year, count(*) n FROM entry WHERE year IS NOT NULL "
+        "GROUP BY 1 ORDER BY n DESC, year LIMIT 6").fetchall()
+    loud = " · ".join(f'<a href="anys/{y}/">{y}</a> <small>{n}</small>'
+                      for y, n in busiest)
+    longest = con.execute(
+        "SELECT id, numeral, title, words FROM document "
+        "ORDER BY words DESC LIMIT 3").fetchall()
+    docs = "".join(f'<li><a href="documents/{esc(i)}/">{esc(t)}</a> '
+                   f"<small>{num(w)} mots</small></li>"
+                   for i, _n, t, w in longest)
 
     return (head("Cronicón Mayoricense · Campaner, 1881",
                  "Edició digital del Cronicón Mayoricense de Campaner (Palma, "
-                 "1881): 2.503 notícies datades de Mallorca entre 1229 i 1800, "
-                 "amb el grau de certesa de cada paraula.",
-                 f"{SITE}/") + masthead() + f"""
+                 f"1881): {num(stats[0])} notícies datades de Mallorca entre "
+                 "1229 i 1800, amb el grau de certesa de cada paraula.",
+                 f"{SITE}/") + masthead(here="") + f"""
 <main class="wrap">
   <div class="stats">
     <div><strong>{num(stats[0])}</strong>notícies datades</div>
@@ -425,33 +598,34 @@ def index_page(con, years: list[int], counts: dict) -> str:
            autocomplete="off" spellcheck="false">
     <label class="toggle"><input type="checkbox" id="plain"> amaga la incertesa</label>
   </div>
-  <p class="hint">Cerca dins les {num(stats[0])} notícies i els 23 documents
-     sencers. Sense accents també va: <em>germania</em> troba
+  <p class="hint">Cerca dins les {num(stats[0])} notícies i els {stats[3]}
+     documents sencers. Sense accents també va: <em>germania</em> troba
      <em>Germanía</em>. Entre cometes, cerca la frase exacta.</p>
   <div id="results"></div>
 
-  <h2 class="section">Els anys</h2>
-  <div class="grid">{grid}</div>
-
-  <h2 class="section">Les fonts</h2>
-  <p class="hint">Campaner atribueix cada notícia al manuscrit d'on la treu.
-     Aquestes són les sigles que glossa a la introducció; a les pàgines d'any
-     es pot clicar qualsevol sigla per veure'n el nom.</p>
-  <div class="scroll"><table>
-    <thead><tr><th>sigla</th><th>font</th>
-      <th class="num">notícies</th></tr></thead>
-    <tbody>{fonts}</tbody>
-  </table></div>
-  <p class="hint">La crònica en cita {len(bare)} més que la introducció no
-     glossa: {missing}. Les d'una sola inicial són sigles de dues que el
-     facsímil no deixa llegir senceres.</p>
-
-  <h2 class="section">Els documents que Campaner reprodueix sencers</h2>
-  <div class="scroll"><table>
-    <thead><tr><th>núm.</th><th>títol</th><th>gènere</th><th>fulls</th>
-      <th class="num">mots</th></tr></thead>
-    <tbody>{rows}</tbody>
-  </table></div>
+  <div class="doors">
+    <section>
+      <h2>Els anys amb més notícia</h2>
+      <p class="loud">{loud}</p>
+      <p><a href="anys/">Tots els anys, segle a segle →</a></p>
+    </section>
+    <section>
+      <h2>Els documents més llargs</h2>
+      <ul class="plainlist">{docs}</ul>
+      <p><a href="documents/">Els {stats[3]} documents sencers →</a></p>
+    </section>
+    <section>
+      <h2>Qui ho explica</h2>
+      <p>Campaner atribueix cada notícia al manuscrit d'on la treu.</p>
+      <p><a href="abreviatures/">Les abreviatures i les seves fonts →</a></p>
+    </section>
+    <section>
+      <h2>Què és fiable</h2>
+      <p>Cada paraula porta el grau d'acord dels sis reconeixedors que la van
+         llegir.</p>
+      <p><a href="metode.html">El mètode i les xifres →</a></p>
+    </section>
+  </div>
 </main>
 """ + FOOT.replace("</body>", '<script src="app.js"></script>\n</body>'))
 
@@ -482,7 +656,7 @@ def method_page(con) -> str:
 
     return (head("El mètode · Cronicón Mayoricense",
                  "Com s'ha obtingut aquesta transcripció i què se n'ha mesurat.",
-                 f"{SITE}/metode.html") + masthead() + f"""
+                 f"{SITE}/metode.html") + masthead(here="metode.html") + f"""
 <main class="wrap">
   <h2 class="section">Com s'ha fet</h2>
   <p>Sis reconeixedors independents llegeixen cada full de <strong>dos
@@ -600,11 +774,21 @@ def main() -> None:
     (WEB / "index.html").write_text(index_page(con, years, counts),
                                     encoding="utf-8")
     (WEB / "metode.html").write_text(method_page(con), encoding="utf-8")
+    (WEB / "anys" / "index.html").write_text(
+        years_page(con, years, counts), encoding="utf-8")
+    (WEB / "documents" / "index.html").write_text(
+        documents_page(con), encoding="utf-8")
+    (WEB / "abreviatures").mkdir(exist_ok=True)
+    (WEB / "abreviatures" / "index.html").write_text(
+        abbreviations_page(con), encoding="utf-8")
 
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
                f"<url><loc>{SITE}/</loc><priority>1.0</priority></url>",
-               f"<url><loc>{SITE}/metode.html</loc></url>"]
+               f"<url><loc>{SITE}/metode.html</loc></url>",
+               f"<url><loc>{SITE}/anys/</loc></url>",
+               f"<url><loc>{SITE}/documents/</loc></url>",
+               f"<url><loc>{SITE}/abreviatures/</loc></url>"]
     sitemap += [f"<url><loc>{SITE}/anys/{y}/</loc></url>" for y in years]
     sitemap += [f"<url><loc>{SITE}/documents/{d[0]}/</loc></url>"
                 for d in documents]

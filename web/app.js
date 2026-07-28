@@ -227,13 +227,17 @@ function init() {
     chip.setAttribute("aria-expanded", open ? "false" : "true");
   });
 
+  // Remembered, because someone who wants to read rather than audit should not
+  // have to say so on every page -- and applied before looking for the
+  // checkbox, because the pages that carry the marks are not always the pages
+  // that carry the switch. It used to be applied inside the `if` below, so the
+  // preference took effect on the index and nowhere the marks actually are.
+  const saved = localStorage.getItem("cronicon-plain") === "1";
+  document.body.classList.toggle("plain", saved);
+
   const plain = $("plain");
   if (plain) {
-    // Remembered, because someone who wants to read rather than audit should
-    // not have to say so on every page.
-    const saved = localStorage.getItem("cronicon-plain") === "1";
     plain.checked = saved;
-    document.body.classList.toggle("plain", saved);
     plain.addEventListener("change", () => {
       document.body.classList.toggle("plain", plain.checked);
       localStorage.setItem("cronicon-plain", plain.checked ? "1" : "0");
