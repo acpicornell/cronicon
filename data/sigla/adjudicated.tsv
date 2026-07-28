@@ -1,0 +1,16 @@
+# Glossary entries the OCR could not read, adjudicated against the facsimile of
+# leaf 25 at native resolution. The list is set in a swash italic -- the capitals
+# are 𝒜 ℳ 𝒩 𝒥 -- which every engine mangles: `MS. y MSS.` comes back as
+# `5VCS. y íhCSS.`, `M. M.` as a bare `M.`, `N. C.` as `N. C.` only sometimes.
+# Two entries also arrive merged into one line, `J. Anónimo. /. M. — Juan
+# Antonio Mateu.`, which is `A.—Anónimo.` and `J. M.—Juan Antonio Mateu.`
+#
+# siglum	expansion
+A.	Anónimo.
+J. F.	Juan Fé.
+J. M.	Juan Antonio Mateu.
+J. V.	Jaime Viquet.
+M. C.	Maestro de Ceremonias.
+M. M.	Matías Mut.
+MS. y MSS.	Manuscrito.
+N. C.	N. Cañellas.

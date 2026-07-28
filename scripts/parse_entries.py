@@ -390,13 +390,35 @@ def split_entries(text: str, year: int | None) -> list[dict]:
     return entries
 
 
+def collapse_repeat(siglum: str) -> str:
+    """`G. G. T.` is `G. T.` counted twice, not a siglum of three initials.
+
+    The engines disagree about where the token after the dash ends: some read
+    `reos.»—G.` and `T.`, others `reos.»—` and `G.` and `T.`. The alignment keeps
+    both, so the `G.` appears at two positions and the vote accepts it at each.
+    Leaf 65 prints `—G. T.`, checked against the facsimile, and the same doubling
+    produced `B. B. J.`, `M. M. M.`, `Cl. Fl. Fl.` and `J. J. F.` elsewhere.
+
+    Only a three-part siglum is collapsed, and only where two neighbours are
+    equal: `M. M.` is Matías Mut and must survive intact.
+    """
+    parts = siglum.split()
+    if len(parts) != 3:
+        return siglum
+    for n in (0, 1):
+        if parts[n] == parts[n + 1]:
+            return " ".join(parts[:n] + parts[n + 1:])
+    return siglum
+
+
 def lift_sigla(text: str) -> tuple[str, list[str]]:
     sigla = []
     while True:
         match = SIGLA.search(text)
         if not match:
             break
-        sigla.insert(0, re.sub(r"\s+", " ", match.group(1)).strip())
+        sigla.insert(0, collapse_repeat(
+            re.sub(r"\s+", " ", match.group(1)).strip()))
         text = text[:match.start()].rstrip()
     return text, sigla
 
