@@ -516,6 +516,115 @@ def monotone_subsequence(years: list[int]) -> list[int]:
     return out[::-1]
 
 
+EDITS = OUT / "edits.jsonl"
+ANCHOR = 48
+
+SIGLA_FILE = PROJECT / "data" / "sigla" / "sigla.json"
+# Prose after the closing siglum, long enough to be a notice rather than a
+# second siglum or a stray fragment.
+SIGLUM_TAIL = r"\s+(?=[A-ZÁÉÍÓÚ«¿][^.]{25,})"
+
+
+def sigla_pattern(path: Path = SIGLA_FILE) -> re.Pattern | None:
+    """A siglum in the middle of an entry ends it -- that is what a siglum is.
+
+    `…mandando anular cuántas se hubiesen instituido.»— G. T. En este año de
+    1305, empezó á ser Lugarteniente…` is two notices, and only the source
+    attribution says so: nothing about the second one's shape distinguishes it
+    from a continuation.
+
+    The discriminator is the glossary Campaner prints in his introduction, and
+    it has to be: `— D. Pedro de Bellcastell` has exactly the same shape as
+    `— G. T. Este mismo año`, and only one of the two is a source. No cycle is
+    created by reading it -- the glossary comes off the introduction leaf, and
+    `parse_sigla.py` reads `entries.jsonl` only to count attributions.
+
+    The mark is placed *after* the siglum so the notice above keeps it: it is
+    that notice's attribution, and `lift_sigla` still has to find it there.
+    """
+    if not path.exists():
+        return None
+    glossary = json.loads(path.read_text(encoding="utf-8"))["glossary"]
+    # Longest first, so `Jn. Br.` is not matched as `J.` with a tail.
+    names = sorted((s["siglum"] for s in glossary), key=len, reverse=True)
+    if not names:
+        return None
+    alternation = "|".join(re.escape(n) for n in names)
+    return re.compile(rf"[—-]\s*(?:{alternation}){SIGLUM_TAIL}")
+
+
+SIGLA_BREAK = sigla_pattern()
+
+# A notice that opens by saying *which year* it belongs to is not dated to a
+# month, and inheriting the running one invents a precision the book does not
+# offer: `En este año de 1305, empezó á ser Lugarteniente…` was coming out as
+# July because the notice above it was. Only the inherited month is dropped --
+# where a marker printed a day, the book's own figures stand.
+WHOLE_YEAR = re.compile(
+    r"^\s*[«\"]?\s*(?:en\s+|por\s+)?est[ea]\s+"
+    r"(?:mismo\s+|propio\s+)?(?:año|ano|tiempo|época|epoca)\b",
+    re.IGNORECASE)
+
+
+def anchor_of(text: str) -> str:
+    """The key an edit is filed under: the opening of the entry, folded.
+
+    Not the entry's index, which renumbers the moment any rule above changes --
+    that is the mistake `review.py` already avoids by keying on the word box.
+    A box is not available here (an entry is a span of prose, not a token), so
+    the anchor is its first characters with accents and case removed.
+
+    It is deliberately sensitive to the text: if the consensus improves and the
+    words at the head of an entry change, the edit stops matching and is
+    *reported*, not silently dropped. An edit that no longer knows what it was
+    editing must be looked at again.
+    """
+    return " ".join(strip_accents(text).lower().split())[:ANCHOR]
+
+
+def read_edits(path: Path) -> dict[tuple[int, str], dict]:
+    """The hand edits, append-only, last one wins for a given anchor."""
+    if not path.exists():
+        return {}
+    out: dict[tuple[int, str], dict] = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        edit = json.loads(line)
+        out[(edit["leaf"], edit["anchor"])] = edit
+    return out
+
+
+def apply_edits(entries: list[dict], edits: dict) -> tuple[list[dict], list[str]]:
+    """Apply the hand edits and say what happened to every one of them.
+
+    Only decisions a parser cannot reach belong here -- a stray heading the year
+    finder rejected, a date the book states in prose. Anything that generalises
+    belongs in a rule, where it can be measured; anything that changes what a
+    *word says* belongs in the adjudication, with the facsimile on screen.
+    """
+    used: set[tuple[int, str]] = set()
+    kept: list[dict] = []
+    for entry in entries:
+        key = (entry["pdf_page"], anchor_of(entry["text"]))
+        edit = edits.get(key)
+        if edit is None:
+            kept.append(entry)
+            continue
+        used.add(key)
+        if edit["op"] == "drop":
+            continue
+        if edit["op"] == "date":
+            entry = {**entry, "month": edit.get("month"), "day": edit.get("day")}
+        kept.append({**entry, "edited": edit.get("why", edit["op"])})
+
+    missed = [f"p{leaf}: {edit['op']} {edit['anchor']!r} matched nothing"
+              for (leaf, _a), edit in edits.items()
+              if (leaf, edit["anchor"]) not in used]
+    return kept, missed
+
+
 def date_marks(text: str) -> list[dict]:
     """Every place an entry opens, from both passes, merged by position.
 
@@ -541,6 +650,13 @@ def date_marks(text: str) -> list[dict]:
             continue
         marks.append({"start": m.start(), "end": m.end(), "month": month,
                       "day": int(m.group("day4")) if m.group("day4") else None})
+    for m in (SIGLA_BREAK.finditer(text) if SIGLA_BREAK else ()):
+        # start == end: the siglum stays with the notice it closes, and the new
+        # one begins at the capital after it.
+        if any(a < m.end() and m.end() < b for a, b in taken):
+            continue
+        marks.append({"start": m.end(), "end": m.end(),
+                      "month": None, "day": None})
     marks.sort(key=lambda m: m["start"])
     return marks
 
@@ -579,6 +695,8 @@ def split_entries(text: str, year: int | None) -> list[dict]:
         day = mark["day"]
         # `—El 14 de Julio…` names its own month; believe it over the one being
         # carried forward.
+        if day is None and WHOLE_YEAR.match(body):
+            current_month = None
         stated = MONTH_AFTER_DAY.match(body)
         if stated:
             current_month = MONTHS[strip_accents(stated.group("month")).lower()]
@@ -675,6 +793,8 @@ def main() -> None:
                     help="run without the document list. Only for the first pass "
                          "of a fresh build, since parse_documents.py reads this "
                          "script's output and so cannot exist yet")
+    ap.add_argument("--edits", default=str(EDITS),
+                    help="hand edits to apply after parsing (append-only)")
     ap.add_argument("--report", action="store_true")
     args = ap.parse_args()
 
@@ -862,6 +982,7 @@ def main() -> None:
     known = known_documents(documents)
     skipped_tables = sorted(tables - known)
 
+    entries, orphans = apply_edits(entries, read_edits(Path(args.edits)))
 
     OUT.mkdir(parents=True, exist_ok=True)
     with (OUT / "entries.jsonl").open("w", encoding="utf-8") as fh:
@@ -896,6 +1017,14 @@ def main() -> None:
     print(f"  with a month      {dated:,}  ({dated/len(entries):.0%})")
     print(f"  with a source     {sourced:,}  ({sourced/len(entries):.0%})")
     print(f"  median length     {sorted(len(e['text']) for e in entries)[len(entries)//2]} chars")
+    edited = sum(1 for e in entries if e.get("edited"))
+    applied = len(read_edits(Path(args.edits))) - len(orphans)
+    if applied or orphans:
+        print(f"  hand edits        {applied} applied, {edited} entries marked")
+    # Loud, and last, because an edit that matches nothing means the text under
+    # it moved: the decision has to be made again rather than assumed to hold.
+    for line in orphans:
+        print(f"  !! EDIT ORPHANED  {line}")
 
     missing = [y for y in range(min(years), max(years) + 1) if y not in set(years)]
     print(f"\n{len(skipped_tables)} Jurats-table leaves skipped: {skipped_tables}")

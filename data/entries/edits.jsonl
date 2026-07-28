@@ -1,0 +1,28 @@
+# Hand edits to the parsed chronicle, applied by parse_entries.py after every
+# rule has run. Append-only: never rewrite a line, add a new one.
+#
+# Keyed by (leaf, anchor), where the anchor is the opening of the entry with
+# case and accents removed -- NOT the entry's index, which renumbers whenever
+# any rule above it changes. If the consensus improves and the text under an
+# anchor moves, the edit stops matching and parse_entries reports it as
+# ORPHANED rather than quietly dropping it: a decision that no longer knows
+# what it was deciding has to be made again.
+#
+# What belongs here: decisions a parser cannot reach. What does not: anything
+# that generalises (that is a rule, where it can be measured), and anything
+# that changes what a word *says* (that is the adjudication, with the facsimile
+# on screen -- see docs/EDITORIAL.md).
+#
+# ops: "drop" removes the entry; "date" sets its month and day.
+{"leaf": 74, "anchor": "3 37‘", "op": "drop", "why": "the 1337 display heading, which the year finder rejected for want of votes; it is not prose", "on": "2026-07-28"}
+{"leaf": 170, "anchor": "enero", "op": "drop", "why": "the January heading, printed with no dash after it so no marker matched; the notice below it is already dated 15 January", "on": "2026-07-28"}
+{"leaf": 288, "anchor": "1 544*", "op": "drop", "why": "the 1544 display heading, misread; the year is carried correctly by the entries under it", "on": "2026-07-28"}
+{"leaf": 595, "anchor": "fbbrbro", "op": "drop", "why": "the February heading, misread; the notice below it is already dated 25 February", "on": "2026-07-28"}
+{"leaf": 283, "anchor": "53 5;", "op": "drop", "why": "the 1535 display heading, misread; the entries under it carry the year", "on": "2026-07-28"}
+{"leaf": 475, "anchor": "6 9 5 •", "op": "drop", "why": "the 1695 display heading, misread", "on": "2026-07-28"}
+{"leaf": 509, "anchor": "706. 7.", "op": "drop", "why": "the 1706 display heading, misread", "on": "2026-07-28"}
+{"leaf": 546, "anchor": "726.", "op": "drop", "why": "the 1726 display heading", "on": "2026-07-28"}
+{"leaf": 549, "anchor": "7 3 3 •", "op": "drop", "why": "the 1733 display heading, misread", "on": "2026-07-28"}
+{"leaf": 596, "anchor": "enero 7 3 •", "op": "drop", "why": "the January 1773 heading, misread; the notice below it is already dated 14 January", "on": "2026-07-28"}
+{"leaf": 460, "anchor": "febrero ii.", "op": "drop", "why": "the February 11 heading; the day is printed II and the date moves to the notice below", "on": "2026-07-28"}
+{"leaf": 460, "anchor": "en este dia y en otros de este mes fueron presas", "op": "date", "month": 2, "day": 11, "why": "FEBRERO II. above it: kraken and paddle both read 11, the rest II, same glyphs", "on": "2026-07-28"}
