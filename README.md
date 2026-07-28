@@ -8,10 +8,10 @@ Intended as a member of the [Corpus Balear](https://corpusbalear.org) family of
 digital editions of public-domain Balearic sources.
 
 **Status.** The OCR has been run over the whole book and measured, and the book has
-been parsed into its own structure: 519 dated years, 245 footnotes separated from
-the text they interrupt, 1 949 Jurats over 356 years, 27 numbered document
+been parsed into its own structure: 521 dated years, 244 footnotes separated from
+the text they interrupt, 1 949 Jurats over 356 years, 29 numbered document
 sections, and a glossary resolving 90% of the source attributions. Not yet built:
-the human review pass over the 24 607 contested words, and the site.
+the human review pass over the 23 647 contested words, and the site.
 
 One honesty caveat governs everything below: **the 159 leaves of medieval Catalan
 and Latin have never been measured.** All 550 adjudicated positions fall on twelve
@@ -89,7 +89,7 @@ measurements make that concrete in both directions:
   32 040 (+22%) — and both are *more* accurate than several sitting members.
   Accuracy and complementarity are different properties. What worked was
   **swapping**, not adding: putting them in place of the two weakest readings
-  keeps six voters and takes the queue down to 24 607.
+  keeps six voters and takes the queue down to 23 647.
 - **A three-engine fallback is not available.** The BNE-only trio is the one
   configuration with a *measured* shared error — 2 wrong in 386 unanimous
   positions — so however good its numbers look on a particular leaf, it cannot
@@ -121,21 +121,29 @@ After this, all readings agree on the column count on every pilot leaf, and the
 disagreement rate falls to 25%.
 
 **This is also the pipeline's remaining weak point.** Two thirds of the review
-queue is a segmentation artefact rather than a disagreement about characters: of
-24 607 contested positions, 46.6% have some engine returning an empty string and
-27.8% have a multi-word variant. On **25 leaves the engines do not agree how many
-columns there are**, and there the contested rate is 21.96% against 4.70%
-everywhere else — the tables, the annotated Jurats lists, anything where a merged
-line hides the very boundary that would have separated it.
+queue is a segmentation artefact rather than a disagreement about characters:
+measured over the queue as it then stood, 46.6% of contested positions have some
+engine returning an empty string and 27.8% have a multi-word variant; only 34.8%
+are a genuine disagreement about characters. On **25 leaves the engines do not
+agree how many columns there are** (`scripts/layout_health.py`), and there the
+contested rate is 21.96% against 4.70% everywhere else — the tables, the annotated
+Jurats lists, anything where a merged line hides the very boundary that would have
+separated it.
 
-`consensus.py --align line` is the general answer: match a printed line against
-the engine text that overlaps it on the page, so the reading order stops
-mattering. It is dramatically better where the layout is contested (leaf 453
-36.1% → 6.4%, leaf 312 38.7% → 11.1%) and **worse on ordinary prose**, where the
-page-wide match already works and this one costs unanimity (leaf 200: 86.1% →
-7.4% unanimous). It is therefore opt-in, and used today only on the leaves that
-cannot be read any other way, until a round of adjudication says what unanimity is
-worth under it.
+`consensus.py --align line` is the answer: match a printed line against the engine
+text that overlaps it on the page, so the reading order stops mattering. It is
+dramatically better where the layout is contested (leaf 453 36.1% → 6.4%, leaf 312
+38.7% → 11.1%) and **worse on ordinary prose**, where the page-wide match already
+works and this one costs unanimity (leaf 200: 86.1% → 7.4% unanimous). So it is
+applied per leaf, to those 25 and no others.
+
+**It does not come with the accept rule attached.** The 550 adjudications say what
+unanimity is worth under the page-wide alignment, and not one of them falls on a
+leaf aligned this way. Those leaves are marked `accept_unanimous: false`, and
+their 11 114 non-contested positions are held back from the "accept unread" 78% —
+not because they are doubtful, but because nothing has measured them. A stratified
+round on those leaves discharges the whole block, or condemns it; that is the
+difference between a bound and an assumption.
 
 ### 4. Token-level consensus
 
@@ -144,11 +152,11 @@ word. Each position lands in one of four tiers:
 
 | tier | tokens | share |
 |---|---:|---:|
-| all six agree | 367 867 | 77.7% |
-| one dissenter | 57 409 | 12.1% |
-| two dissenters | 23 397 | 4.9% |
-| **contested** (three or more, or tied) | **24 607** | **5.2%** |
-| **total** | **473 280** | |
+| all six agree | 367 923 | 77.7% |
+| one dissenter | 58 322 | 12.3% |
+| two dissenters | 23 531 | 5.0% |
+| **contested** (three or more, or tied) | **23 647** | **5.0%** |
+| **total** | **473 423** | |
 
 The winner is always a string some engine actually produced. The pipeline can be
 wrong, but only in ways some recogniser was wrong first.
@@ -196,7 +204,7 @@ top.
 | policy | words reviewed | residual error |
 |---|---:|---:|
 | accept the vote everywhere | 0 | ~0.96% — 1 wrong word in 105 |
-| **review the contested 5.2%** | **24 607** | no residual measured; ≤0.65% at 95% |
+| **review the contested 5.0%** | **23 647** | no residual measured; ≤0.65% at 95% |
 | review contested + two-dissent | 48 004 | — |
 
 The middle row does not say "zero". The production panel was right at all 461
@@ -225,6 +233,7 @@ beforehand.
 | **Folded-key alignment** (lowercase, accents and punctuation stripped, instead of exact equality) | no gain | Leaf 98 66.7% → 61.9% contested, leaf 163 worse. The alignment is not failing for want of anchors; on those leaves the readings genuinely diverge. |
 | **Fitting a vertical scale between the scans** | 10× worse than doing nothing | The two differ by *where the page was cropped*, not by how much it was stretched. Fitting a slope turns a constant offset into an error that grows down the leaf. A plain shift, grid-searched, works. |
 | **Swapping the geometry engine on the blurred leaves** | no gain | The word boxes were never the problem there; the image was. Fixed by swapping the *scan* instead. |
+| **A layout detector (PP-DocLayout) for the columns** | 12/12 on the control, useless on the 25 | It is competent and genuinely independent of what the engines read — and it answers a different question. On the annotated Jurats leaves it returns a single `content` region spanning the width, which is *correct*: a table is one region, and decomposing it belongs to a different model. `TableCellsDetection` is that model and ships the **wired** detector, trained on tables drawn with rules; Campaner's are set typographically with none, so it finds one cell on leaf 631. Kept as `scripts/layout_paddle.py`, consumed by nothing. |
 | **LLM post-correction** | not adopted | The evidence is genuinely mixed: Gemini 2.0 Flash reached 0.84% CER post-correcting historical German directories, but [ICDAR 2026 runs a competition](https://arxiv.org/pdf/2607.08143) on the hallucination and over-correction this causes. The lexicon experiment above is the same mechanism in a far weaker form and it already lost when unconstrained. If revisited, the defensible form is a vote **restricted to the candidates the engines produced**, never free text, measured before being trusted. |
 
 ### The lexicon that is kept
@@ -267,7 +276,7 @@ profile looked ideal for the job — 73% on the *contested* tier where the best 
 engine manages 48% — did the same thing at +22%. A panel is not improved by adding
 accuracy to it. Both engines earn their seats only by **replacing** the two weakest
 readings, which keeps six voters and takes the contested queue from 26 298 to
-24 607.
+24 607 — and to 23 647 once the scan and the alignment are chosen per leaf.
 
 The methodological risk that motivated the test was real and is worth stating: the
 model is trained on consensus output, so it may have learned the panel's biases,
@@ -411,10 +420,10 @@ Everything is idempotent and skips work already on disk.
 
 | | |
 |---|---|
-| `data/entries/` | the chronicle: 519 of 572 years found, entries as `Mes día.—texto—SIGLA`, with **245 footnotes** separated from the text they interrupt |
+| `data/entries/` | the chronicle: 521 of 572 years found, entries as `Mes día.—texto—SIGLA`, with **244 footnotes** separated from the text they interrupt |
 | `data/jurats/` | **1 949 names over 356 years**, one row per (year, seat, name) with its certainty tier |
-| `data/documents/` | the 6 appendix blocks Campaner prints between the centuries, 27 numbered sections over 187 leaves |
-| `data/sigla/` | the glossary of manuscript sigla, resolving **1 625 of 1 797** attributions |
+| `data/documents/` | the 6 appendix blocks Campaner prints between the centuries, 29 numbered sections over 187 leaves |
+| `data/sigla/` | the glossary of manuscript sigla, resolving **1 632 of 1 804** attributions |
 | `data/text/` | the readable transcription, with every editorially repaired word keeping the panel's reading under `printed` |
 
 Two things found along the way that are worth stating as results rather than
@@ -434,7 +443,7 @@ importantly, the veto that stops it corrupting 47 tokens of perfectly good Catal
    until a round of adjudication covers them.
 2. **The review tool** — native-resolution crops, keyboard-driven, decisions to an
    append-only file keyed by `(leaf, box)` so re-runs replay them, ordered by what
-   matters. The same tool serves both the 24 607 decisions and the round above.
+   matters. The same tool serves both the 23 647 decisions and the round above.
 3. **The site** — static SPA, Catalan UI, Cloudflare Worker, and a card on the
    Corpus Balear portal.
 

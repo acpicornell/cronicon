@@ -46,7 +46,7 @@ Measured, not assumed — see `docs/OCR_BENCHMARK.md`:
   `tess-ia-300dpi-spa_old-cat-lat`, `vision-bne`, `vision-ia`, `paddle-ppocrv6`,
   `kraken-cronicon` — and it is the default of every parser. It is the best six
   measured (99.04% on the 495 positions all panels can be scored on, 4 ties
-  against 11, no shared error in 348 unanimous positions), and 24 607 contested
+  against 11, no shared error in 348 unanimous positions), and 23 647 contested
   against 26 298. `benchmark.py --consensus <dir>` scores any panel; it recovers
   the engines the sample predates **by word box**, because an index renumbers
   when a leaf's geometry changes and a box does not.
@@ -62,8 +62,14 @@ Measured, not assumed — see `docs/OCR_BENCHMARK.md`:
   so however good it looks on a particular leaf, it cannot carry the accept rule.
 - Upscaling is not resolution: Tesseract on the BNE scan interpolated to 600 dpi
   scores *worse* than the same engine at native 200 dpi.
-- Reviewing the contested ~3% of words (~16 000 decisions) reaches ~1 error in
-  200 across the book's ~489 000 words.
+- Reviewing the contested 5.0% of words — **23 647 decisions**, counted over all
+  614 leaves, not projected — leaves no residual the sample can measure (95% upper
+  bound 0.65%). The pilot's projection of ~17 000 was wrong by 55%, because five
+  body pages showed 2.1% contested where the real body average is 5.4%.
+- **Plus 11 114 positions held back**, not doubtful: they sit on the 25 leaves
+  aligned line by line, which no adjudication covers. A stratified round on those
+  leaves discharges the block. `accept_unanimous: false` in the leaf JSON marks
+  them.
 - **Review crops must be at native resolution.** Adjudicating from 78-px-tall
   crops produced one wrong call (`asi` for `así`); at full resolution the accent
   is obvious. Accent-vs-dot is exactly what most disagreements turn on.
@@ -72,7 +78,7 @@ Measured, not assumed — see `docs/OCR_BENCHMARK.md`:
   `--force`. The strata depend on every engine's output, so *any* engine
   improvement changes which positions get drawn — repairing the ABBYY-IA parser
   renumbered the sample and orphaned all 550 adjudications. `benchmark.py`
-  verifies a fingerprint of `(id, page, index)` and hard-fails on a mismatch;
+  verifies a fingerprint of `(id, page, index, box)` and hard-fails on a mismatch;
   when it fires, restore the sample from git rather than re-drawing.
 
 ## Structure of the book
@@ -162,7 +168,7 @@ do work, in the order they matter:
    candidates and report the rest. This is the guard that lets rules 1 and 2 be
    generous, and it is what exposed the two real oddities in the whole book.
 
-493 → 519 distinct years of 572, and the 53 still missing are mostly genuine:
+493 → 521 distinct years of 572, and the 51 still missing are mostly genuine:
 29 have no trace of a heading anywhere between the years that bracket them —
 Campaner simply had no news. Only two candidates in the book break the
 chronology, and neither is an OCR error:
@@ -246,7 +252,7 @@ high on leaf 479 was locking out twenty consecutive years.
 
 At the close of each century the chronicle stops and an appendix runs for six to
 sixty-nine leaves. `scripts/parse_documents.py` delimits them →
-`data/documents/documents.json`: **6 blocks, 27 numbered sections, 187 leaves.**
+`data/documents/documents.json`: **6 blocks, 29 numbered sections, 187 leaves.**
 
 A block is *not* identifiable by length: leaves 253–280 are twenty-eight leaves
 of continuous Germanía narrative and are chronicle. What every block does have is
@@ -325,20 +331,34 @@ PaddleOCR are *in* the panel, having replaced the two weakest readings; adding
 either as a seventh was measured and rejected. See §Toolchain above and
 `docs/OCR_BENCHMARK.md` §3b and §4c.
 
-What the ratification exposed, and what is now the work:
+What the ratification exposed, and what was done about it. The book's consensus is
+now built with **both per-leaf corrections**, and this is the command that makes it:
 
-- **The IA scan is defective on a short run of leaves, and the panel puts five of
+```sh
+python scripts/scan_health.py            # -> data/scan_health.json
+python scripts/layout_health.py          # -> data/layout_health.json
+python scripts/consensus.py --pages all --swap-paddle --swap-kraken \
+       --per-leaf-scan --per-leaf-align
+```
+
+- **The IA scan is defective on a short run of leaves, and the panel put five of
   its six votes there.** Comparing each recogniser against itself on the two
-  scans isolates leaves **93, 94, 97, 98** (and marginally 57, 60): the
-  IA-reading engines' malformed-token rate jumps 5–13 points while the BNE ones
-  stay at 0.6–2%. The facsimile confirms it — IA leaf 96 is smeared, BNE p98 is
-  pristine. Those four leaves carry **1 909 contested positions, 7.8% of the
-  whole queue**. Changing the *geometry* does not help; changing the *scan* does.
-- **Two thirds of the review queue is a segmentation artefact.** Of 24 607
-  contested positions, 46.6% have some engine returning an empty string and 27.8%
-  have a multi-word variant; only 34.8% are a genuine disagreement about
-  characters. On **25 leaves the engines do not even agree how many columns there
-  are**, and there the contested rate is 21.96% against 4.70% everywhere else.
+  scans isolates leaves **93, 94, 97, 98**: the IA-reading engines' malformed-token
+  rate jumps 5–13 points while the BNE ones stay at 0.6–2%. The facsimile confirms
+  it — IA leaf 96 is smeared, BNE p98 is pristine. Those four carried **1 909
+  contested positions**. Changing the *geometry* does not help; changing the
+  *scan* does. `scan_health.py` also finds the other direction: the BNE copy of
+  leaf 122 has the facing page set off across it in mirror image.
+- **Two thirds of the review queue was a segmentation artefact.** Of the 24 607
+  contested positions as they then stood, 46.6% had some engine returning an empty
+  string and 27.8% a multi-word variant; only 34.8% were a genuine disagreement
+  about characters. On **25 leaves the engines do not even agree how many columns
+  there are** (`layout_health.py`), and there the contested rate is 21.96% against
+  4.70% everywhere else. Those leaves are now aligned line by line — and marked
+  `accept_unanimous: false`, because no adjudication covers that alignment.
+- Net: **24 607 → 23 647 contested**, and leaf 98 goes from `sos torras grano y y'
+  que` to `frumentarios en grano y especie, sin que`. Only the 29 affected leaves
+  changed; the other 585 are byte-identical.
 - **Scope decision:** the introduction (12 leaves) is dropped from the edition, but
   its glossary of manuscript sigla must still be extracted by hand — the body's
   source attributions are meaningless without it.
@@ -351,6 +371,14 @@ What the ratification exposed, and what is now the work:
   anchors; the readings genuinely diverge.
 - Swapping the geometry engine on the blurred leaves (`tess-bne`, `abbyy-ia` as
   the box source): **no gain**. The boxes were never the problem there.
+- **A layout detector for the column boundaries** (`scripts/layout_paddle.py`,
+  PP-DocLayout_plus-L): 12/12 on the pilot control, including leaf 631's
+  three-column list — and **no use on the 25 disputed leaves**, where it returns
+  one `content` region spanning x 0.148–0.895. That is correct behaviour: a table
+  is one region and decomposing it is a different model's job. That model,
+  `TableCellsDetection`, ships the **wired** variant and Campaner's tables have no
+  rules, so it finds one cell on leaf 631. The script is kept and nothing consumes
+  it; it would serve as an independent check on `find_columns` for prose.
 
 ## Backlog
 

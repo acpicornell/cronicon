@@ -1,11 +1,12 @@
 # OCR pilot — Cronicón Mayoricense (Palma, 1881)
 
 **Verdict: worth building.** A consensus of six independent readings, plus human
-review of the 5.6% of words the engines argue about, gets the book to roughly one
+review of the 5% of words the engines argue about, gets the book to roughly one
 wrong word in 220 — with no generative model anywhere near the transcription.
 
-The panel has since been run over the whole book: 473 280 token positions across
-614 leaves, of which 26 298 need a human. See §4.
+The panel has since been run over the whole book: 473 423 token positions across
+614 leaves, of which 23 647 need a human once the scan and the alignment are
+chosen per leaf. See §4.
 
 Measured on twelve pages chosen to cover every page class in the book, against
 **550 word positions** adjudicated one by one against the facsimile, in two
@@ -275,7 +276,7 @@ Each candidate panel has been run over all 614 leaves, so this is counted:
 
 | panel | unanimous | contested | vs. the six |
 |---|---:|---:|---:|
-| `consensus6_swap_swapk` (production, 6) | 77.7% | **24 607** | −6% |
+| `consensus6_swap_swapk` (production, 6) | 77.7% | **23 647** | −10% |
 | the panel of §8 (6) | 71.3% | 26 298 | — |
 | `consensus7_paddle` (7) | 70.3% | 32 040 | **+22%** |
 | `consensus7` (+kraken, 7) | 69.6% | 35 328 | **+34%** |

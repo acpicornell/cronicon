@@ -47,6 +47,7 @@ GEOMETRY_BNE = ("bne", "400dpi", "spa_old", "psm3")
 GEOMETRY_BNE_ENGINE = "tess-bne-400dpi-spa_old-psm3"
 
 SCAN_HEALTH = PROJECT / "data" / "scan_health.json"
+LAYOUT_HEALTH = PROJECT / "data" / "layout_health.json"
 
 # The production panel: one engine per family and scan. Two variants of the same
 # engine over the same image would vote together and inflate unanimity without
@@ -495,20 +496,25 @@ def run_one(job) -> tuple[int, Counter, int]:
     panel, geometry = scan_adjusted(panel, geometry, prefer)
     loci = collect(pdf_page, panel, gutter, geometry, align)
     if not loci:
-        return pdf_page, Counter(), 0
+        return pdf_page, Counter(), 0, True
     grades = Counter(locus["grade"] for locus in loci)
+    # The accept rule -- take the unanimous positions unread -- rests on 550
+    # adjudications made under the page-wide alignment. None of them falls on a
+    # leaf aligned this way, so on those leaves unanimity is a fact about the
+    # vote and not yet evidence about the text.
+    accept_unanimous = align != "line"
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     (out / f"p{pdf_page:04d}.json").write_text(json.dumps({
         "pdf_page": pdf_page, "panel": panel, "geometry": geometry,
-        "align": align,
+        "align": align, "accept_unanimous": accept_unanimous,
         # Recorded on every leaf, not only the swapped ones, so that a reader of
         # a single file can tell whether it was voted on the default panel
         # without having to know which leaves the health file names.
         "scan": prefer or "default",
         "tokens": len(loci), "grades": dict(grades), "loci": loci,
     }, ensure_ascii=False), encoding="utf-8")
-    return pdf_page, grades, len(loci)
+    return pdf_page, grades, len(loci), accept_unanimous
 
 
 def main() -> None:
@@ -532,6 +538,13 @@ def main() -> None:
                          "38.7%%->11.1%%) and worse on ordinary prose, where the "
                          "page-wide match already works and this one costs "
                          "unanimity. Not the default; see docs/OCR_BENCHMARK.md")
+    ap.add_argument("--per-leaf-align", action="store_true",
+                    help="align by line on the leaves data/layout_health.json "
+                         "names -- the 25 where the panel cannot agree how many "
+                         "columns the page has, and where the contested rate is "
+                         "21.96%% against 4.70%% elsewhere. Those leaves are "
+                         "marked accept_unanimous: false, since no adjudication "
+                         "covers them under this alignment")
     ap.add_argument("--per-leaf-scan", action="store_true",
                     help="on the leaves data/scan_health.json marks, swap the "
                          "panel onto the scan that is legible there. Four leaves "
@@ -600,9 +613,26 @@ def main() -> None:
                 f"a scan swap.\nRe-key data/ground_truth/adjudicated.tsv by word "
                 f"box first, or exclude them from data/scan_health.json.")
 
+    by_line: set[int] = set()
+    if args.per_leaf_align:
+        if not LAYOUT_HEALTH.exists():
+            raise SystemExit(f"{LAYOUT_HEALTH} not found -- "
+                             f"run scripts/layout_health.py first")
+        by_line = set(json.loads(LAYOUT_HEALTH.read_text())["align_by_line"])
+        clash = sorted(by_line & adjudicated_leaves())
+        if clash:
+            raise SystemExit(
+                f"leaves {clash} carry adjudications and would be renumbered by "
+                f"a change of alignment.\nRe-key the truth file by word box "
+                f"first, or exclude them from data/layout_health.json.")
+
     pages = targets.resolve(args.pages)
     print(f"{len(pages)} leaves, panel of {len(panel)}, {args.workers} workers")
     print(f"  {', '.join(panel)}")
+    if by_line:
+        listed = sorted(by_line & set(pages))
+        print(f"  {len(listed)} leaves aligned line by line, and NOT accepted "
+              f"unread: {listed}")
     if prefer:
         # Named out loud rather than applied silently: a leaf voted on a
         # different set of engines is a different measurement, and anyone reading
@@ -619,17 +649,21 @@ def main() -> None:
     totals = Counter()
     tokens = 0
     empty: list[int] = []
+    unguaranteed = 0
     with ProcessPoolExecutor(max_workers=args.workers) as pool:
         futures = [pool.submit(run_one,
                                (page, panel, str(out_dir), gutter, args.geometry,
-                                prefer.get(page), args.align))
+                                prefer.get(page),
+                                "line" if page in by_line else args.align))
                    for page in pages]
         for n, future in enumerate(as_completed(futures), 1):
-            page, grades, count = future.result()
+            page, grades, count, accept = future.result()
             if not count:
                 empty.append(page)
             totals += grades
             tokens += count
+            if not accept:
+                unguaranteed += count
             if n % 100 == 0 or n == len(pages):
                 print(f"  [{n:4d}/{len(pages)}]  {tokens:,} tokens  "
                       f"{time.time()-t0:.0f}s")
@@ -641,6 +675,24 @@ def main() -> None:
     review = totals["contested"]
     print(f"\nReview queue at the recommended rule (contested only): "
           f"{review:,} decisions")
+    if unguaranteed:
+        # Kept as a separate number rather than folded into the queue, because it
+        # is a different kind of cost. The contested positions have to be looked
+        # at one by one; these are held back only because no adjudication covers
+        # this alignment, so a stratified round of a few hundred on these leaves
+        # discharges the whole block -- or condemns it, which is the point of
+        # measuring rather than assuming.
+        held = unguaranteed - sum(
+            Counter(json.loads((out_dir / f"p{p:04d}.json").read_text())["grades"]
+                    )["contested"]
+            for p in sorted(by_line & set(pages))
+            if (out_dir / f"p{p:04d}.json").exists())
+        print(f"  plus {held:,} positions held back on the {len(by_line)} leaves "
+              f"aligned line by line:")
+        print(f"  not doubtful, but not covered by any adjudication either. A "
+              f"round on those leaves")
+        print(f"  settles the block; until then the reviewed total is "
+              f"{review + held:,}.")
     if empty:
         print(f"\n{len(empty)} leaves produced nothing -- missing OCR output: "
               f"{empty[:12]}{' ...' if len(empty) > 12 else ''}")

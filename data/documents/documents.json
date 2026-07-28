@@ -11,12 +11,7 @@
     "pdf_page": 58,
     "line": 0,
     "jurats": true,
-    "until": 63,
-    "years": [
-     1249,
-     1282
-    ],
-    "years_stated": 2
+    "until": 63
    }
   ],
   "numerals_not_found": []
@@ -38,7 +33,7 @@
      1304,
      1400
     ],
-    "years_stated": 44
+    "years_stated": 32
    },
    {
     "number": 2,
@@ -56,7 +51,12 @@
     "pdf_page": 137,
     "line": 0,
     "read_as": "III.",
-    "until": 152
+    "until": 152,
+    "years": [
+     1315,
+     1315
+    ],
+    "years_stated": 1
    },
    {
     "number": 4,
@@ -77,14 +77,14 @@
     "numeral": "V",
     "title": "Algunas noticias é indicaciones curiosas extraídas",
     "pdf_page": 159,
-    "line": 10,
+    "line": 11,
     "read_as": "V.",
     "until": 167,
     "years": [
      1307,
      1706
     ],
-    "years_stated": 24
+    "years_stated": 25
    }
   ],
   "numerals_not_found": []
@@ -174,7 +174,7 @@
      1502,
      1598
     ],
-    "years_stated": 71
+    "years_stated": 84
    },
    {
     "number": 2,
@@ -219,12 +219,7 @@
     "pdf_page": 324,
     "line": 2,
     "read_as": "VI.",
-    "until": 367,
-    "years": [
-     1630,
-     1630
-    ],
-    "years_stated": 1
+    "until": 367
    },
    {
     "number": 9,
