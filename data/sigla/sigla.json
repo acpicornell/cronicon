@@ -11,7 +11,7 @@
    "siglum": "A. G.",
    "expansion": "Antonio Gelabert.",
    "source": "parsed",
-   "attributions": 25
+   "attributions": 26
   },
   {
    "siglum": "A. T.",
@@ -23,7 +23,7 @@
    "siglum": "B. J.",
    "expansion": "Bartolomé Jaume.",
    "source": "parsed",
-   "attributions": 200
+   "attributions": 205
   },
   {
    "siglum": "B. S.",
@@ -71,7 +71,7 @@
    "siglum": "G. T.",
    "expansion": "Guillermo Terrassa.",
    "source": "parsed",
-   "attributions": 430
+   "attributions": 437
   },
   {
    "siglum": "G. V.",
@@ -143,19 +143,19 @@
    "siglum": "M. C.",
    "expansion": "Maestro de Ceremonias.",
    "source": "adjudicated",
-   "attributions": 39
+   "attributions": 40
   },
   {
    "siglum": "M. M.",
    "expansion": "Matías Mut.",
    "source": "adjudicated",
-   "attributions": 192
+   "attributions": 193
   },
   {
    "siglum": "M. S.",
    "expansion": "Mateo Salcet.",
    "source": "parsed",
-   "attributions": 66
+   "attributions": 67
   },
   {
    "siglum": "MS. y MSS.",
@@ -167,7 +167,7 @@
    "siglum": "N. C.",
    "expansion": "N. Cañellas.",
    "source": "adjudicated",
-   "attributions": 5
+   "attributions": 6
   },
   {
    "siglum": "V.",

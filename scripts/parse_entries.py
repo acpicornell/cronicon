@@ -14,14 +14,15 @@ number. What identifies one is that the line says a year and nothing else, that
 several of the eight readings agree on which year, and that the year fits a
 chronicle which only ever moves forward.
 
-Two candidates survive all of that and are still wrong; both were settled against
-the facsimile rather than argued about:
+One candidate survives all of that and is still wrong, and it was settled against
+the facsimile rather than argued about: leaf 39 really does print `1449.`, and
+the entry beneath it reads «año de 1249, perseverando…». Campaner's own error,
+and by the rules of this edition it stays on the page.
 
-  leaf 39  `1449.`  the page really does print 1449, and the entry beneath it
-                    reads «año de 1249, perseverando…». Campaner's own error,
-                    and by the rules of this edition it stays on the page.
-  leaf 74  `1336.»` the last line of a footnote quotation, `…a 13 dias dagost
-                    de 1336.»`, wrapped onto a line of its own.
+Footnotes come off before any of this. They carry their own years -- the second
+surviving candidate used to be `1336.»` on leaf 74, the tail of the note `…a 13
+dias dagost de 1336.»` wrapped onto a line of its own -- and their text is not
+chronicle. Each is attached to the entry that prints its number.
 
 Entries are then split on the date markers, and the trailing sigla — `—G. T.`,
 `—B. J.`, `—L. V.` — are lifted out as the source attribution, which is what makes
@@ -110,6 +111,56 @@ INLINE_YEAR = re.compile(r"(?<!\d)(1[2-8]\d\d)\s*[.,\-—]\s*$")
 
 # Sigla trailing an entry: —G. T. / —B. J. / —L. V. / —Jn. Br. / —T. A.
 SIGLA = re.compile(r"—\s*((?:[A-ZÁÉÍÓÚ][a-z]?\.\s*){1,3})\s*$")
+
+
+# A footnote opens with its own number on a fresh line: `(1)`, `(2)`, `[3]`.
+NOTE_START = re.compile(r"^\s*[\(\[]\s*(\d{1,2})\s*[\)\]]")
+# and never in the upper half of the leaf. The same `(1)` appears inside an entry
+# as the reference to it, mid-sentence, and that one is not a note.
+NOTE_BAND = 0.55
+# A column break: y jumps back towards the head of the leaf.
+COLUMN_BREAK = 0.2
+
+
+def split_notes(lines: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Separate a leaf's footnotes from its body.
+
+    A note runs from its own number to the foot of the column it is in, so the
+    rule follows the reading order rather than the geometry: once a note has
+    opened, every following line belongs to it until y jumps back towards the
+    top of the leaf, which is the next column beginning.
+
+    Type size does not work as a signal here and was tried: notes are set at
+    0.0097 of the leaf against 0.0127 for the body, and the two overlap.
+    """
+    body: list[dict] = []
+    notes: list[dict] = []
+    in_note = False
+    previous = 0.0
+    for line in lines:
+        top = line["bbox"][1]
+        if in_note and top < previous - COLUMN_BREAK:
+            in_note = False
+        if not in_note and top > NOTE_BAND and NOTE_START.match(line["text"]):
+            in_note = True
+        (notes if in_note else body).append(line)
+        previous = top
+    return body, notes
+
+
+def gather_notes(notes: list[dict]) -> list[dict]:
+    """The note lines joined into one record per number."""
+    out: list[dict] = []
+    for line in notes:
+        match = NOTE_START.match(line["text"])
+        if match:
+            out.append({"number": int(match.group(1)),
+                        "text": line["text"][match.end():].strip()})
+        elif out:
+            text = out[-1]["text"]
+            out[-1]["text"] = (text[:-1] + line["text"] if text.endswith("-")
+                               else (text + " " + line["text"]).strip())
+    return out
 
 
 def strip_accents(text: str) -> str:
@@ -469,14 +520,22 @@ def main() -> None:
     inventory = {leaf["pdf_page"]: leaf for leaf in
                  json.loads((PROJECT / "data" / "inventory.json").read_text())["leaves"]}
 
-    # ---- pass 1: read every body leaf, and separate chronicle from name list.
+    # ---- pass 1: read every body leaf, separate the footnotes from the body,
+    # and the name lists from the chronicle. The notes come off first because
+    # they are not chronicle in any sense: they carry their own years, and one of
+    # them -- `…a 13 dias dagost de 1336.»` wrapped alone on leaf 74 -- was one
+    # of only two candidates in the book that broke the chronology.
     leaves: dict[int, list[dict]] = {}
+    footnotes: dict[int, list[dict]] = {}
     body_pages: list[int] = []
     for pdf_page in targets.resolve("all"):
         path = source / f"p{pdf_page:04d}.json"
         if not path.exists() or inventory[pdf_page]["page_class"] != "body":
             continue
-        leaves[pdf_page] = page_lines(path)
+        body, notes = split_notes(page_lines(path))
+        leaves[pdf_page] = body
+        if notes:
+            footnotes[pdf_page] = gather_notes(notes)
         body_pages.append(pdf_page)
 
     tables = fill_table_runs(
@@ -548,10 +607,16 @@ def main() -> None:
             nonlocal_year = year
             for entry in split_entries(text, nonlocal_year):
                 body, sigla = lift_sigla(entry["text"])
+                # The notes this entry refers to, by the number printed in it.
+                wanted = {int(m.group(1))
+                          for m in re.finditer(r"[\(\[]\s*(\d{1,2})\s*[\)\]]", body)}
+                notes = [n for n in footnotes.get(pdf_page, [])
+                         if n["number"] in wanted]
                 entries.append({**entry, "text": body, "sources": sigla,
                                 "pdf_page": pdf_page,
                                 "printed": inventory[pdf_page]["printed"],
-                                "ia_leaf": inventory[pdf_page]["ia_leaf"]})
+                                "ia_leaf": inventory[pdf_page]["ia_leaf"],
+                                **({"notes": notes} if notes else {})})
             buffer.clear()
 
         for position, line in enumerate(lines):
@@ -602,7 +667,10 @@ def main() -> None:
     sourced = sum(1 for e in entries if e["sources"])
     print(f"{len(headings)} year headings, {len(set(years))} distinct "
           f"({min(years)}–{max(years)})")
+    attached = sum(1 for e in entries if e.get("notes"))
     print(f"{len(entries):,} entries")
+    print(f"  footnotes         {sum(len(v) for v in footnotes.values()):,} on "
+          f"{len(footnotes)} leaves, {attached} entries carry one")
     print(f"  with a month      {dated:,}  ({dated/len(entries):.0%})")
     print(f"  with a source     {sourced:,}  ({sourced/len(entries):.0%})")
     print(f"  median length     {sorted(len(e['text']) for e in entries)[len(entries)//2]} chars")
