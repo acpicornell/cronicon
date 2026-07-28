@@ -342,7 +342,38 @@ primeras páginas á las dimensiones del original»*: section VII is a **facsimi
 reprint of a 1541 booklet**, leaves 335–367, carrying its own title page in its
 own typography. The gap is explained, not mysterious.
 
-## The non-Spanish material — measured coverage is zero
+## The non-Spanish material — measured at last
+
+**Round 3 is adjudicated: 320 positions on 127 document leaves** (ids 551–870,
+`data/adjudication/documents.json`), against the facsimile at native resolution
+through `review.py --sample`. The book turns out to be two books:
+
+| | today | after reviewing the contested tier |
+|---|---:|---:|
+| chronicle, 79% of the words | 1 wrong word in 113 | 1 in 706 |
+| documents, 21% | 1 in 39 | 1 in 96 |
+
+Per stratum on the document leaves, raw consensus → as published: unanimous
+98.5% → **99.5%**, one-dissent 96.0%, two-dissent 90.0% → **96.7%**, contested
+62.5% → **70.0%**. The gap between the two columns is `editorial.py`, and this is
+the first evidence that it helps rather than merely changes things — the
+adjudication did not know the rule existed.
+
+**One shared error in 200 unanimous positions, and it was predicted.** Leaf 358
+prints `ſe` in *Vnquam ſi ſe odium Noti remittit* and all six engines read `fe` —
+the exact case `docs/EDITORIAL.md` writes down as knowingly left wrong, because
+`fe` is also a real word and corrupting a real word is worse than leaving a real
+reading unrepaired.
+
+**11 positions (3.4%) had no engine reading the printed form**: the long s, and
+two Latin ligatures nobody offers — `prœdo` and `Numidœ` on leaf 351. Seven are
+repaired by the editorial rule; the ligatures are a known gap and four examples
+are not enough to write a rule from.
+
+Never publish one number for the edition. Publish the tier per word, which
+`data/text/p####.json` already carries.
+
+## How that measurement was made
 
 The book embeds letters, edicts and relations in medieval Catalan and Latin. Two
 things are true and must not be confused:

@@ -13,10 +13,18 @@ the text they interrupt, 1 949 Jurats over 356 years, 29 numbered document
 sections, and a glossary resolving 90% of the source attributions. Not yet built:
 the human review pass over the 23 647 contested words, and the site.
 
-One honesty caveat governs everything below: **the 159 leaves of medieval Catalan
-and Latin have never been measured.** All 550 adjudicated positions fall on twelve
-leaves of Spanish prose. Every accuracy figure here describes the chronicle and
-nothing else.
+**This is two books, and they are not equally reliable.** 870 positions have now
+been adjudicated against the facsimile — 550 on the chronicle, 320 on the leaves
+where Campaner prints letters, edicts and a 1541 booklet:
+
+| | today | after reviewing the contested 5% |
+|---|---:|---:|
+| the chronicle — 79% of the words | 1 wrong word in **113** | 1 in **706** |
+| the documents — 21% | 1 in **39** | 1 in **96** |
+
+A single number would misdescribe both. Every word in `data/text/` carries its own
+certainty tier, which is the honest way to publish this: mark the doubtful words,
+link the facsimile, let the reader see which is which.
 
 ---
 

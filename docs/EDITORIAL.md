@@ -87,6 +87,23 @@ substitution. Without that, the rule accepts an engine's collapse of
 `Cæfar` should be `Cæſar` and no engine read it. These go to the review queue.
 Leaving a real reading unrepaired is recoverable; corrupting a real word is not.
 
+**Measured, afterwards.** Round 3 adjudicated 320 positions on the document
+leaves against the facsimile, knowing nothing of this rule. Of 200 unanimous
+positions the published text is wrong exactly **once** — leaf 358, the Latin
+*Vnquam ſi ſe odium Noti remittit*, where all six engines read `fe` — which is
+the case named in the paragraph above. The rule's only measured failure is the
+one it declared in advance and accepted for a stated reason.
+
+The same round shows what the repair is worth, on tiers it was never tuned
+against: unanimous 98.5% → **99.5%**, two-dissent 90.0% → **96.7%**, contested
+62.5% → **70.0%**.
+
+**A gap the round found.** Seven of the eleven positions where no engine had the
+printed form are long s and are repaired. The other four are not: the Latin
+ligatures `prœdo` and `Numidœ` (leaf 351), which every engine renders as `prodo`,
+`prcedo`, `Numido`, `Numidce` and so on. No rule addresses them yet, and none
+should be written from four examples.
+
 ---
 
 ## The reading form

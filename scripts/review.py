@@ -107,6 +107,15 @@ def decided() -> dict[str, dict]:
     return out
 
 
+def leaf_scan(consensus: Path, pdf_page: int) -> str:
+    """Which scan this leaf's word boxes are normalised to."""
+    path = consensus / f"p{pdf_page:04d}.json"
+    if not path.exists():
+        return "ia"
+    leaf = json.loads(path.read_text())
+    return GEOMETRY_SCAN.get(leaf.get("geometry", "tesseract"), "ia")
+
+
 def queue_from_sample(path: Path, consensus: Path) -> list[dict]:
     """A drawn sample as the queue, so a round is adjudicated at full resolution.
 
@@ -139,6 +148,7 @@ def queue_from_sample(path: Path, consensus: Path) -> list[dict]:
             "context": locus["context"],
             "variants": locus["variants"],
             "panel": panel,
+            "scan": leaf_scan(consensus, locus["pdf_page"]),
             "priority": 0,
         })
     # Adjudication is a sample, not a queue: it is drawn to be representative and
@@ -157,6 +167,7 @@ def build_queue(consensus: Path, pages: list[int], include_held: bool
             continue
         leaf = json.loads(path.read_text())
         held = include_held and not leaf.get("accept_unanimous", True)
+        scan = GEOMETRY_SCAN.get(leaf.get("geometry", "tesseract"), "ia")
         for locus in leaf["loci"]:
             if locus["grade"] != "contested" and not held:
                 continue
@@ -175,6 +186,7 @@ def build_queue(consensus: Path, pages: list[int], include_held: bool
                 "context": locus["context"],
                 "variants": locus["variants"],
                 "panel": leaf["panel"],
+                "scan": scan,
                 "priority": priority(locus),
             })
     queue.sort(key=lambda x: (x["priority"], x["pdf_page"], x["index"]))
@@ -202,28 +214,35 @@ def choices(item: dict) -> list[dict]:
 
 # --- the crop ----------------------------------------------------------------
 
-def source_image(pdf_page: int) -> Path | None:
-    """The most detailed scan held of this leaf, whichever it is.
+# Which scan each geometry provider reads. A box is normalised to *its own*
+# image, and the two scans are cropped differently -- the running head sits at
+# y≈0.082 on a BNE leaf and 0.094 on an IA one -- so a box from one is simply
+# wrong on the other. Showing the largest image available put the highlight two
+# words off, which would have made every adjudication made from it wrong.
+GEOMETRY_SCAN = {"tesseract": "ia", "tesseract-bne": "bne",
+                 "abbyy-ia": "ia", "abbyy-bne": "bne"}
 
-    The Internet Archive images are the better ones on almost every leaf, and on
-    93, 94, 97 and 98 they are out of focus and the BNE ones are pristine. The
-    review has to show whichever one can be read, so it takes the largest
-    available rather than a fixed preference.
-    """
-    candidates = list((PAGES / "ia").glob(f"leaf{pdf_page + IA_OFFSET:04d}_*dpi.png"))
-    candidates += list((PAGES / "bne").glob(f"p{pdf_page:04d}_*dpi.png"))
+
+def source_image(pdf_page: int, scan: str = "ia") -> Path | None:
+    """The most detailed image of this leaf *from the scan the boxes came from*."""
+    if scan == "bne":
+        candidates = list((PAGES / "bne").glob(f"p{pdf_page:04d}_*dpi.png"))
+    else:
+        candidates = list(
+            (PAGES / "ia").glob(f"leaf{pdf_page + IA_OFFSET:04d}_*dpi.png"))
     if not candidates:
         return None
     return max(candidates, key=lambda p: int(p.stem.split("_")[-1][:-3]))
 
 
-def crop(pdf_page: int, bbox, line_bbox, wide: bool) -> bytes | None:
+def crop(pdf_page: int, bbox, line_bbox, wide: bool,
+         scan: str = "ia") -> bytes | None:
     """The word in its line, at native resolution, with the word marked.
 
     Never resized: the whole point is to see the difference between an acute
     accent and the dot of an i, and any resampling is exactly what destroys it.
     """
-    path = source_image(pdf_page)
+    path = source_image(pdf_page, scan)
     if path is None:
         return None
     with Image.open(path) as image:
@@ -380,7 +399,8 @@ class Handler(BaseHTTPRequestHandler):
             if item is None:
                 return self._send(404, b"no such position", "text/plain")
             png = crop(item["pdf_page"], item["bbox"], item["line_bbox"],
-                       params.get("wide", ["0"])[0] == "1")
+                       params.get("wide", ["0"])[0] == "1",
+                       item.get("scan", "ia"))
             if png is None:
                 return self._send(404, b"no image for this leaf", "text/plain")
             return self._send(200, png, "image/png")
@@ -399,6 +419,52 @@ class Handler(BaseHTTPRequestHandler):
         print(f"  p{row['pdf_page']:<5} {row['winner']!r:>24} -> "
               f"{row['chose']!r} {mark}")
         self._send(200, b'{"ok":true}', "application/json")
+
+
+SHEET_GAP = 34
+SHEET_MAX_WIDTH = 2400
+
+
+def batch_sheet(items: list[dict], path: Path) -> dict:
+    """Several positions on one image, each at native resolution.
+
+    The pilot's contact sheets scaled every crop to a constant 78-pixel line and
+    that is what made one adjudication wrong -- but the fault was the *scaling*,
+    not the stacking. Crops here are pasted at the size they were cut, so a sheet
+    is simply several native-resolution crops in a column, and one look settles
+    ten positions instead of one.
+    """
+    from PIL import ImageFont
+    crops, kept = [], []
+    for n, item in enumerate(items, 1):
+        png = crop(item["pdf_page"], item["bbox"], item["line_bbox"],
+                    wide=False, scan=item.get("scan", "ia"))
+        if png is None:
+            continue
+        image = Image.open(io.BytesIO(png))
+        if image.width > SHEET_MAX_WIDTH:
+            image = image.crop((0, 0, SHEET_MAX_WIDTH, image.height))
+        crops.append(image)
+        kept.append({**item, "n": len(kept) + 1})
+
+    width = max((c.width for c in crops), default=100)
+    height = sum(c.height + SHEET_GAP for c in crops) + 8
+    sheet = Image.new("RGB", (width, height), (255, 255, 255))
+    draw = ImageDraw.Draw(sheet)
+    try:
+        font = ImageFont.truetype("/System/Library/Fonts/Menlo.ttc", 22)
+    except OSError:
+        font = None
+    y = 4
+    for item, image in zip(kept, crops):
+        draw.text((8, y + 6), f"[{item['n']}] p{item['pdf_page']}",
+                  fill=(170, 30, 30), font=font)
+        y += SHEET_GAP
+        sheet.paste(image, (0, y))
+        y += image.height
+        draw.line([(0, y - 1), (width, y - 1)], fill=(200, 200, 200))
+    sheet.save(path)
+    return {"sheet": str(path), "positions": kept}
 
 
 def report(consensus: Path, pages: list[int]) -> None:
@@ -434,6 +500,23 @@ def main() -> None:
     ap.add_argument("--export-truth", type=Path, default=None,
                     help="write the adjudicated sample positions as id<TAB>text "
                          "and exit")
+    ap.add_argument("--batch", type=int, default=0,
+                    help="render the next N positions onto one sheet at native "
+                         "resolution, with their variants, and exit")
+    ap.add_argument("--tag", default="",
+                    help="suffix for the sheet, so several can be prepared and "
+                         "looked at together")
+    ap.add_argument("--skip", type=int, default=0,
+                    help="start the batch this far into the queue")
+    ap.add_argument("--by", default="human",
+                    help="who is adjudicating. Recorded on every decision, "
+                         "because a measurement made by whoever built the "
+                         "pipeline is weaker evidence than an independent one "
+                         "and the difference has to be visible in the data")
+    ap.add_argument("--decide", default=None,
+                    help="apply decisions to the last batch: a comma-separated "
+                         "list of n=choice, where choice is a variant number or "
+                         "=text to record what is printed")
     ap.add_argument("--stats", action="store_true",
                     help="report the queue and exit")
     args = ap.parse_args()
@@ -442,6 +525,60 @@ def main() -> None:
     if not consensus.exists():
         raise SystemExit(f"{consensus} missing -- run scripts/consensus.py first")
     pages = targets.resolve(args.pages)
+
+    if args.decide:
+        manifest = json.loads((OUT / f"batch{args.tag}.json").read_text())
+        by_n = {item["n"]: item for item in manifest["positions"]}
+        written = 0
+        with (OUT / "decisions.jsonl").open("a", encoding="utf-8") as fh:
+            for part in args.decide.split(","):
+                n, _, pick = part.strip().partition("=")
+                item = by_n.get(int(n))
+                if item is None:
+                    raise SystemExit(f"no position {n} on the current sheet")
+                if pick.startswith("'") or not pick.isdigit():
+                    # `n==text` records what is printed when no engine has it
+                    text, src, engines = pick.strip("'"), "typed", []
+                else:
+                    choice = item["choices"][int(pick) - 1]
+                    text, src, engines = choice["text"], "variant", choice["engines"]
+                fh.write(json.dumps({
+                    "key": item["key"], "sample_id": item.get("sample_id"),
+                    "pdf_page": item["pdf_page"], "index": item["index"],
+                    "bbox": item["bbox"], "grade": item["grade"],
+                    "held": item.get("held", False), "winner": item["winner"],
+                    "chose": text, "source": src, "engines": engines,
+                    "context": item["context"], "by": args.by,
+                    "at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                }, ensure_ascii=False) + "\n")
+                written += 1
+        print(f"{written} decisions appended to {DECISIONS}")
+        return
+
+    if args.batch:
+        source = (queue_from_sample(
+            PROJECT / "data" / "adjudication" / args.sample, consensus)
+            if args.sample else
+            build_queue(consensus, pages, include_held=not args.no_held))
+        items = source[args.skip:args.skip + args.batch]
+        if not items:
+            print("nothing left")
+            return
+        OUT.mkdir(parents=True, exist_ok=True)
+        sheet = OUT / f"batch{args.tag}.png"
+        manifest = batch_sheet(items, sheet)
+        for item in manifest["positions"]:
+            item["choices"] = choices(item)
+        (OUT / f"batch{args.tag}.json").write_text(
+            json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
+        for item in manifest["positions"]:
+            opts = "  ".join(f"{n}:{c['text']!r}×{c['n']}"
+                             for n, c in enumerate(item["choices"], 1))
+            print(f"[{item['n']}] id={item.get('sample_id','-')} "
+                  f"p{item['pdf_page']} {item['grade']:11} {opts}")
+            print(f"     …{item['context']}…")
+        print(f"\n{sheet}")
+        return
 
     if args.export_truth:
         rows = sorted(((r["sample_id"], r["chose"]) for r in decided().values()

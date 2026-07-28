@@ -342,6 +342,66 @@ tried at all, the defensible form is a vote **restricted to the candidates the
 engines produced**, never free text, weighted by measured accuracy — and measured
 by someone who did not produce the ground truth.
 
+## 4d. Round 3 — the document leaves, measured at last
+
+Every figure above describes Spanish chronicle prose. Not one of the 550
+adjudications falls on a leaf where Campaner prints a letter, an edict or the
+1541 booklet, and those are **159 leaves, 21% of the book's words**. Their
+conflict rate being *lower* than the chronicle's (3.77% against 5.59%) was never
+reassurance: it is what correlated failure looks like.
+
+**320 positions on 127 of those leaves are now adjudicated** — a separate sample
+family (`data/adjudication/documents.json`, ids 551–870) with its own population,
+drawn from the production consensus, and never merged with the chronicle one,
+whose strata shares differ.
+
+| stratum | n | raw consensus | as published |
+|---|---:|---:|---:|
+| unanimous | 200 | 98.5% | **99.5%** |
+| one dissenter | 50 | 96.0% | 96.0% |
+| two dissenters | 30 | 90.0% | 96.7% |
+| contested | 40 | 62.5% | 70.0% |
+
+Two columns because they answer different questions. The first is what the vote
+produces; the second is what `data/text/` actually contains, after the editorial
+rules. **The rules are worth a full point on the unanimous tier and seven on the
+contested one**, and this is the first independent evidence that they help rather
+than merely change things — the adjudication did not know they existed.
+
+| | residual | |
+|---|---:|---|
+| the chronicle, today | 0.88% | 1 wrong word in 113 |
+| the chronicle, after reviewing the contested tier | 0.14% | 1 in 706 |
+| **the documents, today** | **2.55%** | **1 in 39** |
+| the documents, after reviewing the contested tier | 1.05% | 1 in 96 |
+
+### The one shared error, and it was predicted
+
+In 200 unanimous positions the published text is wrong **once**: leaf 358 prints
+`ſe` in the Latin *Vnquam ſi ſe odium Noti remittit*, and all six engines read
+`fe`.
+
+That is not a surprise. It is the case `docs/EDITORIAL.md` writes down in advance
+as knowingly left wrong — *"`fe` (115), `fa` (93) and `fi` (19) are `ſe`, `ſa`,
+`ſi` on the page and are also real words, so the veto leaves them as `f`. Leaving
+a real reading unrepaired is recoverable; corrupting a real word is not."* The
+project's only measured shared error on these leaves is the one it chose to
+accept, for a stated reason. The veto is doing exactly what it was designed to do.
+
+**11 of the 320 (3.4%) had no engine reading the printed form at all** — the long
+s (`Mageſtat`, `paſſats`, `voſtra`, `ſegons`, `coſa`, `noſtra`, `refreſch`) and
+two Latin ligatures nobody offered (`prœdo`, `Numidœ`). Seven of the eleven are
+repaired by the editorial rule; the ligatures are not, and are a known gap.
+
+### What this means for publishing a figure
+
+The book is **two books** and a single number would misdescribe both. The
+chronicle is at 1 error in 113 today and 1 in 706 after review; the documents at
+1 in 39 and 1 in 96. Any claim made for the edition has to be made per class, and
+the per-word certainty tiers in `data/text/p####.json` are the honest way to
+surface it — mark the doubtful words, link the facsimile, and let a reader see
+which is which.
+
 ## 5. What the errors actually look like
 
 Across all engines and all 300 adjudicated positions (892 individual errors):

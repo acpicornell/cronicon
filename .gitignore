@@ -29,3 +29,8 @@ models/
 
 # Review decisions are data -- they are the human's work and are committed.
 # Nothing under data/review/ is regenerable.
+
+# Review batch sheets are scratch: regenerable from the queue in one command.
+# data/review/decisions.jsonl is not -- it is the adjudication itself.
+data/review/batch*.png
+data/review/batch*.json
