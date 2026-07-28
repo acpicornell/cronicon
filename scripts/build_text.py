@@ -30,6 +30,7 @@ from collections import defaultdict
 from pathlib import Path
 
 import editorial
+import spans
 import targets
 
 PROJECT = Path(__file__).resolve().parent.parent
@@ -46,13 +47,48 @@ TIER_MARK = {"unanimous": " ", "one-dissent": "·", "two-dissent": ":",
              "contested": "?"}
 
 
-def assemble(loci: list[dict], repairs: dict | None = None
-             ) -> tuple[str, list[dict]]:
+BOX_PLACES = 5
+DECISIONS = PROJECT / "data" / "review" / "decisions.jsonl"
+
+
+def decision_key(pdf_page: int, bbox) -> str:
+    """The same key `review.py` writes: leaf and word box, never an index."""
+    return f"{pdf_page}:" + ",".join(f"{v:.{BOX_PLACES}f}" for v in bbox)
+
+
+def read_decisions(path: Path = DECISIONS) -> dict[str, str]:
+    """What a person settled with the facsimile on screen, by word box.
+
+    These were being recorded and then ignored: 320 adjudications existed and
+    not one of them reached the page, because nothing between `review.py` and
+    this file ever read them. Twenty-three of the 320 disagree with the panel,
+    and those twenty-three were the whole point of making them.
+
+    A decision outranks an editorial rule. `editorial.py` works from the
+    panel's readings and knows it can be wrong -- it leaves `fe` for `ſe`
+    deliberately -- while a decision was made against the printed page.
+    """
+    out: dict[str, str] = {}
+    if not path.exists():
+        return out
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        row = json.loads(line)
+        if row.get("chose") is not None:
+            out[row["key"]] = row["chose"]      # append-only, last one wins
+    return out
+
+
+def assemble(loci: list[dict], panel: list[str],
+             repairs: dict | None = None,
+             decisions: dict | None = None) -> tuple[str, list[dict]]:
     """Reading-order text, plus one record per word with its tier and box.
 
     `repairs` carries the editorial rules from `editorial.py`, keyed by (leaf,
     index). Where one applies, the word record keeps what the panel voted for
-    under `printed` so that nothing is changed silently.
+    under `printed` so that nothing is changed silently. `decisions` carries the
+    adjudications, keyed by box, and takes precedence over both.
     """
     lines: dict[tuple, list[dict]] = defaultdict(list)
     order: list[tuple] = []
@@ -63,19 +99,43 @@ def assemble(loci: list[dict], repairs: dict | None = None
         lines[key].append(locus)
 
     repairs = repairs or {}
+    decisions = decisions or {}
     words: list[dict] = []
     pieces: list[str] = []
+    flat: list[dict] = []
+    by_line: dict[tuple, list[str]] = {}
     for key in order:
         row = sorted(lines[key], key=lambda x: x["index"])
-        chosen = [repairs.get((w["pdf_page"], w["index"]), w["winner"])
-                  for w in row]
-        text = " ".join(chosen).strip()
-        for w, reading in zip(row, chosen):
-            record = {"text": reading, "tier": w["grade"],
-                      "bbox": w["bbox"], "line": list(key)}
-            if reading != w["winner"]:
-                record["printed"] = w["winner"]
+        settled = [decisions.get(decision_key(w["pdf_page"], w["bbox"]))
+                   for w in row]
+        def reading(locus, page=None):
+            return repairs.get((locus["pdf_page"], locus["index"]),
+                               locus["winner"])
+
+        for group in spans.layout(row, panel, settled, reading):
+            group["line"] = key
+            flat.append(group)
+
+    # The doubling check runs over the whole leaf: a display heading falls on a
+    # line boundary as readily as inside a line.
+    spans.dedupe(flat, panel)
+
+    for group in flat:
+        record = {"text": group["text"], "tier": group["grade"],
+                  "line": list(group["line"]),
+                  "bbox": spans.union([x["bbox"] for x in group["loci"]])}
+        if len(group["loci"]) > 1:
+            record["span"] = len(group["loci"])
+        printed = " ".join(x["winner"] for x in group["loci"]
+                           if x["winner"]).strip()
+        if printed != group["text"]:
+            record["printed"] = printed
+        if record["text"]:
             words.append(record)
+        by_line.setdefault(group["line"], []).append(group["text"])
+
+    for key in order:
+        text = " ".join(c for c in by_line.get(key, ()) if c).strip()
         if not text:
             continue
         if BREAK_HYPHEN.search(text):
@@ -105,6 +165,7 @@ def main() -> None:
     # The editorial rules, applied here and nowhere else, and reported.
     repairs, applied, _ambiguous = editorial.long_s_repairs(
         source, editorial.long_s_leaves(source))
+    decisions = read_decisions()
     if not args.show:
         OUT.mkdir(parents=True, exist_ok=True)
 
@@ -115,7 +176,8 @@ def main() -> None:
         path = source / f"p{pdf_page:04d}.json"
         if not path.exists():
             continue
-        prose, words = assemble(json.loads(path.read_text())["loci"], repairs)
+        leaf = json.loads(path.read_text())
+        prose, words = assemble(leaf["loci"], leaf["panel"], repairs, decisions)
         total_words += len(words)
         for w in words:
             tiers[w["tier"]] += 1
@@ -137,7 +199,8 @@ def main() -> None:
     print(f"  long s repaired  {len(repairs):,}  "
           f"({applied['panel']:,} from the panel, {applied['attested']:,} by "
           f"attestation; {applied['ambiguous']:,} ambiguous left as printed)")
-    for tier in ("unanimous", "one-dissent", "two-dissent", "contested"):
+    for tier in ("unanimous", "one-dissent", "two-dissent", "contested",
+                 "adjudicated"):
         print(f"  {tier:12} {tiers[tier]:8,}  {tiers[tier]/total_words:5.1%}")
     print(f"\n-> {OUT}")
 

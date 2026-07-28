@@ -14,7 +14,7 @@ oficio.—G. F.
 —11—El Comandante General hizo entrega
 del edificio de Montesion al Rector de la Universidad Literaria.— G. F.
 —15 -- Noticia de que Barceló había apresado tres jabeques de moros y dos represas.—
-G. F.
+G. F. —
 —24—Otra noticia de que había apresado
 el jabeque Salim de 32 cañones, con 228 moros
 tripulantes, 2 renegados malteses y 18 esclavos portugueses.—G. F.
@@ -26,7 +26,7 @@ La Poblacion de Mallorca era en este año
 como demuestra el siguiente resúmen:
 Pueblos..
 49
-Parroquias. 54
+Parroquias. . 54
 Conventos de Religiosos.. . . 29
 Idem de Monjas. 13
 Curas Párrocos. 54
@@ -37,12 +37,12 @@ Monjas . 575
 Hermanos de Religiones. . . 52
 Síndicos de Religiones. 22
 Empleados en el Real Servicio. 4 894
-Id. en la Cruzada .
+Id. en la Cruzada .... 51
 Id. en la Real Hacienda. 194
 Inquisicion . 100
 Exentos por Hidalguía. . . . 620
 Solteros. . 39.365
-Solteras 40.603
+Solteras . 40.603
 Casados. 23.304
 Casadas . 23.316
 Total de almas. . . . 126.588
@@ -57,7 +57,7 @@ G. F.—G. T.
 Abr 7.—Llegó noticia de que el capitan
 Barceló había apresado dos polacras tunecinas,
 y llegado hasta Civitavechia.—G. F.
-— -Publicose la sentencia condenatoria
+— 30 —Publicose la sentencia condenatoria
 de los propaladores del falso milagro de la
 imágen de la Virgen de Montesion: á un tal
 Bañas se le impusieron 14 años de destierro; á
