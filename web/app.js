@@ -216,6 +216,17 @@ function init() {
     loadMeta().then(() => { if (q.value) search(q.value); });
   }
 
+  // Clicking a source siglum reveals the name the introduction gives it.
+  // Delegated, because a year page can carry several hundred of them, and left
+  // to the page's own markup so it degrades to the `title` attribute when this
+  // script does not run.
+  document.addEventListener("click", (event) => {
+    const chip = event.target.closest("button.sig");
+    if (!chip) return;
+    const open = chip.getAttribute("aria-expanded") === "true";
+    chip.setAttribute("aria-expanded", open ? "false" : "true");
+  });
+
   const plain = $("plain");
   if (plain) {
     // Remembered, because someone who wants to read rather than audit should

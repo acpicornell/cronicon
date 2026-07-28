@@ -419,6 +419,120 @@ Also: **derive the affected leaves from the consensus, never from
 `data/text/`** — that is the rule's own output, and reading the signal from it
 made the detection vanish the moment the repair had run once.
 
+## The empty string was winning votes
+
+**5 476 positions, up to 9 668 words, were being deleted by the consensus
+itself.** The vote runs one geometric slot at a time, which works while the
+engines agree where a word ends and fails completely where they do not --
+`cuartos.—J. V.—30.—Mataron` is one printed stretch and every engine cuts it
+somewhere else:
+
+```
+paddle    cuartos.—J. | V.  | —30.—Mataron | ''  | ''
+tess-ia   cuartos.—   | J.  | P.           | —   | 30.—Mataron
+abbyy-ia  cuartos.    | ''  | ''           | —   | /. V. — 30. — Mataron
+```
+
+At three of those five slots more engines returned `''` than returned any one
+word, so `—30.—Mataron` lost 3-2 and vanished. An empty reading is not a
+recogniser saying the paper is blank; it is its tokens having landed in the
+neighbouring slot. Absence of evidence was counted as evidence of absence.
+
+`scripts/spans.py` votes on the **whole run at once**: each engine's readings
+are joined across it and the joined strings compared, so the comparison is
+between readings of the same ink. The winner is still a string an engine
+produced. 445 spans, **559 words recovered**, 226 leaves.
+
+Three limits, each of them a mistake made first and then measured:
+
+- **A span may only recover text, never remove it.** Over `ABRiL 3.—Marchó`
+  three engines skipped the display heading and outvoted the three that read
+  it. That is the same error one level up -- reading less is not a vote
+  against -- so the result must be strictly longer than what the slots had and
+  must still contain every word they had.
+- **A span never enters the unanimous stratum.** Agreement is measured after
+  folding whitespace and dash shapes, so it is weaker than the slot-level
+  unanimity the accept rule rests on. One-dissent is the ceiling.
+- **An adjudicated slot stops the merge.** A decision made against the
+  facsimile outranks anything computed here.
+
+**The doubling check is the other half.** `JUNIO JuNio`, `Setiembre SETIEMBRE`,
+`Te-Deum Te-Deum`, `AÑO 1319. 1319.` are one word the alignment gave two slots;
+`etc., etc.` and `Felipe Felipe` are Campaner writing it twice. The panel tells
+them apart with no guessing: **if some engine read the word twice over those
+two slots the page says it twice, and if none did, the second is the
+alignment's.** Two further details, both learned by getting them wrong:
+
+- It runs over the **whole leaf**, not line by line: leaf 430 ends a line with
+  `—J. Agosto` and opens the next with `Acosro 3.—De vuelta`.
+- **Which copy survives is not arbitrary, and neither is which reading.** A
+  month heading belongs to the notice it *opens* and the day follows it, so
+  dropping the second copy strands it at the foot of the previous notice; and
+  the survivor takes the best-supported reading of the two, preferring a form
+  that *is* a month name over one merely close to it (`Acosro 3.` → `Agosto
+  3.`, `Mavo 20.` → `Mayo 20.`).
+
+## One book, one assembly
+
+`build_text.py` published the prose and `parse_entries.py` cut it into notices,
+and **each joined the winners itself**. They drifted: the entries kept
+`Te-Deum Te-Deum` and lacked `—30.—Mataron` after the published text had been
+repaired of both. Both now call `spans.layout`, and `page_lines` must rebuild
+each group's readings from **all eight** engines, not the panel's six -- the
+two outside the panel are what carry leaf 101's `1383.`, and restricting it
+silently cost year headings.
+
+## A siglum is a sequence of initials, not a string
+
+Campaner's source attributions are the reason this book is worth a database,
+and 205 notices kept theirs stuck in the prose because the matcher wanted an em
+dash and exactly one siglum. What an attribution *is*: one of the sigla the
+introduction glosses. So the glossary decides, and the shape only says where to
+look -- at the end, after a dash.
+
+Then a sweep for tails that look like attributions and are not lifted found
+**130 more**, all one cause: comparing characters when the engines scatter the
+stops and the spaces.
+
+| | |
+|---|---|
+| `—G. G. T.` 66 | a doubled initial |
+| `—M M.` 12 | no stop after the first |
+| `—G. T` 6 | no final stop |
+| `—M. S. B. J.` 4 | two sigla, no dash between |
+| `—B. J. .` 3 | a stop too many |
+| `— G . T.` 2 | a space inside |
+
+Matching is now on the **key of initials** and the guard is not the pattern but
+that the key resolves against the glossary; a chunk that does not resolve lifts
+nothing, because half an attribution is worse than none. `G. G. T.` collapses to
+`G. T.` while `M. M.` (Matías Mut) stands, and four initials that fail are
+retried as a pair. Sourced notices **70% → 85%**; 92% of attributions carry the
+name Campaner gives them.
+
+Things that must keep passing: `y su hermano N.`, `de 30 ls. y 4 ds.`, `el
+Alcalde Mayor.`, `de D. Pedro de Bellcastell.` -- `ds. ls. ss.` are in the
+glossary and abbreviate dineros, libras and sueldos, not manuscripts.
+
+**Do not read the `unglossed` list from `sigla.json` here.** It is built by
+counting attributions in `entries.jsonl`, so reading it makes `parse_entries`
+depend on its own output. `UNGLOSSED` is written out in the source instead.
+
+## The site must not tidy the book either
+
+**Year pages are ordered by the book, not by date.** November 1644 runs
+5, 6, 9, 15, 22, 11, 19 -- checked against the facsimile, Campaner's own
+disorder -- and `ORDER BY month, day` silently repaired it. Reordering his
+notices is the same correction as respelling his words. It also puts a notice
+that states no day back under the date it continues.
+
+**A siglum is meaningless without the introduction, which this edition drops.**
+The chips on the year pages expand to the name on click -- a button, not an
+`abbr title`, because a title never appears on a touch screen -- and the index
+carries the browsable glossary. Where a name is missing the page says which of
+the two reasons applies: not in the glossary (`L. V.`, `N. F.`, `T. A.`) or a
+truncated siglum whose second initial no engine placed.
+
 ## Where we left off (28 Jul 2026)
 
 The panel is closed at six, ratified against the adjudications, and the engine

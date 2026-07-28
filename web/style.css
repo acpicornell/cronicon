@@ -64,11 +64,22 @@ main { padding: 2rem 0 3rem; }
 .d { border-bottom: 1px dotted var(--doubt); cursor: help; }
 body.plain .d { border-bottom: none; }
 
-abbr.sig {
+/* The source attribution. A button rather than an `abbr` with a `title`,
+   because a title never appears on a touch screen and this is the one thing on
+   the page a reader is most likely to want explained: the sigla are the whole
+   reason the chronicle can be asked which manuscript reports what, and the
+   introduction that glosses them is the section this edition drops. */
+.cite { display: inline-flex; align-items: baseline; gap: .3rem; }
+button.sig {
   background: var(--accent-light); border-radius: 3px; padding: .05rem .35rem;
-  font-size: .8rem; text-decoration: none;
+  font-size: .8rem; text-decoration: none; border: 0; font-family: inherit;
   color: var(--accent-dark); font-variant-numeric: tabular-nums;
+  cursor: pointer; line-height: inherit;
 }
+button.sig:hover, button.sig:focus-visible { filter: brightness(.94); }
+button.sig.unglossed { color: var(--text-muted); font-style: italic; }
+.sig-name { display: none; font-size: .8rem; color: var(--text-muted); }
+button.sig[aria-expanded="true"] + .sig-name { display: inline; }
 .empty { color: var(--text-muted); font-style: italic; }
 
 /* --- year navigation --- */
@@ -157,3 +168,9 @@ pre { background: var(--surface); border: 1px solid var(--border);
   .entry .prov { flex-wrap: wrap; }
   .facs { margin-left: 0; flex-basis: 100%; }
 }
+
+/* A table wider than the phone scrolls inside its own box. The page body must
+   never scroll sideways: the year grid and the prose are readable at 390px and
+   a stray horizontal scrollbar makes them feel broken. */
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.scroll table { min-width: 30rem; }

@@ -190,10 +190,56 @@ def _regroup(pieces: list[str]) -> list[str]:
     return out
 
 
-def year_page(con, year: int, years: list[int]) -> str:
+def read_sigla(con) -> dict[str, str]:
+    """Siglum -> the name Campaner gives it in his introduction."""
+    return {row[0]: row[1] for row in
+            con.execute("SELECT siglum, expansion FROM siglum").fetchall()}
+
+
+# Why a siglum has no name, which is two different things and should not be
+# reported as one. 249 attributions of 3 253 are unnamed: 226 of them are
+# `L. V.`, `N. F.` and `T. A.`, which the chronicle cites constantly and the
+# introduction's glossary does not list; the other 23 are single initials, the
+# first half of a two-part siglum whose second half no engine placed.
+NOT_IN_GLOSSARY = "No consta al glossari de la introducció."
+TRUNCATED = "Sigla incompleta: només se n'ha llegit la primera inicial."
+
+
+def cite(siglum: str, sigla: dict[str, str]) -> str:
+    """A source chip that gives up its name when clicked.
+
+    The abbreviation alone is useless to anyone who has not read the
+    introduction, and the introduction is the one section this edition drops.
+    """
+    name = sigla.get(siglum)
+    if name is None:
+        name = TRUNCATED if len(siglum.split()) == 1 else NOT_IN_GLOSSARY
+        known = False
+    else:
+        known = True
+    return ('<span class="cite">'
+            f'<button class="sig{"" if known else " unglossed"}" type="button"'
+            f' aria-expanded="false" title="{esc(name)}">'
+            f'{esc(siglum)}</button>'
+            f'<span class="sig-name">{esc(name)}</span>'
+            '</span>')
+
+
+def year_page(con, year: int, years: list[int], sigla: dict[str, str]) -> str:
+    """A year, in the order the book prints it.
+
+    Ordered by `id`, which is the order the leaves were read, and deliberately
+    not by month and day. November 1644 runs 5, 6, 9, 15, 22, 11, 19 in the
+    book -- checked against the facsimile, it is Campaner's own disorder --
+    and sorting the page by date silently repaired it. This edition leaves his
+    errors standing; quietly reordering his notices is the same correction as
+    quietly respelling his words. It also puts a notice that states no day back
+    where it belongs, under the date it continues, instead of at the head of
+    the month.
+    """
     entries = con.execute("""
         SELECT id, month, day, text, sources, pdf_page, printed_page
-        FROM entry WHERE year = ? ORDER BY month NULLS FIRST, day NULLS FIRST, id
+        FROM entry WHERE year = ? ORDER BY id
     """, [year]).fetchall()
     pages = {e[5] for e in entries}
     doubtful = set()
@@ -234,7 +280,7 @@ def year_page(con, year: int, years: list[int]) -> str:
         when = MONTHS.get(month, "")
         if day:
             when = f"{day} {when.lower()}" if when else str(day)
-        cites = " ".join(f'<abbr class="sig">{esc(s)}</abbr>' for s in (sources or []))
+        cites = " ".join(cite(s, sigla) for s in (sources or []))
         leaf_url = ("https://archive.org/details/CroniconMayoricenseCampaner/"
                     f"page/n{page - 2}/mode/2up")
         parts.append(
@@ -313,6 +359,27 @@ def index_page(con, years: list[int], counts: dict) -> str:
         f'<td class="num">{a}–{b}</td><td class="num">{num(w)}</td></tr>'
         for i, n, t, g, a, b, w in docs)
 
+    # The sigla, browsable at last. They were reachable only by guessing a
+    # search term that happened to trigger the quick answer, which is no way to
+    # offer the one key the chronicle cannot be read without: the introduction
+    # that glosses them is the section this edition drops.
+    used = dict(con.execute(
+        "SELECT s, count(*) FROM (SELECT unnest(sources) AS s FROM entry) "
+        "GROUP BY 1").fetchall())
+    glossed = con.execute(
+        "SELECT siglum, expansion FROM siglum ORDER BY siglum").fetchall()
+    fonts = "".join(
+        f"<tr><td><code>{esc(g)}</code></td><td>{esc(x)}</td>"
+        f'<td class="num">{num(used.get(g, 0))}</td></tr>'
+        for g, x in glossed if used.get(g))
+    # Cited but never glossed. Named, with their counts, rather than left out:
+    # `L. V.` alone attributes 102 notices, and a reader who meets it on a year
+    # page and finds no entry here would reasonably think the list is broken.
+    bare = sorted(((g, n) for g, n in used.items()
+                   if g not in {x[0] for x in glossed}),
+                  key=lambda r: -r[1])
+    missing = ", ".join(f"<code>{esc(g)}</code> ({num(n)})" for g, n in bare)
+
     return (head("Cronicón Mayoricense · Campaner, 1881",
                  "Edició digital del Cronicón Mayoricense de Campaner (Palma, "
                  "1881): 2.503 notícies datades de Mallorca entre 1229 i 1800, "
@@ -340,12 +407,25 @@ def index_page(con, years: list[int], counts: dict) -> str:
   <h2 class="section">Els anys</h2>
   <div class="grid">{grid}</div>
 
+  <h2 class="section">Les fonts</h2>
+  <p class="hint">Campaner atribueix cada notícia al manuscrit d'on la treu.
+     Aquestes són les sigles que glossa a la introducció; a les pàgines d'any
+     es pot clicar qualsevol sigla per veure'n el nom.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>sigla</th><th>font</th>
+      <th class="num">notícies</th></tr></thead>
+    <tbody>{fonts}</tbody>
+  </table></div>
+  <p class="hint">La crònica en cita {len(bare)} més que la introducció no
+     glossa: {missing}. Les d'una sola inicial són sigles de dues que el
+     facsímil no deixa llegir senceres.</p>
+
   <h2 class="section">Els documents que Campaner reprodueix sencers</h2>
-  <table>
+  <div class="scroll"><table>
     <thead><tr><th>núm.</th><th>títol</th><th>gènere</th><th>fulls</th>
       <th class="num">mots</th></tr></thead>
     <tbody>{rows}</tbody>
-  </table>
+  </table></div>
 </main>
 """ + FOOT.replace("</body>", '<script src="app.js"></script>\n</body>'))
 
@@ -358,8 +438,10 @@ def method_page(con) -> str:
                round(100.0*count(*) FILTER (WHERE chose = winner)/count(*), 1)
         FROM adjudication WHERE winner IS NOT NULL
         GROUP BY 1,2 ORDER BY 1, 3 DESC""").fetchall()
-    order = {"unanimous": 0, "one-dissent": 1, "two-dissent": 2, "contested": 3}
-    label = {"unanimous": "els sis coincideixen", "one-dissent": "un discrepa",
+    order = {"adjudicated": -1, "unanimous": 0, "one-dissent": 1,
+             "two-dissent": 2, "contested": 3}
+    label = {"adjudicated": "resolt contra el facsímil",
+             "unanimous": "els sis coincideixen", "one-dissent": "un discrepa",
              "two-dissent": "en discrepen dos", "contested": "en discrepen tres o més"}
 
     tier_rows = "".join(
@@ -387,15 +469,15 @@ def method_page(con) -> str:
      <em>mallorquin</em> i les errades del mateix Campaner es queden com són.</p>
 
   <h2 class="section">Quant d'acord es posen</h2>
-  <table><thead><tr><th>grau</th><th class="num">paraules</th>
-    <th class="num">%</th></tr></thead><tbody>{tier_rows}</tbody></table>
+  <div class="scroll"><table><thead><tr><th>grau</th><th class="num">paraules</th>
+    <th class="num">%</th></tr></thead><tbody>{tier_rows}</tbody></table></div>
 
   <h2 class="section">I quan encerten</h2>
   <p>870 posicions s'han resolt mirant el facsímil, una a una. Aquestes són
      dues mesures separades i no s'han de barrejar: el llibre no és igual de
      fiable pertot.</p>
-  <table><thead><tr><th>part</th><th>grau</th><th class="num">n</th>
-    <th class="num">encerts</th></tr></thead><tbody>{adj_rows}</tbody></table>
+  <div class="scroll"><table><thead><tr><th>part</th><th>grau</th><th class="num">n</th>
+    <th class="num">encerts</th></tr></thead><tbody>{adj_rows}</tbody></table></div>
   <p>D'aquí surt que la crònica en castellà va per <strong>1 paraula errada de
      cada 113</strong> i els documents en català medieval i llatí per
      <strong>1 de cada 39</strong>. Per això les paraules discutides van
@@ -432,11 +514,12 @@ def main() -> None:
     # index links the whole grid, and a year the chronicle is silent about is a
     # fact about the book rather than a missing file.
     years = list(range(dated[0], dated[-1] + 1))
+    sigla = read_sigla(con)
 
     for year in years:
         target = WEB / "anys" / str(year)
         target.mkdir(exist_ok=True)
-        (target / "index.html").write_text(year_page(con, year, years),
+        (target / "index.html").write_text(year_page(con, year, years, sigla),
                                            encoding="utf-8")
 
     documents = con.execute(
@@ -454,7 +537,7 @@ def main() -> None:
     (WEB / "search.json").write_text(json.dumps(
         {"e": con.execute(
             "SELECT year, pdf_page, text FROM entry WHERE year IS NOT NULL "
-            "ORDER BY year, month NULLS FIRST, day NULLS FIRST, id").fetchall(),
+            "ORDER BY id").fetchall(),
          "d": [[d[0], d[2], d[8]] for d in documents]},
         ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
