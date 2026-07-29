@@ -282,6 +282,90 @@ h3.month:first-of-type { margin-top: 1.4rem; }
                  color: var(--text-muted); }
 .opening p { margin: 0 0 .5rem; font-size: .92rem; }
 
+/* --- the front page ----------------------------------------------------- */
+/* Two columns on a wide screen, the words and the shape of the book. The
+   shape is the only picture on a site that has none, and it is made of the
+   data: 572 bars, one per year. */
+.hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+        gap: 3rem; align-items: center; margin: .5rem 0 3.4rem; }
+.hero-say h2 { font-family: Georgia, "Times New Roman", serif;
+               font-size: 2.35rem; line-height: 1.18; margin: .1rem 0 .9rem;
+               letter-spacing: -.01em; color: var(--accent-dark); }
+.kicker { margin: 0; font-size: .75rem; letter-spacing: .13em;
+          text-transform: uppercase; color: var(--text-muted); }
+.lede { margin: 0 0 1.4rem; font-size: 1.06rem; max-width: 46ch;
+        color: #40382f; }
+.cta { margin: 0; display: flex; align-items: center; gap: 1.1rem;
+       flex-wrap: wrap; font-size: .92rem; }
+.button { display: inline-block; background: var(--accent); color: #fff;
+          text-decoration: none; padding: .6rem 1.15rem; border-radius: 3px;
+          font-size: .95rem; }
+.button:hover { background: var(--accent-dark); }
+
+.shape { margin: 0; }
+.shape svg { display: block; width: 100%; height: 120px; }
+.shape .y { fill: var(--accent); opacity: .82; }
+.shape .y.void { fill: var(--border); opacity: 1; }
+.shape-axis { position: relative; height: 1.1rem; margin-top: .3rem;
+              font-size: .68rem; color: var(--text-muted);
+              font-variant-numeric: tabular-nums; }
+.shape-axis span { position: absolute; transform: translateX(-50%); }
+.shape-axis span:first-child { transform: none; }
+.shape-axis span:last-child { transform: translateX(-100%); }
+.shape figcaption { margin-top: .5rem; font-size: .78rem;
+                    color: var(--text-muted); max-width: 44ch; }
+
+/* Campaner in his own voice, which is the best copy this page can have. */
+.pull { margin: 0 0 3rem; padding: 0 0 0 1.4rem;
+        border-left: 3px solid var(--accent); max-width: 62ch; }
+.pull p { margin: 0 0 .5rem; font-family: Georgia, "Times New Roman", serif;
+          font-size: 1.18rem; line-height: 1.55; font-style: italic;
+          color: #3a3229; }
+.pull cite { font-style: normal; font-size: .8rem; color: var(--text-muted); }
+
+.specimen { margin: 0 0 3rem; }
+.specimen .kicker { margin-bottom: .9rem; }
+.specimen .notice { background: var(--surface); border: 1px solid var(--border);
+                    border-radius: 4px; padding: 1.1rem 1.3rem; margin: 0;
+                    max-width: 64ch; }
+/* The date needs more room here than on a year page, where the margin only
+   ever holds a bare day number. */
+.specimen .notice { grid-template-columns: 3.2rem 1fr; }
+.specimen .when { font-size: 1.5rem; line-height: 1; }
+.specimen .when small { display: block; font-size: .62rem; letter-spacing: .08em;
+                        text-transform: uppercase; margin-top: .2rem; }
+.specimen-note { margin: .6rem 0 0; font-size: .82rem; color: var(--text-muted); }
+
+/* `h2.section` is already defined above, with the top margin the method and
+   document pages need between one section and the next. Here each section
+   carries its own spacing, so only the top margin is dropped -- redefining the
+   whole rule silently took 2.4rem off every heading on those other pages. */
+.hero ~ section > h2.section { margin-top: 0; }
+.matter { margin: 0 0 3rem; max-width: 68ch; }
+.matter > p { margin: 0 0 1rem; }
+/* Campaner's own list of what the noticiaris record. Set as a run of chips
+   rather than a bulleted column: it is one sentence of his, and breaking it
+   into ten bullets would make it look like a taxonomy of ours. */
+.subjects { list-style: none; margin: 0 0 1.1rem; padding: 0;
+            display: flex; flex-wrap: wrap; gap: .45rem; }
+.subjects li { background: var(--num-bg); border: 1px solid var(--border);
+               border-radius: 999px; padding: .3rem .8rem; font-size: .86rem;
+               font-family: Georgia, "Times New Roman", serif;
+               color: #4a4038; }
+.aside { margin: 0; font-size: .9rem; color: var(--text-muted); }
+
+.find { margin: 0 0 2.6rem; }
+.who { margin: 3rem 0 0; padding-top: 2rem;
+       border-top: 1px solid var(--border); }
+.who p { max-width: 68ch; margin: 0 0 .9rem; }
+.who .stats { margin-top: 1.6rem; }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2.6rem; }
+  .hero-say h2 { font-size: 1.85rem; }
+  .shape svg { height: 90px; }
+}
+
 /* --- the way in --------------------------------------------------------- */
 /* Four across on a wide screen: at two columns the short door left a ragged
    hole beside the long one, because a grid row is as tall as its tallest cell. */

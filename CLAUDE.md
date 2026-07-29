@@ -796,6 +796,32 @@ Four properties, each of them a lesson rather than a preference:
   is re-filtered against the decisions on every request, so reloading the page
   does not bring back settled work.
 
+## What the repository holds, and what it must not
+
+**The rendered site is not committed.** It was, and it was 73% of the history:
+595 pages regenerated whole on every build, and neither HTML nor an
+already-compressed parquet deltas against its previous version, so each rebuild
+added about 10 MB that could never be reclaimed. The history was rewritten to
+drop it — 72 MB → 22.5 MB, all 28 commits re-signed — and a clone can now
+rebuild everything:
+
+```sh
+python scripts/build_db.py --from-parquet web/data
+python scripts/build_site.py
+```
+
+That works because `web/data/*.parquet` **is** committed and is the only copy of
+the two tables `data/` cannot produce: `word` needs the per-leaf sidecars, 100 MB
+of JSON, and `leaf` needs the consensus itself, ten thousand files, and both are
+gitignored. In parquet the same thing is 4.7 MB of zstd, and the site queries it
+in the browser anyway. Verified end to end: the database rebuilt from parquet
+renders every page byte for byte identical.
+
+So the rule for anything new under `web/`: **if `build_site.py` writes it, it
+does not belong in git.** Thirteen files are tracked there — the parquet, and
+the hand-written `style.css`, `app.js`, `_headers`, `robots.txt` — which is the
+convention the sibling projects already follow.
+
 ## Backlog
 
 - [x] Tighten the shared-error bound — 360 unanimous positions adjudicated, none

@@ -124,7 +124,7 @@ def masthead(depth: int = 0, here: str = "") -> str:
   <div class="wrap">
     <p class="eyebrow"><a href="https://corpusbalear.org/">Corpus Balear</a></p>
     <h1><a href="{up}">Cronicón Mayoricense</a></h1>
-    <p class="sub">Álvaro Campaner i Fuertes · Palma, 1881 · notícies de Mallorca
+    <p class="sub">Àlvar Campaner i Fuertes · Palma, 1881 · notícies de Mallorca
        de 1229 a 1800</p>
   </div>
 </header>
@@ -810,13 +810,95 @@ def abbreviations_page(con) -> str:
 """ + tail(1))
 
 
-def index_page(con, years: list[int], counts: dict) -> str:
-    """The way in, and nothing else.
+# Campaner's own account of what the noticiaris record, from the introduction
+# (leaf 15), which this edition otherwise drops. Nothing describes the book
+# better than the list he wrote himself, and no summary of ours would be
+# evidence of anything.
+SUBJECTS = ("acontecimientos políticos y militares",
+            "solemnidades religiosas", "fiestas y costumbres populares",
+            "reyertas de los bandos de la época", "ejecuciones capitales",
+            "calamidades públicas", "sequías", "epidemias",
+            "tormentas marítimas", "afecciones meteorológicas")
 
-    This page used to carry the search box, 572 year boxes, the documents table
-    and the sigla glossary one after another, 7 500px of it. Each of those now
-    has a tab of its own; what stays here is the search and a handful of places
-    worth starting from.
+
+def shape_of_the_book(counts: dict, first: int, last: int) -> str:
+    """The whole chronicle as one strip: how much news each of 572 years carries.
+
+    The same square root the century strips use, and for the same reason -- a
+    median of four notices against a peak of 108 in 1715 makes half the book
+    look empty under a linear scale, which is false. Here it doubles as the only
+    picture on a page that has no pictures: the shape *is* the argument, because
+    what it shows is 1521 and 1715 standing out of five centuries of ordinary
+    years without anyone having to say so.
+    """
+    peak = max(counts.values()) or 1
+    peak_year = max(counts, key=lambda y: counts[y])
+    early = sum(n for y, n in counts.items() if y <= 1300)
+    late = sum(n for y, n in counts.items() if y >= 1701)
+    span = last - first
+    bars = []
+    for year in range(first, last + 1):
+        n = counts.get(year, 0)
+        h = 4 + 56 * math.sqrt(n / peak) if n else 1.5
+        x = 1000 * (year - first) / span
+        bars.append(f'<rect x="{x:.3f}" y="{62 - h:.2f}" width="1.5" '
+                    f'height="{h:.2f}" class="{"y" if n else "y void"}"/>')
+    ticks = "".join(
+        f'<span style="left:{100 * (y - first) / span:.3f}%">{y}</span>'
+        for y in range(1300, last, 100))
+    return (f'<figure class="shape">'
+            f'<svg viewBox="0 0 1000 62" preserveAspectRatio="none" '
+            f'role="img" aria-label="Notícies per any, de {first} a {last}">'
+            + "".join(bars) + "</svg>"
+            f'<div class="shape-axis"><span style="left:0">{first}</span>{ticks}'
+            f'<span style="left:100%">{last}</span></div>'
+            "<figcaption>Una barra per any. La crònica s'espesseix a mesura que "
+            f"s'acosta al temps de Campaner —{num(early)} notícies al segle XIII "
+            f"contra {num(late)} al XVIII— perquè els noticiaris que buida no "
+            f"comencen fins al 1372. El pic és {peak_year}, "
+            f"amb {num(counts[peak_year])}.</figcaption>"
+            "</figure>")
+
+
+def specimen(con) -> str:
+    """One real notice, chosen by its date so that a rebuild cannot move it.
+
+    A text edition sells itself with its text. This one is the Festa de
+    l'Estendard called off by a snowfall, which is dated, attributed, three
+    lines long, and says in one breath what the whole book is for.
+    """
+    row = con.execute("""
+        SELECT text, sources, pdf_page FROM entry
+        WHERE year = 1613 AND month = 12 AND day = 31 LIMIT 1""").fetchone()
+    if not row:
+        return ""
+    text, sources, page = row
+    sigla = read_sigla(con)
+    cites = " ".join(cite(s, sigla) for s in (sources or []))
+    return f"""
+  <section class="specimen">
+    <p class="kicker">Una notícia, tal com queda</p>
+    <article class="notice">
+      <p class="when">31<small>des.</small></p>
+      <div class="said">
+        <p>{esc(text)}</p>
+        <p class="prov">{cites}</p>
+      </div>
+    </article>
+    <p class="specimen-note">Any <a href="anys/1613/">1613</a>, full 388 del
+       facsímil. La sigla s'obre i diu de quin manuscrit surt la notícia.</p>
+  </section>"""
+
+
+def index_page(con, years: list[int], counts: dict) -> str:
+    """The way in.
+
+    It used to be the search box and four links over a strip of five numbers,
+    which told a first-time reader nothing about what this book is -- and the
+    book says it better than we could. So the page now opens with Campaner's own
+    account of it, from the introduction this edition otherwise drops, and with
+    one real notice; the numbers moved to the foot, where a reader who wants
+    them will look.
     """
     stats = con.execute("""SELECT (SELECT count(*) FROM entry),
                                   (SELECT count(DISTINCT year) FROM entry
@@ -836,29 +918,59 @@ def index_page(con, years: list[int], counts: dict) -> str:
                    f"<small>{num(w)} mots</small></li>"
                    for i, _n, t, w in longest)
 
+    subjects = "".join(f"<li>{esc(s)}</li>" for s in SUBJECTS)
+
     return (head("Cronicón Mayoricense · Campaner, 1881",
                  "Edició digital del Cronicón Mayoricense de Campaner (Palma, "
                  f"1881): {num(stats[0])} notícies datades de Mallorca entre "
                  "1229 i 1800, amb el grau de certesa de cada paraula.",
                  f"{SITE}/") + masthead(here="") + f"""
 <main class="wrap">
-  <div class="stats">
-    <div><strong>{num(stats[0])}</strong>notícies datades</div>
-    <div><strong>{stats[1]}</strong>anys</div>
-    <div><strong>{num(stats[2])}</strong>jurats</div>
-    <div><strong>{stats[3]}</strong>documents</div>
-    <div><strong>{num(stats[4])}</strong>paraules</div>
-  </div>
+  <section class="hero">
+    <div class="hero-say">
+      <p class="kicker">Edició digital · Corpus Balear</p>
+      <h2>Cinc segles de notícies de Mallorca,<br>dia a dia</h2>
+      <p class="lede">L'any 1881 Álvaro Campaner va buidar els noticiaris,
+         dietaris i anals manuscrits que corrien per l'illa —molts inèdits, i
+         alguns a punt de perdre's— i en va ordenar les notícies per data, de la
+         conquesta de 1229 fins al 1800. Això és aquell llibre, llegit de nou
+         paraula per paraula.</p>
+      <p class="cta"><a class="button" href="anys/">Entra per un any</a>
+         <a href="#cerca">o cerca un mot</a></p>
+    </div>
+    {shape_of_the_book(counts, years[0], years[-1])}
+  </section>
 
-  <div class="tools">
-    <input type="search" id="q" placeholder="Cerca un mot, una frase, un any…"
-           autocomplete="off" spellcheck="false">
-    <label class="toggle"><input type="checkbox" id="plain"> amaga la incertesa</label>
-  </div>
-  <p class="hint">Cerca dins les {num(stats[0])} notícies i els {stats[3]}
-     documents sencers. Sense accents també va: <em>germania</em> troba
-     <em>Germanía</em>. Entre cometes, cerca la frase exacta.</p>
-  <div id="results"></div>
+  <blockquote class="pull">
+    <p>El presente libro no es una Historia de Mallorca… compónenlo elementos
+       tomados de muy diversas fuentes y colocados por el órden de los tiempos,
+       á fin de que sirvan de algun auxilio al curioso investigador de los
+       hechos y antiguas costumbres é instituciones de la isla.</p>
+    <cite>Campaner, introducció, 1881</cite>
+  </blockquote>
+{specimen(con)}
+  <section class="matter">
+    <h2 class="section">De què parla</h2>
+    <p>Els qui van escriure aquests noticiaris hi anotaven, en paraules del
+       mateix Campaner:</p>
+    <ul class="subjects">{subjects}</ul>
+    <p class="aside">Ho recollia, deia, «salvando de la destruccion ó del
+       extravío algunos de los trabajos de nuestros antepasados, de los cuales
+       bastantes han sido ya pasto del polvo y la polilla».</p>
+  </section>
+
+  <section id="cerca" class="find">
+    <h2 class="section">Cerca-hi</h2>
+    <div class="tools">
+      <input type="search" id="q" placeholder="Cerca un mot, una frase, un any…"
+             autocomplete="off" spellcheck="false">
+      <label class="toggle"><input type="checkbox" id="plain"> amaga la incertesa</label>
+    </div>
+    <p class="hint">Dins les {num(stats[0])} notícies i els {stats[3]}
+       documents sencers. Sense accents també va: <em>germania</em> troba
+       <em>Germanía</em>. Entre cometes, cerca la frase exacta.</p>
+    <div id="results"></div>
+  </section>
 
   <div class="doors">
     <section>
@@ -873,7 +985,8 @@ def index_page(con, years: list[int], counts: dict) -> str:
     </section>
     <section>
       <h2>Qui ho explica</h2>
-      <p>Campaner atribueix cada notícia al manuscrit d'on la treu.</p>
+      <p>Campaner atribueix cada notícia al manuscrit d'on la treu, amb unes
+         inicials que la introducció glossa.</p>
       <p><a href="abreviatures/">Les abreviatures i les seves fonts →</a></p>
     </section>
     <section>
@@ -883,6 +996,28 @@ def index_page(con, years: list[int], counts: dict) -> str:
       <p><a href="metode.html">El mètode i les xifres →</a></p>
     </section>
   </div>
+
+  <section class="who">
+    <h2 class="section">Qui era Campaner</h2>
+    <p><strong>Àlvar Campaner i Fuertes</strong> —a la portada del llibre,
+       <em>Álvaro Campaner y Fuertes</em>— va néixer a Valverde del Camino,
+       Huelva, el 1834 i va morir a Palma el 1894. Doctor en dret i fiscal de
+       l'Audiència de Mallorca, era sobretot numismàtic: va fundar el
+       <em>Memorial numismático español</em> el 1866 i va publicar la
+       <em>Numismática balear</em> el 1879. El <em>Cronicón Mayoricense</em> és
+       de 1881; el <em>Bosquejo de la dominación islamita en las islas
+       Baleares</em>, de 1888.</p>
+    <p>No va escriure una història: va reunir la matèria primera perquè algú
+       altre en pogués fer una. Aquesta edició fa el mateix un pas més enllà,
+       en dades consultables.</p>
+    <div class="stats">
+      <div><strong>{num(stats[0])}</strong>notícies datades</div>
+      <div><strong>{stats[1]}</strong>anys</div>
+      <div><strong>{num(stats[2])}</strong>jurats</div>
+      <div><strong>{stats[3]}</strong>documents</div>
+      <div><strong>{num(stats[4])}</strong>paraules</div>
+    </div>
+  </section>
 </main>
 """ + tail(0))
 
