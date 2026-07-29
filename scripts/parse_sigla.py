@@ -74,6 +74,38 @@ def read_glossary(lines: list[dict]) -> dict[str, str]:
     return out
 
 
+SOURCE_FIELDS = ("name", "life", "role", "span", "work", "note", "leaf")
+
+
+def read_sources() -> dict[str, dict]:
+    """Who each siglum is, from `sources.tsv`.
+
+    The glossary on leaf 25 gives `G. T.—Guillermo Terrassa.` and stops. The
+    eight leaves before it give the man, his trade, what the manuscript
+    physically is, the years it covers and where it was in 1881 -- eight leaves
+    of dossier that this edition drops along with the rest of the introduction,
+    and without which a siglum is a pair of initials.
+
+    Entered by hand rather than parsed: the introduction runs its footnotes in
+    two columns under the text and interleaves them, so the leaves are among the
+    worst in the book for reading order, and there are twenty-six sources. Each
+    row carries the leaf it came from, which is what makes it checkable.
+    """
+    path = OUT / "sources.tsv"
+    if not path.exists():
+        return {}
+    out: dict[str, dict] = {}
+    for row in path.read_text(encoding="utf-8").splitlines():
+        if not row.strip() or row.startswith("#"):
+            continue
+        cells = row.split("\t")
+        siglum, rest = cells[0], cells[1:]
+        record = {field: (rest[n].strip() if n < len(rest) else "")
+                  for n, field in enumerate(SOURCE_FIELDS)}
+        out[tidy(siglum)] = {k: v for k, v in record.items() if v}
+    return out
+
+
 def read_adjudicated() -> dict[str, str]:
     path = OUT / "adjudicated.tsv"
     if not path.exists():
@@ -153,15 +185,26 @@ def main() -> None:
     total = sum(used.values())
     centuries = century_sources(PROJECT / "data" / "entries" / "centuries.json")
 
+    sources = read_sources()
+    # Two of the sources the introduction describes -- the Capuchin librarian
+    # Luis de Villafranca and Nicolás Ferrer de Sant Jordi -- are used all
+    # through the chronicle and are simply not in the abbreviation list. They
+    # belong in the glossary the site shows even though the book's own list
+    # omits them, and the record says where each one comes from.
+    described = {s: d for s, d in sources.items() if s not in glossary}
+
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "sigla.json").write_text(json.dumps({
         "glossary_leaf": where,
         "glossary": [{"siglum": s, "expansion": e,
                       "source": "adjudicated" if s in adjudicated else "parsed",
-                      "attributions": used.get(s, 0)}
+                      "attributions": used.get(s, 0),
+                      **({"who": sources[s]} if s in sources else {})}
                      for s, e in sorted(glossary.items())],
-        "unglossed": [{"siglum": s, "attributions": n}
+        "unglossed": [{"siglum": s, "attributions": n,
+                       **({"who": sources[s]} if s in sources else {})}
                       for s, n in used.most_common() if s not in glossary],
+        "described_only": sorted(described),
         "century_sources": centuries,
     }, ensure_ascii=False, indent=1), encoding="utf-8")
 
@@ -170,6 +213,10 @@ def main() -> None:
     print(f"{resolved:,} of {total:,} attributions resolved "
           f"({resolved/total:.0%}) over {len(used)} distinct sigla")
     print(f"{len(centuries)} century headers with their own source lists")
+    covered = sum(n for s, n in used.items() if s in sources)
+    print(f"{len(sources)} sources described from the introduction, "
+          f"covering {covered:,} of {total:,} attributions "
+          f"({covered/total:.0%})")
 
     if args.report:
         print("\nunglossed, by how often the chronicle uses them:")

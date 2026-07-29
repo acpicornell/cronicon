@@ -283,14 +283,20 @@ h3.month:first-of-type { margin-top: 1.4rem; }
 .opening p { margin: 0 0 .5rem; font-size: .92rem; }
 
 /* --- the front page ----------------------------------------------------- */
-/* Two columns on a wide screen, the words and the shape of the book. The
-   shape is the only picture on a site that has none, and it is made of the
-   data: 572 bars, one per year. */
-.hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-        gap: 3rem; align-items: center; margin: .5rem 0 3.4rem; }
-.hero-say h2 { font-family: Georgia, "Times New Roman", serif;
-               font-size: 2.35rem; line-height: 1.18; margin: .1rem 0 .9rem;
-               letter-spacing: -.01em; color: var(--accent-dark); }
+/* One measure of prose, then the shape of the book across the full width, then
+   two columns of equal weight. Setting the opening beside the chart was tried
+   and was the wrong shape: a squat 120px band of bars next to a tall block of
+   type left a hole under the chart and pulled the eye to the wrong side. The
+   chart wants width -- it is 572 bars -- and prose wants a measure, and the two
+   wants are incompatible in one row. */
+.opener { max-width: 60ch; margin: .5rem 0 2.4rem; }
+.opener h2 { font-family: Georgia, "Times New Roman", serif;
+             font-size: 2.35rem; line-height: 1.18; margin: .1rem 0 .9rem;
+             letter-spacing: -.01em; color: var(--accent-dark); }
+/* Quotation and subject list side by side, both of them text, both of them
+   Campaner's: the balance is between two things of the same kind. */
+.twin { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 2.6rem; align-items: start; margin: 2.8rem 0 3rem; }
 .kicker { margin: 0; font-size: .75rem; letter-spacing: .13em;
           text-transform: uppercase; color: var(--text-muted); }
 .lede { margin: 0 0 1.4rem; font-size: 1.06rem; max-width: 46ch;
@@ -302,8 +308,8 @@ h3.month:first-of-type { margin-top: 1.4rem; }
           font-size: .95rem; }
 .button:hover { background: var(--accent-dark); }
 
-.shape { margin: 0; }
-.shape svg { display: block; width: 100%; height: 120px; }
+.shape { margin: 0 0 .6rem; }
+.shape svg { display: block; width: 100%; height: 150px; }
 .shape .y { fill: var(--accent); opacity: .82; }
 .shape .y.void { fill: var(--border); opacity: 1; }
 .shape-axis { position: relative; height: 1.1rem; margin-top: .3rem;
@@ -312,8 +318,8 @@ h3.month:first-of-type { margin-top: 1.4rem; }
 .shape-axis span { position: absolute; transform: translateX(-50%); }
 .shape-axis span:first-child { transform: none; }
 .shape-axis span:last-child { transform: translateX(-100%); }
-.shape figcaption { margin-top: .5rem; font-size: .78rem;
-                    color: var(--text-muted); max-width: 44ch; }
+.shape figcaption { margin-top: .5rem; font-size: .8rem;
+                    color: var(--text-muted); max-width: 72ch; }
 
 /* Campaner in his own voice, which is the best copy this page can have. */
 .pull { margin: 0 0 3rem; padding: 0 0 0 1.4rem;
@@ -357,13 +363,53 @@ h3.month:first-of-type { margin-top: 1.4rem; }
 .find { margin: 0 0 2.6rem; }
 .who { margin: 3rem 0 0; padding-top: 2rem;
        border-top: 1px solid var(--border); }
-.who p { max-width: 68ch; margin: 0 0 .9rem; }
-.who .stats { margin-top: 1.6rem; }
+.who p { margin: 0 0 .9rem; }
+.who-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+            gap: 2.6rem; align-items: start; }
+.who-grid .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+/* --- who wrote the book ------------------------------------------------- */
+/* One card per source. The table this replaces could hold a name and a count;
+   Campaner gives a trade, a manuscript, a span of years and usually a date of
+   death, and those are what make a siglum mean something. */
+.source-grid { display: grid; gap: 1rem; margin: 1.4rem 0 2rem;
+               grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); }
+.source-card { display: block; text-decoration: none; color: inherit;
+               background: var(--surface); border: 1px solid var(--border);
+               border-radius: 4px; padding: .9rem 1rem; }
+.source-card:hover { border-color: var(--accent); }
+.source-card .sig { display: inline-block; background: var(--accent-light);
+                    color: var(--accent-dark); border-radius: 3px;
+                    padding: .05rem .35rem; font-size: .78rem;
+                    font-variant-numeric: tabular-nums; margin-bottom: .45rem; }
+.source-card strong { display: block; font-family: Georgia, serif;
+                      font-size: 1.02rem; color: var(--accent-dark);
+                      line-height: 1.25; }
+.source-card .role { display: block; font-size: .85rem; margin-top: .2rem; }
+.source-card .span { display: block; font-size: .8rem; color: var(--text-muted);
+                     font-variant-numeric: tabular-nums; margin-top: .15rem; }
+.source-card em { display: block; font-size: .82rem; color: var(--text-muted);
+                  margin-top: .4rem; line-height: 1.4; }
+.source-card .n { display: block; margin-top: .6rem; font-size: .78rem;
+                  color: var(--accent); }
+
+/* …and the dossier at the head of that source's own page. */
+.dossier { background: var(--num-bg); border-radius: 3px;
+           padding: 1.1rem 1.3rem; margin: 0 0 2rem; }
+.dossier .who-line { margin: 0 0 .8rem; font-size: 1rem; color: var(--accent-dark); }
+.dossier dl { display: grid; grid-template-columns: max-content 1fr;
+              gap: .3rem 1.1rem; margin: 0 0 .8rem; font-size: .9rem; }
+.dossier dt { color: var(--text-muted); font-size: .78rem;
+              text-transform: uppercase; letter-spacing: .06em;
+              padding-top: .12rem; }
+.dossier dd { margin: 0; }
+.dossier p { margin: 0 0 .5rem; font-size: .95rem; }
+.dossier .aside { margin: 0; font-size: .8rem; }
 
 @media (max-width: 860px) {
-  .hero { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2.6rem; }
-  .hero-say h2 { font-size: 1.85rem; }
-  .shape svg { height: 90px; }
+  .opener h2 { font-size: 1.85rem; }
+  .shape svg { height: 100px; }
+  .twin, .who-grid { grid-template-columns: 1fr; gap: 1.8rem; }
 }
 
 /* --- the way in --------------------------------------------------------- */

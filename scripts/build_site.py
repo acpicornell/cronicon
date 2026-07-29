@@ -736,14 +736,44 @@ def sources_chart(con, sigla: dict[str, str]) -> str:
   <div class="keys">{legend}</div>"""
 
 
-def source_page(con, siglum: str, expansion: str) -> str:
-    """Where one manuscript is cited, year by year.
+def dossier(who: dict) -> str:
+    """What the introduction says about one source, where it says anything.
 
-    `expansion` is empty for the sigla the introduction never glosses -- `L. V.`
-    and `N. F.` between them attribute 182 notices -- and the page says so
-    rather than printing the abbreviation twice.
+    This is the part of the book that makes the chronicle usable and the part it
+    was easiest to drop: the abbreviation list gives `M. M.—Matías Mut.` and the
+    leaf before it says he was an esparto-worker from Llucmajor whose diary runs
+    1680 to 1715 in a hand Campaner calls very bad, and that we know his
+    birthday because on 15 April 1686 he wrote «Dit dia jo vaig fer 47 anys».
     """
-    named = expansion or "font no glossada a la introducció"
+    if not who.get("role") and not who.get("work"):
+        return ""
+    line = " · ".join(x for x in (who.get("life"), who.get("role")) if x)
+    facts = []
+    if who.get("span"):
+        facts.append(f"<dt>Anys que abraça</dt><dd>{esc(who['span'])}</dd>")
+    if who.get("work"):
+        facts.append(f"<dt>El manuscrit</dt><dd><em>{esc(who['work'])}</em></dd>")
+    return (f'<div class="dossier">'
+            + (f"<p class=\"who-line\">{esc(line)}</p>" if line else "")
+            + (f"<dl>{''.join(facts)}</dl>" if facts else "")
+            + (f"<p>{esc(who['note'])}</p>" if who.get("note") else "")
+            + (f'<p class="aside">Segons la introducció, full '
+               f'{who["leaf"]} del facsímil.</p>' if who.get("leaf") else "")
+            + "</div>")
+
+
+def source_page(con, siglum: str, expansion: str) -> str:
+    """One manuscript: who wrote it, and where the chronicle draws on it.
+
+    It used to be a grid of years and nothing else, which is the least
+    interesting thing that can be said about a source.
+    """
+    who = con.execute(
+        "SELECT expansion, life, role, span, work, note, leaf FROM siglum "
+        "WHERE siglum = ?", [siglum]).fetchone()
+    fields = ("name", "life", "role", "span", "work", "note", "leaf")
+    record = dict(zip(fields, who)) if who else {}
+    named = expansion or record.get("name") or "font no glossada a la introducció"
     rows = con.execute(
         "SELECT year, count(*) n FROM entry WHERE year IS NOT NULL "
         "AND list_contains(sources, ?) GROUP BY 1 ORDER BY 1", [siglum]).fetchall()
@@ -756,11 +786,12 @@ def source_page(con, siglum: str, expansion: str) -> str:
                  f"{named} al Cronicón Mayoricense.",
                  f"{SITE}/abreviatures/{slug(siglum)}/", depth=2)
             + masthead(depth=2, here="abreviatures/") + f"""
-<main class="wrap">
+<main class="wrap read">
   <nav class="yearnav"><h2 class="doctitle">{esc(siglum)} · {esc(named)}</h2></nav>
-  <p class="hint">Campaner atribueix <strong>{num(total)}</strong> notícies a
-     aquesta font, repartides en {num(len(rows))} anys entre {first} i {last}.
-     Cada any enllaça amb la seva pàgina.</p>
+  {dossier(record)}
+  <h3 class="section">On el cita el Cronicón</h3>
+  <p class="hint">Campaner li atribueix <strong>{num(total)}</strong> notícies,
+     repartides en {num(len(rows))} anys entre {first} i {last}.</p>
   <div class="yeargrid">{years}</div>
 </main>
 """ + tail(2))
@@ -772,10 +803,22 @@ def abbreviations_page(con) -> str:
         "GROUP BY 1").fetchall())
     glossed = con.execute(
         "SELECT siglum, expansion FROM siglum ORDER BY siglum").fetchall()
-    rows = "".join(
-        f"<tr><td><code>{esc(g)}</code></td><td>{esc(x)}</td>"
-        f'<td class="num">{num(used.get(g, 0))}</td></tr>'
-        for g, x in glossed if used.get(g))
+    # Each source as a card rather than a table row: the table could hold a name
+    # and a count, and Campaner gives a trade, a manuscript, a span of years and
+    # usually a date of death.
+    people = con.execute("""
+        SELECT siglum, expansion, life, role, span, work, attributions
+        FROM siglum WHERE attributions > 0
+        ORDER BY attributions DESC""").fetchall()
+    cards = "".join(
+        f'<a class="source-card" href="{slug(g)}/">'
+        f'<span class="sig">{esc(g)}</span>'
+        f"<strong>{esc(x.rstrip('.'))}</strong>"
+        + (f"<span class=\"role\">{esc(r)}</span>" if r else "")
+        + (f"<span class=\"span\">{esc(sp)}</span>" if sp else "")
+        + (f"<em>{esc(w)}</em>" if w else "")
+        + f'<span class="n">{num(a or 0)} notícies</span></a>'
+        for g, x, _l, r, sp, w, a in people)
     bare = sorted(((g, n) for g, n in used.items()
                    if g not in {x[0] for x in glossed}), key=lambda r: -r[1])
     missing = ", ".join(f"<code>{esc(g)}</code> ({num(n)})" for g, n in bare)
@@ -797,12 +840,14 @@ def abbreviations_page(con) -> str:
      XVIII — i allà on una dècada penja d'una sola font és on convé
      desconfiar.</p>
   {chart}
-  <div class="scroll">
-  <table>
-    <thead><tr><th>sigla</th><th>font</th><th class="num">notícies</th></tr></thead>
-    <tbody>{rows}</tbody>
-  </table>
-  </div>
+
+  <h2 class="section">Els qui van escriure</h2>
+  <p class="hint">Un notari, un espardenyer, un cirurgià d'hospital, el rector
+     de Campos, el bidell de la Seu. Campaner els descriu un per un vuit fulls
+     abans de la llista d'abreviatures, i és la part del llibre que fa que la
+     crònica es pugui fer servir: diu qui eren, què és el manuscrit, quins anys
+     abraça i on parava el 1881.</p>
+  <div class="source-grid">{cards}</div>
   <p class="hint">La crònica en cita {len(bare)} més que la introducció no
      glossa: {missing}. Les d'una sola inicial són sigles de dues que el
      facsímil no deixa llegir senceres.</p>
@@ -926,39 +971,39 @@ def index_page(con, years: list[int], counts: dict) -> str:
                  "1229 i 1800, amb el grau de certesa de cada paraula.",
                  f"{SITE}/") + masthead(here="") + f"""
 <main class="wrap">
-  <section class="hero">
-    <div class="hero-say">
-      <p class="kicker">Edició digital · Corpus Balear</p>
-      <h2>Cinc segles de notícies de Mallorca,<br>dia a dia</h2>
-      <p class="lede">L'any 1881 Álvaro Campaner va buidar els noticiaris,
-         dietaris i anals manuscrits que corrien per l'illa —molts inèdits, i
-         alguns a punt de perdre's— i en va ordenar les notícies per data, de la
-         conquesta de 1229 fins al 1800. Això és aquell llibre, llegit de nou
-         paraula per paraula.</p>
-      <p class="cta"><a class="button" href="anys/">Entra per un any</a>
-         <a href="#cerca">o cerca un mot</a></p>
+  <section class="opener">
+    <p class="kicker">Edició digital · Corpus Balear</p>
+    <h2>Cinc segles de notícies de Mallorca, dia a dia</h2>
+    <p class="lede">L'any 1881 Àlvar Campaner va buidar els noticiaris,
+       dietaris i anals manuscrits que corrien per l'illa —molts inèdits, i
+       alguns a punt de perdre's— i en va ordenar les notícies per data, de la
+       conquesta de 1229 fins al 1800. Els va escriure un notari, un
+       espardenyer, un cirurgià d'hospital, el rector de Campos, el bidell de
+       la Seu. Això és aquell llibre, llegit de nou paraula per paraula.</p>
+    <p class="cta"><a class="button" href="anys/">Entra per un any</a>
+       <a href="#cerca">o cerca un mot</a></p>
+  </section>
+
+  {shape_of_the_book(counts, years[0], years[-1])}
+
+  <div class="twin">
+    <blockquote class="pull">
+      <p>El presente libro no es una Historia de Mallorca… compónenlo elementos
+         tomados de muy diversas fuentes y colocados por el órden de los
+         tiempos, á fin de que sirvan de algun auxilio al curioso investigador
+         de los hechos y antiguas costumbres é instituciones de la isla.</p>
+      <cite>Campaner, introducció, 1881</cite>
+    </blockquote>
+    <div class="matter">
+      <p>Els qui van escriure aquests noticiaris hi anotaven, en paraules del
+         mateix Campaner:</p>
+      <ul class="subjects">{subjects}</ul>
+      <p class="aside">Ho recollia, deia, «salvando de la destruccion ó del
+         extravío algunos de los trabajos de nuestros antepasados, de los cuales
+         bastantes han sido ya pasto del polvo y la polilla».</p>
     </div>
-    {shape_of_the_book(counts, years[0], years[-1])}
-  </section>
-
-  <blockquote class="pull">
-    <p>El presente libro no es una Historia de Mallorca… compónenlo elementos
-       tomados de muy diversas fuentes y colocados por el órden de los tiempos,
-       á fin de que sirvan de algun auxilio al curioso investigador de los
-       hechos y antiguas costumbres é instituciones de la isla.</p>
-    <cite>Campaner, introducció, 1881</cite>
-  </blockquote>
+  </div>
 {specimen(con)}
-  <section class="matter">
-    <h2 class="section">De què parla</h2>
-    <p>Els qui van escriure aquests noticiaris hi anotaven, en paraules del
-       mateix Campaner:</p>
-    <ul class="subjects">{subjects}</ul>
-    <p class="aside">Ho recollia, deia, «salvando de la destruccion ó del
-       extravío algunos de los trabajos de nuestros antepasados, de los cuales
-       bastantes han sido ya pasto del polvo y la polilla».</p>
-  </section>
-
   <section id="cerca" class="find">
     <h2 class="section">Cerca-hi</h2>
     <div class="tools">
@@ -985,9 +1030,9 @@ def index_page(con, years: list[int], counts: dict) -> str:
     </section>
     <section>
       <h2>Qui ho explica</h2>
-      <p>Campaner atribueix cada notícia al manuscrit d'on la treu, amb unes
-         inicials que la introducció glossa.</p>
-      <p><a href="abreviatures/">Les abreviatures i les seves fonts →</a></p>
+      <p>Vint-i-sis testimonis, cadascun amb el seu ofici i el seu manuscrit,
+         tal com els descriu la introducció.</p>
+      <p><a href="abreviatures/">Les fonts, una per una →</a></p>
     </section>
     <section>
       <h2>Què és fiable</h2>
@@ -999,23 +1044,25 @@ def index_page(con, years: list[int], counts: dict) -> str:
 
   <section class="who">
     <h2 class="section">Qui era Campaner</h2>
-    <p><strong>Àlvar Campaner i Fuertes</strong> —a la portada del llibre,
-       <em>Álvaro Campaner y Fuertes</em>— va néixer a Valverde del Camino,
-       Huelva, el 1834 i va morir a Palma el 1894. Doctor en dret i fiscal de
-       l'Audiència de Mallorca, era sobretot numismàtic: va fundar el
-       <em>Memorial numismático español</em> el 1866 i va publicar la
-       <em>Numismática balear</em> el 1879. El <em>Cronicón Mayoricense</em> és
-       de 1881; el <em>Bosquejo de la dominación islamita en las islas
-       Baleares</em>, de 1888.</p>
-    <p>No va escriure una història: va reunir la matèria primera perquè algú
-       altre en pogués fer una. Aquesta edició fa el mateix un pas més enllà,
-       en dades consultables.</p>
-    <div class="stats">
-      <div><strong>{num(stats[0])}</strong>notícies datades</div>
-      <div><strong>{stats[1]}</strong>anys</div>
-      <div><strong>{num(stats[2])}</strong>jurats</div>
-      <div><strong>{stats[3]}</strong>documents</div>
-      <div><strong>{num(stats[4])}</strong>paraules</div>
+    <div class="who-grid">
+      <div>
+        <p><strong>Àlvar Campaner i Fuertes</strong> —a la portada del llibre,
+           <em>Álvaro Campaner y Fuertes</em>— va néixer a Valverde del Camino,
+           Huelva, el 1834 i va morir a Palma el 1894. Doctor en dret i fiscal
+           de l'Audiència de Mallorca, era sobretot numismàtic: va fundar el
+           <em>Memorial numismático español</em> el 1866 i va publicar la
+           <em>Numismática balear</em> el 1879.</p>
+        <p>No va escriure una història: va reunir la matèria primera perquè
+           algú altre en pogués fer una. Aquesta edició fa el mateix un pas
+           més enllà, en dades consultables.</p>
+      </div>
+      <div class="stats">
+        <div><strong>{num(stats[0])}</strong>notícies datades</div>
+        <div><strong>{stats[1]}</strong>anys</div>
+        <div><strong>{num(stats[2])}</strong>jurats</div>
+        <div><strong>{stats[3]}</strong>documents</div>
+        <div><strong>{num(stats[4])}</strong>paraules</div>
+      </div>
     </div>
   </section>
 </main>

@@ -656,6 +656,41 @@ glossary and abbreviate dineros, libras and sueldos, not manuscripts.
 counting attributions in `entries.jsonl`, so reading it makes `parse_entries`
 depend on its own output. `UNGLOSSED` is written out in the source instead.
 
+## The introduction is dropped, but not thrown away
+
+The scope decision stands — the twelve leaves of introduction are not published
+as text — and it was costing far more than the sigla glossary. **Eight of those
+leaves are a dossier on every source the book uses**, and the abbreviation list
+on leaf 25 is only the index to it. `M. M.—Matías Mut.` is what the list gives;
+leaf 18 says he was an **espardenyer from Llucmajor**, that his diary runs 1680
+to 1715 in a hand Campaner calls «de muy mala letra y peor redaccion y
+ortografía», and that we know he was born in 1639 because on 15 April 1686 he
+wrote in it «Dit dia jo vaig fer 47 anys».
+
+`data/sigla/sources.tsv` holds that for **26 sources covering 97% of the 3 373
+attributions**: who the man was, his trade, the years his manuscript covers, its
+title as printed, and one telling fact. **Every row carries the leaf it comes
+from**, which is what makes it checkable rather than asserted, and where
+Campaner does not say, the field is empty.
+
+Entered by hand, deliberately. Those leaves run two columns of footnotes under
+the text and interleave them, so they are among the worst in the book for
+reading order; and there are twenty-six of them, which is an afternoon, not a
+parser. It is not transcription — it is metadata about the transcription, and
+the prose is Catalan because it is shown on the site.
+
+Two of the entries pay for the whole file on their own: **`L. V.` and `N. F.`
+attribute 183 notices between them and are simply not in the book's own
+abbreviation list.** They used to render as "font no glossada a la
+introducció". They are Luis de Villafranca, the Capuchin librarian who copied
+and continued half the diaries the Cronicón empties, and Nicolás Ferrer de Sant
+Jordi of Sineu, whose book ends «fonch finit este libre en la vila de Sineu, en
+ma casa dita Son Ferrer».
+
+Still open: **`T. A.` is two different people.** Tomás Aguiló in the 16th-century
+header and Tomás Amorós in the 18th, which is exactly why `parse_sigla.py`
+refuses to guess — and it is a fact the site should state rather than hide.
+
 ## The site must not tidy the book either
 
 **Year pages are ordered by the book, not by date.** November 1644 runs

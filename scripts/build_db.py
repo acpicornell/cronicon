@@ -147,10 +147,28 @@ def load_documents(con: duckdb.DuckDBPyConnection) -> None:
 
 
 def load_sigla(con: duckdb.DuckDBPyConnection) -> None:
+    """The glossary, plus the dossier the introduction gives for each source.
+
+    The unglossed sigla are loaded too when the introduction describes them.
+    `L. V.` and `N. F.` attribute 183 notices between them and are simply not in
+    the book's own abbreviation list, but Campaner devotes a paragraph to each
+    eight leaves earlier -- so they get a row, with `expansion` taken from the
+    dossier and `source` marked `described` to say where the name comes from.
+    """
     sigla = json.loads((DATA / "sigla" / "sigla.json").read_text())
-    rows = [(g["siglum"], g["expansion"], g.get("source"), g.get("attributions"))
-            for g in sigla["glossary"]]
-    con.executemany("INSERT INTO siglum VALUES (?,?,?,?)", rows)
+
+    def row(entry: dict, expansion: str, origin: str) -> tuple:
+        who = entry.get("who") or {}
+        return (entry["siglum"], expansion, origin, entry.get("attributions"),
+                who.get("life"), who.get("role"), who.get("span"),
+                who.get("work"), who.get("note"),
+                int(who["leaf"]) if who.get("leaf") else None)
+
+    rows = [row(g, g["expansion"], g.get("source")) for g in sigla["glossary"]]
+    rows += [row(u, (u.get("who") or {}).get("name", ""), "described")
+             for u in sigla.get("unglossed", [])
+             if u["siglum"] in sigla.get("described_only", [])]
+    con.executemany("INSERT INTO siglum VALUES (?,?,?,?,?,?,?,?,?,?)", rows)
     print(f"  siglum        {len(rows):>8,}")
 
 

@@ -11,31 +11,73 @@
    "siglum": "A. G.",
    "expansion": "Antonio Gelabert.",
    "source": "parsed",
-   "attributions": 47
+   "attributions": 47,
+   "who": {
+    "name": "Antonio Gelabert",
+    "role": "prevere",
+    "span": "1695, 1711–1783",
+    "work": "dietari",
+    "leaf": "19"
+   }
   },
   {
    "siglum": "A. T.",
    "expansion": "Agustin de Torrella.",
    "source": "parsed",
-   "attributions": 25
+   "attributions": 25,
+   "who": {
+    "name": "Agustin de Torrella",
+    "role": "testimoni ocular",
+    "span": "1706, 1715",
+    "work": "dues relacions: la rendició de Mallorca a l'arxiduc Carles III i la submissió a Felip V",
+    "note": "Va veure els dos canvis de bàndol i en va escriure un relat de cadascun.",
+    "leaf": "19"
+   }
   },
   {
    "siglum": "B. J.",
    "expansion": "Bartolomé Jaume.",
    "source": "parsed",
-   "attributions": 382
+   "attributions": 382,
+   "who": {
+    "name": "Bartolomé Jaume",
+    "life": "1764–1844",
+    "role": "paborde de la Seu i arxiver del Reial Patrimoni",
+    "span": "s. XIV–s. XVI",
+    "work": "Notas sacadas de los libros de Datas ó Dadas de la antigua Procuracion Real de Mallorca",
+    "note": "No són relats sinó apunts de pagaments, i precisament per això diuen com era la societat mallorquina: què costava una cosa i qui la cobrava.",
+    "leaf": "21"
+   }
   },
   {
    "siglum": "B. S.",
    "expansion": "Buenaventura Serra.",
    "source": "parsed",
-   "attributions": 15
+   "attributions": 15,
+   "who": {
+    "name": "Buenaventura Serra y Ferragut",
+    "life": "nascut a Palma el 3 d'abril de 1728",
+    "role": "advocat, catedràtic de dret canònic i cronista general del regne des de 1759",
+    "span": "1760–1763",
+    "work": "notícies diàries dins les Recreaciones Eruditas",
+    "note": "Erudit de correspondència internacional que gairebé no va publicar res: Campaner el defineix com «el que pasa su vida trabajando, sin dar á la prensa ninguna obra de alguna importancia».",
+    "leaf": "20"
+   }
   },
   {
    "siglum": "C. M.",
    "expansion": "Cayetano de Mallorca.",
    "source": "parsed",
-   "attributions": 60
+   "attributions": 60,
+   "who": {
+    "name": "Cayetano de Mallorca",
+    "life": "mort el 8 de gener de 1767",
+    "role": "caputxí",
+    "span": "1750–1766",
+    "work": "Diario de varios acontecimientos que sucedieron en Mallorca",
+    "note": "Les seves Noticias Misceláneas són el volum on van anar a parar còpies de mitja dotzena dels altres dietaris: sense elles, bona part d'aquest llibre no existiria.",
+    "leaf": "20"
+   }
   },
   {
    "siglum": "C. y R.",
@@ -47,37 +89,89 @@
    "siglum": "Cl. Fl.",
    "expansion": "Cristóbal Fiol.",
    "source": "parsed",
-   "attributions": 77
+   "attributions": 77,
+   "who": {
+    "name": "Cristóbal Fiol",
+    "life": "mort a Palma el 4 de setembre de 1702",
+    "role": "rector de Campos i després vicari general",
+    "span": "1643–1702",
+    "work": "Llibre de Memorias de cosas notables segons el discurs dels anys",
+    "note": "Els darrers anys hi ha molt poques notícies «á consecuencia de la ancianidad y graves ocupaciones del autor»: havia hagut de deixar el càrrec perquè s'havia quedat cec.",
+    "leaf": "18"
+   }
   },
   {
    "siglum": "Co. Fr.",
    "expansion": "Cayetano Ferrer.",
    "source": "parsed",
-   "attributions": 34
+   "attributions": 34,
+   "who": {
+    "name": "Cayetano Ferrer",
+    "life": "natural de Selva",
+    "role": "prevere i vicari de Santa Eulàlia de Palma",
+    "span": "1747–1771",
+    "work": "Memoria y relació de lo que succeí en esta isla sobre la esterilidat de blat, llegums et alias",
+    "note": "Un diari de la fam: comença l'octubre de 1747 comptant què falta.",
+    "leaf": "20"
+   }
   },
   {
    "siglum": "F. S.",
    "expansion": "Francisco Sanceloni.",
    "source": "parsed",
-   "attributions": 15
+   "attributions": 15,
+   "who": {
+    "name": "Francisco Sanceloni",
+    "role": "canonge de la Seu",
+    "span": "1605–1627",
+    "work": "notícies en un quadern d'ingressos i despeses",
+    "note": "Al quadern hi falten fulls del començament.",
+    "leaf": "17"
+   }
   },
   {
    "siglum": "G. F.",
    "expansion": "Gabriel Ferrer.",
    "source": "parsed",
-   "attributions": 212
+   "attributions": 212,
+   "who": {
+    "name": "Gabriel Ferrer",
+    "life": "nascut el 24 d'octubre de 1693",
+    "role": "de casa de Villalonga Mir",
+    "span": "1746–1783",
+    "work": "Noticiario de las cosas más notables sucedidas en Mallorca, escrit en la llengua del país",
+    "note": "El pare Villafranca, que el va extractar, va suposar que Ferrer va morir el 13 d'abril de 1783, que és on s'atura.",
+    "leaf": "20"
+   }
   },
   {
    "siglum": "G. T.",
    "expansion": "Guillermo Terrassa.",
    "source": "parsed",
-   "attributions": 757
+   "attributions": 757,
+   "who": {
+    "name": "Guillermo Terrassa",
+    "life": "1709–1778",
+    "role": "prevere i paborde de la Seu de Mallorca",
+    "span": "1229–1800",
+    "work": "Anales de la isla y reyno de Mallorca, dispuestos por la chronología de los años",
+    "note": "Campaner només va poder veure dos toms originals: el del segle XIII, de la seva pròpia família, i el del XIV, del marquès de Vivot. De la resta va comparar còpies i va adoptar la lliçó repetida en més exemplars i en els més antics.",
+    "leaf": "22"
+   }
   },
   {
    "siglum": "G. V.",
    "expansion": "Guillermo Vidal.",
    "source": "parsed",
-   "attributions": 307
+   "attributions": 307,
+   "who": {
+    "name": "Guillermo Vidal",
+    "role": "doctor en tots dos drets",
+    "span": "1700–1783",
+    "work": "Ocios del Dr. en ambos derechos D…, que puede servir de continuacion á la obra de D. Guillermo Terrassa (1785)",
+    "note": "Es va escriure per continuar els Anales de Terrassa, i la còpia que se'n conserva va acabar substituint-ne el segle XVIII.",
+    "leaf": "19"
+   }
   },
   {
    "siglum": "G. y G.",
@@ -89,73 +183,172 @@
    "siglum": "J. A.",
    "expansion": "Jerónimo Alemany.",
    "source": "parsed",
-   "attributions": 11
+   "attributions": 11,
+   "who": {
+    "name": "Jerónimo Agustin Alemany y Moragues",
+    "life": "Palma, 15 de febrer de 1693 – Madrid, 23 d'agost de 1753",
+    "role": "advocat i cronista del regne",
+    "span": "1655–1711",
+    "work": "Memorias Diarias",
+    "note": "Gairebé tot el que hi anota va passar abans que ell nasqués: ho va recollir d'altres dietaris.",
+    "leaf": "18"
+   }
   },
   {
    "siglum": "J. F.",
    "expansion": "Juan Fé.",
    "source": "adjudicated",
-   "attributions": 192
+   "attributions": 192,
+   "who": {
+    "name": "Juan Fé",
+    "role": "custos de la Seu de Mallorca",
+    "span": "des de 1598",
+    "work": "un tom en foli de 308 fulls",
+    "note": "No va ordenar les notícies per data sinó per matèries, cosa que el fa difícil de fer servir i és per això que Campaner el buida.",
+    "leaf": "17"
+   }
   },
   {
    "siglum": "J. M.",
    "expansion": "Juan Antonio Mateu.",
    "source": "adjudicated",
-   "attributions": 59
+   "attributions": 59,
+   "who": {
+    "name": "Juan Antonio Mateu",
+    "role": "cirurgià de l'hospital; jurat pel braç de menestrals el 1714",
+    "span": "1643–1696",
+    "work": "Llibre de algunas cosas de la ciutat y Reyne de Mallorca",
+    "note": "L'original era a casa d'un advocat el 1807 i Campaner ja no en va saber res més.",
+    "leaf": "18"
+   }
   },
   {
    "siglum": "J. P.",
    "expansion": "Jaime Pujol.",
    "source": "parsed",
-   "attributions": 68
+   "attributions": 68,
+   "who": {
+    "name": "Jaime Pujol",
+    "life": "nascut a Ciutadella el 5 d'octubre de 1589",
+    "role": "notari, síndic i arxiver perpetu de la Ciutat i Regne",
+    "span": "1612–1645",
+    "work": "Memorias diarias",
+    "note": "Menorquí, format al col·legi dels jesuïtes de Mallorca. Va acompanyar diversos bisbes en les visites a Menorca.",
+    "leaf": "17"
+   }
   },
   {
    "siglum": "J. Q.",
    "expansion": "José M. Quadrado.",
    "source": "parsed",
-   "attributions": 9
+   "attributions": 9,
+   "who": {
+    "name": "José M. Quadrado",
+    "role": "historiador, contemporani de Campaner",
+    "work": "documents que va facilitar",
+    "note": "Li va passar l'extracte del procés de 1345 contra el governador Arnaldo de Eril.",
+    "leaf": "17"
+   }
   },
   {
    "siglum": "J. V.",
    "expansion": "Jaime Viquet.",
    "source": "adjudicated",
-   "attributions": 169
+   "attributions": 169,
+   "who": {
+    "name": "Jaime Viquet",
+    "life": "mort a Palma el 16 d'octubre de 1651",
+    "role": "prevere, beneficiat primicer de la Seu",
+    "span": "1636–1645",
+    "work": "quadern de notícies",
+    "note": "L'original que es conservava no tenia ni principi ni final: li havien arrencat els fulls.",
+    "leaf": "17"
+   }
   },
   {
    "siglum": "Jn. Br.",
    "expansion": "Joaquin M. Bover.",
    "source": "parsed",
-   "attributions": 115
+   "attributions": 115,
+   "who": {
+    "name": "Joaquin M. Bover",
+    "role": "erudit i col·leccionista",
+    "span": "1774–1800",
+    "work": "Miscelánea Histórica Mayoricense, divuit toms",
+    "note": "Va recollir notícies i documents des de nen. Campaner en diu «mi infatigable y malogrado amigo»: va morir abans que el Cronicón sortís.",
+    "leaf": "18"
+   }
   },
   {
    "siglum": "Jn. Bs.",
    "expansion": "Juan Binimelis.",
    "source": "parsed",
-   "attributions": 10
+   "attributions": 10,
+   "who": {
+    "name": "Juan Binimelis",
+    "life": "Pollença, 1538 – Palma, 12 de gener de 1616",
+    "role": "metge, matemàtic, sacerdot i cronista general del regne",
+    "span": "s. XVI",
+    "work": "Historia general del Reino de Mallorca",
+    "note": "Campaner en copia sencers els fets de la Germania de 1521–1523 i les incursions de turcs i berbers, perquè Binimelis els va viure o els va sentir explicar als qui els van viure.",
+    "leaf": "21"
+   }
   },
   {
    "siglum": "L. C.",
    "expansion": "Lorenzo Coch.",
    "source": "parsed",
-   "attributions": 11
+   "attributions": 11,
+   "who": {
+    "name": "Lorenzo Coch",
+    "role": "prevere i vicari de Mancor",
+    "span": "1710–1735",
+    "work": "Adnotaciones mensuales",
+    "note": "Parla sobretot de pluges, neus, preus dels fruits i altres coses del temps.",
+    "leaf": "19"
+   }
   },
   {
    "siglum": "M. C.",
    "expansion": "Maestro de Ceremonias.",
    "source": "adjudicated",
-   "attributions": 59
+   "attributions": 59,
+   "who": {
+    "name": "Maestro de Ceremonias de la Ciudad",
+    "span": "1700–1788",
+    "work": "notícies copiades a les Misceláneas",
+    "note": "No se'n sap el nom, ni de qui era el llibre, ni quantes pàgines tenia.",
+    "leaf": "19"
+   }
   },
   {
    "siglum": "M. M.",
    "expansion": "Matías Mut.",
    "source": "adjudicated",
-   "attributions": 332
+   "attributions": 332,
+   "who": {
+    "name": "Matías Mut",
+    "life": "nascut a Llucmajor el 1639",
+    "role": "espardenyer",
+    "span": "1680–1715",
+    "work": "dietari sense títol, en un tom en quart",
+    "note": "«De muy mala letra y peor redaccion y ortografía», diu Campaner. Sabem quan va néixer perquè el 15 d'abril de 1686 va escriure-hi: «Dit dia jo vaig fer 47 anys».",
+    "leaf": "18"
+   }
   },
   {
    "siglum": "M. S.",
    "expansion": "Mateo Salcet.",
    "source": "parsed",
-   "attributions": 98
+   "attributions": 98,
+   "who": {
+    "name": "Mateo Salcet",
+    "role": "notari",
+    "span": "1372–1408",
+    "work": "apuntacions als seus protocols",
+    "note": "El testimoni més antic del llibre. Escrivia les notícies als primers i darrers fulls dels seus protocols; falten els de 1400, 1401 i 1402, i el de 1389 no en duu cap.",
+    "leaf": "15"
+   }
   },
   {
    "siglum": "MS. y MSS.",
@@ -167,7 +360,15 @@
    "siglum": "N. C.",
    "expansion": "N. Cañellas.",
    "source": "adjudicated",
-   "attributions": 12
+   "attributions": 12,
+   "who": {
+    "name": "N. Cañellas",
+    "role": "prevere de l'Oratori de Sant Felip Neri",
+    "span": "1725–1746",
+    "work": "Memorias diarias",
+    "note": "Ni tan sols se'n sap el nom de pila.",
+    "leaf": "19"
+   }
   },
   {
    "siglum": "V.",
@@ -197,11 +398,28 @@
  "unglossed": [
   {
    "siglum": "L. V.",
-   "attributions": 108
+   "attributions": 108,
+   "who": {
+    "name": "Luis de Villafranca",
+    "life": "nascut a Vilafranca el 4 de novembre de 1770",
+    "role": "caputxí, bibliotecari del seu convent",
+    "span": "fins a 1810",
+    "work": "continuació de les Misceláneas del P. Cayetano de Mallorca",
+    "note": "No surt a la llista d'abreviatures del llibre, però hi és per tot arreu: és qui va copiar i continuar mitja dotzena dels dietaris que el Cronicón buida.",
+    "leaf": "20"
+   }
   },
   {
    "siglum": "N. F.",
-   "attributions": 75
+   "attributions": 75,
+   "who": {
+    "name": "Nicolas Ferrer de Sant Jordi",
+    "role": "ciutadà militar, de Sineu",
+    "span": "1730–1758",
+    "work": "Libre de cosas memorables que han succeit en Mallorca",
+    "note": "Un tom en quart de 90 fulls que s'acaba dient: «fonch finit este libre en la vila de Sineu, en ma casa dita Son Ferrer». Tampoc no surt a la llista d'abreviatures.",
+    "leaf": "19"
+   }
   },
   {
    "siglum": "T. A.",
@@ -231,6 +449,10 @@
    "siglum": "Br.",
    "attributions": 1
   }
+ ],
+ "described_only": [
+  "L. V.",
+  "N. F."
  ],
  "century_sources": [
   {

@@ -150,11 +150,22 @@ CREATE TABLE IF NOT EXISTS document (
 -- Campaner's glossary of manuscript sigla, from leaf 25. `source` is 'parsed'
 -- or 'adjudicated': eight entries are set in a swash italic every engine
 -- mangles and were read off the facsimile by eye.
+-- The dossier columns come from the eight leaves of introduction *before* the
+-- list, where Campaner says who each man was, what his manuscript physically
+-- is, the years it covers and where it was in 1881. `leaf` is which of those
+-- leaves says so, because a claim about a source should be checkable against
+-- the facsimile like everything else here.
 CREATE TABLE IF NOT EXISTS siglum (
     siglum       VARCHAR PRIMARY KEY,   -- 'G. T.'
     expansion    VARCHAR NOT NULL,      -- 'Guillermo Terrassa.'
-    source       VARCHAR,               -- parsed | adjudicated
-    attributions INTEGER
+    source       VARCHAR,               -- parsed | adjudicated | described
+    attributions INTEGER,
+    life         VARCHAR,               -- '1709–1778'
+    role         VARCHAR,               -- 'prevere i paborde de la Seu'
+    span         VARCHAR,               -- what years the manuscript covers
+    work         VARCHAR,               -- its title, as Campaner prints it
+    note         VARCHAR,
+    leaf         SMALLINT
 );
 
 -- The evidence -----------------------------------------------------------
