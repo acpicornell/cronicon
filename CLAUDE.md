@@ -566,10 +566,10 @@ What the sweep says is left, none of it structural:
 
 | | | |
 |---|---:|---|
-| `orphan-note` | 64 | a note no notice calls — the 0.55 band |
-| `dangling-note` | 35 | a `(n)` whose note was never separated — same cause |
+| `orphan-note` | 68 | a note no notice calls — its reference was never read |
 | `glued` | 35 | `dive rsos`, `Novie mbre`, `ciu dad`, `alo dio` |
 | `doubled` | 23 | `año año`, `per per`, and Campaner's real `etc., etc.` |
+| `dangling-note` | 18 | a `(n)` whose note was never separated |
 | `runt` | 16 | `47 3 •`, `Díjose F.` |
 | `stray-tail` | 13 | text ending in a dash, usually a broken siglum |
 | `unlifted-siglum` | 3 | `Jn.—Br.`, `J. — P.`, `— — Cl. — Fl.` |
@@ -579,6 +579,41 @@ What the sweep says is left, none of it structural:
 `Setiembre` are correct here and wrong in any Spanish word list — by requiring
 that the joined form be a word the book uses at least five times and that each
 half be rarer than the whole. It has no false positive in the 35.
+
+### The apparatus is found twice, by position and by size
+
+`split_notes` is the **union of two rules**, and the union is the point. The
+band knows where notes usually sit — below y 0.55, running to the foot of their
+column — and fails on the leaves whose apparatus is so deep it starts in the
+upper half: **leaf 86 is eleven lines of chronicle and 122 of a quoted letter**,
+opening at y 0.28, and all 122 were published as chronicle. So the opening is
+also looked for by the size of the type, after which the band's own rule takes
+over. **474 lines on 11 leaves**, and `dangling-note` 35 → 18.
+
+**The threshold is calibrated on the leaf**, between the height of its opening
+lines — body by construction, since a note sits at the foot of a column — and
+the height of whatever notes the band already found, which are apparatus by
+construction. Comparing the two sizes across the book does not work and is the
+negative the old docstring recorded: 0.0097 against 0.0127, and they overlap.
+Where the band found fewer than three note lines there is nothing to calibrate
+against and the body type alone carries it — which is exactly the case on the
+leaves that need this most, leaf 86 among them.
+
+Three things had to be got wrong first, and the third is the one worth keeping:
+
+- **A single line's height means very little.** Leaf 66 opens `(1) El pavorde
+  Terrassa se equivoca lastimosamen-` at 0.0147 with 0.0177 under it, both wrong
+  for note type. An opening counts if it *or the line under it* is small.
+- **A line that is nothing but `(2)` is not a note opening**, it is a reference
+  the alignment stranded, and its box is small because it is two characters. One
+  of them opened an apparatus on leaf 93 that ate the rest of the column.
+- **Scanning up from the foot of a column for a note continuing from the one
+  before was tried and dropped.** It reads correctly — leaf 105's note really
+  does come back at the foot of the second column with no number to announce
+  it — and it cost the year headings of 1289, 1339 and 1730, because `1339.`
+  alone on a line has no ascender or descender and measures like note type.
+  Nine lines of apparatus are not worth a year of the chronicle, and the loss is
+  silent where the gain is not.
 
 `contested` was written and taken out. The entry text has been hyphen-stitched
 and re-joined, so it can only be matched to the leaf's words by the word itself,

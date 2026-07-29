@@ -40,6 +40,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import statistics
 import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -327,16 +328,18 @@ def known_documents(path: Path | None) -> set[int]:
 # agree rather than that the text has a particular shape.
 
 
-def split_notes(lines: list[dict]) -> tuple[list[dict], list[dict]]:
-    """Separate a leaf's footnotes from its body.
+def banded_notes(lines: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Separate a leaf's footnotes from its body, by where they sit.
 
     A note runs from its own number to the foot of the column it is in, so the
     rule follows the reading order rather than the geometry: once a note has
     opened, every following line belongs to it until y jumps back towards the
     top of the leaf, which is the next column beginning.
 
-    Type size does not work as a signal here and was tried: notes are set at
-    0.0097 of the leaf against 0.0127 for the body, and the two overlap.
+    The band is what keeps a reference `(1)` that happens to fall at the start
+    of a line from opening a note. It also means a leaf whose apparatus is deep
+    -- and some carry more note than text -- has its notes read as chronicle:
+    that is what `small_type_notes` is for, and the two are unioned.
     """
     body: list[dict] = []
     notes: list[dict] = []
@@ -351,6 +354,116 @@ def split_notes(lines: list[dict]) -> tuple[list[dict], list[dict]]:
         (notes if in_note else body).append(line)
         previous = top
     return body, notes
+
+
+# A leaf opens in body type. Always: a note sits at the foot of its column, so
+# the first lines of the first column cannot be apparatus.
+OPENING_LINES = 8
+# …and how much smaller the note type has to be before this is worth trying.
+# Both sizes are measured on the leaf itself, never fixed for the book: the
+# earlier attempt compared them globally -- 0.0097 against 0.0127 -- and the
+# distributions overlap because the leaves differ.
+NOTE_TYPE = 0.90
+# A continuation is at least this many lines. Leaf 92 ends `desembar-` / `có en
+# las riberas de Morviedro.»-G. T.`, and one short last line is not a note.
+MIN_CONTINUATION = 2
+# `1339.` alone on a line is a year heading, and a four-digit line has no
+# ascender or descender in it, so its box measures like note type and the scan
+# walked straight through it. Leaves 74 and 547 lost their year that way.
+BARE_YEAR = re.compile(r"^\s*1[2-8]\d\d\s*[.,]?\s*$")
+
+
+def height(line: dict) -> float:
+    return line["bbox"][3] - line["bbox"][1]
+
+
+def small_type_notes(lines: list[dict]) -> list[dict]:
+    """Notes that open above the band, recognised by the size of their type.
+
+    The band is a good rule that fails on one kind of leaf: where the apparatus
+    is so deep that it starts in the upper half. Leaf 86 is eleven lines of
+    chronicle and 122 of a quoted letter, opening at y 0.28; leaf 92's list of
+    subscribers to the armada opens at 0.15. Those notes were read as chronicle.
+
+    So the opening is found by type instead of by position, and then the
+    existing rule takes over: a note runs to the foot of its column. **The
+    threshold is calibrated on the leaf itself**, between the height of its
+    opening lines -- body by construction, since a note sits at the foot of a
+    column -- and the height of whatever notes the band already found, which are
+    apparatus by construction. Comparing the two sizes across the book does not
+    work and was tried: 0.0097 against 0.0127, and they overlap.
+
+    Two things had to be got wrong first:
+
+    - **A single line's height means very little.** Leaf 66's note opens `(1) El
+      pavorde Terrassa se equivoca lastimosamen-` at 0.0147 with 0.0177 under
+      it, both wrong for note type. An opening counts if it *or the line under
+      it* is small.
+    - **A line that is nothing but `(2)` is not a note opening.** It is a
+      reference the alignment stranded, and its box is small for the obvious
+      reason: it is two characters. One of them opened an apparatus on leaf 93
+      that swallowed the rest of the column.
+
+    Scanning up from the foot of a column for a note continuing from the one
+    before was tried and dropped. It reads well -- leaf 105's note really does
+    come back at the foot of the second column with no number to announce it --
+    and it cost year headings on leaves 74, 547 and 1289, because `1339.` alone
+    on a line has no ascender or descender and measures like note type.
+    Recovering nine lines of apparatus is not worth losing a year of the
+    chronicle, and the loss is silent while the gain is not.
+    """
+    live = [line for line in lines if line["text"]]
+    banded = [line for line in banded_notes(lines)[1] if line["text"]]
+    if len(live) < OPENING_LINES:
+        return []
+    body_type = statistics.median(height(line) for line in live[:OPENING_LINES])
+    if len(banded) >= 3:
+        note_type = statistics.median(height(line) for line in banded)
+        if note_type >= NOTE_TYPE * body_type:
+            return []           # this leaf does not set its notes smaller
+        cut = (body_type + note_type) / 2
+    else:
+        # The leaves that need this most are the ones that cannot calibrate:
+        # leaf 86 is eleven lines of chronicle and 122 of a quoted letter, and
+        # the band sees two of the 122. With no sample of the note type to
+        # measure, the body type alone has to carry it.
+        cut = NOTE_TYPE * body_type
+
+    columns: list[list[dict]] = []
+    seen: list[int] = []
+    for line in lines:
+        if not seen or line["column"] != seen[-1]:
+            seen.append(line["column"])
+            columns.append([])
+        columns[-1].append(line)
+
+    notes: list[dict] = []
+    for group in columns:
+        for n, line in enumerate(group):
+            match = NOTE_START.match(line["text"])
+            if not match or len(line["text"][match.end():].strip()) < 4:
+                continue
+            if (height(line) < cut
+                    or (n + 1 < len(group) and height(group[n + 1]) < cut)):
+                notes += group[n:]
+                break
+    return notes
+
+
+def split_notes(lines: list[dict]) -> tuple[list[dict], list[dict]]:
+    """A leaf's body and its footnotes.
+
+    The union of the two rules, and the union is the point: the band knows
+    where notes usually sit and the type test knows what they look like, and
+    each finds apparatus the other cannot. Adding the second recovered **829
+    lines on 40 leaves** -- leaf 86 is eleven lines of chronicle and 122 of a
+    quoted letter, and all 122 were being published as chronicle.
+    """
+    _body, banded = banded_notes(lines)
+    keep = {id(line) for line in banded} | {
+        id(line) for line in small_type_notes(lines)}
+    return ([line for line in lines if id(line) not in keep],
+            [line for line in lines if id(line) in keep])
 
 
 def gather_notes(notes: list[dict]) -> list[dict]:
