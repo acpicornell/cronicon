@@ -420,6 +420,14 @@ def century_openings(leaves: dict[int, list[dict]], accepted: dict,
     inside the eighteenth century's appendix block and would otherwise be
     invisible here too.
     """
+    def across(lines: list[dict], n: int) -> bool:
+        left = min(line["bbox"][0] for line in lines)
+        right = max(line["bbox"][2] for line in lines)
+        box = lines[n]["bbox"]
+        return layout.across_measure(
+            layout.Line(text="", x0=box[0], y0=box[1], x1=box[2], y1=box[3]),
+            left, right)
+
     records: list[dict] = []
     skip: set[tuple[int, int]] = set()
     for pdf_page in body_pages:
@@ -428,18 +436,28 @@ def century_openings(leaves: dict[int, list[dict]], accepted: dict,
                         if CENTURY_LINE.match(line["text"])), None)
         if opening is None:
             continue
-        left = min(line["bbox"][0] for line in lines)
-        right = max(line["bbox"][2] for line in lines)
         end = opening
-        while end < len(lines) and layout.across_measure(
-                layout.Line(text="", x0=lines[end]["bbox"][0],
-                            y0=lines[end]["bbox"][1], x1=lines[end]["bbox"][2],
-                            y1=lines[end]["bbox"][3]), left, right):
+        while end < len(lines) and across(lines, end):
             end += 1
         block = [line for line in lines[opening:end] if line["text"]]
         if not block:
             continue
         skip |= {(pdf_page, n) for n in range(opening, end)}
+
+        # …and onto the next leaf, if the list filled this one. Five of the six
+        # openings fit on their leaf and the eighteenth's does not: leaf 506
+        # ends mid-sentence in the middle of Amorós and four more full-measure
+        # lines run across the head of 507 before `1701.`. The audit found it by
+        # the notice that opened `va. (i)— Noticias y relaciones anónimas…`.
+        after = next((p for p in body_pages if p > pdf_page), None)
+        if end == len(lines) and after is not None and after in leaves:
+            spill = leaves[after]
+            over = 0
+            while over < len(spill) and across(spill, over):
+                over += 1
+            if over:
+                block += [line for line in spill[:over] if line["text"]]
+                skip |= {(after, n) for n in range(over)}
 
         banner = " ".join(line["text"] for line in block[:2])
         numeral = CENTURY_NUMERAL.search(banner)
@@ -1535,6 +1553,12 @@ def main() -> None:
         json.dumps(headings, ensure_ascii=False), encoding="utf-8")
     (OUT / "centuries.json").write_text(
         json.dumps(centuries, ensure_ascii=False, indent=1), encoding="utf-8")
+    # Every note the leaves print, whether or not a notice calls it. The
+    # entries carry only the ones that were called; the difference between the
+    # two is a defect, and it cannot be seen from either file alone.
+    (OUT / "footnotes.json").write_text(json.dumps(
+        {str(page): notes for page, notes in sorted(footnotes.items())},
+        ensure_ascii=False, indent=1), encoding="utf-8")
     (OUT / "sections.json").write_text(json.dumps({
         "chronicle": chronicle,
         "jurats_tables": skipped_tables,

@@ -542,6 +542,49 @@ the whole of 1301, which states no month either. **One example is not enough to
 write a rule from.** The headnote stands where the book prints it, as the first
 notice of the century.
 
+## Reading page by page does not scale; the sweep does
+
+`scripts/audit_entries.py` runs every symptom we have ever found over all 3 445
+notices at once and returns a ranked list of where to look. **201 findings over
+120 years**, which is a worklist rather than 572 pages, and it took one run to
+justify itself twice: it found the eighteenth century's source list spilling
+onto leaf 507, and it disproved its own biggest check.
+
+**Every check prints its own fire rate, and that is the point.** `split` — a
+notice opening in lower case — fired 204 times, 5.9% of the book, and **201 of
+the 204 carry their date perfectly well**. Campaner's other date form is a
+sentence opener: `…contra el partido de Felipe V.—El 29 llegaron de Barcelona el
+Teniente de Rey…`, 149 of those, plus 33 of `—En 31 de Octubre decretó el
+Virey…`. The parser lifts `El 29` into the date column exactly as it lifts
+`AGOSTO 12.—`, and a verb is left behind. That is the book's convention, not a
+broken cut. Narrowed to "lower case **and** no date recovered", the check is 2.
+A check that fires on 6% of a book has found a convention; the rate is what says
+so, and three checks are marked `informational` because they describe the book
+rather than accuse it.
+
+What the sweep says is left, none of it structural:
+
+| | | |
+|---|---:|---|
+| `orphan-note` | 64 | a note no notice calls — the 0.55 band |
+| `dangling-note` | 35 | a `(n)` whose note was never separated — same cause |
+| `glued` | 35 | `dive rsos`, `Novie mbre`, `ciu dad`, `alo dio` |
+| `doubled` | 23 | `año año`, `per per`, and Campaner's real `etc., etc.` |
+| `runt` | 16 | `47 3 •`, `Díjose F.` |
+| `stray-tail` | 13 | text ending in a dash, usually a broken siglum |
+| `unlifted-siglum` | 3 | `Jn.—Br.`, `J. — P.`, `— — Cl. — Fl.` |
+| `bad-day` | 2 | `31 de junio`, `30 de febrero` |
+
+`glued` finds broken words with the book as its own dictionary — `formacion` and
+`Setiembre` are correct here and wrong in any Spanish word list — by requiring
+that the joined form be a word the book uses at least five times and that each
+half be rarer than the whole. It has no false positive in the 35.
+
+`contested` was written and taken out. The entry text has been hyphen-stitched
+and re-joined, so it can only be matched to the leaf's words by the word itself,
+and a word doubtful once on a leaf then marks every occurrence: it fired on 58%.
+`review.py` does the same thing properly, keyed by word box.
+
 ## A siglum is a sequence of initials, not a string
 
 Campaner's source attributions are the reason this book is worth a database,
@@ -595,9 +638,14 @@ truncated siglum whose second initial no engine placed.
 
 ## Where we left off (29 Jul 2026)
 
-**The edition is being read year by year, starting from the first**, and that is
-where the remaining defects are: see §What reading one year found. 1229 and 1301
-are done. Two things it left open and one it must not do by accident:
+**Reading year by year is over; `audit_entries.py` replaced it.** 1229 and 1301
+were read end to end and were worth it — see §What reading one year found — but
+that is because they are the first leaves of their centuries, where every
+structural class happens to meet. The sweep now finds the same symptoms
+everywhere at once: §Reading page by page does not scale. Work from
+`data/audit/findings.json`, not from the next year.
+
+Two things this left open and one it must not do by accident:
 
 - `data/layout_health.json` **as committed is stale** relative to
   `data/ocr/ordered/`, and regenerating it puts leaf 642 into `align_by_line` —
