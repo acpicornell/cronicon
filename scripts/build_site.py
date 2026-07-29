@@ -256,6 +256,23 @@ LONG_ENTRY = 1500     # characters before an entry is broken up to be read
 PARAGRAPH = 900       # rough target for each piece
 
 
+def notemarks(notes, doubtful: dict[str, list[str]]) -> str:
+    """A notice's footnotes, under it, numbered as the book numbers them.
+
+    Campaner's notes are half the scholarship in the book -- he corrects
+    Terrassa's dates, quotes the accounts the notice summarises, and says where
+    he found them -- and the site printed the `(1)` in the text with nothing on
+    the page for it to point at.
+    """
+    if not notes:
+        return ""
+    return ('<div class="notes">'
+            + "".join(f'<p><span class="num">({number})</span> '
+                      f"{mark_doubt(text, doubtful)}</p>"
+                      for number, text in notes)
+            + "</div>")
+
+
 def paragraphs(text: str) -> list[str]:
     """Break a very long entry into readable pieces at sentence ends.
 
@@ -346,7 +363,20 @@ def year_page(con, year: int, years: list[int], sigla: dict[str, str]) -> str:
         SELECT id, month, day, text, sources, pdf_page, printed_page
         FROM entry WHERE year = ? ORDER BY id
     """, [year]).fetchall()
-    pages = {e[5] for e in entries}
+    # A note is printed where its notice is, and belongs under it. 245 of them
+    # were parsed, stored and never shown: the page said `(1)` and pointed at
+    # nothing.
+    notes: dict[int, list[tuple[int, str]]] = {}
+    for entry_id, number, text in con.execute("""
+        SELECT f.entry_id, f.number, f.text FROM footnote f
+        JOIN entry e ON e.id = f.entry_id WHERE e.year = ? ORDER BY f.id
+    """, [year]).fetchall():
+        notes.setdefault(entry_id, []).append((number, text))
+    opening = con.execute(
+        "SELECT numeral, from_year, to_year, sources, pdf_page "
+        "FROM century WHERE from_year = ?", [year]).fetchone()
+
+    pages = {e[5] for e in entries} | ({opening[4]} if opening else set())
     doubtful: dict[str, list[str]] = {}
     if pages:
         doubtful = doubtful_words(con, pages)
@@ -372,6 +402,21 @@ def year_page(con, year: int, years: list[int], sigla: dict[str, str]) -> str:
              '<input type="checkbox" id="plain"> amaga la incertesa'
              "</label></p>"]
 
+    # A century opens by naming its witnesses -- `Anales etc. por Terrassa.—
+    # Notas sacadas de los libros de la Procuracion Real, por D. B. Jaume…` --
+    # and that list is the closest the book comes to a bibliography. It stands
+    # at the head of the first year of the century, which is where the book
+    # prints it.
+    if opening:
+        numeral, first, last, sources, _leaf = opening
+        parts.append(
+            '<section class="opening">'
+            f"<h3>Segle {esc(numeral)} · {first}–{last}</h3>"
+            "<p class=\"lede\">Campaner obre el segle nomenant els manuscrits "
+            "que el conten:</p>"
+            f"<p>{mark_doubt(sources, doubtful)}</p>"
+            "</section>")
+
     if not entries:
         # A silence is information, not a hole. 49 years carry no dated entry;
         # for 27 of them there is no trace of a heading anywhere between the
@@ -391,6 +436,11 @@ def year_page(con, year: int, years: list[int], sigla: dict[str, str]) -> str:
     # of order, the page says so twice rather than tidying it.
     running_month = object()
     running_leaf = None
+    # `sense mes` earns its place only where it separates the undated notices
+    # from the dated ones. On a year that is undated throughout -- the whole of
+    # the thirteenth century is -- it heads a section there is nothing to
+    # distinguish it from, and the em dash under it marks an absence twice.
+    dated = any(month for _i, month, *_r in entries)
 
     def leafmark(page: int) -> str:
         url = ("https://archive.org/details/CroniconMayoricenseCampaner/"
@@ -398,8 +448,8 @@ def year_page(con, year: int, years: list[int], sigla: dict[str, str]) -> str:
         return (f'<p class="leafmark"><a href="{url}" rel="noopener">'
                 f"full {page} al facsímil</a></p>")
 
-    for _id, month, day, text, sources, page, printed in entries:
-        if month != running_month:
+    for entry_id, month, day, text, sources, page, printed in entries:
+        if month != running_month and (month or dated):
             parts.append('<h3 class="month">'
                          f'{esc(MONTHS.get(month) or "sense mes")}</h3>')
             running_month = month
@@ -412,11 +462,12 @@ def year_page(con, year: int, years: list[int], sigla: dict[str, str]) -> str:
         cites = " ".join(cite(s, sigla) for s in (sources or []))
         parts.append(
             '<article class="notice">'
-            f'<p class="when">{day or "&mdash;"}</p>'
+            f'<p class="when">{day or ("&mdash;" if dated else "")}</p>'
             '<div class="said">'
             + "".join(f"<p>{mark_doubt(para, doubtful)}</p>"
                       for para in paragraphs(text))
             + (f'<p class="prov">{cites}</p>' if cites else "")
+            + notemarks(notes.get(entry_id), doubtful)
             + "</div></article>")
     if running_leaf is not None:
         parts.append(leafmark(running_leaf))

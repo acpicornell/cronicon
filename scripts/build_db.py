@@ -114,6 +114,17 @@ def load_entries(con: duckdb.DuckDBPyConnection) -> None:
     print(f"  footnote      {len(notes):>8,}")
 
 
+def load_centuries(con: duckdb.DuckDBPyConnection) -> None:
+    path = DATA / "entries" / "centuries.json"
+    if not path.exists():
+        return
+    rows = [(c["numeral"], c["from_year"], c["to_year"], c["pdf_page"],
+             c["banner"], c["text"])
+            for c in json.loads(path.read_text())]
+    con.executemany("INSERT INTO century VALUES (?,?,?,?,?,?)", rows)
+    print(f"  century       {len(rows):>8,}")
+
+
 def load_jurats(con: duckdb.DuckDBPyConnection) -> None:
     rows = [(n, j["century"], j["year"], j["seat"], j["name"], j.get("tier"),
              j["pdf_page"])
@@ -222,6 +233,7 @@ def main() -> None:
     load_leaves(con, args.consensus)
     load_words(con)
     load_entries(con)
+    load_centuries(con)
     load_jurats(con)
     load_documents(con)
     load_sigla(con)

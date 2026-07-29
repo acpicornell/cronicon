@@ -30,6 +30,7 @@ from collections import defaultdict
 from pathlib import Path
 
 import editorial
+import layout
 import spans
 import targets
 
@@ -92,7 +93,7 @@ def assemble(loci: list[dict], panel: list[str],
     """
     lines: dict[tuple, list[dict]] = defaultdict(list)
     order: list[tuple] = []
-    for locus in loci:
+    for locus in layout.drop_signature(loci):
         key = tuple(locus["line_bbox"])
         if key not in lines:
             order.append(key)

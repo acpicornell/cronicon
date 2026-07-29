@@ -40,7 +40,7 @@ from collections import Counter
 from pathlib import Path
 
 import targets
-from parse_entries import ENTRY_START, OCR, page_lines
+from parse_entries import OCR, page_lines
 
 PROJECT = Path(__file__).resolve().parent.parent
 OUT = PROJECT / "data" / "sigla"
@@ -48,8 +48,6 @@ OUT = PROJECT / "data" / "sigla"
 OPENS_GLOSSARY = re.compile(r"abreviaturas\s+m[áa]s\s+notables", re.IGNORECASE)
 # `G. T.—Guillermo Terrassa.`, `ls.—Libras.`, `C. y R.—Ciudad y Reino.`
 GLOSS = re.compile(r"^\s*([A-Za-zÁÉÍÓÚÑ][\w.\s]{0,14}?\.)\s*[—–-]\s*(\S.*?)\s*$")
-CENTURY = re.compile(r"^\s*SIGLO\s+([IVXL]+)", re.IGNORECASE)
-YEAR_ONLY = re.compile(r"^\s*1[2-8]\d\d\s*[.,]?\s*$")
 
 
 def tidy(siglum: str) -> str:
@@ -89,41 +87,30 @@ def read_adjudicated() -> dict[str, str]:
     return out
 
 
-# `DE 1601 Á 1700.`, which stands between the century numeral and its sources.
-SPAN = re.compile(r"^\s*(DE\s+)?1[2-8]\d\d\s*[ÁA]\s*1[2-8]\d\d\s*\.?\s*$",
-                  re.IGNORECASE)
-
-
-def century_sources(leaves: dict[int, list[dict]]) -> list[dict]:
+def century_sources(path: Path) -> list[dict]:
     """The list of sources at the head of each century, as printed.
 
-    The 13th to 15th centuries put it in a parenthesis and the 16th to 18th do
-    not, so the block is taken from after the span line to the first dated entry
-    instead of from the brackets. Stored verbatim: turning `por TomAs Amorós`
-    into `T. A.` is inference, and the point of this file is to hold what the
-    book says.
+    Read from what `parse_entries.py` delimited rather than delimited again
+    here. Both scripts wanted the same six blocks and each had its own rule for
+    where they end, and the two disagreed: counting lines until something looked
+    like an entry kept the misread year heading `ISOI.` on the end of the 16th
+    century's list and ran the 18th's on into a footnote about the Conde de
+    Peralada. The other rule is typographic -- the list is set across the
+    measure and the columns start where it stops -- and it is right on all six.
+
+    Stored verbatim, minus the brackets the 13th to 15th centuries print it in:
+    turning `por TomAs Amorós` into `T. A.` is inference, and the point of this
+    file is to hold what the book says.
     """
+    if not path.exists():
+        return []
     out = []
-    for page in sorted(leaves):
-        lines = [ln["text"].strip() for ln in leaves[page]]
-        for i, text in enumerate(lines[:6]):
-            match = CENTURY.match(text)
-            if not match:
-                continue
-            start = i + 1
-            while start < len(lines) and (not lines[start] or SPAN.match(lines[start])):
-                start += 1
-            block: list[str] = []
-            for line in lines[start:start + 14]:
-                if not line or ENTRY_START.search(line) or YEAR_ONLY.match(line):
-                    break
-                block.append(line)
-            joined = " ".join(block)
-            if "(" in joined and ")" in joined:
-                joined = joined[joined.find("(") + 1:joined.rfind(")")]
-            out.append({"century": match.group(1).upper(), "pdf_page": page,
-                        "sources": re.sub(r"\s+", " ", joined).strip()})
-            break
+    for century in json.loads(path.read_text()):
+        text = century["text"]
+        if "(" in text and ")" in text:
+            text = text[text.find("(") + 1:text.rfind(")")]
+        out.append({"century": century["numeral"], "pdf_page": century["pdf_page"],
+                    "sources": re.sub(r"\s+", " ", text).strip()})
     return out
 
 
@@ -164,7 +151,7 @@ def main() -> None:
 
     resolved = sum(n for s, n in used.items() if s in glossary)
     total = sum(used.values())
-    centuries = century_sources(leaves)
+    centuries = century_sources(PROJECT / "data" / "entries" / "centuries.json")
 
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "sigla.json").write_text(json.dumps({

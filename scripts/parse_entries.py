@@ -44,6 +44,7 @@ import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
 
+import layout
 import spans
 import targets
 
@@ -353,18 +354,119 @@ def split_notes(lines: list[dict]) -> tuple[list[dict], list[dict]]:
 
 
 def gather_notes(notes: list[dict]) -> list[dict]:
-    """The note lines joined into one record per number."""
+    """The note lines joined into one record per number.
+
+    The number is only unique within its **column**: leaf 74 prints `(1)` and
+    `(2)` at the foot of the left column and `(1)` and `(2)` again at the foot
+    of the right, and so do a dozen other leaves. Keeping the column is what
+    stops a notice in the second column being given the first column's note --
+    which is not a missing note but a wrong one, and worse.
+    """
     out: list[dict] = []
     for line in notes:
         match = NOTE_START.match(line["text"])
         if match:
             out.append({"number": int(match.group(1)),
+                        "column": line.get("column", 0),
                         "text": line["text"][match.end():].strip()})
         elif out:
             text = out[-1]["text"]
             out[-1]["text"] = (text[:-1] + line["text"] if text.endswith("-")
                                else (text + " " + line["text"]).strip())
     return out
+
+
+CENTURY_NUMERAL = re.compile(r"SIGLO\s+([IVXLC]+)", re.IGNORECASE)
+CENTURY_RANGE = re.compile(r"(1[2-8]\d\d)\s*[ÁA]\s*(1[2-8]\d\d)", re.IGNORECASE)
+
+
+def century_openings(leaves: dict[int, list[dict]], accepted: dict,
+                     body_pages: list[int]
+                     ) -> tuple[list[dict], set[tuple[int, int]]]:
+    """The six century openings: the banner and Campaner's list of sources.
+
+    Each century starts `SIGLO XIV. / DE 1301 Á 1400.` and then names, in one
+    long parenthesis, every manuscript that reports the hundred years to come --
+    `Anales etc. por Terrassa.—Notas sacadas de los libros de la Procuracion
+    Real, por D. B. Jaume.—Historia etc. por Binimelis…`. It is the closest
+    thing the book has to a bibliography, and it is not a chronicle entry.
+
+    It was being read as one. `CENTURY_LINE` skipped the banner and let the
+    source list fall through to the buffer, where it became a notice of the year
+    the buffer was carrying -- the *previous* century's last, so the list of the
+    sources of the 14th century was published as news of 1300, and the 15th's as
+    news of 1400. On leaf 28 it became an entry with no year at all, which no
+    page of the site can show; leaf 506's belongs to a leaf the document parser
+    had already claimed, so it was lost outright.
+
+    The banner and the list are set **across the measure**, and that is what
+    bounds them: the block runs while its lines either fill the full width or
+    stand centred on it, and stops at the first line that begins a column. The
+    year heading cannot be used for this. On leaf 64 the column finder fails and
+    the two columns interleave line by line, so the first heading it accepts is
+    `1302.` sixteen lines down -- and bounding on it swallowed a real notice of
+    March 1301 into the front matter.
+
+    What follows the list is left to the chronicle, including Terrassa's
+    headnote on leaf 28 -- the tithes of Urban II, which dates itself to no
+    year. Taking it as a preface of the century was tried and abandoned: the
+    only test that admitted it was "no dated notice in the block", and when leaf
+    64's columns were repaired that test swallowed the whole of 1301, which
+    states no month either. One example is not enough to write a rule from, and
+    the headnote loses nothing by standing where the book prints it, under the
+    century's opening and above the first notice.
+
+    Read from `body_pages` rather than from the chronicle, because leaf 506 sits
+    inside the eighteenth century's appendix block and would otherwise be
+    invisible here too.
+    """
+    records: list[dict] = []
+    skip: set[tuple[int, int]] = set()
+    for pdf_page in body_pages:
+        lines = leaves[pdf_page]
+        opening = next((n for n, line in enumerate(lines[:4])
+                        if CENTURY_LINE.match(line["text"])), None)
+        if opening is None:
+            continue
+        left = min(line["bbox"][0] for line in lines)
+        right = max(line["bbox"][2] for line in lines)
+        end = opening
+        while end < len(lines) and layout.across_measure(
+                layout.Line(text="", x0=lines[end]["bbox"][0],
+                            y0=lines[end]["bbox"][1], x1=lines[end]["bbox"][2],
+                            y1=lines[end]["bbox"][3]), left, right):
+            end += 1
+        block = [line for line in lines[opening:end] if line["text"]]
+        if not block:
+            continue
+        skip |= {(pdf_page, n) for n in range(opening, end)}
+
+        banner = " ".join(line["text"] for line in block[:2])
+        numeral = CENTURY_NUMERAL.search(banner)
+        span = CENTURY_RANGE.search(banner)
+        # The banner is one line or two depending on where it broke -- leaf 246
+        # prints `SIGLO XVI. DE` and then `1501 Á 1600.` -- so the source list
+        # is whatever follows the lines the banner used.
+        used = 1 if CENTURY_RANGE.search(block[0]["text"]) else 2
+        records.append({
+            "pdf_page": pdf_page,
+            "numeral": numeral.group(1).upper() if numeral else None,
+            "from_year": int(span.group(1)) if span else None,
+            "to_year": int(span.group(2)) if span else None,
+            "banner": banner.strip(),
+            "text": stitch_lines(block[used:]),
+        })
+    return records, skip
+
+
+
+def stitch_lines(lines: list[dict]) -> str:
+    """Line texts joined with the book's word-break hyphens closed up."""
+    text = ""
+    for line in lines:
+        text = (text[:-1] + line["text"] if text.endswith("-")
+                else (text + " " + line["text"]).strip())
+    return text
 
 
 def strip_accents(text: str) -> str:
@@ -387,7 +489,7 @@ def page_lines(path: Path) -> list[dict]:
     leaf = json.loads(path.read_text())
     grouped: dict[tuple, list[dict]] = defaultdict(list)
     order: list[tuple] = []
-    for locus in leaf["loci"]:
+    for locus in layout.drop_signature(leaf["loci"]):
         key = tuple(locus["line_bbox"])
         if key not in grouped:
             order.append(key)
@@ -403,6 +505,19 @@ def page_lines(path: Path) -> list[dict]:
                                   leaf["panel"], [None] * len(grouped[key]))
                 for key in order}
     spans.dedupe([g for key in order for g in per_line[key]], leaf["panel"])
+
+    # Which column each line is in, by the same clustering the whole project
+    # reads leaves with. Only the footnotes need it -- their numbering restarts
+    # at the head of every column -- but it is a property of the line, so it is
+    # attached here rather than recomputed by whoever wants it.
+    lefts = layout.find_columns([layout.Line(text="", x0=key[0], y0=key[1],
+                                             x1=key[2], y1=key[3])
+                                 for key in order])
+
+    def column_of(key) -> int:
+        return max((n for n, left in enumerate(lefts)
+                    if key[0] >= left - layout.COLUMN_EDGE_TOLERANCE),
+                   default=0)
 
     lines = []
     for key in order:
@@ -420,6 +535,7 @@ def page_lines(path: Path) -> list[dict]:
         lines.append({
             "text": " ".join(p["winner"] for p in parts).strip(),
             "bbox": list(key),
+            "column": column_of(key),
             "row": parts,
             "worst_tier": max((p["grade"] for p in parts),
                               key=lambda g: rank[g], default="unanimous"),
@@ -917,14 +1033,15 @@ def split_entries(text: str, year: int | None,
     """
     marks = date_marks(text, months)
     if not marks:
-        return ([{"month": None, "day": None, "year": year,
-                  "text": text.strip()}] if text.strip() else [])
+        return ([{"month": None, "day": None, "year": year, "at": 0,
+                  "to": len(text), "text": text.strip()}] if text.strip()
+                else [])
 
     entries = []
     preamble = text[:marks[0]["start"]].strip()
     if preamble:
-        entries.append({"month": None, "day": None, "year": year,
-                        "text": preamble})
+        entries.append({"month": None, "day": None, "year": year, "at": 0,
+                        "to": marks[0]["start"], "text": preamble})
 
     # `El mismo día` states its own date by referring to the one before it, so
     # the day carries forward as well as the month -- but only for that phrase.
@@ -962,11 +1079,18 @@ def split_entries(text: str, year: int | None,
         # before it, orphaned when the split fell between the two.
         if entries and re.fullmatch(r"(?:[A-ZÁÉÍÓÚ][a-z]?\.\s*){1,3}", body):
             entries[-1]["text"] = (entries[-1]["text"] + " —" + body).strip()
+            entries[-1]["to"] = end
             continue
         entries.append({
             "month": current_month,
             "day": int(day) if day else None,
             "year": year,
+            # Where this notice sits in the run of prose it was cut from. The
+            # caller turns that back into a leaf: an entry belongs to the leaf
+            # it opens on, and a footnote to the leaf its reference is printed
+            # on, and neither is knowable once the text has been cut up.
+            "at": mark["start"],
+            "to": end,
             "text": body,
         })
     return entries
@@ -1283,6 +1407,9 @@ def main() -> None:
         # Offsets of the month headings the vote lost, carried into the joined
         # text so `date_marks` can cut at them.
         months: list[tuple[int, int]] = []
+        # …and of the leaves themselves, which is what turns an offset in the
+        # joined run back into a leaf of the book.
+        bounds: list[tuple[int, int, int]] = []
         for ln in buffer:
             if text.endswith("-"):
                 base = len(text) - 1
@@ -1291,17 +1418,51 @@ def main() -> None:
                 base = len(text) + 1 if text else 0
                 text = (text + " " + ln["text"]).strip()
             months += [(base + at, m) for at, m in line_months(ln)]
-        # An entry belongs to the leaf it *opens* on, and may refer to a note
-        # printed on any leaf it runs across.
+            bounds.append((base, base + len(ln["text"]), ln["leaf"],
+                           ln.get("column", 0)))
+
         spanned = list(dict.fromkeys(ln["leaf"] for ln in buffer))
-        opened = spanned[0]
+
+        def where(offset: int) -> tuple[int, int]:
+            """The leaf and column that carry this position in the joined run."""
+            found = [(leaf, column) for start, _e, leaf, column in bounds
+                     if start <= offset]
+            return found[-1] if found else (spanned[0], 0)
+
+        def leaf_at(offset: int) -> int:
+            return where(offset)[0]
+
         for entry in split_entries(text, year, months):
+            at, to = entry.pop("at"), entry.pop("to")
             body, sigla = lift_sigla(entry["text"])
-            # The notes this entry refers to, by the number printed in it.
-            wanted = {int(m.group(1))
-                      for m in re.finditer(r"[\(\[]\s*(\d{1,2})\s*[\)\]]", body)}
-            notes = [n for leaf in spanned for n in footnotes.get(leaf, [])
-                     if n["number"] in wanted]
+            # An entry belongs to the leaf it *opens* on -- which is the leaf
+            # its own date marker is printed on, not the leaf the buffer began
+            # on. The buffer runs from one year heading to the next and can
+            # cross five leaves, so crediting all of them to its first leaf sent
+            # the facsimile link, the printed page number and the leafmark on
+            # the year page to the wrong page of the book.
+            opened = leaf_at(at)
+            # A footnote belongs where its *reference* is printed, and the
+            # address is (leaf, column, number) -- the numbering restarts at the
+            # head of every column. Matching the bare number across every leaf
+            # the entry ran over put leaf 29's «Honores ó féudos.» under 1229 as
+            # well as under 1230, which is where it is called: 85 of the book's
+            # 185 notes were reaching more than one notice.
+            notes = []
+            for m in re.finditer(r"[\(\[]\s*(\d{1,2})\s*[\)\]]", text[at:to]):
+                number = int(m.group(1))
+                leaf, column = where(at + m.start())
+                # Nothing of that number in that column means the note was not
+                # separated, not that it is elsewhere: leaf 105 opens its `(1)`
+                # at y 0.545 and `split_notes` only looks below 0.55, so the
+                # note stayed in the prose. Reaching to a neighbour for a
+                # number that happens to match would print leaf 104's note
+                # under a notice of leaf 105 -- an attribution invented to fill
+                # a hole. Print nothing instead.
+                hit = [n for n in footnotes.get(leaf, ())
+                       if n["number"] == number and n["column"] == column
+                       and n not in notes]
+                notes += hit[:1]
             entries.append({**entry, "text": body, "sources": sigla,
                             "pdf_page": opened,
                             "printed": inventory[opened]["printed"],
@@ -1309,12 +1470,26 @@ def main() -> None:
                             **({"notes": notes} if notes else {})})
         buffer.clear()
 
+    # The six century openings, lifted before the entry loop so that neither
+    # their banner nor the source list under them can be read as chronicle.
+    centuries, front_lines = century_openings(leaves, accepted, body_pages)
+    # `DE 1301 Á 1400.` is Campaner stating the year the chronicle resumes at,
+    # and it has to be believed, because two centuries never print a heading for
+    # their own first year. The 14th opens with a drop cap -- `EN este año 1301
+    # fueron Lugartenientes…` -- and the 16th's `1501.` came back from the vote
+    # as `ISOI.`, so both centuries began under the last year of the one before.
+    opens_at = {c["pdf_page"]: c["from_year"] for c in centuries
+                if c["from_year"]}
+
     for n, pdf_page in enumerate(chronicle):
         for position, line in enumerate(leaves[pdf_page]):
             if not line["text"]:
                 continue
-            if CENTURY_LINE.match(line["text"]):
+            if (pdf_page, position) in front_lines:
                 flush()
+                if pdf_page in opens_at:
+                    year = opens_at.pop(pdf_page)
+                    headings.append((pdf_page, year))
                 continue
             candidate = accepted.get((pdf_page, position))
             if candidate is not None:
@@ -1358,6 +1533,8 @@ def main() -> None:
     # where an appendix block ends and the chronicle resumes.
     (OUT / "headings.json").write_text(
         json.dumps(headings, ensure_ascii=False), encoding="utf-8")
+    (OUT / "centuries.json").write_text(
+        json.dumps(centuries, ensure_ascii=False, indent=1), encoding="utf-8")
     (OUT / "sections.json").write_text(json.dumps({
         "chronicle": chronicle,
         "jurats_tables": skipped_tables,
@@ -1376,6 +1553,9 @@ def main() -> None:
     print(f"{len(entries):,} entries")
     print(f"  footnotes         {sum(len(v) for v in footnotes.values()):,} on "
           f"{len(footnotes)} leaves, {attached} entries carry one")
+    print(f"  century openings  {len(centuries)}, "
+          f"{sum(len(c['text'].split()) for c in centuries):,} words of "
+          "front matter no longer read as chronicle")
     print(f"  with a month      {dated:,}  ({dated/len(entries):.0%})")
     print(f"  with a source     {sourced:,}  ({sourced/len(entries):.0%})")
     print(f"  median length     {sorted(len(e['text']) for e in entries)[len(entries)//2]} chars")

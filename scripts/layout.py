@@ -17,6 +17,7 @@ is what separates a real column break from a paragraph indent.
 """
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 
 # Tolerances in normalised page-width units (a two-column body leaf is ~567 pt
@@ -31,12 +32,60 @@ MAX_BOUNDARY_CROSSING = 0.10
 # other thirty lines respected. Leaf 28 -- the first leaf of the chronicle --
 # was read as one column and its two columns interleaved line by line.
 SPANNING_WIDTH = 0.55
+# Width alone does not catch all of them, and leaf 64 is the proof: `SIGLO XIV.`
+# is 0.547 wide, `DE 1301 Á 1400.` 0.476 and the last line of the century's
+# source list 0.396, so all three counted as column text, all three crossed the
+# gutter, and 3 of 27 is 11% -- just over the 10% a boundary is allowed. Leaf 64
+# was read as one column, its two columns interleaved line by line, and the
+# whole of 1301 was published under 1300 in prose reading `mandó al Gobernador y
+# JuraGa`. A line centred on the measure is laid across it whatever its width.
+CENTRED_TOLERANCE = 0.06
 # But on a single wide column almost every line is that wide, and discounting
 # them all leaves a handful of short ones to invent a boundary that is not
 # there. Only discount the wide lines when the narrow ones carry the page.
 NARROW_SHARE = 0.6
 HEADER_BAND = 0.09   # top of the leaf: running head
 FOOTER_BAND = 0.965  # bottom: the BNE watermark strip
+
+# The foot of every eighth leaf carries the gathering signature: a bare `I`,
+# `2`, `13`, set alone under the right column so the binder can order the
+# quires. It is printer's furniture like the running head, and because it is the
+# last thing in the reading order it glues onto whatever ends the leaf -- the
+# footnote on leaf 28, the first leaf of the chronicle, came out
+# `…el adjetivo «otros» ó «varios.» I`.
+#
+# What proves these are signatures rather than stray readings is arithmetic: the
+# rule fires on 61 leaves and every one of them is at pdf_page ≡ 4 (mod 8), the
+# quire boundary, with no exception anywhere in the 614 leaves of text.
+#
+# Dropped at assembly and deliberately not in `consensus.py`: removing a token
+# there renumbers the leaf, and the frozen adjudication sample is keyed by index
+# as well as by box. Leaf 36 carries a signature and is one of its twelve.
+SIGNATURE_BAND = 0.895
+SIGNATURE_LEFT = 0.70
+SIGNATURE = re.compile(r"^[IVXLl0-9]{1,4}\s*[.,]?$")
+
+
+def is_signature(text: str, line_bbox) -> bool:
+    """Is this line the gathering signature? Ask only of a leaf's last line."""
+    return bool(line_bbox[1] > SIGNATURE_BAND and line_bbox[0] > SIGNATURE_LEFT
+                and SIGNATURE.match(text.strip()))
+
+
+def drop_signature(loci: list[dict]) -> list[dict]:
+    """`loci` without the gathering signature, if the leaf ends in one.
+
+    The loci arrive in reading order, so the signature is the last line: it sits
+    at the foot of the right-hand column, which is where the leaf ends.
+    """
+    if not loci:
+        return loci
+    last = tuple(loci[-1]["line_bbox"])
+    tail = [x for x in loci if tuple(x["line_bbox"]) == last]
+    text = " ".join(x["winner"] for x in tail if x["winner"]).strip()
+    if not is_signature(text, last):
+        return loci
+    return [x for x in loci if tuple(x["line_bbox"]) != last]
 
 
 @dataclass
@@ -69,11 +118,26 @@ def normalise_boxes(lines: list[dict], page_width: float, page_height: float,
     return out
 
 
+def across_measure(line: Line, left: float, right: float) -> bool:
+    """Is this line laid across the page rather than sitting inside a column?
+
+    True for a full-width line and for a centred one -- the century banners, the
+    short last line of a paragraph set across the measure -- and false as soon
+    as the text is in a column, which has a wide margin on one side and none on
+    the other.
+    """
+    if line.x1 - line.x0 >= SPANNING_WIDTH:
+        return True
+    return abs((line.x0 - left) - (right - line.x1)) <= CENTRED_TOLERANCE
+
+
 def find_columns(lines: list[Line]) -> list[float]:
     """Left edge of each column, left to right. One entry means single-column."""
     if not lines:
         return [0.0]
 
+    left_edge = min(ln.x0 for ln in lines)
+    right_edge = max(ln.x1 for ln in lines)
     edges = sorted(ln.x0 for ln in lines)
     clusters: list[list[float]] = [[edges[0]]]
     for x in edges[1:]:
@@ -91,7 +155,8 @@ def find_columns(lines: list[Line]) -> list[float]:
         before = [ln for ln in lines if ln.x0 < left - COLUMN_EDGE_TOLERANCE]
         if not before:
             continue
-        narrow = [ln for ln in before if (ln.x1 - ln.x0) < SPANNING_WIDTH]
+        narrow = [ln for ln in before
+                  if not across_measure(ln, left_edge, right_edge)]
         body = narrow if len(narrow) >= NARROW_SHARE * len(before) else before
         if not body:
             continue

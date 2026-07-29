@@ -81,13 +81,29 @@ CREATE INDEX IF NOT EXISTS idx_entry_year ON entry(year);
 CREATE INDEX IF NOT EXISTS idx_entry_page ON entry(pdf_page);
 
 -- Footnotes interrupt the entries; they are separated so that a note's own
--- dates do not read as chronicle. 244 over 177 leaves.
+-- dates do not read as chronicle. 245 over 178 leaves, 175 of them called by a
+-- notice. A note's address is (leaf, column, number), never the number alone:
+-- Campaner restarts the numbering at the head of every column, so leaf 74
+-- prints (1) and (2) twice.
 CREATE TABLE IF NOT EXISTS footnote (
     id        INTEGER PRIMARY KEY,
     entry_id  INTEGER,             -- the entry printing its number, where known
     number    SMALLINT,
     text      VARCHAR NOT NULL,
     pdf_page  SMALLINT NOT NULL
+);
+
+-- The six century openings: `SIGLO XIV. / DE 1301 Á 1400.`, then Campaner's
+-- list of every manuscript that reports the hundred years to follow. The
+-- closest thing the book has to a bibliography, and it used to be published as
+-- a chronicle notice of the previous century's last year.
+CREATE TABLE IF NOT EXISTS century (
+    numeral    VARCHAR PRIMARY KEY,
+    from_year  SMALLINT NOT NULL,
+    to_year    SMALLINT NOT NULL,
+    pdf_page   SMALLINT NOT NULL,
+    banner     VARCHAR NOT NULL,
+    sources    VARCHAR NOT NULL
 );
 
 -- The Jurats -------------------------------------------------------------

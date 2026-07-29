@@ -482,6 +482,66 @@ each group's readings from **all eight** engines, not the panel's six -- the
 two outside the panel are what carry leaf 101's `1383.`, and restricting it
 silently cost year headings.
 
+## What reading one year found
+
+Reading 1229 — the first year of the book — end to end against the facsimile
+turned up five defects, none of them visible in any aggregate. Four of them are
+whole classes:
+
+- **Printer's furniture at the foot.** Every eighth leaf ends with the gathering
+  signature, a bare `I`, `2`, `13` set alone under the right column, and it
+  glues onto whatever the reading order puts last. It landed inside words —
+  leaf 562 read `apre68 saron`, leaf 387 `este año 46 fué`. `layout.drop_signature`
+  removes it like the running head, and what proves the rule is arithmetic:
+  it fires on **61 leaves and every one of them is pdf_page ≡ 4 (mod 8)**, with
+  no exception in 614. Dropped at assembly and *not* in `consensus.py`, because
+  removing a token there renumbers a leaf and leaf 36 is in the frozen sample.
+- **A notice was credited to the leaf its buffer opened on.** The buffer runs
+  from one year heading to the next and crosses up to five leaves; every notice
+  in it claimed the first. **1 504 of 3 446 notices — 44% — pointed at the wrong
+  page of the facsimile.** `split_entries` now returns the offsets it cut at and
+  `flush` turns them back into leaves.
+- **A footnote's address is (leaf, column, number).** Campaner restarts the
+  numbering at the head of every column — leaf 74 prints `(1)` and `(2)` twice —
+  and matching the bare number across every leaf the notice spanned sent leaf
+  29's «Honores ó féudos.» to 1229 as well as to 1230. **85 of 185 notes reached
+  more than one notice; now none does.** Where the number is not in that column
+  the note is *not* printed: 22 of 198 chronicle notes reach nothing, because
+  `split_notes` missed them, and a note fetched from a neighbouring leaf to fill
+  the hole would be a wrong one rather than a missing one.
+- **The century front matter was published as chronicle.** `SIGLO XIV. / DE 1301
+  Á 1400.` and Campaner's list of every manuscript that reports the next hundred
+  years — the closest thing the book has to a bibliography — became a notice of
+  **1300**, and the 15th's of 1400, the 16th's of 1500, the 17th's of 1600. Leaf
+  28's became an entry with no year, which no page could show; leaf 506's fell
+  inside the appendix block and was lost outright. `century_openings` lifts all
+  six to `data/entries/centuries.json`, and `parse_sigla.py` now reads that file
+  instead of delimiting the same six blocks by its own rule — the two disagreed,
+  and the typographic one is right on all six.
+- **245 footnotes were parsed, stored and never rendered.** The page printed
+  `(1)` pointing at nothing.
+
+Two rules came out of it, both typographic and both general:
+
+- **A line centred on the measure is laid across it, whatever its width.**
+  `SPANNING_WIDTH` catches the full-width lines and missed `SIGLO XIV.` at 0.547,
+  so three banner lines counted as column text, crossed the gutter, and 3 of 27
+  is 11% — just over the 10% a column boundary may be crossed. **Leaf 64 was read
+  as one column with its two columns interleaved line by line**, and the whole of
+  1301 came out as prose reading `mandó al Gobernador y JuraGa`, dated 1300.
+  With the centred test all eight engines read it as two columns.
+- **`DE 1301 Á 1400.` is Campaner stating the year the chronicle resumes at.**
+  Two centuries never print a heading for their own first year — the 14th opens
+  with a drop cap (`EN este año 1301…`) and the 16th's `1501.` came back from the
+  vote as `ISOI.` — so both began under the last year of the century before.
+
+And one rule was written and then withdrawn: the century's *preface* (leaf 28's
+«PARA que no causen al lector dificultad…») was admitted by "no dated notice in
+the block", and the moment leaf 64's columns were repaired that test swallowed
+the whole of 1301, which states no month either. **One example is not enough to
+write a rule from.** The headnote stands where the book prints it, as the first
+notice of the century.
+
 ## A siglum is a sequence of initials, not a string
 
 Campaner's source attributions are the reason this book is worth a database,
@@ -533,7 +593,19 @@ carries the browsable glossary. Where a name is missing the page says which of
 the two reasons applies: not in the glossary (`L. V.`, `N. F.`, `T. A.`) or a
 truncated siglum whose second initial no engine placed.
 
-## Where we left off (28 Jul 2026)
+## Where we left off (29 Jul 2026)
+
+**The edition is being read year by year, starting from the first**, and that is
+where the remaining defects are: see §What reading one year found. 1229 and 1301
+are done. Two things it left open and one it must not do by accident:
+
+- `data/layout_health.json` **as committed is stale** relative to
+  `data/ocr/ordered/`, and regenerating it puts leaf 642 into `align_by_line` —
+  which `consensus.py` refuses, because leaf 642 carries adjudications. The
+  guard is right. Re-key `adjudicated.tsv` by word box before touching it.
+- Only 5 leaves were re-ordered under the centred-line rule (57, 64, 115, 116,
+  119), because `data/ocr/ordered/` is on disk and was not regenerated. The
+  whole-book pass is deliberate work, not a side effect.
 
 The panel is closed at six, ratified against the adjudications, and the engine
 question is settled: **the marginal engine is not the lever.** Kraken and

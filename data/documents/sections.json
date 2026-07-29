@@ -8,15 +8,15 @@
   "first_leaf": 123,
   "last_leaf": 137,
   "leaves": 15,
-  "words": 12624,
+  "words": 12622,
   "footnotes": 3,
   "certainty": {
    "unanimous": 11269,
    "one-dissent": 864,
    "two-dissent": 258,
-   "contested": 233
+   "contested": 231
   },
-  "contested_share": 0.0185
+  "contested_share": 0.0183
  },
  {
   "id": "0114-III-03",
@@ -27,15 +27,15 @@
   "first_leaf": 137,
   "last_leaf": 153,
   "leaves": 17,
-  "words": 12308,
+  "words": 12307,
   "footnotes": 7,
   "certainty": {
    "unanimous": 10451,
    "one-dissent": 1197,
    "two-dissent": 437,
-   "contested": 223
+   "contested": 222
   },
-  "contested_share": 0.0181
+  "contested_share": 0.018
  },
  {
   "id": "0114-IV-04",
@@ -46,12 +46,12 @@
   "first_leaf": 153,
   "last_leaf": 159,
   "leaves": 7,
-  "words": 4895,
+  "words": 4894,
   "footnotes": 7,
   "certainty": {
    "unanimous": 4316,
    "one-dissent": 405,
-   "two-dissent": 77,
+   "two-dissent": 76,
    "contested": 97
   },
   "contested_share": 0.0198
@@ -179,12 +179,12 @@
   "first_leaf": 316,
   "last_leaf": 321,
   "leaves": 6,
-  "words": 4451,
+  "words": 4450,
   "footnotes": 2,
   "certainty": {
    "unanimous": 3078,
    "one-dissent": 1042,
-   "two-dissent": 241,
+   "two-dissent": 240,
    "contested": 90
   },
   "contested_share": 0.0202
@@ -236,15 +236,15 @@
   "first_leaf": 324,
   "last_leaf": 368,
   "leaves": 45,
-  "words": 17806,
+  "words": 17801,
   "footnotes": 3,
   "certainty": {
    "unanimous": 13906,
-   "one-dissent": 2601,
-   "two-dissent": 753,
-   "contested": 546
+   "one-dissent": 2598,
+   "two-dissent": 752,
+   "contested": 545
   },
-  "contested_share": 0.0307
+  "contested_share": 0.0306
  },
  {
   "id": "0311-IX-09",
@@ -369,11 +369,11 @@
   "first_leaf": 487,
   "last_leaf": 495,
   "leaves": 9,
-  "words": 6275,
+  "words": 6274,
   "footnotes": 1,
   "certainty": {
    "unanimous": 5349,
-   "one-dissent": 629,
+   "one-dissent": 628,
    "two-dissent": 200,
    "contested": 97
   },
@@ -426,11 +426,11 @@
   "first_leaf": 632,
   "last_leaf": 639,
   "leaves": 8,
-  "words": 4137,
+  "words": 4136,
   "footnotes": 2,
   "certainty": {
    "unanimous": 3301,
-   "one-dissent": 378,
+   "one-dissent": 377,
    "two-dissent": 185,
    "contested": 273
   },

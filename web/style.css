@@ -264,6 +264,23 @@ h3.month:first-of-type { margin-top: 1.4rem; }
 .leafmark { margin: .2rem 0 2rem; padding-left: 4rem; font-size: .78rem;
             color: var(--text-muted); }
 .leafmark a { color: var(--text-muted); }
+/* Campaner's own notes, under the notice that calls them and set smaller, as
+   the book sets them. The rule on the left says they are apparatus without
+   needing a horizontal one across the column. */
+.notes { margin: .6rem 0 0; padding-left: .9rem;
+         border-left: 2px solid var(--border); }
+.notes p { margin: 0 0 .35rem !important; font-size: .88rem !important;
+           color: var(--text-muted); }
+.notes .num { font-variant-numeric: tabular-nums; color: var(--accent-dark); }
+
+/* The century's own opening: its banner and the list of its witnesses. */
+.opening { margin: 1.8rem 0 .6rem; padding: 1.2rem 1.4rem;
+           background: var(--num-bg); border-radius: 3px; }
+.opening h3 { margin: 0 0 .3rem; font-family: Georgia, "Times New Roman", serif;
+              font-size: 1.05rem; color: var(--accent-dark); }
+.opening .lede { margin: 0 0 .6rem; font-size: .82rem;
+                 color: var(--text-muted); }
+.opening p { margin: 0 0 .5rem; font-size: .92rem; }
 
 /* --- the way in --------------------------------------------------------- */
 /* Four across on a wide screen: at two columns the short door left a ragged
