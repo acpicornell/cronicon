@@ -437,6 +437,24 @@ uv sync         # Python, pinned by uv.lock
 Full command sequence in [`docs/OCR_BENCHMARK.md` §7](docs/OCR_BENCHMARK.md).
 Everything is idempotent and skips work already on disk.
 
+### Rebuilding the site from a clone
+
+The OCR itself is not in the repository and cannot be: the consensus is ten
+thousand files and the per-word certainty is 100 MB of JSON. Its compact form
+is — `web/data/*.parquet`, 4.7 MB of zstd holding all 467 318 words with their
+tiers and boxes, which is what the site queries in the browser anyway. So the
+whole site rebuilds from a clone without any of that:
+
+```sh
+python scripts/build_db.py --from-parquet web/data
+python scripts/build_site.py
+```
+
+The rendered pages are therefore not committed. They were, and they were 73% of
+the repository's history: 595 files regenerated whole on every build, and
+neither HTML nor an already-compressed parquet deltas against its previous
+version, so each rebuild added about 10 MB that could never be reclaimed.
+
 ## What the book has been parsed into
 
 | | |

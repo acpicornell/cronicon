@@ -40,3 +40,22 @@ data/review/batch*.json
 # as in the sibling projects.
 db/*.duckdb
 db/*.duckdb.wal
+
+# The rendered site. 595 pages regenerated whole on every build, and neither
+# HTML nor an already-compressed parquet deltas against its previous version,
+# so committing them added about 10 MB of history per rebuild -- 73% of the
+# repository was `build_site.py` output.
+#
+# What stays is what cannot be regenerated from anything else here:
+# `web/data/*.parquet`, the 467 318 words with their certainty tiers, 4.7 MB of
+# zstd against 100 MB of JSON, and the hand-written style.css, app.js, _headers
+# and robots.txt. `build_db.py --from-parquet web/data` rebuilds the database
+# from it and `build_site.py` rebuilds every page, byte for byte.
+web/anys/
+web/documents/
+web/abreviatures/
+web/index.html
+web/metode.html
+web/search.json
+web/sitemap.xml
+web/data.json

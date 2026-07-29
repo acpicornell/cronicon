@@ -213,6 +213,27 @@ def load_adjudications(con: duckdb.DuckDBPyConnection) -> None:
     print(f"  adjudication  {len(rows):>8,}")
 
 
+def load_from_parquet(con: duckdb.DuckDBPyConnection, where: Path,
+                      tables: tuple[str, ...]) -> None:
+    """Reload tables from the parquet export instead of from `data/`.
+
+    Two tables are derived from files that are not in the repository and cannot
+    be: `word` needs the per-leaf sidecars, 100 MB of JSON, and `leaf` needs the
+    consensus itself, ten thousand files. Their compact form -- 4.7 MB of zstd
+    parquet -- **is** in the repository, because the site queries it in the
+    browser, so a clone can rebuild the database and the whole site from what it
+    has. That is what makes it possible to stop committing the rendered pages:
+    they become derived again rather than being the only copy.
+    """
+    for table in tables:
+        path = where / f"{table}.parquet"
+        if not path.exists():
+            raise SystemExit(f"{path} missing -- cannot rebuild {table}")
+        con.execute(f"INSERT INTO {table} SELECT * FROM read_parquet('{path}')")
+        n = con.execute(f"SELECT count(*) FROM {table}").fetchone()[0]
+        print(f"  {table:<13} {n:>8,}  (from parquet)")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--consensus", default="consensus6_swap_swapk")
@@ -220,6 +241,12 @@ def main() -> None:
     ap.add_argument("--parquet", default=None,
                     help="also export every table as zstd parquet into this "
                          "directory, for DuckDB-WASM in the browser")
+    ap.add_argument("--from-parquet", default=None, metavar="DIR",
+                    help="rebuild `leaf` and `word` from a parquet export "
+                         "rather than from data/ocr and data/text, which are "
+                         "not in the repository. Everything else still comes "
+                         "from data/. This is how a fresh clone rebuilds the "
+                         "site: --from-parquet web/data")
     args = ap.parse_args()
 
     out = PROJECT / args.out
@@ -230,8 +257,11 @@ def main() -> None:
     con = duckdb.connect(str(out))
     con.execute((DB / "schema.sql").read_text())
     print(f"building {out.relative_to(PROJECT)}")
-    load_leaves(con, args.consensus)
-    load_words(con)
+    if args.from_parquet:
+        load_from_parquet(con, PROJECT / args.from_parquet, ("leaf", "word"))
+    else:
+        load_leaves(con, args.consensus)
+        load_words(con)
     load_entries(con)
     load_centuries(con)
     load_jurats(con)
