@@ -83,7 +83,8 @@ def read_decisions(path: Path = DECISIONS) -> dict[str, str]:
 
 def assemble(loci: list[dict], panel: list[str],
              repairs: dict | None = None,
-             decisions: dict | None = None) -> tuple[str, list[dict]]:
+             decisions: dict | None = None,
+             joins: dict | None = None) -> tuple[str, list[dict]]:
     """Reading-order text, plus one record per word with its tier and box.
 
     `repairs` carries the editorial rules from `editorial.py`, keyed by (leaf,
@@ -113,7 +114,7 @@ def assemble(loci: list[dict], panel: list[str],
             return repairs.get((locus["pdf_page"], locus["index"]),
                                locus["winner"])
 
-        for group in spans.layout(row, panel, settled, reading):
+        for group in spans.layout(row, panel, settled, reading, joins):
             group["line"] = key
             flat.append(group)
 
@@ -172,6 +173,10 @@ def main() -> None:
     # The editorial rules, applied here and nowhere else, and reported.
     repairs, applied, _ambiguous = editorial.long_s_repairs(
         source, editorial.long_s_leaves(source))
+    # Words the line break split and the vote never put back together. Asked of
+    # the shared cache so that `parse_entries.py` applies exactly the same set.
+    joins = editorial.joins_for(source)
+    join_tiers = editorial._JOINS[source][1]
     decisions = read_decisions()
     if not args.show:
         OUT.mkdir(parents=True, exist_ok=True)
@@ -184,7 +189,8 @@ def main() -> None:
         if not path.exists():
             continue
         leaf = json.loads(path.read_text())
-        prose, words = assemble(leaf["loci"], leaf["panel"], repairs, decisions)
+        prose, words = assemble(leaf["loci"], leaf["panel"], repairs,
+                                decisions, joins)
         total_words += len(words)
         for w in words:
             tiers[w["tier"]] += 1
@@ -203,6 +209,9 @@ def main() -> None:
     if args.show:
         return
     print(f"{written} leaves assembled, {total_words:,} words")
+    print(f"  words rejoined   {len(joins):,}  "
+          f"({join_tiers['panel']} an engine read whole, "
+          f"{join_tiers['attested']} by attestation)")
     print(f"  long s repaired  {len(repairs):,}  "
           f"({applied['panel']:,} from the panel, {applied['attested']:,} by "
           f"attestation; {applied['ambiguous']:,} ambiguous left as printed)")

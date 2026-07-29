@@ -542,6 +542,30 @@ the whole of 1301, which states no month either. **One example is not enough to
 write a rule from.** The headnote stands where the book prints it, as the first
 notice of the century.
 
+## Working from the sweep: the first rule it produced
+
+`audit_entries.py --check glued` found 35 words the line break split and the vote
+never rejoined — `dive rsos`, `bandole ros:`, `Tarrago. na`. **11 of the 35 are
+now repaired and the other 24 are declined and listed**, which is the honest
+ratio and the same shape as the long s. `docs/EDITORIAL.md` §Rule 2 has the
+whole thing; three things are worth carrying in the head:
+
+- **The lexicon comes from the consensus, never from `data/text/`** — that is the
+  rule's own output, the same trap the long s fell into once.
+- **The left half must not be a word.** Requiring it of both halves let `de` +
+  `Ntro.` become `deNtro.` while refusing `Tarrago` + `na`.
+- **Excluding tokens that end in a real break hyphen is not an optimisation, it
+  is the rule.** Without it the thing fired 2 481 times on 547 leaves, rejoining
+  every ordinary hyphenated line break in the book — all of which the assembler
+  already stitches correctly one stage later.
+
+And the trap this project keeps re-paying for: **a rule wired into one assembly
+is wired into neither.** The joins went into `build_text.py`, the published text
+lost `dive rsos`, and the audit went on reporting it because it reads the entries
+— which `parse_entries.py` assembles separately. Both now ask
+`editorial.joins_for()`, which caches because the lexicon costs a pass over 614
+leaves.
+
 ## Reading page by page does not scale; the sweep does
 
 `scripts/audit_entries.py` runs every symptom we have ever found over all 3 445

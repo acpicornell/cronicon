@@ -157,6 +157,130 @@ def clean_lexicon(source: Path, leaves: set[int]) -> Counter:
     return lexicon
 
 
+# A word must appear this often in the book before a join is made on attestation
+# alone. Higher than ATTESTED because this tier has no reading from any engine
+# behind it -- only the fact that the book uses the joined form and neither half.
+ATTESTED_JOIN = 5
+# What the engines make of a line-break hyphen when they do not read it as one.
+# Leaf 95 prints `Tarrago-/na,` and the panel offers `Tarrago-`, `Tarrago.`,
+# `Tarrago,` and `Tarrago_` for the same mark; the winner was `Tarrago.`, so the
+# hyphen stitch never fired and the published text read `Tarrago. na,`.
+BREAK_MARK = re.compile(r"[.,_·]+$")
+# …and a token that ends in a hyphen the *assembler* already stitches is not this
+# rule's business. Measured before it was believed: without this the rule fired
+# 2 481 times on 547 leaves, joining `patronato`, `construir` and `necesario`
+# -- every ordinary hyphenated line break in the book, all of them already
+# joined correctly one stage later.
+ALREADY_STITCHED = re.compile(r"[-‐‑­–—]$")
+
+
+def split_words(source: Path, lexicon: Counter) -> tuple[dict, Counter, Counter]:
+    """Words the line break split and the vote never put back together.
+
+    `dive rsos`, `Novie mbre`, `ciu dad`, `bandole ros`, `Tarrago. na`. Three
+    different causes, one repair:
+
+      the panel disagreed   Leaf 107: three engines read `diversos` and five read
+                            `dive` + `rsos`, and the majority wins slot by slot.
+                            The span re-vote cannot help, because `fold()` strips
+                            whitespace, so both readings are the same class to it
+                            and neither is longer than the other.
+      the hyphen was misread Leaf 95 prints `Tarrago-/na,` and the winner was
+                            `Tarrago.`, which `BREAK_HYPHEN` does not stitch.
+      nobody joined it      Leaf 429: all eight engines read `bandole` + `ros:`.
+                            There is no reading to recover, only the fact that
+                            the book uses `bandoleros` and uses neither half.
+
+    Two tiers of evidence, as with the long s. `panel` where some engine read the
+    joined form; `attested` where none did but the book uses it {ATTESTED_JOIN}
+    times or more. And the same veto: **refused when both halves are words this
+    book uses**, which is what keeps `de` + `l`, `en` + `torn` and every other
+    real pair of short words intact.
+    """
+    joins: dict[tuple[int, int], str] = {}
+    tiers: Counter = Counter()
+    refused: Counter = Counter()
+    ambiguous: Counter = Counter()
+
+    for path in sorted(source.glob("p*.json")):
+        data = json.loads(path.read_text())
+        page = data["pdf_page"]
+        loci = data["loci"]
+        for n, left in enumerate(loci[:-1]):
+            right = loci[n + 1]
+            head, tail = nfc(left["winner"] or ""), nfc(right["winner"] or "")
+            if not head or not tail or ALREADY_STITCHED.search(head):
+                continue
+            # A clitic is not half a word. Leaves 123, 149 and 155 are medieval
+            # Catalan and gave `qu'` + `ell`, `qu'` + `il`, `qu'` + `es`, which
+            # fold to `qu` -- not a word the book uses -- and would have been
+            # joined on that technicality.
+            if head.endswith(("'", "’")):
+                continue
+            stem = BREAK_MARK.sub("", head)
+            a, b = word_of(stem), word_of(tail)
+            # Three characters on the left, because two is where the guess stops
+            # being one: `er` + `en` makes the Catalan `eren` and could as
+            # easily be two words on a leaf written in Catalan.
+            if len(a) < 3 or len(b) < 2:
+                continue
+            whole = a + b
+            if lexicon.get(whole, 0) < ATTESTED:
+                continue
+            # **The left half must not be a word.** Requiring that of both halves
+            # was tried and is too weak on one side and too strong on the other:
+            # it let `de` + `Ntro.` become `deNtro.` and `des` + `Portell` become
+            # `desPortell`, because the second half of each is rare, while
+            # refusing `Tarrago` + `na` and `VINGU` + `da`, whose second half is
+            # an ordinary Catalan word. A broken word's *first* half is never a
+            # word the book uses -- `dive`, `bandole`, `Tarrago`, `capítu` are
+            # not -- and a common word on the left is overwhelmingly just a word.
+            if lexicon.get(a, 0) >= ATTESTED:
+                refused[f"{a} {b}"] += 1
+                continue
+            by_engine = any(word_of(v or "") == whole
+                            for v in left["variants"].values())
+            if not by_engine:
+                # With no engine reading behind it the join rests on attestation
+                # alone, and there the right half must not be a word either.
+                # Leaf 105 gave `despes` + `es` -> `despeses`, and read as the
+                # Catalan it is, `lo dit Jordi despès és bestrach del seu propi`
+                # is two words: `es` is a word of this book and `despeses` a
+                # plausible one, so the looser veto corrupted a good reading.
+                if (lexicon.get(whole, 0) < ATTESTED_JOIN
+                        or lexicon.get(b, 0) >= ATTESTED):
+                    ambiguous[f"{a} {b}"] += 1
+                    continue
+            # The repair keeps whatever the right-hand token carried after the
+            # word -- `ros:` is `bandoleros:` and the colon is Campaner's.
+            repaired = stem + tail
+            # …but never a dash left standing inside the word it just made.
+            if re.search(r"[-‐‑–—]", repaired):
+                continue
+            joins[(page, left["index"])] = repaired
+            tiers["panel" if by_engine else "attested"] += 1
+    return joins, tiers, refused + ambiguous
+
+
+_JOINS: dict[Path, tuple[dict, Counter, Counter]] = {}
+
+
+def joins_for(source: Path) -> dict:
+    """`split_words` for a consensus directory, computed once per process.
+
+    Every assembly of the book has to apply the same rules or they drift, and
+    this project has already paid for that lesson twice: `build_text.py` and
+    `parse_entries.py` publish the same prose and cut the same notices out of
+    it, and when only the first was given this rule the audit went on reporting
+    `dive rsos` in the entries after the published text had been repaired of it.
+    Both callers ask here, and the answer is cached because the lexicon costs a
+    pass over 614 leaves.
+    """
+    if source not in _JOINS:
+        _JOINS[source] = split_words(source, clean_lexicon(source, set()))
+    return _JOINS[source][0]
+
+
 def long_s_repairs(source: Path, leaves: list[int]
                    ) -> tuple[dict, Counter, Counter]:
     """{(leaf, index): repaired}, what each tier settled, and what is ambiguous.

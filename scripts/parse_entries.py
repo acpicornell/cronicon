@@ -45,6 +45,7 @@ import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
 
+import editorial
 import layout
 import spans
 import targets
@@ -631,9 +632,11 @@ def page_lines(path: Path) -> list[dict]:
     # Assemble every line first, then run the doubling check over the leaf as a
     # whole -- the same order `build_text.py` uses, and necessary because a
     # doubled display heading straddles the line break as often as not.
+    joins = editorial.joins_for(path.parent)
     per_line = {key: spans.layout(sorted(grouped[key],
                                          key=lambda x: x["index"]),
-                                  leaf["panel"], [None] * len(grouped[key]))
+                                  leaf["panel"], [None] * len(grouped[key]),
+                                  None, joins)
                 for key in order}
     spans.dedupe([g for key in order for g in per_line[key]], leaf["panel"])
 

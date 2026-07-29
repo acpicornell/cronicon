@@ -219,8 +219,52 @@ def doubled(before: dict, after: dict, panel: list[str], word: str) -> bool:
     return True
 
 
+def apply_joins(groups: list[dict], joins: dict) -> list[dict]:
+    """Merge the pairs an editorial rule says are one word split in two.
+
+    Passed through here rather than substituted slot by slot so that the word
+    record keeps its evidence: as one group the pair reports `printed` as
+    `dive rsos`, the box as the union of both, and the grade as the worse of the
+    two. Rewriting slot one to `diversos` and slot two to nothing would publish
+    the same text and lose the other half of what the panel actually read.
+
+    An adjudicated slot is never merged: a decision taken against the facsimile
+    outranks a rule that works from the panel's readings.
+    """
+    if not joins:
+        return groups
+    out: list[dict] = []
+    n = 0
+    while n < len(groups):
+        here, nxt = groups[n], groups[n + 1] if n + 1 < len(groups) else None
+        key = (here["loci"][-1]["pdf_page"], here["loci"][-1]["index"])
+        if (nxt is not None and key in joins
+                and not here.get("settled") and not nxt.get("settled")
+                and len(here["loci"]) == 1 and len(nxt["loci"]) == 1):
+            # The worse of the two grades, and never `unanimous`: the panel was
+            # unanimous about two slots, not about the one word this makes.
+            worst = max(here["grade"], nxt["grade"], key=rank_of)
+            out.append({"loci": here["loci"] + nxt["loci"],
+                        "at": here["at"] + nxt["at"],
+                        "text": joins[key], "settled": False,
+                        "grade": "one-dissent" if worst == "unanimous" else worst})
+            n += 2
+            continue
+        out.append(here)
+        n += 1
+    return out
+
+
+RANKS = {"unanimous": 0, "one-dissent": 1, "two-dissent": 2, "contested": 3,
+         "adjudicated": 0}
+
+
+def rank_of(grade: str) -> int:
+    return RANKS.get(grade, 3)
+
+
 def layout(row: list[dict], panel: list[str], settled: list[str | None],
-           reading=None) -> list[dict]:
+           reading=None, joins: dict | None = None) -> list[dict]:
     """One line, assembled: span re-vote, then the doubling check.
 
     Both callers must use this. `build_text.py` publishes the prose and
@@ -230,7 +274,9 @@ def layout(row: list[dict], panel: list[str], settled: list[str | None],
     repaired of both. Two assemblies of one book is one too many.
 
     `reading(locus)` supplies a slot's final text, so the caller can apply its
-    decisions and editorial repairs; it defaults to the panel's winner.
+    decisions and editorial repairs; it defaults to the panel's winner. `joins`
+    carries the pairs `editorial.split_words` found to be one word the line
+    break split in two.
     """
     reading = reading or (lambda locus: locus["winner"])
     groups = merge(row, panel, settled)
@@ -244,7 +290,7 @@ def layout(row: list[dict], panel: list[str], settled: list[str | None],
             group["settled"] = fixed is not None
         else:
             group["settled"] = False
-    return groups
+    return apply_joins(groups, joins or {})
 
 
 def dedupe(groups: list[dict], panel: list[str]) -> list[dict]:

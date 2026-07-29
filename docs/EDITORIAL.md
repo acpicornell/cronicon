@@ -106,6 +106,70 @@ should be written from four examples.
 
 ---
 
+## Rule 2 — a word the line break split in two
+
+`calamidades públic as`, `los dive rsos`, `bandole ros:`, `Tarrago. na,`. The
+word is one word on the page and two tokens in the transcription. Three
+different causes:
+
+| | |
+|---|---|
+| the panel disagreed | Leaf 107: three engines read `diversos` and five read `dive` + `rsos`, and the vote is slot by slot, so the majority wins. The span re-vote in `spans.py` cannot help — `fold()` strips whitespace, so both readings are the same class to it and neither is longer. |
+| the hyphen was misread | Leaf 95 prints `Tarrago-/na,` and the panel offers `Tarrago-`, `Tarrago.`, `Tarrago,` and `Tarrago_` for the same mark. The winner was `Tarrago.`, which the hyphen stitch does not touch. |
+| nobody joined it | Leaf 429: all eight engines read `bandole` + `ros:`. There is no reading to recover, only the fact that the book uses `bandoleros` and uses neither half. |
+
+**The book is the dictionary.** `formacion`, `Setiembre` and `mallorquin` are
+correct here and wrong in any Spanish word list, and the medieval Catalan of the
+documents is in no word list at all, so the lexicon is built from the consensus's
+own unanimous winners — 31 168 words — and never from `data/text/`, which is this
+rule's output.
+
+Two tiers of evidence, as with the long s, and a veto on each:
+
+| outcome | | tokens |
+|---|---|---:|
+| repaired, panel | some engine read the joined form, and the left half is not a word the book uses | 6 |
+| repaired, attested | none did, but the book uses the joined form five times or more and **neither half** is a word of the book | 5 |
+| declined | one of the halves is a word the book uses: 692 occurrences of 180 distinct pairs | — |
+
+**The left half must not be a word.** Requiring it of both halves was tried and
+is wrong on both sides at once: it let `de` + `Ntro.` become `deNtro.` and `des`
++ `Portell` become `desPortell`, because the second half of each is rare, while
+refusing `Tarrago` + `na`, whose second half is an ordinary Catalan word. A
+broken word's *first* half is never a word — `dive`, `bandole`, `Tarrago`,
+`capítu` are not — and a common word on the left is overwhelmingly just a word.
+
+**The attested tier needs the stricter veto**, because nothing read it that way.
+Leaf 105 gave `despes` + `es` → `despeses`, and read as the Catalan it is, `lo
+dit Jordi despès és bestrach del seu propi` is two words. The looser veto
+corrupted a good reading; requiring the right half to be a non-word as well
+declines it.
+
+Three further guards, each of them a mistake made first:
+
+- **A token ending in a real break hyphen is not this rule's business.** Without
+  that exclusion the rule fired **2 481 times on 547 leaves**, rejoining
+  `patronato`, `construir` and `necesario` — every ordinary hyphenated line break
+  in the book, all of which the assembler already stitches correctly one stage
+  later.
+- **A clitic is not half a word.** Leaves 123, 149 and 155 are medieval Catalan
+  and gave `qu'` + `ell`, `qu'` + `il`, `qu'` + `es`, which fold to `qu` — not a
+  word the book uses — and were joined on that technicality.
+- **Never leave a dash inside the word just made.** `costea-` + `ron` produced
+  `costea-ron`.
+
+The repair is applied as a **span**, not as two substitutions, so the word record
+keeps its evidence: the pair reports `printed` as `dive rsos`, its box as the
+union of both, and its grade as the worse of the two and never `unanimous` — the
+panel was unanimous about two slots, not about the one word this makes.
+
+`audit_entries.py --check glued` still reports **31 pairs the rule declines**,
+including `alo dio`, `ciu dad,` and `Pala-. cio`. They go to review rather than
+being repaired on a hunch, which is the same place the long s leaves its 465
+ambiguous tokens and for the same reason.
+
+---
+
 ## The reading form
 
 Separate from the repair, and not a correction: `editorial.reading_form()` folds
