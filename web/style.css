@@ -550,11 +550,18 @@ a.key:hover { color: var(--accent); }
 /* The numeral and title Campaner prints at the head of a section are a heading,
    not the first two paragraphs of the document. */
 h3.dochead { font-family: Georgia, "Times New Roman", serif; margin: 0 0 .6rem;
-             color: var(--accent-dark); line-height: 1.35; }
-h3.dochead:first-child { font-size: 1.5rem; letter-spacing: .06em; }
+             color: var(--accent-dark); line-height: 1.35;
+             /* Centred, as the book sets them: the numeral over the title over
+                the source note, all on the measure. It is also what tells the
+                reader where the document itself begins. */
+             text-align: center; max-width: 58ch; margin-inline: auto; }
+h3.dochead:first-child { font-size: 1.5rem; letter-spacing: .06em;
+                         margin-bottom: .8rem; }
 h3.dochead:first-child + h3.dochead { font-size: 1.12rem; font-weight: 400; }
 .doc h3.dochead ~ h3.dochead { font-size: .88rem; font-weight: 400;
                                color: var(--text-muted); font-style: italic; }
+/* …and the document opens under them, not against them. */
+.doc h3.dochead + p { margin-top: 1.6rem; }
 
 /* On a reading page the container is already the measure -- `.wrap.read` is
    900px -- so capping prose again at 68ch (about 612px) only makes the caveat
