@@ -393,6 +393,14 @@ philology rather than parsing.** The Centellas section holds 20 salutations
 letter. It wants the same treatment the year headings got: a rule, measured,
 with the exceptions counted.
 
+**Section VI of the 16th-century block is 45 leaves and most of it is not the
+section.** It runs 324–368 and 17 806 words, and leaves 335–367 are the 1541
+reprint — a different work, reading as part of the executions of 1523. The
+boundary needs no new evidence: `editorial.long_s_leaves` already derives
+335–367 from the consensus with two independent signals, leaves 333–334 are
+blank, and leaf 332 is Campaner introducing it. Measured and not yet applied,
+because splitting it touches the catalogue, the ids and the site.
+
 Three numerals in the 16th-century block are still not found (VII, VIII, X).
 Leaves 333–334 are blank and leaf 332 ends *«haber reducido el tamaño de las tres
 primeras páginas á las dimensiones del original»*: section VII is a **facsimile
