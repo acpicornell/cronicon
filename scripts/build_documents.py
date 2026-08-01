@@ -51,7 +51,8 @@ SECTIONS = OUT / "sections"
 # `Sentencia`, `Relacion`, `Memorial`, `Declaraciones`, `Toma de posesion`. That
 # is better evidence than any classification of ours, so it is surfaced as it
 # stands rather than mapped onto categories the book does not use.
-NUMERAL_HEAD = re.compile(r"[IVXLC]{1,6}\\.\\s+")
+# `IV. ` opening a line, where the numeral and the title share it.
+NUMERAL_HEAD = re.compile(r"[IVXLC]{1,6}\.\s+")
 ROMAN = re.compile(r"[IVXLCivxlc0-9 .,]{1,10}")
 GENRE = re.compile(r"^[«\"'\s]*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)")
 
@@ -231,12 +232,8 @@ def main() -> None:
             # `parse_documents.py` knows where the title ends -- it read it --
             # so the break is taken from there, and only the first paragraph is
             # touched, because rewriting the whole text collapses the paragraphs
-            # that stitch has just found. 21 of the 23 come out with the title
-            # standing free; sections 0225-IV and 0311-IV do not, and both have
-            # a title the panel read a little differently from the body it is
-            # glued to, so the prefix does not match. They are two, they are
-            # named here, and forcing them would mean cutting on a length rather
-            # than on evidence.
+            # that stitch has just found. All 23 come out with the title
+            # standing free.
             paras = text.split("\n\n")
             flat = " ".join(section["title"].split())
             for i, para in enumerate(paras[:2]):
