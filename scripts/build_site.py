@@ -603,15 +603,31 @@ def document_page(con, doc) -> str:
             [first, last]).fetchall()}
 
     def platemark(pages) -> str:
-        run = ", ".join(str(p) for p in pages)
-        url = ("https://archive.org/details/CroniconMayoricenseCampaner/"
-               f"page/n{pages[0] - 2}/mode/2up")
-        one = len(pages) == 1
-        what = "una làmina" if one else "làmines"
-        which = "full" if one else "fulls"
-        return (f'<p class="platemark">Aquí hi ha {what} — {which} {run} — '
-                "que aquesta edició no reprodueix. "
-                f'<a href="{url}" rel="noopener">Mira-la al facsímil</a>.</p>')
+        """The plates themselves, served by the Archive rather than stored here.
+
+        Explaining a genealogical tree and not showing it is absurd, and the
+        plate is 1881 and public domain. It is not committed: the page images
+        are 1.6 GB in `data/pages/`, gitignored, and putting 57 of them in the
+        repository would undo the work that took its history from 72 MB to 22.5.
+        The Archive already serves them over IIIF from the same scan this
+        edition cites, so the cost here is a URL. The link stays underneath: if
+        their service is down the plate does not render, and the reader still
+        has a way to the page.
+        """
+        out = []
+        for leaf in pages:
+            src = ("https://iiif.archive.org/iiif/"
+                   f"CroniconMayoricenseCampaner%24{leaf - 2}/full/1200,/0/"
+                   "default.jpg")
+            url = ("https://archive.org/details/CroniconMayoricenseCampaner/"
+                   f"page/n{leaf - 2}/mode/2up")
+            out.append(
+                f'<figure class="plate"><img src="{src}" loading="lazy" '
+                f'alt="Làmina del full {leaf} del Cronicón Mayoricense">'
+                f'<figcaption>Làmina, full {leaf}. '
+                f'<a href="{url}" rel="noopener">Al facsímil</a></figcaption>'
+                "</figure>")
+        return "".join(out)
 
     chunks, running = [], None
     for i, para in enumerate(paras):
@@ -645,6 +661,13 @@ def document_page(con, doc) -> str:
                else "p")
         chunks.append(f'<{tag} id="p{i}" class="{"dochead" if tag == "h3" else ""}">'
                       f"{mark_doubt(para, doubtful)}</{tag}>")
+    # …and the plates that stand after the last paragraph, which no gap between
+    # two paragraphs can reach: section II of the 18th-century block ends with
+    # eight of them.
+    if running is not None:
+        trailing = [p for p in range(running + 1, last + 1) if p in plates]
+        if trailing:
+            chunks.append(platemark(trailing))
     if running is not None:
         chunks.append(f'<p class="leafmark"><a href="'
                       f"https://archive.org/details/CroniconMayoricenseCampaner"

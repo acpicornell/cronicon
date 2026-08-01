@@ -587,3 +587,12 @@ h3.dochead:first-child + h3.dochead { font-size: 1.12rem; font-weight: 400; }
 .platemark { margin: 1.4rem 0; padding: .7rem .9rem; background: var(--num-bg);
              border-left: 3px solid var(--accent-light); border-radius: 3px;
              font-size: .86rem; color: var(--text-muted); }
+
+/* An engraved plate, served by the Archive from the scan this edition cites.
+   Not stored here: 57 page images would undo the work that took the history
+   from 72 MB to 22.5. */
+.plate { margin: 1.8rem 0; text-align: center; }
+.plate img { max-width: 100%; height: auto; border: 1px solid var(--border);
+             background: var(--surface); }
+.plate figcaption { margin-top: .5rem; font-size: .8rem;
+                    color: var(--text-muted); }

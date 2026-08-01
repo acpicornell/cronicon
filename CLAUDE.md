@@ -320,14 +320,24 @@ words, 3.3% contested**, footnotes separated as in the chronicle and the
 certainty tiers carried through, because these are the leaves nothing has
 measured and a mostly-contested document must say so on its face.
 
-**Seven of the 23 documents run across an engraved plate**, and none of them
-said so. Section III prints the `ESPLICACION DEL ÁRBOL` on leaf 152 and the tree
-itself is the plate on 151, so a reader met the explanation of a diagram the
-edition never mentioned. This publishes text and not the plates; the page now
-names the leaf where one stands and links to it in the facsimile. The plates are
-found by asking which leaves of the range carry no word at all, which is the
-same fact `inventory.py` records as `plate_or_blank` and does not need to be
-listed twice.
+**Six of the 23 documents run across an engraved plate — 13 of them — and the
+plates are now shown.** Section III prints the `ESPLICACION DEL ÁRBOL` on leaf
+152 and the tree itself is the plate on 151, so a reader met the explanation of
+a diagram the edition never mentioned.
+
+**They are shown without being stored.** The page images are 1.6 GB in
+`data/pages/`, gitignored, and committing 13 of them would start undoing the
+work that took the history from 72 MB to 22.5. The Internet Archive serves them
+over IIIF from the same scan this edition already cites —
+`iiif.archive.org/iiif/CroniconMayoricenseCampaner$<ia_leaf>/full/1200,/0/default.jpg`
+— so the cost here is a URL. The link to the facsimile stays under each one: if
+their service is down the plate does not render and the reader still has a way
+to the page.
+
+A plate is a leaf of the section's range that carries **no word at all**, taken
+from the text that was actually assembled. Reading `page_class` instead was
+tried and is wrong: it counts the appendix leaves as plates, which is how the
+first count came out as seven documents rather than six.
 
 Two details that are not obvious:
 
