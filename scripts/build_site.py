@@ -48,6 +48,7 @@ import json
 import math
 import re
 import shutil
+from collections import Counter
 from pathlib import Path
 
 import duckdb
@@ -108,6 +109,7 @@ def head(title: str, description: str, canonical: str, depth: int = 0) -> str:
 # type shrinking.
 TABS = (("", "Inici", "Inici"),
         ("anys/", "Els anys", "Anys"),
+        ("jurats/", "Els jurats", "Jurats"),
         ("documents/", "Els documents", "Documents"),
         ("abreviatures/", "Les abreviatures", "Sigles"),
         ("metode.html", "El mètode", "Mètode"))
@@ -797,6 +799,154 @@ def source_page(con, siglum: str, expansion: str) -> str:
 """ + tail(2))
 
 
+# Campaner writes a Jurat's trade after a comma -- `Juan Sala, perayre` -- for
+# 341 of the 1 979 names. It is the most interesting column in the table and the
+# easiest to mistake for a surname: taking the last word of the name makes
+# `perayre` the commonest family in Mallorca, with 70 seats.
+TRADES = {
+    "perayre": "paraire", "apotecari": "apotecari", "forner": "forner",
+    "dr. en leyes": "doctor en lleis", "doncel": "donzell", "notari": "notari",
+    "assabonador": "saboner", "caballero": "cavaller", "argenter": "argenter",
+    "ferrer": "ferrer", "pellisser": "pellisser", "texidor": "teixidor",
+    "sabater": "sabater", "sastre": "sastre", "blanquer": "blanquer",
+    "flassader": "flassader", "sucrer": "sucrer", "fuster": "fuster",
+    "jurista": "jurista", "draper": "draper", "tintorer": "tintorer",
+    "esparter": "esparter", "manescal": "manescal", "chirurgid": "cirurgià",
+    "apuntador": "apuntador",
+}
+CENTURY_NAMES = {13: "XIII", 14: "XIV", 15: "XV", 16: "XVI", 17: "XVII",
+                 18: "XVIII"}
+
+
+def trade_of(name: str) -> str | None:
+    """The trade Campaner notes after the comma, normalised, or None."""
+    if "," not in name:
+        return None
+    tail = name.split(",", 1)[1].strip().strip(".").lower()
+    return TRADES.get(tail)
+
+
+def jurats_index(con) -> str:
+    """The six series, and who sat in them.
+
+    The Jurats governed the Ciutat i Regne, six of them at a time, replaced
+    every year at Christmas by Real privilege of 7 July 1240. Campaner prints
+    the lists as appendices inside the body and they are the hardest leaves in
+    the book: only a quarter of these names are read the same way by all six
+    engines, which the page has to say rather than imply.
+    """
+    series = con.execute("""
+        SELECT century, count(*), min(year), max(year), count(DISTINCT year)
+        FROM jurat GROUP BY 1 ORDER BY 1""").fetchall()
+    tiers = dict(con.execute(
+        "SELECT tier, count(*) FROM jurat GROUP BY 1").fetchall())
+    total = sum(tiers.values())
+
+    blocks = "".join(
+        f'<a class="serie" href="{c}/">'
+        f'<span class="sig">Segle {CENTURY_NAMES[c]}</span>'
+        f"<strong>{num(n)} noms</strong>"
+        f'<span class="span">{first}–{last}</span>'
+        f'<span class="n">{years} anys documentats</span></a>'
+        for c, n, first, last, years in series)
+
+    names = [r[0] for r in con.execute("SELECT name FROM jurat").fetchall()]
+    trades = Counter(t for t in (trade_of(n) for n in names) if t)
+    chips = "".join(f'<li>{esc(t)} <small>{n}</small></li>'
+                    for t, n in trades.most_common(18))
+
+    return (head("Els jurats · Cronicón Mayoricense",
+                 f"Els {num(total)} jurats de la Ciutat i Regne de Mallorca que "
+                 "Campaner llista, de 1240 a 1715, amb el grau de certesa de "
+                 "cada nom.",
+                 f"{SITE}/jurats/", depth=1)
+            + masthead(depth=1, here="jurats/") + f"""
+<main class="wrap">
+  <section class="opener">
+    <p class="kicker">Els qui governaven</p>
+    <h2>{num(total)} jurats, de 1240 a 1715</h2>
+    <p class="lede">Per privilegi reial de Jaume I, del 7 de juliol de 1240,
+       Mallorca es governava per sis jurats que es renovaven cada any per Nadal
+       i que elegien els seus successors. Campaner en llista els noms segle a
+       segle, com a apèndix dins del cos del llibre.</p>
+  </section>
+
+  <div class="source-grid">{blocks}</div>
+
+  <section class="matter">
+    <h2 class="section">No tots eren cavallers</h2>
+    <p>De 341 noms, Campaner n'anota l'ofici darrere una coma. El gremi seia al
+       costat del jurista i del donzell:</p>
+    <ul class="subjects">{chips}</ul>
+  </section>
+
+  <section class="matter">
+    <h2 class="section">Quant se'n pot refiar</h2>
+    <p>Aquests fulls són els més difícils del llibre: llistes atapeïdes, tipus
+       petit i noms propis mallorquins del 1300, que és exactament on un
+       reconeixedor no té cap paraula coneguda a què agafar-se.
+       <strong>Només {num(tiers.get('unanimous', 0))} dels {num(total)} noms
+       ({tiers.get('unanimous', 0) / total:.0%}) els llegeixen igual els sis
+       motors</strong>, contra el 79% del llibre sencer. Cada nom porta el seu
+       grau i els dubtosos van marcats.</p>
+    <p class="aside">Un nom marcat no vol dir que sigui erroni: vol dir que no
+       s'ha comprovat contra el facsímil i que els reconeixedors no hi van
+       coincidir del tot.</p>
+  </section>
+</main>
+""" + tail(1))
+
+
+def jurats_century(con, century: int) -> str:
+    """One century's series, year by year, six seats to the row."""
+    rows = con.execute(
+        "SELECT year, seat, name, tier, pdf_page FROM jurat "
+        "WHERE century = ? ORDER BY year, seat", [century]).fetchall()
+    by_year: dict[int, list] = {}
+    for year, seat, name, tier, page in rows:
+        by_year.setdefault(year, []).append((seat, name, tier, page))
+
+    dated = {r[0] for r in con.execute(
+        "SELECT DISTINCT year FROM entry WHERE year IS NOT NULL").fetchall()}
+    out = []
+    for year, seats in sorted(by_year.items()):
+        page = seats[0][3]
+        link = (f'<a href="../../anys/{year}/">{year}</a>'
+                if year in dated else str(year))
+        cells = "".join(
+            f'<li class="{"d" if tier not in ("unanimous", "adjudicated") else ""}"'
+            f' title="{esc(DOUBT_NOTE) if tier not in ("unanimous", "adjudicated") else ""}">'
+            f"{esc(name)}</li>"
+            for _seat, name, tier, _p in seats)
+        out.append(f'<article class="serie-year"><h3>{link}</h3>'
+                   f'<ol class="seats">{cells}</ol>'
+                   f'<p class="leafmark">full {page}</p></article>')
+
+    order = sorted(CENTURY_NAMES)
+    i = order.index(century)
+    prev_c = order[i - 1] if i else None
+    next_c = order[i + 1] if i + 1 < len(order) else None
+    roman = CENTURY_NAMES[century]
+    return (head(f"Jurats del segle {roman} · Cronicón Mayoricense",
+                 f"Els jurats de Mallorca del segle {roman} segons el Cronicón "
+                 "Mayoricense de Campaner.",
+                 f"{SITE}/jurats/{century}/", depth=2)
+            + masthead(depth=2, here="jurats/") + f"""
+<main class="wrap">
+  <nav class="yearnav">
+    {f'<a href="../{prev_c}/">← segle {CENTURY_NAMES[prev_c]}</a>' if prev_c else "<span></span>"}
+    <h2>Segle {roman}</h2>
+    {f'<a href="../{next_c}/">segle {CENTURY_NAMES[next_c]} →</a>' if next_c else "<span></span>"}
+  </nav>
+  <p class="readmode"><label class="toggle">
+     <input type="checkbox" id="plain"> amaga la incertesa</label></p>
+  <p class="hint">{num(len(rows))} noms en {len(by_year)} anys. L'any enllaça
+     amb les seves notícies quan en té.</p>
+  <div class="serie-grid">{"".join(out)}</div>
+</main>
+""" + tail(2))
+
+
 def abbreviations_page(con) -> str:
     used = dict(con.execute(
         "SELECT s, count(*) FROM (SELECT unnest(sources) AS s FROM entry) "
@@ -1035,6 +1185,12 @@ def index_page(con, years: list[int], counts: dict) -> str:
       <p><a href="abreviatures/">Les fonts, una per una →</a></p>
     </section>
     <section>
+      <h2>Els qui governaven</h2>
+      <p>{num(stats[2])} jurats de la Ciutat i Regne entre 1240 i 1715, sis
+         cada any. Paraires i apotecaris al costat de donzells.</p>
+      <p><a href="jurats/">Les sis sèries →</a></p>
+    </section>
+    <section>
       <h2>Què és fiable</h2>
       <p>Cada paraula porta el grau d'acord dels sis reconeixedors que la van
          llegir.</p>
@@ -1144,6 +1300,7 @@ def main() -> None:
     con = duckdb.connect(args.db, read_only=True)
     WEB.mkdir(exist_ok=True)
     (WEB / "anys").mkdir(exist_ok=True)
+    (WEB / "jurats").mkdir(exist_ok=True)
     (WEB / "documents").mkdir(exist_ok=True)
 
     dated = [r[0] for r in con.execute(
@@ -1210,6 +1367,15 @@ def main() -> None:
                                               separators=(",", ":")),
                                    encoding="utf-8")
 
+    (WEB / "jurats" / "index.html").write_text(jurats_index(con),
+                                               encoding="utf-8")
+    for (century,) in con.execute(
+            "SELECT DISTINCT century FROM jurat ORDER BY 1").fetchall():
+        target = WEB / "jurats" / str(century)
+        target.mkdir(exist_ok=True)
+        (target / "index.html").write_text(jurats_century(con, century),
+                                           encoding="utf-8")
+
     (WEB / "index.html").write_text(index_page(con, years, counts),
                                     encoding="utf-8")
     (WEB / "metode.html").write_text(method_page(con), encoding="utf-8")
@@ -1237,7 +1403,11 @@ def main() -> None:
                f"<url><loc>{SITE}/metode.html</loc></url>",
                f"<url><loc>{SITE}/anys/</loc></url>",
                f"<url><loc>{SITE}/documents/</loc></url>",
-               f"<url><loc>{SITE}/abreviatures/</loc></url>"]
+               f"<url><loc>{SITE}/abreviatures/</loc></url>",
+               f"<url><loc>{SITE}/jurats/</loc></url>"]
+    sitemap += [f"<url><loc>{SITE}/jurats/{c}/</loc></url>"
+                for (c,) in con.execute(
+                    "SELECT DISTINCT century FROM jurat ORDER BY 1").fetchall()]
     sitemap += [f"<url><loc>{SITE}/anys/{y}/</loc></url>" for y in years]
     sitemap += [f"<url><loc>{SITE}/abreviatures/{slug(b)}/</loc></url>"
                 for b, _c in BANDS]

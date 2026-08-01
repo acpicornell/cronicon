@@ -746,6 +746,28 @@ Still open: **`T. A.` is two different people.** Tomás Aguiló in the 16th-cent
 header and Tomás Amorós in the 18th, which is exactly why `parse_sigla.py`
 refuses to guess — and it is a fact the site should state rather than hide.
 
+## The Jurats have a section at last
+
+1 979 names were in the database and in the parquet and **no route showed one of
+them**. `/jurats/` is the six series and `/jurats/<century>/` is a year at a
+time, six seats to a card, the year linking to its notices where it has any.
+
+Two things it turned up that are worth keeping:
+
+- **`perayre` is not a surname.** Taking the last word of a name makes it the
+  commonest family in Mallorca with 70 seats, ahead of Pachs and Zaforteza. It
+  is a trade — a wool-carder — and Campaner writes the trade after a comma for
+  **341 of the 1 979**: apotecari, forner, doctor en lleis, notari, argenter,
+  ferrer, sabater, sastre, teixidor, blanquer. That is the guild sitting beside
+  the donzell in the government of the Kingdom, and it is the most interesting
+  column in the table. A families-across-the-centuries view needs the trades cut
+  out first, which is why there isn't one yet.
+- **The page has to say how weak this is.** Only **516 of 1 979 names (26%)** are
+  read the same way by all six engines, against 79% for the book. Every doubtful
+  name is marked and the index says the figure in words. Some names still carry
+  the notes column bleeding into them — `Bernardo Villafranca se encuentran en
+  el privi-`, `Jaime de Montsó I mismos` — on the annotated leaves.
+
 ## The site must not tidy the book either
 
 **Year pages are ordered by the book, not by date.** November 1644 runs

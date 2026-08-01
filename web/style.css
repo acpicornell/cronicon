@@ -393,6 +393,43 @@ h3.month:first-of-type { margin-top: 1.4rem; }
 .source-card .n { display: block; margin-top: .6rem; font-size: .78rem;
                   color: var(--accent); }
 
+/* --- the Jurats --------------------------------------------------------- */
+/* A year is a card of six seats. A table was the obvious shape and the wrong
+   one: six names to a row over 361 rows is a wall, and the unit a reader
+   actually wants is the year -- who governed in 1330 -- not the column. */
+.serie-grid { display: grid; gap: 1rem; margin: 1.4rem 0 0;
+              grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.serie-year { background: var(--surface); border: 1px solid var(--border);
+              border-radius: 4px; padding: .8rem 1rem; }
+.serie-year h3 { margin: 0 0 .5rem; font-family: Georgia, serif;
+                 font-size: 1.1rem; color: var(--accent-dark);
+                 font-variant-numeric: tabular-nums; }
+.serie-year h3 a { text-decoration: none; color: inherit; }
+.serie-year h3 a:hover { text-decoration: underline; }
+.seats { list-style: none; margin: 0; padding: 0;
+         font-family: Georgia, "Times New Roman", serif; font-size: .93rem; }
+.seats li { padding: .12rem 0; border-bottom: 1px dotted transparent; }
+.seats li.d { border-bottom: 1px dotted var(--doubt); cursor: help; }
+body.plain .seats li.d { border-bottom-color: transparent; }
+.serie-year .leafmark { margin: .5rem 0 0; padding-left: 0; font-size: .72rem; }
+/* The century cards on the index reuse the source card, which already holds a
+   label, a headline, a span of years and a count. */
+.serie { display: block; text-decoration: none; color: inherit;
+         background: var(--surface); border: 1px solid var(--border);
+         border-radius: 4px; padding: .9rem 1rem; }
+.serie:hover { border-color: var(--accent); }
+.serie .sig { display: inline-block; background: var(--accent-light);
+              color: var(--accent-dark); border-radius: 3px;
+              padding: .05rem .35rem; font-size: .78rem; margin-bottom: .45rem; }
+.serie strong { display: block; font-family: Georgia, serif; font-size: 1.05rem;
+                color: var(--accent-dark); }
+.serie .span { display: block; font-size: .85rem; color: var(--text-muted);
+               font-variant-numeric: tabular-nums; margin-top: .15rem; }
+.serie .n { display: block; margin-top: .5rem; font-size: .78rem;
+            color: var(--accent); }
+.subjects li small { color: var(--text-muted); font-variant-numeric: tabular-nums;
+                     margin-left: .25rem; }
+
 /* …and the dossier at the head of that source's own page. */
 .dossier { background: var(--num-bg); border-radius: 3px;
            padding: 1.1rem 1.3rem; margin: 0 0 2rem; }
