@@ -546,3 +546,12 @@ a.key:hover { color: var(--accent); }
 .unplaced h3.section { margin: 0 0 .4rem; font-size: 1rem; }
 .unplaced .hint { margin: 0 0 .8rem; max-width: 62ch; }
 .unplaced .notes { border-left-color: var(--doubt); }
+
+/* The numeral and title Campaner prints at the head of a section are a heading,
+   not the first two paragraphs of the document. */
+h3.dochead { font-family: Georgia, "Times New Roman", serif; margin: 0 0 .6rem;
+             color: var(--accent-dark); line-height: 1.35; }
+h3.dochead:first-child { font-size: 1.5rem; letter-spacing: .06em; }
+h3.dochead:first-child + h3.dochead { font-size: 1.12rem; font-weight: 400; }
+.doc h3.dochead ~ h3.dochead { font-size: .88rem; font-weight: 400;
+                               color: var(--text-muted); font-style: italic; }

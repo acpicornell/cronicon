@@ -568,6 +568,11 @@ def year_page(con, year: int, years: list[int], sigla: dict[str, str]) -> str:
     return "\n".join(parts)
 
 
+# How many opening paragraphs may be the section's own heading: the numeral,
+# the title, and the `(pág. 71 del texto.)` Campaner puts under it.
+HEAD_LINES = 3
+
+
 def document_page(con, doc) -> str:
     """One of the 23 pieces Campaner reprints in full.
 
@@ -581,8 +586,38 @@ def document_page(con, doc) -> str:
     doubtful = doubtful_words(con, range(first, last + 1))
 
     paras = [p for p in text.split("\n") if p.strip()]
-    body = "".join(f'<p id="p{i}">{mark_doubt(p, doubtful)}</p>'
-                   for i, p in enumerate(paras))
+    # Which leaf each paragraph opens on, so a seventeen-leaf document can be
+    # traced back to the page from anywhere in it rather than only from its
+    # head. Named once per run, as on the year pages.
+    at = json.loads((PROJECT / "data" / "documents" / "sections.json").read_text())
+    per_para = next((d.get("paragraph_leaves") or [] for d in at
+                     if d["id"] == _id), [])
+    chunks, running = [], None
+    for i, para in enumerate(paras):
+        leaf = per_para[i] if i < len(per_para) else None
+        if leaf and leaf != running:
+            if running is not None:
+                chunks.append(f'<p class="leafmark"><a href="'
+                              f"https://archive.org/details/"
+                              f"CroniconMayoricenseCampaner/page/n{running - 2}"
+                              f'/mode/2up" rel="noopener">full {running} al '
+                              "facsímil</a></p>")
+            running = leaf
+        # The numeral and the title Campaner prints at the head of a section
+        # are a heading, not the first two paragraphs of the text. They were
+        # being set as body, so the page opened with a bare `III.` in reading
+        # type and the title indistinguishable from the first sentence.
+        tag = ("h3" if i < HEAD_LINES and len(para) < 200 and
+               (i == 0 or para.startswith(("«", "(", '"')) or para.isupper())
+               else "p")
+        chunks.append(f'<{tag} id="p{i}" class="{"dochead" if tag == "h3" else ""}">'
+                      f"{mark_doubt(para, doubtful)}</{tag}>")
+    if running is not None:
+        chunks.append(f'<p class="leafmark"><a href="'
+                      f"https://archive.org/details/CroniconMayoricenseCampaner"
+                      f'/page/n{running - 2}/mode/2up" rel="noopener">'
+                      f"full {running} al facsímil</a></p>")
+    body = "".join(chunks)
     leaf_url = ("https://archive.org/details/CroniconMayoricenseCampaner/"
                 f"page/n{first - 2}/mode/2up")
     return (head(f"{numeral}. {title} · Cronicón Mayoricense",

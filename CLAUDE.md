@@ -329,6 +329,44 @@ Two details that are not obvious:
 `Fragmentos`, `Historia`, `Nota`, `Cas nunca vist`. That is surfaced as `genre`
 rather than mapped onto categories the book does not use.
 
+**A line break is not a paragraph break**, and treating it as one made these
+documents unreadable: `stitch` ended every printed line that did not carry a
+hyphen, so a letter of Gilaberto de Centellas arrived as a wall of
+forty-character lines. The original's line breaks belong to the measure and to
+the facsimile, not to a text meant to be read. What the book *does* mark is the
+paragraph, and it marks it with an indent — so lines are joined and a paragraph
+opens where the printer indented one. **Two details, both of them bugs first:**
+the left edge is the commonest one *per column*, because a heading starts
+further left than the body and the minimum makes every ordinary line look
+indented; and a line ending in a break hyphen joins the next with **no
+separator at all**, which the first attempt got wrong and produced `fe yets`.
+**And an indent alone is not enough.** Section III still came out with 266 of
+its 395 paragraphs under 60 characters, because a continuation line sits a
+little right of the modal edge often enough — an opening quotation mark outside
+the measure, a word the panel gave a wide box. A paragraph also *ends*, and it
+ends with a **short line**, so an opener must be indented **and** follow a line
+that does not fill the measure. Those are 7, 2 and 16 lines on leaves 137, 145
+and 153, which is the right order for a page of prose. Section III 395 → 91
+paragraphs; the Centellas letters 1 800 lines → 40.
+
+**And the documents get the facsimile marks the chronicle already had.** One
+link at the head of a seventeen-leaf section says where it starts and nothing
+else, so `stitch` carries out the leaf each paragraph opens on and the page
+names it once per run — 16 marks over section III's 91 paragraphs.
+
+**The recovered numeral has to win in the heading.** Display type is the class
+the engines read worst: leaf 316 prints `III.` and the vote returned `I XIX.`,
+having been offered `zz.`, `LL.` and `TIT.` `parse_documents.py` already reads
+the numeral off the panel rather than off the winner — that is how the section
+is catalogued as III — and `build_documents.py` was throwing that away, because
+the text keeps the winner. The head of the file now takes the recovered reading;
+everything below it does not, since the panel's evidence is about the numeral
+and nothing else. 22 of the 23 heads agree with the catalogue after it.
+
+And the numeral and title are set as **a heading**, not as the first two
+paragraphs. The page used to open with a bare `III.` in reading type with the
+title indistinguishable from the first sentence.
+
 **Splitting a section into its individual pieces is still open, and it is
 philology rather than parsing.** The Centellas section holds 20 salutations
 `«Molt alt e molt poderos princep e Senyor»` against only 3 numbered pieces and 3

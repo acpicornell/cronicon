@@ -34,6 +34,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import statistics
 import unicodedata
 from collections import Counter
 from pathlib import Path
@@ -50,6 +51,7 @@ SECTIONS = OUT / "sections"
 # `Sentencia`, `Relacion`, `Memorial`, `Declaraciones`, `Toma de posesion`. That
 # is better evidence than any classification of ours, so it is surfaced as it
 # stands rather than mapped onto categories the book does not use.
+ROMAN = re.compile(r"[IVXLCivxlc0-9 .,]{1,10}")
 GENRE = re.compile(r"^[«\"'\s]*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)")
 
 
@@ -66,19 +68,93 @@ def span_of(block: dict, index: int) -> tuple[tuple[int, int], tuple[int, int]]:
     return start, end
 
 
-def stitch(lines: list[dict]) -> str:
-    """Reading-order prose, line-end hyphens joined, as in build_text.py."""
-    pieces: list[str] = []
+# How far past its column's left edge a line has to start before it counts as
+# opening a paragraph. Word spaces here are 0.0066 of the page and the printer's
+# indent is about 0.02, so 0.012 sits between them with room on both sides.
+INDENT = 0.012
+# A line this much narrower than the measure is the last line of a paragraph.
+SHORT = 0.88
+
+
+def paragraph_breaks(lines: list[dict]) -> set[int]:
+    """Which lines open a paragraph, by where the printer indented them.
+
+    **A line break is not a paragraph break**, and treating it as one is what
+    made these documents unreadable: `stitch` used to end every printed line
+    that did not carry a hyphen, so a letter of Gilaberto de Centellas arrived
+    as a wall of forty-character lines instead of prose. The original's line
+    breaks are an accident of the measure and belong to the facsimile, not to a
+    text meant to be read.
+
+    What the book does mark is the paragraph, and it marks it the way books do:
+    with an indent. The left edge is taken per column, because a two-column leaf
+    has two of them and one median over both makes every line of column one look
+    outdented and every line of column two indented.
+    """
+    # The commonest left edge, not the smallest: a heading or a display line
+    # starts further left than the body and would make every ordinary line look
+    # indented. Rounded to a hundredth so that near-identical edges count as one.
+    edges: dict[int, Counter] = {}
     for line in lines:
+        if line["text"].strip():
+            edges.setdefault(line.get("column", 0), Counter())[
+                round(line["bbox"][0], 2)] += 1
+    base = {column: xs.most_common(1)[0][0] for column, xs in edges.items()}
+    # An indent alone is not enough, and this document proved it: leaf 137 gave
+    # 11 openers in 73 lines and the section still came out with 266 of its 395
+    # paragraphs under 60 characters, because continuation lines like `páginas
+    # 76 y 77, citando á Gar. ser. præs. Mag.` sit a little right of the modal
+    # edge for reasons that are not a paragraph -- a quotation mark that starts
+    # outside the measure, a word the panel gave a wide box.
+    #
+    # A paragraph also *ends*, and it ends with a short line. So an opener has
+    # to be indented **and** follow a line that does not fill the measure. Those
+    # are 7, 2 and 16 lines on leaves 137, 145 and 153, which is the right order
+    # of magnitude for a page of prose.
+    live = [n for n, line in enumerate(lines) if line["text"].strip()]
+    widths = [lines[n]["bbox"][2] - lines[n]["bbox"][0] for n in live]
+    if not widths:
+        return set()
+    measure = statistics.median(widths)
+    ends = {live[i] for i, w in enumerate(widths) if w < measure * SHORT}
+    opens = set()
+    for i, n in enumerate(live):
+        indented = (lines[n]["bbox"][0]
+                    - base.get(lines[n].get("column", 0), 0) > INDENT)
+        if indented and (i == 0 or live[i - 1] in ends):
+            opens.add(n)
+    return opens
+
+
+def stitch(lines: list[dict]) -> tuple[str, list[int]]:
+    """Reading-order prose, and the leaf each paragraph opens on.
+
+    The leaf is carried out because a document runs across up to seventeen of
+    them and the reader needs the same thing the chronicle gives: a way back to
+    the page. One link at the head of a seventeen-leaf section only says where
+    it starts.
+    """
+    opens = paragraph_breaks(lines)
+    pieces: list[str] = []
+    leaves: list[int] = []
+    hyphen = False          # did the line before end mid-word?
+    for n, line in enumerate(lines):
         text = line["text"].strip()
         if not text:
             continue
-        if BREAK_HYPHEN.search(text):
-            pieces.append(BREAK_HYPHEN.sub("", text))
+        if hyphen:
+            pass            # the word continues: no separator at all
+        elif n in opens and pieces:
+            pieces.append("\n\n")
+            leaves.append(line.get("leaf", 0))
+        elif pieces:
+            pieces.append(" ")
         else:
-            pieces.append(text + "\n")
+            leaves.append(line.get("leaf", 0))
+        hyphen = bool(BREAK_HYPHEN.search(text))
+        pieces.append(BREAK_HYPHEN.sub("", text) if hyphen else text)
     prose = unicodedata.normalize("NFC", "".join(pieces))
-    return re.sub(r"[ \t]+", " ", prose)
+    return re.sub(r"[ \t]+", " ", prose).strip() + "\n", leaves
 
 
 def main() -> None:
@@ -108,6 +184,8 @@ def main() -> None:
                 cache[pdf_page] = ([], [])
             else:
                 body, notes = split_notes(page_lines(path))
+                for line in body:
+                    line["leaf"] = pdf_page
                 cache[pdf_page] = (body, gather_notes(notes) if notes else [])
         return cache[pdf_page]
 
@@ -136,7 +214,18 @@ def main() -> None:
             for line in lines:
                 tiers += line["tiers"]
             words = sum(tiers.values())
-            text = stitch(lines)
+            text, para_leaves = stitch(lines)
+            # The section's own numeral, as `parse_documents.py` read it off the
+            # panel rather than off the vote's winner. Display type is the class
+            # the engines read worst -- leaf 316 prints `III.` and the winner
+            # was `I XIX.`, having been offered `zz.`, `LL.` and `TIT.` -- and
+            # the numeral was recovered there and then thrown away here, because
+            # the text keeps the winner. The heading is the one place the
+            # recovered reading has to win, since it is what the reader sees
+            # first and the panel's own evidence says the winner is wrong.
+            head, _, rest = text.partition("\n\n")
+            if ROMAN.fullmatch(head.strip()) and head.strip("." ) != section["numeral"]:
+                text = f"{section['numeral']}.\n\n{rest}"
             genre = GENRE.match(section["title"])
 
             name = (f"{block['first_leaf']:04d}-{section['numeral']}"
@@ -157,6 +246,9 @@ def main() -> None:
                 "first_leaf": start[0], "last_leaf": end[0],
                 "leaves": end[0] - start[0] + 1,
                 "words": words,
+                # Which leaf each paragraph opens on, so the reader can get back
+                # to the page from anywhere in a seventeen-leaf document.
+                "paragraph_leaves": para_leaves,
                 "footnotes": len(notes),
                 "certainty": {k: tiers[k] for k in
                               ("unanimous", "one-dissent", "two-dissent",
