@@ -580,3 +580,10 @@ h3.dochead:first-child + h3.dochead { font-size: 1.12rem; font-weight: 400; }
                  font-family: inherit; }
 .docnotes .leafref { font-size: .76rem; white-space: nowrap;
                      font-family: -apple-system, sans-serif; }
+
+/* Where an engraved plate stands in a document. The edition publishes text, so
+   the plate is not reproduced; saying it is there costs a line and not saying
+   it leaves the reader with the explanation of a diagram they never see. */
+.platemark { margin: 1.4rem 0; padding: .7rem .9rem; background: var(--num-bg);
+             border-left: 3px solid var(--accent-light); border-radius: 3px;
+             font-size: .86rem; color: var(--text-muted); }

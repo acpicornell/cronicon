@@ -592,9 +592,34 @@ def document_page(con, doc) -> str:
     at = json.loads((PROJECT / "data" / "documents" / "sections.json").read_text())
     per_para = next((d.get("paragraph_leaves") or [] for d in at
                      if d["id"] == _id), [])
+    # The leaves of this document that carry no running text: the engraved
+    # plates. Leaf 151 is the genealogical tree of the kings of Mallorca and the
+    # section prints its `ESPLICACION` on the leaf after it, so a reader meets
+    # the explanation of a diagram the edition never mentions. This publishes
+    # text and not the plates, and saying where one stands costs a line.
+    plates = set(range(first, last + 1)) - {
+        p for (p,) in con.execute(
+            "SELECT DISTINCT pdf_page FROM word WHERE pdf_page BETWEEN ? AND ?",
+            [first, last]).fetchall()}
+
+    def platemark(pages) -> str:
+        run = ", ".join(str(p) for p in pages)
+        url = ("https://archive.org/details/CroniconMayoricenseCampaner/"
+               f"page/n{pages[0] - 2}/mode/2up")
+        one = len(pages) == 1
+        what = "una làmina" if one else "làmines"
+        which = "full" if one else "fulls"
+        return (f'<p class="platemark">Aquí hi ha {what} — {which} {run} — '
+                "que aquesta edició no reprodueix. "
+                f'<a href="{url}" rel="noopener">Mira-la al facsímil</a>.</p>')
+
     chunks, running = [], None
     for i, para in enumerate(paras):
         leaf = per_para[i] if i < len(per_para) else None
+        if leaf and running is not None and leaf > running + 1:
+            gap = [p for p in range(running + 1, leaf) if p in plates]
+            if gap:
+                chunks.append(platemark(gap))
         if leaf and leaf != running:
             if running is not None:
                 chunks.append(f'<p class="leafmark"><a href="'

@@ -320,6 +320,15 @@ words, 3.3% contested**, footnotes separated as in the chronicle and the
 certainty tiers carried through, because these are the leaves nothing has
 measured and a mostly-contested document must say so on its face.
 
+**Seven of the 23 documents run across an engraved plate**, and none of them
+said so. Section III prints the `ESPLICACION DEL ÁRBOL` on leaf 152 and the tree
+itself is the plate on 151, so a reader met the explanation of a diagram the
+edition never mentioned. This publishes text and not the plates; the page now
+names the leaf where one stands and links to it in the facsimile. The plates are
+found by asking which leaves of the range carry no word at all, which is the
+same fact `inventory.py` records as `plate_or_blank` and does not need to be
+listed twice.
+
 Two details that are not obvious:
 
 - **A section can start in the middle of a leaf.** `until` is the leaf *before*
