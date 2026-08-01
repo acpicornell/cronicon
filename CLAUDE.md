@@ -592,9 +592,9 @@ What the sweep says is left, none of it structural:
 |---|---:|---|
 | `orphan-note` | 68 | a note no notice calls — its reference was never read |
 | `glued` | 35 | `dive rsos`, `Novie mbre`, `ciu dad`, `alo dio` |
-| `doubled` | 23 | `año año`, `per per`, and Campaner's real `etc., etc.` |
+| `doubled` | 23 | informational: the book, not the reading — see below |
 | `dangling-note` | 18 | a `(n)` whose note was never separated |
-| `runt` | 16 | `47 3 •`, `Díjose F.` |
+| `runt` | 5 | `47 3 •`, `Díjose F.`, `ENERO . 1795-` |
 | `stray-tail` | 13 | text ending in a dash, usually a broken siglum |
 | `unlifted-siglum` | 3 | `Jn.—Br.`, `J. — P.`, `— — Cl. — Fl.` |
 | `bad-day` | 2 | `31 de junio`, `30 de febrero` |
@@ -638,6 +638,37 @@ Three things had to be got wrong first, and the third is the one worth keeping:
   alone on a line has no ascender or descender and measures like note type.
   Nine lines of apparatus are not worth a year of the chronicle, and the loss is
   silent where the gain is not.
+
+### Two checks that turned out to describe the book
+
+**`doubled` finds Campaner's page, not our reading of it.** Four of the
+doublings were cut from the facsimile and looked at — the one use of an image
+this project allows — and **all four are printed twice**: leaf 219 `«En dicho
+año año de 1488`, leaf 41 `de dicho año año, á quienes`, leaf 79 `generoso,
+Nuñis Nuñis, domicelo` (a man's name in a list of names), and leaf 88
+`Falleció el Reformador Felipe` / `Felipe de Boil`, the compositor setting a
+word twice across a line break. His errors stand and so do his printer's. The
+rest of the 23 are Campaner writing it twice on purpose: `etc., etc.`,
+`¡Vergüenza, vergüenza!`, `Aquí, aquí`, `«todos, todos`, `luégo luégo`.
+
+The check stays, because the other kind exists and this is what caught it:
+`Te-Deum Te-Deum` and `JUNIO JuNio` were one word the alignment gave two slots,
+and `spans.dedupe` drops those — on the evidence that **no** engine read the word
+twice. Here every engine did, on both scans.
+
+**`runt` was 16 and is 5.** Eleven were Campaner writing one line: `se levantó
+el entredicho.`, `Extraccion de Jurados.`, `Llegó el Obispo de Orihuela.` The
+five that are wreckage have 0, 3, 5, 7 and 7 letters against 12 for the shortest
+real notice, so the threshold is letters and not length, and nothing in the book
+sits in the gap.
+
+Two of those five are one class — `OCTUBRE 7 3 •` before `Octubre i.°`, `ENERO .
+1795-` before `Enero i.°` — a display heading the alignment wrote twice, badly
+the first time. **Extending `dedupe` to skip the junk between two copies was
+measured and refused**: it fires 95 times and nearly all of them are false, since
+`month_of` tolerates two wrong letters and turns `moro`, `cuyo`, `judío` into
+months. Adjacency is what makes that tolerance safe, and over a gap there is
+nothing holding it.
 
 `contested` was written and taken out. The entry text has been hyphen-stitched
 and re-joined, so it can only be matched to the leaf's words by the word itself,

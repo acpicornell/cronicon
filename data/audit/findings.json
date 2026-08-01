@@ -99,15 +99,6 @@
   "excerpt": "de órden del Gobernador prohibiendo la extraccion de la isla de vituallas y otras cosas, s"
  },
  {
-  "check": "runt",
-  "year": 1399,
-  "month": 4,
-  "day": 12,
-  "pdf_page": 111,
-  "detail": "se levantó el entredicho.",
-  "excerpt": "se levantó el entredicho."
- },
- {
   "check": "stray-tail",
   "year": 1399,
   "month": 7,
@@ -133,15 +124,6 @@
   "pdf_page": 172,
   "detail": "alo dio -> alodio",
   "excerpt": "(1) «El 8 de Mayo de 1406, se hizo público pregon en Mallorca que habiéndose formado ciert"
- },
- {
-  "check": "runt",
-  "year": 1408,
-  "month": 2,
-  "day": 17,
-  "pdf_page": 175,
-  "detail": "Se levantó el entredicho.",
-  "excerpt": "Se levantó el entredicho."
  },
  {
   "check": "dangling-note",
@@ -468,15 +450,6 @@
   "excerpt": "Real Pragmática autorizando el aumento en los derechos de la Molienda, Sisa de Carnes, Alf"
  },
  {
-  "check": "runt",
-  "year": 1611,
-  "month": 12,
-  "day": 24,
-  "pdf_page": 386,
-  "detail": "Juraron los dos ciudadanos.",
-  "excerpt": "Juraron los dos ciudadanos."
- },
- {
   "check": "unlifted-siglum",
   "year": 1619,
   "month": 2,
@@ -630,24 +603,6 @@
   "excerpt": "«Resolvió la ciudad una talla de 30000 libras, como queda dicho en 1652, para ocurrir á lo"
  },
  {
-  "check": "runt",
-  "year": 1660,
-  "month": 3,
-  "day": 19,
-  "pdf_page": 447,
-  "detail": "y el 26 se repitió.",
-  "excerpt": "y el 26 se repitió."
- },
- {
-  "check": "runt",
-  "year": 1660,
-  "month": 3,
-  "day": 28,
-  "pdf_page": 447,
-  "detail": "á media noche lo mismo.",
-  "excerpt": "á media noche lo mismo."
- },
- {
   "check": "bad-day",
   "year": 1671,
   "month": 6,
@@ -655,15 +610,6 @@
   "pdf_page": 454,
   "detail": "31 of junio",
   "excerpt": "El Doctor Vilasalo, de la Real Audiencia, y el Abogado Fiscal, de órden del Virey, fueron "
- },
- {
-  "check": "runt",
-  "year": 1672,
-  "month": 10,
-  "day": 22,
-  "pdf_page": 455,
-  "detail": "Fiestas de S. Pio V.",
-  "excerpt": "Fiestas de S. Pio V."
  },
  {
   "check": "glued",
@@ -711,15 +657,6 @@
   "excerpt": "Para celebrar la canonizacion de S. Juan Capistrano y S. Pascual Bailon corrióse un estafe"
  },
  {
-  "check": "runt",
-  "year": 1696,
-  "month": 5,
-  "day": 7,
-  "pdf_page": 475,
-  "detail": "Extraccion de Jurados.",
-  "excerpt": "Extraccion de Jurados."
- },
- {
   "check": "stray-tail",
   "year": 1700,
   "month": 11,
@@ -745,15 +682,6 @@
   "pdf_page": 516,
   "detail": "pú. blicos, -> públicos",
   "excerpt": "Grandes fiestas y regocijos pú. blicos, que duraron más de tres dias, con motivo de las no"
- },
- {
-  "check": "runt",
-  "year": 1713,
-  "month": 2,
-  "day": null,
-  "pdf_page": 519,
-  "detail": "JUNIO ordinaria de Jurados.",
-  "excerpt": "JUNIO ordinaria de Jurados."
  },
  {
   "check": "stray-tail",
@@ -918,24 +846,6 @@
   "excerpt": "Publicacion de la Real Pragmática aumentando el valor de la moneda de oro y de este metal "
  },
  {
-  "check": "runt",
-  "year": 1781,
-  "month": 10,
-  "day": 25,
-  "pdf_page": 611,
-  "detail": "fondeó en la bahía.",
-  "excerpt": "fondeó en la bahía."
- },
- {
-  "check": "runt",
-  "year": 1781,
-  "month": 11,
-  "day": null,
-  "pdf_page": 612,
-  "detail": "El correo verificó 10 viajes.",
-  "excerpt": "El correo verificó 10 viajes."
- },
- {
   "check": "glued",
   "year": 1782,
   "month": 3,
@@ -997,15 +907,6 @@
   "pdf_page": 619,
   "detail": "cuen. ta -> cuenta",
   "excerpt": "En este mes acudió el Ayuntamiento al Real Acuerdo pidiendo permiso para emplear dinero de"
- },
- {
-  "check": "runt",
-  "year": 1792,
-  "month": 7,
-  "day": 31,
-  "pdf_page": 623,
-  "detail": "Llegó el Obispo de Orihuela.",
-  "excerpt": "Llegó el Obispo de Orihuela."
  },
  {
   "check": "glued",

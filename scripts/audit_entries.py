@@ -51,11 +51,19 @@ DAYS_IN = {1: 31, 2: 29, 3: 31, 4: 30, 5: 31, 6: 30,
 WEIGHT = {
     "split": 5, "glued": 5, "runt": 4, "dangling-note": 3, "orphan-note": 3,
     "unlifted-siglum": 3, "stray-tail": 2, "leaf-backwards": 2, "bad-day": 2,
-    "doubled": 2, "bare-dash": 1, "month-backwards": 0, "long-undated": 0,
+    "bare-dash": 1, "month-backwards": 0, "long-undated": 0, "doubled": 0,
 }
-INFORMATIONAL = {"month-backwards", "long-undated"}
+INFORMATIONAL = {"month-backwards", "long-undated", "doubled"}
 
 WORD = re.compile(r"[a-záéíóúüñ]+")
+LETTERS = re.compile(r"[A-Za-zÀ-ÿ]")
+# A notice with fewer letters than this is not a short notice, it is wreckage.
+# Measured, not guessed: of the 16 the length test flagged, eleven were Campaner
+# writing one line -- `se levantó el entredicho.`, `Extraccion de Jurados.`,
+# `Llegó el Obispo de Orihuela.` -- and the five that were not have 0, 3, 5, 7
+# and 7 letters against 12 for the shortest real one. The gap between 7 and 12
+# is where the threshold goes, and nothing in the book sits in it.
+MIN_LETTERS = 10
 
 
 def vocabulary() -> Counter:
@@ -136,7 +144,7 @@ def check_entry(entry: dict, vocab: Counter, called: set) -> list[tuple[str, str
             found.append(("bare-dash", text[:60]))
         elif not entry.get("day") and not entry.get("month"):
             found.append(("split", text[:60]))
-    if len(text) < 30:
+    if len(LETTERS.findall(text)) < MIN_LETTERS:
         found.append(("runt", text))
     for broken in broken_words(text, vocab):
         found.append(("glued", broken))
@@ -160,6 +168,21 @@ def check_entry(entry: dict, vocab: Counter, called: set) -> list[tuple[str, str
     # readings of one word and need not agree: leaf 380 prints `Relacion
     # Relación Anónima`, which is one `Relacion` the alignment gave two slots
     # and the panel read differently in each.
+    #
+    # **Informational, because it finds the book.** Four of the doublings were
+    # cut from the facsimile and looked at, and all four are printed twice:
+    # leaf 219 `«En dicho año año de 1488`, leaf 41 `de dicho año año, á
+    # quienes`, leaf 79 `generoso, Nuñis Nuñis, domicelo` -- a man's name in a
+    # list of them -- and leaf 88 `Falleció el Reformador Felipe` / `Felipe de
+    # Boil`, the compositor setting a word twice across a line break. Campaner's
+    # errors stand, and so do his printer's. The rest of what this check finds
+    # is Campaner writing it twice on purpose: `etc., etc.`, `¡Vergüenza,
+    # vergüenza!`, `Aquí, aquí`, `«todos, todos`, `luégo luégo`.
+    #
+    # It stays because the *other* kind exists and this is what catches it:
+    # `Te-Deum Te-Deum` and `JUNIO JuNio` were one word the alignment gave two
+    # slots, and `spans.dedupe` drops those -- on the evidence that no engine
+    # read the word twice. Here every engine did.
     tokens = text.split()
     for a, b in zip(tokens, tokens[1:]):
         bare = fold(a)
