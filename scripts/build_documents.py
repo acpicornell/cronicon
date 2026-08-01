@@ -51,6 +51,7 @@ SECTIONS = OUT / "sections"
 # `Sentencia`, `Relacion`, `Memorial`, `Declaraciones`, `Toma de posesion`. That
 # is better evidence than any classification of ours, so it is surfaced as it
 # stands rather than mapped onto categories the book does not use.
+NUMERAL_HEAD = re.compile(r"[IVXLC]{1,6}\\.\\s+")
 ROMAN = re.compile(r"[IVXLCivxlc0-9 .,]{1,10}")
 GENRE = re.compile(r"^[«\"'\s]*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)")
 
@@ -223,6 +224,33 @@ def main() -> None:
             # the text keeps the winner. The heading is the one place the
             # recovered reading has to win, since it is what the reader sees
             # first and the panel's own evidence says the winner is wrong.
+            # The title is a heading whether or not the line under it was
+            # indented, and on two sections it was not: leaf 316's VI ran its
+            # title into 1 795 characters of body, and leaf 229's IV put the
+            # numeral, the title and the first sentence in one paragraph.
+            # `parse_documents.py` knows where the title ends -- it read it --
+            # so the break is taken from there, and only the first paragraph is
+            # touched, because rewriting the whole text collapses the paragraphs
+            # that stitch has just found. 21 of the 23 come out with the title
+            # standing free; sections 0225-IV and 0311-IV do not, and both have
+            # a title the panel read a little differently from the body it is
+            # glued to, so the prefix does not match. They are two, they are
+            # named here, and forcing them would mean cutting on a length rather
+            # than on evidence.
+            paras = text.split("\n\n")
+            flat = " ".join(section["title"].split())
+            for i, para in enumerate(paras[:2]):
+                one = " ".join(para.split())
+                lead = NUMERAL_HEAD.match(one)
+                body = one[lead.end():] if lead else one
+                if not flat or not body.startswith(flat):
+                    continue
+                cut = [lead.group(0).strip()] if lead else []
+                paras[i:i + 1] = [x for x in
+                                  cut + [flat, body[len(flat):].lstrip()] if x]
+                break
+            text = "\n\n".join(x for x in paras if x.strip()) + "\n"
+
             head, _, rest = text.partition("\n\n")
             if ROMAN.fullmatch(head.strip()) and head.strip("." ) != section["numeral"]:
                 text = f"{section['numeral']}.\n\n{rest}"
