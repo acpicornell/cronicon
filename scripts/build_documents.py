@@ -78,6 +78,75 @@ INDENT = 0.012
 SHORT = 0.88
 
 
+# A bare numeral hanging left of its column's text: the node number of the
+# genealogical plate, printed in the margin against the entry it belongs to.
+HANGING_NUMBER = re.compile(r"^\s*[0-9IilOo]{1,3}\s*$")
+HANGS = 0.015
+
+
+def hanging_numbers(lines: list[dict]) -> set[int]:
+    """Lines that are a node number standing in their column's margin.
+
+    Leaf 152 is the `ESPLICACION DEL ÁRBOL` of the genealogical plate on 151,
+    and it prints each entry's number out in the margin: `8  Casó con el
+    infante de Castilla D. Juan Manuel.` The number is its own line box with a
+    y a hair below the entry's first, so the reading order puts it *after* that
+    line and it lands in the middle of the sentence -- `Se dice es la que está
+    enterrada en la 9 Catedral.`, and once inside a hyphen join, `D. Fer17
+    rario`.
+
+    Sorting overlapping lines left to right would fix it and was measured
+    first: it reorders 74 of 650 leaves, two of which carry adjudications, so
+    it is not a change to make in passing. This is the same fact stated where
+    it is safe -- **one leaf in all 23 documents has a hanging numeral at all**
+    -- and the number opens its entry, which is what the book does with it.
+    """
+    out: set[int] = set()
+    by_column: dict[int, list[int]] = {}
+    # (the caller moves each of these in front of the line it overlaps)
+    for n, line in enumerate(lines):
+        if line["text"].strip():
+            by_column.setdefault(line.get("column", 0), []).append(n)
+    for rows in by_column.values():
+        base = statistics.median(lines[n]["bbox"][0] for n in rows)
+        out |= {n for n in rows
+                if HANGING_NUMBER.match(lines[n]["text"])
+                and lines[n]["bbox"][0] < base - HANGS}
+    return out
+
+
+# Leaves whose columns must be sorted by *printed line* rather than by the top
+# of each box. Two lines that overlap in y are one line of the page and belong
+# left to right; sorting by y0 alone puts a marginal number after the line it
+# stands against, because its box begins a hair lower.
+#
+# Leaf 152 -- the `ESPLICACION DEL ÁRBOL` of the genealogical plate -- is the
+# only leaf in all 23 documents with a number in its margin, and it came out as
+# `Se dice es la que está enterrada en la 9 Catedral.` and `D. Fer17 rario`.
+#
+# Named leaf by leaf on purpose. Applying it everywhere reorders 74 of the 650
+# engine-leaves, two of them carrying adjudications from the frozen sample, and
+# that is a measurement to act on with room to verify it -- not a side effect of
+# repairing one page.
+BY_PRINTED_LINE = {152}
+
+
+def by_printed_line(lines: list[dict]) -> list[dict]:
+    """Sort each column by printed line, then left to right within it."""
+    out: list[dict] = []
+    for column in sorted({line.get("column", 0) for line in lines}):
+        rows = [line for line in lines if line.get("column", 0) == column]
+        # From the lines that carry text: an empty line has a degenerate box
+        # and a handful of them move the median enough to change every key.
+        heights = [line["bbox"][3] - line["bbox"][1] for line in rows
+                   if line["text"].strip() and line["bbox"][3] > line["bbox"][1]]
+        step = (statistics.median(heights) if heights else 0.01) * 0.7
+        rows.sort(key=lambda line: (round(line["bbox"][1] / step),
+                                    line["bbox"][0]))
+        out += rows
+    return out
+
+
 def paragraph_breaks(lines: list[dict]) -> set[int]:
     """Which lines open a paragraph, by where the printer indented them.
 
@@ -136,7 +205,8 @@ def stitch(lines: list[dict]) -> tuple[str, list[int]]:
     the page. One link at the head of a seventeen-leaf section only says where
     it starts.
     """
-    opens = paragraph_breaks(lines)
+    opens = paragraph_breaks(lines) | hanging_numbers(lines)
+    hanging = hanging_numbers(lines)
     pieces: list[str] = []
     leaves: list[int] = []
     hyphen = False          # did the line before end mid-word?
@@ -144,6 +214,10 @@ def stitch(lines: list[dict]) -> tuple[str, list[int]]:
         text = line["text"].strip()
         if not text:
             continue
+        # The number opens its entry, so it never continues the line before it
+        # however that line ended.
+        if n in hanging:
+            hyphen = False
         if hyphen:
             pass            # the word continues: no separator at all
         elif n in opens and pieces:
@@ -189,6 +263,8 @@ def main() -> None:
                 for line in lines:
                     line["leaf"] = pdf_page
                 body, notes = split_notes(lines)
+                if pdf_page in BY_PRINTED_LINE:
+                    body = by_printed_line(body)
                 cache[pdf_page] = (body, gather_notes(notes) if notes else [])
         return cache[pdf_page]
 
