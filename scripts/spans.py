@@ -43,8 +43,24 @@ SPACE = re.compile(r"\s+")
 
 
 def fold(text: str) -> str:
-    """Compare two readings of the same ink, ignoring where the spaces fell."""
-    return DASHES.sub("—", SPACE.sub("", text))
+    """Compare two readings of the same ink, ignoring where the spaces fell.
+
+    **Case is not a disagreement here.** The thing this vote most often has to
+    recover is a display heading, which the book sets in small capitals, and a
+    small capital is exactly what the engines are least consistent about: leaf
+    632 prints `DICIEMBRE 24.—Se terminó…` and the panel returned
+    `DICIEMBRE`, `DICIEMBRE`, `DiciEMBRE` and two empty strings. Comparing
+    exactly, that is 2 against 2 and `revote` refuses to outvote the blanks, so
+    the month was dropped and the entry published as `24.—Se terminó…`. Folding
+    case makes it 3 against 2, which is what the page shows.
+
+    The string published is still the raw reading of an engine -- the fold
+    decides only which readings are *the same reading*. Measured over the whole
+    book: 438 spans -> 472, 1 514 words -> 1 667, and all 34 of the new ones are
+    a display month, a source siglum or a name in a source list -- `Diciembre
+    7.—Pagó`, `JULIO 24.—Fundicion`, `B. J. Octubre`, `—J. F.`
+    """
+    return DASHES.sub("—", SPACE.sub("", text)).casefold()
 
 
 def joined(loci: list[dict], engine: str) -> str:
@@ -335,6 +351,72 @@ def dedupe(groups: list[dict], panel: list[str]) -> list[dict]:
             groups[n]["text"] = " ".join(head[:-1] + [word])
             groups[n + 1].setdefault("printed", groups[n + 1]["text"])
             groups[n + 1]["text"] = " ".join(tail[1:])
+    return groups
+
+
+def strictly_a_month(text: str) -> str | None:
+    """The month this token misreads, when the token is *only* that month.
+
+    `month_of` also matches a month with something stuck to it -- `Abril.—B.`,
+    `-G. T. OCTUBRE`, `B. J. (1) NOVIEMBRE`, `1355. Marzo` -- and 13 of the 103
+    slots this rule would otherwise touch are of that kind. Replacing one of
+    those with the plain month name deletes a siglum, a footnote reference or a
+    year: the same error the span vote is written to avoid one level up, where
+    reading less is not a vote against. So the token has to be the same length
+    as the month, letter for letter, and differ in at most two of them.
+    """
+    if not text or SPACE.search(text.strip()):
+        return None
+    import unicodedata
+    bare = "".join(c for c in unicodedata.normalize("NFD", text)
+                   if unicodedata.category(c) != "Mn").lower()
+    bare = WORDISH.sub("", bare)
+    if bare in MONTHS:
+        return None                      # already right; nothing to recover
+    for name in MONTHS:
+        if len(bare) == len(name) and sum(
+                x != y for x, y in zip(bare, name)) <= 2:
+            return name
+    return None
+
+
+def months(groups: list[dict], panel: list[str]) -> list[dict]:
+    """Take a display month heading from the panel where the winner mangled it.
+
+    `Mavo 20.`, `Acosro 3.`, `OcruBRE 28.`, `Jusio 7.`, `FEsRERO 6.`, `ENBRO`.
+    A month set in display capitals is the class the engines read worst -- it is
+    five or six letters of a face that appears nowhere else on the leaf -- and
+    the vote regularly returns the worst of the eight readings, exactly as it
+    does for the year headings. This is the same rule the years already get:
+    *ask the panel, not the winner*, and publish a string an engine produced.
+
+    It fires on **90 slots over 89 leaves**, and never invents: the winner has
+    to be a misreading of one month and nothing else (`strictly_a_month`), a day
+    marker has to follow it so the slot is a heading and not prose, and some
+    engine has to have read that month plainly. Where no engine did, the
+    winner stands and goes to review.
+    """
+    for n, group in enumerate(groups):
+        month = strictly_a_month(group["text"])
+        if month is None or group.get("settled"):
+            continue
+        after = groups[n + 1]["text"] if n + 1 < len(groups) else ""
+        if not DAY_MARKER.match(after):
+            continue
+        counts: Counter = Counter(
+            read
+            for engine in panel
+            for locus in group["loci"]
+            for read in str(locus["variants"].get(engine, "")).split()
+            if WORDISH.sub("", read.lower()) in MONTHS
+            and month_of(read) == month)
+        if not counts:
+            continue
+        # Most engines first; then the fully capitalised form, because the book
+        # sets these in small capitals throughout -- checked on the facsimile at
+        # leaves 605 and 627 -- and `data/documents` renders small capitals as
+        # capitals under the same finding.
+        group["text"] = max(counts, key=lambda r: (counts[r], r.isupper(), r))
     return groups
 
 

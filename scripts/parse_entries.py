@@ -67,7 +67,14 @@ FIRST_YEAR, LAST_YEAR = 1229, 1800
 # the reading is only accepted when the panel independently supports the year.
 DIGIT_LOOKALIKE = str.maketrans({"I": "1", "l": "1", "i": "1", "|": "1", "/": "1",
                                  "J": "1", "Í": "1", "¡": "1", "!": "1",
-                                 "O": "0", "o": "0", "S": "5"})
+                                 "O": "0", "o": "0", "S": "5", "T": "7"})
+# `T` for `7` is the newest of these and was measured before being added, the
+# way `S` for `5` should have been: over all 614 leaves it changes the panel's
+# verdict on exactly **two** lines. One is the fix -- leaf 634's heading, whose
+# winner collapsed to `1` while three engines read `1751.`, `I75I.` and `ITSI.`
+# -- and the other is a single stray vote on `Pedro Vidal.` which never comes
+# near the three the rule requires. A lookalike table is only admissible while
+# it can show it opens no door but the one it was written for.
 # Punctuation the printer or the engines hang off a heading: `1282.»`, `1337-`,
 # `1353•`, `i 501 .`.
 HEADING_NOISE = re.compile(r"[\s.,;:\-—‐–_•*'’‘\"«»()\[\]ºª]")
@@ -639,7 +646,7 @@ def page_lines(path: Path) -> list[dict]:
     leaf = json.loads(path.read_text())
     grouped: dict[tuple, list[dict]] = defaultdict(list)
     order: list[tuple] = []
-    for locus in layout.drop_signature(leaf["loci"]):
+    for locus in layout.drop_folio(layout.drop_signature(leaf["loci"])):
         key = tuple(locus["line_bbox"])
         if key not in grouped:
             order.append(key)
@@ -656,7 +663,8 @@ def page_lines(path: Path) -> list[dict]:
                                   leaf["panel"], [None] * len(grouped[key]),
                                   None, joins)
                 for key in order}
-    spans.dedupe([g for key in order for g in per_line[key]], leaf["panel"])
+    spans.months(spans.dedupe([g for key in order for g in per_line[key]],
+                              leaf["panel"]), leaf["panel"])
 
     # Which column each line is in, by the same clustering the whole project
     # reads leaves with. Only the footnotes need it -- their numbering restarts

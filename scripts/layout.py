@@ -18,6 +18,7 @@ is what separates a real column break from a paragraph indent.
 from __future__ import annotations
 
 import re
+import unicodedata
 from dataclasses import dataclass
 
 # Tolerances in normalised page-width units (a two-column body leaf is ~567 pt
@@ -70,6 +71,88 @@ def is_signature(text: str, line_bbox) -> bool:
     """Is this line the gathering signature? Ask only of a leaf's last line."""
     return bool(line_bbox[1] > SIGNATURE_BAND and line_bbox[0] > SIGNATURE_LEFT
                 and SIGNATURE.match(text.strip()))
+
+
+# The head of the leaf carries the folio number, and `consensus.py` drops the
+# running head *by content* -- the line has to say `CRONICON` or `MAYORICENSE.`
+# So where the engines cut the head into two line boxes, the words are dropped
+# and **the number survives**, and being first in the reading order it glues
+# onto whatever opens the leaf: leaf 43 published `16 que el estado de la
+# iglesia de…`. The appendices are worse, because there Campaner prints the
+# number and nothing else, so no rule anywhere had ever seen them.
+#
+# What proves these are folios and not text is the same kind of arithmetic that
+# proves the signatures: **all 109 of them state `pdf_page - 27`, and each sits
+# on the side of the leaf its parity requires** -- an even printed page at the
+# left, an odd one at the right -- with no exception in the 614 leaves of text.
+# The fifteen other bare numbers in the band are all four digits and all year
+# headings at the top of a column (`1497.`, `1700.`, `1788.`), which is why the
+# rule is written for one to three digits and checks the number it reads.
+#
+# Dropped at assembly, like the signature and for the same reason: removing a
+# token in `consensus.py` renumbers the leaf and the frozen sample is keyed by
+# index as well as by box.
+FOLIO_BAND = 0.10
+FOLIO_OFFSET = 27          # printed page = pdf_page - 27, over leaves 43-637
+FOLIO = re.compile(r"^\s*([0-9IilOo]{1,3})\s*[.,]?\s*$")
+FOLIO_LOOKALIKE = str.maketrans({"I": "1", "i": "1", "l": "1",
+                                 "O": "0", "o": "0"})
+
+
+def is_folio(text: str, line_bbox, pdf_page: int) -> bool:
+    """Is this line the printed page number at the head of the leaf?"""
+    match = FOLIO.match(text.strip())
+    if not match or line_bbox[1] >= FOLIO_BAND:
+        return False
+    digits = match.group(1).translate(FOLIO_LOOKALIKE)
+    printed = pdf_page - FOLIO_OFFSET
+    if not digits.isdigit() or int(digits) != printed:
+        return False
+    # A verso's number stands at the left of the measure and a recto's at the
+    # right. Requiring it costs nothing -- all 109 agree -- and it is what keeps
+    # a stray figure at the top of a table column from being read as a folio.
+    return (line_bbox[0] < 0.5) == (printed % 2 == 0)
+
+
+# The other half of the head, for the leaves where `consensus.py`'s
+# content-based drop does not recognise it. It matches on the word and not on
+# the string, because six of the twelve survivors are `MAYORISENCE.` -- the
+# engines swapping the `C` and the `S` -- and one is `MAYORISENCE.121` with the
+# folio run into it. 12 leaves in the book, 11 of which this removes; the
+# twelfth is leaf 98's `MAYORICENSE. sos`, where the trailing letters are wreck-
+# age off the defective scan rather than part of the head, and are left to the
+# review queue rather than guessed at.
+HEAD_WORDS = ("MAYORICENSE", "CRONICON", "INTRODUCCION")
+HEAD_SLACK = 2
+
+
+def is_running_head(text: str) -> bool:
+    """Is this line the running head, however the engines spelt it?"""
+    letters = "".join(
+        c for c in unicodedata.normalize("NFD", text.upper())
+        if "A" <= c <= "Z")
+    if len(letters) < 6:
+        return False
+    return any(len(letters) == len(word)
+               and sum(a != b for a, b in zip(letters, word)) <= HEAD_SLACK
+               for word in HEAD_WORDS)
+
+
+def drop_folio(loci: list[dict]) -> list[dict]:
+    """`loci` without the head of the leaf: its folio number and its title."""
+    if not loci:
+        return loci
+    pdf_page = loci[0]["pdf_page"]
+    drop: set[tuple] = set()
+    for locus in loci:
+        box = tuple(locus["line_bbox"])
+        if box[1] >= FOLIO_BAND or box in drop:
+            continue
+        line = [x for x in loci if tuple(x["line_bbox"]) == box]
+        text = " ".join(x["winner"] for x in line if x["winner"]).strip()
+        if is_folio(text, box, pdf_page) or is_running_head(text):
+            drop.add(box)
+    return [x for x in loci if tuple(x["line_bbox"]) not in drop]
 
 
 def drop_signature(loci: list[dict]) -> list[dict]:

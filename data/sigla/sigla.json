@@ -5,7 +5,7 @@
    "siglum": "A.",
    "expansion": "Anónimo.",
    "source": "adjudicated",
-   "attributions": 41
+   "attributions": 42
   },
   {
    "siglum": "A. G.",
@@ -38,7 +38,7 @@
    "siglum": "B. J.",
    "expansion": "Bartolomé Jaume.",
    "source": "parsed",
-   "attributions": 382,
+   "attributions": 387,
    "who": {
     "name": "Bartolomé Jaume",
     "life": "1764–1844",
@@ -133,7 +133,7 @@
    "siglum": "G. F.",
    "expansion": "Gabriel Ferrer.",
    "source": "parsed",
-   "attributions": 212,
+   "attributions": 213,
    "who": {
     "name": "Gabriel Ferrer",
     "life": "nascut el 24 d'octubre de 1693",
@@ -148,7 +148,7 @@
    "siglum": "G. T.",
    "expansion": "Guillermo Terrassa.",
    "source": "parsed",
-   "attributions": 756,
+   "attributions": 760,
    "who": {
     "name": "Guillermo Terrassa",
     "life": "1709–1778",
@@ -163,7 +163,7 @@
    "siglum": "G. V.",
    "expansion": "Guillermo Vidal.",
    "source": "parsed",
-   "attributions": 307,
+   "attributions": 309,
    "who": {
     "name": "Guillermo Vidal",
     "role": "doctor en tots dos drets",
@@ -198,7 +198,7 @@
    "siglum": "J. F.",
    "expansion": "Juan Fé.",
    "source": "adjudicated",
-   "attributions": 192,
+   "attributions": 193,
    "who": {
     "name": "Juan Fé",
     "role": "custos de la Seu de Mallorca",
@@ -298,7 +298,7 @@
    "siglum": "L. C.",
    "expansion": "Lorenzo Coch.",
    "source": "parsed",
-   "attributions": 11,
+   "attributions": 12,
    "who": {
     "name": "Lorenzo Coch",
     "role": "prevere i vicari de Mancor",
@@ -325,7 +325,7 @@
    "siglum": "M. M.",
    "expansion": "Matías Mut.",
    "source": "adjudicated",
-   "attributions": 334,
+   "attributions": 336,
    "who": {
     "name": "Matías Mut",
     "life": "nascut a Llucmajor el 1639",
@@ -340,7 +340,7 @@
    "siglum": "M. S.",
    "expansion": "Mateo Salcet.",
    "source": "parsed",
-   "attributions": 98,
+   "attributions": 99,
    "who": {
     "name": "Mateo Salcet",
     "role": "notari",
@@ -398,7 +398,7 @@
  "unglossed": [
   {
    "siglum": "L. V.",
-   "attributions": 108,
+   "attributions": 109,
    "who": {
     "name": "Luis de Villafranca",
     "life": "nascut a Vilafranca el 4 de novembre de 1770",
@@ -434,12 +434,12 @@
    "attributions": 4
   },
   {
-   "siglum": "G.",
+   "siglum": "Fl.",
    "attributions": 3
   },
   {
-   "siglum": "Fl.",
-   "attributions": 3
+   "siglum": "G.",
+   "attributions": 2
   },
   {
    "siglum": "T.",
@@ -478,12 +478,12 @@
   {
    "century": "XVII",
    "pdf_page": 380,
-   "sources": "Anales, etc., por TERRASA.—Noticias coleccionadas por el Custos de la Seo, Juan Fé.— extraidas de un libro de anotaciones y advertencias por Antonio Fé.— Id. de un cuaderno de cuentas de FRANCISCO Sanceloni diarias, etc., por JAIME PujoL.—Noticias sacadas de las que escribió JAIME ViauET.— Llibre de algunas cosas de la ciutat, etc. por JUAN ANTONIO MATEU.—Llibre de Memorias de cosas notables, etc., por Cristóbal Fiol. extraidas de unas Memorias Diarias de D. Jerónimo AGUSTIN ALEMANY.—Id. del diario M. S. de MATIAs Mut.*— Cronicon Apéndice, etc., por TALLADAs.—Noticias sueltas por Bo ver.— Relación del Estafermo que se corrió en Mallorca por D. Vicente Mut.—Almanaques de las islas Baleares por D. Tomás Aguiló.—Relacion Relación Anónima del Auto General de fé, celebrado en 1675,—etc., etc."
+   "sources": "Anales, etc., por TERRASA.—Noticias coleccionadas por el Custos de la Seo, Juan Fé.— extraidas de un libro de anotaciones y advertencias por Antonio Fé.— Id. de un cuaderno de cuentas de Francisco Sanceloni .—Memorias diarias, etc., por JAIME PujoL.—Noticias sacadas de las que escribió JAIME ViauET.— Llibre de algunas cosas de la ciutat, etc. por JUAN ANTONIO MATEU.— Llibre de Memorias de cosas notables, etc., por CRISTÓBAL FioL.—Noticias extraidas de unas Memorias Diarias de D. Jerónimo AGUSTIN ALEMANY.—Id. del diario M. S. de MATIAs Mut.*— Cronicon Apéndice, etc., por TALLADAs.—Noticias sueltas por Bo ver.— Relación del Estafermo que se corrió en Mallorca por D. Vicente Mut.—Almanaques de las islas Baleares por D. Tomás Aguiló.—Relacion Relación Anónima del Auto General de fé, celebrado en 1675,—etc., etc."
   },
   {
    "century": "XVIII",
    "pdf_page": 506,
-   "sources": "i)—Llibre de Memorias de cosas notables, etc., por Cristóbal FIOL.—Noticias extraidas de las Memorias diarias de J. A. Alemany.— Id. del Diario MS. de MATíAs Mur.—Ocios del Dr. en ambos derechos D. GUILLERMO ViDAL etc. (2)—Sucesos de Mallorca en los años de 1706 y 1715 por Agustín DE TORRELLA. —Diario de Torrell GELABERT.—Noticias de varios años por el MAESTRO DE CEREMONIAS DE LA CIUDAD.— Anotaciones mensuales del Rvdo. Lorenzo Coch.— Memorias diarias de N. Cabellas.— Llibre de cosas memorables que han succeit en Mallorca etc., por FERRER DE ST. de algunas curiositats escritas, comensant lo any 1740, etc., por TomAs Amorós. (3)—Noticiario de las cosas más notables sucedidas en Mallorca, etc. por GABRIEL FERRER. — Memoria y relació de lo que succei en esta isla sobre la esterilidad de blat, etc., por CAYETANO FERRER.—Diario de varios acontecimientos que sucedieron en Mallorca etc., por el P. CAYETANO DE MALLORCA.—Noticias diarias por D. BUENAVENTURA SERRA.—Apuntes del Doctor D. José Barberí, recogidos por D. JoAQuIN M. Bover.— Noticias puestas á continuacion de los trabajos de Gabriel Ferrer y el P. Cayetano de Mallorca, por el P. LUIS DE VILLANUEva. (i"
+   "sources": "i)—Llibre de Memorias de cosas notables, etc., por Cristóbal FIOL.—Noticias extraidas de las Memorias diarias de J. A. Alemany.— Id. del Diario MS. de MATíAs Mur.—Ocios del Dr. en ambos derechos D. GUILLERMO ViDAL etc. (2)—Sucesos de Mallorca en los años de 1706 y 1715 por Agustín DE TORRELLA. —Diario de Torrell GELABERT.—Noticias de varios años por el MAESTRO DE CEREMONIAS DE LA CIUDAD.— Anotaciones mensuales del Rvdo. Lorenzo Coch.— Memorias diarias de N. Cabellas.— Llibre de cosas memorables que han succeit en Mallorca etc., por NIcOLÁs FERRER DE ST. JoRD1.—Relació de algunas curiositats escritas, comensant lo any 1740, etc., por TomAs Amorós. (3)—Noticiario de las cosas más notables sucedidas en Mallorca, etc. por GABRIEL FERRER. — Memoria y relació de lo que succei en esta isla sobre la esterilidad de blat, etc., por CAYETANO FERRER.—Diario de varios acontecimientos que sucedieron en Mallorca etc., por el P. CAYETANO DE MALLORCA.—Noticias diarias por D. BUENAVENTURA SERRA.—Apuntes del Doctor D. José Barberí, recogidos por D. JoAQuIN M. Bover.— Noticias puestas á continuacion de los trabajos de Gabriel Ferrer y el P. Cayetano de Mallorca, por el P. LUIS DE VILLANUEva. (i"
   }
  ]
 }

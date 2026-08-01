@@ -794,7 +794,6 @@
 {"century": 15, "year": 1488, "seat": 3, "name": "Simon Des-Camps.", "tier": "two-dissent", "pdf_page": 228, "printed": "201"}
 {"century": 15, "year": 1488, "seat": 4, "name": "Juan Bartolomé Perera.", "tier": "two-dissent", "pdf_page": 228, "printed": "201"}
 {"century": 15, "year": 1488, "seat": 5, "name": "Gabriel Molins, fuster.", "tier": "two-dissent", "pdf_page": 228, "printed": "201"}
-{"century": 15, "year": 1488, "seat": 6, "name": "201", "tier": "two-dissent", "pdf_page": 228, "printed": "201"}
 {"century": 15, "year": 1489, "seat": 1, "name": "Jaime Juan Zaforteza.", "tier": "contested", "pdf_page": 228, "printed": "201"}
 {"century": 15, "year": 1489, "seat": 2, "name": "Juan de Salas.", "tier": "one-dissent", "pdf_page": 228, "printed": "201"}
 {"century": 15, "year": 1489, "seat": 3, "name": "Bernardo Nicolau.", "tier": "one-dissent", "pdf_page": 228, "printed": "201"}
@@ -1304,8 +1303,8 @@
 {"century": 16, "year": 1590, "seat": 2, "name": "Gaspar Rossinyol.", "tier": "contested", "pdf_page": 314, "printed": null}
 {"century": 16, "year": 1590, "seat": 3, "name": "Berenguer Vida.", "tier": "two-dissent", "pdf_page": 314, "printed": null}
 {"century": 16, "year": 1590, "seat": 4, "name": "Miguel Carau.", "tier": "two-dissent", "pdf_page": 314, "printed": null}
-{"century": 16, "year": 1590, "seat": 5, "name": "287", "tier": "unanimous", "pdf_page": 314, "printed": null}
-{"century": 16, "year": 1590, "seat": 6, "name": "Gabriel Ferragut.", "tier": "unanimous", "pdf_page": 314, "printed": null}
+{"century": 16, "year": 1590, "seat": 5, "name": "Gabriel Ferragut.", "tier": "unanimous", "pdf_page": 314, "printed": null}
+{"century": 16, "year": 1590, "seat": 6, "name": "Antonio Planas, sabater.", "tier": "unanimous", "pdf_page": 314, "printed": null}
 {"century": 16, "year": 1591, "seat": 1, "name": "Juan Bautista Despuig.", "tier": "contested", "pdf_page": 314, "printed": null}
 {"century": 16, "year": 1591, "seat": 2, "name": "Ramon Gual de Canet.", "tier": "two-dissent", "pdf_page": 314, "printed": null}
 {"century": 16, "year": 1591, "seat": 3, "name": "Juan Antonio Truyols.", "tier": "contested", "pdf_page": 314, "printed": null}

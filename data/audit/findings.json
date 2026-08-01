@@ -72,15 +72,6 @@
   "excerpt": "Real órden, dada en Tarrago. na, disponiendo que los familiares de los Gobernadores de Mal"
  },
  {
-  "check": "dangling-note",
-  "year": 1374,
-  "month": 10,
-  "day": 7,
-  "pdf_page": 97,
-  "detail": "(1) in the text, no note",
-  "excerpt": "Fueron ahorcados en las plazas de la capital catorce esclavos sarracenos, tártaros y neófi"
- },
- {
   "check": "doubled",
   "year": 1374,
   "month": 10,
@@ -88,6 +79,15 @@
   "pdf_page": 97,
   "detail": "del del",
   "excerpt": "Fueron ahorcados en las plazas de la capital catorce esclavos sarracenos, tártaros y neófi"
+ },
+ {
+  "check": "dangling-note",
+  "year": 1374,
+  "month": 11,
+  "day": 10,
+  "pdf_page": 97,
+  "detail": "(1) in the text, no note",
+  "excerpt": "«Sabiendo elRey D. Pedro IV de Aragon que el virey de Mallorca D. Olfo de Proxida y los Ju"
  },
  {
   "check": "split",
@@ -119,7 +119,7 @@
  {
   "check": "glued",
   "year": 1406,
-  "month": null,
+  "month": 5,
   "day": 8,
   "pdf_page": 172,
   "detail": "alo dio -> alodio",
@@ -182,20 +182,20 @@
  {
   "check": "doubled",
   "year": 1452,
-  "month": 8,
-  "day": 18,
+  "month": 11,
+  "day": 22,
   "pdf_page": 196,
   "detail": "per per",
-  "excerpt": "Pregon de Francisco de Erill y Arnaldo Vilademany, Lugartenientes y Regentes la Gobernacio"
+  "excerpt": "Pregon ordenando una reseña de caballos y armas en la plaza delante del Castillo Real, jur"
  },
  {
   "check": "doubled",
   "year": 1452,
-  "month": 8,
-  "day": 18,
+  "month": 11,
+  "day": 22,
   "pdf_page": 196,
   "detail": "etc., etc.",
-  "excerpt": "Pregon de Francisco de Erill y Arnaldo Vilademany, Lugartenientes y Regentes la Gobernacio"
+  "excerpt": "Pregon ordenando una reseña de caballos y armas en la plaza delante del Castillo Real, jur"
  },
  {
   "check": "glued",
@@ -655,6 +655,24 @@
   "pdf_page": 547,
   "detail": "-Fué ahorcado el famoso bandido apodado Rolget: su cabeza fu",
   "excerpt": "-Fué ahorcado el famoso bandido apodado Rolget: su cabeza fué llevada á Alaró, de donde er"
+ },
+ {
+  "check": "split",
+  "year": 1741,
+  "month": null,
+  "day": null,
+  "pdf_page": 557,
+  "detail": ",",
+  "excerpt": ","
+ },
+ {
+  "check": "runt",
+  "year": 1741,
+  "month": null,
+  "day": null,
+  "pdf_page": 557,
+  "detail": ",",
+  "excerpt": ","
  },
  {
   "check": "glued",
@@ -1436,7 +1454,7 @@
   "month": null,
   "day": null,
   "pdf_page": 84,
-  "detail": "1967 chars",
+  "detail": "1964 chars",
   "excerpt": "«El dia 14 de Marzo de 1345, el Rey de Aragon remitió embajadores al Smo. Pontífice, para "
  },
  {
@@ -1472,7 +1490,7 @@
   "month": 4,
   "day": 9,
   "pdf_page": 97,
-  "detail": "octubre then abril",
+  "detail": "noviembre then abril",
   "excerpt": "Falleció el Obispo mallorquin Antonio de Galiana; se enterró su cadáver en la capilla de l"
  },
  {
@@ -1492,15 +1510,6 @@
   "pdf_page": 106,
   "detail": "633 chars",
   "excerpt": "Con motivo del saqueo de la judería de Mallorca, dispuso la Reina Violante que los habitan"
- },
- {
-  "check": "long-undated",
-  "year": 1406,
-  "month": null,
-  "day": 8,
-  "pdf_page": 172,
-  "detail": "6470 chars",
-  "excerpt": "(1) «El 8 de Mayo de 1406, se hizo público pregon en Mallorca que habiéndose formado ciert"
  },
  {
   "check": "long-undated",
@@ -1625,7 +1634,7 @@
   "month": null,
   "day": null,
   "pdf_page": 209,
-  "detail": "6955 chars",
+  "detail": "6951 chars",
   "excerpt": "«Por estos tiempos hubo entre el dicho Gobernador y los Vicarios Generales del Obispo entó"
  },
  {
@@ -1679,7 +1688,7 @@
   "month": null,
   "day": null,
   "pdf_page": 250,
-  "detail": "440 chars",
+  "detail": "436 chars",
   "excerpt": "En este año los corsarios moros penetraron en la bahía de Palma y apresaron algunos barcos"
  },
  {

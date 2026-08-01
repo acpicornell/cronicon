@@ -53,6 +53,8 @@ from pathlib import Path
 
 import duckdb
 
+import parse_entries
+
 PROJECT = Path(__file__).resolve().parent.parent
 WEB = PROJECT / "web"
 DB = PROJECT / "db" / "cronicon.duckdb"
@@ -576,10 +578,34 @@ HEAD_LINES = 3
 # first sentence of the year it opens -- `1637. A 30 Sctembre 1637 prengué
 # possesió Don Alonso de Cardona…`. Either way it is a heading and not prose,
 # and the documents that are diaries read as a wall without it.
-DOC_YEAR = re.compile(r"^\s*(1[2-8]\d\d)\s*[.,]\s*(?=$|[«\"A-ZÁÉÍÓÚÑ])")
+DOC_YEAR = re.compile(r"^\s*(1[2-8]\d\d)\s*[.,]?\s*(?=$|[«\"A-ZÁÉÍÓÚÑ])")
 
 
-def document_page(con, doc) -> str:
+def sourced(paragraph: str, sigla: dict[str, str],
+            doubtful: dict[str, list[str]]) -> str:
+    """A document paragraph with its source attribution set as chips.
+
+    The diaries Campaner reprints credit their manuscript exactly as the
+    chronicle does -- `…y ya se cantaron vísperas en el coro.—M. M.` -- and 132
+    of these paragraphs end in one. On a year page that abbreviation is a button
+    that gives up the name; here it was a pair of initials in the middle of a
+    sentence, which is the state the whole `sigla` machinery exists to fix.
+
+    Lifting it also settles the dash. The engines return the mark before a
+    siglum as `—`, `-`, `- ` or nothing at all, so the same attribution was
+    printed four ways down one page; the chip carries its own separator, so what
+    the reader sees no longer depends on which engine won a punctuation slot.
+    The text keeps the panel's reading -- `data/documents/sections/*.txt` and
+    the database are untouched. This is how the page is set, not what it says.
+    """
+    body, sources = parse_entries.lift_sigla(paragraph)
+    if not sources:
+        return mark_doubt(paragraph, doubtful)
+    return (mark_doubt(body, doubtful) + '<span class="attrib">'
+            + "".join(cite(s, sigla) for s in sources) + "</span>")
+
+
+def document_page(con, doc, sigla: dict[str, str]) -> str:
     """One of the 23 pieces Campaner reprints in full.
 
     These are 21% of the edition and had nowhere to live: the index listed them
@@ -635,6 +661,19 @@ def document_page(con, doc) -> str:
                 "</figure>")
         return "".join(out)
 
+    # Campaner numbers the pieces inside two of these sections -- the 21 letters
+    # of Gilaberto de Centellas and the 21 of the `Nota de varias ejecuciones` --
+    # and that numbering is the only thing that delimits one letter from the
+    # next, since the salutation `Molt alt e molt poderos princep e Senyor`
+    # recurs inside a letter as readily as at its head. Without it the section
+    # is fourteen leaves of unbroken prose. Where the number stands alone in the
+    # text it becomes the heading; where the alignment put a word of the
+    # salutation in its slot the heading is set above the paragraph instead, so
+    # that no word is dropped to print a number.
+    pieces = {p: n for n, p in con.execute(
+        "SELECT number, paragraph FROM piece WHERE document_id = ? "
+        "ORDER BY number", [_id]).fetchall()}
+
     chunks, running = [], None
     for i, para in enumerate(paras):
         leaf = per_para[i] if i < len(per_para) else None
@@ -671,14 +710,20 @@ def document_page(con, doc) -> str:
             chunks.append(f'<h3 class="docyear">{year.group(1)}</h3>')
             rest = flat[year.end():].strip()
             if rest:
-                chunks.append(f'<p id="p{i}">{mark_doubt(rest, doubtful)}</p>')
+                chunks.append(f'<p id="p{i}">{sourced(rest, sigla, doubtful)}</p>')
             continue
+        if i in pieces:
+            chunks.append(f'<h3 class="piece" id="n{pieces[i]}">'
+                          f'<span>{pieces[i]}</span></h3>')
+            if not re.search(r"[A-Za-zÀ-ÖØ-öø-ÿ]", para):
+                continue      # the paragraph *is* the number: it is the heading
         tag = ("h3" if i < HEAD_LINES and len(para) < 260 and
                (i == 0 or flat == " ".join(title.split())
                 or para.startswith(("«", "(", '"')) or para.isupper())
                else "p")
         chunks.append(f'<{tag} id="p{i}" class="{"dochead" if tag == "h3" else ""}">'
-                      f"{mark_doubt(para, doubtful)}</{tag}>")
+                      f"{sourced(para, sigla, doubtful) if tag == 'p' else mark_doubt(para, doubtful)}"
+                      f"</{tag}>")
     # …and the plates that stand after the last paragraph, which no gap between
     # two paragraphs can reach: section II of the 18th-century block ends with
     # eight of them.
@@ -692,6 +737,24 @@ def document_page(con, doc) -> str:
                       f'/page/n{running - 2}/mode/2up" rel="noopener">'
                       f"full {running} al facsímil</a></p>")
     body = "".join(chunks)
+    # A jump list, and a statement of what is missing from it. Two of Centellas'
+    # twenty-one numbers were not recovered -- leaf 134's is on the page and no
+    # engine returned it at all -- and a reader counting the letters is owed
+    # that rather than left to wonder.
+    index = ""
+    if pieces:
+        got = sorted(pieces.values())
+        gaps = [n for n in range(1, got[-1] + 1) if n not in set(got)]
+        index = ('<nav class="pieces"><h2>Peces numerades</h2><ol>'
+                 + "".join(f'<li><a href="#n{n}">{n}</a></li>' for n in got)
+                 + "</ol>"
+                 + (f"<p class=\"gap\">Campaner numera {got[-1]} peces; "
+                    f"{'el número' if len(gaps) == 1 else 'els números'} "
+                    + ", ".join(str(n) for n in gaps)
+                    + " no s'ha pogut llegir en cap dels vuit motors, "
+                    "així que la peça comença on ho fa el text.</p>"
+                    if gaps else "")
+                 + "</nav>")
     # Campaner's own apparatus, set smaller as the book sets it. 62 notes come
     # off these leaves and none of them reached a page: they were separated
     # from the body -- which is why the documents read as prose -- and then
@@ -729,6 +792,7 @@ def document_page(con, doc) -> str:
      <strong>un mot errat de cada 96</strong>, contra un de cada 706 a la
      crònica. Són en català medieval i llatí, i els reconeixedors hi van pitjor.
      <a href="../../metode.html">Com se sap?</a></p>
+  {index}
   <div class="doc">{body}</div>
   {docnotes}
 </main>
@@ -1540,7 +1604,7 @@ def main() -> None:
     for doc in documents:
         target = WEB / "documents" / doc[0]
         target.mkdir(exist_ok=True)
-        (target / "index.html").write_text(document_page(con, doc),
+        (target / "index.html").write_text(document_page(con, doc, sigla),
                                            encoding="utf-8")
 
     # The searchable book. Two arrays, positional rather than keyed, because the

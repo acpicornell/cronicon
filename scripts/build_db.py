@@ -198,6 +198,11 @@ def load_documents(con: duckdb.DuckDBPyConnection) -> None:
     con.executemany("INSERT INTO document VALUES (?,?,?,?,?,?,?,?,?,?,?)", rows)
     print(f"  document      {len(rows):>8,}")
 
+    pieces = [(s["id"], p["number"], p["paragraph"], p["pdf_page"])
+              for s in sections for p in s.get("pieces", [])]
+    con.executemany("INSERT INTO piece VALUES (?,?,?,?)", pieces)
+    print(f"  piece         {len(pieces):>8,}")
+
 
 def load_sigla(con: duckdb.DuckDBPyConnection) -> None:
     """The glossary, plus the dossier the introduction gives for each source.

@@ -94,7 +94,7 @@ def assemble(loci: list[dict], panel: list[str],
     """
     lines: dict[tuple, list[dict]] = defaultdict(list)
     order: list[tuple] = []
-    for locus in layout.drop_signature(loci):
+    for locus in layout.drop_folio(layout.drop_signature(loci)):
         key = tuple(locus["line_bbox"])
         if key not in lines:
             order.append(key)
@@ -120,7 +120,7 @@ def assemble(loci: list[dict], panel: list[str],
 
     # The doubling check runs over the whole leaf: a display heading falls on a
     # line boundary as readily as inside a line.
-    spans.dedupe(flat, panel)
+    spans.months(spans.dedupe(flat, panel), panel)
 
     for group in flat:
         record = {"text": group["text"], "tier": group["grade"],

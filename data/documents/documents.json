@@ -127,7 +127,7 @@
     "numeral": "III",
     "title": "Documento inédito acerca de la conduccion á esta isla, desde la de Menorca, de Simon Tort Ballester. (1)",
     "pdf_page": 233,
-    "line": 7,
+    "line": 6,
     "read_as": "III.",
     "until": 234
    },
@@ -199,7 +199,7 @@
     "numeral": "IV",
     "title": "Noticia de lo que sucedió al ejército Real en la rendicion de (Mallorca en tiempo de la Germanía, sacada de un papel antiguo mutilado al principio, faltándole algunas hojas, y solo contiene lo que sigue:» (1)",
     "pdf_page": 321,
-    "line": 30,
+    "line": 29,
     "read_as": "IV.",
     "until": 322
    },
@@ -208,7 +208,7 @@
     "numeral": "V",
     "title": "Sentencia contra Juanot Colom y otros tres compafieros. (1)",
     "pdf_page": 323,
-    "line": 18,
+    "line": 17,
     "read_as": "V.",
     "until": 323
    },
@@ -273,7 +273,7 @@
      1601,
      1697
     ],
-    "years_stated": 92
+    "years_stated": 91
    },
    {
     "number": 2,
@@ -392,7 +392,7 @@
      1706,
      1800
     ],
-    "years_stated": 65
+    "years_stated": 66
    }
   ],
   "numerals_not_found": []

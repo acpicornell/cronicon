@@ -425,12 +425,42 @@ And the numeral and title are set as **a heading**, not as the first two
 paragraphs. The page used to open with a bare `III.` in reading type with the
 title indistinguishable from the first sentence.
 
-**Splitting a section into its individual pieces is still open, and it is
-philology rather than parsing.** The Centellas section holds 20 salutations
-`«Molt alt e molt poderos princep e Senyor»` against only 3 numbered pieces and 3
-`Dat.` closings, so neither the numbering nor the formula alone delimits a
-letter. It wants the same treatment the year headings got: a rule, measured,
-with the exceptions counted.
+**The numbered pieces are found, and the numbering was the answer after all.**
+This file used to say the Centellas section held "20 salutations against only 3
+numbered pieces", so that neither the numbering nor the formula could delimit a
+letter. That was a measurement of our reading order, not of the book: **all
+twenty-one numbers are on the page**, set alone and centred over the letter they
+open, and it took the centred-line rule to see them. The salutation is no use --
+`Molt alt e molt poderos princep e Senyor` recurs *inside* a letter as readily
+as at its head -- and the number is decisive.
+
+The number is two characters of display type standing alone, the worst case
+this book offers a recogniser, so it is read off the panel: leaf 125 published
+`*` for `4.*`, leaf 126 `.*` for `5.*`, leaf 128 `*` for `7.*`. **The sequence
+is the guard, not the vote.** One reading is enough, because a candidate has to
+take its place in a run that rises and rises by no more than three -- the same
+constraint `parse_documents.py` puts on a section numeral. Over all 23 documents
+that separates completely: **two have a series and no other reaches five
+candidates in a row.** Centellas 19 of 21, the `Nota de varias ejecuciones` of
+1523 20 of 21, and the gaps are stated on the page rather than papered over --
+leaf 134's number is printed and no engine returned it at all.
+
+Two guards, each a wrong answer first: without the step cap, leaf 356's `42` (a
+figure inside the 1541 reprint, 25 leaves past the last execution) joined the
+run; without excluding `hanging_numbers`, leaf 152's ten marginal node numbers
+looked like a series of their own.
+
+**And a numeral was being published inside a word.** Leaf 123 sets the section's
+`II.` centred above the second column, and sorting that column by y dropped it
+between `…fo scap-` and `sat, lo qual…`: the edition printed **`fo scapXX.
+sat`**. Leaf 152 did the same to `D. Fer17 rario` and `Montfer22 rato`, leaf 325
+to `los ager18 » manats`. `unwedge` moves the numeral past the word rather than
+dropping it -- it is a reading of real ink and belongs in the text, just not
+inside a word -- and what says the join is real is that the line after the
+numeral **continues the word in lower case**. Over the book 14 numerals sit
+inside an apparent join and that test splits them 7 and 7 with nothing between:
+`sat`, `rario`, `rato`, `nio`, `bores`, `manats`, `gents` against `«Los`,
+`Hasta`, `«Part`, `Fragmentos`, `FEBRERO`, `Agosto`, `I.`
 
 **Section VI of the 16th-century block is 45 leaves and most of it is not the
 section.** It runs 324–368 and 17 806 words, and leaves 335–367 are the 1541
@@ -645,6 +675,93 @@ the block", and the moment leaf 64's columns were repaired that test swallowed
 the whole of 1301, which states no month either. **One example is not enough to
 write a rule from.** The headnote stands where the book prints it, as the first
 notice of the century.
+
+## The documents were dirty in five different ways, and four were general
+
+Reading `documents/0631-II-02` -- section II of the 18th century, a diary of 52
+years -- turned up a page with a stray `605`, years printed as `171` and `1`, a
+notice that opened `24.—Se terminó` with no month, attributions loose in the
+prose and the same dash set four ways. Every one of them is a class, and none of
+them is confined to the documents:
+
+- **The folio number was leaking into the text of 109 leaves.** The running head
+  is dropped by content, so where the engines cut it into two line boxes the
+  words went and the number stayed. `layout.drop_folio`, and the proof is the
+  same shape as the signature's: all 109 state `pdf_page - 27` and each is on the
+  side its parity requires. The fifteen other bare numbers in that band are four
+  digits and every one is a year heading.
+- **A display month was being deleted by the span vote, on a technicality of
+  case.** Leaf 632 prints `DICIEMBRE 24.—Se terminó…` and the panel returned
+  `DICIEMBRE`, `DICIEMBRE`, `DiciEMBRE` and two empty strings; `spans.fold` did
+  not fold case, so that is 2 against 2, `revote` refuses to outvote the blanks,
+  and the month vanished. Folding case makes it 3 against 2. Over the whole book
+  **438 spans → 472, 1 514 words → 1 667**, and all 34 of the new ones are a
+  display month, a siglum or a name in a source list.
+- **`Mavo`, `Acosro`, `OcruBRE`, `Jusio`, `FEsRERO`.** The years already got
+  *ask the panel, not the winner*; the months never did, though they are the
+  same display type failing the same way. `spans.months` fires on **86 slots
+  over 76 leaves**. The guard that makes it safe is `strictly_a_month`: the
+  winner has to be a misreading of one month **and nothing else**, because 13 of
+  the 103 candidates were `Abril.—B.`, `-G. T. OCTUBRE`, `1355. Marzo` -- and
+  replacing those deletes a siglum, a year or a footnote reference.
+- **Year headings inside the documents.** Four sections are diaries and head
+  each stretch with a bare year, which the winner collapses exactly as in the
+  chronicle: `171`, `1`, `1 781.` `build_documents.year_heading` counts the year
+  across all eight readings and publishes the best reading an engine gave of it.
+  Section II went from 5 broken headings to none. One `T`→`7` was added to
+  `DIGIT_LOOKALIKE` to reach the last of them, and measured first: over 614
+  leaves it changes the panel's verdict on **two** lines, one of which is the fix.
+- **The attributions were stuck in the prose**, where the chronicle lifts them
+  into chips. 132 document paragraphs end in a siglum the glossary resolves;
+  `build_site.sourced` lifts them with `parse_entries.lift_sigla`, which also
+  settles the dash the user noticed -- `—`, `-`, `- ` and none were all being
+  printed for the same mark, and the chip carries its own separator. The text
+  keeps the panel's reading; this is how the page is set, not what it says.
+
+And one defect that was silent and is the worst of them: **`paragraph_leaves`
+was one short in 19 of the 23 documents.** Cutting the title free and putting the
+recovered numeral back each added a paragraph and no leaf, so every *full N al
+facsímil* link inside those documents named the leaf of the paragraph before it.
+`stitch` now builds a list of paragraphs instead of joining a string and
+splitting it again, and every edit that moves a paragraph moves its leaf.
+
+### The documents have a second signal, and it is centred type
+
+Sweeping all 23 documents rather than reading one showed the paragraph rule
+failing in a way the diaries hid. Two fixes, both geometric:
+
+- **A centred line is a heading.** `Declaracions en la causa criminal` set each
+  deposition's heading centred in its column (`Declaració de Amet, cochero de
+  Berga.`), `Historia de los Reyes de Mallorca` heads its chapters the same way
+  (`D.a VIOLANTE / REINA VIUDA DE MALLORCA.`), Centellas numbers each of his
+  letters over the measure, and the diaries centre their years. **333 lines on
+  91 leaves**, and in a justified measure no line of body text is centred, so
+  the signal is clean. Two details: a **run** of centred lines is one heading
+  and not one each — leaf 373 sets a heading over three lines — and the width
+  threshold sits in a gap, since moving it from 0.90 of the measure to 0.95
+  admits six lines in the whole corpus and moving it on to 0.97 admits none.
+- **A clear indent needs no short line before it.** The pair *indented **and**
+  the line above is short* was written for section III and is right there; it
+  fails on the legal documents, where a deposition or a sentence runs a full
+  measure to its last line. The indent histogram over the 187 document leaves
+  has a valley: 4 400 lines within 10‰ of the modal edge, **149 between 10 and
+  15**, and 960 between 15 and 25 — the printer's indent. Above 20‰ the indent
+  carries itself. **199 further paragraphs**, and reading every document's
+  additions they are quotations opening `«`, operative clauses (`Proveex,
+  sentencia y declara…`), and the second line of a title.
+- Which is the trap that came with it: **a title runs to as many printed lines
+  as it needs and Campaner indents its continuation**, so the new rule cut
+  `Algunas noticias é indicaciones curiosas extraídas / de las que coleccionó el
+  Pavorde Jaume.` in two and the catalogue no longer recognised its own title.
+  The match is now made against up to three opening paragraphs joined.
+
+Also **the running head survives on 12 leaves** and `consensus.py` cannot see
+it, because six of them read `MAYORISENCE.` — the engines swapping the C and the
+S. `layout.is_running_head` matches the word within two letters instead of the
+string. 11 of the 12 go; the twelfth is leaf 98's `MAYORICENSE. sos`, where the
+trailing letters are wreckage off the defective scan and are left to review.
+
+Documents: 1 280 → **1 550 paragraphs**, none removed.
 
 ## Working from the sweep: the first rule it produced
 

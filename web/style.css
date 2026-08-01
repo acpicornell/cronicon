@@ -606,3 +606,29 @@ h3.docyear { font-family: Georgia, "Times New Roman", serif; font-size: 1.2rem;
              border-top: 1px solid var(--border);
              font-variant-numeric: tabular-nums; }
 h3.docyear:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
+
+/* A source attribution lifted out of a document paragraph. The chips are the
+   same buttons the year pages use; the separator is set here so that the mark
+   the engines disagreed about -- `—`, `-`, or none -- stops being visible. */
+.attrib { white-space: nowrap; }
+.attrib .cite::before { content: "—"; color: var(--muted); }
+.attrib .cite + .cite::before { content: " · "; }
+
+/* The numbered pieces inside a document: Campaner's own numbering, which is
+   the only thing that separates one of Centellas' letters from the next. */
+nav.pieces { margin: 2rem 0; padding: 1rem 1.1rem; border: 1px solid var(--rule);
+             border-radius: 4px; }
+nav.pieces h2 { font-size: .78rem; letter-spacing: .09em; text-transform: uppercase;
+                color: var(--muted); margin: 0 0 .6rem; font-weight: 600; }
+nav.pieces ol { list-style: none; display: flex; flex-wrap: wrap; gap: .35rem;
+                margin: 0; padding: 0; }
+nav.pieces li a { display: inline-block; min-width: 2.1rem; text-align: center;
+                  padding: .2rem .35rem; border: 1px solid var(--rule);
+                  border-radius: 3px; text-decoration: none; font-variant-numeric: tabular-nums; }
+nav.pieces li a:hover { background: var(--rule); }
+nav.pieces .gap { font-size: .82rem; color: var(--muted); margin: .7rem 0 0; }
+h3.piece { margin: 2.4rem 0 1rem; text-align: center; }
+h3.piece span { display: inline-block; font-family: Georgia, serif;
+                font-size: 1rem; color: var(--accent); padding: 0 .9rem;
+                border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+                line-height: 1.9; font-variant-numeric: tabular-nums; }

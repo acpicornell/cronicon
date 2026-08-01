@@ -181,8 +181,34 @@ consumers that display the text do not.
 
 ## Not rules
 
-Two transformations happen in `build_text.py` and are typographic rather than
-editorial, but they are recorded here because they do change the string:
+These transformations are typographic rather than editorial, but they are
+recorded here because they do change the string:
+
+- **The folio number is dropped from the head of the leaf.** `consensus.py`
+  drops the running head by content -- the line has to say `CRONICON` or
+  `MAYORICENSE.` -- so wherever the engines cut the head into two line boxes the
+  words went and the number stayed, and being first in the reading order it
+  glued onto whatever opened the leaf: leaf 43 published `16 que el estado de la
+  iglesia de…`, and the appendices, where Campaner prints the number and nothing
+  else, had never been seen by any rule at all. What proves these are folios is
+  arithmetic, as with the gathering signatures: **all 109 state `pdf_page - 27`
+  and each sits on the side its parity requires**, verso left and recto right,
+  with no exception in 614 leaves. The other fifteen bare numbers in the band are
+  four digits and all of them year headings at the top of a column, which is why
+  the rule reads one to three digits and checks the number it read.
+
+- **A display month heading is set in capitals.** Campaner sets `MARZO 14.—` in
+  small capitals throughout, and the engines return a small capital sometimes as
+  a capital and sometimes as a minuscule, so one heading arrives as `MARZO`,
+  `Marzo`, `MARzO` and `MaRzo`. Checked against the facsimile on leaves 627 and
+  605: `MARZO` and `JUNIO` are set the same way, so **the variation is ours and
+  not the book's**. Rendering small capitals as capitals is the ordinary
+  convention and is what 74 of the 115 headings in the documents already showed;
+  the other 41 now match. No letter is chosen, only its case, and the case is
+  what the page prints. Applied in `build_documents.py` to a month that opens a
+  paragraph and is followed by its day, which is the only place a display
+  heading survives in the text — in the chronicle the month is lifted into its
+  own column.
 
 - **Line-end hyphens are stitched.** A word broken across two lines is rejoined
   and the hyphen dropped. Only word-break hyphens: em and en dashes are

@@ -162,6 +162,21 @@ CREATE TABLE IF NOT EXISTS document (
     text         VARCHAR
 );
 
+-- Campaner numbers the pieces inside two of the documents and sets the number
+-- alone over each: the 21 letters Gilaberto de Centellas wrote to Pedro IV in
+-- 1343, and the 21 pieces of the `Nota de varias ejecuciones` of June 1523.
+-- That numbering is the only thing that delimits a letter -- the salutation
+-- `Molt alt e molt poderos princep e Senyor` recurs inside them as often as at
+-- their head -- so without it a fourteen-leaf section is one wall of prose.
+-- `paragraph` is the index into the document's text, counted in paragraphs.
+CREATE TABLE IF NOT EXISTS piece (
+    document_id VARCHAR NOT NULL,
+    number      SMALLINT NOT NULL,
+    paragraph   INTEGER NOT NULL,
+    pdf_page    SMALLINT NOT NULL,
+    PRIMARY KEY (document_id, number)
+);
+
 -- The sources ------------------------------------------------------------
 
 -- Campaner's glossary of manuscript sigla, from leaf 25. `source` is 'parsed'
