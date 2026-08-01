@@ -306,6 +306,14 @@ onward. Three traps, all measured:
   weaker, a section found that way must be the *next* number, not merely a later
   one — without that constraint a chronicle entry on leaf 632 became section V.
 
+**Campaner's apparatus on those leaves was separated and then thrown away.**
+Splitting the notes off is the hard half and the reason the documents read as
+prose at all — 62 of them across 22 sections — and they were counted and
+dropped, so not one reached a page. They are where he says which manuscript a
+passage comes from and where he corrects it. Now stored with the section, loaded
+into `footnote` with a `document_id`, and set under the document at the smaller
+size the book gives them, each with a link to its own leaf.
+
 `scripts/build_documents.py` then assembles each one as a text →
 `data/documents/sections/*.txt` and `sections.json`: **23 documents, 97 595
 words, 3.3% contested**, footnotes separated as in the chronicle and the

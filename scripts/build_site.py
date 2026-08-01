@@ -626,6 +626,25 @@ def document_page(con, doc) -> str:
                       f'/page/n{running - 2}/mode/2up" rel="noopener">'
                       f"full {running} al facsímil</a></p>")
     body = "".join(chunks)
+    # Campaner's own apparatus, set smaller as the book sets it. 62 notes come
+    # off these leaves and none of them reached a page: they were separated
+    # from the body -- which is why the documents read as prose -- and then
+    # counted and dropped. They are where he says which manuscript a passage
+    # comes from and where he corrects it.
+    notes = con.execute(
+        "SELECT number, text, pdf_page FROM footnote WHERE document_id = ? "
+        "ORDER BY pdf_page, number", [_id]).fetchall()
+    docnotes = ("" if not notes else
+                '<section class="docnotes"><h3 class="section">Notes de '
+                "Campaner</h3>"
+                + "".join(f'<p><span class="num">({n})</span> '
+                          f"{mark_doubt(t, doubtful)} "
+                          f'<a class="leafref" href="'
+                          f"https://archive.org/details/"
+                          f"CroniconMayoricenseCampaner/page/n{p - 2}/mode/2up"
+                          f'" rel="noopener">full {p}</a></p>'
+                          for n, t, p in notes)
+                + "</section>")
     leaf_url = ("https://archive.org/details/CroniconMayoricenseCampaner/"
                 f"page/n{first - 2}/mode/2up")
     return (head(f"{numeral}. {title} · Cronicón Mayoricense",
@@ -645,6 +664,7 @@ def document_page(con, doc) -> str:
      crònica. Són en català medieval i llatí, i els reconeixedors hi van pitjor.
      <a href="../../metode.html">Com se sap?</a></p>
   <div class="doc">{body}</div>
+  {docnotes}
 </main>
 """ + tail(2))
 

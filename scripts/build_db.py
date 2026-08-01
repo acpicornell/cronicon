@@ -107,25 +107,32 @@ def load_entries(con: duckdb.DuckDBPyConnection) -> None:
                      e.get("sources") or [], e["pdf_page"], e.get("printed"),
                      None, None))
         for note in e.get("notes") or []:
-            notes.append((len(notes) + 1, n, note.get("number"), note["text"],
-                          note.get("pdf_page", e["pdf_page"])))
+            notes.append((len(notes) + 1, n, None, note.get("number"),
+                          note["text"], note.get("pdf_page", e["pdf_page"])))
     # …and every note the leaves print that no notice calls. 62 of the 257 are
     # in that position -- the call is a superscript `(1)` two characters wide,
     # the smallest thing on the leaf, and where no engine read it there is
     # nothing to match. They are loaded with a null `entry_id` rather than
     # dropped, because the book prints them and an edition that silently keeps
     # 62 notes to itself is worse than one that says it cannot place them.
-    claimed = {(n[4], n[2], (n[3] or "")[:40]) for n in notes}
+    claimed = {(n[5], n[3], (n[4] or "")[:40]) for n in notes}
     printed = DATA / "entries" / "footnotes.json"
     if printed.exists():
         for page, leaf_notes in json.loads(printed.read_text()).items():
             for note in leaf_notes:
                 if (int(page), note["number"], note["text"][:40]) in claimed:
                     continue
-                notes.append((len(notes) + 1, None, note["number"],
+                notes.append((len(notes) + 1, None, None, note["number"],
                               note["text"], int(page)))
     con.executemany("INSERT INTO entry VALUES (?,?,?,?,?,?,?,?,?,?)", rows)
-    con.executemany("INSERT INTO footnote VALUES (?,?,?,?,?)", notes)
+    # The apparatus of the documents, which the chronicle's own notes do not
+    # cover: 62 notes on the leaves Campaner prints in full.
+    docs = json.loads((DATA / "documents" / "sections.json").read_text())
+    for section in docs:
+        for note in section.get("notes") or []:
+            notes.append((len(notes) + 1, None, section["id"], note["number"],
+                          note["text"], note.get("pdf_page")))
+    con.executemany("INSERT INTO footnote VALUES (?,?,?,?,?,?)", notes)
     print(f"  entry         {len(rows):>8,}")
     print(f"  footnote      {len(notes):>8,}")
 

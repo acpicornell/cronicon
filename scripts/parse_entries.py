@@ -499,6 +499,7 @@ def gather_notes(notes: list[dict]) -> list[dict]:
         if match:
             out.append({"number": int(match.group(1)),
                         "column": line.get("column", 0),
+                        "leaf": line.get("leaf"),
                         "text": line["text"][match.end():].strip()})
         elif out:
             text = out[-1]["text"]

@@ -185,9 +185,10 @@ def main() -> None:
             if not path.exists():
                 cache[pdf_page] = ([], [])
             else:
-                body, notes = split_notes(page_lines(path))
-                for line in body:
+                lines = page_lines(path)
+                for line in lines:
                     line["leaf"] = pdf_page
+                body, notes = split_notes(lines)
                 cache[pdf_page] = (body, gather_notes(notes) if notes else [])
         return cache[pdf_page]
 
@@ -275,6 +276,14 @@ def main() -> None:
                 # to the page from anywhere in a seventeen-leaf document.
                 "paragraph_leaves": para_leaves,
                 "footnotes": len(notes),
+                # …and the notes themselves, not only how many. They were being
+                # separated from the body -- which is the hard half, and the
+                # reason the documents read as prose at all -- and then counted
+                # and dropped, so 62 notes came off the leaves and none of them
+                # reached a page. Campaner's apparatus is where he says which
+                # manuscript a passage is from and where he corrects it.
+                "notes": [{"number": n["number"], "text": n["text"],
+                           "pdf_page": n.get("leaf", start[0])} for n in notes],
                 "certainty": {k: tiers[k] for k in
                               ("unanimous", "one-dissent", "two-dissent",
                                "contested")},

@@ -88,6 +88,7 @@ CREATE INDEX IF NOT EXISTS idx_entry_page ON entry(pdf_page);
 CREATE TABLE IF NOT EXISTS footnote (
     id        INTEGER PRIMARY KEY,
     entry_id  INTEGER,             -- the entry printing its number, where known
+    document_id VARCHAR,           -- …or the document, for the 62 on those leaves
     number    SMALLINT,
     text      VARCHAR NOT NULL,
     pdf_page  SMALLINT NOT NULL
