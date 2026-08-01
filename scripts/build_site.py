@@ -635,7 +635,7 @@ def document_page(con, doc) -> str:
   <p class="caveat">Els documents són la part del llibre pitjor mesurada:
      <strong>un mot errat de cada 96</strong>, contra un de cada 706 a la
      crònica. Són en català medieval i llatí, i els reconeixedors hi van pitjor.
-     <a href="../../metode.html">Com se sap</a>.</p>
+     <a href="../../metode.html">Com se sap?</a></p>
   <div class="doc">{body}</div>
 </main>
 """ + tail(2))

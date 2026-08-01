@@ -555,3 +555,10 @@ h3.dochead:first-child { font-size: 1.5rem; letter-spacing: .06em; }
 h3.dochead:first-child + h3.dochead { font-size: 1.12rem; font-weight: 400; }
 .doc h3.dochead ~ h3.dochead { font-size: .88rem; font-weight: 400;
                                color: var(--text-muted); font-style: italic; }
+
+/* On a reading page the container is already the measure -- `.wrap.read` is
+   900px -- so capping prose again at 68ch (about 612px) only makes the caveat
+   and the hints narrower than the text they introduce. The cap is for the wide
+   data pages, where the container is 1320px and a paragraph would run to 150
+   characters. */
+.wrap.read .hint, .wrap.read .caveat { max-width: none; }
