@@ -607,8 +607,16 @@ def document_page(con, doc) -> str:
         # are a heading, not the first two paragraphs of the text. They were
         # being set as body, so the page opened with a bare `III.` in reading
         # type and the title indistinguishable from the first sentence.
-        tag = ("h3" if i < HEAD_LINES and len(para) < 200 and
-               (i == 0 or para.startswith(("«", "(", '"')) or para.isupper())
+        # The heading is the numeral, the title as the catalogue records it,
+        # and the source note Campaner sets under them. Recognising the title by
+        # its shape was tried and fails on the commonest kind -- `Algunas
+        # noticias é indicaciones curiosas extraidas…` opens with an ordinary
+        # capital -- so it is recognised by *being* the title, which is a fact
+        # the catalogue already holds.
+        flat = " ".join(para.split())
+        tag = ("h3" if i < HEAD_LINES and len(para) < 260 and
+               (i == 0 or flat == " ".join(title.split())
+                or para.startswith(("«", "(", '"')) or para.isupper())
                else "p")
         chunks.append(f'<{tag} id="p{i}" class="{"dochead" if tag == "h3" else ""}">'
                       f"{mark_doubt(para, doubtful)}</{tag}>")
