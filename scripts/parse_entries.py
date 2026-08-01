@@ -157,6 +157,11 @@ NEAR_MONTH = re.compile(
 
 # `—El 14 de Julio otro pregon…` states its own month, and taking the month
 # carried forward instead would date it to whatever month was running.
+# February gets 29: this is a chronicle of leap years too, and the check is for
+# the impossible rather than for the calendar.
+DAYS_IN = {1: 31, 2: 29, 3: 31, 4: 30, 5: 31, 6: 30,
+           7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31}
+
 SAME_DAY = re.compile(r"E(?:l|ste)\s+mismo\s+d[ií]a", re.IGNORECASE)
 
 MONTH_AFTER_DAY = re.compile(rf"^\s*de\s+(?P<month>{MONTH_ALT})\b", re.IGNORECASE)
@@ -287,6 +292,18 @@ def fold_siglum(text: str) -> str:
 # the note instead of to its own tail at the top of the next column, and the
 # entry read `el 24 falle(1.) «A hora de vespres…» ció.`
 NOTE_START = re.compile(r"^\s*[\(\[]\s*(\d{1,2})\s*[.,]?\s*[\)\]]")
+# The call in the text is a superscript `(1)` two characters wide, which is the
+# smallest thing on the leaf and the likeliest to be misread: seven of the notes
+# nothing calls are called by `(I)`. Accepting the letter shapes of 1 is safe
+# because the match still has to find a note of that number *in that column* --
+# a stray `(I)` with no note behind it resolves to nothing and prints nothing.
+NOTE_REF = re.compile(r"[\(\[]\s*([0-9IiLl|]{1,2})\s*[\)\]]")
+ONE = {"I", "i", "L", "l", "|"}
+
+
+def ref_number(text: str) -> int | None:
+    digits = "".join("1" if c in ONE else c for c in text)
+    return int(digits) if digits.isdigit() else None
 # and never in the upper half of the leaf. The same `(1)` appears inside an entry
 # as the reference to it, mid-sentence, and that one is not a note.
 NOTE_BAND = 0.55
@@ -1207,6 +1224,16 @@ def split_entries(text: str, year: int | None,
         stated = MONTH_AFTER_DAY.match(body)
         if stated:
             current_month = MONTHS[strip_accents(stated.group("month")).lower()]
+        # A day the carried month cannot hold proves the carry wrong, not the
+        # day. Leaf 454 reads `…de Julio.—Cl. Fl. —31.—El Doctor Vilasalo…`:
+        # the `Julio.` is the tail of the previous notice's own sentence, not a
+        # heading, so June was still running and the notice came out 31 June.
+        # The day is what the book prints and the month is our inference, so the
+        # inference goes. Publishing 31 June asserts something the page does not
+        # say, and guessing July asserts something else.
+        month = current_month
+        if month and day and int(day) > DAYS_IN[month]:
+            month = None
         if not body:
             continue
         # An "entry" consisting of nothing but a sigla is the tail of the one
@@ -1216,7 +1243,7 @@ def split_entries(text: str, year: int | None,
             entries[-1]["to"] = end
             continue
         entries.append({
-            "month": current_month,
+            "month": month,
             "day": int(day) if day else None,
             "year": year,
             # Where this notice sits in the run of prose it was cut from. The
@@ -1323,7 +1350,12 @@ def resolve(chunk: str) -> list[str] | None:
 # opened the next one, or of a siglum the engines lost: `…embarcado en dos naves
 # inglesas. —`. It is punctuation belonging to something else, and 17 notices
 # ended on one.
-TRAILING_DASH = re.compile(r"\s+[-—–]+\s*$")
+# A dash at the very end of a notice is never text. It is either the dash that
+# would have introduced a siglum nobody read, or -- 11 of the 13 cases -- the
+# one that opens the *next* notice, left behind when the cut fell after it:
+# `…luminarias dos noches.— — 28.—Llegaron 5 galeras…`. Whitespace before it is
+# not required, because the commonest form has none: `…dos noches.—`.
+TRAILING_DASH = re.compile(r"\s*[-—–]+\s*$")
 
 
 # `…las corts en Inca.—J. V. (2)`: the reference to the footnote is printed
@@ -1345,6 +1377,17 @@ def lift_sigla(text: str) -> tuple[str, list[str]]:
     if not match:
         return (text + (" " + ref.group(1) if ref else "")), []
     tail = match.group(0)
+    # The whole tail first, because a dash *inside* a siglum is the alignment's
+    # and not the book's: `-Jn.—Br.` is Joaquin M. Bover in two pieces, and
+    # splitting on the dash asks whether `Jn.` is a source, which it is not, so
+    # the guard below threw the whole attribution away. Resolving the tail whole
+    # still separates a real pair -- `—M. S.—B. J.` comes back as two -- because
+    # the key is a sequence of initials and the glossary decides where it ends.
+    whole = resolve(tail)
+    if whole is not None:
+        kept = [x for n, x in enumerate(whole) if n == 0 or x != whole[n - 1]]
+        body = text[:match.start()].rstrip()
+        return (body + (" " + ref.group(1) if ref else "")), kept
     sigla: list[str] = []
     for part in re.split(r"[-—–]+", tail):
         if not part.strip():
@@ -1583,8 +1626,10 @@ def main() -> None:
             # well as under 1230, which is where it is called: 85 of the book's
             # 185 notes were reaching more than one notice.
             notes = []
-            for m in re.finditer(r"[\(\[]\s*(\d{1,2})\s*[\)\]]", text[at:to]):
-                number = int(m.group(1))
+            for m in NOTE_REF.finditer(text[at:to]):
+                number = ref_number(m.group(1))
+                if number is None:
+                    continue
                 leaf, column = where(at + m.start())
                 # Nothing of that number in that column means the note was not
                 # separated, not that it is elsewhere: leaf 105 opens its `(1)`

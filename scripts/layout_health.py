@@ -84,10 +84,23 @@ def main() -> None:
                               "agreed": tally.most_common(1)[0][1],
                               "engines": len(counts)}
 
+    # A leaf that carries adjudications is left page-aligned whatever its
+    # engines disagree about. Aligning by line renumbers the leaf, and the
+    # ground truth is keyed by index as well as by box, so switching leaf 642 --
+    # which holds part of the frozen sample -- would orphan its decisions.
+    # `consensus.py` refuses such a leaf outright; naming them here is the same
+    # rule stated where it can be read. Lift this when `adjudicated.tsv` is
+    # re-keyed by word box, not before.
+    from consensus import adjudicated_leaves
+    held = sorted(set(disputed) & adjudicated_leaves())
+    for page in held:
+        disputed[page]["held_for_adjudications"] = True
+
     OUT.write_text(json.dumps({
         "panel": PANEL,
         "leaves_measured": measured,
-        "align_by_line": sorted(disputed),
+        "align_by_line": sorted(set(disputed) - set(held)),
+        "held_for_adjudications": held,
         "detail": [disputed[p] for p in sorted(disputed)],
     }, ensure_ascii=False, indent=1), encoding="utf-8")
 

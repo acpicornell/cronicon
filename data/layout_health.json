@@ -10,14 +10,15 @@
  "leaves_measured": 614,
  "align_by_line": [
   57,
-  59,
   60,
+  114,
   115,
   116,
   117,
   118,
   119,
   120,
+  121,
   122,
   152,
   159,
@@ -25,56 +26,72 @@
   163,
   165,
   186,
-  233,
-  312,
   319,
-  324,
   325,
   326,
-  453,
-  507,
   630
+ ],
+ "held_for_adjudications": [
+  642
  ],
  "detail": [
   {
    "pdf_page": 57,
    "columns": {
-    "1": 3,
-    "2": 3
+    "1": 1,
+    "2": 5
    },
-   "agreed": 3,
-   "engines": 6
-  },
-  {
-   "pdf_page": 59,
-   "columns": {
-    "1": 2,
-    "2": 4
-   },
-   "agreed": 4,
+   "agreed": 5,
    "engines": 6
   },
   {
    "pdf_page": 60,
    "columns": {
-    "1": 2,
-    "2": 4
+    "1": 1,
+    "2": 5
    },
-   "agreed": 4,
+   "agreed": 5,
+   "engines": 6
+  },
+  {
+   "pdf_page": 114,
+   "columns": {
+    "1": 5,
+    "2": 1
+   },
+   "agreed": 5,
    "engines": 6
   },
   {
    "pdf_page": 115,
    "columns": {
-    "1": 2,
-    "2": 3,
-    "3": 1
+    "2": 2,
+    "3": 4
    },
-   "agreed": 3,
+   "agreed": 4,
    "engines": 6
   },
   {
    "pdf_page": 116,
+   "columns": {
+    "1": 1,
+    "2": 1,
+    "3": 4
+   },
+   "agreed": 4,
+   "engines": 6
+  },
+  {
+   "pdf_page": 117,
+   "columns": {
+    "1": 1,
+    "2": 5
+   },
+   "agreed": 5,
+   "engines": 6
+  },
+  {
+   "pdf_page": 118,
    "columns": {
     "1": 1,
     "2": 4,
@@ -84,28 +101,10 @@
    "engines": 6
   },
   {
-   "pdf_page": 117,
-   "columns": {
-    "1": 3,
-    "2": 3
-   },
-   "agreed": 3,
-   "engines": 6
-  },
-  {
-   "pdf_page": 118,
-   "columns": {
-    "1": 2,
-    "2": 4
-   },
-   "agreed": 4,
-   "engines": 6
-  },
-  {
    "pdf_page": 119,
    "columns": {
-    "1": 1,
-    "2": 5
+    "2": 1,
+    "3": 5
    },
    "agreed": 5,
    "engines": 6
@@ -114,9 +113,19 @@
    "pdf_page": 120,
    "columns": {
     "1": 4,
-    "2": 2
+    "2": 1,
+    "3": 1
    },
    "agreed": 4,
+   "engines": 6
+  },
+  {
+   "pdf_page": 121,
+   "columns": {
+    "1": 1,
+    "2": 5
+   },
+   "agreed": 5,
    "engines": 6
   },
   {
@@ -186,34 +195,7 @@
    "engines": 6
   },
   {
-   "pdf_page": 233,
-   "columns": {
-    "1": 1,
-    "2": 5
-   },
-   "agreed": 5,
-   "engines": 6
-  },
-  {
-   "pdf_page": 312,
-   "columns": {
-    "2": 3,
-    "3": 3
-   },
-   "agreed": 3,
-   "engines": 6
-  },
-  {
    "pdf_page": 319,
-   "columns": {
-    "1": 1,
-    "2": 5
-   },
-   "agreed": 5,
-   "engines": 6
-  },
-  {
-   "pdf_page": 324,
    "columns": {
     "1": 1,
     "2": 5
@@ -240,24 +222,6 @@
    "engines": 6
   },
   {
-   "pdf_page": 453,
-   "columns": {
-    "1": 3,
-    "2": 3
-   },
-   "agreed": 3,
-   "engines": 6
-  },
-  {
-   "pdf_page": 507,
-   "columns": {
-    "1": 5,
-    "2": 1
-   },
-   "agreed": 5,
-   "engines": 6
-  },
-  {
    "pdf_page": 630,
    "columns": {
     "1": 1,
@@ -265,6 +229,16 @@
    },
    "agreed": 5,
    "engines": 6
+  },
+  {
+   "pdf_page": 642,
+   "columns": {
+    "1": 4,
+    "2": 2
+   },
+   "agreed": 4,
+   "engines": 6,
+   "held_for_adjudications": true
   }
  ]
 }

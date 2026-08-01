@@ -258,6 +258,71 @@ LONG_ENTRY = 1500     # characters before an entry is broken up to be read
 PARAGRAPH = 900       # rough target for each piece
 
 
+def tables_on(con, pages) -> tuple[dict[str, str], dict[str, str]]:
+    """The inline tables of these leaves, keyed by the text of their first row.
+
+    A table's rows are still in the notice's prose, exactly as the panel read
+    them -- nothing was moved out. What this returns is the same words set as a
+    table, and `lay_out_tables` swaps the run of text for it, so the reader sees
+    the figures in the column the page put them in. The key is the first row's
+    own text because that is what survives both assemblies unchanged.
+    """
+    if not pages:
+        return {}, {}
+    rows = con.execute(
+        "SELECT table_id, seq, label, figure, tier, text FROM table_row "
+        f"WHERE pdf_page IN ({','.join(str(p) for p in pages)}) "
+        "ORDER BY table_id, seq").fetchall()
+    grouped: dict[int, list] = {}
+    for tid, _seq, label, figure, tier, text in rows:
+        grouped.setdefault(tid, []).append((label, figure, tier, text))
+    out, ends = {}, {}
+    for cells in grouped.values():
+        body = "".join(
+            f'<tr class="{"d" if tier not in ("unanimous", "adjudicated") else ""}">'
+            f"<th>{esc(label or '')}</th>"
+            f'<td class="num">{esc(figure or "")}</td></tr>'
+            for label, figure, tier, _text in cells)
+        key = cells[0][3]
+        out[key] = f'<table class="inline-table"><tbody>{body}</tbody></table>'
+        ends[key] = cells[-1][3]
+    return out, ends
+
+
+def lay_out_tables(text: str, tables: dict[str, str],
+                   last: dict[str, str]) -> list[str]:
+    """Split a notice's prose where a table starts, and set the table as one.
+
+    Matched on the first row's text rather than on a stored offset: the notice
+    is hyphen-stitched and re-joined out of the same word records, so an offset
+    into the leaf means nothing here, and the row text is the one thing both
+    assemblies agree on.
+    """
+    # Every table in the run, not the first: the notice of 1750 carries two --
+    # the dead of the plague to August and the harvest of the year -- and
+    # returning at the first left the second as prose.
+    found = sorted(((text.find(key), key) for key in tables
+                    if text.find(key) >= 0))
+    if not found:
+        return [text]
+    pieces, at = [], 0
+    for start, key in found:
+        if start < at:
+            continue
+        # The table runs to the end of its last row; everything after it is
+        # prose again -- `Y 101,716 moliendas de aceite.—Co. Fr.` follows the
+        # harvest of 1750 and is a sentence, not a fifth row.
+        end = text.find(last[key], start)
+        end = end + len(last[key]) if end >= 0 else start + len(key)
+        if text[at:start].strip():
+            pieces.append(text[at:start].strip())
+        pieces.append(tables[key])
+        at = end
+    if text[at:].strip():
+        pieces.append(text[at:].strip())
+    return pieces
+
+
 def notemarks(notes, doubtful: dict[str, list[str]]) -> str:
     """A notice's footnotes, under it, numbered as the book numbers them.
 
@@ -377,8 +442,19 @@ def year_page(con, year: int, years: list[int], sigla: dict[str, str]) -> str:
     opening = con.execute(
         "SELECT numeral, from_year, to_year, sources, pdf_page "
         "FROM century WHERE from_year = ?", [year]).fetchone()
+    # The notes the book prints on these leaves that no notice calls: the
+    # superscript that would have called them was never read. They are shown at
+    # the foot of the year, where the book has them, rather than kept back --
+    # 62 of the 257 notes are in that position and they are Campaner's
+    # scholarship, not filler.
+    unplaced = con.execute("""
+        SELECT DISTINCT f.number, f.text, f.pdf_page FROM footnote f
+        WHERE f.entry_id IS NULL AND f.pdf_page IN (
+            SELECT pdf_page FROM entry WHERE year = ?)
+        ORDER BY f.pdf_page, f.number""", [year]).fetchall()
 
     pages = {e[5] for e in entries} | ({opening[4]} if opening else set())
+    inline, table_ends = tables_on(con, pages)
     doubtful: dict[str, list[str]] = {}
     if pages:
         doubtful = doubtful_words(con, pages)
@@ -466,13 +542,24 @@ def year_page(con, year: int, years: list[int], sigla: dict[str, str]) -> str:
             '<article class="notice">'
             f'<p class="when">{day or ("&mdash;" if dated else "")}</p>'
             '<div class="said">'
-            + "".join(f"<p>{mark_doubt(para, doubtful)}</p>"
-                      for para in paragraphs(text))
+            + "".join(
+                piece if piece.startswith("<table")
+                else f"<p>{mark_doubt(piece, doubtful)}</p>"
+                for para in paragraphs(text)
+                for piece in lay_out_tables(para, inline, table_ends))
             + (f'<p class="prov">{cites}</p>' if cites else "")
             + notemarks(notes.get(entry_id), doubtful)
             + "</div></article>")
     if running_leaf is not None:
         parts.append(leafmark(running_leaf))
+    if unplaced:
+        parts.append(
+            '<section class="unplaced"><h3 class="section">Notes sense crida</h3>'
+            "<p class=\"hint\">Campaner imprimeix aquestes notes en aquests fulls "
+            "i la crida que hi remetia —un <em>(1)</em> volat de dos caràcters— "
+            "no s'ha pogut llegir, així que no sabem a quina notícia van.</p>"
+            + notemarks([(n, t) for n, t, _p in unplaced], doubtful)
+            + "</section>")
     parts.append("</main>")
     # The year pages are where the uncertainty marks actually are, so they are
     # the pages that most need the script that hides them. They shipped without

@@ -590,14 +590,27 @@ What the sweep says is left, none of it structural:
 
 | | | |
 |---|---:|---|
-| `orphan-note` | 68 | a note no notice calls — its reference was never read |
+| `orphan-note` | 62 | a note no notice calls — see below |
 | `glued` | 35 | `dive rsos`, `Novie mbre`, `ciu dad`, `alo dio` |
 | `doubled` | 23 | informational: the book, not the reading — see below |
 | `dangling-note` | 18 | a `(n)` whose note was never separated |
 | `runt` | 5 | `47 3 •`, `Díjose F.`, `ENERO . 1795-` |
-| `stray-tail` | 13 | text ending in a dash, usually a broken siglum |
-| `unlifted-siglum` | 3 | `Jn.—Br.`, `J. — P.`, `— — Cl. — Fl.` |
-| `bad-day` | 2 | `31 de junio`, `30 de febrero` |
+| `stray-tail` | 5 | text ending in a dash — was 13 |
+| `bad-day` | 0 | was `31 de junio`, `30 de febrero` |
+
+**A trailing dash is never text**, and eleven of the thirteen were not a broken
+siglum at all but the dash that opens the *next* notice, left behind when the
+cut fell after it: `…luminarias dos noches.— — 28.—Llegaron 5 galeras…`. The
+pattern required whitespace before the dash and the commonest form has none.
+13 → 5.
+
+**A day the carried month cannot hold proves the carry wrong, not the day.**
+Leaf 454 reads `…de Julio.—Cl. Fl. —31.—El Doctor Vilasalo…`: the `Julio.` is
+the tail of the previous notice's own sentence rather than a heading, so June
+was still running and the notice came out 31 June. The day is what the book
+prints and the month is our inference, so the inference goes — publishing 31
+June asserts something the page does not say, and repairing it to July asserts
+something else.
 
 `glued` finds broken words with the book as its own dictionary — `formacion` and
 `Setiembre` are correct here and wrong in any Spanish word list — by requiring
@@ -638,6 +651,25 @@ Three things had to be got wrong first, and the third is the one worth keeping:
   alone on a line has no ascender or descender and measures like note type.
   Nine lines of apparatus are not worth a year of the chronicle, and the loss is
   silent where the gain is not.
+
+### The notes nothing calls, and why most of them stay that way
+
+The call in the text is a superscript `(1)`, **two characters wide and the
+smallest thing on the leaf**, so it is the likeliest thing in the book to be
+misread or missed entirely. Of the leaves carrying an uncalled note: 35 have no
+reference in the body at all, 11 have one that already belongs to another note,
+and **7 have one misread as `(I)`**. Accepting the letter shapes of 1 is safe —
+the match still has to find a note of that number *in that column*, so a stray
+`(I)` with nothing behind it resolves to nothing — and it is worth 6 notes:
+68 → 62, with 158 → 165 notices carrying one.
+
+The other 55 are not recoverable by any rule, because there is no evidence to
+recover them from. **So they are published anyway**, at the foot of the year,
+with `entry_id` null and a line saying the call could not be read. 306 footnote
+rows against 257 called ones, on 77 year pages. Campaner's notes are half the
+scholarship in the book — he corrects Terrassa's dates and quotes the accounts a
+notice summarises — and an edition that silently keeps 62 of them to itself is
+worse than one that admits it cannot place them.
 
 ### Two checks that turned out to describe the book
 
@@ -696,7 +728,15 @@ stops and the spaces.
 | `—B. J. .` 3 | a stop too many |
 | `— G . T.` 2 | a space inside |
 
-Matching is now on the **key of initials** and the guard is not the pattern but
+**And the tail is resolved whole before it is split.** A dash *inside* a siglum
+is the alignment's and not the book's: `-Jn.—Br.` is Joaquin M. Bover in two
+pieces, and splitting on the dash asked whether `Jn.` was a source, which it is
+not, so the guard threw the whole attribution away. Resolving the tail whole
+still separates a real pair — `—M. S.—B. J.` comes back as two — because the key
+is a sequence of initials and the glossary decides where one ends. Sourced
+notices 2 945 → 2 948, attributions resolved 92% → **93%**, `unlifted-siglum` 3 → 0.
+
+Matching is on the **key of initials** and the guard is not the pattern but
 that the key resolves against the glossary; a chunk that does not resolve lifts
 nothing, because half an attribution is worse than none. `G. G. T.` collapses to
 `G. T.` while `M. M.` (Matías Mut) stands, and four initials that fail are
@@ -746,6 +786,73 @@ Still open: **`T. A.` is two different people.** Tomás Aguiló in the 16th-cent
 header and Tomás Amorós in the 18th, which is exactly why `parse_sigla.py`
 refuses to guess — and it is a fact the site should state rather than hide.
 
+## The drop caps: adjudicated, because no rule could do it
+
+`ENERO 13.—Por Real Privilegio…` opened 1401 and the edition printed `NERO 13`.
+
+**The letter is not misread; it is outside the geometry.** A crop of leaf 168
+cut to the line's own box does not contain the `E` at all — the display initial
+sits left of every engine's line box, so the line segmentation excludes it. No
+amount of panel work recovers a character no engine was ever asked about, and
+that is what makes this the review tool's business rather than `editorial.py`'s.
+
+Finding them is geometric and clean: a drop cap indents the three lines beside
+it by its own width and the fourth steps back to the column margin. Leaf 28
+reads 0.196, 0.197, 0.196 then 0.129; leaf 64 0.182, 0.182, 0.183 then 0.119.
+**15 candidates in the whole book.** Choosing the letter is the half no rule can
+do — the lexicon offers `A, B, E, I, O, U, V` for `N este año` — so all fifteen
+were cut from the facsimile and looked at:
+
+| | |
+|---|---|
+| leaf 14 | `E` + `L presente libro` → **EL presente libro** |
+| leaf 28 | `P` + `ARA que no cáusen` → **PARA que no cáusen** |
+| leaf 64 | `E` + `N este año 1301` → **EN este año 1301** |
+| leaf 168 | `E` + `NERO 13.—Por Real Privilegio` → **ENERO 13** |
+
+**Eleven of the fifteen are not drop caps at all**, and the crops are the only
+thing that could have said so. Nine are verse indented for scansion — the Latin
+of the 1541 reprint on leaves 345–358, Catalan on 280, and a Mallorcan goig on
+578 («y del Pare general, / Maria es concebuda / sens pecat original») — and two
+are the brace `)` of the notes column on the annotated Jurats leaves 114 and 118.
+
+The four repairs are recorded in `data/review/decisions.jsonl` as `source:
+"typed"`, which is exactly what that field is for: the share of the edition
+resting on a reading no engine produced should be countable, not assumed. It is
+now four positions.
+
+## The tables inside the prose
+
+Campaner stops now and then and prints a table — the harvest of a year, the dead
+of a plague, the census of 1784, who lent how much for the armada of 1343 — and
+the transcription had every word of them and had lost the one thing that made
+them readable, that the figures were in a column. `scripts/tables.py` finds
+**16 tables, 78 rows, on 13 leaves**.
+
+**This recovers structure, not text, and that distinction is the whole licence
+for doing it.** No character is added, removed or changed; what is stored is
+which word records make up which row. The signal is geometric and needs no
+model: on leaf 569 the figures end at x 0.793, 0.796, 0.797 and 0.796 —
+right-aligned to within four thousandths of the page — while prose does not do
+that. A model was used once, the way this project allows: **crops of leaves 591
+and 569 were read to check the detections**, and both times the check paid.
+
+- The first crop showed two rows the detector had dropped. **The figure is not
+  always the last token**: where the panel disagreed about where words end,
+  `spans.py` returns one record for the whole run, so leaf 591's row arrives as
+  the single string `Solteras . 40.603`.
+- The second showed a row it drops **correctly**: leaf 569's `163` has a box
+  0.002 of the page wide, a sliver, so it can align with nothing. It stays in
+  the prose, where it always was. Absorbing a line because it *looks* like a row
+  after the geometry has said no is guessing.
+
+**Only one of the two families is a rule.** Figure last — `Cebada. 176,780 »` —
+is 16 detections and all 16 are tables. Figure first — `24,294 hombres útiles
+para tomar las armas.`, which really is one on leaves 453 and 593 — was declined:
+it also takes `19 de Febrero, por haber llovido el día 23 y` and `15 ss. la
+barcilla; el trigo á 14 ss.`, because prose begins with a date or a price often
+enough, and 9 detections of which 4 are real is not a rule.
+
 ## The Jurats have a section at last
 
 1 979 names were in the database and in the parquet and **no route showed one of
@@ -794,13 +901,17 @@ everywhere at once: §Reading page by page does not scale. Work from
 
 Two things this left open and one it must not do by accident:
 
-- `data/layout_health.json` **as committed is stale** relative to
-  `data/ocr/ordered/`, and regenerating it puts leaf 642 into `align_by_line` —
-  which `consensus.py` refuses, because leaf 642 carries adjudications. The
-  guard is right. Re-key `adjudicated.tsv` by word box before touching it.
-- Only 5 leaves were re-ordered under the centred-line rule (57, 64, 115, 116,
-  119), because `data/ocr/ordered/` is on disk and was not regenerated. The
-  whole-book pass is deliberate work, not a side effect.
+- **Both are now done.** The centred-line rule was applied to the whole book:
+  17 engine-leaf files on 12 leaves changed their column count (22, 28, 59, 60,
+  117, 118, 120, 121, 168, 246, 380, 482), none of them adjudicated, and the
+  consensus was rebuilt. Unanimous 367 908 → **368 887**, contested 23 647 →
+  23 538, and the leaves needing line alignment 25 → **21**, which takes the
+  held-back block from 11 114 positions to 8 391.
+- **A leaf that carries adjudications is held page-aligned**, and that rule now
+  lives in `layout_health.py` rather than being discovered by hitting
+  `consensus.py`'s guard. Leaf 642 is the only one, it holds part of the frozen
+  sample, and aligning it by line would renumber it. Lift the hold when
+  `adjudicated.tsv` is re-keyed by word box, not before.
 
 The panel is closed at six, ratified against the adjudications, and the engine
 question is settled: **the marginal engine is not the lever.** Kraken and

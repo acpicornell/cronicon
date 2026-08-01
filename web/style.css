@@ -393,6 +393,26 @@ h3.month:first-of-type { margin-top: 1.4rem; }
 .source-card .n { display: block; margin-top: .6rem; font-size: .78rem;
                   color: var(--accent); }
 
+/* --- a table Campaner set inside the prose ------------------------------ */
+/* The words are the panel's, unchanged; what is restored is that the figures
+   were in a column. Leader dots rather than rules, because that is what the
+   page has. */
+.inline-table { width: auto; min-width: min(100%, 22rem); max-width: 34rem;
+                margin: .9rem 0 1.1rem; border-collapse: collapse;
+                font-family: Georgia, "Times New Roman", serif; }
+.inline-table th { font-weight: 400; text-align: left; padding: .18rem 0;
+                   border-bottom: 1px dotted var(--border);
+                   text-transform: none; letter-spacing: 0; font-size: .98rem;
+                   color: var(--text); }
+.inline-table td { text-align: right; padding: .18rem 0 .18rem 1.4rem;
+                   border-bottom: 1px dotted var(--border);
+                   font-variant-numeric: tabular-nums; white-space: nowrap; }
+.inline-table tr.d th, .inline-table tr.d td { color: var(--text-muted); }
+.inline-table tr.d td { border-bottom-color: var(--doubt); }
+body.plain .inline-table tr.d td { border-bottom-color: var(--border); }
+body.plain .inline-table tr.d th,
+body.plain .inline-table tr.d td { color: var(--text); }
+
 /* --- the Jurats --------------------------------------------------------- */
 /* A year is a card of six seats. A table was the obvious shape and the wrong
    one: six names to a row over 361 rows is a wall, and the unit a reader
@@ -517,3 +537,12 @@ a.key:hover { color: var(--accent); }
 .yeargrid small { color: var(--text-muted); font-size: .72rem; }
 
 @media (max-width: 620px) { .chart svg.stack { height: 240px; } }
+
+/* Notes the book prints and no notice calls: the superscript that would have
+   called them was never read. Shown at the foot of the year, set apart, rather
+   than kept back -- 62 of 257 notes are in that position. */
+.unplaced { margin: 2.4rem 0 0; padding-top: 1.4rem;
+            border-top: 1px solid var(--border); }
+.unplaced h3.section { margin: 0 0 .4rem; font-size: 1rem; }
+.unplaced .hint { margin: 0 0 .8rem; max-width: 62ch; }
+.unplaced .notes { border-left-color: var(--doubt); }

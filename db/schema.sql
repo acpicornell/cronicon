@@ -106,6 +106,22 @@ CREATE TABLE IF NOT EXISTS century (
     sources    VARCHAR NOT NULL
 );
 
+-- The tables Campaner sets inside the prose: the harvest of a year, the dead
+-- of a plague week by week, the census of 1784, who lent how much for the
+-- armada of 1343. The transcription had every word and had lost the fact that
+-- the figures were in a column. One row per printed row, `label` and `figure`
+-- split where the geometry splits them; nothing is added or changed.
+CREATE TABLE IF NOT EXISTS table_row (
+    table_id  INTEGER NOT NULL,     -- rows of one table share it
+    seq       SMALLINT NOT NULL,    -- position in the table, from 0
+    pdf_page  SMALLINT NOT NULL,
+    text      VARCHAR NOT NULL,    -- the row as the panel read it, unaltered
+    label     VARCHAR,              -- the same row cut in two for display
+    figure    VARCHAR,
+    tier      VARCHAR,              -- worst certainty in the row
+    PRIMARY KEY (table_id, seq)
+);
+
 -- The Jurats -------------------------------------------------------------
 
 -- Six series, one per century, printed as appendices inside the body.

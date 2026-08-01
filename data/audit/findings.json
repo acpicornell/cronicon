@@ -270,15 +270,6 @@
   "excerpt": "Pagó la Procuracion Real el importe de una copia del proceso sobre las ocurrencias de San "
  },
  {
-  "check": "stray-tail",
-  "year": 1490,
-  "month": 12,
-  "day": 15,
-  "pdf_page": 220,
-  "detail": "terior, la cual debía remitirse al Rey.—",
-  "excerpt": "Pagó la Procuracion Real el importe de una copia del proceso sobre las ocurrencias de San "
- },
- {
   "check": "dangling-note",
   "year": 1492,
   "month": 6,
@@ -441,24 +432,6 @@
   "excerpt": "Exequias del Rey D. Felipe II, por cuenta del Procurador Real de Mallorca.—Desde el dia 10"
  },
  {
-  "check": "stray-tail",
-  "year": 1600,
-  "month": 9,
-  "day": 7,
-  "pdf_page": 309,
-  "detail": "s ó repartimientos; y que en las escase-",
-  "excerpt": "Real Pragmática autorizando el aumento en los derechos de la Molienda, Sisa de Carnes, Alf"
- },
- {
-  "check": "unlifted-siglum",
-  "year": 1619,
-  "month": 2,
-  "day": null,
-  "pdf_page": 396,
-  "detail": "Jn. Br. in 'ciándose luego á los bandoleros.-Jn.—Br.'",
-  "excerpt": "Otro hombre, de Alaró, lo fué por homicidio de Magin Bosch, asociándose luego á los bandol"
- },
- {
   "check": "glued",
   "year": 1621,
   "month": 5,
@@ -466,15 +439,6 @@
   "pdf_page": 400,
   "detail": "Procura dor -> procurador",
   "excerpt": "En 31 de Marzo falleció el Rey Don Felipe III, á los 44 años de su edad y 23 de reinado. L"
- },
- {
-  "check": "stray-tail",
-  "year": 1621,
-  "month": 6,
-  "day": 27,
-  "pdf_page": 401,
-  "detail": "braron fiestas y luminarias dos noches.—",
-  "excerpt": "El Virey D. Francisco Juan de Torres tomó posesion del presente Reino á nombre del nuevo m"
  },
  {
   "check": "dangling-note",
@@ -493,15 +457,6 @@
   "pdf_page": 407,
   "detail": "etc. etc.",
   "excerpt": "Solemnes fiestas de Sta. Isabel, Reina de Portugal: repiques, músicas, luminarias. El día "
- },
- {
-  "check": "stray-tail",
-  "year": 1628,
-  "month": 9,
-  "day": 7,
-  "pdf_page": 409,
-  "detail": "unciones religiosas, estando abierta la-",
-  "excerpt": "Traslacion del cuerpo de la Beata Catalina Thomás del sitio en que estaba á la capilla nue"
  },
  {
   "check": "split",
@@ -576,24 +531,6 @@
   "excerpt": "Refriega entre Comisarios y bandole ros: fué preso un tal Ribes y muerto el Bort del Fanga"
  },
  {
-  "check": "stray-tail",
-  "year": 1645,
-  "month": 8,
-  "day": 31,
-  "pdf_page": 432,
-  "detail": "etc. hubo procesion per ambitum.—J. — P.",
-  "excerpt": "Se celebraron las paces generales de los Caballeros, que había iniciado el Obispo. y Virey"
- },
- {
-  "check": "unlifted-siglum",
-  "year": 1645,
-  "month": 8,
-  "day": 31,
-  "pdf_page": 432,
-  "detail": "J. P. in 'etc. hubo procesion per ambitum.—J. — P.'",
-  "excerpt": "Se celebraron las paces generales de los Caballeros, que había iniciado el Obispo. y Virey"
- },
- {
   "check": "glued",
   "year": 1654,
   "month": null,
@@ -601,15 +538,6 @@
   "pdf_page": 438,
   "detail": "canó nigos -> canónigos",
   "excerpt": "«Resolvió la ciudad una talla de 30000 libras, como queda dicho en 1652, para ocurrir á lo"
- },
- {
-  "check": "bad-day",
-  "year": 1671,
-  "month": 6,
-  "day": 31,
-  "pdf_page": 454,
-  "detail": "31 of junio",
-  "excerpt": "El Doctor Vilasalo, de la Real Audiencia, y el Abogado Fiscal, de órden del Virey, fueron "
  },
  {
   "check": "glued",
@@ -621,15 +549,6 @@
   "excerpt": "Llegaron 10 galeras francesas; saludaron á la plaza y se les devolvió el saludo: marcháron"
  },
  {
-  "check": "stray-tail",
-  "year": 1683,
-  "month": 4,
-  "day": 18,
-  "pdf_page": 466,
-  "detail": "abían apresado la Capitana de Mallorca.—",
-  "excerpt": "Llegan unos bajeles ingleses de Túnez y dan la noticia de que los moros argelinos habían a"
- },
- {
   "check": "bare-dash",
   "year": 1685,
   "month": 3,
@@ -639,13 +558,13 @@
   "excerpt": "-Fueron al Borne donde justaron é hicieron un rech; por la noche dió el Virey baile en Pal"
  },
  {
-  "check": "unlifted-siglum",
+  "check": "stray-tail",
   "year": 1691,
   "month": 6,
   "day": 4,
   "pdf_page": 473,
-  "detail": "Cl. Fl. in ' y terminó en 23 siguiente.— — Cl. — Fl.'",
-  "excerpt": "Sínodo diocesano que dió principio en este día y terminó en 23 siguiente.— — Cl. — Fl."
+  "detail": " en este día y terminó en 23 siguiente.—",
+  "excerpt": "Sínodo diocesano que dió principio en este día y terminó en 23 siguiente.—"
  },
  {
   "check": "doubled",
@@ -655,15 +574,6 @@
   "pdf_page": 474,
   "detail": "etc., etc.",
   "excerpt": "Para celebrar la canonizacion de S. Juan Capistrano y S. Pascual Bailon corrióse un estafe"
- },
- {
-  "check": "stray-tail",
-  "year": 1700,
-  "month": 11,
-  "day": 10,
-  "pdf_page": 477,
-  "detail": "ar en la calle en los dias 17, 18 y 19.—",
-  "excerpt": "Noticia de la muerte del rey Cárlos II: el 16 se mandó tener cerradas medias puertas de la"
  },
  {
   "check": "runt",
@@ -682,15 +592,6 @@
   "pdf_page": 516,
   "detail": "pú. blicos, -> públicos",
   "excerpt": "Grandes fiestas y regocijos pú. blicos, que duraron más de tres dias, con motivo de las no"
- },
- {
-  "check": "stray-tail",
-  "year": 1715,
-  "month": 3,
-  "day": 19,
-  "pdf_page": 525,
-  "detail": "ento del Coronel Ortiz con un Teniente.-",
-  "excerpt": "Salió para Alcudia el Regimiento de la Ciudad al mando de D. Juan Fuster, habiéndose ántes"
  },
  {
   "check": "doubled",
@@ -819,15 +720,6 @@
   "excerpt": "En los primeros dias de este mes empezaron los Diputados del Comun á funcionar en el Ayunt"
  },
  {
-  "check": "bad-day",
-  "year": 1770,
-  "month": 2,
-  "day": 30,
-  "pdf_page": 591,
-  "detail": "30 of febrero",
-  "excerpt": "Publicose la sentencia condenatoria de los propaladores del falso milagro de la imágen de "
- },
- {
   "check": "doubled",
   "year": 1770,
   "month": 10,
@@ -923,17 +815,8 @@
   "month": null,
   "day": null,
   "pdf_page": 627,
-  "detail": "ENERO . 1795-",
-  "excerpt": "ENERO . 1795-"
- },
- {
-  "check": "stray-tail",
-  "year": 1795,
-  "month": null,
-  "day": null,
-  "pdf_page": 627,
-  "detail": "ENERO . 1795-",
-  "excerpt": "ENERO . 1795-"
+  "detail": "ENERO . 1795",
+  "excerpt": "ENERO . 1795"
  },
  {
   "check": "orphan-note",
@@ -1000,15 +883,6 @@
  },
  {
   "check": "orphan-note",
-  "year": 1337,
-  "month": null,
-  "day": null,
-  "pdf_page": 74,
-  "detail": "(1) col1 called by nothing",
-  "excerpt": "«Extraordinaris. Se pagd en Guillem Jover porter del castell de la Almudayna 2 y ls. 15 ss"
- },
- {
-  "check": "orphan-note",
   "year": null,
   "month": null,
   "day": null,
@@ -1063,30 +937,12 @@
  },
  {
   "check": "orphan-note",
-  "year": 1403,
-  "month": null,
-  "day": null,
-  "pdf_page": 170,
-  "detail": "(1) col1 called by nothing",
-  "excerpt": "CRIDA A FAVOR DELS CLERGUES. A 14 Abril de 1404 pagam an Berenguer Moragues trompeta de la"
- },
- {
-  "check": "orphan-note",
   "year": 1406,
   "month": null,
   "day": null,
   "pdf_page": 174,
   "detail": "(1) col0 called by nothing",
   "excerpt": "Dos cuadritos sobre tabla, colgados en las columnas de la Seo, frente á la capilla de la C"
- },
- {
-  "check": "orphan-note",
-  "year": 1411,
-  "month": null,
-  "day": null,
-  "pdf_page": 177,
-  "detail": "(1) col1 called by nothing",
-  "excerpt": "ELECCIÓ DEL SR. REY D. FERNANDO. A 2 de Juriol del añy 1412 pagam Girart trompeta de las C"
  },
  {
   "check": "orphan-note",
@@ -1198,15 +1054,6 @@
  },
  {
   "check": "orphan-note",
-  "year": 1450,
-  "month": null,
-  "day": null,
-  "pdf_page": 195,
-  "detail": "(1) col1 called by nothing",
-  "excerpt": "Guillerm Nadal de Manacor y Miquel Renovard de Alcudia executats en 1450 (equivocacion por"
- },
- {
-  "check": "orphan-note",
   "year": 1452,
   "month": null,
   "day": null,
@@ -1249,15 +1096,6 @@
   "pdf_page": 220,
   "detail": "(1) col1 called by nothing",
   "excerpt": "QUINTO AUTO DE FE. Item pagui an Guillem Gravalosa arrendador de la casa dels bans 15 ls. "
- },
- {
-  "check": "orphan-note",
-  "year": 1493,
-  "month": null,
-  "day": null,
-  "pdf_page": 222,
-  "detail": "(1) col1 called by nothing",
-  "excerpt": "PRECMATICHA SANCIÓ QUI PRIVA LAS PARCIALITATS Y CAVALLGADAS. A 26 de Setembre de 1494 pagu"
  },
  {
   "check": "orphan-note",
@@ -1393,15 +1231,6 @@
   "pdf_page": 407,
   "detail": "(1) col0 called by nothing",
   "excerpt": "Véase en los apéndices el original de esta rclacion anónima."
- },
- {
-  "check": "orphan-note",
-  "year": 1634,
-  "month": null,
-  "day": null,
-  "pdf_page": 419,
-  "detail": "(1) col1 called by nothing",
-  "excerpt": "Hay alguna divergencia en los noticiarios con respecto á los nombres de los capitanes desi"
  },
  {
   "check": "orphan-note",
@@ -1818,15 +1647,6 @@
   "excerpt": "«Este mismo año, habiendo concluido la gracia y misericordia concedida por S. M. á los des"
  },
  {
-  "check": "month-backwards",
-  "year": 1502,
-  "month": 1,
-  "day": 17,
-  "pdf_page": 246,
-  "detail": "agosto then enero",
-  "excerpt": "Se publicó por pregones la guerra entre España y Francia."
- },
- {
   "check": "long-undated",
   "year": 1508,
   "month": null,
@@ -2097,6 +1917,15 @@
   "excerpt": "«Entrando el año de 1659 volvieron á Gibraltar nuestra almiranta y el navio Ntra. Señora d"
  },
  {
+  "check": "long-undated",
+  "year": 1671,
+  "month": null,
+  "day": 31,
+  "pdf_page": 454,
+  "detail": "1340 chars",
+  "excerpt": "El Doctor Vilasalo, de la Real Audiencia, y el Abogado Fiscal, de órden del Virey, fueron "
+ },
+ {
   "check": "month-backwards",
   "year": 1674,
   "month": 7,
@@ -2203,6 +2032,15 @@
   "pdf_page": 573,
   "detail": "diciembre then agosto",
   "excerpt": "Entró en el puerto una fragata inglesa de porte de 44 cañones, con cuatro tartanas frances"
+ },
+ {
+  "check": "long-undated",
+  "year": 1770,
+  "month": null,
+  "day": 30,
+  "pdf_page": 591,
+  "detail": "461 chars",
+  "excerpt": "Publicose la sentencia condenatoria de los propaladores del falso milagro de la imágen de "
  },
  {
   "check": "long-undated",

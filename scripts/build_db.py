@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -108,6 +109,21 @@ def load_entries(con: duckdb.DuckDBPyConnection) -> None:
         for note in e.get("notes") or []:
             notes.append((len(notes) + 1, n, note.get("number"), note["text"],
                           note.get("pdf_page", e["pdf_page"])))
+    # …and every note the leaves print that no notice calls. 62 of the 257 are
+    # in that position -- the call is a superscript `(1)` two characters wide,
+    # the smallest thing on the leaf, and where no engine read it there is
+    # nothing to match. They are loaded with a null `entry_id` rather than
+    # dropped, because the book prints them and an edition that silently keeps
+    # 62 notes to itself is worse than one that says it cannot place them.
+    claimed = {(n[4], n[2], (n[3] or "")[:40]) for n in notes}
+    printed = DATA / "entries" / "footnotes.json"
+    if printed.exists():
+        for page, leaf_notes in json.loads(printed.read_text()).items():
+            for note in leaf_notes:
+                if (int(page), note["number"], note["text"][:40]) in claimed:
+                    continue
+                notes.append((len(notes) + 1, None, note["number"],
+                              note["text"], int(page)))
     con.executemany("INSERT INTO entry VALUES (?,?,?,?,?,?,?,?,?,?)", rows)
     con.executemany("INSERT INTO footnote VALUES (?,?,?,?,?)", notes)
     print(f"  entry         {len(rows):>8,}")
@@ -123,6 +139,36 @@ def load_centuries(con: duckdb.DuckDBPyConnection) -> None:
             for c in json.loads(path.read_text())]
     con.executemany("INSERT INTO century VALUES (?,?,?,?,?,?)", rows)
     print(f"  century       {len(rows):>8,}")
+
+
+TABLE_FIGURE = re.compile(r"([\d][\d.,\s]*[\d]|\d)\s*([»\"'\s.,]*"
+                          r"(?:cuarteras?|id|ls|ss|ds|libs?)?[\s.,»]*)$")
+
+
+def load_tables(con: duckdb.DuckDBPyConnection) -> None:
+    """The inline tables, one row per printed row, label and figure apart.
+
+    The split is made here rather than in `tables.py` because it is a reading of
+    the row, not a fact about the page: the geometry says where the figure ends,
+    and cutting the label off in front of it is presentation. The whole row text
+    is recoverable by joining the two back together.
+    """
+    path = DATA / "tables" / "tables.json"
+    if not path.exists():
+        return
+    rows = []
+    for n, table in enumerate(json.loads(path.read_text()), 1):
+        for seq, (cells, tier) in enumerate(zip(table["rows"], table["tiers"])):
+            text = " ".join(cells).strip()
+            match = TABLE_FIGURE.search(text)
+            if match:
+                label = text[:match.start()].strip(" .·•")
+                figure = (match.group(1) + " " + match.group(2).strip()).strip()
+            else:
+                label, figure = text, None
+            rows.append((n, seq, table["pdf_page"], text, label, figure, tier))
+    con.executemany("INSERT INTO table_row VALUES (?,?,?,?,?,?,?)", rows)
+    print(f"  table_row     {len(rows):>8,}")
 
 
 def load_jurats(con: duckdb.DuckDBPyConnection) -> None:
@@ -282,6 +328,7 @@ def main() -> None:
         load_words(con)
     load_entries(con)
     load_centuries(con)
+    load_tables(con)
     load_jurats(con)
     load_documents(con)
     load_sigla(con)

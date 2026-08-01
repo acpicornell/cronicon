@@ -87,8 +87,8 @@
   "words": 3304,
   "footnotes": 1,
   "certainty": {
-   "unanimous": 2857,
-   "one-dissent": 299,
+   "unanimous": 2858,
+   "one-dissent": 298,
    "two-dissent": 74,
    "contested": 74
   },
@@ -103,15 +103,15 @@
   "first_leaf": 233,
   "last_leaf": 235,
   "leaves": 3,
-  "words": 1082,
+  "words": 1080,
   "footnotes": 1,
   "certainty": {
-   "unanimous": 954,
-   "one-dissent": 85,
+   "unanimous": 952,
+   "one-dissent": 84,
    "two-dissent": 30,
-   "contested": 13
+   "contested": 14
   },
-  "contested_share": 0.012
+  "contested_share": 0.013
  },
  {
   "id": "0225-IV-04",
@@ -179,12 +179,12 @@
   "first_leaf": 316,
   "last_leaf": 321,
   "leaves": 6,
-  "words": 4450,
+  "words": 4449,
   "footnotes": 2,
   "certainty": {
    "unanimous": 3078,
    "one-dissent": 1042,
-   "two-dissent": 240,
+   "two-dissent": 239,
    "contested": 90
   },
   "contested_share": 0.0202
@@ -220,12 +220,12 @@
   "words": 605,
   "footnotes": 2,
   "certainty": {
-   "unanimous": 506,
+   "unanimous": 508,
    "one-dissent": 72,
    "two-dissent": 17,
-   "contested": 10
+   "contested": 8
   },
-  "contested_share": 0.0165
+  "contested_share": 0.0132
  },
  {
   "id": "0311-VI-06",
@@ -236,15 +236,15 @@
   "first_leaf": 324,
   "last_leaf": 368,
   "leaves": 45,
-  "words": 17801,
+  "words": 17806,
   "footnotes": 3,
   "certainty": {
-   "unanimous": 13906,
-   "one-dissent": 2598,
-   "two-dissent": 752,
-   "contested": 545
+   "unanimous": 14069,
+   "one-dissent": 2503,
+   "two-dissent": 691,
+   "contested": 543
   },
-  "contested_share": 0.0306
+  "contested_share": 0.0305
  },
  {
   "id": "0311-IX-09",

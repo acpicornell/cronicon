@@ -1,12 +1,11 @@
-MAYORICENSE.
-1519. *5*8Pedro Descatlar. Alfonso Torrella. Ramon Forteza Burgués.
-Juanot Berard. Juanot de Moya. Jaime Desmas.
-Nicolás de Berga. Juanot Soldevila. Pedro Net.
-Bautista Benet. Jaime Garau. Gabriel Mir.
-Jaime Garau. Antonio Reus. Miguel García.
+Pedro Descatlar. Juanot
+Berard. Nicolás
+de Berga.
+Bautista Benet. Jaime
+Garau.
 Bartolomé Palou, perayre.
 Lyso.
-Félipe Pelayo Fuster.
+Felipe Pelayo Fuster.
 Agustin Serralta.
 Martin Truyols.
 Juanot Ribas.
@@ -17,8 +16,8 @@ Juanot de Puigdorfila.
 Guillermo Desmas.
 Jaime Martí.
 Miguel Suñer.
-Jorge Arquer.
-Rafael Arnau, flassader.
+Jorge Arquer. Rafael
+Arnau, flassader.
 1522.
 Pelayo Fuster.
 Juanot Salas.
@@ -71,7 +70,8 @@ Gaspar Casas.
 Bartolomé Cavaller, apotecari.
 1530.
 Felipe Fuster.
-Bernardo de
+Bernardo de juny¿
+Jaime Campfullós.
 Gabriel Seguí.
 Pedro Ferrandell.
 Francisco Rossell, aésdhonádot ,
@@ -82,7 +82,6 @@ Jaime Montanyans.
 Juanot Casas.
 Miguel Garau.
 Pedro Boy, flassader.
-Miguel Binimelis, assahonador.
 1532.
 Juanot de Caulellas,
 Juanot Riera.
@@ -135,10 +134,10 @@ Gregorio Fornés, perayre.
 I540.
 Hugo Sant Joan.
 Bartolomé Rossinyol.
-Francisco Serralta.
-Bartolomé Pagés.
-Gabriel Segui.
-1541.
+Francisco Serralta. Bartolomé
+Pagés.
+Gabriel Segui. Miguel Binimelis,
+assahonador.
 Juanot de Caulellas.
 Nicolás Cotoner mayor.
 Juan Antonio Barthomeu.
@@ -166,7 +165,6 @@ Jaime de Campfullós.
 Jorge Pastor.
 Gabriel Poquet.
 Bartolomé Tortrella, apuntador
-1
 Jaime Montanyans.
 Francisco Descós.
 Bernardo Cotoner.
