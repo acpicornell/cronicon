@@ -176,6 +176,26 @@ dropping the leading digit of the running head (`5^ CRONICON` for 54). Never
 drive the mapping off the per-leaf printed number — an earlier version did and
 mapped leaf 211 to IA leaf 29.
 
+## A column's edge is where its leftmost line starts
+
+`find_columns` took the **mean** of a cluster of left edges, and a mean falls
+inside the column whenever anything hangs in its margin. Leaf 152 is the
+`ESPLICACION DEL ÁRBOL` of the genealogical plate and prints each entry's node
+number out in the margin of its column, so the second column's edges run 0.485
+to 0.555 and the mean lands at 0.529. Every number then sat left of the
+boundary, was assigned to the *first* column, and sorted by y among its prose:
+`…conquistó á Mallorca y Menorca.— IO En 1231 las dá en cambio…`.
+
+The minimum is right and is safe by measurement: **over all 614 leaves it
+changes no leaf's column count.** It only moves a boundary within its own
+column, which is exactly where a hanging number, an outdent or a display
+initial lives. Unanimous 368 887 → **369 566** over the book.
+
+Two remedies were tried first and neither applies, which is worth not repeating:
+`--split-gutter` cuts a *line* whose internal gap is too wide and these numbers
+are already lines of their own; and `find_columns` was not failing to find two
+columns, it was putting the boundary in the wrong place inside one.
+
 ## Finding year headings
 
 Measured, after geometry was tried and dropped. A display heading is **not**

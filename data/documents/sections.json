@@ -3,21 +3,13 @@
   "id": "0114-II-02",
   "block_leaf": 114,
   "numeral": "II",
-  "title": "Cartas del gobernador Gilaberto de Centellas á Pedro IV acerca de la última empresa de Jaime III para recobrar su reino. (1)",
-  "genre": "Cartas",
+  "title": "sat, lo qual Bn. de Buadella, havia dada una",
+  "genre": null,
   "first_leaf": 123,
   "last_leaf": 137,
   "leaves": 15,
-  "words": 12622,
+  "words": 12213,
   "paragraph_leaves": [
-   123,
-   123,
-   123,
-   123,
-   123,
-   123,
-   123,
-   123,
    123,
    123,
    123,
@@ -55,7 +47,7 @@
   "notes": [
    {
     "number": 1,
-    "text": "Ya se ha dicho en una nota de su lugar correspondiente del texto, que las cartas de Centellas acerca de la última empresa del desgraciado Jaime III se hallan insertas en un Códice copiador del archivo que fué de la Lugartenencia de estas islas, hoy de la Audiencia del Distrito. De allí tomó por primera vez el P. Villanueva las que le parecieron de mayor interés: muchos años despues se han copiado otras tambien muy importantes, que se ha servido facilitarme D. Bartolomé Pascual. Todas merecen ser conocidas por el público: en ellas se palpan, por decirlo así, los preliminares del trágico fin del desventurado Jaime III, y en alguna (como en la de 6 de Junio) se traslucen varias de las venganzas, más que castigos, llevadas á cabo, de su usurpacion, por el astuto implacable Pedro IV. Las que considero inéditas llevan un asterisco, para distinguirlas de las ya publicadas por Villanueva.",
+    "text": "Ya se ha dicho en una nota de su lugar correspondiente del texto, que las cartas de Centellas acerca de la última empresa del desgraciado Jaime III se hallan insertas en un Códice copiador del archivo que fué de la Lugartenencia de estas islas, hoy de la Audiencia del Distrito. De allí tomó por primera vez el P. Villanueva las que le parecieron de mayor interés: muchos años despues se han copiado otras tambien muy importantes, que se ha servido facilitarme D. Bartolomé Pascual. Todas merecen ser conocidas por el público: en ellas se palpan, por decirlo así, los preliminares del trágico fin del desventurado Jaime III, y en alguna (como en la de 6 de Junio) se traslucen varias de las venganzas, más que castigos, llevadas á cabo, Pedro de su usurpacion, por el astuto é implacable risco, para distinguirlas de las ya publicadas por Villanueva.",
     "pdf_page": 123
    },
    {
@@ -70,10 +62,10 @@
    }
   ],
   "certainty": {
-   "unanimous": 11269,
-   "one-dissent": 864,
-   "two-dissent": 258,
-   "contested": 231
+   "unanimous": 10945,
+   "one-dissent": 798,
+   "two-dissent": 246,
+   "contested": 224
   },
   "contested_share": 0.0183
  },
@@ -86,7 +78,7 @@
   "first_leaf": 137,
   "last_leaf": 153,
   "leaves": 17,
-  "words": 12307,
+  "words": 12303,
   "paragraph_leaves": [
    137,
    137,
@@ -163,21 +155,6 @@
    152,
    152,
    152,
-   152,
-   152,
-   152,
-   152,
-   152,
-   152,
-   152,
-   152,
-   152,
-   152,
-   152,
-   152,
-   152,
-   152,
-   152,
    152
   ],
   "footnotes": 7,
@@ -219,12 +196,12 @@
    }
   ],
   "certainty": {
-   "unanimous": 10451,
-   "one-dissent": 1197,
-   "two-dissent": 437,
-   "contested": 222
+   "unanimous": 10517,
+   "one-dissent": 1214,
+   "two-dissent": 359,
+   "contested": 213
   },
-  "contested_share": 0.018
+  "contested_share": 0.0173
  },
  {
   "id": "0114-IV-04",
@@ -585,8 +562,9 @@
   "first_leaf": 229,
   "last_leaf": 233,
   "leaves": 5,
-  "words": 3304,
+  "words": 3313,
   "paragraph_leaves": [
+   229,
    229,
    229,
    229,
@@ -635,12 +613,12 @@
    }
   ],
   "certainty": {
-   "unanimous": 2858,
-   "one-dissent": 298,
-   "two-dissent": 74,
-   "contested": 74
+   "unanimous": 2421,
+   "one-dissent": 697,
+   "two-dissent": 112,
+   "contested": 83
   },
-  "contested_share": 0.0224
+  "contested_share": 0.0251
  },
  {
   "id": "0225-III-03",
@@ -725,7 +703,7 @@
   "first_leaf": 236,
   "last_leaf": 246,
   "leaves": 11,
-  "words": 5054,
+  "words": 5066,
   "paragraph_leaves": [
    236,
    236,
@@ -752,6 +730,7 @@
    238,
    238,
    238,
+   239,
    239,
    239,
    239,
@@ -838,12 +817,12 @@
    }
   ],
   "certainty": {
-   "unanimous": 4196,
-   "one-dissent": 514,
-   "two-dissent": 195,
+   "unanimous": 4217,
+   "one-dissent": 504,
+   "two-dissent": 196,
    "contested": 149
   },
-  "contested_share": 0.0295
+  "contested_share": 0.0294
  },
  {
   "id": "0311-II-02",
@@ -884,8 +863,8 @@
   ],
   "certainty": {
    "unanimous": 642,
-   "one-dissent": 86,
-   "two-dissent": 28,
+   "one-dissent": 85,
+   "two-dissent": 29,
    "contested": 28
   },
   "contested_share": 0.0357
@@ -938,12 +917,12 @@
    }
   ],
   "certainty": {
-   "unanimous": 3078,
-   "one-dissent": 1042,
-   "two-dissent": 239,
-   "contested": 90
+   "unanimous": 3647,
+   "one-dissent": 589,
+   "two-dissent": 137,
+   "contested": 76
   },
-  "contested_share": 0.0202
+  "contested_share": 0.0171
  },
  {
   "id": "0311-IV-04",
@@ -1344,9 +1323,9 @@
    }
   ],
   "certainty": {
-   "unanimous": 14069,
-   "one-dissent": 2503,
-   "two-dissent": 691,
+   "unanimous": 14085,
+   "one-dissent": 2486,
+   "two-dissent": 692,
    "contested": 543
   },
   "contested_share": 0.0305
@@ -1430,8 +1409,8 @@
    }
   ],
   "certainty": {
-   "unanimous": 3385,
-   "one-dissent": 499,
+   "unanimous": 3384,
+   "one-dissent": 500,
    "two-dissent": 110,
    "contested": 53
   },
@@ -1446,7 +1425,7 @@
   "first_leaf": 373,
   "last_leaf": 380,
   "leaves": 8,
-  "words": 2830,
+  "words": 2834,
   "paragraph_leaves": [
    373,
    373,
@@ -1464,7 +1443,6 @@
    373,
    373,
    373,
-   374,
    374,
    374,
    374,
@@ -1518,12 +1496,12 @@
   "footnotes": 0,
   "notes": [],
   "certainty": {
-   "unanimous": 2156,
+   "unanimous": 2172,
    "one-dissent": 362,
-   "two-dissent": 169,
-   "contested": 143
+   "two-dissent": 162,
+   "contested": 138
   },
-  "contested_share": 0.0505
+  "contested_share": 0.0487
  },
  {
   "id": "0478-II-02",
@@ -1636,8 +1614,8 @@
    }
   ],
   "certainty": {
-   "unanimous": 823,
-   "one-dissent": 78,
+   "unanimous": 824,
+   "one-dissent": 77,
    "two-dissent": 25,
    "contested": 16
   },
@@ -1673,9 +1651,9 @@
    }
   ],
   "certainty": {
-   "unanimous": 613,
-   "one-dissent": 98,
-   "two-dissent": 26,
+   "unanimous": 622,
+   "one-dissent": 90,
+   "two-dissent": 25,
    "contested": 13
   },
   "contested_share": 0.0173
@@ -1780,12 +1758,12 @@
    }
   ],
   "certainty": {
-   "unanimous": 5349,
+   "unanimous": 5357,
    "one-dissent": 628,
-   "two-dissent": 200,
-   "contested": 97
+   "two-dissent": 193,
+   "contested": 96
   },
-  "contested_share": 0.0155
+  "contested_share": 0.0153
  },
  {
   "id": "0478-VII-07",
@@ -2172,8 +2150,8 @@
    }
   ],
   "certainty": {
-   "unanimous": 3301,
-   "one-dissent": 377,
+   "unanimous": 3308,
+   "one-dissent": 370,
    "two-dissent": 185,
    "contested": 273
   },

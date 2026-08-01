@@ -146,7 +146,18 @@ def find_columns(lines: list[Line]) -> list[float]:
         else:
             clusters.append([x])
 
-    candidates = [sum(c) / len(c) for c in clusters if len(c) >= MIN_COLUMN_LINES]
+    # The column's edge is where its leftmost line starts, not the mean of its
+    # cluster. Leaf 152 -- the `ESPLICACION DEL ÁRBOL` of the genealogical
+    # plate -- prints each entry's node number hanging in the margin of its
+    # column, so the second column's edges run 0.485 to 0.555 and the mean falls
+    # at 0.529, *inside* the column. Every number then sat left of the boundary,
+    # was assigned to the first column, and sorted by y among its prose:
+    # `…conquistó á Mallorca y Menorca.— IO En 1231 las dá en cambio…`.
+    #
+    # Safe by measurement: over all 614 leaves the minimum changes no leaf's
+    # column *count*. It only moves a boundary within its own column, which is
+    # where a hanging number, a paragraph's outdent or a display initial lives.
+    candidates = [min(c) for c in clusters if len(c) >= MIN_COLUMN_LINES]
     if not candidates:
         return [0.0]
 

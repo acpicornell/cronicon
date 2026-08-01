@@ -11,7 +11,12 @@
     "pdf_page": 58,
     "line": 0,
     "jurats": true,
-    "until": 63
+    "until": 63,
+    "years": [
+     1281,
+     1281
+    ],
+    "years_stated": 1
    }
   ],
   "numerals_not_found": []
@@ -38,10 +43,10 @@
    {
     "number": 2,
     "numeral": "II",
-    "title": "Cartas del gobernador Gilaberto de Centellas á Pedro IV acerca de la última empresa de Jaime III para recobrar su reino. (1)",
+    "title": "sat, lo qual Bn. de Buadella, havia dada una",
     "pdf_page": 123,
-    "line": 0,
-    "read_as": "II.",
+    "line": 52,
+    "read_as": "XX.",
     "until": 136
    },
    {
@@ -51,12 +56,7 @@
     "pdf_page": 137,
     "line": 0,
     "read_as": "III.",
-    "until": 152,
-    "years": [
-     1315,
-     1315
-    ],
-    "years_stated": 1
+    "until": 152
    },
    {
     "number": 4,
@@ -152,7 +152,7 @@
      1401,
      1500
     ],
-    "years_stated": 36
+    "years_stated": 37
    }
   ],
   "numerals_not_found": []
@@ -174,7 +174,7 @@
      1502,
      1598
     ],
-    "years_stated": 79
+    "years_stated": 80
    },
    {
     "number": 2,
@@ -240,7 +240,7 @@
     "numeral": "XI",
     "title": "Algunas noticias é indicaciones curiosas extraidas de las que coleccionó el Pavorde Jaume.",
     "pdf_page": 373,
-    "line": 27,
+    "line": 26,
     "read_as": "XI.",
     "until": 379,
     "years": [

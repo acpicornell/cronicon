@@ -24,7 +24,7 @@ trompas é tabals una crida, so es de part del dit
 noble Governador, que alscu sots pena de cors
 é deaver no fes socors ne ajuda al dit Bisba, ne
 á alscuna persona ecclesiastica, ne á aquellas respongues de res que á aquell demands, ne pa, ne
-vi, ne carns los venés, ne pa los cogués é ne altres vituallas á aquells aderessás.
+vi; ne carns los venés, ne pa los cogués é ne altres vituallas á aquells aderessás.
 *
 Divenres á xxvi de Janer any dessusdit en
 Bernat Umbert, fill de l'honrat en Francesch
@@ -46,10 +46,10 @@ dessus dit més en possessio de la nostra Juraria
 los dessus anomenats; jatsia, segons franquesas
 e privilegis del dit Regne, los dits Jurats se daguessan elegir per los habitadors del dit Regne
 la vigilia de Nadal, e segons pragmaticha de
-Mos. Huc d' Anglessola, virey, trames en Mallorques, se daguessan elegir lo jorn de Santa
+Mos: Huc d' Anglessola, virey, trames en Mallorques, se daguessan elegir lo jorn de Santa
 Lucia.
-Dijous lo
-primer die de Fabrer any Mccccm
+*
+Dijous lo primer die de Fabrer any Mccccm
 dessusdit lo entredit que fo mes en la ciutat per
 lo Reverent Bisba de Mallorques fó per aquell
 mateix Bisba relevat e tolt. E lo die dessusdit lo
@@ -60,9 +60,10 @@ lo entredit dessusdit seria tolt é relevat, e no
 mes avant; pero lo dit noble Governador stech
 vedat continuadament ab senys sonants e ab
 participants.
+# * *
 Dimars á m de Abril any dessusdit lo dit noble Governador a requesta dels subrogats en
 la Jurería levá e tolch als honrats misser Bernat de Auleza, doctor en leys, e en Johan Berart, Vaguers, per lo Senyor Rey elets sobre la
 sentencia per ells donadora, per vigor de comissio a ells feta per lo Senyor Rey, en la e sobre la denunciació feta contra los Jurats del
-any mcccc, lo procés original sobre el qual ells
+any Mcccc, lo procés original sobre el qual ells
 havian a dar lur sentencia. E feu panyorar lo
 dit misser Bernat per penas las quals á aquells
