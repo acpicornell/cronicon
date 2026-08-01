@@ -596,3 +596,12 @@ h3.dochead:first-child + h3.dochead { font-size: 1.12rem; font-weight: 400; }
              background: var(--surface); }
 .plate figcaption { margin-top: .5rem; font-size: .8rem;
                     color: var(--text-muted); }
+
+/* A year opening a stretch of a diary, set as the year pages set a month:
+   ranged left, small, with a rule over it. Campaner prints it alone on its
+   line or runs it into the first sentence, and either way it is a heading. */
+h3.docyear { font-size: .74rem; letter-spacing: .14em; font-weight: 700;
+             color: var(--text-muted); margin: 2rem 0 .9rem; padding-top: .6rem;
+             border-top: 1px solid var(--border);
+             font-variant-numeric: tabular-nums; }
+h3.docyear:first-child { margin-top: 0; border-top: 0; padding-top: 0; }

@@ -571,6 +571,12 @@ def year_page(con, year: int, years: list[int], sigla: dict[str, str]) -> str:
 # How many opening paragraphs may be the section's own heading: the numeral,
 # the title, and the `(pág. 71 del texto.)` Campaner puts under it.
 HEAD_LINES = 3
+# A year standing at the head of a stretch of a document, the way Campaner sets
+# it: alone on its line in `Fragmentos… de Mos. Jaume Viquet`, or run into the
+# first sentence of the year it opens -- `1637. A 30 Sctembre 1637 prengué
+# possesió Don Alonso de Cardona…`. Either way it is a heading and not prose,
+# and the documents that are diaries read as a wall without it.
+DOC_YEAR = re.compile(r"^\s*(1[2-8]\d\d)\s*[.,]\s*(?=$|[«\"A-ZÁÉÍÓÚÑ])")
 
 
 def document_page(con, doc) -> str:
@@ -655,6 +661,18 @@ def document_page(con, doc) -> str:
         # capital -- so it is recognised by *being* the title, which is a fact
         # the catalogue already holds.
         flat = " ".join(para.split())
+        year = DOC_YEAR.match(flat)
+        # No `i >= HEAD_LINES` guard: the first year of a diary sits inside the
+        # range reserved for the numeral and the title -- `VI`, the title,
+        # `1636.` -- and skipping it left the diary's opening year as a bare
+        # paragraph while every later one was a heading. A numeral or a title
+        # cannot match DOC_YEAR, so the range needs no protecting.
+        if year:
+            chunks.append(f'<h3 class="docyear">{year.group(1)}</h3>')
+            rest = flat[year.end():].strip()
+            if rest:
+                chunks.append(f'<p id="p{i}">{mark_doubt(rest, doubtful)}</p>')
+            continue
         tag = ("h3" if i < HEAD_LINES and len(para) < 260 and
                (i == 0 or flat == " ".join(title.split())
                 or para.startswith(("«", "(", '"')) or para.isupper())
