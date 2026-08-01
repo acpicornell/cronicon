@@ -1,0 +1,2411 @@
+{
+ "0114-II-02": [
+  {
+   "check": "wall",
+   "detail": "¶13: 1214 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶33: 'Item, es cert quen Jacme haura iij. m homens a peu'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶43: 3102 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶45: 1236 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶62: 1870 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶64: 2611 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶66: 3200 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶68: 5229 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶71: 2150 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶73: 2182 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶75: 1666 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶81: 2275 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶83: 1533 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶85: 2532 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶86: 3201 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶88: 2885 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶91: 1287 chars"
+  },
+  {
+   "check": "runt",
+   "detail": "¶94: '1.a'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶94: '1.a'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶96: 1333 chars"
+  },
+  {
+   "check": "runt",
+   "detail": "¶97: '2.a'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶97: '2.a'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶99: 1697 chars"
+  },
+  {
+   "check": "piece-gap",
+   "detail": "piece 1 was not read"
+  },
+  {
+   "check": "piece-gap",
+   "detail": "piece 19 was not read"
+  }
+ ],
+ "0114-III-03": [
+  {
+   "check": "short-para",
+   "detail": "¶3: '(Página 71 del texto.)'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶4: 'D. JAIME I REY DE MALLORCA.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶12: 1261 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶13: 1490 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶14: 1298 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶15: 1472 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶22: 1252 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶23: 1727 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶24: 'D. SANCHO REY DE MALLORCA.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶28: 'D. FERNANDO, INFANTE'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶29: 'DE MALLORCA.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶35: 1507 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶36: 1259 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶38: 1644 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶40: 1995 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶42: 1235 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶43: 1537 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶45: 1331 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶47: 1354 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶48: 2297 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶49: 1652 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶50: 1401 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶51: 1697 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶54: 2184 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶55: 1276 chars"
+  },
+  {
+   "check": "runt",
+   "detail": "¶60: 'D. JAIME,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶60: 'D. JAIME,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶61: 'PRIMOGÉNITO DEL REY D. JAIME II DE MALLORCA.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶62: 2072 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶64: 1222 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶65: 1651 chars"
+  },
+  {
+   "check": "runt",
+   "detail": "¶66: 'D. FERNANDO'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶66: 'D. FERNANDO'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶67: 'HERMANO DEL REY D. JAIME II DE MALLORCA.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶68: 2537 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶69: 'D.a VIOLANTE'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶70: 'REINA VIUDA DE MALLORCA.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶72: 'D.* ISABEL'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶72: 'D.* ISABEL'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶73: 'INFANTA DE MALLORCA.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶74: 1787 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶76: 1731 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶77: 'ESPLICACION DEL ÁRBOL.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶84: 'Casó con el infante de Castilla D. Juan Manuel.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶86: 'Se dice es la que está enterrada en la Catedral.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶98: 'Se halla notado en las letras Reales de dicho año.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶100: 'Se llamaba Pagano de Mallorca, casó con Blanca de '"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶102: 'Casó con D.* Juana, Reina de Nápoles.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶104: 'Casó con Juan, marqués de Montferrato.—En 1403 aún'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶106: 'Véase el Lib. de Datas del R. Patrimonio, de 1339.'"
+  },
+  {
+   "check": "broken-year",
+   "detail": "leaf 152: '16' -- the panel says 1337, 2 of 8 readings"
+  }
+ ],
+ "0114-IV-04": [
+  {
+   "check": "short-para",
+   "detail": "¶6: '«Fle misera, geme vitam sortem balearis.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶7: 'Mistrum (3) adest; chaos inseviet,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶8: 'fies et tuis exul.»'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶10: 'inde liberatus existit.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶15: 1206 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶65: 1864 chars"
+  }
+ ],
+ "0114-V-05": [
+  {
+   "check": "short-para",
+   "detail": "¶7: 'Dimecres á s Juriol. Vi. . s. + ds. Carn y porch..'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶10: 'Suma.. . . » 5 1 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶10: 'Suma.. . . » 5 1 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶11: '«Se ignora lo que son el Libertí y Anet.» (1)'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶21: '* * * Entrelos gastos Reales de este año 1311 figu'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶24: 'En 4 de Agosto per menjar del mes de Agost...... ('"
+  },
+  {
+   "check": "runt",
+   "detail": "¶29: 'Ingresos.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶29: 'Ingresos.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶31: '3.705 libs. 12 ss. » ds. esta comarca.) . .'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶32: '«Id. de la rebuda'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶33: 'fora la ciutat, en diner. . . . . . . .'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶34: '2.594 » 7 » IO »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶34: '2.594 » 7 » IO »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶35: 'Id. de la rebuda'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶36: 'del preu de tot lo blat.. 3.521'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶37: '» » » 9 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶37: '» » » 9 »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶37: '» » » 9 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶38: 'Id. de la rebuda'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶40: '«Id. de la rebuda'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶41: 'de les rendes que foren del Noble Gaston de Bearne'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶42: '1.113 *» 5 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶42: '1.113 *» 5 »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶42: '1.113 *» 5 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶44: 'Quitacio de 1 5 libs. per civade.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶45: 'Quitacio de sirvents dels casteyls.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶47: 'Dada de agres de falcons. .... 36 » 18 » 7 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶50: 'Dada de salaris e messions de rendes.» 449 » 17 » '"
+  },
+  {
+   "check": "runt",
+   "detail": "¶51: '8.435 » 16 » 11 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶51: '8.435 » 16 » 11 »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶51: '8.435 » 16 » 11 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶52: 'Ingresos. . . . . 17.069 libs. 15 ss. 6 ds.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶53: 'Gastos.. . . . . 8.435 » 16 » 11 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶53: 'Gastos.. . . . . 8.435 » 16 » 11 »'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶54: 'Resta. ..... 8.633 » 18 » 7 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶54: 'Resta. ..... 8.633 » 18 » 7 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶73: 'A la dona Nastorina qui pren 90 libs.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶75: 'A Mestre Ramon Capsir, assesor del lochtinent, 100'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶76: 'A Rodrigo Ortiz, Vaguer de fora, pren 108 libs.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶77: 'A Jaume Vedruyans, assesor de Vaguer, 80 libs.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶81: 'A Pere de Massanes, Batle de Inca, 100 libs.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶82: 'A Mateu Eymich, Batle de Sineu, 42 libs.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶84: 'A Uguet de Ribes altes, sots veguer, 74 libs. 4 ss'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶86: 'A Johan Matha, barber del Sr. Rey, 109 libs. IO ss'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶89: 'A Cassanimigo Salvatge, etc. etc. 238 libs., 8 ss.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶99: '» Pera de Crexell. .'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶101: 'Deficit. . . » 9 » 4»'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶101: 'Deficit. . . » 9 » 4»'"
+  },
+  {
+   "check": "contested",
+   "detail": "9.9% of its words"
+  }
+ ],
+ "0225-II-02": [
+  {
+   "check": "short-para",
+   "detail": "¶7: 'Gaspar Tomás.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶8: 'Domingo de Oleza.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶9: 'Francisco Bartomeu.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶10: 'Antonio Caldes.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶11: 'Miguel Goixat.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶14: 5433 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶15: 1222 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶20: 'LA RECEPCIÓ DEL PRIMOGENIT'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶21: 'DARAGÓ.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶21: 'DARAGÓ.'"
+  },
+  {
+   "check": "orphan-note",
+   "detail": "note (1) is called by nothing"
+  }
+ ],
+ "0225-III-03": [
+  {
+   "check": "short-para",
+   "detail": "¶3: 'LO REY DARAGO E DE LES DOS'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶4: 'SICILIES.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶4: 'SICILIES.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶5: 1620 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶7: 3405 chars"
+  }
+ ],
+ "0225-IV-04": [
+  {
+   "check": "runt",
+   "detail": "¶2: 'de 1490.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶7: 1858 chars"
+  },
+  {
+   "check": "orphan-note",
+   "detail": "note (1) is called by nothing"
+  }
+ ],
+ "0225-V-05": [
+  {
+   "check": "wall",
+   "detail": "¶29: 1384 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶31: 1430 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶33: 'Otra nota original curiosa:'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶43: 1544 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶51: 1442 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶56: 'Se vendió el aceite, este año, á 3 ss. el cuartan.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶59: 'El Gobernador Mos. Vidal Castelladoriz, 1700 lbs.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶60: 'Su asesor, Mos. Miguel Çabrugada, 600 lbs.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶61: 'Procurador Real, Mos. Francisco Burgues, 900 lbs.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶62: 'Los demás, continuaban como en 1450.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶71: 6480 chars"
+  },
+  {
+   "check": "runt",
+   "detail": "¶76: '1489. Julio'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶76: '1489. Julio'"
+  }
+ ],
+ "0311-II-02": [],
+ "0311-III-03": [
+  {
+   "check": "wall",
+   "detail": "¶3: 3162 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶8: 2053 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶12: 1228 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶18: 1314 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶19: 'Die veneris xxiij Mensis Aprilis anno MDxxij.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶22: 2101 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶34: 'Die ij mensis Julii Anno predicto MDxxij.'"
+  }
+ ],
+ "0311-IV-04": [
+  {
+   "check": "wall",
+   "detail": "¶6: 3334 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶8: 1581 chars"
+  }
+ ],
+ "0311-V-05": [
+  {
+   "check": "wall",
+   "detail": "¶2: 2251 chars"
+  }
+ ],
+ "0311-VI-06": [
+  {
+   "check": "short-para",
+   "detail": "¶10: 'por el Pavorde D. A. Jaume.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶13: '«Lo Lochtinent general.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶15: '18 ls.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶15: '18 ls.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶17: '18 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶17: '18 »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶17: '18 »'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶19: '28 » 16'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶19: '28 » 16'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶19: '28 » 16'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶21: 'A Francesch Torres per 3 mesos.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶22: '27 » 18 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶22: '27 » 18 »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶22: '27 » 18 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶23: 'A Juliá Valera, altre dels sargents majors.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶24: '41 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶24: '41 »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶24: '41 »'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶26: '2103'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶26: '2103'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶26: '2103'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶28: '. 1218'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶28: '. 1218'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶28: '. 1218'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶30: '785'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶30: '785'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶30: '785'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶31: 'A Joanot Mora, capitá per sí y 93 homens.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶33: 'A Hernan Sanchiz..'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶39: '175 13 companyons. . .'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶40: 'A Johanot Altés (alies) Saboner, capitá, per son s'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶41: '. 1811 17'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶41: '. 1811 17'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶41: '. 1811 17'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶42: 'A Pedro de Mora, capitá de'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶43: '48 ls. 12 s. 6 ds. Ballesters.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶46: '»6»'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶46: '»6»'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶46: '»6»'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶49: 'Al mateix Torres per id. . .462 15 » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶53: 'Resistencia de Pollensa.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶54: 'Lo Lochtinent general.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶55: 1329 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶57: 'Nota dels executats á mort.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶61: 'INCA. Blay Ferrer.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶62: 'MONTUIRI. Sebastia Vey.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶63: 'MURO. Marti Palau.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶64: 'La POBLA. Joan Serra. Onofre Reura. Simon Massana.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶68: 'ANDRAIX. Gabriel Cadafell,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶69: 'ALARÓ. Jaume Simó.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶71: 'ALGAIDA. Michel Trias Gabriel Company.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶72: 'BUNYOLA. Lorens Muntaner. Matheu Parets. Gabriel A'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶73: 'ARTÀ. Anthoni Nicholauet. Bernat Mir. March Brech.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶74: 'SANTANY. Johan Pou. Arnau Albert.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶76: 'SOLLER. Barthomeu Bonosa. Barthomeu Ripoll. Nadal '"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶80: 'SAN JOAN. Joan Reus. Pere Verger.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶82: 'SINEU. Jaume Ferragut.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶83: 'COHANEGRE. Onofre Jaume.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶84: 'SANTA MARGALIDA. Bernat Nadal.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶85: 'SCORCHA. Lorens de Scorcha.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶86: 'PUIGPUNYENT Michel Fuixá.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶87: 1947 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶115: '«Per la guarda den Colom.»'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶122: '«Exemplar per terror del Poble.»'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶125: 'Sitio de Ibiza.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶130: 'LECTOREM.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶130: 'LECTOREM.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶131: 'TSI apparatus noftri quam pro tanti'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶133: 'regi fuo gens Maiorica tantopere'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶136: 'Vale optime lector, lege et fruere.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶137: 'AUTHOR AD LECTOREM.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶138: 'Quidquid habet codex patienter perlege, lector,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶139: 'Inclita fi patrie gloria forte iuuat.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶140: 'Perlege, fit quamuis humili compofta cothurno,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶141: 'Nam noua cum veris continet hifteria.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶142: 'LA FELICISSIMA VINGU'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶143: 'da de Don Carlos cinque Emperador de'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶144: 'Romans Rey e fenyor noftre en la fua'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶145: 'ciutat de Mallorques, fonch á tretze'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶146: 'del mes de Octubre del any Mil'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶147: 'cincents quaranta hu. Prefidint'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶148: 'en aquella y effent Jurats los'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶149: 'feguents. Com appar mes'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶150: 'llarch en la hiftoria.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶151: 'V1REY.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶151: 'V1REY.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶152: 'VIREY. Lo Spectable y noble fenyor don Phelip de'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶153: 'Ceruello.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶153: 'Ceruello.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶154: 'JURATS. Lo Magnifich moffen Joanot de Caulelles'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶155: 'Caualler.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶155: 'Caualler.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶157: 'PROHEMI.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶157: 'PROHEMI.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶158: 'ATURAL cofa es a tots los homens (legons diu Plato'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶159: 'defitjar faber les nouitats feguides, o que de caf'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶160: 'dia fe fegueixen: y ja mes en fas propias patrias.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶161: 'ço que la falut de cada hu particular es vifta ten'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶162: 'certa dependencia, o conexitat ab la falut de aque'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶163: 'Y aço es tant cert que no es inconuenient algu, di'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶164: 'creure, que de açi aja agut principi aquell delito'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶165: 'menys neceffari que vtil genero, o manera de fcriu'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶166: 2530 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶167: 'COMENÇA LA HYSTORIA.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶168: 'AUENT de fcriure, e narrar vna tant mareuellosa no'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶169: 'que tinch per cert que als suceffors ha de portar'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶171: 'fem, per la gran marauella de la cofa, que quafi n'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶172: 'appar effer eftat un somni; sera be començar la'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶173: 'prefent hiftoria, ab ouo, com fe diu en lo Adagi'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶174: 'vulgar, é infertar en aquella totas las particular'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶176: 'Al illuftre feñor el Viforey de Mallorca.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶177: 'Illuftre feñor.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶178: 1452 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶179: '*Cierto feruidor de vra. feñoria.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶180: 'Andrea Doria.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶181: 2943 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶182: 3363 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶183: 1829 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶184: 1629 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶185: 6223 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶186: 'Cefarea producte tribu Rex maxime regum,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶187: 'Qua te fata ducunt arripe, quæfo, viam.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶188: 'Si nefcis, ego fum Praxedis fanguine ab alto'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶190: 'De magno Carolo Quinto Imperatore'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶192: 'Petrus Antich Notarius.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶194: 4045 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶195: 'MAIORICA AD CESAREM. JOAN. GENOUARDUS.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶196: 'Dum fortuna dabat, titulis que pingerer auri,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶197: 'Inuidiffe mihi plurima regna putes.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶198: 'Non eram ab infrenis numidis direpta: fed illi'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶199: 'Nomine pallebant candidiore meo.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶200: 'Tunc mea tercentum complebant littora puppes,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶201: 'Mercibus et variis Carole diues eram.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶202: 'Nunc jaceo infælix vix finu miferabilis vlli,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶203: 'Vixque meo poffum tutior effe finu.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶204: 'Quare mafta precor, prifco me redde nitori,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶205: 'Ponendo Numidis dura lupata feris'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶206: 'Refpice follicitam, Caefar, mitiffime Princeps:'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶207: 'Principis eft miferos eripuiffe malis.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶208: 2831 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶212: 2536 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶214: 'URBIS BALEARICE AD SUUM CESAREM. EPIGRAMMA.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶215: 'Tanta tuo aduentu contingit gloria Cæsar,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶216: 'Ut certem cernens an mea vana fides.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶217: 'Dumque tuos, alij, numen terreftre, triumphos'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶218: 'Extollunt, anceps carmine pauca cano.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶219: 'Imperium fortuna, licet, regnumque negaffet,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶220: 'Hoc virtute tibi Bellica preda foret.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶221: 'Laudibus eft igitur merito digniffima, namque,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶222: 'Quod rapturus eras, obtulit illa tibi.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶223: 1880 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶224: 'DESCRIPCIO DEL PRESENT ARCH.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶225: 2765 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶226: 'Læthale herefeos virus fi pellis ab orbe,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶227: 'Cefar, ne inficiat cætera membra lues;'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶228: 'Profternis valido fi hoftes, fortiffime, cornu;'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶229: '¿Nonne ego fum titulis dignus adelfe tuis?'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶231: 'Lux orbis, jam digne polo, fortiffime Cæfar,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶232: 'Perge opus. En reftant grandia gefta tibi.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶233: 'Te Solymas expectant arces, dauidica regna;'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶234: 'Hec funt, hec manibus digna trophea tuis.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶235: 'Initium tanti primum dabit Africa belli:'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶236: 'Ipfa adero, et ceptis profpera vela dabo.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶239: 'Carole, et in falfis Eunofigæns (*) aquis.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶240: 'Victor in Europa, libyes fitientia regna'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶242: 'Ductorem hic Chriftus cui dedit effe fuum.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶244: 'AD EUNDEM. Dum Carolum in pænos Mauors jam bella m'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶246: 'Gesta, inquit: libya hoc fulmine tota cadet.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶250: 2286 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶254: 'Etherea poffes pellere ab arce Jouem.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶264: 'Portas pande tuas, Induperador adest.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶265: 'Si te confpiciet manibus poft terga reuinctis,'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶266: 2685 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶267: 1343 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶268: 'POETA AD AQUILAM.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶269: 'Dic mihi quem portas, volucrum regina, monarcham;'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶270: 'Cur pelago veniens claffica tanta mouet.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶271: 'R. AQUILA POETE.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶272: 'Captus amore pio, gelido volitauit ab Axe,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶273: 'Et geminis alis punica regna petit.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶274: 'QUE CAUSA.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶274: 'QUE CAUSA.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶275: 'Vulpeculas agitat roftro pedibufque fubactas,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶276: 'Poft boream libye prælia magna parat.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶277: 'C.LO V. I.RI Aug.to Thom. MARCER NOTAR.S'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶278: 'Belliger armipotens, Cæfar, Baleare supinum'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶279: 'Vififti regnum: ni tua dextra fauet?'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶280: 'Oppreffos releuans, renouando catera prifca,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶281: 'Reftitues Palme nomen, et orbis opes.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶282: 'Aufpicio celi fuperas faftigia Regum;'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶283: 'Sic Aquilas præftant, altius vtque volant.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶284: 'Rumpe moras peragens qua ex te defcripta leguntur:'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶285: 'Telluris fancte, Carole, carpe viam.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶286: 'Barbara gens dabitur, veniet, tua fubiuga, parthus'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶287: 'Quemque crucis fignum concelebrare jube.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶288: 'Ecce falutiferum præcedens omnia fignum,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶289: 'Hoc tibi concedet parthica regna dari.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶290: 'Hinc genibus flexis, animam reddendo tomanti,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶291: 'Te merito fanctum, Cæfar, in orbe tenent.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶293: 'x'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶293: 'x'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶294: 3516 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶295: 1862 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶296: 4233 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶297: 3205 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶298: 'SUMARI DEL REFRESCH.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶304: 'AL OTRO MEMORIAL.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶307: 'Urries Secretarius.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶308: 6865 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶309: 'ET QUI VIDIT TESTIMONIUM'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶310: 'PERHIBUIT: ET IPSE SCIT QUIA VERA DICIT.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶311: 'LAUS DEO.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶311: 'LAUS DEO.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶312: 'Fonch eftampada la prefent hyftoria en la'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶313: 'infigne ciutat de Mallorques (Palma'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶314: 'anomenada) per Meftre Ferrando'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶315: 'de Canfoles Eftampador. Natural de la vila de Hamu'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶316: 'dela diocefis de Palencia.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶317: 'Acabas a trenta dies'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶318: 'del mes de Jener'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶319: 'del any M. D.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶319: 'del any M. D.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶320: 'XXXXII.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶320: 'XXXXII.'"
+  },
+  {
+   "check": "piece-gap",
+   "detail": "piece 4 was not read"
+  },
+  {
+   "check": "broken-year",
+   "detail": "leaf 325: '. 1811' -- the panel says 1511, 1 of 8 readings"
+  }
+ ],
+ "0311-IX-09": [
+  {
+   "check": "wall",
+   "detail": "¶3: 2407 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶5: 1418 chars"
+  },
+  {
+   "check": "runt",
+   "detail": "¶7: 'en lo any 1598.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶7: 'en lo any 1598.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶8: 1729 chars"
+  },
+  {
+   "check": "runt",
+   "detail": "¶9: 'EL REY.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶9: 'EL REY.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶10: 1966 chars"
+  },
+  {
+   "check": "runt",
+   "detail": "¶11: 'Yo EL REY.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶11: 'Yo EL REY.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶12: 'Cortixs Secretarius.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶13: 'Vt. Frigola Vice.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶14: 'Vt. G. S. The.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶14: 'Vt. G. S. The.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶15: 'Vt. Covarruvias.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶16: 'Vt. Guardiola. Rs.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶17: 'Vt. V. P. S. Fisci Advocatus.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶18: 'Vt. Baptista. R.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶19: 'Vt. Claver.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶19: 'Vt. Claver.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶23: 'Las 9 llisons de mort per lo Señor Rey.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶25: 'Die de las honrras feu per dit Sr. Rey lo'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶26: 'Procurador Real.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶28: 'Lo modo com vingué á la Seu lo Sr. Virrey.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶31: 1431 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶33: 'Lo modo com estava lo Capell ardent.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶35: 'Nota. Nota. Nota.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶37: 1513 chars"
+  },
+  {
+   "check": "runt",
+   "detail": "¶38: 'Nota.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶38: 'Nota.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶41: 'Nota.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶41: 'Nota.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶43: 'Una absolta feren per lo Sr. Rey la confraría'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶44: 'de St. Sebastiá, devant dita capella.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶46: 'Ofici y sermó en lo Monestir de San Domingo'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶47: 'per dit Sr. Rey.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶50: 'Nota.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶50: 'Nota.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶53: 'Nou llisons de morts dels magnffichs Jurats.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶55: 'Las honrres feren los magnífichs Jurats per dit'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶56: 'Sr. Rey Phelip segon á 27 de Janer'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶57: 'del any 1599.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶57: 'del any 1599.'"
+  }
+ ],
+ "0311-XI-11": [
+  {
+   "check": "short-para",
+   "detail": "¶4: 'Lugarteniente General Moss. Juan Aymerich. . s.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶5: 'ds.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶5: 'ds.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶6: 'Asesor, Misser Pons Dornos, Doctor en Derechos.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶7: '600 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶7: '600 » » »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶7: '600 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶8: 'Procurador Real Moss. Gregorio Burgués.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶9: '900 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶9: '900 » » »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶9: '900 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶10: 'Los escribanos de la Procuracion, cada uno.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶12: 'Honrres feren los Parayres en la iglesia de'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶13: 'Sta. Creu per dit Sr, Rey.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶15: 'Honrres feren los honrrats de texidors de llana,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶16: 'en lo monestir del Carme.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶18: 'Carcelero Jaime Salcet.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶19: '50 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶19: '50 »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶19: '50 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶20: 'Escribano de la cárcel. .'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶21: '12 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶21: '12 »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶21: '12 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶24: 'Sirvientes de los castillos,'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶25: 'cada uno. 27 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶25: 'cada uno. 27 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶26: 'Castellano de Cap de Pedra,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶27: 'Miguel Soler. . . » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶28: 'Sobreestante de obras Reales, Antonio Mir. 65 » 5 '"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶30: 'A Moss. Juan de Ribesaltes,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶31: 'donacion del Rey D. Juan.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶32: '500 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶32: '500 »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶32: '500 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶33: 'A D. Luis de Requesens,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶36: 'A Moss. Juan Aymerich,'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶38: '200 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶38: '200 »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶38: '200 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶39: 'A Tomás Barbará, bombardero; asignacion del Rey do'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶40: '132 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶40: '132 » » »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶40: '132 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶42: 'A Juan Angelats, secretario'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶43: 'de . 102 » 5 » 6 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶43: 'de . 102 » 5 » 6 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶44: 'Caballos armados.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶46: 'A Arnaldo de Santa Cilia.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶47: '50»»»'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶47: '50»»»'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶47: '50»»»'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶48: 'A los herederos de Gilibert'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶49: 'Roig. . . .'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶49: 'Roig. . . .'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶50: '3 5 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶50: '3 5 » » »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶50: '3 5 » » »'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶72: 'ISSI.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶72: 'ISSI.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶79: 4449 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶81: 'En este año tenían de sueldo:'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶82: 'El capitan General D. Juan de Urries . 1700 lbs. s'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶84: '900 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶84: '900 » » »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶84: '900 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶85: 'Sus cinco escribanos, cada uno.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶86: 'La Cartuja, por la castellanía de Bellver.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶87: 'Pedro de Pachs, castellano de idem.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶88: '108 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶88: '108 » » »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶88: '108 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶89: 'Los otros tres de Santueri, Pollensa y Alaró, cada'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶90: '50 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶90: '50 » » »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶90: '50 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶91: 'Los sirvientes de dichos castillos, cada uno .'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶92: 'El Prior de la Cartuja, por el palacio de Valldemo'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶93: '25 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶93: '25 » » »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶93: '25 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶94: 'El castellano de Cap de Pera, Don Fernando Malferi'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶95: 'I2 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶95: 'I2 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶96: 'Por caballos armados:'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶98: '25 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶98: '25 » » »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶98: '25 » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶99: 'D. Gabriel Miralles, per Gaspar Miralles. .'"
+  }
+ ],
+ "0478-II-02": [
+  {
+   "check": "wall",
+   "detail": "¶3: 1571 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶5: 'Miguel Juan Net.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶6: 'Jerónimo Alemany.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶7: 'Salvador Truyols.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶8: 'Andrés Perets, notari.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶9: 'Pedro Andrés Campos.'"
+  }
+ ],
+ "0478-III-03": [
+  {
+   "check": "wall",
+   "detail": "¶2: 3356 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶3: 'Declaració de Mn. Juan Miquel Pre. sobre lo matex.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶4: 2988 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶5: 'Declaració de Amet, cochero de Berga.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶6: 'Die decima quarta mensis decembris anno á'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶7: 'natte. Dni. mdcxviiij.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶8: 2733 chars"
+  }
+ ],
+ "0478-IV-04": [
+  {
+   "check": "wall",
+   "detail": "¶2: 3214 chars"
+  }
+ ],
+ "0478-V-05": [
+  {
+   "check": "wall",
+   "detail": "¶3: 1954 chars"
+  }
+ ],
+ "0478-VI-06": [
+  {
+   "check": "wall",
+   "detail": "¶4: 1671 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶7: 2227 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶14: 1281 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶78: 1657 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶113: 1319 chars"
+  }
+ ],
+ "0478-VII-07": [
+  {
+   "check": "wall",
+   "detail": "¶3: 1623 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶4: 2079 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶6: 1386 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶7: 1511 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶9: 'Auto General de la Inquisició de Mallorca'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶10: 'als 13 de Janer de 1675. (1)'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶12: 1489 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶13: 1233 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶14: 'La casa de la Inquisiciò.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶17: 'La Prosesó.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶17: 'La Prosesó.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶19: 'La volta feu la Prosesó.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶21: 'Acompanyament del Inquisidor al Auto.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶23: 1760 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶24: 'Comensament del Auto.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶25: 1824 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶26: 'Conclusiò del Auto.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶29: 'Autos de Fè.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶29: 'Autos de Fè.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶32: 'A 30 Abril, diumenge, se feu altre auto, se'"
+  }
+ ],
+ "0478-VIII-08": [
+  {
+   "check": "bad-month",
+   "detail": "¶34: 'MájYO 23.—Bendijo el Obispo la i.a piedra de'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶48: 'DICIEMBRE 15.—Aparicion de un cometa coj&j'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶49: '60 cola muy larga, luz pálida y corona oscura.— G.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶96: 'SIGLO XVIII. DE'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶97: '1701 Á 1800.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶97: '1701 Á 1800.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶98: 1216 chars"
+  },
+  {
+   "check": "contested",
+   "detail": "9.7% of its words"
+  }
+ ],
+ "0631-II-02": [
+  {
+   "check": "short-para",
+   "detail": "¶77: 'Manzo 6 —Gran nevada en la capital.— G. F.'"
+  },
+  {
+   "check": "bad-month",
+   "detail": "¶77: 'Manzo 6 —Gran nevada en la capital.— G. F.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶95: 'ABRIL 2.—Murió Rafael Ayadas «gran poeta.»—G. F.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶100: '—Empezó á limpiarse (buidar) el muelle de Palma.—T'"
+  },
+  {
+   "check": "unlifted-siglum",
+   "detail": "¶130: …'hino s: solemne Te-Deum.-G. F.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶148: '-Construccion del Lazareto en la ciudad de Alcudia'"
+  },
+  {
+   "check": "unlifted-siglum",
+   "detail": "¶154: …'imentada en 1726.— G. M.—T. A.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶156: 'Se edificó el Anfiteatro anatómico.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶157: '—D. Jerónimo Berard hizo y escribió su viaje por l'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶181: 'JUNIO 4.—Llegó un batallon del Regimiento de Borbo'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶183: '1800. otro de guardias walonas.—T. A.'"
+  },
+  {
+   "check": "contested",
+   "detail": "6.7% of its words"
+  }
+ ]
+}

@@ -763,6 +763,47 @@ trailing letters are wreckage off the defective scan and are left to review.
 
 Documents: 1 280 → **1 550 paragraphs**, none removed.
 
+### And the documents get their own sweep
+
+`scripts/audit_documents.py`, for the same reason `audit_entries.py` exists:
+reading one document works and does not scale. Section II of the 18th century
+was worth reading because it is a diary, where the year heading, the display
+month, the folio number and the source siglum all meet on one leaf; the next
+document is eight paragraphs of narrative and costs the same to read.
+
+**It caught two of its own checks before it caught anything else**, which is
+what the fire rate is printed for. `runt` and `bare-dash` fired on 17% of the
+corpus each and every one of them was a heading -- a year over a diary's stretch
+or a piece's number, which have no letters by construction. And two checks were
+accusing defects the assembler already repairs one stage later: `wedged` and
+`broken-year` read the raw lines instead of the output, so they reported four
+year headings `year_heading` had recovered and six numerals `unwedge` had moved.
+A sweep that accuses a fixed defect trains you to ignore it. 275 → 70, 262 → 26,
+9 → 2. `bad-month` had a bug of its own: `strictly_a_month` reads `Entre` as two
+letters off `enero`, so `Entre las partidas` passed a day-marker test that
+accepted a lowercase `l`.
+
+What it says is left, over 1 555 paragraphs:
+
+| | | |
+|---|---:|---|
+| `short-para` | 368 | informational: the diaries' notices really are short |
+| `wall` | 113 | informational: a deposition really is 3 000 characters |
+| `runt` | 70 | **40 of them are one class** -- see below |
+| `bare-dash` | 26 | the same class |
+| `piece-gap` | 3 | numbers Campaner prints and no engine read; stated on the page |
+| `broken-year` | 2 | `1 607.` on leaf 499 |
+| `bad-month` | 2 | `MájYO 23.`, `Manzo 6` -- no engine read the month |
+| `orphan-note` | 2 | |
+| `unlifted-siglum` | 2 | `-G. F.`, `— G. M.—T. A.` |
+
+**And the class it found is a ledger.** `0311-VI-06` and `0311-XI-11` rank first
+and second, and their runts are all the same shape: `A Juliá Valera, altre dels
+sargents majors.` then `41 »` on its own. Campaner prints a payments ledger
+inside the document and the figure comes out as a paragraph. `tables.py` already
+solves exactly this for the chronicle -- the figure-last family, 16 detections
+and all 16 real -- and has never been run on a document leaf.
+
 ## Working from the sweep: the first rule it produced
 
 `audit_entries.py --check glued` found 35 words the line break split and the vote
