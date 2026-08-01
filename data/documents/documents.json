@@ -38,7 +38,7 @@
    {
     "number": 2,
     "numeral": "II",
-    "title": "Cartas del gobernador Gilaberto de Centellas á Pedro IV acerca de la última empresa",
+    "title": "Cartas del gobernador Gilaberto de Centellas á Pedro IV acerca de la última empresa de Jaime III para recobrar su reino. (1)",
     "pdf_page": 123,
     "line": 0,
     "read_as": "II.",
@@ -47,7 +47,7 @@
    {
     "number": 3,
     "numeral": "III",
-    "title": "Historia de los Reyes de Mallorca, que fueron",
+    "title": "Historia de los Reyes de Mallorca, que fueron Señores de Montpeller.",
     "pdf_page": 137,
     "line": 0,
     "read_as": "III.",
@@ -61,7 +61,7 @@
    {
     "number": 4,
     "numeral": "IV",
-    "title": "Fragmentos de las Apuntaciones del Notario",
+    "title": "Fragmentos de las Apuntaciones del Notario Mateo Salcet. (I)",
     "pdf_page": 153,
     "line": 0,
     "read_as": "126 IV.",
@@ -75,7 +75,7 @@
    {
     "number": 5,
     "numeral": "V",
-    "title": "Algunas noticias é indicaciones curiosas extraídas",
+    "title": "Algunas noticias é indicaciones curiosas extraídas de las que coleccionó el Pavorde Jaume. (1)",
     "pdf_page": 159,
     "line": 11,
     "read_as": "V.",
@@ -111,7 +111,7 @@
    {
     "number": 2,
     "numeral": "II",
-    "title": "Fragmentos de las Apuntaciones del Notario",
+    "title": "Fragmentos de las Apuntaciones del Notario Mateo Salcet.",
     "pdf_page": 229,
     "line": 10,
     "read_as": "II.",
@@ -134,7 +134,7 @@
    {
     "number": 4,
     "numeral": "IV",
-    "title": "Relacion (anónima) del tumulto ocurrido en la Iglesia de",
+    "title": "Relacion (anónima) del tumulto ocurrido en la Iglesia de San Francisco de Asis de esta ciudad, el dia 2 de Noviembre",
     "pdf_page": 235,
     "line": 0,
     "read_as": "IV.",
@@ -179,7 +179,7 @@
    {
     "number": 2,
     "numeral": "II",
-    "title": "Memorial fet per mi Antoni Johan Lambías, Frare del convent de Sant Domingo, Procurador de dit convent,",
+    "title": "Memorial fet per mi Antoni Johan Lambías, Frare del convent de Sant Domingo, Procurador de dit convent, lo añy present, quen contam 1522. (1)",
     "pdf_page": 315,
     "line": 5,
     "read_as": "II.",
@@ -197,7 +197,7 @@
    {
     "number": 4,
     "numeral": "IV",
-    "title": "Noticia de lo que sucedió al ejército Real en la rendicion de (Mallorca en tiempo de la Germanía,",
+    "title": "Noticia de lo que sucedió al ejército Real en la rendicion de (Mallorca en tiempo de la Germanía, sacada de un papel antiguo mutilado al principio, faltándole algunas hojas, y solo contiene lo que sigue:» (1)",
     "pdf_page": 321,
     "line": 30,
     "read_as": "IV.",
@@ -229,7 +229,7 @@
    {
     "number": 9,
     "numeral": "IX",
-    "title": "Relacion (anónima) de la muerte de Jorge San Juan",
+    "title": "Relacion (anónima) de la muerte de Jorge San Juan y Juan Rosiñol en el año 1598. (1)",
     "pdf_page": 368,
     "line": 0,
     "read_as": "IX.",
@@ -238,7 +238,7 @@
    {
     "number": 11,
     "numeral": "XI",
-    "title": "Algunas noticias é indicaciones curiosas extraidas de las",
+    "title": "Algunas noticias é indicaciones curiosas extraidas de las que coleccionó el Pavorde Jaume.",
     "pdf_page": 373,
     "line": 27,
     "read_as": "XI.",
@@ -273,7 +273,7 @@
      1601,
      1697
     ],
-    "years_stated": 91
+    "years_stated": 92
    },
    {
     "number": 2,

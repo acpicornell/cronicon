@@ -324,6 +324,17 @@ Two details that are not obvious:
   the printed title already stands at the head, and the recorded one is a
   truncation of it.
 
+**A title runs to as many printed lines as it needs**, and taking one truncated
+a third of them: `Historia de los Reyes de Mallorca, que fueron` stopped before
+`Señores de Montpeller.`, `Fragmentos de las Apuntaciones del Notario` before
+`Mateo Salcet`, `Relacion (anónima) del tumulto ocurrido en la Iglesia de`
+before `San Francisco de Asis`. A title is centred and the body is not — the
+same signal the century openings use — so it runs while the lines stay centred
+and stops where one begins at the column's left edge. It also stops at the
+source note Campaner sets under it, which is centred too: `«Resúmen recopilado
+del tomo cuarto de la Historia general del Languedoc…`, `(pág. 71 del texto.)`.
+Both announce themselves in their first character.
+
 **Campaner names the genre himself**, in the first word of each title — `Cartas`,
 `Sentencia`, `Relacion`, `Memorial`, `Declaraciones`, `Toma de posesion`,
 `Fragmentos`, `Historia`, `Nota`, `Cas nunca vist`. That is surfaced as `genre`

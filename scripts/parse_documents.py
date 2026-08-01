@@ -91,6 +91,55 @@ def block_bounds(jurats: list[int], chronicle: list[list]) -> list[tuple]:
     return out
 
 
+# How many lines a title may run to. Campaner's longest is three.
+TITLE_LINES = 4
+# A title line is centred on the measure; a line of body starts at the column's
+# left edge. 0.05 of the page is well clear of the paragraph indent, 0.02.
+CENTRED = 0.05
+
+
+def title_after(lines: list[dict], texts: list[str], i: int) -> str:
+    """The title under a numeral, however many printed lines it runs to.
+
+    Taking one line truncated a third of them: `Historia de los Reyes de
+    Mallorca, que fueron` stopped before `Señores de Montpeller.`, `Fragmentos
+    de las Apuntaciones del Notario` before `Mateo Salcet`, and `Relacion
+    (anónima) del tumulto ocurrido en la Iglesia de` before `San Francisco de
+    Asis`.
+
+    A title is centred and the body is not, which is the same signal the century
+    openings and the document paragraphs use. The title runs while the lines
+    stay centred on the measure and stops at the first that begins at the
+    column's left edge. The line straight after the numeral is taken whatever
+    its box says -- it is the title by position -- and only its continuation has
+    to prove itself.
+    """
+    body = [ln for ln in lines if ln["text"].strip()]
+    if not body:
+        return ""
+    left = min(ln["bbox"][0] for ln in body)
+    right = max(ln["bbox"][2] for ln in body)
+    parts: list[str] = []
+    for n in range(i + 1, min(i + 3 + TITLE_LINES, len(lines))):
+        text = texts[n]
+        if not text:
+            continue
+        box = lines[n]["bbox"]
+        centred = abs((box[0] - left) - (right - box[2])) <= CENTRED
+        if parts and not centred:
+            break
+        # …and it stops at the source note Campaner sets under the title, which
+        # is centred too: `«Resúmen recopilado del tomo cuarto de la Historia
+        # general del Languedoc…` under section III, and `(pág. 71 del texto.)`
+        # under several. Both announce themselves in their first character.
+        if parts and text[:1] in "«\"" or text.startswith("(pág"):
+            break
+        parts.append(text)
+        if len(parts) >= TITLE_LINES:
+            break
+    return " ".join(parts).strip()
+
+
 def sections(leaves: dict[int, list[dict]], first: int, last: int,
              jurats_until: int) -> list[dict]:
     """The numbered sections inside one block, in order.
@@ -114,7 +163,7 @@ def sections(leaves: dict[int, list[dict]], first: int, last: int,
             readings: set[str] = set()
             match = BARE_NUMERAL.match(text)
             if match:
-                title = next((t for t in texts[i + 1:i + 3] if t), "")
+                title = title_after(lines, texts, i)
                 readings.add(match.group(1))
             elif NUMERAL_TITLE.match(text):
                 match = NUMERAL_TITLE.match(text)
@@ -126,7 +175,7 @@ def sections(leaves: dict[int, list[dict]], first: int, last: int,
                 # panel before it is dismissed. The evidence is weaker here, so
                 # the prior is stronger: a section found this way has to be the
                 # very next one, not merely a later one.
-                title = next((t for t in texts[i + 1:i + 3] if t), "")
+                title = title_after(lines, texts, i)
                 readings = {r for r in roman_readings(lines[i]["row"])
                             if from_roman(r) == (found[-1]["number"] + 1
                                                  if found else 1)}
