@@ -148,6 +148,30 @@ def by_printed_line(lines: list[dict]) -> list[dict]:
 
 
 def paragraph_breaks(lines: list[dict]) -> set[int]:
+    """Paragraph openers, computed leaf by leaf and unioned.
+
+    The indent and the short line are facts about **a page**, and this used to
+    be asked of a whole section at once: the 17 leaves of `Historia de los Reyes
+    de Mallorca` share a column-0 edge of 0.11, and leaf 152's own column sits
+    at 0.15, so every ordinary line on it read as indented by 0.04 and the
+    breaks fell wherever the short-line test happened to agree.
+
+    A section is not typeset to one measure -- it crosses a table, a plate and a
+    change of type -- so the unit is the leaf.
+    """
+    by_leaf: dict[int, list[int]] = {}
+    for n, line in enumerate(lines):
+        by_leaf.setdefault(line.get("leaf", 0), []).append(n)
+    if len(by_leaf) > 1:
+        out: set[int] = set()
+        for rows in by_leaf.values():
+            here = [lines[n] for n in rows]
+            out |= {rows[i] for i in paragraph_breaks(here)}
+        return out
+    return _breaks_on_one_leaf(lines)
+
+
+def _breaks_on_one_leaf(lines: list[dict]) -> set[int]:
     """Which lines open a paragraph, by where the printer indented them.
 
     **A line break is not a paragraph break**, and treating it as one is what
@@ -328,6 +352,13 @@ def main() -> None:
             head, _, rest = text.partition("\n\n")
             if ROMAN.fullmatch(head.strip()) and head.strip("." ) != section["numeral"]:
                 text = f"{section['numeral']}.\n\n{rest}"
+            elif " ".join(head.split()) == " ".join(section["title"].split()):
+                # The section opens on its title because its numeral sorted
+                # elsewhere on the leaf -- leaf 123's `II.` is centred above the
+                # title and lands in whichever column edge is nearer. The panel
+                # recovered the numeral, so it is put back at the head where the
+                # book prints it.
+                text = f"{section['numeral']}.\n\n{text}"
             genre = GENRE.match(section["title"])
 
             name = (f"{block['first_leaf']:04d}-{section['numeral']}"

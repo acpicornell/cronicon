@@ -93,12 +93,15 @@ def block_bounds(jurats: list[int], chronicle: list[list]) -> list[tuple]:
 
 # How many lines a title may run to. Campaner's longest is three.
 TITLE_LINES = 4
+# How far below the numeral the title may begin, in fractions of the page.
+TITLE_REACH = 0.07
 # A title line is centred on the measure; a line of body starts at the column's
 # left edge. 0.05 of the page is well clear of the paragraph indent, 0.02.
 CENTRED = 0.05
 
 
-def title_after(lines: list[dict], texts: list[str], i: int) -> str:
+def title_after(lines: list[dict], texts: list[str], i: int
+               ) -> tuple[str, int]:
     """The title under a numeral, however many printed lines it runs to.
 
     Taking one line truncated a third of them: `Historia de los Reyes de
@@ -119,8 +122,21 @@ def title_after(lines: list[dict], texts: list[str], i: int) -> str:
         return ""
     left = min(ln["bbox"][0] for ln in body)
     right = max(ln["bbox"][2] for ln in body)
+    # The title is the line *under* the numeral on the page, and that has to be
+    # found by geometry rather than by position in the reading stream. Leaf 123
+    # prints `II.` centred at y 0.121 above `Cartas del gobernador Gilaberto de
+    # Centellas…` at y 0.150, but the panel reads the numeral `XX.` -- display
+    # type is the class it reads worst -- and a short centred line lands in
+    # whichever column edge is nearer, so it sorted to the foot of the leaf and
+    # the line after it in the stream was a line of body.
+    box = lines[i]["bbox"]
+    below = sorted((n for n, ln in enumerate(lines)
+                    if ln["text"].strip() and n != i
+                    and box[3] <= ln["bbox"][1] < box[3] + TITLE_REACH),
+                   key=lambda n: (lines[n]["bbox"][1], lines[n]["bbox"][0]))
     parts: list[str] = []
-    for n in range(i + 1, min(i + 3 + TITLE_LINES, len(lines))):
+    used: list[int] = []
+    for n in below[:TITLE_LINES + 2]:
         text = texts[n]
         if not text:
             continue
@@ -135,9 +151,14 @@ def title_after(lines: list[dict], texts: list[str], i: int) -> str:
         if parts and text[:1] in "«\"" or text.startswith("(pág"):
             break
         parts.append(text)
+        used.append(n)
         if len(parts) >= TITLE_LINES:
             break
-    return " ".join(parts).strip()
+    # …and where the title begins in the reading stream, which is not always
+    # after the numeral: on leaf 123 the numeral sorted to the foot of the leaf
+    # while its title stayed at the head, so a section that started at the
+    # numeral's index began sixty lines into its own text.
+    return " ".join(parts).strip(), (used[0] if used else i)
 
 
 def sections(leaves: dict[int, list[dict]], first: int, last: int,
@@ -163,11 +184,12 @@ def sections(leaves: dict[int, list[dict]], first: int, last: int,
             readings: set[str] = set()
             match = BARE_NUMERAL.match(text)
             if match:
-                title = title_after(lines, texts, i)
+                title, opens_at = title_after(lines, texts, i)
                 readings.add(match.group(1))
             elif NUMERAL_TITLE.match(text):
                 match = NUMERAL_TITLE.match(text)
                 title = match.group(2)
+                opens_at = i
                 readings.add(match.group(1))
             elif len(text) <= 10 and len(lines[i]["row"]) <= 2:
                 # The winner may be no numeral at all -- leaf 482 prints `II.`
@@ -175,7 +197,7 @@ def sections(leaves: dict[int, list[dict]], first: int, last: int,
                 # panel before it is dismissed. The evidence is weaker here, so
                 # the prior is stronger: a section found this way has to be the
                 # very next one, not merely a later one.
-                title = title_after(lines, texts, i)
+                title, opens_at = title_after(lines, texts, i)
                 readings = {r for r in roman_readings(lines[i]["row"])
                             if from_roman(r) == (found[-1]["number"] + 1
                                                  if found else 1)}
@@ -195,7 +217,8 @@ def sections(leaves: dict[int, list[dict]], first: int, last: int,
                 continue
             number, numeral = forward[0]
             found.append({"number": number, "numeral": numeral,
-                          "title": title, "pdf_page": page, "line": i,
+                          "title": title, "pdf_page": page,
+                          "line": min(i, opens_at),
                           "read_as": text})
     return found
 
