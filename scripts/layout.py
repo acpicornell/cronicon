@@ -155,6 +155,112 @@ def drop_folio(loci: list[dict]) -> list[dict]:
     return [x for x in loci if tuple(x["line_bbox"]) not in drop]
 
 
+# Campaner's ledgers set the label and the figure on **one printed line**, with
+# leader dots between them: `manats. . . . . . . . 18 »  »`. The engines cut
+# that line in two -- the dots are a wide gap, which is exactly what a line
+# segmenter looks for -- so the figure arrives as a line of its own, sorts by
+# its own y, and lands anywhere from the middle of the label to after it. Read
+# as prose the ledger came out as `A Juliá Valera, altre dels sargents majors.`
+# followed by a paragraph reading `41 »`, which is what `audit_documents.py`
+# ranked first and second in the whole corpus.
+#
+# The join is between two line boxes that **overlap in y, sit in the same
+# column, and where the right-hand one is nothing but a figure**. All three are
+# needed and the third is what makes it safe: over the 614 leaves it fires 25
+# times on 7 leaves and every one is a ledger row. Without the same-column test
+# it also joins leaf 152's marginal node numbers to the entry beside them and
+# every line of column one to the line facing it in column two.
+#
+# Nothing is dropped, reordered or rewritten: the two boxes become one line, so
+# the words that were printed on one line are on one line again. That is also
+# what lets `tables.py` see these at all -- it asks each printed line whether it
+# is a row, and here the row had been cut in half.
+LEDGER_FIGURE = re.compile(
+    r"^[\s.,·•]*\d[\d.,\s]*\d?[\s.,]*"
+    r"(?:»|\"|ls\.?|ss\.?|ds\.?|libs?\.?|lbs?\.?|id\.?|cuarteras?)?[\s.,»]*$",
+    re.IGNORECASE)
+LEDGER_YEAR = re.compile(r"\s*1[2-8]\d\d\s*[.,]?\s*")
+LEDGER_OVERLAP = 0.6      # of the shorter box's height
+
+
+def only_a_figure(text: str) -> bool:
+    """Is this line a figure and nothing else -- a ledger's right-hand cell?"""
+    text = text.strip()
+    return (bool(text) and bool(LEDGER_FIGURE.match(text))
+            and not LEDGER_YEAR.fullmatch(text))
+
+
+def join_leaders(loci: list[dict]) -> list[dict]:
+    """Put a ledger's figure back on the printed line that leads to it."""
+    if not loci:
+        return loci
+    lines: dict[tuple, list[dict]] = {}
+    order: list[tuple] = []
+    for locus in loci:
+        key = tuple(locus["line_bbox"])
+        if key not in lines:
+            order.append(key)
+            lines[key] = []
+        lines[key].append(locus)
+
+    lefts = find_columns([Line(text="", x0=k[0], y0=k[1], x1=k[2], y1=k[3])
+                          for k in order])
+
+    def column_of(key) -> int:
+        return max((n for n, left in enumerate(lefts)
+                    if key[0] >= left - COLUMN_EDGE_TOLERANCE), default=0)
+
+    def text_of(key) -> str:
+        return " ".join(x["winner"] for x in lines[key] if x["winner"]).strip()
+
+    merged: dict[tuple, tuple] = {}
+    for key in order:
+        if not only_a_figure(text_of(key)):
+            continue
+        column, best, most = column_of(key), None, 0.0
+        for other in order:
+            if other == key or column_of(other) != column:
+                continue
+            if other[2] > key[0] or only_a_figure(text_of(other)):
+                continue          # must be to its left, and be the label
+            share = min(other[3], key[3]) - max(other[1], key[1])
+            height = min(other[3] - other[1], key[3] - key[1])
+            if height > 0 and share > most and share >= LEDGER_OVERLAP * height:
+                best, most = other, share
+        if best is not None:
+            merged[key] = best
+
+    if not merged:
+        return loci
+    labels = {label: key for key, label in merged.items()}
+    out = []
+    for locus in loci:
+        key = tuple(locus["line_bbox"])
+        other = merged.get(key) or labels.get(key)
+        if other is None:
+            out.append(locus)
+            continue
+        locus = dict(locus)
+        locus["line_bbox"] = [min(other[0], key[0]), min(other[1], key[1]),
+                              max(other[2], key[2]), max(other[3], key[3])]
+        # The two boxes are one printed line again, so the words on it read
+        # left to right -- and in the stream they often do not, because the
+        # figure's box begins a hair above the label's and sorts before it:
+        # leaf 325 published `41 » gents majors.` and `18 manats.` The index is
+        # left alone, since `build_text` keys its editorial repairs on it and
+        # `review.py` its decisions on the box.
+        locus["leader"] = True
+        out.append(locus)
+    return out
+
+
+def line_order(row: list[dict]) -> list[dict]:
+    """A line's loci in reading order: by index, or by x on a rejoined line."""
+    if any(x.get("leader") for x in row):
+        return sorted(row, key=lambda x: (x["bbox"][0], x["index"]))
+    return sorted(row, key=lambda x: x["index"])
+
+
 def drop_signature(loci: list[dict]) -> list[dict]:
     """`loci` without the gathering signature, if the leaf ends in one.
 

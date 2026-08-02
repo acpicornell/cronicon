@@ -1108,6 +1108,45 @@ and 569 were read to check the detections**, and both times the check paid.
   the prose, where it always was. Absorbing a line because it *looks* like a row
   after the geometry has said no is guessing.
 
+**And the documents print a third kind, which is a line the engines cut in
+half.** Campaner's ledgers set the label and the figure on *one* printed line
+with leader dots between them — `manats. . . . . . . . 18 »  »` — and the dots
+are a wide internal gap, which is exactly what a line segmenter looks for. So
+the figure arrived as a line of its own, sorted by its own y, and landed
+anywhere from the middle of the label to after it: `A Juliá Valera, altre dels
+sargents majors.` and then a paragraph reading `41 »`. That is what
+`audit_documents.py` ranked first and second in the whole corpus.
+
+`layout.join_leaders` puts the two boxes back into one line. The join needs
+three things at once — they overlap in y, they are in the **same column**, and
+the right-hand one is **nothing but a figure** — and the third is what makes it
+safe: **25 joins on 7 leaves and every one is a ledger row.** Without the
+same-column test it also joins leaf 152's marginal node numbers to the entry
+beside them, and every line of column one to the line facing it in column two.
+Nothing is dropped or rewritten; `layout.line_order` reads a rejoined line left
+to right, because the figure's box begins a hair above the label's and sorted
+first — leaf 325 published `41 » gents majors.`
+
+Two consequences, and the second is why it belongs in `layout` rather than in
+either assembler. The documents lose 49 stranded paragraphs, so the sweep's
+`runt` goes 70 → **47** and `bare-dash` 26 → **7**; and `tables.py` starts
+seeing rows it could not see before, because it asks each *printed line* whether
+it is a row and the row had been cut in half. **16 tables → 20, 78 rows → 92**,
+three of the new leaves being document leaves.
+
+`ledgers_on` is the family that then reads them: a run of rejoined lines whose
+figures align, with the label running over the lines between two rows. **The
+rejoin is the whole guard.** Allowing any line that ends in a figure, with up to
+six lines of label between two rows, took leaf 74's footnote (`los cuatro
+importan 538 ls. 8 ss.—130 ls. 10 / ss. 5 ds. para execuacion…`) and five other
+stretches of prose that merely count money. A rejoined line is *proof* of the
+typography: the engines cut it at a gap wide enough to be leader dots, and what
+stood to the right of that gap was nothing but a figure.
+
+Leaf 374's ledger is **declined and that is right**: its figures end at 0.398,
+0.436, 0.465 and 0.364, because the number of trailing ditto marks varies and
+the panel drops some. The geometry says no, so those rows stay in the prose.
+
 **Only one of the two families is a rule.** Figure last — `Cebada. 176,780 »` —
 is 16 detections and all 16 are tables. Figure first — `24,294 hombres útiles
 para tomar las armas.`, which really is one on leaves 453 and 593 — was declined:

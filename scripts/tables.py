@@ -145,6 +145,80 @@ def tables_on(leaf: dict) -> list[list[list[dict]]]:
     return found
 
 
+# The second family, and it is the documents' rather than the chronicle's. A
+# payments ledger sets the label across as many printed lines as it needs and
+# the figure alone on its own line, right against the measure:
+#
+#     A Juliá Valera, altre dels sargents majors.
+#                                            41 »
+#
+# `tables_on` cannot see it, because it asks each printed line whether it is a
+# row and here the row is four lines. The audit found it the other way round --
+# `audit_documents.py` ranked `0311-VI-06` and `0311-XI-11` first and second on
+# 40 runts between them, and every runt was one of these figures stranded as a
+# paragraph of its own.
+#
+# Two guards, and the second is what separates this from the genealogical tree.
+# Leaf 152 has ten figure-only lines aligned to within 0.012 -- the node numbers
+# of the plate -- and they hang in the *left* margin of their column, opening
+# the entry they belong to. A ledger's figure closes its row and stands at the
+# right. So the figure has to sit in the right-hand part of its own column, and
+# the label has to come before it and not after.
+# How many printed lines of label a row may carry before the two figures stop
+# being one ledger. The longest real one in the book is five.
+LEDGER_GAP = 6
+
+
+def ends_in_a_figure(row: list[dict]) -> bool:
+    """Does this printed line close with a figure, as a ledger's row does?"""
+    return cell_edge(row) is not None
+
+
+def ledgers_on(leaf: dict) -> list[list[list[dict]]]:
+    """Runs of ledger rows, where the label runs over the lines between them."""
+    rows = rows_of(leaf)
+    lines = [row for _cell, row in rows]
+    if not lines:
+        return []
+    # Only the lines `layout.join_leaders` put back together. That is the whole
+    # guard, and it is what the first version lacked: allowing any line that
+    # ends in a figure, with up to six lines of label between two rows, took
+    # leaf 74's footnote (`los cuatro importan 538 ls. 8 ss.—130 ls. 10 / ss. 5
+    # ds. para execuacion de la transaccion de 1315…`) and five other stretches
+    # of prose that merely count money. A joined line is *proof* of the ledger's
+    # typography: the engines cut it in two at a gap wide enough to be leader
+    # dots, and what stood to the right of that gap was nothing but a figure.
+    marks = [n for n, row in enumerate(lines)
+             if any(w.get("leader") for w in row)]
+    found: list[list[list[dict]]] = []
+    run: list[int] = []
+
+    def edge(n: int) -> float:
+        return max(w["bbox"][2] for w in lines[n])
+
+    def close() -> None:
+        if len(run) < MIN_ROWS:
+            return
+        block: list[list[dict]] = []
+        for i, at in enumerate(run):
+            since = run[i - 1] + 1 if i else at
+            block.append([w for n in range(since, at) for w in lines[n]]
+                         + lines[at])
+        if all(LABELLED.search(" ".join(w["text"] for w in r)) for r in block) \
+                and len({figures(r) for r in block}) > 1:
+            found.append(block)
+
+    for at in marks:
+        if (run and at - run[-1] <= LEDGER_GAP
+                and abs(edge(at) - edge(run[-1])) < ALIGN):
+            run.append(at)
+            continue
+        close()
+        run = [at]
+    close()
+    return found
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--show", type=int, help="print the tables found on one leaf")
@@ -159,7 +233,11 @@ def main() -> None:
         leaf = json.loads(path.read_text())
         if leaf["pdf_page"] in skip:
             continue
-        for side, block in tables_on(leaf):
+        blocks = [("right", b) for b in ledgers_on(leaf)]
+        seen = {id(row) for _s, b in blocks for row in b}
+        blocks += [(side, b) for side, b in tables_on(leaf)
+                   if not any(id(row) in seen for row in b)]
+        for side, block in blocks:
             rows_total += len(block)
             records.append({
                 "pdf_page": leaf["pdf_page"],

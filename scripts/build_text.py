@@ -94,7 +94,8 @@ def assemble(loci: list[dict], panel: list[str],
     """
     lines: dict[tuple, list[dict]] = defaultdict(list)
     order: list[tuple] = []
-    for locus in layout.drop_folio(layout.drop_signature(loci)):
+    for locus in layout.join_leaders(
+            layout.drop_folio(layout.drop_signature(loci))):
         key = tuple(locus["line_bbox"])
         if key not in lines:
             order.append(key)
@@ -107,7 +108,7 @@ def assemble(loci: list[dict], panel: list[str],
     flat: list[dict] = []
     by_line: dict[tuple, list[str]] = {}
     for key in order:
-        row = sorted(lines[key], key=lambda x: x["index"])
+        row = layout.line_order(lines[key])
         settled = [decisions.get(decision_key(w["pdf_page"], w["bbox"]))
                    for w in row]
         def reading(locus, page=None):
@@ -126,6 +127,13 @@ def assemble(loci: list[dict], panel: list[str],
         record = {"text": group["text"], "tier": group["grade"],
                   "line": list(group["line"]),
                   "bbox": spans.union([x["bbox"] for x in group["loci"]])}
+        # This word sits on a printed line the engines cut in two at the leader
+        # dots of a ledger, and `layout.join_leaders` put back together. Carried
+        # into the word record because `tables.py` reads these files and it is
+        # the only evidence that separates a ledger's row from a sentence that
+        # happens to end in a figure.
+        if any(x.get("leader") for x in group["loci"]):
+            record["leader"] = True
         if len(group["loci"]) > 1:
             record["span"] = len(group["loci"])
         printed = " ".join(x["winner"] for x in group["loci"]

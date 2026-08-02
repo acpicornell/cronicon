@@ -646,7 +646,8 @@ def page_lines(path: Path) -> list[dict]:
     leaf = json.loads(path.read_text())
     grouped: dict[tuple, list[dict]] = defaultdict(list)
     order: list[tuple] = []
-    for locus in layout.drop_folio(layout.drop_signature(leaf["loci"])):
+    for locus in layout.join_leaders(
+            layout.drop_folio(layout.drop_signature(leaf["loci"]))):
         key = tuple(locus["line_bbox"])
         if key not in grouped:
             order.append(key)
@@ -658,8 +659,7 @@ def page_lines(path: Path) -> list[dict]:
     # whole -- the same order `build_text.py` uses, and necessary because a
     # doubled display heading straddles the line break as often as not.
     joins = editorial.joins_for(path.parent)
-    per_line = {key: spans.layout(sorted(grouped[key],
-                                         key=lambda x: x["index"]),
+    per_line = {key: spans.layout(layout.line_order(grouped[key]),
                                   leaf["panel"], [None] * len(grouped[key]),
                                   None, joins)
                 for key in order}

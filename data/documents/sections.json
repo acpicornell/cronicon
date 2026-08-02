@@ -642,7 +642,6 @@
    163,
    163,
    163,
-   163,
    164,
    164,
    164,
@@ -1208,7 +1207,7 @@
   "first_leaf": 324,
   "last_leaf": 368,
   "leaves": 45,
-  "words": 17802,
+  "words": 17798,
   "paragraph_leaves": [
    324,
    324,
@@ -1219,21 +1218,6 @@
    324,
    324,
    324,
-   325,
-   325,
-   325,
-   325,
-   325,
-   325,
-   325,
-   325,
-   325,
-   325,
-   325,
-   325,
-   325,
-   325,
-   325,
    325,
    325,
    325,
@@ -1540,97 +1524,97 @@
    },
    {
     "number": 2,
-    "paragraph": 52,
+    "paragraph": 37,
     "pdf_page": 326
    },
    {
     "number": 3,
-    "paragraph": 56,
+    "paragraph": 41,
     "pdf_page": 326
    },
    {
     "number": 5,
-    "paragraph": 88,
+    "paragraph": 73,
     "pdf_page": 329
    },
    {
     "number": 6,
-    "paragraph": 90,
+    "paragraph": 75,
     "pdf_page": 329
    },
    {
     "number": 7,
-    "paragraph": 92,
+    "paragraph": 77,
     "pdf_page": 329
    },
    {
     "number": 8,
-    "paragraph": 94,
+    "paragraph": 79,
     "pdf_page": 329
    },
    {
     "number": 9,
-    "paragraph": 96,
+    "paragraph": 81,
     "pdf_page": 330
    },
    {
     "number": 10,
-    "paragraph": 98,
+    "paragraph": 83,
     "pdf_page": 330
    },
    {
     "number": 11,
-    "paragraph": 100,
+    "paragraph": 85,
     "pdf_page": 330
    },
    {
     "number": 12,
-    "paragraph": 102,
+    "paragraph": 87,
     "pdf_page": 330
    },
    {
     "number": 13,
-    "paragraph": 104,
+    "paragraph": 89,
     "pdf_page": 330
    },
    {
     "number": 14,
-    "paragraph": 106,
+    "paragraph": 91,
     "pdf_page": 330
    },
    {
     "number": 15,
-    "paragraph": 108,
+    "paragraph": 93,
     "pdf_page": 330
    },
    {
     "number": 16,
-    "paragraph": 110,
+    "paragraph": 95,
     "pdf_page": 330
    },
    {
     "number": 17,
-    "paragraph": 112,
+    "paragraph": 97,
     "pdf_page": 330
    },
    {
     "number": 18,
-    "paragraph": 114,
+    "paragraph": 99,
     "pdf_page": 330
    },
    {
     "number": 19,
-    "paragraph": 118,
+    "paragraph": 103,
     "pdf_page": 331
    },
    {
     "number": 20,
-    "paragraph": 121,
+    "paragraph": 106,
     "pdf_page": 331
    },
    {
     "number": 21,
-    "paragraph": 124,
+    "paragraph": 109,
     "pdf_page": 331
    }
   ],
@@ -1654,11 +1638,11 @@
   ],
   "certainty": {
    "unanimous": 14085,
-   "one-dissent": 2484,
-   "two-dissent": 692,
-   "contested": 541
+   "one-dissent": 2483,
+   "two-dissent": 691,
+   "contested": 539
   },
-  "contested_share": 0.0304
+  "contested_share": 0.0303
  },
  {
   "id": "0311-IX-09",
@@ -1762,7 +1746,7 @@
   "first_leaf": 373,
   "last_leaf": 380,
   "leaves": 8,
-  "words": 2834,
+  "words": 2833,
   "paragraph_leaves": [
    373,
    373,
@@ -1783,29 +1767,6 @@
    373,
    373,
    373,
-   373,
-   373,
-   373,
-   373,
-   373,
-   374,
-   374,
-   374,
-   374,
-   374,
-   374,
-   374,
-   374,
-   374,
-   374,
-   374,
-   374,
-   374,
-   374,
-   374,
-   374,
-   374,
-   374,
    374,
    374,
    374,
@@ -1844,16 +1805,6 @@
    375,
    375,
    375,
-   376,
-   376,
-   376,
-   376,
-   376,
-   376,
-   376,
-   376,
-   376,
-   376,
    376,
    376,
    376,
@@ -1877,7 +1828,7 @@
   "notes": [],
   "certainty": {
    "unanimous": 2172,
-   "one-dissent": 362,
+   "one-dissent": 361,
    "two-dissent": 162,
    "contested": 138
   },

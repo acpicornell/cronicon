@@ -673,6 +673,12 @@ def document_page(con, doc, sigla: dict[str, str]) -> str:
     pieces = {p: n for n, p in con.execute(
         "SELECT number, paragraph FROM piece WHERE document_id = ? "
         "ORDER BY number", [_id]).fetchall()}
+    # The ledgers Campaner sets inside three of these sections -- the payments
+    # of the Germanía on leaf 325, the Procuración Real's salaries on 373 and
+    # 376 -- shown as the columns the page puts them in, exactly as the year
+    # pages already do. Nothing is moved out of the prose: the same words are
+    # set as a table.
+    inline, table_ends = tables_on(con, range(first, last + 1))
 
     chunks, running = [], None
     for i, para in enumerate(paras):
@@ -721,9 +727,14 @@ def document_page(con, doc, sigla: dict[str, str]) -> str:
                (i == 0 or flat == " ".join(title.split())
                 or para.startswith(("«", "(", '"')) or para.isupper())
                else "p")
-        chunks.append(f'<{tag} id="p{i}" class="{"dochead" if tag == "h3" else ""}">'
-                      f"{sourced(para, sigla, doubtful) if tag == 'p' else mark_doubt(para, doubtful)}"
-                      f"</{tag}>")
+        if tag == "p":
+            for piece in lay_out_tables(para, inline, table_ends):
+                chunks.append(piece if piece.startswith("<table")
+                              else f'<p id="p{i}">'
+                                   f"{sourced(piece, sigla, doubtful)}</p>")
+            continue
+        chunks.append(f'<{tag} id="p{i}" class="dochead">'
+                      f"{mark_doubt(para, doubtful)}</{tag}>")
     # …and the plates that stand after the last paragraph, which no gap between
     # two paragraphs can reach: section II of the 18th-century block ends with
     # eight of them.
