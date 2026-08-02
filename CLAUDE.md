@@ -783,19 +783,48 @@ A sweep that accuses a fixed defect trains you to ignore it. 275 → 70, 262 →
 letters off `enero`, so `Entre las partidas` passed a day-marker test that
 accepted a lowercase `l`.
 
-What it says is left, over 1 555 paragraphs:
+**And the second run said the same thing about `runt`.** Once the centred lines
+were being recorded, 20 of the 47 that remained turned out to be headings the
+book prints and the edition was setting as prose: `LECTOREM.` and `PROHEMI.` in
+the 1541 reprint, `EL REY.` and `Vt. Claver.` under a royal cédula, `Autos de
+Fè.` and `La Prosesó.` over a stretch of a diary, `D. FERNANDO` over a chapter
+of the `Historia`. `build_documents` now carries them out as `headings` -- **304
+paragraphs, 96 of them set as headings on the page** -- and the sweep stops
+counting them as wreckage. 47 → **27**.
+
+A trap that came with it: a heading still calls its footnotes, and skipping the
+heading paragraphs took `orphan-note` from 2 to 13 before the note references
+were collected first.
+
+What it says is left, over 1 508 paragraphs:
 
 | | | |
 |---|---:|---|
-| `short-para` | 368 | informational: the diaries' notices really are short |
+| `short-para` | 228 | informational: the diaries' notices really are short |
 | `wall` | 113 | informational: a deposition really is 3 000 characters |
-| `runt` | 70 | **40 of them are one class** -- see below |
-| `bare-dash` | 26 | the same class |
+| `runt` | 27 | 14 stranded ledger figures, 11 display lines of the 1541 reprint |
+| `bare-dash` | 7 | the same ledger figures |
 | `piece-gap` | 3 | numbers Campaner prints and no engine read; stated on the page |
-| `broken-year` | 2 | `1 607.` on leaf 499 |
-| `bad-month` | 2 | `MájYO 23.`, `Manzo 6` -- no engine read the month |
+| `bad-month` | 2 | `MájYO 23.`, `Manzo 6` — no engine read the month |
 | `orphan-note` | 2 | |
-| `unlifted-siglum` | 2 | `-G. F.`, `— G. M.—T. A.` |
+| `broken-year` | 1 | leaf 152's `16`, 2 of 8 readings |
+| `unlifted-siglum` | 1 | `— G. M.—T. A.`, and `G. M.` is not in the glossary |
+
+**Eleven of the 27 runts are the 1541 reprint's own display lines** and are not
+this rule's business: `LECTOREM.` is centred on a measure narrower than the
+column's, `Ceruello.` and `Caualler.` are set flush left, `XXXXII.` misses the
+centring tolerance by two thousandths. Reading a 1541 booklet's typography with
+thresholds calibrated on Campaner's 1881 text is the confusion **task #47**
+exists to end, and it is the right place to stop rather than loosen a threshold
+that was measured.
+
+**And the attribution dash may not follow a letter.** `…se cantó un solemnísimo
+Te-Deum. — J. M. — M. M.` matched from the hyphen *inside* `Te-Deum`, so the
+tail offered for resolution was `-Deum. — J. M. — M. M.`, `Deum.` is not a
+source, and the guard threw the whole attribution away rather than lift half of
+one. Seven notices and one document paragraph get their sources back and nothing
+loses one; `…dos noches.—G. T.` and `…Te-Deum.-G. F.` are untouched, since both
+put a stop before the dash.
 
 **And the class it found is a ledger.** `0311-VI-06` and `0311-XI-11` rank first
 and second, and their runts are all the same shape: `A Juliá Valera, altre dels

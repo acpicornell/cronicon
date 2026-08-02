@@ -1335,7 +1335,15 @@ SOURCES = source_sigla()
 # guard is not the pattern -- it is that every group of initials it captures
 # has to resolve against Campaner's glossary before anything is lifted.
 _GROUP = r"[A-Za-zÁÉÍÓÚÑ]{1,2}\s*[.,]?\s*"
-SIGLA = re.compile(rf"(?:\s*[-—–]+\s*[.,]?\s*(?:{_GROUP}){{1,4}})+[\s.,]*$")
+# The dash may not be preceded by a letter, and that is not decoration. `…se
+# cantó un solemnísimo Te-Deum. — J. M. — M. M.` matched from the hyphen inside
+# `Te-Deum`, so the tail offered for resolution was `-Deum. — J. M. — M. M.`,
+# `Deum.` is not a source, and the guard threw the whole attribution away rather
+# than lift half of one. Seven notices and one document paragraph recover their
+# sources; nothing loses one. The other forms the book uses are untouched, since
+# `…dos noches.—G. T.` and `…Te-Deum.-G. F.` both put a stop before the dash.
+SIGLA = re.compile(
+    rf"(?:(?<![A-Za-zÀ-ÿ])\s*[-—–]+\s*[.,]?\s*(?:{_GROUP}){{1,4}})+[\s.,]*$")
 
 
 def resolve(chunk: str) -> list[str] | None:

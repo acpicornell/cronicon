@@ -173,6 +173,19 @@ def paragraph_breaks(lines: list[dict]) -> set[int]:
     return _breaks_on_one_leaf(lines)
 
 
+def centred_lines(lines: list[dict]) -> set[int]:
+    """Which lines are centred, leaf by leaf and unioned -- see `centred`."""
+    by_leaf: dict[int, list[int]] = {}
+    for n, line in enumerate(lines):
+        by_leaf.setdefault(line.get("leaf", 0), []).append(n)
+    out: set[int] = set()
+    for rows in by_leaf.values():
+        here = [lines[n] for n in rows]
+        live = [i for i, line in enumerate(here) if line["text"].strip()]
+        out |= {rows[i] for i in centred(here, live)}
+    return out
+
+
 def _breaks_on_one_leaf(lines: list[dict]) -> set[int]:
     """Which lines open a paragraph, by where the printer indented them.
 
@@ -508,7 +521,8 @@ def unwedge(lines: list[dict]) -> list[dict]:
     return out
 
 
-def stitch(lines: list[dict]) -> tuple[str, list[int], list[int | None]]:
+def stitch(lines: list[dict]) -> tuple[str, list[int], list[int | None],
+                                     list[bool]]:
     """Reading-order prose, the leaf each paragraph opens on, and its number.
 
     The leaf is carried out because a document runs across up to seventeen of
@@ -521,12 +535,21 @@ def stitch(lines: list[dict]) -> tuple[str, list[int], list[int | None]]:
     opens = paragraph_breaks(lines) | hanging_numbers(lines)
     hanging = hanging_numbers(lines)
     pieces = numbered_pieces(lines)
+    # A paragraph that opens on a centred line is a heading, and the book has
+    # many more of them than the section titles: `D.a VIOLANTE / REINA VIUDA DE
+    # MALLORCA.` over a chapter of the `Historia`, `LECTOREM.`, `PROHEMI.` and
+    # `LAUS DEO.` in the 1541 reprint, `EL REY.` and `Vt. Claver.` under a royal
+    # cédula, `La Prosesó.` and `Autos de Fè.` over a stretch of a diary. They
+    # were being set as ordinary paragraphs, which is why `audit_documents.py`
+    # reported them as wreckage: 30 of its 47 runts are one of these.
+    heads = centred_lines(lines)
     # Built as a list of paragraphs rather than as one string that is split
     # again afterwards: the leaf per paragraph is what the site's facsimile
     # links are keyed on, and joining and re-splitting let the two counts drift.
     paragraphs: list[list[str]] = []
     leaves: list[int] = []
     marks: list[int | None] = []
+    titles: list[bool] = []
     hyphen = False          # did the line before end mid-word?
     for n, line in enumerate(lines):
         if n in pieces and not LETTER.search(line["text"]):
@@ -550,19 +573,20 @@ def stitch(lines: list[dict]) -> tuple[str, list[int], list[int | None]]:
             paragraphs.append([])
             leaves.append(line.get("leaf", 0))
             marks.append(pieces.get(n))
+            titles.append(n in heads and n not in pieces)
         else:
             paragraphs[-1].append(" ")
         hyphen = bool(BREAK_HYPHEN.search(text))
         paragraphs[-1].append(BREAK_HYPHEN.sub("", text) if hyphen else text)
 
     kept = [(small_caps(re.sub(r"[ \t]+", " ", unicodedata.normalize(
-        "NFC", "".join(parts))).strip()), leaf, mark)
-        for parts, leaf, mark in zip(paragraphs, leaves, marks)]
+        "NFC", "".join(parts))).strip()), leaf, mark, head)
+        for parts, leaf, mark, head in zip(paragraphs, leaves, marks, titles)]
     kept = [row for row in kept
             if row[0] and not FURNITURE.fullmatch(row[0])]
-    return ("\n\n".join(text for text, _l, _m in kept) + "\n",
-            [leaf for _t, leaf, _m in kept],
-            [mark for _t, _l, mark in kept])
+    return ("\n\n".join(row[0] for row in kept) + "\n",
+            [row[1] for row in kept], [row[2] for row in kept],
+            [row[3] for row in kept])
 
 
 def main() -> None:
@@ -625,7 +649,7 @@ def main() -> None:
             for line in lines:
                 tiers += line["tiers"]
             words = sum(tiers.values())
-            text, para_leaves, para_marks = stitch(lines)
+            text, para_leaves, para_marks, para_heads = stitch(lines)
             # The section's own numeral, as `parse_documents.py` read it off the
             # panel rather than off the vote's winner. Display type is the class
             # the engines read worst -- leaf 316 prints `III.` and the winner
@@ -671,10 +695,20 @@ def main() -> None:
             if found:
                 i, j, lead, body = found
                 cut = [lead.group(0).strip()] if lead else []
-                new = [x for x in cut + [flat, body[len(flat):].lstrip()] if x]
+                # The numeral and the title are headings; whatever the same
+                # paragraph carried after the title is the section's first
+                # sentence and is not, which marking the whole splice `True`
+                # got wrong on five sections -- `Ara oiats y veiats la
+                # sentensia…` came out as a heading of 3 000 characters.
+                pieces_of = [(x, True) for x in cut + [flat] if x]
+                rest = body[len(flat):].lstrip()
+                if rest:
+                    pieces_of.append((rest, False))
+                new = [x for x, _h in pieces_of]
                 paras[i:j + 1] = new
                 para_leaves[i:j + 1] = [para_leaves[i]] * len(new)
                 para_marks[i:j + 1] = [None] * len(new)
+                para_heads[i:j + 1] = [h for _x, h in pieces_of]
 
             head = paras[0] if paras else ""
             if ROMAN.fullmatch(head.strip()) and head.strip(". ") != section["numeral"]:
@@ -688,15 +722,18 @@ def main() -> None:
                 paras.insert(0, f"{section['numeral']}.")
                 para_leaves.insert(0, para_leaves[0] if para_leaves else start[0])
                 para_marks.insert(0, None)
+                para_heads.insert(0, True)
 
             # Last, because cutting the title free is what creates the commonest
             # one: the wavy rule under it arrives glued to the end of the title's
             # own paragraph and only becomes a paragraph here.
-            kept = [row for row in zip(paras, para_leaves, para_marks)
+            kept = [row for row in zip(paras, para_leaves, para_marks,
+                                       para_heads)
                     if row[0].strip() and not FURNITURE.fullmatch(row[0].strip())]
-            paras = [p for p, _l, _m in kept]
-            para_leaves = [leaf for _p, leaf, _m in kept]
-            para_marks = [mark for _p, _l, mark in kept]
+            paras = [row[0] for row in kept]
+            para_leaves = [row[1] for row in kept]
+            para_marks = [row[2] for row in kept]
+            para_heads = [row[3] for row in kept]
             text = "\n\n".join(paras) + "\n"
             genre = GENRE.match(section["title"])
 
@@ -725,6 +762,8 @@ def main() -> None:
                 # where it has one: which paragraph opens piece N.
                 "pieces": [{"number": m, "paragraph": i, "pdf_page": para_leaves[i]}
                            for i, m in enumerate(para_marks) if m is not None],
+                # Paragraphs the book sets centred: a heading, not prose.
+                "headings": [i for i, h in enumerate(para_heads) if h],
                 "footnotes": len(notes),
                 # …and the notes themselves, not only how many. They were being
                 # separated from the body -- which is the hard half, and the

@@ -624,6 +624,13 @@ def document_page(con, doc, sigla: dict[str, str]) -> str:
     at = json.loads((PROJECT / "data" / "documents" / "sections.json").read_text())
     per_para = next((d.get("paragraph_leaves") or [] for d in at
                      if d["id"] == _id), [])
+    # The paragraphs Campaner sets centred, which are headings and were being
+    # published as prose: the chapter openings of the `Historia de los Reyes`,
+    # `LECTOREM.` and `PROHEMI.` in the 1541 reprint, `EL REY.` and `Vt.
+    # Claver.` under a royal cédula, `Declaració de Amet, cochero de Berga.`
+    # over each deposition. 304 of them over the 23 documents.
+    heads = set(next((d.get("headings") or [] for d in at
+                      if d["id"] == _id), []))
     # The leaves of this document that carry no running text: the engraved
     # plates. Leaf 151 is the genealogical tree of the kings of Mallorca and the
     # section prints its `ESPLICACION` on the leaf after it, so a reader meets
@@ -727,6 +734,8 @@ def document_page(con, doc, sigla: dict[str, str]) -> str:
                (i == 0 or flat == " ".join(title.split())
                 or para.startswith(("«", "(", '"')) or para.isupper())
                else "p")
+        if tag == "p" and i in heads:
+            tag = "h4"
         if tag == "p":
             for piece in lay_out_tables(para, inline, table_ends):
                 chunks.append(piece if piece.startswith("<table")
@@ -735,6 +744,7 @@ def document_page(con, doc, sigla: dict[str, str]) -> str:
             continue
         chunks.append(f'<{tag} id="p{i}" class="dochead">'
                       f"{mark_doubt(para, doubtful)}</{tag}>")
+
     # …and the plates that stand after the last paragraph, which no gap between
     # two paragraphs can reach: section II of the 18th-century block ends with
     # eight of them.

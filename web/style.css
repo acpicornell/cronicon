@@ -632,3 +632,8 @@ h3.piece span { display: inline-block; font-family: Georgia, serif;
                 font-size: 1rem; color: var(--accent); padding: 0 .9rem;
                 border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
                 line-height: 1.9; font-variant-numeric: tabular-nums; }
+
+/* A paragraph the book sets centred inside a document: a heading. */
+.doc h4.dochead { text-align: center; font-family: Georgia, serif;
+                  font-size: 1rem; font-weight: 600; color: var(--ink);
+                  margin: 1.8rem auto .8rem; max-width: 46ch; }

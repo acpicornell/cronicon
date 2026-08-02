@@ -88,6 +88,7 @@ def prose_checks(doc: dict, paras: list[str], vocab: Counter
     found: list[tuple[str, str]] = []
     called: set[int] = set()
     numbered = {p["paragraph"] for p in doc.get("pieces", [])}
+    headings = set(doc.get("headings", []))
     for i, para in enumerate(paras):
         one = " ".join(para.split())
         letters = len(re.findall(r"[A-Za-zÀ-ÖØ-öø-ÿ]", one))
@@ -96,7 +97,19 @@ def prose_checks(doc: dict, paras: list[str], vocab: Counter
         # year over a diary's stretch (`1706.`) or a piece number -- which have
         # no letters by construction. A check firing on a sixth of a corpus has
         # found a convention, which is what the rate is printed for.
-        if HEADING.fullmatch(one) or i in numbered:
+        # A heading is not a short paragraph. `runt` and `bare-dash` both fired
+        # on 17% of the corpus on their first run and every one of them was a
+        # year over a diary's stretch (`1706.`) or a piece number -- which have
+        # no letters by construction. Once `build_documents` began recording the
+        # centred paragraphs, 30 of the 47 that remained turned out to be
+        # headings too: `LECTOREM.`, `EL REY.`, `Autos de Fè.`, `D. FERNANDO`.
+        # A check firing on a sixth of a corpus has found a convention, which is
+        # what the rate is printed for.
+        # …but a heading still calls its notes: the title of a section carries
+        # `(1)` as often as not, and skipping it took `orphan-note` from 2 to 13.
+        called |= {n for n in (ref_number(m.group(1))
+                               for m in NOTE_REF.finditer(one)) if n}
+        if HEADING.fullmatch(one) or i in numbered or i in headings:
             continue
         if letters < MIN_LETTERS and i > 1:
             found.append(("runt", f"¶{i}: {one!r}"))
