@@ -1418,27 +1418,121 @@ def source_page(con, siglum: str, expansion: str) -> str:
 # 341 of the 1 979 names. It is the most interesting column in the table and the
 # easiest to mistake for a surname: taking the last word of the name makes
 # `perayre` the commonest family in Mallorca, with 70 seats.
-TRADES = {
-    "perayre": "paraire", "apotecari": "apotecari", "forner": "forner",
-    "dr. en leyes": "doctor en lleis", "doncel": "donzell", "notari": "notari",
-    "assabonador": "saboner", "caballero": "cavaller", "argenter": "argenter",
-    "ferrer": "ferrer", "pellisser": "pellisser", "texidor": "teixidor",
-    "sabater": "sabater", "sastre": "sastre", "blanquer": "blanquer",
-    "flassader": "flassader", "sucrer": "sucrer", "fuster": "fuster",
-    "jurista": "jurista", "draper": "draper", "tintorer": "tintorer",
-    "esparter": "esparter", "manescal": "manescal", "chirurgid": "cirurgià",
-    "apuntador": "apuntador",
-}
 CENTURY_NAMES = {13: "XIII", 14: "XIV", 15: "XV", 16: "XVI", 17: "XVII",
                  18: "XVIII"}
 
+# Campaner writes a Jurat's trade after a comma -- `Juan Sala, perayre` -- and
+# reading all 2 436 names off the facsimile showed where: **always against the
+# sixth seat.** The first is the knight's (`caballero`, `doncel`, `miles`), the
+# second and third the citizens' and jurists' (`Dr. en leyes`), and the sixth
+# the menestral's; not one trade stands against any other seat. So the trades
+# are not a property of "the Jurats", they are the sixth Jurat.
+ARTISAN_SEAT = 6
+# One trade, several spellings. Only spellings are merged -- `perayre` and
+# `peraire` are one word set two ways -- never two words for what may be the
+# same craft: `apotecari`, `especiayre` and `boticario` stay three rows,
+# because whether an apothecary and a spicer were one guild in 1460 is a
+# historian's call and not a chart's. Each row is named by the form Campaner
+# prints most and lists the others.
+TRADE_SPELLINGS = {
+    "peraire": "perayre", "pelliser": "pellisser",
+    "cirurgiá": "chirurgiá", "chirurgià": "chirurgiá",
+    "teixidor": "texidor", "menescal": "manescal",
+    "picapedras": "picapedrer", "sellater": "selleter", "jerrer": "jarrer",
+    "speciayre": "especiayre", "spicier": "especiayre",
+    "notari y menestral": "notari",
+}
+BAR_W, BAR_H = 150, 12
 
-def trade_of(name: str) -> str | None:
-    """The trade Campaner notes after the comma, normalised, or None."""
-    if "," not in name:
-        return None
-    tail = name.split(",", 1)[1].strip().strip(".").lower()
-    return TRADES.get(tail)
+
+def artisan_trades(con) -> tuple[list[dict], dict[int, tuple[int, int]]]:
+    """The sixth seat's trades, commonest first, and how often one is stated.
+
+    Returns the rows -- trade, the spellings printed, a count per century --
+    and, per century, (sixth Jurats, of them with a trade). The second half is
+    what keeps the chart honest: before 1500 Campaner's sources name the trade
+    for a third to two thirds of them, and after it for every one, so a trade
+    that looks rare in the fourteenth century may only be unrecorded.
+    """
+    rows = con.execute(
+        "SELECT century, name FROM jurat WHERE seat = ? AND tier <> 'remark' "
+        "ORDER BY id", [ARTISAN_SEAT]).fetchall()
+    stated: dict[int, list[int]] = {}
+    trades: dict[str, dict] = {}
+    for century, name in rows:
+        seen = stated.setdefault(century, [0, 0])
+        seen[0] += 1
+        if "," not in name:
+            continue
+        seen[1] += 1
+        # The trade is what follows the last comma: `Miguel Fiol, menor,
+        # forner` is a baker, and `menor` tells him from his father.
+        printed = name.rsplit(",", 1)[1].strip().rstrip(".")
+        form = printed[0].lower() + printed[1:]
+        trade = trades.setdefault(
+            TRADE_SPELLINGS.get(form, form),
+            {"forms": Counter(), "by": Counter(), "n": 0})
+        trade["forms"][form] += 1
+        trade["by"][century] += 1
+        trade["n"] += 1
+    out = [dict(trade=t, **v) for t, v in trades.items()]
+    out.sort(key=lambda r: (-r["n"], r["trade"]))
+    return out, {c: tuple(v) for c, v in sorted(stated.items())}
+
+
+def trades_chart(con) -> str:
+    """Ranked bars, one hue, with the figures per century beside them.
+
+    More than twenty trades, so not a stacked chart of twenty colours: a bar on
+    a common baseline compares exactly, and the table beside it is the split by
+    century in figures. Every number the bars encode is printed in the row, so
+    nothing is carried by the picture alone. The bar's length is an SVG
+    attribute, not a style.
+    """
+    trades, stated = artisan_trades(con)
+    centuries = sorted(stated)
+    shown = [t for t in trades if t["n"] >= 2]
+    once = [t for t in trades if t["n"] == 1]
+    peak = shown[0]["n"]
+    total = sum(t["n"] for t in trades)
+
+    def row(t: dict) -> str:
+        others = [f for f in t["forms"] if f != t["trade"]]
+        also = (f' <small>també {", ".join(esc(f) for f in sorted(others))}'
+                "</small>" if others else "")
+        width = max(2, round(BAR_W * t["n"] / peak))
+        cells = "".join(
+            f'<td class="num">{t["by"][c] or ""}</td>' for c in centuries)
+        return (f'<tr><th scope="row" lang="ca" translate="no">'
+                f'{esc(t["trade"])}{also}</th>'
+                f'<td class="barcell"><svg width="{BAR_W}" height="{BAR_H}" '
+                f'viewBox="0 0 {BAR_W} {BAR_H}" aria-hidden="true">'
+                f'<rect width="{width}" height="{BAR_H}" rx="3" '
+                f'fill="currentColor"><title>{esc(t["trade"])} · {t["n"]}'
+                f'</title></rect></svg></td>'
+                f'<td class="num total">{t["n"]}</td>{cells}</tr>')
+
+    head = "".join(f'<th scope="col" class="num">{CENTURY_NAMES[c]}</th>'
+                   for c in centuries)
+    recorded = "".join(
+        f'<td class="num">{have} de {seats}</td>'
+        for seats, have in (stated[c] for c in centuries))
+    rest = ", ".join(
+        f'<span lang="ca" translate="no">{esc(t["trade"])}</span>' for t in once)
+    return f"""<figure class="trades">
+  <div class="scroll"><table class="ranked">
+    <caption>Oficis del sisè jurat, tal com els escriu Campaner, per segle</caption>
+    <thead><tr><th scope="col">ofici</th><th scope="col"><span class="vh">proporció</span></th>
+      <th scope="col" class="num">total</th>{head}</tr></thead>
+    <tbody>{"".join(row(t) for t in shown)}</tbody>
+    <tfoot><tr><th scope="row" colspan="3">sisens jurats amb l'ofici anotat</th>
+      {recorded}</tr></tfoot>
+  </table></div>
+  <figcaption>{num(total)} sisens jurats amb ofici, en {len(trades)} oficis.
+    Un sol cop hi surten: {rest}. S'han ajuntat només les grafies d'un mateix
+    mot (<em>perayre</em> i <em>peraire</em>), no els oficis que podrien ser el
+    mateix (<em>apotecari</em>, <em>especiayre</em>, <em>boticario</em>).</figcaption>
+</figure>"""
 
 
 def jurats_index(con) -> str:
@@ -1495,11 +1589,8 @@ def jurats_index(con) -> str:
         + "</a>"
         for c, n, first, last, years, read in series)
 
-    names = [r[0] for r in con.execute(
-        "SELECT name FROM jurat WHERE tier <> 'remark' ORDER BY id").fetchall()]
-    trades = Counter(t for t in (trade_of(n) for n in names) if t)
-    chips = "".join(f'<li>{esc(t)} <small>{n}</small></li>'
-                    for t, n in trades.most_common(18))
+    _trades, stated = artisan_trades(con)
+    early = [c for c in stated if stated[c][1] < stated[c][0]]
 
     body = f"""<header class="page-head">
   <p class="kicker">Els qui governaven</p>
@@ -1512,11 +1603,21 @@ def jurats_index(con) -> str:
 <div class="cards">{blocks}</div>
 
 <section class="matter">
-  <h2>No tots eren cavallers</h2>
-  <p>De {num(sum(1 for n in names if "," in n))} noms, Campaner n'anota
-     l'ofici o la condició darrere una coma. El gremi seia al
-     costat del jurista i del donzell:</p>
-  <ul class="subjects">{chips}</ul>
+  <h2>El sisè jurat: l'ofici del menestral</h2>
+  <p>Dels sis jurats, el primer era cavaller o donzell, el segon i el tercer
+     ciutadans —molts, doctors en lleis— i <strong>el sisè, un menestral</strong>.
+     Campaner n'escriu l'ofici darrere una coma, i a la llista només en porta
+     aquest seient: cap ofici no surt en cap dels altres cinc.</p>
+  {trades_chart(con)}
+  <p class="aside">Abans de 1500 l'ofici no hi és sempre: les fonts de
+     Campaner el donen per a
+     {" i ".join(f"{stated[c][1]} dels {stated[c][0]} sisens jurats del segle {CENTURY_NAMES[c]}" for c in early if stated[c][1] > 1)},
+     i després per a tots. Un ofici que sembla rar al segle XIV potser només
+     és que no es va anotar.</p>
+  <p class="aside">No es compta aquí qui va repetir càrrec, perquè la llista
+     dona noms i no persones: <span lang="es" translate="no">Pedro Net</span>
+     hi surt deu vegades entre 1363 i 1586, que són avis, fills i nets del
+     mateix nom.</p>
 </section>
 
 <section class="matter">
@@ -1530,7 +1631,7 @@ def jurats_index(con) -> str:
                 f"Els {num(total)} jurats de la Ciutat i Regne de Mallorca que "
                 "Campaner llista, de 1240 a 1715, amb el grau de certesa de "
                 "cada nom.",
-                "jurats/", "jurats/", body,
+                "jurats/", "jurats/", body, main="wrap column",
                 trail=crumbs(("Inici", "../"), ("Els jurats", None)))
 
 

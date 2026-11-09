@@ -119,6 +119,16 @@ main.wrap { padding-top: 1.2rem; padding-bottom: 4rem; }
 /* A reading page is as wide as its text and its rail, so the head of the page
    starts where the text does. */
 .wrap.page { max-width: 64rem; }
+/* One column with one right edge: text, cards and table all end where the
+   widest of them does. A page that mixes prose capped at 66ch with full-width
+   cards and an auto-width table has three right edges, and it shows. */
+/* The column starts where every other page starts -- under the brand -- and
+   only its width is limited, so the left edge does not move between tabs. */
+.wrap.column > * { max-width: 56rem; }
+.column p, .column .lede, .column figcaption, .column .hint,
+.column .matter > p { max-width: none; }
+.column .cards { grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); }
+.column .ranked { width: 100%; }
 main > p, .prose > p, .matter > p { max-width: var(--measure); }
 
 .kicker { font-family: var(--display); font-size: .875rem; letter-spacing: .14em;
@@ -430,6 +440,22 @@ figcaption { font-size: 1rem; color: var(--muted); margin-top: .7rem; max-width:
 a.key:hover { color: var(--accent); }
 .key small { color: var(--muted); }
 .swatch { width: .8rem; height: .8rem; border-radius: 2px; align-self: center; flex: none; }
+
+/* Ranked bars with their figures: one hue, every number printed beside it. */
+.trades { margin: 1rem 0 1.2rem; }
+.ranked { width: auto; min-width: min(100%, 34rem); font-size: 1.02rem; font-variant-numeric: lining-nums tabular-nums; }
+.ranked caption { text-align: left; color: var(--muted); font-size: .95rem; padding-bottom: .4rem; }
+.ranked th, .ranked td { padding: .16rem .9rem .16rem 0; border-bottom: 1px dotted var(--line); vertical-align: middle; }
+.ranked tbody th { font-weight: 400; font-style: italic; }
+.ranked tbody th small { white-space: nowrap; }
+.ranked tbody th small { font-style: normal; color: var(--muted); }
+/* `barcell`, not `bar`: `.bar` is the header's flex row, and a table cell that
+   picks it up stops being a table cell -- the column rode up half a row. */
+.ranked td.barcell { color: var(--accent); padding-right: .5rem; }
+.ranked td.barcell svg { display: block; }
+.ranked td.total { font-weight: 600; }
+.ranked td.num { min-width: 2.4rem; }
+.ranked tfoot th, .ranked tfoot td { font-weight: 400; color: var(--muted); font-size: .92rem; border-bottom: 0; padding-top: .5rem; white-space: nowrap; }
 
 .dossier { background: var(--page); border: 1px solid var(--line); border-radius: 4px;
            padding: 1rem 1.3rem; margin: 0 0 1.5rem; }

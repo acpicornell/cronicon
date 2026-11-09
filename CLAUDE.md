@@ -1571,6 +1571,26 @@ Still not published: the notes column of the annotated leaves (which codex
 gives which name). And `jurats_facsimile.py --check` should be run whenever a
 file under `data/adjudication/jurats/` is touched.
 
+**The trades are the sixth seat, and only the sixth.** With every name read,
+what follows the comma sorts by seat with no exception: `caballero`, `doncel`,
+`miles` against the first, `Dr. en leyes` and `jurista` against the second and
+third, `notari` against the fourth in the 17th century, and **all 302 craft
+names against the sixth** — the menestral's. `/jurats/` charts them as ranked
+bars of one hue with the count per century in figures beside each
+(`build_site.trades_chart`): 45 trades, `perayre` 88, `apotecari` 26, `forner`
+22. Three decisions in it:
+
+- **Only spellings are merged** (`perayre`/`peraire`, `chirurgiá`/`cirurgiá`),
+  never two words for what may be one craft: `apotecari`, `especiayre` and
+  `boticario` stay three rows. Rows are named by Campaner's commonest form.
+- **The foot of the table says how often a trade is stated at all**: 1 of 14
+  sixth Jurats in the 13th century, 24 of 75, 65 of 100, then 99 of 99. A
+  trade that looks rare before 1500 may only be unrecorded.
+- **No chart of who held office twice**, on the user's doubt and it was right:
+  the list gives names, not persons. 524 names are printed more than once;
+  `Pedro Net` ten times between 1363 and 1586, and 60 names span over a
+  century. Counting them would count grandfathers with grandsons.
+
 ## The site must not tidy the book either
 
 **Year pages are ordered by the book, not by date.** November 1644 runs
