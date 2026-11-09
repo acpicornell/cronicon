@@ -63,15 +63,6 @@
   "excerpt": "«Acabóse la prosperidad de esta isla con la guerra de Castilla, que empezó en este año de "
  },
  {
-  "check": "doubled",
-  "year": 1374,
-  "month": 10,
-  "day": 7,
-  "pdf_page": 97,
-  "detail": "del del",
-  "excerpt": "Fueron ahorcados en las plazas de la capital catorce esclavos sarracenos, tártaros y neófi"
- },
- {
   "check": "dangling-note",
   "year": 1374,
   "month": 11,
@@ -126,49 +117,13 @@
   "excerpt": "Sesion del G. y G. Consejo para nombrar embajadores ó diputados que concurriesen á la elec"
  },
  {
-  "check": "dangling-note",
-  "year": 1438,
-  "month": 11,
-  "day": 26,
-  "pdf_page": 187,
-  "detail": "(1) in the text, no note",
-  "excerpt": "Pregon publicado por Real Orden suspendiendo la obediencia al Papa Eugenio.—B. J. (1) «Por"
- },
- {
-  "check": "dangling-note",
-  "year": 1450,
-  "month": 4,
-  "day": 5,
-  "pdf_page": 191,
-  "detail": "(1) in the text, no note",
-  "excerpt": "Pregon remitido en forma de requisitoria á los pueblos de la isla para la captura de Alfon"
- },
- {
   "check": "glued",
   "year": 1450,
   "month": 4,
   "day": null,
   "pdf_page": 191,
   "detail": "ciu dad, -> ciudad",
-  "excerpt": "«En el año de 1451, (2) que reinaba en Ma(I) CRIDA. Ara oiats que mana e denuncia hoc e in"
- },
- {
-  "check": "dangling-note",
-  "year": 1452,
-  "month": 5,
-  "day": 25,
-  "pdf_page": 196,
-  "detail": "(1) in the text, no note",
-  "excerpt": "De órden de la Reina dispuso el Lugarteniente la publicacion de un bando imponiendo sobre "
- },
- {
-  "check": "doubled",
-  "year": 1452,
-  "month": 11,
-  "day": 22,
-  "pdf_page": 196,
-  "detail": "per per",
-  "excerpt": "Pregon ordenando una reseña de caballos y armas en la plaza delante del Castillo Real, jur"
+  "excerpt": "«En el año de 1451, (2) que reinaba en Mallorca el Rey D. Alonso y residía en Nápoles, los"
  },
  {
   "check": "doubled",
@@ -180,24 +135,6 @@
   "excerpt": "Pregon ordenando una reseña de caballos y armas en la plaza delante del Castillo Real, jur"
  },
  {
-  "check": "dangling-note",
-  "year": 1463,
-  "month": null,
-  "day": null,
-  "pdf_page": 205,
-  "detail": "(1) in the text, no note",
-  "excerpt": "En este año se verificaron varias ejecuciones: I.* de Pedro Splugues, catalan, sitiador de"
- },
- {
-  "check": "dangling-note",
-  "year": 1468,
-  "month": 5,
-  "day": null,
-  "pdf_page": 207,
-  "detail": "(1) in the text, no note",
-  "excerpt": "Pagó la Procuracion Real su salario al portador de letras que trajo una carta del Bayle de"
- },
- {
   "check": "runt",
   "year": 1473,
   "month": null,
@@ -205,15 +142,6 @@
   "pdf_page": 211,
   "detail": "47 3 •",
   "excerpt": "47 3 •"
- },
- {
-  "check": "dangling-note",
-  "year": 1476,
-  "month": 9,
-  "day": 19,
-  "pdf_page": 212,
-  "detail": "(1) in the text, no note",
-  "excerpt": "Otro pregon mandando denunciar dentro de diez dias toda clase de bienes inmuebles, muebles"
  },
  {
   "check": "doubled",
@@ -241,24 +169,6 @@
   "pdf_page": 220,
   "detail": "Novie mbre -> noviembre",
   "excerpt": "Pagó la Procuracion Real el importe de una copia del proceso sobre las ocurrencias de San "
- },
- {
-  "check": "dangling-note",
-  "year": 1492,
-  "month": 6,
-  "day": 1,
-  "pdf_page": 221,
-  "detail": "(1) in the text, no note",
-  "excerpt": "Mos. Alvaro Unis, Lugarteniente del Regente del Reino, mandó un correo á Felanitx avisando"
- },
- {
-  "check": "dangling-note",
-  "year": 1498,
-  "month": 9,
-  "day": 14,
-  "pdf_page": 223,
-  "detail": "(1) in the text, no note",
-  "excerpt": "Se pagó el gasto de un pregon publicando la paz firmada entre los Reyes de Castilla y Arag"
  },
  {
   "check": "glued",
@@ -466,15 +376,6 @@
   "pdf_page": 420,
   "detail": "s. Hubo tambien bastante aceite y vino.—",
   "excerpt": "—A principios de este año, hasta la época de la cosecha, volvió á experimentarse en Mallor"
- },
- {
-  "check": "dangling-note",
-  "year": 1638,
-  "month": 7,
-  "day": null,
-  "pdf_page": 423,
-  "detail": "(1) in the text, no note",
-  "excerpt": "JULIO 30, 31 y primeros días de Agosto.— No habiéndose prestado la Ciudad á dar al Virey C"
  },
  {
   "check": "runt",
@@ -883,6 +784,15 @@
  },
  {
   "check": "orphan-note",
+  "year": 1376,
+  "month": null,
+  "day": null,
+  "pdf_page": 98,
+  "detail": "(1) col1 called by nothing",
+  "excerpt": "Véanse los apéndices al siglo XIV."
+ },
+ {
+  "check": "orphan-note",
   "year": 1392,
   "month": null,
   "day": null,
@@ -1060,6 +970,15 @@
   "pdf_page": 220,
   "detail": "(1) col1 called by nothing",
   "excerpt": "QUINTO AUTO DE FE. Item pagui an Guillem Gravalosa arrendador de la casa dels bans 15 ls. "
+ },
+ {
+  "check": "orphan-note",
+  "year": 1499,
+  "month": null,
+  "day": null,
+  "pdf_page": 224,
+  "detail": "(1) col0 called by nothing",
+  "excerpt": "PAU PUBLICADA EN LENGUA CASTELLANA ENTRE LOS REYS DE ESPANYA E REY DE FRANCE. A 14 de Sete"
  },
  {
   "check": "orphan-note",
@@ -1562,7 +1481,7 @@
   "month": null,
   "day": null,
   "pdf_page": 205,
-  "detail": "2877 chars",
+  "detail": "1089 chars",
   "excerpt": "En este año se verificaron varias ejecuciones: I.* de Pedro Splugues, catalan, sitiador de"
  },
  {

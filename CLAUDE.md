@@ -986,6 +986,20 @@ scholarship in the book — he corrects Terrassa's dates and quotes the accounts
 notice summarises — and an edition that silently keeps 62 of them to itself is
 worse than one that admits it cannot place them.
 
+**The note's own number is misread the same way, and that was most of
+`dangling-note`.** The call got the `(I)` licence and the note opening did not,
+so eleven notes that open `(I) CRIDA. Ara oiats…`, `(I) EXECUCIÓ RARA.`, `(I)
+NOU DRET DE ADUANAS.`, `(i) Véanse los apéndices al siglo XIV.` were never split
+off and were **published as chronicle**, straight after the `(1)` that called
+them — Catalan documents a notice quotes in full, reading as Campaner's prose.
+`parse_entries.note_start` accepts the letter shapes of 1 at a note's head when
+text follows it, since a bare `(I)` at the start of a line is a stranded call.
+Over the whole book twelve lines open that way and every one is a note.
+`dangling-note` **18 → 9**; `orphan-note` 62 → 64, because two of the eleven sit
+where their call cannot be matched (leaf 224's note is called from leaf 223).
+The nine left are leaves where the note is genuinely absent from the panel's
+lines or split_notes' bands, not a reading problem.
+
 ### Two checks that turned out to describe the book
 
 **`doubled` finds Campaner's page, not our reading of it.** Four of the

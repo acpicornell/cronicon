@@ -300,6 +300,25 @@ def fold_siglum(text: str) -> str:
 # the note instead of to its own tail at the top of the next column, and the
 # entry read `el 24 falle(1.) «A hora de vespres…» ció.`
 NOTE_START = re.compile(r"^\s*[\(\[]\s*(\d{1,2})\s*[.,]?\s*[\)\]]")
+# …and the note's own number is the same two characters of small type, misread
+# the same way. Ten notes opened `(I) CRIDA. Ara oiats…`, `(I) EXECUCIÓ RARA.`,
+# `(i) Véanse los apéndices al siglo XIV.`, were never separated, and were
+# published as chronicle straight after the `(1)` that called them -- that is
+# most of what `dangling-note` was reporting. Over the whole book twelve lines
+# open this way and every one is a note. Only with text after it, because a bare
+# `(I)` at the start of a line is a call the alignment stranded.
+NOTE_START_ONE = re.compile(r"^\s*[\(\[]\s*([IiLl|])\s*[.,]?\s*[\)\]](?=\s*\S.{3})")
+
+
+def note_start(text: str) -> tuple[int, int] | None:
+    """(number, end of the number) if this line opens a footnote."""
+    match = NOTE_START.match(text)
+    if match:
+        return int(match.group(1)), match.end()
+    match = NOTE_START_ONE.match(text)
+    if match:
+        return 1, match.end()
+    return None
 # The call in the text is a superscript `(1)` two characters wide, which is the
 # smallest thing on the leaf and the likeliest to be misread: seven of the notes
 # nothing calls are called by `(I)`. Accepting the letter shapes of 1 is safe
@@ -375,7 +394,7 @@ def banded_notes(lines: list[dict]) -> tuple[list[dict], list[dict]]:
         top = line["bbox"][1]
         if in_note and top < previous - COLUMN_BREAK:
             in_note = False
-        if not in_note and top > NOTE_BAND and NOTE_START.match(line["text"]):
+        if not in_note and top > NOTE_BAND and note_start(line["text"]):
             in_note = True
         (notes if in_note else body).append(line)
         previous = top
@@ -466,8 +485,8 @@ def small_type_notes(lines: list[dict]) -> list[dict]:
     notes: list[dict] = []
     for group in columns:
         for n, line in enumerate(group):
-            match = NOTE_START.match(line["text"])
-            if not match or len(line["text"][match.end():].strip()) < 4:
+            match = note_start(line["text"])
+            if not match or len(line["text"][match[1]:].strip()) < 4:
                 continue
             if (height(line) < cut
                     or (n + 1 < len(group) and height(group[n + 1]) < cut)):
@@ -503,12 +522,12 @@ def gather_notes(notes: list[dict]) -> list[dict]:
     """
     out: list[dict] = []
     for line in notes:
-        match = NOTE_START.match(line["text"])
+        match = note_start(line["text"])
         if match:
-            out.append({"number": int(match.group(1)),
+            out.append({"number": match[0],
                         "column": line.get("column", 0),
                         "leaf": line.get("leaf"),
-                        "text": line["text"][match.end():].strip()})
+                        "text": line["text"][match[1]:].strip()})
         elif out:
             text = out[-1]["text"]
             out[-1]["text"] = (text[:-1] + line["text"] if text.endswith("-")
