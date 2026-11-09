@@ -1,0 +1,28 @@
+# The account of 1318, receipts: right column of leaf 160. It runs on to 161.
+leaf: 160
+box: 0.49 0.527 0.96 0.872
+by: claude (facsímil, resolució nativa)
+---
+0.534 A | «Primo, de la re-
+0.549 A | buda de la ciutat,
+0.564 A | en diner» (valor de
+0.580 A | 504 cuarteras 3 al-
+0.594 A | mudes de trigo y
+0.610 A | 486 cuarteras 3 al-
+0.623 A | mudes de cebada
+0.638 A | de los diezmos de
+0.654 A | esta comarca.) | 3.705 libs. 12 ss. » ds.
+0.668 A | «Id. de la rebuda
+0.683 A | fora la ciutat, en
+0.698 A | diner. | 2.594 » 7 » 10 »
+0.712 A | Id. de la rebuda
+0.728 A | del preu de tot lo
+0.743 A | blat.. | 3.521 » » » 9 »
+0.756 A | Id. de la rebuda
+0.772 A | de justicias de tota
+0.787 A | la isla» (multas etc.) | 651 » 9 » 8 »
+0.801 A | «Id. de la rebuda
+0.816 A | de les rendes que
+0.831 A | foren del Noble
+0.846 A | Gaston de Bearne. | 1.113 » 5 » 11 »
+0.860 A | De les rendes

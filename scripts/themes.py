@@ -13,8 +13,12 @@ is why a route can be wrong in both directions: it finds the `rayos` of a
 wheel as well as the lightning, and it misses the plague a chronicler describes
 without naming.
 
-Three patterns were narrowed after reading their samples, which is what the
-report is for. `bando` is an edict far more often than a faction in the
+Four patterns were narrowed after being read, which is what the report is for
+-- and the fourth by a reader of the site rather than by the report: `inquisi`
+took `inquisiciones ocultas` (1279), `haciendo inquisicion del estado` (1304)
+and `declaracion inquisitiva` (1619), which are inquiries and not the
+Inquisition. The tribunal is now the capitalised noun, its officers and its
+other name. `bando` is an edict far more often than a faction in the
 eighteenth century, and took half of "Bàndols" with it; `temporal` is the
 Church's *porción temporal* and `incendio` a town burnt in war; and `Colom` is
 Porto-Colom and a doctor of 1708 before it is the leader of the Germania. The hit counts are measured (`build_site.py --themes-report`
@@ -55,9 +59,19 @@ class Theme:
     terms: str                       # as shown to the reader
     pattern: str                     # over fold(text)
     documents: tuple[str, ...] = ()  # whole documents that belong to the route
+    exact: str = ""                  # over the text itself, case and accents kept
 
-    def search(self, text: str) -> re.Match | None:
-        return re.search(self.pattern, fold(text))
+    def find(self, text: str, folded: str) -> tuple[int, int] | None:
+        """Where this route's first term stands in `text`, or None.
+
+        `exact` exists for the one distinction folding destroys: a capital.
+        `Inquisicion` is the tribunal and `inquisicion` is an inquiry, and in
+        this book the second is as ordinary a word as the first.
+        """
+        spans = [m.span() for m in (
+            re.search(self.pattern, folded),
+            re.search(self.exact, text) if self.exact else None) if m]
+        return min(spans) if spans else None
 
 
 THEMES = (
@@ -96,9 +110,11 @@ THEMES = (
           r"bandidos?|bandolero|bandejad|canamunt|canavall|parcialidad|reyerta"),
     Theme("inquisicio", "La Inquisició",
           "Actes de fe, relaxats, penitenciats i sambenets.",
-          "Inquisición, auto de fe, relajado, penitenciado, judaizante, "
-          "sambenito, hereje",
-          r"inquisi|auto de fe|relajad|penitenciad|judaiz|sambenito|herej"),
+          "Inquisición (amb majúscula), inquisidor, Santo Oficio, auto de fe, "
+          "relajado, penitenciado, judaizante, sambenito, hereje",
+          r"inquisidor|santo oficio|sto\. oficio|auto de fe|relajad|penitenciad"
+          r"|judaiz|sambenito|herej",
+          exact=r"\bInquisici[oó]n\b"),
     Theme("temporals", "Llamps, terratrèmols i temporals",
           "Llamps al campanar, neu a ciutat, torrentades i la terra que tremola.",
           "terremoto, temblor, rayo, granizo, pedrisco, nieve, nevada, "

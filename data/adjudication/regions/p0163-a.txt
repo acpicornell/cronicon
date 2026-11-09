@@ -1,0 +1,30 @@
+# The account of 1343, receipts: left column of leaf 163.
+leaf: 163
+box: 0.13 0.540 0.52 0.912
+by: claude (facsímil, resolució nativa)
+---
+0.547 A | En aquest any
+0.561 A | munten totes les
+0.576 A | dites rendes. | 3.489 libs. 16 ss. 1 ds.
+0.590 A | Munta tota la
+0.604 A | moneda rebuda de
+0.620 A | fora la ciutat, ex-
+0.636 A | ceptat lo preu del
+0.651 A | blat.. | 4.850 » 5 » 11 »
+0.664 A | Condennacions
+0.680 A | fetas axi per lo se-
+0.696 A | ñor Rey com per
+0.709 A | son Governador.. | 104 libs. 1 ss. 8 ds.
+0.724 A | Monedatje de
+0.740 A | tota la isla. | 4.512 » 15 » 1 »
+0.754 A | Rebudes extra-
+0.771 A | ordinaries. | 2.738 » 19 » 3 »
+0.783 A | Rebuda de Me-
+0.800 A | norca.. | 312 » 11 » 2 »
+0.814 A | De Evissa. | 50 » » » » »
+0.828 A | Deutes vells qui
+0.844 A | eren deguts an Jac-
+0.859 A | me de Montpeller. | 402 » 14 » 5 »
+0.873 A | Blat del terme
+0.890 A | 1.014 quarteres,
+0.903 A | munta en diners. | 460 » 16 » 2 »

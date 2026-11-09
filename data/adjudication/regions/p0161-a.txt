@@ -1,0 +1,57 @@
+# The account of 1318, the end of the receipts and the expenses: left column
+# of leaf 161. The first row begins on leaf 160 and the last ends in p0161-b.
+leaf: 161
+box: 0.13 0.098 0.52 0.895
+by: claude (facsímil, resolució nativa)
+---
+0.105 A | de Biniaraix que fo
+0.120 A | den Arnaldo Tor-
+0.135 A | rella. | 65 » 5 » 1 »
+0.149 A | Id. de la rebuda
+0.165 A | de les rendes que
+0.178 A | foren haudes de lo
+0.195 A | del Temple.. | 389 » 1 » 7 »
+0.208 A | Id. de la rebuda
+0.224 A | de les rendes qne
+0.239 A | foren haudes per
+0.253 A | lo Pariatge, del se-
+0.269 A | ñor Bisbe.. | 451 » 8 » 1 »
+0.282 A | Id. de la rebuda
+0.297 A | de les rendes que
+0.311 A | foren haudes de la
+0.326 A | tenda e del dret
+0.341 A | dels sarrasins e ju-
+0.357 A | eus estranys. | 1.687 » 11 » 5 »
+0.370 A | Id. de la rebuda
+0.384 A | de les rendes de
+0.402 A | Menorca. | 1.913 » 9 » 10 »
+0.414 A | Id. de les de Ebi-
+0.431 A | ça.. | 582 » 3 » 3 »
+0.444 A | Id. de la rebuda
+0.460 A | extraordinaria.» | 395 » » » 1 »
+0.489 A | | 17.069 » 15 » 6 »
+0.518 | Gastos.
+0.548 B | «Dada per viola-
+0.563 B | ris» (pensiones vi-
+0.578 B | talicias.) | 473 libs. 18 ss. 8 ds.
+0.591 B | «Dada de la al-
+0.607 B | moyna den Gui-
+0.621 B | llem Sa Coma e
+0.636 B | den Jaume Espi-
+0.651 B | nach e de lo ques
+0.666 B | dona per los Pro-
+0.682 B | curadors. | 525 » » » » »
+0.695 B | Dada de provi-
+0.710 B | sions dordes e des-
+0.726 B | pitals. | 122 » 10 » 8 »
+0.739 B | Quitacio de
+0.754 B | Lochtinent e dal-
+0.771 B | tre. | 439 » 9 » 7 »
+0.784 B | Quitacio de
+0.800 B | 25 libs. per cavayl
+0.815 B | armat.. | 403 » 15 » » »
+0.828 B | Quitacio de
+0.845 B | 15 libs. per civade. | 45 » » » » »
+0.858 B | Quitacio de sir-
+0.874 B | vents dels casteyls. | 661 » » » 5 »
+0.887 B | Dada de dons

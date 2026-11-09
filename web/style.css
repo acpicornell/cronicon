@@ -294,7 +294,9 @@ thead th { font-family: var(--display); font-size: .8rem; letter-spacing: .1em;
 
 .inline-table { width: auto; min-width: min(100%, 22rem); margin: .6rem 0 1rem; font-size: 1.05rem; }
 .inline-table th { font-weight: 400; }
-.inline-table th, .inline-table td { border-bottom: 1px dotted var(--line); padding: .15rem 1.5rem .15rem 0; }
+.inline-table th { border-bottom: 1px dotted var(--line); padding: .15rem 1.5rem .15rem 0; }
+.inline-table td { border-bottom: 1px dotted var(--line); padding: .15rem 0 .15rem .9rem; }
+.inline-table { font-variant-numeric: lining-nums tabular-nums; }
 /* A disputed row is marked on its figure: that is the cell a reader copies. */
 .inline-table tr.d > td { text-decoration: underline dotted var(--doubt); text-decoration-thickness: 2px;
                           text-underline-offset: .2em; }

@@ -296,6 +296,68 @@ def ledgers_on(leaf: dict) -> list[list[list[dict]]]:
     return found
 
 
+BREAK = re.compile("[-\u2010\u2011\u00ad]$")
+
+
+def stitch(lines: list[str]) -> str:
+    """Printed lines as the assemblers join them: a break hyphen closes up."""
+    out = ""
+    for line in lines:
+        out = (BREAK.sub("", out) + line if BREAK.search(out)
+               else f"{out} {line}".strip())
+    return out
+
+
+def adjudicated() -> tuple[list[dict], dict[int, list[list[float]]]]:
+    """The tables read off the facsimile, and the boxes they were read in.
+
+    A region file (`scripts/adjudicate_region.py`) says which printed lines are
+    rows of a table and where each row's label stops and its cells begin. That
+    is the one thing this script works hardest to infer and gets wrong exactly
+    where the page is hardest, so where it has been written down it is taken
+    and nothing is detected inside that box.
+
+    A row is one or more printed lines: a ledger sets a long label over three
+    or four lines of a narrow column and the figures against the last. The
+    lines with no cells are the label continuing. A row may begin at the foot
+    of one column and end at the head of the next -- or of the next leaf -- so
+    an unfinished label is carried into the next region; the row belongs to
+    the leaf it ends on.
+    """
+    records: list[dict] = []
+    boxes: dict[int, list[list[float]]] = {}
+    carry: list[str] = []
+    for path in sorted(layout.REGIONS.glob("p*.txt")):
+        region = layout.read_region(path)
+        boxes.setdefault(region["pdf_page"], []).append(region["box"])
+        tables: dict[str, list[list[str]]] = {}
+        order: list[str] = []
+        if carry and not (region["lines"] and region["lines"][0]["table"]):
+            carry = []            # the label led nowhere: it stays prose
+        for line in region["lines"]:
+            if not line["table"]:
+                carry = []
+                continue
+            if line["table"] not in tables:
+                order.append(line["table"])
+                tables[line["table"]] = []
+            if line["cells"] is None:
+                carry.append(line["label"])
+                continue
+            tables[line["table"]].append(
+                [stitch(carry + [line["label"]]), line["cells"]])
+            carry = []
+        for letter in order:
+            if tables[letter]:
+                records.append({
+                    "pdf_page": region["pdf_page"], "figures": "right",
+                    "adjudicated": region["name"],
+                    "rows": tables[letter],
+                    "tiers": ["adjudicated"] * len(tables[letter]),
+                })
+    return records, boxes
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--show", type=int, help="print the tables found on one leaf")
@@ -305,7 +367,8 @@ def main() -> None:
         (PROJECT / "data" / "entries" / "sections.json").read_text()
     )["jurats_tables"])
 
-    records, rows_total = [], 0
+    records, regions = adjudicated()
+    rows_total = sum(len(r["rows"]) for r in records)
     for path in sorted(TEXT.glob("p*.json")):
         leaf = json.loads(path.read_text())
         if leaf["pdf_page"] in skip:
@@ -314,6 +377,10 @@ def main() -> None:
         seen = {id(row) for _s, b in blocks for row in b}
         blocks += [(side, b) for side, b in tables_on(leaf)
                    if not any(id(row) in seen for row in b)]
+        # Nothing is detected where the rows have been read off the page.
+        blocks = [(side, b) for side, b in blocks
+                  if not any(layout.inside(b[0][0]["bbox"], box)
+                             for box in regions.get(leaf["pdf_page"], []))]
         for side, block in blocks:
             rows_total += len(block)
             records.append({
@@ -330,6 +397,7 @@ def main() -> None:
                           for row in block],
             })
 
+    records.sort(key=lambda r: r["pdf_page"])     # stable: book order
     if args.show:
         for r in records:
             if r["pdf_page"] == args.show:

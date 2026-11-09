@@ -21,6 +21,9 @@ import re
 from collections import defaultdict
 import unicodedata
 from dataclasses import dataclass
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # Tolerances in normalised page-width units (a two-column body leaf is ~567 pt
 # wide, so 0.021 is the ~12 pt used when this was developed on PDF coordinates).
@@ -317,7 +320,7 @@ def join_leaders(loci: list[dict]) -> list[dict]:
 
 def line_order(row: list[dict]) -> list[dict]:
     """A line's loci in reading order: by index, or by x on a rejoined line."""
-    if any(x.get("leader") for x in row):
+    if any(x.get("leader") or x.get("region") for x in row):
         return sorted(row, key=lambda x: (x["bbox"][0], x["index"]))
     return sorted(row, key=lambda x: x["index"])
 
@@ -545,3 +548,111 @@ def ordered_text(lines: list[dict], page_width: float, page_height: float,
     body, _ = order(normalise_boxes(lines, page_width, page_height, origin))
     ncols = len({ln.column for ln in body}) if body else 0
     return "\n".join(ln.text for ln in body), ncols
+
+
+# --- Regions adjudicated against the facsimile -------------------------------
+#
+# Where a ledger defeats the panel, someone reads the facsimile and writes down
+# each printed line of the region (`scripts/adjudicate_region.py`). The text of
+# those lines reaches the edition as decisions, box by box, like any other
+# adjudication. What is applied here is the other half, which no decision about
+# a single box can express: *which boxes are one printed line, and in what
+# order the lines run*.
+REGIONS = PROJECT_ROOT / "data" / "adjudication" / "regions"
+# Half the pitch of a line of this book, in page heights: a box belongs to the
+# printed line whose centre is nearer than this.
+REGION_ROW = 0.0065
+_REGIONS: dict[int, list[dict]] | None = None
+
+
+def centre_y(bbox) -> float:
+    return (bbox[1] + bbox[3]) / 2
+
+
+def inside(bbox, box) -> bool:
+    """Is the centre of `bbox` inside `box`?"""
+    x = (bbox[0] + bbox[2]) / 2
+    return box[0] <= x <= box[2] and box[1] <= centre_y(bbox) <= box[3]
+
+
+def read_region(path) -> dict:
+    """One region file: its leaf, its box, and its printed lines in order.
+
+    A line is `y | text`, or `y TABLE | label | cells` for a row of a table;
+    `y` is the vertical centre of the printed line as a fraction of the page.
+    """
+    head, _, body = path.read_text(encoding="utf-8").partition("\n---\n")
+    meta = dict(line.split(":", 1) for line in head.splitlines()
+                if ":" in line and not line.lstrip().startswith("#"))
+    lines = []
+    for raw in body.splitlines():
+        if not raw.strip() or raw.lstrip().startswith("#"):
+            continue
+        where, *parts = [p.strip() for p in raw.split("|")]
+        y, *tag = where.split()
+        label, cells = (parts + [""])[:2] if len(parts) > 1 else (parts[0], "")
+        lines.append({"y": float(y), "table": tag[0] if tag else None,
+                      "label": label, "cells": cells if len(parts) > 1 else None,
+                      "text": f"{label} {cells}".strip()})
+    return {"name": path.stem, "pdf_page": int(meta["leaf"]),
+            "box": [float(v) for v in meta["box"].split("#")[0].split()],
+            "by": meta.get("by", "").strip(), "lines": lines}
+
+
+def regions_on(pdf_page: int) -> list[dict]:
+    global _REGIONS
+    if _REGIONS is None:
+        _REGIONS = {}
+        for path in sorted(REGIONS.glob("p*.txt")):
+            region = read_region(path)
+            _REGIONS.setdefault(region["pdf_page"], []).append(region)
+    return _REGIONS.get(pdf_page, [])
+
+
+def line_of(bbox, lines: list[dict]) -> int | None:
+    """Which printed line of a region this box sits on, or None."""
+    y = centre_y(bbox)
+    best = min(range(len(lines)), key=lambda n: abs(lines[n]["y"] - y),
+               default=None)
+    if best is None or abs(lines[best]["y"] - y) > REGION_ROW:
+        return None
+    return best
+
+
+def apply_regions(loci: list[dict]) -> list[dict]:
+    """Group and order the boxes of every adjudicated region as the page has them.
+
+    Each printed line's boxes become one line -- its box is their union, so the
+    indent and width the assemblers look at are the printed ones -- and the
+    lines stand in the order the region file lists them, in the place the
+    region's first box had. Everything outside a region is left exactly as it
+    was, and so is the index of every locus: decisions and repairs key on it.
+    """
+    if not loci:
+        return loci
+    regions = regions_on(loci[0]["pdf_page"])
+    if not regions:
+        return loci
+    out = list(loci)
+    for region in regions:
+        rows: dict[int, list[dict]] = {}
+        stray, first = [], None
+        for n, locus in enumerate(out):
+            if not inside(locus["bbox"], region["box"]):
+                continue
+            first = n if first is None else first
+            at = line_of(locus["bbox"], region["lines"])
+            (rows.setdefault(at, []) if at is not None else stray).append(locus)
+        if first is None:
+            continue
+        block = []
+        for at in sorted(rows):
+            row = sorted(rows[at], key=lambda x: x["bbox"][0])
+            union = [min(x["bbox"][0] for x in row), min(x["bbox"][1] for x in row),
+                     max(x["bbox"][2] for x in row), max(x["bbox"][3] for x in row)]
+            block += [dict(x, line_bbox=union, region=region["name"]) for x in row]
+        taken = {id(x) for row in rows.values() for x in row} | {id(x) for x in stray}
+        before = [x for x in out[:first] if id(x) not in taken]
+        after = [x for x in out[first:] if id(x) not in taken]
+        out = before + block + stray + after
+    return out

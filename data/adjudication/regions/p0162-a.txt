@@ -1,0 +1,15 @@
+# The yearly balances of 1333, 1334 and 1338: left column of leaf 162.
+leaf: 162
+box: 0.12 0.372 0.50 0.521
+by: claude (facsímil, resolució nativa)
+---
+0.380 A | Ingresos. | 19.734 libs. 15 ss. 5 ds.
+0.394 A | Gastos. | 10.646 » 11 » 6 »
+0.410 | 1334.
+0.422 | Rentas de este año.
+0.438 B | Ingresos. | 22.635 libs. 9 ss. 6 ds.
+0.454 B | Gastos. | 14.271 » 9 » 11 »
+0.468 | 1338.
+0.482 | Rentas de este año.
+0.497 C | Ingresos. | 22.280 libs. » ss. 6 ds.
+0.513 C | Gastos. | 15.286 » 2 » 4 »

@@ -666,8 +666,8 @@ def page_lines(path: Path) -> list[dict]:
     leaf = json.loads(path.read_text())
     grouped: dict[tuple, list[dict]] = defaultdict(list)
     order: list[tuple] = []
-    for locus in layout.join_leaders(
-            layout.drop_folio(layout.drop_signature(leaf["loci"]))):
+    for locus in layout.apply_regions(layout.join_leaders(
+            layout.drop_folio(layout.drop_signature(leaf["loci"])))):
         key = tuple(locus["line_bbox"])
         if key not in grouped:
             order.append(key)

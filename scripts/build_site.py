@@ -388,69 +388,103 @@ LONG_ENTRY = 1500     # characters before an entry is broken up to be read
 PARAGRAPH = 900       # rough target for each piece
 
 
-def tables_on(con, pages) -> tuple[dict[str, str], dict[str, str]]:
-    """The inline tables of these leaves, keyed by the text of their first row.
+class InlineTables:
+    """The tables of a run of leaves, set where their rows stand in the prose.
 
-    A table's rows are still in the notice's prose, exactly as the panel read
-    them -- nothing was moved out. What this returns is the same words set as a
-    table, and `lay_out_tables` swaps the run of text for it, so the reader sees
-    the figures in the column the page put them in. The key is the first row's
-    own text because that is what survives both assemblies unchanged.
+    A table's rows are still in the notice's text, exactly as the panel read
+    them -- nothing was moved out. This finds each row there and sets the same
+    words as a table row, so the reader sees the figures in the column the
+    page put them in.
+
+    **Row by row, not first-row-to-last.** It used to find a table's first row,
+    find its last, and replace everything between; so when the assembler broke
+    a paragraph in the middle of a table the last row was not in that paragraph
+    and only the first was replaced -- by the whole table, whose other rows
+    then came again as prose underneath. A ledger of forty rows was printed
+    twice. Each row is now found on its own, in its table's order, and rows
+    that follow one another with nothing between them are one table.
+
+    One instance per page: a row is set once, and a table that runs across
+    several paragraphs carries on where it left off.
     """
+    LOOKAHEAD = 3     # rows of a table that may be skipped to find the next
+
+    def __init__(self, rows: list[tuple]) -> None:
+        # (table_id, seq, label, figure, tier, text), in table order
+        self.tables: dict[int, list[tuple]] = {}
+        for row in rows:
+            if row[5]:
+                self.tables.setdefault(row[0], []).append(row)
+        self.at = {tid: 0 for tid in self.tables}
+
+    @staticmethod
+    def row_html(label, figure, tier) -> str:
+        # One cell per figure, unit or ditto mark, so a ledger's columns line
+        # up -- libras, sueldos and dineros under one another -- the way the
+        # page sets them.
+        cells = "".join(f'<td class="num">{esc(c)}</td>'
+                        for c in (figure or "").split())
+        klass = ' class="d"' if tier in DOUBTFUL else ""
+        return f"<tr{klass}><th>{esc(label or '')}</th>{cells}</tr>"
+
+    def lay_out(self, text: str) -> list[str]:
+        """`text` cut where table rows stand in it: prose and `<table>`s."""
+        pieces: list[str] = []
+        run: list[str] = []
+        at = 0
+
+        def flush() -> None:
+            if run:
+                pieces.append('<table class="inline-table"><tbody>'
+                              + "".join(run) + "</tbody></table>")
+                run.clear()
+
+        while True:
+            best = None
+            for tid, rows in self.tables.items():
+                for n in range(self.at[tid], min(self.at[tid] + self.LOOKAHEAD,
+                                                 len(rows))):
+                    found = text.find(rows[n][5], at)
+                    if found >= 0 and (best is None or found < best[0]):
+                        best = (found, tid, n)
+            if best is None:
+                break
+            found, tid, n = best
+            between = text[at:found].strip()
+            if between:
+                flush()
+                pieces.append(between)
+            _tid, _seq, label, figure, tier, row_text = self.tables[tid][n]
+            run.append(self.row_html(label, figure, tier))
+            self.at[tid] = n + 1
+            at = found + len(row_text)
+        flush()
+        if text[at:].strip():
+            pieces.append(text[at:].strip())
+        return pieces or [text]
+
+    @staticmethod
+    def join(markup: str) -> str:
+        """Tables that follow one another with nothing between are one table.
+
+        The assembler opens a paragraph wherever the printer indents, and a
+        ledger indents the first line of every entry, so a table of forty rows
+        arrives as forty paragraphs and would be set as forty tables, each
+        with column widths of its own.
+        """
+        return markup.replace(
+            '</tbody></table><table class="inline-table"><tbody>', "")
+
+
+def tables_on(con, pages) -> InlineTables:
+    """The inline tables of these leaves."""
+    pages = list(pages)
     if not pages:
-        return {}, {}
-    rows = con.execute(
+        return InlineTables([])
+    return InlineTables(con.execute(
         "SELECT table_id, seq, label, figure, tier, text FROM table_row "
         f"WHERE pdf_page IN ({','.join(str(p) for p in pages)}) "
-        "ORDER BY table_id, seq").fetchall()
-    grouped: dict[int, list] = {}
-    for tid, _seq, label, figure, tier, text in rows:
-        grouped.setdefault(tid, []).append((label, figure, tier, text))
-    out, ends = {}, {}
-    for cells in grouped.values():
-        body = "".join(
-            f'<tr{" class=\'d\'" if tier in DOUBTFUL else ""}>'
-            f"<th>{esc(label or '')}</th>"
-            f'<td class="num">{esc(figure or "")}</td></tr>'
-            for label, figure, tier, _text in cells)
-        key = cells[0][3]
-        out[key] = f'<table class="inline-table"><tbody>{body}</tbody></table>'
-        ends[key] = cells[-1][3]
-    return out, ends
-
-
-def lay_out_tables(text: str, tables: dict[str, str],
-                   last: dict[str, str]) -> list[str]:
-    """Split a notice's prose where a table starts, and set the table as one.
-
-    Matched on the first row's text rather than on a stored offset: the notice
-    is hyphen-stitched and re-joined out of the same word records, so an offset
-    into the leaf means nothing here, and the row text is the one thing both
-    assemblies agree on.
-    """
-    # Every table in the run, not the first: the notice of 1750 carries two --
-    # the dead of the plague to August and the harvest of the year -- and
-    # returning at the first left the second as prose.
-    found = sorted(((text.find(key), key) for key in tables
-                    if text.find(key) >= 0))
-    if not found:
-        return [text]
-    pieces, at = [], 0
-    for start, key in found:
-        if start < at:
-            continue
-        # The table runs to the end of its last row; everything after it is
-        # prose again -- `Y 101,716 moliendas de aceite.—Co. Fr.` follows the
-        # harvest of 1750 and is a sentence, not a fifth row.
-        end = text.find(last[key], start)
-        end = end + len(last[key]) if end >= 0 else start + len(key)
-        if text[at:start].strip():
-            pieces.append(text[at:start].strip())
-        pieces.append(tables[key])
-        at = end
-    if text[at:].strip():
-        pieces.append(text[at:].strip())
-    return pieces
+        "ORDER BY table_id, seq").fetchall())
 
 
 def notemarks(notes, mark) -> str:
@@ -598,7 +632,7 @@ def year_page(con, year: int, counts: dict, sigla: dict[str, str],
         ORDER BY f.pdf_page, f.number, f.text""", [year]).fetchall()
 
     leaves = sorted({e[5] for e in entries})
-    inline, table_ends = tables_on(
+    inline = tables_on(
         con, set(leaves) | ({opening[4]} if opening else set()))
 
     # Earlier and later *years with news*. The 44 years the chronicle is silent
@@ -719,7 +753,7 @@ def year_page(con, year: int, counts: dict, sigla: dict[str, str],
                 piece if piece.startswith("<table")
                 else f"<p>{marked.html(piece)}</p>"
                 for para in paragraphs(text)
-                for piece in lay_out_tables(para, inline, table_ends))
+                for piece in inline.lay_out(para))
             + "</div>"
             + (f'<p class="prov">{cites}</p>' if cites else "")
             + notemarks(notes.get(entry_id),
@@ -748,7 +782,7 @@ def year_page(con, year: int, counts: dict, sigla: dict[str, str],
             + DOUBT_CONTROL.format(up="../../") + "</aside>") if entries else ""
 
     body = (head_ + f'\n<div class="reading">{rail}'
-            f'<div class="text">{"".join(parts)}</div></div>')
+            f'<div class="text">{InlineTables.join("".join(parts))}</div></div>')
     return page(f"{year} · Cronicón Mayoricense",
                 f"Notícies de Mallorca de l'any {year} segons el Cronicón "
                 "Mayoricense de Campaner (1881).",
@@ -883,7 +917,7 @@ def document_page(con, doc, sigla: dict[str, str], doubt: Doubt,
     # The ledgers Campaner sets inside these sections, shown as the columns the
     # page puts them in, exactly as the year pages do. Nothing is moved out of
     # the prose: the same words are set as a table.
-    inline, table_ends = tables_on(con, range(first, last + 1))
+    inline = tables_on(con, range(first, last + 1))
 
     chunks, running = [], None
     # What the reader can jump to: the numbered pieces, the years of a diary
@@ -955,7 +989,7 @@ def document_page(con, doc, sigla: dict[str, str], doubt: Doubt,
                           f"{marks[i].html()}</h3>")
             continue
         ident = f' id="p{i}"'
-        for piece in lay_out_tables(para, inline, table_ends):
+        for piece in inline.lay_out(para):
             if piece.startswith("<table"):
                 chunks.append(piece)
             else:
@@ -972,7 +1006,23 @@ def document_page(con, doc, sigla: dict[str, str], doubt: Doubt,
         if trailing:
             chunks.append(platemark(trailing))
         chunks.append(leafmark(running))
-    body = "".join(chunks)
+    # A leaf that turns in the middle of a table: the mark naming the leaf
+    # just left goes under the table rather than through it. The account of
+    # 1318 runs from leaf 160 on to 161 and its total was cut off from its own
+    # rows by `full 160 al facsímil`.
+    i = 1
+    while i < len(chunks) - 1:
+        if (chunks[i].startswith('<p class="leafmark"')
+                and chunks[i - 1].startswith("<table")
+                and chunks[i + 1].startswith("<table")):
+            j = i + 1
+            while j < len(chunks) and chunks[j].startswith("<table"):
+                j += 1
+            chunks[i:j] = chunks[i + 1:j] + [chunks[i]]
+            i = j
+        else:
+            i += 1
+    body = InlineTables.join("".join(chunks))
 
     # A statement of what is missing from the numbering. Two of Centellas'
     # twenty-one numbers were not recovered -- leaf 134's is on the page and no
@@ -1996,10 +2046,10 @@ def theme_hits(con) -> dict[str, list]:
         folded = themes.fold(text)
         assert len(folded) == len(text), "fold() must keep offsets"
         for theme in themes.THEMES:
-            match = re.search(theme.pattern, folded)
-            if match:
+            span = theme.find(text, folded)
+            if span:
                 # The pattern is a stem (`cautiv`); what is marked is the word.
-                start, end = match.span()
+                start, end = span
                 while start and text[start - 1].isalnum():
                     start -= 1
                 while end < len(text) and text[end].isalnum():

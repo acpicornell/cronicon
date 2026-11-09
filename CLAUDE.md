@@ -1339,6 +1339,66 @@ visible rather than buried in a run of figures:
   shows it as a paragraph of its own. Six new `runt`s in `0114-V-05` are rows of
   this kind plus the account's total and its `Gastos.` heading.
 
+### Leaves 159–164: adjudicated as lines, because the defect was the line
+
+The accounts of 1307, 1318 and 1343 never came right by rule: every fix above
+moved figures nearer their labels and left a page a reader could not follow --
+rows as prose, a table printed twice, `Dimecres á 5 Juriol. Pa Vi. I s. + ds.`
+What was wrong was not any one word box but **the line**: which boxes are one
+printed row, in what order the rows run, which rows are a table and where a
+row's label stops. `review.py` settles a box at a time and cannot say that.
+
+So those leaves were read from the facsimile at native resolution, line by
+line, into **region files**:
+
+```
+data/adjudication/regions/p0161-a.txt
+leaf: 161
+box: 0.13 0.098 0.52 0.895
+---
+0.414 A | Id. de les de Ebi-
+0.431 A | ça.. | 582 » 3 » 3 »
+0.518 | Gastos.
+```
+
+`y [table] | text`, or `y table | label | cells` for a row; a table line with
+no cells is the label continuing onto the next. **Nine regions, 226 printed
+lines.** `scripts/adjudicate_region.py --show LEAF --box …` lists the rows it
+finds with their centres; `--apply` does three things, and the file is the
+record of all three:
+
+- **Text.** Every box in the region gets a decision in `decisions.jsonl`, keyed
+  by box as always: 1 314 written, **148 typed** -- no engine had read them --
+  the rest confirming a reading some engine gave. Typed positions in the
+  edition: 167, of which 152 are on these six leaves. That number is the
+  condition this is allowed on, so it is printed by the tool and kept here.
+- **Lines.** `layout.apply_regions` makes the boxes of one printed line one
+  line, in the order the file gives, in the place the region's first box had.
+  Both assemblers call it. Nothing outside the box moves and no index changes.
+- **Tables.** `tables.py` takes the rows as written and detects nothing inside
+  the box. A row that starts at the foot of one column and ends at the head of
+  the next -- or of the next leaf -- is carried over and belongs where it ends.
+
+Three things that came with it:
+
+- **Leader dots are not transcribed.** `Carn y tocino.. . . . . . .` is the
+  printer's fill between a label and its figure; counting dots off a scan is
+  neither reliable nor information. The label keeps the stops set against it
+  (`Pa..`, `blat..`), which are the book's. `docs/EDITORIAL.md` §Not rules.
+- **Tables are set row by row** (`build_site.InlineTables`). They were set
+  first-row-to-last, so when the assembler broke a paragraph inside a table the
+  last row was not in that paragraph, only the first was replaced -- by the
+  whole table -- and the other rows came again as prose. Adjacent tables are
+  joined, and a leaf mark that falls inside a table goes under it.
+- **A ledger's cells are separate cells.** `2 » 4 » »` is five table cells, so
+  libras, sueldos and dineros stand under one another as the page sets them.
+
+`0114-V-05` went from 3 tables and 27 flagged runts to 10 tables and 107 rows,
+every one found in the text. **Do this again rather than write another rule**
+when a table's cells are being emptied and its order is wrong: read the crop,
+write the lines. And check the name is free first -- `scripts/adjudicate.py`
+already existed (the pilot's review sheets) and was overwritten and restored.
+
 ### Lines the geometry never boxed
 
 The first of those residues was not a stitching problem. **Kraken and PaddleOCR
@@ -1692,6 +1752,16 @@ random sample, and **a route is kept only after its sample is read** — which
 narrowed three on the first reading: `bando` is an edict far more often than a
 faction, `temporal` is the Church's *porción temporal*, and `Colom` is
 Porto-Colom before it is the leader of the Germania.
+
+A fourth was narrowed by the user reading the site, and it is the instructive
+one: **`inquisi` is not the Inquisition.** `inquisiciones ocultas` (1279),
+`haciendo inquisicion del estado` (1304) and `declaracion inquisitiva` (1619)
+are inquiries. Folding destroys the one thing that tells them apart, the
+capital, so a route may also carry an `exact` pattern run on the text as
+printed: the tribunal is `Inquisicion` capitalised, `inquisidor`, and `Santo
+Oficio` -- which the first pattern had not thought to look for and is worth
+nine notices. 119 → 125, three out. A random sample of eight does not find
+three wrong in 119; a reader who knows the word does.
 
 **"Tal dia com avui"** on the home page reads `web/dies/MM.json` — dated
 notices short enough to show whole, and only those that open the way a notice

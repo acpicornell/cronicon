@@ -1,0 +1,28 @@
+# The household accounts of 1307, the other two days: right column of leaf 159.
+leaf: 159
+box: 0.50 0.419 0.95 0.807
+by: claude (facsímil, resolució nativa)
+---
+0.426 | Dimecres á 5 Juriol.
+0.440 A | Pa.. |
+0.457 A | Vi.. | 1 s. 4 ds.
+0.472 A | Carn y porch.. | 2 » 5 »
+0.485 | Dilluns á 25 Desembre.
+0.500 B | Pa.. |
+0.515 B | Vi.. | 1 s. 6 ds. » ob.
+0.531 B | Carn y tocino.. | 2 » 4 » »
+0.547 B | Una galina. | 2 » » » »
+0.561 B | Ous y salsa. | » » 5 » »
+0.576 B | Cols y sebas. | » » 3 » »
+0.591 B | Sardina. | » » 4 » »
+0.605 B | Arros. | » » 2 » »
+0.621 B | Figues y melles. | » » 4 » »
+0.636 B | Juyevert y raves. | » » » » 1 »
+0.649 B | Cendra. | » » 3 » »
+0.666 B | Un cadaf. | » » 5 » »
+0.679 B | Salsa. | » » 4 » »
+0.696 B | Vinagre.. | » » 3 » »
+0.725 B | Suma.. | 8 » 7 » 1 »
+0.754 B | Pestanagues.. | » » 1 ds. »
+0.769 B | Un liberti y un anet. | 2 s. 5 » »
+0.799 B | Suma.. | 11 » 5 » 1 »

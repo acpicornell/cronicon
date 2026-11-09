@@ -1,0 +1,12 @@
+# The household accounts of 1307, first day: left column of leaf 159.
+leaf: 159
+box: 0.13 0.537 0.50 0.657
+by: claude (facsímil, resolució nativa)
+---
+0.544 | Disapte 1.er de Juliol.
+0.558 A | Costá pa. |
+0.574 A | It. vi. | 1 s. 2 ds.
+0.590 A | It. farina. | » » 4 »
+0.604 A | It. figues y cogombres. | » » 2 »
+0.618 A | It. peix y ous. | 1 » 6 »
+0.649 A | Suma.. | 3 » 2 »

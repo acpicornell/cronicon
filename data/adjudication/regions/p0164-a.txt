@@ -1,0 +1,21 @@
+# The account of 1343, the end of the expenses and the balance: left column of
+# leaf 164. The first row begins at the foot of leaf 163.
+leaf: 164
+box: 0.09 0.105 0.478 0.362
+by: claude (facsímil, resolució nativa)
+---
+0.114 A | en los blats per en
+0.130 A | Pera de Crexell. | 333 » 7 » 8 »
+0.144 A | Dades extraor-
+0.161 A | dinaries.. | 10.379 » 7 » 11 »
+0.172 A | Dades dels ca-
+0.188 A | valers soldats de
+0.205 A | Malorcas. | 4.175 » 11 » 3 »
+0.218 A | Nolits dels ca-
+0.234 A | valers estipendia-
+0.250 A | ris. | 155 » 13 » 3 »
+0.262 A | Dades de esti-
+0.279 A | mas de cavayls.. | 649 » 13 » » »
+0.308 B | Suma total dades. | 20.533 libs. 17 ss. » ds.
+0.323 B | Suma total rebudes | 18.219 » 7 » 8 »
+0.354 B | Deficit. | 2.314 » 9 » 4 »

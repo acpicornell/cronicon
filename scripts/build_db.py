@@ -187,8 +187,14 @@ def load_tables(con: duckdb.DuckDBPyConnection) -> None:
     rows = []
     for n, table in enumerate(json.loads(path.read_text()), 1):
         for seq, (cells, tier) in enumerate(zip(table["rows"], table["tiers"])):
-            text = " ".join(cells).strip()
-            label, figure = split_row(text)
+            text = " ".join(c for c in cells if c).strip()
+            if table.get("adjudicated"):
+                # Read off the facsimile as label and cells: nothing to infer.
+                # The leader dots between them are the printer's fill, and the
+                # stop the label ends on is the book's.
+                label, figure = cells[0], cells[1] or None
+            else:
+                label, figure = split_row(text)
             rows.append((n, seq, table["pdf_page"], text, label, figure, tier))
     con.executemany("INSERT INTO table_row VALUES (?,?,?,?,?,?,?)", rows)
     print(f"  table_row     {len(rows):>8,}")

@@ -1,0 +1,57 @@
+# The account of 1343, the end of the receipts and the expenses: right column
+# of leaf 163. The last row ends on leaf 164.
+leaf: 163
+box: 0.52 0.108 0.97 0.910
+by: claude (facsímil, resolució nativa)
+---
+0.116 A | Id. 169 quarte-
+0.130 A | res id.. | 92 » 1 » » »
+0.144 A | Ordi de id. 911
+0.160 A | quarteres 3 bars. | 231 » 14 » 11 »
+0.175 A | De llegums en
+0.189 A | diner. | 11 » 12 » 10 »
+0.203 A | Oli rebut 8.329
+0.218 A | cortans en mitx
+0.233 A | valen. | 961 » 19 » 2 »
+0.263 A | Suma total. | 18.219 libs. 7 ss. 8 ds.
+0.299 | Compte de dades.
+0.324 B | Dade de violaris | 484 libs. 19 ss. 8 ds.
+0.338 B | Dade de prebe-
+0.355 B | res. | 296 » 17 » 7 »
+0.368 B | Dade de cava-
+0.385 B | yls armats. | 259 » 11 » 8 »
+0.397 B | Dade de dons
+0.414 B | secrets. | 116 » 18 » 4 »
+0.427 B | Dade de salaris
+0.444 B | de oficials. | 632 » 18 » » »
+0.457 B | Quitacions de
+0.474 B | familias.. | 1.026 » 1 » 1 »
+0.487 B | Dades de salaris. | 118 » 17 » 1 »
+0.503 B | Dades per la car-
+0.519 B | celeria. | 84 » 4 » » »
+0.532 B | Salaris dels pro-
+0.546 B | curadors e de lurs
+0.563 B | escrivans. | 254 » 19 » 2 »
+0.575 B | Dade de sala-
+0.590 B | ris de casteylans;
+0.607 B | Bellver. | 266 » 6 » 2 »
+0.621 B | Alaro.. | 195 » 11 » » »
+0.636 B | Santueri. | 228 » 4 » 8 »
+0.650 B | Dades de quarts
+0.666 B | de luismes | 10 » 9 » 10 »
+0.679 B | Dade del censal
+0.695 B | quel Sr. Rey fa. | 108 » 2 » 8 »
+0.709 B | Salaris daquells
+0.725 B | que levaren lo mo-
+0.741 B | nedatje. | 197 » 9 » 4 »
+0.754 B | Dade de obres. | 87 » 10 » 11 »
+0.769 B | Dade de mes-
+0.784 B | sions dels sellers. | 160 » 17 » 10 »
+0.798 B | Dade de dons
+0.814 B | fets per lo Sr. Rey. | 125 » » » » »
+0.828 B | Dade de mes-
+0.843 B | sions per lofici de
+0.859 B | la Procuracio.. | 55 » 7 » 1 »
+0.873 B | Dade de mes-
+0.888 B | sions dels blats. | 129 » 17 » 10 »
+0.902 B | Messions fetas

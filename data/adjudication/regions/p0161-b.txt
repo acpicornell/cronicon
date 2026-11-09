@@ -1,0 +1,27 @@
+# The account of 1318, the end of the expenses and the balance: right column
+# of leaf 161. The first row begins at the foot of the left column.
+leaf: 161
+box: 0.52 0.097 0.96 0.452
+by: claude (facsímil, resolució nativa)
+---
+0.104 B | fets de manament
+0.119 B | del Sr. Rey.. | 81 » 13 » 4 »
+0.132 B | Dada de dons
+0.150 B | secrets. | 268 » » » » »
+0.163 B | Dada de agres
+0.179 B | de falcons. | 36 » 18 » 7 »
+0.192 B | Dada de com-
+0.209 B | pres.. | 3.300 » » » » »
+0.221 B | Dada de obres
+0.238 B | diverses. | 480 » 17 » 11 »
+0.251 B | Dada de la Da-
+0.268 B | raçana. | 472 » 17 » 10 »
+0.280 B | Dada extraordi-
+0.298 B | nari.. | 674 » 17 » 7 »
+0.310 B | Dada de salaris
+0.326 B | e messions de ren-
+0.342 B | des.» | 449 » 17 » 4 »
+0.370 B | | 8.435 » 16 » 11 »
+0.401 C | Ingresos. | 17.069 libs. 15 ss. 6 ds.
+0.416 C | Gastos.. | 8.435 » 16 » 11 »
+0.445 C | Resta. | 8.633 » 18 » 7 »

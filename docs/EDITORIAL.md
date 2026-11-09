@@ -242,6 +242,15 @@ recorded here because they do change the string:
   heading survives in the text — in the chronicle the month is lifted into its
   own column.
 
+- **Leader dots are not transcribed in an adjudicated region.** Where a ledger
+  has been read off the facsimile line by line (`data/adjudication/regions/`),
+  the run of dots a printer sets between a label and its figure --
+  `Carn y tocino.. . . . . . . 2 » 4 » »` -- is left out: it is fill, its
+  length is whatever the measure needed, and counting it off a scan is neither
+  reliable nor information. The stops set against the label itself stay
+  (`Pa..`, `blat..`, `rella.`). Elsewhere the dots stand as the panel read
+  them.
+
 - **Line-end hyphens are stitched.** A word broken across two lines is rejoined
   and the hyphen dropped. Only word-break hyphens: em and en dashes are
   structural in this book — they separate entries and introduce the source

@@ -470,6 +470,7 @@ scripts/
   build_documents.py       each of those sections assembled as one document
   tables.py                the tables Campaner prints inside the prose
   review.py                the review tool: crops at native resolution, keyboard
+  adjudicate_region.py     a region read off the facsimile line by line: text, lines, tables
   parse_sigla.py           the glossary the introduction prints
   audit_entries.py         every symptom ever found, swept over all 3 458 notices
   audit_documents.py       the same sweep over the 23 documents

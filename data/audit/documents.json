@@ -284,199 +284,191 @@
  "0114-V-05": [
   {
    "check": "runt",
-   "detail": "¶6: 'Suma 3 » 2 »'"
+   "detail": "¶6: 'Suma.. 3 » 2 »'"
   },
   {
    "check": "short-para",
-   "detail": "¶6: 'Suma 3 » 2 »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶8: 'Dilluns á 25 Desembre. Pa'"
+   "detail": "¶6: 'Suma.. 3 » 2 »'"
   },
   {
    "check": "runt",
-   "detail": "¶11: 'Suma.. . . » 5 1 »'"
+   "detail": "¶10: 'Suma.. 11 » 5 » 1 »'"
   },
   {
    "check": "short-para",
-   "detail": "¶11: 'Suma.. . . » 5 1 »'"
+   "detail": "¶10: 'Suma.. 11 » 5 » 1 »'"
   },
   {
    "check": "short-para",
-   "detail": "¶12: '«Se ignora lo que son el Libertí y Anet.» (1)'"
+   "detail": "¶11: '«Se ignora lo que son el Libertí y Anet.» (1)'"
   },
   {
    "check": "short-para",
-   "detail": "¶22: '* * * Entrelos gastos Reales de este año 1311 figu'"
+   "detail": "¶21: '* * * Entrelos gastos Reales de este año 1311 figu'"
   },
   {
    "check": "short-para",
-   "detail": "¶25: 'En 4 de Agosto per menjar del mes de Agost...... ('"
+   "detail": "¶24: 'En 4 de Agosto per menjar del mes de Agost...... ('"
   },
   {
    "check": "runt",
-   "detail": "¶30: 'Ingresos.'"
+   "detail": "¶29: 'Ingresos.'"
   },
   {
    "check": "short-para",
-   "detail": "¶30: 'Ingresos.'"
+   "detail": "¶29: 'Ingresos.'"
   },
   {
    "check": "runt",
-   "detail": "¶33: '17.069 » I5 » 6 »'"
+   "detail": "¶32: '17.069 » 15 » 6 »'"
   },
   {
    "check": "short-para",
-   "detail": "¶33: '17.069 » I5 » 6 »'"
-  },
-  {
-   "check": "runt",
-   "detail": "¶34: 'Gastos.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶34: 'Gastos.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶37: 'Quitacio de Lochtinent e daltre 439 » 9 » 7 »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶38: 'Quitacio de 25 libs. per cavayl armat 403 » 15 » »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶39: 'Quitacio de 1 5 libs. per civade. 45 » » » » »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶40: 'Quitacio de sirvents dels casteyls. 661 » » » 5 »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶42: 'Dada de agres de falcons. .... 36 » 18 » 7 »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶45: 'Dada de salaris e messions de rendes.» 449 » 17 » '"
-  },
-  {
-   "check": "runt",
-   "detail": "¶46: '8.435 » 16 » 11 »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶46: '8.435 » 16 » 11 »'"
+   "detail": "¶32: '17.069 » 15 » 6 »'"
   },
   {
    "check": "bare-dash",
-   "detail": "¶46: '8.435 » 16 » 11 »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶47: 'Ingresos. . . . . 17.069 libs. 15 ss. 6 ds.'"
+   "detail": "¶32: '17.069 » 15 » 6 »'"
   },
   {
    "check": "runt",
-   "detail": "¶48: 'Gastos.. . . . . 8.435 » 16 » 11 »'"
+   "detail": "¶33: 'Gastos.'"
   },
   {
    "check": "short-para",
-   "detail": "¶48: 'Gastos.. . . . . 8.435 » 16 » 11 »'"
+   "detail": "¶33: 'Gastos.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶35: 'Quitacio de Lochtinent e daltre. 439 » 9 » 7 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶36: 'Quitacio de 25 libs. per cavayl armat.. 403 » 15 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶37: 'Quitacio de 15 libs. per civade. 45 » » » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶38: 'Quitacio de sirvents dels casteyls. 661 » » » 5 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶40: 'Dada de agres de falcons. 36 » 18 » 7 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶43: 'Dada de salaris e messions de rendes.» 449 » 17 » '"
   },
   {
    "check": "runt",
-   "detail": "¶49: 'Resta. ..... 8.633 » 18 » 7 »'"
+   "detail": "¶44: '8.435 » 16 » 11 »'"
   },
   {
    "check": "short-para",
-   "detail": "¶49: 'Resta. ..... 8.633 » 18 » 7 »'"
+   "detail": "¶44: '8.435 » 16 » 11 »'"
+  },
+  {
+   "check": "bare-dash",
+   "detail": "¶44: '8.435 » 16 » 11 »'"
   },
   {
    "check": "short-para",
-   "detail": "¶68: 'A la dona Nastorina qui pren 90 libs.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶70: 'A Mestre Ramon Capsir, assesor del lochtinent, 100'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶71: 'A Rodrigo Ortiz, Vaguer de fora, pren 108 libs.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶72: 'A Jaume Vedruyans, assesor de Vaguer, 80 libs.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶76: 'A Pere de Massanes, Batle de Inca, 100 libs.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶79: 'A Uguet de Ribes altes, sots veguer, 74 libs. 4 ss'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶81: 'A Johan Matha, barber del Sr. Rey, 109 libs. IO ss'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶84: 'A Cassanimigo Salvatge, etc. etc. 238 libs., 8 ss.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶91: 'Compte de dades.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶95: 'Dades de quarts de luismes . 10 » 9 » 10 »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶96: 'Dade del censal quel Sr. Rey fa. . 108 » 2 »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶98: 'Dade de obres. 87 » 10 » II »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶99: 'Dade de messions dels sellers. 160 » 17 » 10 »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶100: 'Dade de dons fets per lo Sr. Rey. 125 » » » »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶102: 'Dade de messions dels blats. . 129 » 17 » IO *'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶103: 'Messions fetas en los blats per en Pera de Crexell'"
+   "detail": "¶45: 'Ingresos. 17.069 libs. 15 ss. 6 ds.'"
   },
   {
    "check": "runt",
-   "detail": "¶104: '333 » X)'"
+   "detail": "¶46: 'Gastos.. 8.435 » 16 » 11 »'"
   },
   {
    "check": "short-para",
-   "detail": "¶104: '333 » X)'"
+   "detail": "¶46: 'Gastos.. 8.435 » 16 » 11 »'"
   },
   {
    "check": "runt",
-   "detail": "¶106: 'Deficit.... 2.314 » 9» 4»'"
+   "detail": "¶47: 'Resta. 8.633 » 18 » 7 »'"
   },
   {
    "check": "short-para",
-   "detail": "¶106: 'Deficit.... 2.314 » 9» 4»'"
+   "detail": "¶47: 'Resta. 8.633 » 18 » 7 »'"
   },
   {
-   "check": "contested",
-   "detail": "10.0% of its words"
+   "check": "short-para",
+   "detail": "¶66: 'A la dona Nastorina qui pren 90 libs.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶68: 'A Mestre Ramon Capsir, assesor del lochtinent, 100'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶69: 'A Rodrigo Ortiz, Vaguer de fora, pren 108 libs.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶70: 'A Jaume Vedruyans, assesor de Vaguer, 80 libs.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶74: 'A Pere de Massanes, Batle de Inca, 100 libs.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶77: 'A Uguet de Ribes altes, sots veguer, 74 libs. 4 ss'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶79: 'A Johan Matha, barber del Sr. Rey, 109 libs. IO ss'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶82: 'A Cassanimigo Salvatge, etc. etc. 238 libs., 8 ss.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶89: 'Compte de dades.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶93: 'Dades de quarts de luismes 10 » 9 » 10 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶94: 'Dade del censal quel Sr. Rey fa. 108 » 2 » 8 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶95: 'Salaris daquells que levaren lo monedatje. 197 » 9'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶96: 'Dade de obres. 87 » 10 » 11 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶97: 'Dade de messions dels sellers. 160 » 17 » 10 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶98: 'Dade de dons fets per lo Sr. Rey. 125 » » » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶99: 'Dade de messions per lofici de la Procuracio.. 55 '"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶100: 'Dade de messions dels blats. 129 » 17 » 10 »'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶102: 'Deficit. 2.314 » 9 » 4 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶102: 'Deficit. 2.314 » 9 » 4 »'"
   }
  ],
  "0225-II-02": [
