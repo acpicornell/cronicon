@@ -18,6 +18,7 @@ is what separates a real column break from a paragraph indent.
 from __future__ import annotations
 
 import re
+from collections import defaultdict
 import unicodedata
 from dataclasses import dataclass
 
@@ -218,6 +219,26 @@ def only_a_figure(text: str) -> bool:
     return seen_digit
 
 
+def panel_text(loci: list[dict]) -> str:
+    """A line's winners, plus the ditto mark the vote dropped, if any engine read one.
+
+    For asking what *kind* of line it is, not a text to publish. The vote
+    strips ditto marks -- leaf 325's `785 » 17 »` comes out of it as `785` and
+    `17` -- and a column of bare numbers no longer looks like a ledger's, so the
+    mark is asked of the panel. Whether the line is a figure at all is still
+    asked of the winners: joining every reading lets one engine that glued the
+    label on (`conipanya.......2103`) turn a figure into prose, and leaf 161's
+    figure column back into a column of the page.
+    """
+    text = " ".join(x["winner"] for x in loci if x.get("winner")).strip()
+    if not only_a_figure(text) or LEDGER_MARK.search(text):
+        return text
+    if any(LEDGER_MARK.search(v) for x in loci
+           for v in (x.get("variants") or {}).values() if v):
+        return text + " »"
+    return text
+
+
 def join_leaders(loci: list[dict]) -> list[dict]:
     """Put a ledger's figure back on the printed line that leads to it."""
     if not loci:
@@ -231,15 +252,17 @@ def join_leaders(loci: list[dict]) -> list[dict]:
             lines[key] = []
         lines[key].append(locus)
 
-    lefts = find_columns([Line(text="", x0=k[0], y0=k[1], x1=k[2], y1=k[3])
-                          for k in order])
+    def text_of(key) -> str:
+        return " ".join(x["winner"] for x in lines[key] if x["winner"]).strip()
+
+    # With the text, so that a ledger's figure column is not taken for a column
+    # of the page -- which is exactly the case this function exists to repair.
+    lefts = find_columns([Line(text=panel_text(lines[k]), x0=k[0], y0=k[1],
+                               x1=k[2], y1=k[3]) for k in order])
 
     def column_of(key) -> int:
         return max((n for n, left in enumerate(lefts)
                     if key[0] >= left - COLUMN_EDGE_TOLERANCE), default=0)
-
-    def text_of(key) -> str:
-        return " ".join(x["winner"] for x in lines[key] if x["winner"]).strip()
 
     merged: dict[tuple, tuple] = {}
     for key in order:
@@ -260,17 +283,27 @@ def join_leaders(loci: list[dict]) -> list[dict]:
 
     if not merged:
         return loci
-    labels = {label: key for key, label in merged.items()}
+    # A label may lead to more than one figure box: leaf 325 prints `de la sua
+    # companya. . . . 2103 » 18 »` and the engines cut it into three. Every box
+    # of the printed line takes the same union, or the line comes back in pieces.
+    parts: dict[tuple, list[tuple]] = defaultdict(list)
+    for key, label in merged.items():
+        parts[label].append(key)
+    joined: dict[tuple, list[float]] = {}
+    for label, figures in parts.items():
+        boxes = [label, *figures]
+        union = [min(b[0] for b in boxes), min(b[1] for b in boxes),
+                 max(b[2] for b in boxes), max(b[3] for b in boxes)]
+        for box in boxes:
+            joined[box] = union
     out = []
     for locus in loci:
         key = tuple(locus["line_bbox"])
-        other = merged.get(key) or labels.get(key)
-        if other is None:
+        if key not in joined:
             out.append(locus)
             continue
         locus = dict(locus)
-        locus["line_bbox"] = [min(other[0], key[0]), min(other[1], key[1]),
-                              max(other[2], key[2]), max(other[3], key[3])]
+        locus["line_bbox"] = list(joined[key])
         # The two boxes are one printed line again, so the words on it read
         # left to right -- and in the stream they often do not, because the
         # figure's box begins a hair above the label's and sorts before it:
@@ -391,7 +424,55 @@ def find_columns(lines: list[Line]) -> list[float]:
         crossing = sum(1 for ln in body if ln.x1 > left + COLUMN_EDGE_TOLERANCE)
         if crossing / len(body) <= MAX_BOUNDARY_CROSSING:
             lefts.append(left)
-    return lefts
+    return [left for n, left in enumerate(lefts)
+            if n == 0 or not is_ledger_column(lines, lefts, n)]
+
+
+# A ledger's figure column can look like a column of the page. On leaves 161
+# and 163 the accounts set their figures far enough right of the labels, and
+# regularly enough, that the left edges cluster, the gutter test passes, and the
+# leaf reads as three columns: every label first, then every figure, and the
+# edition published `Dada de dons 65 » » 389 » 451 » 8 » 1 » 1.687 1.913 …` -- a
+# whole account's figures in one run, its labels a paragraph away. Leaf 325's
+# payments ledger is the same defect at the right of its second column.
+#
+# A column whose lines are mostly figures is not a column of the page, so its
+# lines go back to the column on its left, where `join_leaders` puts each figure
+# on its label's line. Two thresholds, both measured over every engine on all
+# 614 leaves:
+#
+# - At least half its lines are nothing but figures. The OCR noise in a figure
+#   cell (`17.069 » I$ » 62`, `395 Y » » I»`) keeps real ledger columns between
+#   0.50 and 0.94; no column on any other leaf reaches 0.40 except the next one.
+# - At least half of those figures carry a ditto or a money unit. Leaf 152's
+#   genealogical node numbers -- `8`, `9`, `17` hanging in the margin of the
+#   second column -- are 0.82 figures for Apple Vision on the IA scan, and they
+#   belong to the column on their *right*. None of them carries a mark; every
+#   ledger column of the geometry engine is 1.00 marked.
+#
+# Fires on leaves 161, 163 and 325 and nowhere else.
+LEDGER_COLUMN_SHARE = 0.5
+LEDGER_MARKED_SHARE = 0.5
+LEDGER_MARK = re.compile(r"»|\b(?:ls|ss|ds|lbs?|libs?)\b\.?", re.IGNORECASE)
+
+
+def is_ledger_column(lines: list[Line], lefts: list[float], n: int) -> bool:
+    """Is column `n` of `lefts` a ledger's figures rather than a page column?"""
+    right = lefts[n + 1] if n + 1 < len(lefts) else float("inf")
+    # A line with no text says nothing either way. Callers that only have line
+    # boxes pass none, and on the consensus the vote empties ledger cells often
+    # enough -- leaf 325's figure column is five empty lines in eight.
+    column = [ln for ln in lines
+              if ln.text.strip()
+              and lefts[n] - COLUMN_EDGE_TOLERANCE <= ln.x0
+              < right - COLUMN_EDGE_TOLERANCE]
+    if not column:
+        return False
+    figures = [ln for ln in column if only_a_figure(ln.text)]
+    if len(figures) < LEDGER_COLUMN_SHARE * len(column) or not figures:
+        return False
+    marked = sum(1 for ln in figures if LEDGER_MARK.search(ln.text))
+    return marked >= LEDGER_MARKED_SHARE * len(figures)
 
 
 def order(lines: list[Line], strip_furniture: bool = True,
@@ -423,7 +504,39 @@ def order(lines: list[Line], strip_furniture: bool = True,
         ln.column = max((i for i, left in enumerate(lefts)
                          if ln.x0 >= left - COLUMN_EDGE_TOLERANCE), default=0)
     body.sort(key=lambda ln: (ln.column, ln.y0, ln.x0))
-    return body, furniture
+    return side_by_side(body), furniture
+
+
+def side_by_side(body: list[Line]) -> list[Line]:
+    """Two boxes of one printed line read left to right, whatever their tops.
+
+    A ledger's figure is a box of its own, and it often starts a hair above its
+    label: on leaf 325 `18 »` tops at 0.411 and `de la sua companya.` at 0.412,
+    so sorting by y put the figure first. Under line alignment that is not
+    cosmetic -- the readings are matched to the slots in this order, Apple
+    Vision's `• 2103` landed in the slot of the `18`, and `2103` lost its vote.
+
+    Only a ledger figure -- one carrying a ditto or a unit -- is moved right of
+    what it shares a row with, label or another cell (`. 2103` before `18 »`
+    on the same leaf). Applied to any two boxes
+    sharing a row it reordered some 350 leaves -- marginal numbers, display
+    initials, words the segmenter split -- the frozen sample among them.
+    """
+    out = list(body)
+    for _ in range(len(out)):
+        swapped = False
+        for i in range(len(out) - 1):
+            a, b = out[i], out[i + 1]
+            share = min(a.y1, b.y1) - max(a.y0, b.y0)
+            height = min(a.y1 - a.y0, b.y1 - b.y0)
+            if (a.column == b.column and height > 0
+                    and share >= LEDGER_OVERLAP * height and a.x0 >= b.x1
+                    and only_a_figure(a.text) and LEDGER_MARK.search(a.text)):
+                out[i], out[i + 1] = b, a
+                swapped = True
+        if not swapped:
+            break
+    return out
 
 
 def ordered_text(lines: list[dict], page_width: float, page_height: float,

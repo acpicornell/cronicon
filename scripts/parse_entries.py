@@ -683,9 +683,9 @@ def page_lines(path: Path) -> list[dict]:
     # reads leaves with. Only the footnotes need it -- their numbering restarts
     # at the head of every column -- but it is a property of the line, so it is
     # attached here rather than recomputed by whoever wants it.
-    lefts = layout.find_columns([layout.Line(text="", x0=key[0], y0=key[1],
-                                             x1=key[2], y1=key[3])
-                                 for key in order])
+    lefts = layout.find_columns([layout.Line(
+        text=layout.panel_text(grouped[key]),
+        x0=key[0], y0=key[1], x1=key[2], y1=key[3]) for key in order])
 
     def column_of(key) -> int:
         return max((n for n, left in enumerate(lefts)

@@ -1248,14 +1248,54 @@ first and every figure after, and the edition published `Dada de dons 65 » » 3
 a whole account's figures in one run, with its labels a paragraph away.
 
 `join_leaders` cannot reach them, because it requires the two boxes to be in the
-same column and here they are not. The test that finds them is clean and the
-population is tiny: **a column whose lines are all figures is not a page
-column** — over 614 leaves that is 15 of 16 lines on leaf 161 and 25 of 25 on
-leaf 163, and **no other leaf in the book**.
+same column and here they are not. **Fixed**: `layout.is_ledger_column` merges a
+column back into the one on its left when **half its lines are nothing but
+figures and half of those carry a ditto or a unit**. "All figures" was the first
+draft and is wrong: measured over every engine-leaf file, OCR noise in the cells
+(`17.069 » I$ » 62`, `395 Y » » I»`) puts the real ledger columns anywhere from
+0.50 to 0.94, the geometry engine's at 0.62 on leaf 161. The mark is what keeps
+leaf 152 out — its genealogical node numbers are 0.82 figures for Apple Vision
+and carry no mark — and it fires on **161, 163 and 325** and nowhere else. 325 is
+the same defect: its payments ledger set `18 »` far enough right to be a column.
 
-Fixing it means rebuilding the consensus for those two leaves with the column
-merged, which renumbers them, so it wants the adjudication check run first.
-That is the next thing on this document.
+Three things came with it, each a wrong answer first:
+
+- **The figure has to follow its label.** Merged into the label's column, a
+  figure whose box tops a hair higher sorted *first*, and under line alignment
+  the readings are matched to slots in that order — Apple Vision's `• 2103` was
+  given to the `18`'s slot and `2103` lost its vote. `layout.side_by_side` moves
+  a ledger figure (one carrying a mark) right of whatever shares its row. Applied
+  to any two boxes on a row it reordered ~350 leaves, the frozen sample among
+  them; restricted to marked figures it touches **15 leaves, every one a ledger**.
+- **A label can lead to more than one figure box.** `2103 » 18 »` arrives as
+  `. 2103` and `18 »`, and `join_leaders` gave each figure its own union with the
+  label, so the printed line came back in two pieces. Every box of the row now
+  takes one union.
+- **Asking the column question of the consensus needs the panel for the mark and
+  the winner for the figure.** The vote strips dittos (`785 » 17 »` → `785`,
+  `17`), so winners alone no longer look like a ledger; but joining every
+  reading lets one engine that glued the label on (`conipanya.......2103`) turn
+  a figure into prose. `layout.panel_text` takes the winners and adds the mark
+  if any engine read one. `join_leaders` and `parse_entries` used to pass no text
+  at all, so neither could ever see this rule.
+
+Consensus rebuilt for the 15 leaves; every box identical, all 7 round-3
+positions on them found with their grade, every review decision still keyed.
+Tables **34 → 39, rows 142 → 165, leaves 20 → 22**; no leaf publishes fewer
+figures than before and 160, 162, 164 publish more (`Gastos… 14.271 » 9 » 11 »`
+for 1334, checked against the facsimile). What it does not fix, and is now
+visible rather than buried in a run of figures:
+
+- **Tesseract never segmented the last line of several labels** on 161 and 163 —
+  `rella. . . .`, `ça. . . .`, `pitals. . . .`, `tre. . . .`, `armat. . . .` have
+  no box at all — so the hyphen stitch joins the label's `Tor-` to the figure:
+  `Tor65 » »`, `Ebi582» 3» 3»`, `des122 » 10 » 8»`, `prebe296 » 17 » 7 »`. A word
+  never continues in a digit, and four stitchers would need the guard; and the
+  missing line is a geometry problem the guard would only hide.
+- On 325 the vote still empties the `18 »` of `agermanats. . . 18 »`: with the
+  label first, the engines' leader dots fill the figure's slots. The document
+  shows it as a paragraph of its own. Six new `runt`s in `0114-V-05` are rows of
+  this kind plus the account's total and its `Gastos.` heading.
 
 **What is still not right on leaf 159 and is honest to say so:**
 `Disapte 1.er de Juliol` runs `It. vi.`, `It. farina.`, `It. peix y ous` — and
