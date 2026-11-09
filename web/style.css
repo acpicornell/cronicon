@@ -126,7 +126,7 @@ main.wrap { padding-top: 1.2rem; padding-bottom: 4rem; }
    only its width is limited, so the left edge does not move between tabs. */
 .wrap.column > * { max-width: 56rem; }
 .column p, .column .lede, .column figcaption, .column .hint,
-.column .matter > p { max-width: none; }
+.column .matter > p { max-width: 56rem; }
 .column .cards { grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); }
 .column .ranked { width: 100%; }
 main > p, .prose > p, .matter > p { max-width: var(--measure); }
@@ -505,17 +505,16 @@ a.key:hover { color: var(--accent); }
 
 /* ---------------------------------------------------------------- footer */
 
-.site-footer { background: var(--paper-2); border-top: 1px solid var(--line); font-size: 1rem;
-               color: var(--ink-soft); padding: 2.2rem 0 1.6rem; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
-.footer-brand { font-family: var(--display); font-size: 1.1rem; letter-spacing: .05em; color: var(--ink); margin-bottom: .4rem; }
-.footer-col h2 { font-family: var(--display); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
-                 color: var(--muted); margin: 0 0 .5rem; }
-.footer-col a { display: block; margin-bottom: .25rem; }
-.gh { vertical-align: -.12em; margin-right: .35em; }
-.footer-bottom { border-top: 1px solid var(--line); margin-top: 1.6rem; padding-top: 1rem; font-size: .95rem; }
-.footer-bottom p { margin: 0 0 .3rem; }
-@media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-about { grid-column: 1 / -1; } }
+/* The foot of every Corpus Balear edition: centred, small, quiet. */
+.site-footer { margin-top: 4rem; border-top: 2px solid var(--line); background: var(--paper-2); }
+.site-footer .wrap { padding-top: 1.6rem; padding-bottom: 1.6rem; font-size: .9rem; line-height: 1.5;
+                     color: var(--ink-soft); text-align: center; }
+.site-footer p { margin: 0 auto .45rem; max-width: 52rem; }
+.site-footer a { color: var(--sepia); }
+.site-footer .foot-links { margin-top: .8rem; padding-top: .7rem; border-top: 1px solid var(--line);
+                           display: flex; justify-content: center; flex-wrap: wrap; gap: .3rem 1.6rem; }
+.site-footer .foot-links a { display: inline-flex; align-items: center; gap: .4rem; }
+.gh { vertical-align: -.12em; }
 
 /* ------------------------------------------------------------- facsimile */
 

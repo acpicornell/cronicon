@@ -259,7 +259,7 @@ def crumbs(*steps: tuple[str, str | None]) -> str:
             + "</nav>")
 
 
-GITHUB = "https://github.com/acpicornell/corpusbalear"
+GITHUB = "https://github.com/acpicornell/cronicon"
 GH_ICON = ('<svg class="gh" viewBox="0 0 16 16" width="15" height="15" '
            'aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 '
            '8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49'
@@ -294,53 +294,36 @@ FACSIMILE_DIALOG = """<dialog id="facs" class="facs" aria-labelledby="facs-title
 
 
 def foot(up: str, scripts: tuple[str, ...] = ()) -> str:
-    """The foot, in the shape the portal and the sibling editions use.
+    """The foot every Corpus Balear edition carries, in the same words.
 
-    What belongs here is what a reader needs when they have finished reading:
-    who made it, how to cite it, what they may do with it, and where the
-    sources are.
+    Centred, small and quiet, as on the sibling sites (`mapes/mut`, the
+    nomenclators): what the edition is, its licence, how to cite it, that it is
+    part of the Corpus Balear, and the code. The sections are in the header and
+    are not repeated here.
     """
     tags = "".join(f'<script src="{up}{asset(name)}" defer></script>\n'
                    for name in ("app.js", *scripts))
     return f"""<footer class="site-footer">
   <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-about">
-        <p class="footer-brand">Cronicón Mayoricense</p>
-        <p>Transcripció obtinguda pel consens de sis reconeixedors
-           independents. <strong>Cap model generatiu ha escrit ni un caràcter
-           del text.</strong> Cada paraula duu el seu grau de certesa i les
-           discutides van marcades.</p>
-      </div>
-      <nav class="footer-col" aria-label="L'edició">
-        <h2>L'edició</h2>
-        <a href="{up}anys/">Els anys</a>
-        <a href="{up}temes/">Els temes</a>
-        <a href="{up}documents/">Els documents</a>
-        <a href="{up}jurats/">Els jurats</a>
-        <a href="{up}abreviatures/">Les fonts</a>
-        <a href="{up}metode.html">El mètode i les xifres</a>
-      </nav>
-      <nav class="footer-col" aria-label="Les fonts">
-        <h2>D'on surt</h2>
-        <a href="{ARCHIVE}" rel="noopener">Facsímil a l'Internet Archive</a>
-        <a href="https://bdh.bne.es/" rel="noopener">Biblioteca Nacional</a>
-        <a href="{up}metode.html#dades">Dades en parquet</a>
-        <a href="{GITHUB}" rel="noopener">{GH_ICON}Codi al repositori</a>
-      </nav>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Antoni C. Picornell Company ·
-         <a href="https://creativecommons.org/licenses/by-nc/4.0/"
-            rel="noopener">CC BY-NC 4.0</a>
-         (reutilització no comercial amb atribució).</p>
-      <p>Com citar: Picornell Company, A. C. <em>Cronicón Mayoricense</em>,
-         edició digital del text d'Álvaro Campaner (Palma, 1881).
-         Corpus Balear · cronicon.corpusbalear.org</p>
-      <p>Part del <a href="https://corpusbalear.org/" rel="noopener">Corpus
-         Balear</a> · edicions digitals de fonts històriques de les Illes
-         Balears.</p>
-    </div>
+    <p>Edició digital del <em>Cronicón Mayoricense</em> d'Álvaro Campaner
+       (Palma, 1881), elaborada a partir del facsímil dipositat a Internet
+       Archive pel consens de sis reconeixedors independents. Cap model
+       generatiu n'ha escrit el text.</p>
+    <p>© 2026 Antoni C. Picornell Company ·
+       <a href="https://creativecommons.org/licenses/by-nc/4.0/"
+          rel="noopener">CC BY-NC 4.0</a>
+       (reutilització no comercial amb atribució). Text original (1881):
+       domini públic.</p>
+    <p>Com citar: Picornell Company, A. C. <em>Cronicón Mayoricense</em>
+       (1881), edició digital. Corpus Balear · cronicon.corpusbalear.org</p>
+    <p>Part del <a href="https://corpusbalear.org/" rel="noopener">Corpus
+       Balear</a> · edicions digitals de fonts històriques de les Illes
+       Balears.</p>
+    <p class="foot-links">
+      <a href="{GITHUB}" rel="noopener">{GH_ICON}Codi al repositori</a>
+      <a href="{ARCHIVE}" rel="noopener">Facsímil a Internet Archive</a>
+      <a href="{up}metode.html#dades">Dades en parquet</a>
+    </p>
   </div>
 </footer>
 {FACSIMILE_DIALOG}{tags}</body>
@@ -1235,7 +1218,7 @@ def documents_page(con) -> str:
                 f"Els {len(docs)} documents que Campaner reprodueix sencers dins "
                 "el Cronicón Mayoricense: cartes, sentències, relacions i "
                 "fragments en castellà, català medieval i llatí.",
-                "documents/", "documents/", body,
+                "documents/", "documents/", body, main="wrap column",
                 trail=crumbs(("Inici", "../"), ("Els documents", None)))
 
 
@@ -1790,7 +1773,7 @@ def abbreviations_page(con) -> str:
     return page("Les fonts · Cronicón Mayoricense",
                 "Les sigles amb què Campaner atribueix cada notícia al "
                 "manuscrit d'on la treu, amb el nom que en dona la introducció.",
-                "abreviatures/", "abreviatures/", body,
+                "abreviatures/", "abreviatures/", body, main="wrap column",
                 trail=crumbs(("Inici", "../"), ("Les fonts", None)))
 
 
@@ -1889,7 +1872,7 @@ def index_page(con, counts: dict, routes: dict) -> str:
                       for y, n in busiest)
     longest = con.execute(
         "SELECT id, numeral, title, words FROM document "
-        "ORDER BY words DESC LIMIT 3").fetchall()
+        "ORDER BY words DESC LIMIT 1").fetchall()
     docs = "".join(f'<li><a href="documents/{esc(i)}/" lang="es" translate="no">'
                    f"{esc(t)}</a> <small>{num(w)} mots</small></li>"
                    for i, _n, t, w in longest)
@@ -1951,7 +1934,7 @@ def index_page(con, counts: dict, routes: dict) -> str:
     <p><a href="anys/">Tots els anys, segle a segle</a></p>
   </section>
   <section>
-    <h2>Els documents més llargs</h2>
+    <h2>El document més llarg</h2>
     <ul class="plainlist">{docs}</ul>
     <p><a href="documents/">Els {stats[3]} documents sencers</a></p>
   </section>
@@ -1964,7 +1947,7 @@ def index_page(con, counts: dict, routes: dict) -> str:
   <section>
     <h2>Els qui governaven</h2>
     <p>{num(stats[2])} jurats de la Ciutat i Regne entre 1240 i 1715, sis
-       cada any. Paraires i apotecaris al costat de donzells.</p>
+       cada any.</p>
     <p><a href="jurats/">Les sis sèries</a></p>
   </section>
   <section>
@@ -2328,7 +2311,7 @@ def themes_index(routes: dict) -> str:
                 "Deu camins per assumpte dins el Cronicón Mayoricense: pestes, "
                 "corsaris, execucions, festes, bàndols, la Inquisició, la "
                 "Germania.",
-                "temes/", "temes/", body,
+                "temes/", "temes/", body, main="wrap column",
                 trail=crumbs(("Inici", "../"), ("Els temes", None)))
 
 
