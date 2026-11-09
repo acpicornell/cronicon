@@ -1604,9 +1604,129 @@ in the browser anyway. Verified end to end: the database rebuilt from parquet
 renders every page byte for byte identical.
 
 So the rule for anything new under `web/`: **if `build_site.py` writes it, it
-does not belong in git.** Thirteen files are tracked there — the parquet, and
-the hand-written `style.css`, `app.js`, `_headers`, `robots.txt` — which is the
-convention the sibling projects already follow.
+does not belong in git.** What is tracked there is the parquet and what a
+person wrote: `style.css`, `app.js`, `search.js`, `home.js`, `theme.js`,
+`favicon.svg`, `_headers`, `robots.txt` and `vendor/` (the fonts) — the
+convention the sibling projects already follow. `web/jurats/` was tracked by
+mistake for months, seven generated pages, and is out.
+
+## The site: a book to be read, under its own security policy
+
+Redesigned on 9 Nov 2026 after an audit. The look follows the sibling
+`mapes/mut` — paper and ink, EB Garamond and Cinzel **served from this origin**
+(`web/vendor/fonts/`, OFL; the long s was checked in the font before it was
+adopted) — because this is the one site of the family that is read for pages at
+a time. Light and dark, the measure held at 66 characters, `hyphens: manual` so
+a browser never adds a hyphen that looks like the book's.
+
+**The deployed site would have been broken, and nothing local showed it.** The
+Content-Security-Policy is `style-src 'self'` with no `'unsafe-inline'`, and the
+year index drew its 572 bars with `style="height:…"`: 627 inline styles, every
+one blocked, plus the plates from an origin `img-src` did not admit. A plain
+`python -m http.server` ignores `_headers`, so it all looked fine. Three things
+keep that from recurring, and all three are to be used:
+
+```sh
+python scripts/build_site.py     # ~5 s
+python scripts/check_site.py     # fails on any style=, on*=, inline script,
+                                 # foreign origin, dead link or duplicate id
+python scripts/dev_server.py     # serves web/ with the real _headers, :8788
+```
+
+- **Nothing writes a `style` attribute.** What varies with the data is an SVG
+  attribute (`height` is geometry, not style) or a class; chart colours are
+  `--band-0…11` in `style.css`, once per theme; axis labels are equal flex
+  cells, one per decade, so no position is written into the markup.
+- **One foreign origin, for one thing**: `https://iiif.archive.org` under
+  `img-src`. A leaf of the facsimile opens in a `<dialog>` when the reader
+  clicks a `full N` link; the `<img>` is created on that click and not before,
+  so a reader who opens none makes no request to the Archive. Every such link
+  is a real link to the Archive's reader and works with scripts off.
+- **`theme.js` is a file, loaded synchronously in `<head>`**, because an inline
+  script is forbidden and a deferred one flashes light before turning dark.
+
+**Doubt is marked by position, in `scripts/doubt.py`.** It was marked by word
+*form* — underlined wherever the form had been disputed anywhere on those
+leaves — so `/anys/1715/` carried 4 161 dotted words, 40% of the page, mostly
+`de` and `la`; and those spans were 70% of the bytes of the heavy pages. A
+notice does not record its word records (`word_from`/`word_to` are NULL), so
+the text is **aligned** against the leaves' word stream with
+`difflib.SequenceMatcher`: 99.9% of 430 676 text tokens placed, in about a
+second. 1715 now carries **576 marks**; the heaviest page went 615 KB → 188 KB.
+Four things, each a wrong answer first:
+
+- **Tokens are runs of letters and digits; punctuation is not a token.** The
+  engines dispute a dash far more than a word, and the published text has moved
+  both — `21.--Rogativas` is one record on the leaf and `Rogativas` in the
+  notice.
+- **A multi-token record's tier is the run's, not each word's.** `1.°—Refriega`
+  is contested because of the day; marking `Refriega` for it put a dotted line
+  under the first word of four notices in ten. Each token of a run is graded
+  from the record's own rival readings: disputed if two or more lack it — the
+  line the tiers draw. Where no rivals are recorded the whole run stays marked.
+- **An unaligned stretch is disputed if its side of the stream was.** A failed
+  alignment must never present a disputed reading as settled.
+- **A stray match of one or two tokens far off its neighbours' diagonal is
+  dropped** — it is `de` matching some other `de`.
+
+The build prints the coverage and **exits non-zero under 95%**. The rival
+readings shown are those of *that* position (`data-v`), reachable by tapping
+the word or by the "amb les variants" mode — a `title` tooltip does not exist
+on a phone or from a keyboard. Jurats alone get a second, fainter grade for one
+dissenter, because a name is what a reader copies into a genealogy.
+
+**Wayfinding.** Every notice has an address, `anys/<y>/#n<id>`; the id is its
+position in the book, so it is stable as long as the parse is and no longer —
+nothing outside a build stores one. Search is a page (`/cerca/`) reachable from
+a form in every header, with state in the URL, filters by century, source and
+scope, AND between words, and hits that land on the notice. The index is in
+shards (`web/search/c13…c18.json`, `docs.json`, `jurats.json`), fetched on the
+first search and only the century asked for. The 44 years with no news keep
+their page, are `noindex`, and prev/next steps over them.
+
+**Thematic routes are searches, and say so** (`scripts/themes.py`,
+`/temes/<slug>/`). A pattern over the folded text of every notice, the terms
+printed on the page, the notices in the book's order: nobody chose them and
+nobody wrote about them. `build_site.py --themes-report` prints counts and a
+random sample, and **a route is kept only after its sample is read** — which
+narrowed three on the first reading: `bando` is an edict far more often than a
+faction, `temporal` is the Church's *porción temporal*, and `Colom` is
+Porto-Colom before it is the leader of the Germania.
+
+**"Tal dia com avui"** on the home page reads `web/dies/MM.json` — dated
+notices short enough to show whole, and only those that open the way a notice
+opens, because one that starts in lower case is the tail of a sentence the
+parse cut and the home page is the wrong place to show the edition's seams.
+
+**`lang` is set where the language changes.** The interface is Catalan; the
+chronicle is `lang="es"`; ten documents are `lang="ca"` (`DOC_LANG`, a judgment
+by title and to be reviewed); everything transcribed is `translate="no"`.
+
+**A page must not depend on its stylesheet to be legible, and must never be
+paired with an old one.** The first review of the redesign came back as "you
+have removed the spaces between words and destroyed every bar chart". Neither
+was in the HTML: the browser had kept August's `style.css`, cached under a
+server that sent no cache headers, and was showing the new markup with it.
+Reproduced by rendering a new page against the old stylesheet — the bars one
+black block, `AnysTemesDocuments`, `12301123111232`. Three fixes, because the
+cache was only the trigger:
+
+- **Asset URLs carry a fingerprint** (`style.css?v=92b95b32`, `asset()` in
+  `build_site.py`), so a rebuilt page cannot load a stylesheet from before it.
+- **Adjacent inline elements are separated by real spaces**, not by CSS
+  margins: links in a nav, a year and its count, the fields of a card. The
+  page reads correctly with no stylesheet at all, which is also what a screen
+  reader gets.
+- **SVG bars carry `fill` as an attribute.** A shape with no fill is black, and
+  572 full-height hit areas with no stylesheet are one black rectangle.
+
+`_headers` now sets `Cache-Control` on directory URLs too (`/` and `/*/`): a
+page is requested as `/anys/1521/`, which `/*.html` never matched.
+
+**The build is deterministic and that is checked the same way as the
+assemblers**: four runs under different `PYTHONHASHSEED`s, `diff -r`. Five
+queries had no total order — a tie in `ORDER BY n` — and each showed up as one
+page differing between runs.
 
 ## Backlog
 

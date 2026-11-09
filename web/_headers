@@ -2,6 +2,12 @@
 # an unchanged file comes back 304 with no payload and a new deploy propagates
 # at once -- no stale data.json after a rebuild.
 
+# A page is requested as `/anys/1521/`, not as `.../index.html`, so the
+# directory URLs need the rule as much as the files do.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/*/
+  Cache-Control: public, max-age=0, must-revalidate
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 /*.json
@@ -9,6 +15,8 @@
 /*.js
   Cache-Control: public, max-age=0, must-revalidate
 /*.css
+  Cache-Control: public, max-age=0, must-revalidate
+/*.svg
   Cache-Control: public, max-age=0, must-revalidate
 
 # The parquet files are the corpus, and they are meant to be queried from
@@ -20,10 +28,25 @@
   Access-Control-Allow-Origin: *
   Access-Control-Expose-Headers: Content-Length, Content-Range, Accept-Ranges
 
-# The site is read-only and static: no auth, no forms, no third-party anything.
-# script-src 'self' with no inline scripts kills the main XSS vector outright.
+# Self-hosted type never changes under a given name.
+/vendor/fonts/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+# The site is read-only and static: no auth, no accounts, no third-party code.
+#
+# `script-src 'self'` and `style-src 'self'`, both without 'unsafe-inline': no
+# inline script, no inline handler and no `style=""` attribute can run, which
+# closes the main XSS vectors outright. `scripts/check_site.py` fails the build
+# if a generated page would need any of them.
+#
+# One foreign origin is admitted, for one thing: `https://iiif.archive.org`
+# under `img-src`. The engraved plates and the facsimile pages are served by
+# the Internet Archive from the same scan this edition cites; they are images,
+# loaded only when a reader asks for one, and nothing else may come from there.
 /*
   X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
-  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'
-  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https://iiif.archive.org; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()

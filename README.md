@@ -475,6 +475,10 @@ scripts/
   audit_documents.py       the same sweep over the 23 documents
   build_db.py              the parsed book -> DuckDB -> parquet
   build_site.py            the static site
+  doubt.py                 which words of a published text are disputed, by position
+  themes.py                the thematic routes: a search someone has already typed
+  check_site.py            lints the site against its own Content-Security-Policy
+  dev_server.py            serves web/ locally with the headers production sends
 
 data/inventory.json        the 671-leaf survey (committed)
 data/scan_health.json      the leaves where the two scans disagree (committed)
@@ -490,9 +494,19 @@ docs/OCR_BENCHMARK.md      the full measurement report
 docs/EDITORIAL.md          what this edition changes, and what it refuses to
 ```
 
-**If `build_site.py` writes it, it does not belong in git.** Thirteen files are
-tracked under `web/` — the parquet, and the hand-written `style.css`, `app.js`,
-`_headers`, `robots.txt`.
+**If `build_site.py` writes it, it does not belong in git.** What is tracked
+under `web/` is the parquet and what a person wrote: `style.css`, `app.js`,
+`search.js`, `home.js`, `theme.js`, `favicon.svg`, `_headers`, `robots.txt` and
+`vendor/` (self-hosted fonts, with their licences).
+
+The site runs under a strict Content-Security-Policy -- `script-src 'self';
+style-src 'self'`, no inline anything, and one foreign origin for facsimile
+images. After building, lint it and look at it with the real headers:
+
+```sh
+python scripts/check_site.py
+python scripts/dev_server.py    # http://127.0.0.1:8788
+```
 
 ## Reproducing it
 
