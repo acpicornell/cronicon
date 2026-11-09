@@ -1,0 +1,53 @@
+leaf: 116
+by: claude (facsímil, resolució nativa)
+---
+1322
+1 | Gerardo Adarró, miles
+2 | Felipe Valentí
+3 | Bernardo Umbert
+4 | Pedro Dalmau
+5 | Jaime Sa Vall
+6 | Arnaldo Moragues
+1323
+3 | Arnaldo Net
+1325
+2 | Felipe Valentí
+3 | Arnaldo Umbert
+4 | Francisco Renovart
+5 | Ferrer de Comellas
+6 | Pedro de Castelló
+1327
+1 | Guillermo Santiscle, caballero
+2 | Pedro Dalmau
+3 | Bartolomé Geronés
+4 | Domingo Cima
+5 | Romeu Sesplanes
+6 | Guillermo Cuch
+1328
+1 | Ramon de Sant Martí, doncel
+2 | Guillermo Robert
+3 | Bernardo Custany
+4 | Andrés de Coma ó Soma
+5 | Guillermo Fluxá
+6 | Ferrer Sala
+1329
+1 | Jaime de Santacilia, caballero
+2 | Nicolás Sala ó de Salas
+3 | Francisco Alcover
+4 | Bernardo Desmás
+5 | Nicolás Garau
+6 | Jaime Canyellas
+1330
+1 | Arnaldo de Santacilia, caballero
+2 | Guillermo Rubert
+3 | Benito Blancas
+4 | Domingo Cima
+5 | Pedro Bosa
+6 | Guillermo Conte
+1331
+1 | Guillermo Descache
+2 | Francisco Durán
+3 | Juan Desportell
+4 | Pedro de Sitjes
+5 | Pedro Roig
+6 | Guillermo de Burguera

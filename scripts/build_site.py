@@ -1451,21 +1451,52 @@ def jurats_index(con) -> str:
     engines, which the page has to say rather than imply.
     """
     series = con.execute("""
-        SELECT century, count(*), min(year), max(year), count(DISTINCT year)
+        SELECT century, count(*) FILTER (WHERE tier <> 'remark'), min(year),
+               max(year), count(DISTINCT year),
+               count(*) FILTER (WHERE tier = 'adjudicated')
         FROM jurat GROUP BY 1 ORDER BY 1""").fetchall()
     tiers = dict(con.execute(
-        "SELECT tier, count(*) FROM jurat GROUP BY 1").fetchall())
+        "SELECT tier, count(*) FROM jurat WHERE tier <> 'remark' "
+        "GROUP BY 1 ORDER BY 1").fetchall())
     total = sum(tiers.values())
+    checked = tiers.get("adjudicated", 0)
+    panel = total - checked
+    typed = con.execute(
+        "SELECT count(*) FROM jurat WHERE source = 'typed'").fetchone()[0]
+    # What a reader may rely on, said for the state the lists are actually in.
+    trust = (
+        f"<p><strong>Per això els {num(total)} noms s'han llegit directament "
+        "del facsímil</strong>, full per full i any per any, i cada un s'ha "
+        "comparat amb el que n'havia llegit cada reconeixedor. "
+        f"{num(checked - typed)} coincideixen lletra per lletra amb la lectura "
+        f"d'algun motor; els altres {num(typed)} duen una lletra volada "
+        "(<em>B.ª</em>, <em>Mig.<sup>l</sup></em>) que cap motor no reprodueix. "
+        "Res no s'hi ha corregit: les errades d'impremta de Campaner hi són "
+        "tal com les va deixar.</p>"
+        if not panel else
+        f"<p><strong>{num(checked)} dels {num(total)} noms s'han llegit "
+        "directament del facsímil</strong>, any per any, i cada un s'ha "
+        "comparat amb el que n'havia llegit cada reconeixedor: van sense "
+        f"marca. Dels altres {num(panel)}, només "
+        f"{num(tiers.get('unanimous', 0))} els llegeixen igual els sis motors; "
+        "porten el seu grau i els discutits van marcats.</p>"
+        '<p class="aside">Un nom marcat no vol dir que sigui erroni: vol dir '
+        "que no s'ha comprovat contra el facsímil i que els reconeixedors no "
+        "hi van coincidir del tot.</p>")
 
     blocks = "".join(
         f'<a class="card" href="{c}/">'
         f'<span class="tag">Segle {CENTURY_NAMES[c]}</span>'
         f"<strong>{num(n)} noms</strong>"
-        f'<span class="meta">{first}–{last} · {years} anys documentats</span></a>'
-        for c, n, first, last, years in series)
+        f'<span class="meta">{first}–{last} · {years} anys documentats</span> '
+        + ('<span class="n">llegits del facsímil</span>' if read == n
+           else f'<span class="n">{num(read)} llegits del facsímil</span>' if read
+           else '<span class="n">lectura dels reconeixedors</span>')
+        + "</a>"
+        for c, n, first, last, years, read in series)
 
     names = [r[0] for r in con.execute(
-        "SELECT name FROM jurat ORDER BY id").fetchall()]
+        "SELECT name FROM jurat WHERE tier <> 'remark' ORDER BY id").fetchall()]
     trades = Counter(t for t in (trade_of(n) for n in names) if t)
     chips = "".join(f'<li>{esc(t)} <small>{n}</small></li>'
                     for t, n in trades.most_common(18))
@@ -1482,23 +1513,18 @@ def jurats_index(con) -> str:
 
 <section class="matter">
   <h2>No tots eren cavallers</h2>
-  <p>De 341 noms, Campaner n'anota l'ofici darrere una coma. El gremi seia al
+  <p>De {num(sum(1 for n in names if "," in n))} noms, Campaner n'anota
+     l'ofici o la condició darrere una coma. El gremi seia al
      costat del jurista i del donzell:</p>
   <ul class="subjects">{chips}</ul>
 </section>
 
 <section class="matter">
   <h2>Quant se'n pot refiar</h2>
-  <p>Aquests fulls són els més difícils del llibre: llistes atapeïdes, tipus
-     petit i noms propis mallorquins del 1300, que és exactament on un
-     reconeixedor no té cap paraula coneguda a què agafar-se.
-     <strong>Només {num(tiers.get('unanimous', 0))} dels {num(total)} noms
-     ({tiers.get('unanimous', 0) / total:.0%}) els llegeixen igual els sis
-     motors</strong>, contra el 79% del llibre sencer. Cada nom porta el seu
-     grau i els discutits van marcats.</p>
-  <p class="aside">Un nom marcat no vol dir que sigui erroni: vol dir que no
-     s'ha comprovat contra el facsímil i que els reconeixedors no hi van
-     coincidir del tot.</p>
+  <p>Aquests fulls són els més difícils del llibre per als reconeixedors:
+     llistes atapeïdes en columnes, on no es posen d'acord sobre l'ordre de
+     lectura, i els noms acabaven sota l'any que no era o es perdien.</p>
+  {trust}
 </section>"""
     return page("Els jurats · Cronicón Mayoricense",
                 f"Els {num(total)} jurats de la Ciutat i Regne de Mallorca que "
@@ -1520,7 +1546,7 @@ def jurats_century(con, century: int) -> str:
     """
     rows = con.execute(
         "SELECT year, seat, name, tier, pdf_page FROM jurat "
-        "WHERE century = ? ORDER BY year, seat", [century]).fetchall()
+        "WHERE century = ? ORDER BY id", [century]).fetchall()
     by_year: dict[int, list] = {}
     for year, seat, name, tier, leaf in rows:
         by_year.setdefault(year, []).append((seat, name, tier, leaf))
@@ -1533,15 +1559,40 @@ def jurats_century(con, century: int) -> str:
             return ' class="d"'
         return ' class="d1"' if tier == "one-dissent" else ""
 
+    read = sum(1 for r in rows if r[3] == "adjudicated")
+    names = sum(1 for r in rows if r[3] != "remark")
+
     out = []
     for year, seats in sorted(by_year.items()):
         link = (f'<a href="../../anys/{year}/">{year}</a>'
                 if year in dated else str(year))
-        cells = " ".join(f"<li{grade(tier)}>{esc(name)}</li>"
-                        for _seat, name, tier, _p in seats)
+        # In the order the leaf has them, because a year is not always one
+        # list of six: 1401 is printed twice -- `1401.` and then `1401 (EN 7 DE
+        # JULIO.)`, a second election -- and a sentence may stand in place of
+        # names (`Los del año anterior.`) or between two sets of them. `value`
+        # is the seat Campaner numbers: a year may fill the third and the sixth
+        # and leave the rest blank, and the list must say so.
+        parts, run = [], []
+
+        def flush() -> None:
+            if run:
+                parts.append('<ol class="seats" lang="es" translate="no">'
+                             + " ".join(run) + "</ol>")
+                run.clear()
+
+        for seat, name, tier, _p in seats:
+            if tier == "remark":
+                flush()
+                parts.append('<p class="remark" lang="es" translate="no">'
+                             f"{esc(name)}</p>")
+            else:
+                run.append(f'<li value="{seat}"{grade(tier)}>{esc(name)}</li>')
+        flush()
+        leaves = sorted({p for _s, _n, _t, p in seats})
+        marks = " · ".join(facsimile(p) for p in leaves)
         out.append(f'<article class="serie-year" id="y{year}"><h2>{link}</h2>'
-                   f'<ol class="seats" lang="es" translate="no">{cells}</ol>'
-                   f'<p class="leafmark">{facsimile(seats[0][3])}</p></article>')
+                   + "".join(parts)
+                   + f'<p class="leafmark">{marks}</p></article>')
 
     decades = sorted({y // 10 * 10 for y in by_year})
     jump = " ".join(
@@ -1557,7 +1608,7 @@ def jurats_century(con, century: int) -> str:
   <h1>Jurats del segle {roman}</h1>
   {f'<a class="step" rel="next" href="../{next_c}/">segle {CENTURY_NAMES[next_c]} <span aria-hidden="true">→</span></a>' if next_c else '<span class="step"></span>'}
 </header>
-<p class="year-sub">{num(len(rows))} noms en {len(by_year)} anys</p>
+<p class="year-sub">{num(names)} noms en {len(by_year)} anys</p>
 <nav class="jump" aria-label="Dècades">{jump}</nav>
 <div class="tools">
   <label for="jf">Filtra per nom</label>
@@ -1565,10 +1616,9 @@ def jurats_century(con, century: int) -> str:
          placeholder="Zaforteza, perayre, notari…">
   <span id="jf-n" class="tally" role="status"></span>
 </div>
-<p class="hint">L'any enllaça amb les seves notícies quan en té. Un nom
-   <span class="d">puntejat</span> és una lectura en què dos o més
-   reconeixedors discrepen; un de <span class="d1">subratllat fi</span>, una en
-   què en discrepa un de sol. Cap dels dos vol dir que sigui erroni.</p>
+<p class="hint">L'any enllaça amb les seves notícies quan en té.
+   {("Tots aquests noms s'han llegit directament del facsímil i comparat amb el que n'havien llegit els reconeixedors." if read == names else "")}
+   {("" if read == names else "Un nom <span class='d'>puntejat</span> és una lectura en què dos o més reconeixedors discrepen; un de <span class='d1'>subratllat fi</span>, una en què en discrepa un de sol. Cap dels dos vol dir que sigui erroni." + (" Els que no duen marca en els anys llegits del facsímil s'han comprovat contra la pàgina." if read else ""))}</p>
 <div class="serie-grid">{"".join(out)}</div>"""
     return page(f"Jurats del segle {roman} · Cronicón Mayoricense",
                 f"Els jurats de Mallorca del segle {roman} segons el Cronicón "
@@ -1727,7 +1777,8 @@ def index_page(con, counts: dict, routes: dict) -> str:
     stats = con.execute("""SELECT (SELECT count(*) FROM entry),
                                   (SELECT count(DISTINCT year) FROM entry
                                    WHERE year IS NOT NULL),
-                                  (SELECT count(*) FROM jurat),
+                                  (SELECT count(*) FROM jurat
+                                   WHERE tier <> 'remark'),
                                   (SELECT count(*) FROM document),
                                   (SELECT count(*) FROM word)""").fetchone()
     busiest = con.execute(
@@ -2278,7 +2329,8 @@ def main() -> None:
          [[d[0], d[1], d[2], [p for p in d[8].split("\n") if p.strip()]]
           for d in documents])
     dump(WEB / "search" / "jurats.json", con.execute(
-        "SELECT century, year, name FROM jurat ORDER BY year, seat").fetchall())
+        "SELECT century, year, name FROM jurat WHERE tier <> 'remark' "
+        "ORDER BY year, seat").fetchall())
 
     # "On this day": the dated notices short enough to show whole, by month.
     # The home page fetches the current month and nothing else.

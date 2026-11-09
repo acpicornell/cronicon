@@ -1,0 +1,190 @@
+leaf: 479
+by: claude (facsímil, resolució nativa)
+---
+1618
+3 | Jaime Morell
+4 | Bernardo Amer
+5 | Pedro Onofre Socias
+6 | Salvador Francesch, sastre
+1619
+1 | Juan Antonio de Puigdorfila
+2 | Pedro Onofre Cotoner y Sala
+3 | Jaime Truyols
+4 | Pedro Onofre Vicens y Salom
+5 | Bartolomé Malferit
+6 | Juan Palou, forner
+1620
+1 | Juan Torrella
+2 | Jerónimo Caldes
+3 | Perot Andreu
+4 | Bernardo Bertran
+5 | Mateu Reus
+6 | Bartolomé Coch, forner
+1621
+1 | Jerónimo Pablo de Puigdorfila
+2 | Francisco Comellas
+3 | Jaime Mas
+4 | Miguel Domenge
+5 | Jaime Cererols
+6 | Miguel Bolitxer, sastre
+1622
+1 | Jorge Caulellas
+2 | Pedro Desmás
+3 | Salvador Armengol
+4 | Bernardo Amer
+5 | Rafael Bisquerra
+6 | Juan Pons, sarrier
+1623
+1 | Nicolás Rossinyol Zagranada
+2 | Pedro Onofre Cotoner y Sala
+3 | Francisco Truyols
+4 | Gabriel Llull
+5 | Galcerán Ortiz
+6 | Jorge Vaquer, blanquer
+1624
+1 | Jaime Rossinyol
+2 | Guillermo Desmás
+3 | Tomás de Bordils
+4 | Miguel Bisquerra
+5 | Francisco Serra y Esteva
+6 | Simon Llompart, sabater
+1625
+1 | Juan Torrella
+2 | Baltasar Desbrull
+3 | Francisco de Comellas
+4 | Miguel Domenge
+5 | Jaime Artigues
+6 | Nicolás Crespí, apotecari
+1626
+1 | Ramon de Verí
+2 | Francisco Morell
+3 | Pedro Jorge Armengol
+4 | Juan Antonio Casellas
+5 | Pedro Onofre Socias
+6 | Antonio Pelliser, forner
+1627
+1 | Pedro Luis de Lloscos
+2 | Jerónimo Caldes
+3 | Onofre Font y Montornés
+4 | Gabriel Fiol
+5 | Ramon Llull
+6 | Juan Mateu, forner
+1628
+1 | Nicolás Rossinyol Zagranada
+2 | Baltasar Serra Parera
+3 | Joanot Mut
+4 | Mateo Reus
+5 | Baltasar Sans
+6 | Jerónimo Nicolau, peraire
+1629
+1 | Alberto Togores
+2 | Tomás de Bordils
+3 | Nicolás Vida
+4 | Jerónimo Socias
+5 | Ramon Reginaldo Estada
+6 | Jerónimo Riera, apotecari
+1630
+1 | Hugo Net
+2 | Ferrando Espanyol
+3 | Salvador Armengol
+4 | Gabriel Domenech
+5 | Antonio Bordoy
+6 | Antonio Rosselló, calderer
+1631
+1 | Nicolás de Montanyans
+2 | Miguel Juan Espanyol
+3 | Pedro Desmás
+4 | Rafael Bisquerra
+5 | Francisco Serra
+6 | Antonio Togores, perayre
+1632
+1 | Jaime Rossinyol
+2 | Nicolás Rossinyol
+3 | Pedro Jorge Armengol
+4 | Miguel Domenge
+5 | Cristóbal Socias
+6 | Antonio Pelliser, forner
+1633
+1 | Luis de Villalonga
+2 | Juan Moll
+3 | Agustin Palou
+4 | Ramon Llull
+5 | Francisco Socias
+6 | Domingo Busquets, ferrer
+1634
+1 | Miguel Juan Serralta
+2 | Jerónimo Caldes
+3 | Francisco de Comellas
+4 | Baltasar Sans
+5 | Damian Huguet
+6 | Pedro Ferrer, brodador
+1635
+1 | Jorge de Caulellas
+2 | Hugo Morell
+3 | Jaime Juan Alemany
+4 | Miguel Francisco Pizá
+5 | Antonio Socias y Mayol
+6 | Magin Güells, sastre
+1636
+1 | Juan Antonio de Puigdorfila
+2 | Pedro Jorge Armengol
+3 | Perot Andreu
+4 | Pedro Antonio Nicolau
+5 | Jaime Antonio Genovart
+6 | Antonio Pelliser, forner
+1637
+1 | Ramon de Verí
+2 | Nicolás Rossinyol
+3 | Domingo de Comellas
+4 | Juan Antonio Casellas
+5 | Juanot Fontiroig
+6 | Juan Cerdó, perayre
+1638
+1 | Miguel Juan Serralta
+2 | Fernando Espanyol
+3 | Mateo Net
+4 | Miguel Domenge
+5 | Jaime Artigues
+6 | Pedro Perdiguer, sastre
+1639
+1 | Ramon de Puigdorfila
+2 | Francisco Morell
+3 | Francisco Nadal
+4 | Cristóbal Socias
+5 | Ramon Reginaldo Estada
+6 | Domingo Busquets, ferrer
+1640
+1 | Juan Antonio de Puigdorfila
+2 | Jerónimo Caldes
+3 | Perot Andreu, (murió antes de jurar.)
+4 | Mateo Reus
+5 | Miguel Bisquerra
+6 | Rafael Maura, assahonador
+1641
+1 | Salvador Sureda
+2 | Nicolás Rossinyol
+3 | Pedro Jorge Armengol
+4 | Jerónimo Socias
+5 | Joanot Fontiroig
+6 | Juan Palou, forner
+1642
+1 | Juan Torrella
+2 | Antonio Cifre
+3 | Arnaldo Burguet
+4 | Mateo Morey
+5 | Pedro Onofre Socias
+6 | Antonio Pelliser, forner
+1643
+1 | Hugo Net, Doctor en derechos
+2 | Mateo Net, menor
+3 | Agustin Palou
+4 | Miguel Domenge
+5 | Baltasar Sans
+6 | Estevan Ferrer, assahonador
+1644
+1 | Nicolás de Togores y Montanyans
+2 | Francisco Garriga
+3 | Nicolás Armengol
+4 | Ramon Reginaldo Estada
+5 | Antonio Socias
+6 | Miguel Fiol, forner

@@ -1,0 +1,13 @@
+leaf: 315
+by: claude (facsímil, resolució nativa)
+---
+1599
+5 | Pedro Valls
+6 | Juan Guixar, perayre
+1600
+1 | Juan de Puigdorfila
+2 | Basilio Morell
+3 | Berenguer Vida
+4 | Clemente Socías
+5 | Gabriel Lull
+6 | Guillermo Cerdá, selleter

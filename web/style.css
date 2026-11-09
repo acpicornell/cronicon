@@ -457,6 +457,7 @@ a.key:hover { color: var(--accent); }
 .seats li { margin-bottom: .1rem; }
 .seats li::marker { color: var(--muted); font-size: .85em; font-variant-numeric: lining-nums; }
 .serie-year .leafmark { margin: .3rem 0 0; }
+.serie-year .remark { font-style: italic; color: var(--ink-soft); font-size: 1rem; margin: .2rem 0; }
 [hidden] { display: none !important; }
 
 /* ---------------------------------------------------------------- search */

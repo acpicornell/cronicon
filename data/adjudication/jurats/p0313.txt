@@ -1,0 +1,192 @@
+leaf: 313
+by: claude (facsímil, resolució nativa)
+---
+1545
+6 | Tomás Cañellas, perayre
+1546
+1 | Antonio Gual Desmur
+2 | Pedro Espanyol
+3 | Miguel Barthomeu
+4 | Cristóbal Serra
+5 | Juanot Sala
+6 | Domingo Janer, perayre
+1547
+1 | Pedro Juan de Santacilia
+2 | Juan García
+3 | Francisco Serralta
+4 | Pedro Gibert
+5 | Esteban Nadal
+6 | Pedro Arnau, flassader
+1548
+1 | Pedro Ramon Zaforteza
+2 | Mateo Net
+3 | Benito Armadans
+4 | Juan Miguel Pagés
+5 | Pedro Cabrer
+6 | Bartolomé Cavaller, spicier
+1549
+1 | Francisco de Oleza
+2 | Miguel Angelats
+3 | Pedro Juan Burguet
+4 | Francisco Benet
+5 | Miguel Monjo
+6 | Juanot Palou, assahonador
+1550
+1 | Pedro de Pachs
+2 | Sant Martí Despuig
+3 | Antonio Bacó
+4 | Gabriel Poquet
+5 | Pedro Juan Ferrer
+6 | Tomás Ginard, perayre
+1551
+1 | Juanot de Caulellas
+2 | Juanot Zaforteza
+3 | Francisco Descós
+4 | Juanot Milia
+5 | Juanot Mora
+6 | Gabriel Riera, apotecari
+1552
+1 | Pedro Benito Sala
+2 | Pedro Espanyol
+3 | Melchor Dureta
+4 | Juan Miguel Morlá
+5 | Pedro Cabrer
+6 | Antonio Solivella, perayre
+1553
+1 | Ramon Vivot
+2 | Pedro Net
+3 | Ramon Zaforteza
+4 | Rafael Oleza
+5 | Juanot Jover
+6 | Domingo Lull, perayre
+1554
+1 | Miguel Sureda Zanglada
+2 | Rafael de Oleza
+3 | Agustin Serralta
+4 | Juanot Bosch
+5 | Antonio Fornari
+6 | Juanot Salleras, perayre
+1555
+1 | Perellós de Pachs
+2 | Jerónimo Maxella
+3 | Juanot García y Despí
+4 | Francisco Benet
+5 | Tomás Moranta
+6 | Perot Vicens, perayre
+1556
+1 | Arnaldo Albertí
+2 | Francisco Serralta
+3 | Miguel Desmas
+4 | Juanot Milia
+5 | Gabriel Poquet
+6 | Martin Dalmau (a) Fuster, perayre
+1557
+1 | Bautista Brondo
+2 | Leonardo Zaforteza
+3 | Miguel Busquets
+4 | Pedro Cabrer
+5 | Gabriel Lull
+6 | Rafael Guardiola, perayre
+1558
+1 | Pedro Malferit
+2 | Mateo Net
+3 | Agustin Serralta
+4 | Rafael Oleza
+5 | Juanot Jover
+6 | Juan Gallur, perayre
+1559
+1 | Albertin Dameto
+2 | Gabriel Berga
+3 | Jaime Vida
+4 | Juanot Salas
+5 | Pedro Juan Ferrer
+6 | Antonio Clar, perayre
+1560
+1 | Antonio Forteza
+2 | Gabriel de Verí
+3 | Juan Angelats
+4 | Juanot Bosch
+5 | Gabriel Poquet
+6 | Antonio Seguí, apotecari
+1561
+1 | Pedro Jorge Puigdorfila
+2 | Jerónimo Descós
+3 | Francisco Serra
+4 | Mateo Binimelis
+5 | Miguel Garau
+6 | Juan Gayá, perayre
+1562
+1 | Ramon Zaforteza
+2 | Pedro Juan Font de Roqueta
+3 | Rafael Ballester
+4 | Gabriel Lull
+5 | Francisco Antich
+6 | Gabriel Riera, apotecari
+1563
+1 | Jaime de Puigdorfila
+2 | Pedro Juan Espanyol
+3 | Gerardo Pont
+4 | Esteban Nadal
+5 | Juan Grimalt
+6 | Antonio Clar, perayre
+1564
+1 | Miguel San Juan de la Bastida
+2 | Miguel Truyols
+3 | Jaime Vida
+4 | Juan Alemany
+5 | Antonio Prohens
+6 | Jerónimo Rossell, assahonador
+1565
+1 | Juan Puigdorfila
+2 | Nicolás Rossiñol
+3 | Bernardo Marcer
+4 | Miguel Ferrandell
+5 | Juan Casellas
+6 | Pedro Lladó, flassader
+1566
+1 | Felipe Fuster
+2 | Gabriel Berga
+3 | Ignacio García
+4 | Pedro Cabrer
+5 | Antonio Alemany
+6 | Bartolomé Estelrich, perayre
+1567
+1 | Ramon Torrella
+2 | Miguel Busquets
+3 | Pedro Net
+4 | Juanot Mut
+5 | Antonio Amer
+6 | Francisco Pellicer, selleter
+1568
+1 | Arnaldo de Santacilia
+2 | Antonio Cotoner
+3 | Miguel Cotoner
+4 | Juan Gacías
+5 | Antonio Vallés
+6 | Pedro Oliver, perayre
+1569
+1 | Ramon Sant Martí
+2 | Marcos Verí
+3 | Felipe Valentí
+4 | Juan Alemany
+5 | Antonio Reus
+6 | Jaime Garau, apuntador
+1570
+1 | Jorge Santa Cilia
+2 | Leonardo Zaforteza
+3 | Oliver de Térmens
+4 | Juan Casellas
+5 | Miguel Pau
+6 | Juan Gallur, perayre
+1571
+1 | Francisco Anglada
+2 | Gabriel Berga
+3 | Gaspar Rossinyol
+4 | Antonio Casellas
+5 | Pedro Janer
+6 | Felipe Girard, sucrer
+1572
+1 | Ramon Gual
+2 | Miguel Mas
+3 | Jaime García
+4 | Antonio Prohens

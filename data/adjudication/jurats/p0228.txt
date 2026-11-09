@@ -1,0 +1,192 @@
+leaf: 228
+by: claude (facsímil, resolució nativa)
+---
+1471
+1 | Mateo Roig
+2 | Antonio Colom
+3 | Guillermo Dameto, Dr. en leyes
+4 | Mateo Riera
+5 | Pedro Martí
+6 | Julian Valls, perayre
+1472
+1 | Miguel de Pachs
+2 | Miguel Brú
+3 | Pedro de Villalonga
+4 | Bartolomé Febrer
+5 | Antonio Tomás Vallori
+6 | Antonio Gornals, texidor
+1473
+1 | Matías Zaforteza
+2 | Albertin de Dameto
+3 | Jaime Juan Speraneu, jurista
+4 | Bernardo Rovira
+5 | Jaime Dureta
+6 | Bernardo Llorens, perayre
+1474
+1 | Alvaro Uniz
+2 | Pablo Terriola
+3 | Pedro Spanyol
+4 | Jaime Riera
+5 | Bernardo Spia
+6 | Bartolomé Canet, blanquer
+1475
+1 | Gabriel de Lloscos
+2 | Rafael Ferrer, jurista
+3 | Pedro Muntañans
+4 | Antonio Oliver
+5 | Antonio Calaf
+6 | Martin Basset, perayre
+1476
+1 | Jorge Sureda
+2 | Mateo Net
+3 | Gaspar Genovard
+4 | Gaspar Castellar
+5 | Andrés Sunyer
+6 | Julian Valls, perayre
+1477
+1 | Juan Torrella de Morneta
+2 | Guillermo de Dameto
+3 | Francisco Riera
+4 | Pedro Des-Pi
+5 | Gabriel Segura
+6 | Matías Costa, cirurgiá
+1478
+1 | Pedro de San Juan
+2 | Pedro Spanyol
+3 | Perote Des-Cos
+4 | Gabriel Rovira
+5 | Cristóbal Llinás
+6 | Blas Puig, texidor
+1479
+1 | Bernardo Burgues (a) Zaforteza
+2 | Jorge Burguet
+3 | Gabriel Martí
+4 | Bernardo Selia
+5 | Rafael Des Puig
+6 | Antonio Ballester, perayre
+1480
+1 | Miguel de San Juan
+2 | Gabriel de Berga
+3 | Bernardo de Oleza
+4 | Bernardo Rovira
+5 | Juan Nadal
+6 | Bartolomé Coll, perayre
+1481
+1 | Pedro Jordá, cab.° y médico
+2 | Francisco de Brossa
+3 | Nicolas Spanyol
+4 | Bartolomé Febrer
+5 | Miguel Quintana
+6 | Lúcas Domenech, blanquer
+1482
+1 | Galcerán Janer
+2 | Gaspar Pont
+3 | Francisco Des-Brull
+4 | Guillermo Llinás
+5 | Gabriel Muntaner
+6 | Juan Llodrá, perayre
+1483
+1 | Pedro Des-Catlar
+2 | Bernardo Cotoner
+3 | Pedro de Villalonga
+4 | Guillermo de Busquets
+5 | Pedro de Verí
+6 | Bernardo Llorens. perayre
+1484
+1 | Mateo Roig
+2 | Francisco Morell
+3 | Juan Pont
+4 | Rafael Vidal
+5 | Juan Vicens
+6 | Juan Esteva, blanquer
+1485
+1 | Juan de Galiana
+2 | Guillermo Francisco Hortolá
+3 | Jaime de Montañans, jurista
+4 | Mateo Riera
+5 | Pedro Martí
+6 | Juan Miguel, botiguer
+1486
+1 | Salvador Sureda
+2 | Simon Serralta
+3 | Juan Nicolau
+4 | Antonio Tomas Vallori
+5 | Juan Des-Pi
+6 | Francisco Ballester, tintorer
+1487
+1 | Bernardo de Puigdorfila
+2 | Antonio Colom
+3 | Juan Valero, Dr. en leyes
+4 | Miguel Goixat
+5 | Pedro Segura
+6 | Pedro Companyó, perayre
+1488
+1 | Berenguer de Galiana
+2 | Leonardo Massanet
+3 | Mateo Zaforteza, jurista
+4 | Simon Des-Camps
+5 | Juan Bartolomé Perera
+6 | Gabriel Molins, fuster
+1489
+1 | Jaime Juan Zaforteza
+2 | Juan de Salas
+3 | Bernardo Nicolau
+4 | Francisco Paulaga
+5 | Juan Puig
+6 | Gregorio Fiol, perayre
+1490
+1 | Burgués Burgués
+2 | Felipe de Pachs
+3 | Priamo de Villalonga
+4 | Juan de Gradolí
+5 | Antonio Martí
+6 | Juan Aguiló, apotecari
+1491
+1 | Gaspar Thomas
+2 | Bartolomé de Pachs
+3 | Juan Luis Berard
+4 | Berenguer Sbert
+5 | Nicolas Oliva
+6 | Juan Roig, apotecari
+1492
+1 | Albertin Dameto
+2 | Bernardo Mateo Massanet
+3 | Juan Bennassar
+4 | Gabriel Rovira
+5 | Gabriel Segura
+6 | Salvador Thomas, apotecari
+1493
+1 | Ramon de Sant Martí
+2 | Pedro Zaforteza
+3 | Gaspar Bordils
+4 | Pedro Martí
+5 | Juan Bartolomé Perera
+6 | Cristobal Serra, perayre
+1494
+1 | Juan de Lloscos
+2 | Felipe Pont
+3 | Domingo Oleza
+4 | Juan Puig
+5 | Juan Bautista Salom
+6 | Damian Bogellas, ferrer
+1495
+1 | Cárlos Des-Bach
+2 | Ramon de Moyá
+3 | Juan Bautista Cotoner
+4 | Nicolas Oliva
+5 | Antonio Martí
+6 | Antonio Forns, perayre
+1496
+1 | Tomas Des-Bach
+2 | Luis Soldevila
+3 | Juan Des-Cós
+4 | Mateo Riera
+5 | Berenguer Sbert
+6 | Juan Romanyá, perayre
+1497
+1 | Alvaro Uniz
+2 | Perote Des-Cós
+3 | Ramon Gual
+4 | Gabriel Rovira
+5 | Antonio Miguel Perera
+6 | Mateo Bauló

@@ -1,0 +1,191 @@
+leaf: 312
+by: claude (facsímil, resolució nativa)
+---
+1519
+1 | Pedro Descatlar
+2 | Juanot Berard
+3 | Nicolás de Berga
+4 | Bautista Benet
+5 | Jaime Garau
+6 | Bartolomé Palou, perayre
+1520
+1 | Felipe Pelayo Fuster
+2 | Agustin Serralta
+3 | Martin Truyols
+4 | Juanot Ribas
+5 | Antonio Arnau
+6 | Pedro Seguí, apotecari
+1521
+1 | Juanot de Puigdorfila
+2 | Guillermo Desmas
+3 | Jaime Martí
+4 | Miguel Suñer
+5 | Jorge Arquer
+6 | Rafael Arnau, flassader
+1522
+1 | Pelayo Fuster
+2 | Juanot Salas
+3 | Sebastian Armadans
+4 | Bartolomé Pajés
+5 | Juan Paretó
+6 | Guillermo Colom, perayre
+1523
+1 | Priamo de Vilalonga
+2 | Baltasar Serralta
+3 | Jaime Montanyans
+4 | Gabriel Mir
+5 | Bautista Benet
+6 | Bartolomé Palou, perayre
+1524
+1 | Juan Palou
+2 | Miguel de Térmens
+3 | Juanot de Soldevila
+4 | Gaspar Casas
+5 | Miguel García
+6 | Antonio Blanch, perayre
+1525
+1 | Hugo de Sant Joan
+2 | Jaime Marcer
+3 | Juanot Salas de Soldevila
+4 | Juanot Ribas
+5 | Juan Axartell
+6 | Bartolomé Canyellas, apotecari
+1526
+1 | Pedro Abri Descatlar
+2 | Juan Antonio Barthomeu
+3 | Jaime de Campfullós
+4 | Miguel Pizá
+5 | Miguel Garau
+6 | Pedro Domenge, perayre
+1527
+1 | Berenguer Vivot
+2 | Juan García
+3 | Nicolas Berga
+4 | Arnaldo Font
+5 | Juanot Casas
+6 | Domingo Janer, perayre
+1528
+1 | Alfonso Torrella
+2 | Juanot de Moya
+3 | Juanot Soldevila
+4 | Jaime Garau
+5 | Antonio Reus
+6 | Miguel Nadal, perayre
+1529
+1 | Miguel Sureda Zanglada
+2 | Francisco de Oleza, mayor
+3 | Sant Martí Despuig
+4 | Juanot Ribas
+5 | Gaspar Casas
+6 | Bartolomé Cavaller, apotecari
+1530
+1 | Felipe Fuster
+2 | Bernardo de Juny
+3 | Jaime Campfullós
+4 | Gabriel Seguí
+5 | Pedro Ferrandell
+6 | Francisco Rossell, assahonador
+1531
+1 | Hugo de Sant Joan
+2 | Francisco de Oleza
+3 | Jaime Montanyans
+4 | Juanot Casas
+5 | Miguel Garau
+6 | Pedro Boy, flassader
+1532
+1 | Juanot de Caulellas
+2 | Juanot Riera
+3 | Berenguer Sbert
+4 | Gabriel Ribas
+5 | Miguel García
+6 | Antonio Palmer, sucrer
+1533
+1 | Juan Mig.l Ballester de Togores
+2 | Miguel Angelats
+3 | Nicolás Sampol ó Spanyol
+4 | Bartolomé Pagés
+5 | Rafael Morlá
+6 | Pedro Domenech, perayre
+1534
+1 | Antonio Gual Desmur
+2 | Juan García
+3 | Francisco de Milia
+4 | Gaspar Casas
+5 | Jorge Pastor
+6 | Tomás Cañellas, perayre
+1535
+1 | Pedro de Puigdorfila
+2 | Martin Truyols
+3 | Pedro Sampol ó Spanyol
+4 | Bartolomé Calvó
+5 | Juan Miguel Pagés
+6 | Pedro Gradolí, perayre
+1536
+1 | Pedro Malferit
+2 | Hugo Desmas
+3 | Gaspar Bordils
+4 | Pedro Cabrer
+5 | Juanot Milia
+6 | Antonio Solivellas, perayre
+1537
+1 | Ramon Forteza Burgués
+2 | Jaime Desmas
+3 | Pedro Net
+4 | Gabriel Mir
+5 | Miguel García
+6 | Lorenzo Vives, perayre
+1538
+1 | Bortolomé Brondo
+2 | Juanot Salas de Solanda
+3 | Oliver de Térmens
+4 | Rafael Fornari
+5 | Gaspar Estrany
+6 | Domingo Janer, perayre
+1539
+1 | Pedro Nicolás Descatlar
+2 | Juanot Barthomeu
+3 | Jaime Juan Desmas
+4 | Pedro Ferrandell
+5 | Francisco Benet
+6 | Gregorio Fornés, perayre
+1540
+1 | Hugo Sant Joan
+2 | Bartolomé Rossinyol
+3 | Francisco Serralta
+4 | Bartolomè Pagés
+5 | Gabriel Seguí
+6 | Miguel Binimelis, assahonador
+1541
+1 | Juanot de Caulellas
+2 | Nicolás Cotoner mayor
+3 | Juan Antonio Barthomeu
+4 | Gabriel Mir
+5 | Juan Miguel Pagés
+6 | Miguel Genovard, perayre
+1542
+1 | Jerónimo San Juan
+2 | Juanot de Moya
+3 | Juanot de Soldevila
+4 | Pedro Cabrer
+5 | Cristóbal Serra
+6 | Jorge Botí, perayre
+1543
+1 | Pedro Malferit
+2 | Juanot Zaforteza
+3 | Pedro Net
+4 | Antonio Salvá ó Salvat
+5 | Miguel Monjo
+6 | Antonio Andreu, perayre
+1544
+1 | Felipe de Pachs y Fuster
+2 | Sant Martí Despuig ó Gil Despuig y S. Martí
+3 | Jaime de Campfullós
+4 | Jorge Pastor
+5 | Gabriel Poquet
+6 | Bartolomé Tortrella, apuntador
+1545
+1 | Jaime Montanyans
+2 | Francisco Descós
+3 | Bernardo Cotoner
+4 | Juanot Mora
+5 | Tomás Moranta

@@ -1,0 +1,108 @@
+leaf: 631
+by: claude (facsímil, resolució nativa)
+---
+1701
+1 | Gabriel Fuster
+2 | Tomás Garriga
+3 | Nicolás Armengol
+4 | Pedro Ignacio Prohens
+5 | Jaime Manente
+6 | Antonio Prohens, velluter
+1702
+1 | Baltasar Rossinyol
+2 | Antonio Garriga
+3 | Nicolás Rossinyol de Defla
+4 | Miguel Bibiloni, notari
+5 | Miguel Andrés Capó
+6 | Pablo Juan, sucrer
+1703
+1 | Antonio Dameto
+2 | Miguel Santandreu
+3 | Francisco Comellas
+4 | Juan Antonio Estada
+5 | Jorge Barceló
+6 | Guillermo Terrassa, menescal
+1704
+1 | Tomás Burgués Zaforteza
+2 | Juan Conrado
+3 | Juan Amer de las Puntas
+4 | Juan Mesquida, menor
+5 | Juan Antonio Arsis
+6 | Juan Mas, sastre
+1705
+1 | Salvador Sureda Sanmartí
+2 | Gerardo Pont
+3 | Tomás Garriga
+4 | Juan Amer
+5 | Juan Mesquida, menor
+6 | Jaime Martí, teixidor
+1706
+1 | Marcos Antonio Cotoner
+2 | Gerònimo Alemany
+3 | Nicolás Armengol
+4 | Jaime Moranta
+5 | Jaime Mateo Sunyer
+6 | Antonio Brotat, fuster
+1707
+1 | Juan B.ª Bordils y Sureda
+2 | Gregorio Miguel Santandreu
+3 | Antonio Armengol
+4 | Miguel Andrés Capó
+5 | Antonio José Mulet, notari
+6 | Jaime Feliu, chirurgiá
+1708
+1 | Salvador Sureda Sanmartí
+2 | Juan Conrado
+3 | Juan Amer de las Puntas
+4 | Juan Antonio Estada
+5 | Jorge Barceló
+6 | Martin Pou, sucrer
+1709
+1 | Antonio Dameto, menor
+2 | Francisco Mora y Mulet
+3 | Juan Antonio Dureta
+4 | Miguel Vidal
+5 | Antonio Busquets
+6 | Francisco Rebassa, guixer
+1710
+1 | Miguel Desclapés
+2 | Antonio Garriga
+3 | Francisco Comellas
+4 | Miguel Bibiloni, notari
+5 | Antonio Roca y Amer
+6 | Gerónimo Torres, chirurgià
+1711
+1 | Juan B.ª Bordils y Sureda
+2 | Miguel Santandreu
+3 | Antonio Armengol
+4 | Bartolomé Talladas, notari
+5 | Francisco Serra
+6 | Miguel Barceló, scultor
+1712
+1 | Antonio de Verí y Oleza
+2 | Pedro Francisco Llabrés
+3 | Tomás Garriga
+4 | Juan Bautista Rubí
+5 | Jorge Barceló
+6 | Jacinto Sancho, esparter
+1713
+1 | Ramon Fortuny de Ruescas
+2 | Jerònimo Alemany
+3 | Juan Amer de las Puntas
+4 | Miguel Vidal
+5 | Francisco Pizá
+6 | Francisco Tomás, esparter
+1714
+1 | Juan B.ª Bordils y Sureda
+2 | Nicolás Rossinyol de Defla
+3 | Jaime Morell
+4 | Bartolomé Custurer
+5 | Pedro Antonio Sancho
+6 | Juan Antonio Mateu, chirurgiá
+1715
+1 | Jerónimo Net y Ferrandell
+2 | Juan Conrado
+3 | Jerónimo Alemany, menor
+4 | José Totosaus y Seriñosa
+5 | Miguel Palet y Ferrer
+6 | Onofre Mateu, chirurgiá

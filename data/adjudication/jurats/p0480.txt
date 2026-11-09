@@ -1,0 +1,190 @@
+leaf: 480
+by: claude (facsímil, resolució nativa)
+---
+1645
+1 | Ramon de Verí
+2 | Miguel Despuig
+3 | Juan Garriga
+4 | Cristóbal Socias
+5 | Juan Mesquida
+6 | Estevan Girard, sucrer
+1646
+1 | Miguel Juan Serralta
+2 | Pedro Jorge Armengol
+3 | Vicente Mut
+4 | Miguel Bisquerra
+5 | Pedro Onofre Socias
+6 | Jerónimo Nicolau, perayre
+1647
+1 | Salvador Sureda
+2 | Nicolás Rossinyol de Canet
+3 | Jaime Juan Juliá
+4 | Gabriel Fiol
+5 | Antonio Vallés
+6 | Nicolás Ballester, forner
+1648
+1 | Gabriel de Berga
+2 | Pedro Juan Font
+3 | Basilio Morell
+4 | Sebastian Canyellas
+5 | Antonio Pizá
+6 | Jaime Llinás, forner
+1649
+1 | Jorge Dezcallar y Anglada
+2 | Nicolás Armengol
+3 | Juan Garriga
+4 | Juan Mesquida
+5 | Francisco Socias
+6 | Antonio Togores, perayre
+1650
+1 | Miguel Juan Serralta
+2 | Mateo Net, menor
+3 | Vicente Mut
+4 | Baltasar Sans
+5 | Ramon Reginaldo Estada
+6 | Juan Cerdó, perayre
+1651
+1 | Gaspar de Puigdorfila
+2 | Jaime Morell de Pastoritx
+3 | Francisco Armengol
+4 | Pedro Onofre Socias
+5 | Juan Antonio Güells
+6 | Jerónimo Nicolau, perayre
+1652
+1 | Domingo Sureda
+2 | Juan Antonio Dureta
+3 | Pedro Juan Font
+4 | Sebastian Canyellas
+5 | Antonio Socias y Mayol
+6 | Estevan Girard, sucrer
+1653
+1 | Ramon de Puigdorfila
+2 | Pedro Angelats y Moranta
+3 | Juan Garriga
+4 | Juan Mesquida
+5 | Antonio Pizá
+6 | Miguel Fiol, forner
+1654
+1 | Gabriel de Berga
+2 | Agustin Palou
+3 | Nicolás Armengol
+4 | Pedro Ramon Bisquerra
+5 | Juan Bautista Sunyer
+6 | Estevan Ferrer, assahonador
+1655
+1 | Francisco Brondo
+2 | Nicolás Andrés Rossinyol
+3 | Antonio Armengol
+4 | Miguel Vivó
+5 | Miguel Amer
+6 | Felipe Ballester, apotecari
+1656
+1 | Domingo Sureda
+2 | Pedro Juan Font
+3 | Juan Antonio Nadal
+4 | José Amer
+5 | Juan Moyá
+6 | Miguel Capó, forner
+1657
+1 | Gregorio de Villalonga
+2 | Tomás Garriga y Trobat
+3 | Francisco Armengol
+4 | Juan Mesquida
+5 | Juan Antonio Güells
+6 | Tomás Moranta, perayre
+1658
+1 | Gabriel de Berga
+2 | Jaime Morell de Pastoritx
+3 | Juan Bordils
+4 | Antonio Socias y Mayol
+5 | Jaime Antonio Fiol
+6 | Miguel Fiol, menor, forner
+1659
+1 | Jorge Abri Dezcallar y Zanglada
+2 | Nicolás Rossinyol de Defla
+3 | Juan Garriga
+4 | Pedro Ramon Bisquerra
+5 | Miguel Vivó
+6 | Luis Morey, sabater
+1660
+1 | Pedro de Verí
+2 | Pedro Juan Font
+3 | Antonio Armengol
+4 | Juan Moyá
+5 | Jaime Llabrés
+6 | Miguel Pons, esparter
+1661
+1 | Ignacio Torrella
+2 | Agustin Palou
+3 | Jerónimo Pont Desmur
+4 | José Amer
+5 | Jaime Sunyer
+6 | Jerónimo Danús, argenter
+1662
+1 | Francisco Brondo
+2 | Tomás Garriga y Trobat
+3 | Jaime Morell de Pastoritx
+4 | Gabriel Armengol
+5 | Francisco Serra
+6 | Jaime Llinás, forner
+1663
+1 | Jorge Dezcallar y Zanglada
+2 | Francisco Andrés Rossinyol de Defla
+3 | Francisco Vanrell
+4 | Miguel Vivó
+5 | Antonio Pizá
+6 | Antonio Castillo, chirurgiá
+1664
+1 | Mateo Zanglada
+2 | Juan de Bordils
+3 | Jaime Desmás
+4 | Gabriel Rius
+5 | Martin Perelló
+6 | Miguel Binimelis, passamaner
+1665
+1 | Baltasar Rossinyol Zagranada
+2 | Pedro Juan Font
+3 | Andrés Rossinyol de Defla
+4 | Jaime Antonio Fiol
+5 | Jaime Llabrés
+6 | Antonio Gomila, fuster
+1666
+1 | Salvador de Oleza
+2 | Jerónimo Pont y Desmur
+3 | Antonio Garriga
+4 | Juan Moyá
+5 | Jaime Mateo Sunyer
+6 | Jaime Llinás, forner
+1667
+1 | Gabriel de Berga
+2 | Juan Antonio Nadal
+3 | Francisco Vanrell
+4 | José Amer
+5 | Francisco Canyellas
+6 | Jerónimo Danús, argenter
+1668
+1 | Antonio Dameto
+2 | Nicolás Andrés Rossinyol de Defla
+3 | Francisco Armengol
+4 | Juan Gibert
+5 | Gabriel Rius
+6 | Juan Rebassa, argenter
+1669
+1 | Nicolás de Sala
+2 | Juan Fornari
+3 | Andrés Rossinyol de Defla
+4 | Juan Mesquida
+5 | Gabriel Armengol
+6 | Antonio Gomila, fuster
+1670
+1 | Miguel Ferrandell
+2 | Tomás Garriga y Trobat
+3 | Antonio Armengol
+4 | Jaime Antonio Fiol
+5 | Miguel Amer
+6 | Rafael Fiol, manescal
+1671
+1 | Francisco de Oleza
+2 | Pedro Juan Font
+3 | Francisco Vanrell
+4 | José Amer

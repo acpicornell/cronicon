@@ -1,0 +1,41 @@
+leaf: 119
+by: claude (facsímil, resolució nativa)
+---
+1347
+3 | Bernardo Febrer
+4 | Jaime de Font
+1348
+2 | Guillermo de Pax
+3 | Francisco Umbert
+1349
+1 | Bernardo Togores
+2 | Arnaldo Burguet
+3 | Bernardo Valentí
+4 | Ramon Zaforteza
+5 | Guillermo Miró
+6 | Guillermo Balleró
+1350
+1 | Berenguer de Tornamira, doncel
+2 | Francisco Umbert
+3 | Maimom Peris
+4 | Francisco de Comellas
+5 | Ferrer Saserra
+6 | Arnaldo Rotger
+1351
+1 | Juan de Muredine ó de Mora, doncel
+2 | Arnaldo Burguet
+3 | Simon Branxifort
+4 | Guillermo de Termens
+5 | Lúcas Cirera
+6 | Miguel Rauselli ó Rossell
+1352
+* | Villafranca no pone ninguno.
+1353
+1 | Berenguer de Tornamira, doncel
+2 | Jaime de Buadella
+3 | Bernardo Mateu
+4 | Francisco Geronés
+5 | Bernardo Bennasser
+6 | Juan Torá
+1354
+3 | Bernardo de Granada

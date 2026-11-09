@@ -1,0 +1,193 @@
+leaf: 227
+by: claude (facsímil, resolució nativa)
+---
+1444
+1 | Pablo Sureda
+2 | Hugo de Pachs
+3 | Francisco Axeló
+4 | Juan Geronés
+5 | Hugo Febrer
+6 | Jaime Cervera
+1444
+* | 1444 EN 23 JUNIO.
+1 | Pedro de San Juan, cab.° y jurista
+2 | Bartolomé Fuster
+3 | Arnaldo de Pachs
+4 | Matías Ferrer
+5 | Gregorio Juan
+6 | Pedro Granyana
+1445
+1 | Pedro de Catlar
+2 | Jaime Rossiñol
+3 | Guillermo de Pachs
+4 | Antonio Salt
+5 | Berenguer Perera
+6 | Juan Pascual
+1446
+1 | Guillermo de Puigdorfila
+2 | Pedro Beltran
+3 | Juan des Catlar
+4 | Guillermo Mateu
+5 | Pedro Donadeu
+6 | Bartolomé Benejam
+1447
+* | 1447 y 1448.
+1 | Lázaro de Lloscos
+2 | Arnaldo de Pachs
+3 | Francisco Axeló
+4 | Rafael de Vallmajor
+5 | Gabriel Muntaner
+6 | Antonio Domenech, draper
+1449
+1 | Juan de Galiana
+2 | Bernardo des Cos
+3 | Juan de Salas
+4 | Guillermo Mateu
+5 | Pedro Za-Vila
+6 | Antonio de Mora
+1450
+1 | Juan de Torrella, doncel
+2 | Gabriel Gual
+3 | Juan Zaforteza
+4 | Juan Miró
+5 | Miguel Mercer
+6 | Salvador Nadal
+1451
+1 | Guillermo de Puigdorfila
+2 | Rafael de Oleza, Dr. en leyes
+3 | Mateo Zanglada
+4 | Juan Terriola
+5 | Antonio Sastre
+6 | Miguel Domingo
+1452
+1 | Francisco Burgues
+2 | Pedro Zaforteza
+3 | Gabriel de Verí, Dr. en leyes
+4 | Rafael de Vallmajor
+6 | Juan Llops
+1453
+1 | Jorge de San Juan
+2 | Bonifacio Morro, Dr. en leyes
+3 | Juan Fuster
+4 | Berenguer Perera
+5 | Juan de Bas
+6 | Lorenzo Marsal
+1454
+1 | Guillermo de San Juan
+2 | Berenguer Talents
+3 | Juan Moix
+4 | Pedro Spanyol
+5 | Ramon de Moyá
+6 | Luis Prats
+1455
+1 | Jaime de Galiana
+2 | Hugo Borrassá
+3 | Juan de Caulellas
+4 | Antonio Sala
+5 | Francisco Prats
+6 | Blas Puig, texidor
+1456
+1 | Blas de Tagamanent
+2 | Juan de Cunilleres
+3 | Francisco Morell
+4 | Antonio Durán
+5 | Jaime Mercer
+6 | Juan Nadal
+1457
+1 | Hugo de San Juan
+2 | Jorge Brondo
+3 | Romeo Marí
+4 | Francisco de Comellas
+5 | Juan de Bas
+6 | Andrés Massot
+1458
+1 | Francisco Axeló
+2 | Luis Berard
+3 | Rafael de Oleza, Dr. en leyes
+4 | Ponce de Llaneras
+5 | Juan Joli
+6 | Miguel Domingo
+1459
+1 | Galcerán Janer, caballero
+2 | Bonifacio Morro
+3 | Damian Dameto
+4 | Pedro Des-Pí
+5 | Andrés Sunyer
+6 | Pedro Andreu, cirurgiá
+1460
+1 | Juan de Torrella
+2 | Mateo Zanglada
+3 | Nicolás de Pachs
+4 | Pedro Zavila
+5 | Juan Bartomeu
+6 | Gregorio Scarp
+1461
+1 | Salvador Sureda
+2 | Gabriel de Verí, Dr. en leyes
+3 | Bartolomé Des-Cos
+4 | Arnaldo Mestre
+5 | Ramon de Moyá
+6 | Juan Esteva, blanquer
+1462
+1 | Lorongo de Marí
+2 | Francisco Des-Brull
+3 | Guillermo Des-Mas
+4 | Juan Pont
+5 | Antonio Oliver
+6 | Gabriel Jaume, speciayre
+1463
+1 | Mateo Sala
+2 | Jaime Rossiñol
+3 | Mateo Net
+4 | Antonio de Verí
+5 | Bautista Bartomeu
+6 | Arnaldo Ferrer, perayre
+1464
+1 | Pablo Sureda
+2 | Nicolás Berard, Dr. en leyes
+3 | Hugo Serra
+4 | Miguel Despuig
+5 | Juan Nicolau
+6 | Juan Brech, perayre
+1465
+1 | Rodrigo de Sant Martí
+2 | Antonio Durán
+3 | Andrés Net
+4 | Pedro Spanyol
+5 | Gabriel Martí
+6 | Lúcas Domenech, blanquer
+1466
+1 | Tomás Thomás
+2 | Rafael Ferrer, Dr. en leyes
+3 | Jaime Muntañans, Dr. en leyes
+4 | Pedro de Verí
+5 | Simon Des-Camps
+6 | Martin Basset, texidor
+1467
+1 | Miguel Sureda
+2 | Luis Umbert
+3 | Pedro Borrassá
+4 | Pedro Ametler
+5 | Gaspar Pont
+6 | Antonio Gual, perayre
+1468
+1 | Felipe Fuster
+2 | Bernardo Cotoner
+3 | Juan Valero, Dr. en leyes
+4 | Gabriel Muntaner
+5 | Francisco de Mora
+6 | Antonio Nadal, cirurgiá
+1469
+1 | Luis Des-Lladó
+2 | Francisco Reyas y Desvilar
+3 | Jaime Berard
+4 | Guillermo Llinás
+5 | Guillermo de Busquets
+6 | Matías Mora, calceter
+1470
+1 | Bernardo de Puigdorfila
+2 | Felipe de Bordils
+3 | Nicolás Spanyol
+4 | Jaime Company
+5 | Juan Vicens
+6 | Juan Sorell, pellisser

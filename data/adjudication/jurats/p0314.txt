@@ -1,0 +1,193 @@
+leaf: 314
+by: claude (facsímil, resolució nativa)
+---
+1572
+5 | Miguel Ferrandell
+6 | Rafael Gomila, perayre
+1573
+1 | Juanot de Puigdorfila
+2 | Jaime Berga
+3 | Gabriel Gual de Canet
+4 | Gabriel Lull
+5 | Juanot Mut
+6 | Gabriel Vaquer, assahonador
+1574
+1 | Pedro Antonio Zaforteza
+2 | Leonardo Salas
+3 | Miguel Cotoner
+4 | Francisco Antich
+5 | Cosme Prohens
+6 | Benito Verger, flassader
+1575
+1 | Alfonso Torrella
+2 | Hugo Serra
+3 | Honorato Nicolás Catlar
+4 | Antonio Vallés
+5 | Pedro Alemany
+6 | Poncio Homar, perayre
+1576
+1 | Jorge Santacilia
+2 | Jaime Vida
+3 | Pedro Espanyol
+4 | Gabriel Ballester
+5 | Antonio Reus
+6 | Gaspar Tauler, boter
+1577
+1 | Arnaldo de Santacilia
+2 | Gabriel Berga
+3 | Francisco Serra
+4 | Bernardo Nadal
+5 | Juan Fornari
+6 | Bartolomé Estelrich, perayre
+1578
+1 | Felipe Fuster
+2 | Baltasar Dureta
+3 | Gabriel Gual de Canet
+4 | Baltasar Sans
+5 | Pedro Janer
+6 | Jaime Borrás, flassader
+1579
+1 | Ramon de Sant Martí
+2 | Francisco Serralta
+3 | Felipe Valentí
+4 | Juan Gacías
+5 | Miguel Pau
+6 | Bernardino Alemany, apotecari
+1580
+1 | Pedro Sureda Zanglada
+2 | Jaime Berga
+3 | Gapar Serralta
+4 | Francisco Vallespir
+5 | Gregorio Reus
+6 | Matías Esteva, assahonador
+1581
+1 | Juan Bautista Despuig
+2 | Jaime Moranta
+3 | Bernardo Oleza
+4 | Miguel Ferrandell
+5 | Antonio Reus
+6 | Francisco Riera, apotecari
+1582
+1 | Juanot Gual
+2 | Oliver de Térmens
+3 | Antonio Gual
+4 | Gabriel Ballester
+5 | Nicolas Domenge
+6 | Juanot Palou, assahonador
+1583
+1 | Juanot Zanglada
+2 | Nicolas Rossinyol
+3 | Francisco Desmás
+4 | Gabriel Lull
+5 | Rafael Oleza
+6 | Pedro Fornés, forner
+1584
+1 | Antonio Gual
+2 | Juan Antonio Axartell
+3 | Basilio Morell
+4 | Juan Casellas
+5 | Gaspar Poquet
+6 | Antonio Clar, perayre
+1585
+1 | Pedro Luis Berard
+2 | Francisco Espanyol
+3 | Gaspar Rossinyol
+4 | Miguel Garau
+5 | Gabriel Ferragut
+6 | Jaime Garau, apuntador
+1586
+1 | Juanot Fuster
+2 | Pedro Net
+3 | Jaime Antonio Serralta
+4 | Pedro Janer
+5 | Pedro Cabrer
+6 | Tomás Benejam, guanter
+1587
+1 | Felipe Despuig
+2 | Jaime García
+3 | Francisco Serra
+4 | Gabriel Ballester
+5 | Baltasar Sans
+6 | Antonio Cifre, perayre
+1588
+1 | Albertin Dameto
+2 | Hugo Serra
+3 | Gabriel Valero
+4 | Juanot Mut
+5 | Rafael Oleza
+6 | Pedro Juan Vaquer, assahonador
+1589
+1 | Jerónimo Catlar
+2 | Nicolas Rossinyol de Defla
+3 | Nicolas Truyols
+4 | Antonio Amer
+5 | Gregorio Reus
+6 | Jerónimo Riera, apotecari
+1590
+1 | Pedro Espanyol
+2 | Gaspar Rossinyol
+3 | Berenguer Vida
+4 | Miguel Carau
+5 | Gabriel Ferragut
+6 | Antonio Planas, sabater
+1591
+1 | Juan Bautista Despuig
+2 | Ramon Gual de Canet
+3 | Juan Antonio Truyols
+4 | Pedro Janer
+5 | Melchor Serra
+6 | Tomás Serra, apotecari
+1592
+1 | Ferrando Moix
+2 | Bonifacio Pachs
+3 | Antonio Nadal
+4 | Antonio Urgell
+5 | Gabriel Fiol
+6 | Tomas Benejam, guanter
+1593
+1 | Bernardo Pí y Juny
+2 | Basilio Morell
+3 | Martin Rossinyol
+4 | Antonio Amer
+5 | Nicolas Moragues
+6 | Francisco Umbert, boter
+1594
+1 | Pedro Gual
+2 | Baltasar Dureta
+3 | Jaime Antonio Serralta
+4 | Juan Casellas
+5 | Juanot Peretó
+6 | Pedro Antonio Ballester, forner
+1595
+1 | Antonio Gual
+2 | Gabriel Gual de Canet
+3 | Oliver de Térmens
+4 | Cosme Prohens
+5 | Francisco Cabrer
+6 | Pedro Mesquida, perayre
+1596
+1 | Tomas de Verí
+2 | Berenguer Vida
+3 | Jaime Morell de Pastoritx
+4 | Miguel Moyá
+5 | Juan Fornari
+6 | Jaime Massanet, calderer
+1597
+1 | Jerónimo Descatlar
+2 | Pedro Jerónimo Nadal
+3 | Baltasar Constantí
+4 | Antonio Amer
+5 | Antonio Estada
+6 | Pedro Fiol, assahonador
+1598
+1 | Pedro Luis Berard
+2 | Pedro Valero
+3 | Gines Font
+4 | Miguel Juan Cabrer
+5 | Antonio Cifre
+6 | Agustin Crespí, perayre
+1599
+1 | Antonio Gual
+2 | Pedro Cabrer
+3 | Juan Agustin, Garau
+4 | Nicolás Seguí

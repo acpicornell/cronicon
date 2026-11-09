@@ -1,0 +1,53 @@
+leaf: 121
+by: claude (facsímil, resolució nativa)
+---
+1364
+1 | Bernardo Togores, doncel
+2 | Nicolás Bennasser
+3 | Luis Umbert
+4 | Tomás Serra
+5 | Jaime Lodrigo
+6 | Guillermo Sarrocas
+1365
+* | Villafranca no pone ninguno.
+1366
+1 | Pedro de Torrella, caballero
+2 | Arnaldo Cerdó
+3 | Francisco Miró
+4 | Poncio Sescomes
+5 | Ramon de Berga
+6 | Guillermo Algaida
+1368
+2 | Pedro de Montsó
+3 | Tomás Serra
+4 | Jaime de Quintana
+1369
+1 | Berenguer de Galiana
+2 | Jaime de Buadella
+3 | Maimon Peris
+4 | Guillermo Vida
+5 | Raimundo Satorre
+6 | Juan Pagés
+1370
+2 | Poncio de Cumba
+3 | Ramon de Berga
+1371
+1 | Berenguer de Olms
+2 | Francisco Umbert
+3 | Antonio Cirera
+4 | Antonio Za-Coma
+5 | Bernardo Forciá
+6 | Guillermo Axeló, picapedras
+1372
+1 | Lorenzo de Marí
+2 | Luis Umbert
+4 | Juan Pagés
+5 | Bernardo Melis
+6 | Bernardo Cerdá
+1373
+1 | Berenguer de Tornamira
+2 | Juan Vivot
+3 | Juan Umbert
+4 | Pedro Zaforteza
+5 | Guillermo Pont
+6 | Jaime Matas, picapedras

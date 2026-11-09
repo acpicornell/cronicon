@@ -1,0 +1,56 @@
+leaf: 115
+by: claude (facsímil, resolució nativa)
+---
+1312
+2 | Guillermo de Montsó
+3 | Berenguer Domingo
+4 | Bernardo Umbert, de Palacio
+5 | Ramon de Palou, ó Palació
+1313
+1 | Jaime de Santacilia
+2 | Francisco Sa Costa
+3 | Pedro de Montsó, Desmás
+4 | Bernardo Guillerm
+5 | Jaime des Portell
+6 | Ramon de Lineriis ó Delmer
+1314
+1 | Luis de Sant Martí, doncel
+2 | Guillermo Des Catlar
+3 | Andrés Roig
+4 | Juan Borrás
+6 | Antonio Aguiló
+1315
+1 | Gil Garcés, miles
+2 | Guillermo Arnau Ses Esgleyies
+3 | Guillermo Safont
+4 | Guillermo Sa Costa
+5 | Guillermo Roig
+6 | Francisco de Vilanona
+1316
+1 | Pedro sa Torre
+2 | Pedro de Sentmenat
+3 | Arnaldo Umbert
+4 | Pedro Burgués
+5 | Pedro de Codines ó Sescudines
+6 | Pedro de Montclar
+1318
+1 | Pedro Uniz
+2 | Arnaldo Umbert
+3 | Felipe Valentí
+4 | Guillermo Sa Costa
+5 | Ferrer de Comellas
+6 | Pedro de Servera
+1319
+1 | Jaime de Santacilia, caballero
+2 | Pedro de Montsó, Desmás
+3 | Guillermo Abrí
+4 | Arnaldo Net
+5 | Pedro de Montblanch
+6 | Guillermo Prats
+1321
+1 | Jaime de Santacilia, miles
+2 | Pedro de Montsó
+3 | Juan Abrí
+4 | Benito Blanchas
+5 | Jaime Des Portell
+6 | Bernardo Ses Comes

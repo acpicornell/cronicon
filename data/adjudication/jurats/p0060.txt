@@ -1,0 +1,46 @@
+leaf: 60
+by: claude (facsímil, resolució nativa)
+---
+1282
+1 | Bernardo de Mora, miles
+2 | Renovardo de Malbosch
+3 | Guillermo Abrí
+4 | Mateo Sa Costa
+5 | Ramon de Codinas
+6 | Lanfranco Botar
+1284
+1 | Bernardo Beltran
+1290
+1 | Ramon de Cardona, caballero
+2 | Pedro Abrí
+3 | Pedro Cerdá
+4 | Berenguer Cuch
+5 | Arnaldo Marroig
+6 | Antonio Nadal, notario
+1291
+1 | Arnaldo de Torrella, caballero
+2 | Bernardo de Zaragoza
+3 | Berenguer de Vilafraser
+4 | Arnaldo de Castelló
+5 | Pedro Ferrer
+6 | Raimundo Sala
+1293
+* | Los puestos en 1291.
+1295
+3 | Ramon Lull
+1298
+1 | Ramon Lull
+1299
+1 | Asaldo de Galiana
+2 | Guillermo Valentí
+3 | Arnaldo Benet
+4 | Ferrer Picany
+5 | Guillermo Sa Coma
+6 | Guillermo Oller
+1300
+1 | Fernando Rodriguez, miles
+2 | Bernardo de Zaragoza
+3 | Francisco Sa Costa
+4 | Guillermo Arnaldo de Sas Iglesias
+5 | Bernardo de Hultcina
+6 | Guillermo Muntseré

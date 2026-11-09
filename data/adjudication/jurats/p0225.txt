@@ -1,0 +1,128 @@
+leaf: 225
+by: claude (facsímil, resolució nativa)
+---
+1401
+1 | Guillermo de San Juan, doncel
+2 | Pascual Cirera, Dr. en leyes
+3 | Juan Berard, Dr. en leyes
+4 | Berenguer Martí
+5 | Francisco Lodrigo
+6 | Guillermo Sorribas, perayre
+1401
+* | 1401 (EN 7 DE JULIO.)
+1 | Bernardo Febrer
+2 | Arnaldo Sureda
+3 | Francisco de Brossa
+4 | Bernardo Terrassa
+5 | Miguel Desdé
+6 | Juan de Moyá, apotecari
+1402
+1 | Ramon de Sant Martí
+2 | Pedro Valentí
+3 | Pedro Font, Médico
+4 | Juan Sallambé
+5 | Bartolomé de Bassers
+6 | Guillermo Sorribas, perayre
+1403
+1 | Alberto de Roaix
+2 | Juan Umbert
+3 | Pascasio Cirera
+4 | Julian Guardiola
+5 | Gregorio Negre
+6 | Tomás Romeu, perayre
+1404
+1 | Ramon de Sant Martí
+2 | Francisco Umbert
+3 | Nicolas de Pachs
+4 | Juan Sallambé
+5 | Juan Dameto
+6 | Juan de Moyá, especiayre
+1405
+1 | Raimundo Zaforteza
+2 | Juan Vivot
+3 | Juan Za-Flor
+4 | Juan de Cunilleres
+5 | Juan Des-Pí
+6 | Francisco Vives
+1406
+1 | Arnaldo Albertí, cab.° y jurista
+2 | Jaime Za-Coma
+3 | Arnaldo Sureda
+4 | Nicolás de Pachs
+5 | Gregorio Negre
+6 | Eloy Rovira
+1407
+1 | Guillermo de San Juan
+2 | Juan Berard, Dr. en leyes
+3 | Pascasio Cirera
+4 | Francisco Lodrigo
+5 | Berenguer Martí
+6 | Guillermo Sorribas, perayre
+1408
+1 | Berenguer de Olms
+2 | Pedro Callar
+3 | Jorge Roig
+4 | Antonio de Pachs
+5 | Pedro de Arbucías
+6 | Pedro Lensis, ferrer
+1409
+1 | Alberto de Roaix
+2 | Bartolomé Segarra
+3 | Juan Za-Flor
+4 | Gregorio Negre
+5 | Juan Albertí
+6 | Lorenzo Mercer, tintorer
+1410
+1 | Pedro de Buadella
+2 | Jaime Za-Coma
+3 | Felipe Fuster
+4 | Berenguer Martí
+5 | Juan Zaforteza
+6 | Miguel Piquer, perayre
+1411
+1 | Jorge de San Juan, alias Serra
+2 | Juan Vivot
+3 | Luis de Pachs
+4 | Bernardo Soldevila
+5 | Antonio de Comellas
+6 | Felio Guasch, pelliser
+1412
+1 | Ramon Zaforteza
+2 | Pedro Gual
+3 | Arnaldo Sureda
+4 | Juan Torelló
+5 | Juan Muntella
+6 | Bartolomé Bramona, pellisser
+1413
+1 | Jaime Pontiró
+2 | Nicolás de Pachs
+3 | Bernardo de Oleza, Dr. en leyes
+4 | Antonio Reynés
+5 | Ferrer de Comellas
+6 | Berenguer Botellas
+1414
+1 | Guillermo de San Juan
+2 | Arnaldo Desmur, Dr. en leyes
+3 | Nicolás de Dameto
+4 | Antonio de Quint
+5 | Juan Zaforteza
+6 | Antonio Melis
+1415
+1 | Berenguer de Tagamanent
+2 | Luis Zanglada
+3 | Arnaldo Sala, Dr. en leyes
+4 | Nicolás de Pachs
+5 | Antonio de Soldevila
+6 | Pedro Vicens, perayre
+1416
+2 | Antonio Morro, Dr. en leyes
+3 | Berenguer Talents
+4 | Alberto Maimó
+5 | Pedro Colom
+6 | Bartolomé Bramona, perayre
+1417
+2 | Bernardo de Oleza, Dr. en leyes
+3 | Pedro de Pachs
+4 | Jaime Mercer
+5 | Fortasino Martí
+6 | Ramon Puig, sabater

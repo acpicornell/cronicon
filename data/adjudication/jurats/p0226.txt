@@ -1,0 +1,184 @@
+leaf: 226
+by: claude (facsímil, resolució nativa)
+---
+1418
+1 | Pedro de Mora, doncel
+2 | Bernardo Valentí
+3 | Nicolás de Dameto
+4 | Berenguer Martí
+5 | Pedro Reyal
+6 | Miguel Piquer, perayre
+1419
+1 | Jorge de San Juan, alias Serra
+2 | Bartolomé Segarra
+3 | Juan Umbert
+4 | Guillermo Hug
+5 | Luis Za-Vila
+6 | Gabriel Bofí, menescal
+1420
+1 | Ramon Zaforteza
+2 | Albertin de Dameto
+3 | Arnaldo Sureda
+4 | Pedro Colom
+5 | Ramon de Moyá
+6 | Pedro Jofre, pellisser
+1421
+1 | Antonio de Galiana
+2 | Pedro Zavenal, Lic. en leyes
+3 | Hugo de Pachs
+4 | Pedro de Arbucias
+5 | Jaime de Vinyolas
+6 | Juan Rossell, perayre
+1422
+1 | Antonio de Puigdorfila
+2 | Antonio Sala
+3 | Arnaldo Desmur
+4 | Bernardo Zavall
+5 | Antonio de Quint
+6 | Nicolás Martí, sastre
+1423
+1 | Antonio Castell
+2 | Juan Umbert
+3 | Juan Desmás de Lluchmayor
+4 | Guillermo Hug
+5 | Nicolás de Pachs
+6 | Pedro Vicens, perayre
+1424
+1 | Jaime de Galiana, doncel
+2 | Arnaldo Sureda
+3 | Albertin de Dameto
+4 | Antonio de Comellas
+5 | Bernardo Bru
+6 | Estéban Puig, fuster
+1425
+1 | Berenguer de Togores
+2 | Vicente Salcet, Dr. en leyes
+3 | Jaime Caulellas
+4 | Pedro de Arbucias
+5 | Nicolás de Quint
+6 | Bernardo Bramona
+1426
+1 | Guillermo de San Juan
+2 | Juan Fuster
+3 | Pedro Net
+4 | Bernardo Desclapés
+5 | Felipe Bricas
+6 | Bernardo Coll
+1427
+1 | Berenguer de San Juan
+2 | Nicolás de Pachs
+3 | Bartolomé Fuster
+4 | Guillermo Hug
+5 | Ponce Des-Lladó
+6 | Bernardo Bramona, perayre
+1428
+1 | Berenguer Uniz
+2 | Arnaldo Sureda
+3 | Hugo de Pachs
+4 | Francisco Des-Boix
+5 | Antonio de Quint
+6 | Bartolomé Benejam
+1429
+1 | Jaime de Galiana
+2 | Albertin de Dameto
+3 | Pedro Net
+4 | Luis Des-Lladó
+5 | Marcos Des Pí
+6 | Gabriel Claver, perayre
+1430
+1 | Ferrer de Llagostera
+2 | Guillermo Hug
+3 | Bartolomé de Moyá
+4 | Antonio Martí
+5 | Pedro Vidal
+1431
+1 | Pelayo Uniz
+2 | Juan Umbert
+3 | Pascual Zanglada
+4 | Juan Terriola
+5 | Ponce Des-lladó
+6 | Arnaldo Perera
+1432
+1 | Jaime de Galiana
+2 | Pedro Net
+3 | Andrés Rossinyol
+4 | Pedro de Arbucias
+5 | Guillermo Matheu
+6 | Bartolomé Bramona
+1433
+1 | Pedro Dezcallar
+2 | Hugo de Pachs
+3 | Bernardo Talents
+4 | Nicolás Mercer
+5 | Bernardo Desclapés
+6 | Bernardo Bramona
+1434
+1 | Antonio de Galiana
+2 | Juan Berard, Dr. en leyes
+3 | Juan de Cunilleras
+4 | Bartolomé Real
+5 | Bernardo Bru
+6 | Arnaldo Mestre
+1435
+1 | Berenguer Uniz
+2 | Mateo Zanglada
+3 | Pablo Sureda
+4 | Pedro de Termens
+5 | Luis Des-lladó
+6 | Luis Prats
+1436
+1 | Antonio Castell
+2 | Raimundo Gual
+3 | Martin Desbrull, Dr. en leyes
+4 | Miguel Borrás
+5 | Hugo Pont
+6 | Guillermo Pons
+1437
+1 | Hugo de San Juan
+2 | Arnaldo Sureda
+3 | Gaspar de Pachs
+4 | Arnaldo Mestre
+5 | Juan Geronés
+6 | Vidal Palmer
+1438
+1 | Juan Torrella, doncel
+2 | Albertin de Dameto
+3 | Ferrando Valentí, Dr. en leyes
+4 | Francisco Comellas
+5 | Pedro Za-Vila
+6 | Julian Quintana
+1439
+1 | Bernardo de Vilar
+2 | Juan Sureda
+3 | Pedro Zaforteza
+4 | Luis Des-Lladó
+5 | Gabriel Vicens
+6 | Gabriel Claver, perayre
+1440
+1 | Berenguer Uniz
+2 | Jaime de Pachs
+3 | Guillermo Bennassar
+4 | Berenguer Renovard
+5 | Guillermo Mateu
+6 | Antonio Bestard, texidor
+1441
+1 | Ramon Zaforteza
+2 | Pedro Net
+3 | Bonifacio Morro, jurista
+4 | Ponce Des-Lladó
+5 | Antonio Sastre
+6 | Bernardo Guitard
+1442
+1 | Juan Desbach
+2 | Lúcas Oliver
+3 | Juan de Cunilleras
+4 | Bartolomé Reyal
+5 | Juan de Bas
+6 | Bartolomé Botellas
+1443
+1 | Guillermo de San Juan
+2 | Juan de Dameto
+3 | Guillermo de Pachs
+4 | Hugo Pont
+5 | Francisco de Comellas
+6 | Antonio Arrufat, sabater

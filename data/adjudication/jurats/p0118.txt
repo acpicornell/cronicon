@@ -1,0 +1,52 @@
+leaf: 118
+by: claude (facsímil, resolució nativa)
+---
+1339
+2 | Juan Sacosta
+3 | Pedro de Arbucies
+1340
+1 | Berenguer de Holms
+2 | Ponce Guillermo Soriu
+3 | Juan Desportell
+4 | Ramon de Salellas
+5 | Julian de Estany
+6 | Berenguer de Oltsina, zapatero
+1341
+1 | Umberto des Fonollar
+2 | Bernardo sa Font
+3 | Pedro Roig
+4 | Guillermo Fullana
+5 | Francisco Umbert
+1342
+1 | Aries Fernandez
+2 | Pedro de Puigdorfila
+3 | Benito Blancas
+5 | Pedro de Sitges
+6 | Guillermo Burguera
+1343
+1 | Arnaldo de Santacilia, caballero
+2 | Ponce Guillermo Soriu
+3 | Arnaldo Burgués
+4 | Ramon de Salellas
+5 | Pedro de Arbucies
+6 | Guillermo Descals
+1344
+1 | Pedro Torrella, caballero
+2 | Bernardo Valentí
+3 | Juan Sacosta
+4 | Antonio Mora
+6 | Bernardo Tauler
+1345
+1 | Umberto Desfonollar
+2 | Bernardo de Font
+3 | Juan Hom de Deu
+4 | Julian de Estany
+5 | Guillermo de Pachs
+6 | Bernardo Sasilio
+1346
+1 | Pedro Dalmau, caballero
+2 | Arnaldo Burgués
+3 | Simon Ravell
+4 | Pedro Rossinyol
+5 | Guillermo Borrasa
+6 | Francisco Cardona

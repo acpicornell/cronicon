@@ -1,0 +1,24 @@
+leaf: 229
+by: claude (facsímil, resolució nativa)
+---
+1498
+1 | Berenguer de Santa Cilia
+2 | Francisco Des-Brull
+3 | Gaspar Bordils
+4 | Juan Des-Pi
+5 | Bernardo Peretó
+6 | Gabriel Balaguer
+1499
+1 | Juan Miró, Doncel
+2 | Basilio Morell
+3 | Mateo Bartomeu
+4 | Gabriel Segura
+5 | Bautista Salom
+6 | Bartolomé Lossá
+1500
+1 | Gaspar Tomás
+2 | Domingo de Oleza
+3 | Francisco Bartomeu
+4 | Antonio Caldes
+5 | Miguel Goixat
+6 | Jaime Serra, perayre

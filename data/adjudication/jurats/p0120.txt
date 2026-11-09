@@ -1,0 +1,66 @@
+leaf: 120
+by: claude (facsímil, resolució nativa)
+---
+1355
+1 | Berenguer de Tornamira, doncel
+2 | Jaime de Buadella
+3 | Maimon Peris
+4 | Berenguer Vivot
+5 | Arnaldo de Termens
+6 | Pedro de Mates, albañil
+1356
+1 | Bernardo de Togores, doncel
+2 | Simon Branxifort
+3 | Simon Berenguer
+4 | Guillermo de Termens
+5 | Luquino Cirera
+6 | Bernardo Serra
+1357
+1 | Juan de Mora, doncel
+2 | Roberto de Bellvehí, als. Zagranada
+3 | Arnaldo Cerdó
+4 | Ferrer Saserra
+5 | Antonio Negre
+6 | Bernardo Samata ó Ses mates
+1358
+1 | Arnaldo de Santacilia, caballero
+2 | Francisco Umbert
+3 | Maimon Peris
+4 | Guillermo de Termens
+5 | Guillermo de Pachs
+6 | Beruardo Bonet
+1359
+1 | Ferrer de Tornamira, doncel
+2 | Domingo Llull
+3 | Gregorio Sellambé
+4 | Francisco Andreu
+5 | Bernardo Martí
+6 | Juan Pagés
+1360
+1 | Bernardo de Olms, doncel
+2 | Simon Berenguer
+3 | Nicolás Bennasser
+4 | Pedro de Pax
+5 | Francisco Geronés
+6 | Pedro Cardona
+1361
+1 | Berengario de Tagamanent, doncel
+2 | Guillermo Valentí
+3 | Juan Umbert
+4 | Nicolás Cerdá
+5 | Bononat Massanet
+6 | Berengario Descamps, boticario
+1362
+1 | Juan de Mora
+2 | Francisco Umbert
+3 | Maimon Peris
+4 | Pedro Rossinyol
+5 | Ramon de Berga
+6 | Jaime de Font
+1363
+1 | Rodrigo de Santmartí, caballero
+2 | Guillermo Miró
+3 | Pedro Ravell
+4 | Pedro Net
+5 | Ferrer de Comellas
+6 | Arnaldo Rotger

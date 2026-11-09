@@ -281,6 +281,9 @@ segmentation, which is wrong on these leaves in two different ways.
 - Not by having a model read the page. Family names of 1300s Mallorca are
   exactly where a language model silently normalises `Za-flor` to `Zaflor` and
   invents a plausible surname, with no consensus left to catch it.
+  **Superseded for the annotated leaves, on the user's decision and with a
+  guard** — see §The Jurats, read off the facsimile. The warning was right
+  about the risk and it is why every name read is checked against the engines.
 
 **`--align line` is the general form of that fix and is not the default.**
 `project()` matches two flat token streams over the whole leaf, which works only
@@ -1497,6 +1500,76 @@ Two things it turned up that are worth keeping:
   name is marked and the index says the figure in words. Some names still carry
   the notes column bleeding into them — `Bernardo Villafranca se encuentran en
   el privi-`, `Jaime de Montsó I mismos` — on the annotated leaves.
+
+## The Jurats, read off the facsimile — and what that showed
+
+The user asked whether the lists were as bad as the tiers said and suggested
+reading them with vision. **They were worse, and not in the way the tiers
+measured.** Leaf 114 prints six Jurats for 1302; the edition had two, and both
+belong to 1303. Of 344 parsed names for the 13th and 14th centuries one was
+unanimous, but the damage was structural: names missing four in six and filed
+under the wrong year, because on these leaves the engines do not agree what
+order the page is read in.
+
+So leaves 58–60 and 114–121 were read at native resolution into
+`data/adjudication/jurats/p####.txt` (year, then `seat | name`, or `* | remark`
+where Campaner prints a sentence instead of names). `parse_jurats.py` calls
+`jurats_facsimile.override`: the years a file covers come from the file.
+**382 names over 80 years where the parse had 202**; `Los del año anterior.`
+and `Villafranca no pone ninguno.` are kept as remarks; a seat he numbers and
+leaves blank is absent, and the seat number is the one he prints.
+
+**The guard is the comparison with the engines, and it is the finding too.**
+This file says, of exactly these leaves, that a model must not read them: a
+1300s surname is where it normalises and invents. So every name read is
+compared with each engine's text of that leaf (`jurats_facsimile.py --check`):
+
+- **381 of 382 were read letter for letter by at least one engine, nearly all
+  by three or more.** The engines read these names well. What failed was never
+  recognition; it was the alignment and the parse built on it.
+- **The one that differed was the model's error.** `Guillermo Delfi` on leaf 59
+  had been written `Delfí`, by analogy with leaf 58 where the accent is
+  printed. Five engines had `Delfi`; a 3× crop shows an fi ligature and no
+  accent. That is the normalisation the rule warns of, caught by the check the
+  rule's own logic suggests. No name on these leaves now rests on the model
+  alone (`source: "typed"` is 0).
+- **Nothing is corrected**: `Francisco de Vilanona` (leaf 115, though the note
+  beside it says Vilanova) and `Beruardo Bonet` (leaf 120, a turned letter)
+  stand as printed, and every engine reads them so.
+
+**Then the compact lists were read the same way, on the user's decision**
+("léelo directamente como hasta ahora, es lo más fiable"): leaf 121 from 1371,
+122, 225–229, 311–315, 478–482 and 631. **All six series now come from the
+facsimile: 28 leaves, 2 436 names, 12 remarks, 423 year headings, and no row
+of the parse is kept.** A whole leaf at ~1 000 px wide is legible enough to
+read three columns in order; the check is what makes that safe.
+
+- **2 431 of 2 436 names match some engine letter for letter**; the other five
+  carry a superior letter no engine renders (`Juan B.ª Bordils y Sureda` ×3,
+  `Juan B.ª de Bordils`, `Juan Mig.l Ballester de Togores`) and are the only
+  `typed` ones. Twenty matched a single engine, nearly all over an accent, and
+  each was re-read from a 3–6× crop: the acute is a slanted stroke where the
+  dot of an `i` is round.
+- **The check caught the model a second time**: leaf 478 prints `uan Vivot.`
+  for 1614 — the `J` never inked — all eight engines read `uan`, and the model
+  had written `Juan`. Restored. Two for two, both normalisations, both the
+  failure this file predicted.
+- **What the parse had got wrong beyond the names**: the 16th-century list does
+  not end on leaf 314 — the last two seats of 1599 and the whole of 1600 are at
+  the head of leaf **315**, above section II, and were never read (the parse
+  stopped at 1598). Two years are printed twice and are two elections: `1401.`
+  then `1401 (EN 7 DE JULIO.)`, `1444.` then `1444 EN 23 JUNIO.` A year runs
+  across a column or a leaf break as often as not (1545, 1554, 1563, 1572,
+  1581, 1590, 1599, 1606, 1612, 1618, 1627, 1636, 1671, 1680, 1689).
+- Rows keep the leaf's order (`order`, then `id` in the database), because
+  (year, seat) no longer orders a year printed twice; the site renders a year
+  in that order, remarks where they stand. `jurat` gained `source` and
+  `engines`. `Pedro AndrésRossinyolde Defla` (leaf 481, set squeezed) is
+  matched ignoring spaces only.
+
+Still not published: the notes column of the annotated leaves (which codex
+gives which name). And `jurats_facsimile.py --check` should be run whenever a
+file under `data/adjudication/jurats/` is touched.
 
 ## The site must not tidy the book either
 

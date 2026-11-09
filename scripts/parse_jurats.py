@@ -60,6 +60,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
+import jurats_facsimile
 import targets
 from parse_entries import (OCR, monotone_subsequence, page_lines,
                            year_of_line)
@@ -301,6 +302,17 @@ def main() -> None:
                         "backwards": sum(1 for a, b in zip(years, years[1:])
                                          if b < a)})
 
+    # The leaves that have been read off the facsimile replace what was parsed
+    # from them -- see `jurats_facsimile.py`. The parse above still runs, so
+    # the figures it prints say what the panel made of the lists unaided.
+    parsed = len(rows)
+    rows = jurats_facsimile.override(
+        rows, {page: leaf["printed"] for page, leaf in inventory.items()})
+    read = sum(1 for r in rows if r["tier"] == "adjudicated")
+    kept = sum(1 for r in rows if r["tier"] not in ("adjudicated", "remark"))
+    print(f"{read:,} names taken from the facsimile; {parsed:,} parsed, "
+          f"{kept:,} of them kept\n")
+
     OUT.mkdir(parents=True, exist_ok=True)
     with (OUT / "jurats.jsonl").open("w", encoding="utf-8") as fh:
         for row in rows:
@@ -322,7 +334,8 @@ def main() -> None:
     tiers = Counter(r["tier"] for r in rows)
     print("certainty:    " + "  ".join(
         f"{t} {tiers[t]:,} ({tiers[t]/len(rows):.0%})"
-        for t in ("unanimous", "one-dissent", "two-dissent", "contested")))
+        for t in ("adjudicated", "unanimous", "one-dissent", "two-dissent",
+                  "contested")))
 
     left = sorted(set(annotated))
     print(f"\n{len(regeometried)} leaves read from the gutter-split consensus")

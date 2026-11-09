@@ -125,20 +125,27 @@ CREATE TABLE IF NOT EXISTS table_row (
 
 -- The Jurats -------------------------------------------------------------
 
--- Six series, one per century, printed as appendices inside the body.
--- 1 949 names over 356 years, one row per (year, seat, name). `tier` is the
--- worst certainty in the name, and it matters: these are the hardest leaves in
--- the book and only a quarter of the names are unanimous.
+-- Six series, one per century, printed as appendices inside the body: one row
+-- per seat, in the order the leaf has them (`id`). The lists were the worst-read
+-- leaves in the book -- names lost and filed under the wrong year -- so they are
+-- read off the facsimile (`data/adjudication/jurats/`), and each name is
+-- compared with what every engine read on that leaf:
+--   tier    adjudicated | remark -- a remark is a sentence Campaner prints in
+--           place of names (`Los del año anterior.`), with seat 0
+--   source  variant: some engine read the name letter for letter
+--           typed:   none did (a superior letter no engine renders)
+--   engines how many engines read it so
 CREATE TABLE IF NOT EXISTS jurat (
     id        INTEGER PRIMARY KEY,
     century   SMALLINT NOT NULL,
     year      SMALLINT NOT NULL,
-    seat      SMALLINT NOT NULL,  -- 1..6, as printed where the list numbers them
+    seat      SMALLINT NOT NULL,  -- 1..6 as the list numbers or orders them; 0 = remark
     name      VARCHAR NOT NULL,
     tier      VARCHAR,
-    pdf_page  SMALLINT NOT NULL
+    pdf_page  SMALLINT NOT NULL,
+    source    VARCHAR,
+    engines   SMALLINT
 );
-
 CREATE INDEX IF NOT EXISTS idx_jurat_year ON jurat(year);
 CREATE INDEX IF NOT EXISTS idx_jurat_name ON jurat(name);
 

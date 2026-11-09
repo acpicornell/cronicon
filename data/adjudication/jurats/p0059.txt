@@ -1,0 +1,48 @@
+leaf: 59
+by: claude (facsímil, resolució nativa)
+---
+1249
+1 | Bernardo Español
+1253
+1 | Aries Ivanyes, caballero
+2 | Guillermo Delfi
+3 | Ramon Des Clergue
+4 | Renovardo de Malbosch
+5 | Arnaldo de Olives
+6 | Ramon de Codines
+1254
+1 | Miguel Nuñez
+3 | Bernardo de Font
+4 | Valentin Sas Torres
+5 | Berenguer de Vilafranca
+6 | Guillermo Brunet
+1270
+1 | Pedro de Torrella, caballero
+2 | Bernardo Valentí
+3 | Bernardo Guillermo
+4 | Renovart de Malbosch
+5 | Ramon de Güells
+6 | Berenguer de Guardiola
+1276
+1 | Pedro Zavardera
+2 | Bernardo de Zaragoza
+3 | Francisco Des Clerga
+4 | Guillermo Valentí
+5 | Bernardo de Vich
+6 | Martin de Mayol
+1279
+1 | Pedro Sa Torre
+2 | Bernardo Valentí
+3 | Renovardo de Malbosch
+4 | Berenguer de Guardiola
+5 | Ramon des Güells
+6 | Bernardo Guillem
+1280
+* | (Por abril los mismos del año anterior.)
+1281
+1 | Pedro Sa Verdera, miles
+2 | Bernardo de Zaragoza
+3 | Francisco des Clergue
+4 | Guillermo Valentí
+5 | Bernardo de Vich
+6 | Martin de Mayols

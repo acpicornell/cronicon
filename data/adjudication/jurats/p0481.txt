@@ -1,0 +1,187 @@
+leaf: 481
+by: claude (facsímil, resolució nativa)
+---
+1671
+5 | Miguel Vivó
+6 | Miguel Riera, jarrer
+1672
+1 | Pedro de Verí
+2 | Nicolás Andrés Rossinyol de Defla
+3 | Juan Antonio Nadal
+4 | Martin Perelló
+5 | Miguel Fiol
+6 | Juan Rebassa, argenter
+1673
+1 | Jorge Abri Dezcallar y Zanglada
+2 | Juan Fornari
+3 | Francisco Armengol
+4 | Francisco Seguí
+5 | Francisco Serra
+6 | Antonio Gomila, fuster
+1674
+1 | Antonio Dameto
+2 | Antonio Armengol
+3 | Pedro Andrés Rossinyol de Defla
+4 | Miguel Amer
+5 | Jaime Mateo Sunyer
+6 | Juan Cerdá, apotecari
+1675
+1 | José de Santacilia
+2 | Antonio Garriga y Noguera
+3 | Agustin Andreu
+4 | Pedro Ramon Bisquerra
+5 | Gabriel Armengol
+6 | Miguel Riera, jerrer
+1676
+1 | Francisco Oleza Peracanyas
+2 | Nicolás Andrés Rossinyol de Defla
+3 | Pedro José Morell de Pastoritx
+4 | Pedro Andrés Campos
+5 | Francisco Canyellas
+6 | Domingo Llatzer, sucrer
+1677
+1 | Salvador de Oleza
+2 | Pedro Francisco Llabrés
+3 | Gaspar Dureta
+4 | Jaime Antonio Fiol
+5 | Martin Perelló
+6 | Juan Sacarés, sastre
+1678
+1 | Fernando Gual y Moix
+2 | Francisco Armengol
+3 | Andrés Rossinyol de Defla
+4 | Miguel Fiol
+5 | Francisco Serra
+6 | Damian Cassa, ferrer
+1679
+1 | Antonio de Puigdorfila
+2 | Francisco Vanrell
+3 | Antonio Ferrer Comellas
+4 | Martin Perelló, menor
+5 | Francisco Serra, menor
+6 | Miguel Fiol, apotecari
+1680
+1 | Miguel Ferrandell
+2 | Nicolás Rossinyol de Defla
+3 | Pedro Juan Morell
+4 | Francisco Canyellas
+5 | Nadal Fiol
+6 | Miguel Riera, jarrer
+1681
+1 | Agustin Gual y Sunyer
+2 | Jaime Desmás
+3 | Juan Arnau y Paix
+4 | Juan Gibert
+5 | Francisco Seguí
+6 | Rafael Fiol, manescal
+1682
+1 | Juan Miguel Sureda
+2 | Antonio Garriga y Noguera
+4 | Juan Artigues
+5 | Salvador Fiol
+6 | Miguel Fornari, ferrer
+1683
+1 | Nicolás Rossinyol Zagranada
+2 | Antonio Custurer
+3 | Pedro Jorge Armengol
+4 | Juan Ferragut
+5 | Antonio Busquets
+6 | Damian Cassa, ferrer
+1684
+1 | Pedro Ramon de Villalonga
+2 | Francisco Vanrell
+3 | Pedro Jorge Pons
+4 | Ramon Estada y Pont
+5 | Juan Mesquida
+6 | José Ferrer, daurador
+1685
+1 | Agustin Gual y Sunyer
+2 | Juan Miguel Mayol
+3 | Juan Font y Belloto
+4 | José Barceló
+5 | Miguel Canyellas
+6 | Jaime Llompart; sastre
+1686
+1 | Ramon Brondo
+2 | Andrés Rossinyol de Defla
+3 | Pedro Juan Morell de Pastoritx
+4 | Francisco Serra
+5 | Miguel Vidal
+6 | Rafael Fiol, manescal
+1687
+1 | Antonio Dameto
+2 | Nicolás Andrés Rossinyol de Defla
+3 | Francisco Mora y Mulet
+4 | Juan Bautista Rubí
+5 | Pedro Ignacio Prohens
+6 | Jaime Blanquer, sastre
+1688
+1 | Fernando Gual y Moix
+2 | Antonio de Comellas y Serra
+3 | Bartolomé Fornari
+4 | Juan Bautista Llorens, notari
+5 | Rafael Planas
+6 | Gabriel Terrassa, sellater
+1689
+1 | Joanot Desclapés
+2 | Antonio Garriga
+3 | Pedro Jorge Font
+4 | Miguel Bibiloni, notari
+5 | Antonio Ribot
+6 | José Ferrer, daurador
+1690
+1 | Marqués de Bellpuig
+2 | Antonio Custurer
+3 | Juan Bordils y Sureda
+4 | Francisco Canyellas
+5 | Pedro Andrés Campos
+6 | Joaquin Bassa, chirurgiá
+1691
+1 | Agustin Gual y Sunyer
+2 | Juan Morro y Pastor
+3 | Pedro Jorge Armengol
+4 | Jaime Fé, notari
+5 | Juan Artigues
+6 | Juan Antonio Mateu, chirurgiá
+1692
+1 | Fernando Gual y Moix
+2 | Bartolomé Fornari
+3 | Juan Antonio Llabrés
+4 | Juan Bautista Mora, notari
+5 | Salvador Fiol
+6 | Antonio Brotat y Barceló, fuster
+1693
+1 | Miguel Juan Net
+2 | Pedro Francisco Llabrés
+3 | Pedro Jorge Pont
+4 | Pedro Ignacio Prohens
+5 | Juan Barceló
+6 | Francisco Aulet, forner
+1694
+1 | Joanot Desclapés
+2 | Pedro Juan Morell
+3 | Juan B.ª de Bordils
+4 | Juan B.ª Rubí
+5 | Antonio Roca y Amer
+6 | Gabriel Fábregues, sabater
+1695
+1 | Ramon Brondo
+2 | Juan Font y Belloto
+3 | Francisco Mora y Mulet
+4 | Ramon Estada y Pont
+5 | Miguel Bibiloni, notari
+6 | Bartolomé García, flassader
+1696
+1 | Agustin Gual y Sunyer
+2 | Antonio Garriga
+3 | Pedro Jorge Armengol
+4 | Antonio Moll, notari
+5 | Miguel Canyellas
+6 | Guillermo Terrassa, manescal
+1697
+1 | Nicolás Rossinyol Zagranada
+2 | Pedro Francisco Llabrés
+3 | Bartolomé Fornari
+4 | Miguel Vidal
+5 | Juan Barceló
+6 | Mateo Gomila, fuster

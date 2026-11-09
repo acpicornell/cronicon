@@ -1,0 +1,39 @@
+leaf: 114
+by: claude (facsímil, resolució nativa)
+---
+1302
+1 | Pedro Sa Verdera, miles
+2 | Guillermo de Buadella
+3 | Francisco Durán
+4 | Bernardo Garau
+5 | Ferrer Sa Serra
+6 | Guillermo de Llagostera
+1303
+1 | Aries Ivañez, caballero
+2 | Guillermo Dalfi
+3 | Ramon Desclergue
+4 | Renovard de Malbosch
+5 | Arnaldo de Olives
+6 | Guillermo de Codines
+1304
+2 | Pedro de Cardona
+3 | Ramon de Costa
+4 | Pedro de Sentmenat
+5 | Bernardo de Curvins
+6 | Simon de Puigmalver
+1309
+1 | Bernardo de Torrella, caballero
+2 | Guillermo de Buadella
+3 | Guillermo de Puigdorfila
+4 | Pedro de Quintana
+5 | Jaime Savall
+6 | Pedro de Sarriá
+1310
+* | Los del año anterior.
+1311
+1 | Gil Garcés, miles
+2 | Guillermo Arnaldo Ses Esgleyes
+3 | Ramon Sa Costa
+4 | Francisco Renovard
+5 | Simon Virgili
+6 | Bernardo Ses Comes

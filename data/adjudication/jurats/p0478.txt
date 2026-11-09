@@ -1,0 +1,126 @@
+leaf: 478
+by: claude (facsímil, resolució nativa)
+---
+1601
+1 | Leonardo Zaforteza
+2 | Baltasar Constantí
+3 | Joanot García
+4 | Antonio Estelrich
+5 | Jerónimo Totxa
+6 | Antonio Baró, apotecari
+1602
+1 | Pedro Antonio de Sant Martí
+2 | Antonio Nadal
+3 | Onofre Font y Montornés
+4 | Pedro Onofre Vicens y Salom
+5 | Rafael Oloza
+6 | Pedro Antonio Ballester, forner
+1603
+1 | Jaime de Oleza
+2 | Andrés Rossinyol de Defla
+3 | Arnaldo Cotoner
+4 | Miguel Juan Cabrer
+5 | Antonio Vallés
+6 | Onofre Socias, assahonador
+1604
+1 | Guillermo Tagamanent y Forteza (murió ántes de jurar.)
+2 | Miguel Morell
+3 | Francisco García
+4 | Pedro Coll
+5 | Pedro Antonio Ferretjans
+6 | Francisco Belliel, perayre
+1605
+1 | Fernando de la Cavallería
+2 | Gaspar Mir
+3 | Jerónimo Caldes
+4 | Guillermo Ferragut
+5 | Bartolomé Malferit
+6 | Pedro Juan Domingo, passamaner
+1606
+1 | Jerónimo Pablo de Puigdorfila
+2 | Basilio Morell
+3 | Baltasar Contestí
+4 | Gabriel Llull
+5 | Antonio Cifre
+6 | Perot Fiol; ferrer
+1607
+1 | Pedro Onofre Zanglada
+2 | Juan Arnau
+3 | Berenguer Vida
+4 | Clemente Socias
+5 | Gabriel Jerónimo Real
+6 | Francisco Oller, argenter
+1608
+1 | Marcos Antonio Cotoner
+2 | Pedro Cabrer
+3 | Onofre Font y Montornés
+4 | Pedro Onofre Vicens
+5 | Antonio Estelrich
+6 | Bernardo Llabrés, ferrer
+1609
+1 | Juan de Puigdorfila
+2 | Martin Rossinyol
+3 | Bernardo Cotoner
+4 | Nicolás Seguí
+5 | Domingo Janer
+6 | Juan Cerdá, sellater
+1610
+1 | Luis Zanglada
+2 | Salvador Armengol
+3 | Juan Antonio Axartell
+4 | Bartolomé Malferit
+5 | Jerónimo Janer
+6 | Francisco Rexach, forner
+1611
+1 | Leonardo Zaforteza
+2 | Juan Agustin Garau
+3 | Jaime Morell
+4 | Miguel Juan Cabrer
+5 | Juan Bautista Domenge
+6 | Juan Fiol, ferrer
+1612
+1 | Jorge Zaforteza
+2 | Miguel Nadal
+3 | Miguel Ferrandell
+4 | Gabriel Llull
+5 | Jerónimo Alemany
+6 | Antonio Togores, perayre
+1613
+1 | Jaime Juan de Lloscos
+2 | Mateo Net Valero
+3 | Pedro Espanyol
+4 | Miguel Domenge
+5 | Rafael Bisquerra
+6 | Gabriel Cassador, polvorista
+1614
+1 | uan Vivot
+2 | Jerónimo Caldes
+3 | Onofre Font y Montornés
+4 | Bartolomé Malferit
+5 | Jaime Amer
+6 | Jerónimo Nicolau, perayre
+* | fueron Jurados año y medio, hasta 4 de Junio de
+1615
+1 | Guillermo de San Juan
+2 | Bernardo Cotoner
+3 | Bartolomé Ferrandell
+4 | Rafael Santandreu
+5 | Cristóbal Socias
+6 | Juan Mateu, forner
+1616
+1 | Jorge Sureda, menor
+2 | Pedro Jorge Armengol
+3 | Perot Andreu
+4 | Bernardo Bertran
+5 | Pedro Juan Bordoy
+6 | Francisco Oller, argenter
+1617
+1 | Pedro Abri Dezcallar
+2 | Tomás de Oleza
+3 | Pedro Desmás
+4 | José Guayta
+5 | Jerónimo Socias
+6 | Nadal Vidal, arrer
+1618
+1 | Nicolás Rossinyol Zagranada
+2 | Baltasar Desbrull

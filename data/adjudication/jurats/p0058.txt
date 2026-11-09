@@ -1,0 +1,20 @@
+leaf: 58
+by: claude (facsímil, resolució nativa)
+---
+1240
+6 | Pedro Ferrer
+1245
+1 | Arnaldo de Torrella
+2 | Bernardo de Zaragoza
+3 | Berenguer de Vilafranca
+4 | Arnaldo de Castelló
+5 | Pedro Ferrer
+6 | Ramon Sala
+1248
+1 | Roberto de Bellvehi
+2 | Guillermo de Torrella
+3 | Bernardo de Torrella
+4 | Guillermo Delfí
+5 | Bernardo Spanyol
+6 | Bernardo Granada
+7 | Aries Ivanyes

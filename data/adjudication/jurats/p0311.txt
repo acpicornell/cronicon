@@ -1,0 +1,124 @@
+leaf: 311
+by: claude (facsímil, resolució nativa)
+---
+1501
+1 | Juan de Puigdorfila
+2 | Luis Umbert
+3 | Bernardo Nicolau
+4 | Pedro Busquets
+5 | Gabriel Axartell
+6 | Juan Aguiló, apotecari
+1502
+1 | Alvaro Nuñis
+2 | Juan Nicolás Berard
+3 | Juan Vicente Campfullós
+4 | Mateo Riera
+5 | Juanot Anglada
+6 | Gabriel Balaguer, ferrer
+1503
+1 | Tomas Desbach
+2 | Miguel Desmas
+3 | Antonio de Verí
+4 | Miguel Quintana
+5 | Berenguer Sbert
+6 | Guillermo Cárlos, sabater
+1504
+1 | Gaspar Tomas
+2 | Gabriel de Berga
+3 | Domingo de Oleza
+4 | Juan Perera
+5 | Pedro Andreu
+6 | Pedro Companyó, artesá
+1505
+1 | Miguel Sant Joan
+2 | Luis Umbert
+3 | Cárlos Despuig
+4 | Juan Puig
+5 | Pedro Busquets
+6 | Juan Aguiló, apotecari
+1506
+1 | Pedro Descallar
+2 | Juan Nicolás Berard
+3 | Juan Vicente Campfullós
+4 | Mateo Riera
+5 | Gabriel Axartell
+6 | Gaspar Roig, perayre
+1507
+* | Los de 1506 hasta 23 de Abril y por órden del Rey continuaron hasta la extraccion del año siguiente.
+1508
+1 | Alvaro Nuñis
+2 | Juan Domingo Nicolau
+3 | Juan García
+4 | Miguel Palmer
+5 | Juanot Ribas
+6 | Antonio Mirambell, perayre
+1509
+1 | Albertin Dameto
+2 | Juan Rossiñol
+3 | Domingo de Oleza
+4 | Pedro Caraboti
+5 | Juan de Busquets
+6 | Miguel Ballester, perayre
+1510
+1 | Berenguer de Sant Joan
+2 | Antonio Armadans
+3 | Matias Borrassá
+4 | Juan Puig
+5 | Antonio Miguel Parera
+6 | Jorge Juan, perayre
+1511
+1 | Juan Miró
+2 | Miguel de Térmens
+3 | Juan Serra
+4 | Pedro Andreu
+5 | Miguel Llodrá
+6 | Domingo Celaya, sabater
+1512
+1 | Berenguer Vivot
+2 | Juan García
+3 | Nicolás Berga
+4 | Arnaldo Font
+5 | Juanot Casas
+6 | Domingo Janer, perayre
+1513
+1 | Hugo de Pachs
+2 | Juan Descós
+3 | Juanot de Moya
+4 | Juanot Anglada
+5 | Pedro Cerdá
+6 | Galcerán Casellas, artesá
+1514
+1 | Berenguer de Galiana
+2 | Juanot Falcó
+3 | Miguel de Verí
+4 | Antonio Bolaix
+5 | Juan Axartell
+6 | Miguel Bauló, apotecari
+1515
+1 | Pedro Juan Albertí
+2 | Francisco Barthomeu
+3 | Juan Andreu
+4 | Arnaldo Riera
+5 | Miguel Segura
+6 | Juan de Sant Joan, apotecari
+1516
+1 | Jorge de Santacilia
+2 | Francisco Juan de Caulellas
+3 | Bernardo de Brossa
+4 | Bernardo Ferragut
+5 | Pedro Valls
+6 | Gabriel Ribas, apuntador
+1517
+1 | Pedro de Pachs
+2 | Mateo de Barthomeu
+3 | Hugo Net
+4 | Bernardo Peretó
+5 | Gabriel Ribas
+6 | Francisco Riera, apotecari
+1518
+1 | Juan Miguel Fuster
+2 | Blas de Net
+3 | Bartolomé de Verí
+4 | Jaime Sbert
+5 | Pedro Torrents
+6 | Juan Oliver, apotecari

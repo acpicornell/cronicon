@@ -1,0 +1,47 @@
+leaf: 117
+by: claude (facsímil, resolució nativa)
+---
+1332
+1 | Fortuño Diez
+2 | Guillermo Serra
+3 | Pedro Safont de Flandes
+4 | Pedro Roig
+5 | Ponce Guillermo Soria
+6 | Arnaldo Quintana
+1333
+1 | Fortuño Diez, doncel
+2 | Bernardo Roig
+3 | Guillermo de Bisbal
+4 | Julian de Estany
+5 | Bernardo de Valls
+6 | Bernardo Sacoma
+1334
+* | Los de 1331, aunque llamando al 1.° de Scavia.
+1335
+1 | Pedro de Torre, caballero
+2 | Guillermo de Font
+3 | Bernardo de Umbert
+4 | Ferrer de Comellas
+5 | Juan de Pachs, menor
+6 | Jaime Canyellas
+1336
+1 | Arnaldo de Santacilia, doncel
+2 | Guillermo Serra
+3 | Pedro Safont de Flandes
+4 | Pedro Roig
+5 | Poncio Guillermo Soriu
+6 | Arnaldo Quintana
+1337
+1 | Pedro Nuñiz, doncel
+2 | Simon de Iglesias
+3 | Juan Sacosta
+4 | Paulino Brondo
+5 | Ramon de Salellas
+6 | Bartolomé de Atromonto
+1338
+1 | Guillermo Arnaldo de Illa, doncel
+2 | Bernardo Umbert
+3 | Guillermo Valentí
+4 | Pedro de Sitges
+5 | Pedro de Costa
+6 | Pedro de Sant Martí, molinero

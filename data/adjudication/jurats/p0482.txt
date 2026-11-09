@@ -1,0 +1,24 @@
+leaf: 482
+by: claude (facsímil, resolució nativa)
+---
+1698
+1 | Antonio Dameto
+2 | Nicolás Juliá
+3 | Pedro Jorge Font
+4 | Nadal Fiol
+5 | Salvador Fiol
+6 | Damian Cassa, ferrer
+1699
+1 | Salvador Sureda de Santmartí
+2 | Francisco Antich de Llorach
+3 | Francisco Comellas y Miralles
+4 | Francisco Serra
+5 | Miguel Bertran
+6 | Antonio Brotat y Barceló, fuster
+1700
+1 | Miguel Juan Net
+2 | Jerónimo Alemany
+3 | Salvador Truyols
+4 | Andrés Perets, notari
+5 | Pedro Andrés Campos
+6 | Jaime Serra, chirurgiá

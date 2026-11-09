@@ -1,0 +1,183 @@
+leaf: 122
+by: claude (facsímil, resolució nativa)
+---
+1374
+1 | Arnaldo de Lupiá
+2 | Juan des-Portell
+3 | Tomás Serra
+4 | Bernardo Gili
+5 | Ponce Descamps
+6 | Guillermo Za-Roca
+1375
+1376
+1 | Berenguer de San Juan
+2 | Guillermo Valentí
+3 | Pedro Ravell
+4 | Bernardo Cerdó
+5 | Juan Espinach
+6 | Bernardo Aguiló, draper
+1377
+1 | Juan de Mora
+2 | Juan Umbert
+3 | Pedro Sala
+4 | Guillermo de Pachs
+5 | Hugo Borrassá
+6 | Jaime Matas, picapedras
+1378
+1 | Ramon Adarró
+2 | Simon Berenguer
+3 | Berengner Vida
+4 | Guillermo Pont
+5 | Miguel Sabater
+6 | Francisco Oliver, argenter
+1379
+1 | Jaime de Galiana, Dr. en leyes
+2 | Maymon Peris
+3 | Felipe Umbert
+4 | Ramon de Berga
+5 | Nicolás de Pachs
+6 | Andrés Reyal, tintorer
+1380
+1 | Tomás Des-Bach, doncel
+2 | Pedro Ravell
+3 | Nicolás Bennassar
+4 | Antonio Za-coma
+5 | Juan Espinach
+6 | Gasperto Hug
+1381
+1 | Juan de Mora
+2 | Juan Umbert
+3 | Bernardo de Fontanes
+4 | Bernardo Cerdá
+5 | Miguel de Pachs
+6 | Berenguer de Plegamans, draper
+1382
+1 | Juan de Tagamanent, doncel
+2 | Pedro Zaforteza
+3 | Pedro Sala
+4 | Miguel Sabater
+5 | Simon Ravell
+6 | Jaime Matas, picapedrer
+1383
+1 | Arnaldo Cerdó
+2 | Juan Des-Portell
+3 | Guillermo Serra
+4 | Pedro Pont
+5 | Juan de Cunilleras
+6 | Andrés Reyal
+1384
+1 | Bernardo de Olms
+2 | Arnaldo Sant Martí
+3 | Arnaldo Serra
+4 | Nicolás de Pachs
+5 | Miguel Desde
+6 | Antonio Castell, notari y menestral
+1385
+1 | Berenguer de Tornamira
+2 | Juan Umbert
+3 | Juan Abrí
+4 | Miguel de Pachs
+5 | Juan de Quadras
+6 | Pedro Umbert, pellisser
+1386
+1 | Juan de Tagamanent
+2 | Pedro Zaforteza
+3 | Juan Des-Portell
+4 | Bernardo Cerdá
+5 | Simon Ravell
+6 | Raimundo Roig, peraire
+1387
+1 | Berenguer de San Juan
+2 | Juan Llobera, doctor en leyes
+3 | Bernardo Cerdó
+4 | Jaime Cañellas
+5 | Juan de Cunilleras
+6 | Berenguer de Plegamans, draper
+1388
+1 | Juan de Mora
+2 | Andrés Rossinyol
+3 | Guillermo Serra
+4 | Pedro Zafont
+5 | Juan de Cunilleras
+6 | Lorenzo Mager, texidor
+1389
+1 | Lorenzo de Marí
+2 | Pedro Ravell
+3 | Arnaldo Net
+4 | Miguel de Pachs
+5 | Pedro de Villalonga
+6 | Bernardo Aguiló, draper
+1390
+1 | Juan de Tagamanent
+2 | Juan Llobera, doctor en leyes
+3 | Pedro Sala
+4 | Nicolás de Pachs
+5 | Juan de Dameto
+6 | Pedro Figuerola, argenter
+1391
+1 | Nuño Uniz
+2 | Arnaldo Serra
+3 | Jorge de Roig
+4 | Guillermo Za-Coma
+5 | Bartolomé Martí
+6 | Juan Serra
+1392
+2 | Lorenzo Dolcet
+3 | Bernardo de Magadins
+4 | Martin Pons
+5 | Berenguer Des-Camps
+1393
+* | 1393, en 5 de Octubre.
+1 | Ganberto Roig
+2 | Guillermo de Termens
+3 | Felipe Malferit
+4 | Juan Sallambé
+5 | Andrés Serralta
+6 | Bernardo Oller, perayre
+1394
+1 | Ortiz de Sant-Martí
+2 | Juan Za-flor, doctor en medicina
+3 | Andrés Rossinyol
+4 | Felipe de Termens
+5 | Francisco de Zaragoza
+6 | Tomás Romeu, pellisser
+1395
+1 | Bernardo Santa-Cilia
+2 | Jaime Za-Coma
+3 | Jaime Aymerich
+4 | Gregorio Negre
+5 | Guillermo Benet
+6 | Juan Zamelera, pellisser
+1396
+1 | Bernardo Ferrer
+2 | Guillermo de Termens
+3 | Arnaldo Burguet de Sarriá
+4 | Juan Sallambé
+5 | Pedro de Villalonga
+6 | Tomás Romeu, pellisser
+1397
+1 | Alberto de Roaix
+2 | Pedro Ravell
+3 | Francisco Umbert
+4 | Pedro Bennassar
+5 | Juan Andreu
+6 | Juan Pujol
+1398
+1 | Juan Des-Bach
+2 | Arnaldo Des-Mur, Dr. en leyes
+3 | Pedro Des-Brull
+4 | Arnaldo Janer
+6 | Bartolomé Estarás
+1399
+1 | Berenguer de Olms
+2 | Juan de Llobera, doctor en dro.
+3 | Juan Vivot
+4 | Jaime de Pujals
+5 | Guillermo Oliver
+6 | Pedro Figuerola, argenter
+1400
+2 | Pedro Sala
+3 | Pedro Gual
+4 | Juan Torrelló
+5 | Antonio de Pachs
+6 | Nicolás Des-Pí
