@@ -63,15 +63,6 @@
   "excerpt": "«Acabóse la prosperidad de esta isla con la guerra de Castilla, que empezó en este año de "
  },
  {
-  "check": "glued",
-  "year": 1365,
-  "month": 2,
-  "day": 14,
-  "pdf_page": 95,
-  "detail": "Tarrago. na, -> tarragona",
-  "excerpt": "Real órden, dada en Tarrago. na, disponiendo que los familiares de los Gobernadores de Mal"
- },
- {
   "check": "doubled",
   "year": 1374,
   "month": 10,
@@ -135,15 +126,6 @@
   "excerpt": "Sesion del G. y G. Consejo para nombrar embajadores ó diputados que concurriesen á la elec"
  },
  {
-  "check": "glued",
-  "year": 1429,
-  "month": null,
-  "day": null,
-  "pdf_page": 181,
-  "detail": "Pala-. cio -> palacio",
-  "excerpt": "«En este año pero de 1429, nos da Bsovio, pág. 730., núm. 86, col. 2, tom. 15 de sus Anale"
- },
- {
   "check": "dangling-note",
   "year": 1438,
   "month": 11,
@@ -196,15 +178,6 @@
   "pdf_page": 196,
   "detail": "etc., etc.",
   "excerpt": "Pregon ordenando una reseña de caballos y armas en la plaza delante del Castillo Real, jur"
- },
- {
-  "check": "glued",
-  "year": 1463,
-  "month": null,
-  "day": null,
-  "pdf_page": 203,
-  "detail": "fue-. ron -> fueron",
-  "excerpt": "«Duraba aún por estos tiempos en Mallorca la antipatía entre los pageses y los de la ciuda"
  },
  {
   "check": "dangling-note",
@@ -349,15 +322,6 @@
   "pdf_page": 256,
   "detail": "«todos, todos",
   "excerpt": "«El otro dia que fué sábado, tuvieron consejo todos los oficios, y pusieron guardas por to"
- },
- {
-  "check": "glued",
-  "year": 1525,
-  "month": 11,
-  "day": 8,
-  "pdf_page": 281,
-  "detail": "ordena. do -> ordenado",
-  "excerpt": "«A instancia de Síndicos, clavarios y Consejo de la parte forense de este Reino fueron env"
  },
  {
   "check": "bare-dash",
@@ -585,15 +549,6 @@
   "excerpt": "J. Ai"
  },
  {
-  "check": "glued",
-  "year": 1708,
-  "month": 8,
-  "day": 19,
-  "pdf_page": 516,
-  "detail": "pú. blicos, -> públicos",
-  "excerpt": "Grandes fiestas y regocijos pú. blicos, que duraron más de tres dias, con motivo de las no"
- },
- {
   "check": "doubled",
   "year": 1715,
   "month": 7,
@@ -817,15 +772,6 @@
   "pdf_page": 619,
   "detail": "cuen. ta -> cuenta",
   "excerpt": "En este mes acudió el Ayuntamiento al Real Acuerdo pidiendo permiso para emplear dinero de"
- },
- {
-  "check": "glued",
-  "year": 1793,
-  "month": 9,
-  "day": 19,
-  "pdf_page": 625,
-  "detail": "compa-, ñías -> compañías",
-  "excerpt": "se embarcaron en el navio San Fermin, con rumbo á Tolon, las dos compa-, ñías de granadero"
  },
  {
   "check": "runt",
@@ -1598,7 +1544,7 @@
   "month": null,
   "day": null,
   "pdf_page": 203,
-  "detail": "1088 chars",
+  "detail": "1085 chars",
   "excerpt": "«Duraba aún por estos tiempos en Mallorca la antipatía entre los pageses y los de la ciuda"
  },
  {

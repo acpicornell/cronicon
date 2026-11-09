@@ -174,6 +174,51 @@ BREAK_MARK = re.compile(r"[.,_·]+$")
 ALREADY_STITCHED = re.compile(r"[-‐‑­–—]$")
 
 
+# A line-break hyphen the winner read as a stop or a comma is evidence the panel
+# can give directly, and it needs no dictionary: `Tarrago-` / `na,` is never read
+# `Tarragona` by any engine, because no engine sees both lines as one word, but
+# several of them read the hyphen. Measured over the book, with the token last on
+# its printed line and the next line opening in lower case:
+#
+#   engines reading `X-`   candidates   real breaks
+#   1                      12           1 (`transfi-` also has 3)
+#   2                      4            3 -- `el.` / `gobierno` is not one
+#   3 or more              12           12
+#
+# One engine is noise: `buenos,` / `nuevos,`, `de.` / `la`, `día,` / `li`. Two
+# need the joined form to be a word of the book, which keeps `Tarragona`,
+# `campanario` and `refresco` and drops `el gobierno`. No left-half veto here,
+# unlike the other tiers: `fue-ron`, `es-caparon`, `re-fresco` break after a
+# common word, and the hyphen, not the dictionary, is what says they are broken.
+BREAK_HYPHEN_READ = re.compile(r"[-‐‑­]$")
+HYPHEN_READERS = 3
+HYPHEN_READERS_ATTESTED = 2
+
+
+def read_as_break(left: dict, right: dict, stem: str,
+                  lexicon: Counter) -> str | None:
+    """`stem` without its hyphen, if the panel read a line-break hyphen there."""
+    if left.get("line_bbox") is None or left["line_bbox"] == right["line_bbox"]:
+        return None
+    if stem == nfc(left["winner"] or "") and not stem.endswith("-"):
+        return None               # nothing was misread: no stop, no comma
+    tail = nfc(right["winner"] or "")
+    if not tail or not tail[0].islower():
+        return None
+    word = re.sub(r"[-‐‑­]+$", "", stem)
+    if not word or re.search(r"[-‐‑–—]", word):
+        return None
+    readers = sum(1 for v in left["variants"].values()
+                  if v and BREAK_HYPHEN_READ.search(nfc(v).strip())
+                  and word_of(v) == word_of(word))
+    if readers >= HYPHEN_READERS:
+        return word
+    if (readers >= HYPHEN_READERS_ATTESTED
+            and lexicon.get(word_of(word) + word_of(tail), 0) >= ATTESTED):
+        return word
+    return None
+
+
 def split_words(source: Path, lexicon: Counter) -> tuple[dict, Counter, Counter]:
     """Words the line break split and the vote never put back together.
 
@@ -219,6 +264,10 @@ def split_words(source: Path, lexicon: Counter) -> tuple[dict, Counter, Counter]
                 continue
             stem = BREAK_MARK.sub("", head)
             a, b = word_of(stem), word_of(tail)
+            # A hyphen the panel read is `hyphen_breaks`' repair, not a join:
+            # the pair straddles a line break and the stitch joins it there.
+            if read_as_break(left, right, stem, lexicon):
+                continue
             # Three characters on the left, because two is where the guess stops
             # being one: `er` + `en` makes the Catalan `eren` and could as
             # easily be two words on a leaf written in Catalan.
@@ -279,6 +328,51 @@ def joins_for(source: Path) -> dict:
     if source not in _JOINS:
         _JOINS[source] = split_words(source, clean_lexicon(source, set()))
     return _JOINS[source][0]
+
+
+def hyphen_breaks(source: Path, lexicon: Counter) -> dict[tuple[int, int], str]:
+    """{(leaf, index): `stem-`} where the panel read a line-break hyphen the
+    winner turned into a stop or a comma.
+
+    The repair restores the hyphen and nothing else; the assemblers' ordinary
+    stitch then joins the word across the line, exactly as it joins every other
+    break. A join made here instead could not reach: the two halves sit on two
+    printed lines, and `spans.apply_joins` works inside one.
+    """
+    out: dict[tuple[int, int], str] = {}
+    for path in sorted(source.glob("p*.json")):
+        data = json.loads(path.read_text())
+        loci = data["loci"]
+        for n, left in enumerate(loci[:-1]):
+            head = nfc(left["winner"] or "")
+            if not head or ALREADY_STITCHED.search(head):
+                continue
+            word = read_as_break(left, loci[n + 1], BREAK_MARK.sub("", head),
+                                 lexicon)
+            if word:
+                out[(data["pdf_page"], left["index"])] = word + "-"
+    return out
+
+
+_REPAIRS: dict[Path, dict] = {}
+
+
+def repairs_for(source: Path) -> dict:
+    """Every per-slot repair of the editorial rules, computed once per process.
+
+    The long s and the misread break hyphen. `build_text.py` used to compute the
+    long s for itself and `parse_entries.page_lines` -- which assembles the
+    notices *and* the documents -- passed no repairs at all, so the 1 481 tokens
+    of the 1541 reprint the rule repairs were repaired in `data/text/` and
+    nowhere a reader could see them: the document showed 10 `ſ` where the
+    published text had 1 681. The same lesson as `joins_for`, paid again.
+    """
+    if source not in _REPAIRS:
+        long_s, _tiers, _ambiguous = long_s_repairs(source,
+                                                    long_s_leaves(source))
+        breaks = hyphen_breaks(source, clean_lexicon(source, set()))
+        _REPAIRS[source] = {**breaks, **long_s}
+    return _REPAIRS[source]
 
 
 def long_s_repairs(source: Path, leaves: list[int]

@@ -163,10 +163,42 @@ keeps its evidence: the pair reports `printed` as `dive rsos`, its box as the
 union of both, and its grade as the worse of the two and never `unanimous` — the
 panel was unanimous about two slots, not about the one word this makes.
 
-`audit_entries.py --check glued` still reports **31 pairs the rule declines**,
-including `alo dio`, `ciu dad,` and `Pala-. cio`. They go to review rather than
-being repaired on a hunch, which is the same place the long s leaves its 465
-ambiguous tokens and for the same reason.
+### The third tier: the hyphen the panel read
+
+`Tarrago. na`, `pú. blicos`, `Pala-. cio`, `compa-, ñías`. The winner turned the
+line-break hyphen into a stop or a comma, and the tiers above cannot reach it:
+no engine reads `Tarragona`, because none sees the two lines as one word, and
+`Tarragona` is used twice, under the attested threshold. But the engines *did*
+read the hyphen — two of them on leaf 95, four on leaf 182.
+
+So `editorial.hyphen_breaks` restores it: when the token is the last on its
+printed line, the next line opens in lower case, and enough engines read the
+same stem followed by a hyphen, the slot's text becomes `Tarrago-` and the
+ordinary stitch joins it across the line like every other break. Measured over
+the whole book:
+
+| engines reading `X-` | candidates | real breaks |
+|---|---:|---:|
+| 1 | 12 | 1 |
+| 2 | 4 | 3 |
+| 3 or more | 12 | 12 |
+
+One engine is noise (`buenos,` / `nuevos,`, `de.` / `la`, `día,` / `li`). Three
+or more are always right; two are right when the joined form is a word of the
+book, which keeps `Tarragona`, `campanario` and `refresco` and drops
+`el.` / `gobierno`. **15 tokens.** There is no left-half veto in this tier,
+unlike the others: `fue-ron`, `es-caparon` and `re-fresco` break after a common
+word, and it is the hyphen, not the dictionary, that says they are broken.
+
+It is a per-slot repair rather than a join because the two halves sit on two
+printed lines and `spans.apply_joins` works inside one. Like the long s, it is
+served by `editorial.repairs_for()`, which **both** assemblers ask — see below.
+
+`audit_entries.py --check glued` still reports **25 pairs no tier repairs**,
+`alo dio`, `ciu dad,` and `dista ncia` among them: split mid-line with no reading
+of the whole word and a half that is a word of the book. They go to review
+rather than being repaired on a hunch, which is the same place the long s
+leaves its 465 ambiguous tokens and for the same reason.
 
 ---
 

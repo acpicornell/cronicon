@@ -474,16 +474,23 @@ def year_heading(line: dict) -> str | None:
                        for word in line["row"]
                        for reading in list(word["variants"].values())
                        + [word["winner"]]
-                       if reading and years_in(reading) == {year})
+                       if reading and years_in(reading) == {year}
+                       # A heading is never broken across a line, so a hyphen
+                       # on it is a misread stop -- and published, the stitch
+                       # takes it for a break and glues the year to the next
+                       # paragraph: leaf 374's `1525-` gave `1525«A 30 de…`.
+                       and not BREAK_HYPHEN.search(reading.strip()))
     if not readings:
         return None
     # Of the readings that state this year and nothing else, prefer the one that
     # is the year plainly -- `1711.` over `171 1.` and `I7II.` -- then the one
-    # most engines gave. Both are readings; the tie-break is not a repair.
+    # most engines gave. Both are readings; the tie-break is not a repair. The
+    # last key only makes it deterministic: leaf 375 offers `1543.` and `1543•`
+    # once each, and which came first used to follow Python's hash order.
     digits = str(year)
     return min(readings,
                key=lambda r: (r.lstrip("0123456789") != r[len(digits):],
-                              -readings[r], len(r)))
+                              -readings[r], len(r), r))
 
 
 # A numeral the reading order dropped into the middle of a word. Leaf 123 sets

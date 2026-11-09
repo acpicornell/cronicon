@@ -660,6 +660,13 @@ def page_lines(path: Path) -> list[dict]:
     # whole -- the same order `build_text.py` uses, and necessary because a
     # doubled display heading straddles the line break as often as not.
     joins = editorial.joins_for(path.parent)
+    # The per-slot repairs too -- the long s and the misread break hyphen. This
+    # function passed none, so the 1541 reprint's 1 481 repaired tokens reached
+    # `data/text/` and never the document a reader opens.
+    repairs = editorial.repairs_for(path.parent)
+
+    def reading(locus, page=None):
+        return repairs.get((locus["pdf_page"], locus["index"]), locus["winner"])
     # The adjudications, applied here as `build_text.py` applies them. They were
     # not, and that is the same drift this function was written to end: a
     # position settled against the facsimile reached the published text and
@@ -675,7 +682,7 @@ def page_lines(path: Path) -> list[dict]:
     for key in order:
         row = layout.line_order(grouped[key])
         per_line[key] = spans.layout(row, leaf["panel"], settled_for(row),
-                                     None, joins)
+                                     reading, joins)
     spans.months(spans.dedupe([g for key in order for g in per_line[key]],
                               leaf["panel"]), leaf["panel"])
 
@@ -699,7 +706,11 @@ def page_lines(path: Path) -> list[dict]:
         # year across all eight -- the two engines outside the panel are what
         # carry leaf 101's `1383.`, which the winner lost -- so restricting
         # this to the panel silently cost year headings.
-        engines = {e for g in groups for x in g["loci"] for e in x["variants"]}
+        # Sorted: a set's order follows Python's string hashing, which changes
+        # from run to run, and everything downstream that breaks a tie by
+        # first-seen -- `year_heading` among them -- flipped with it.
+        engines = sorted({e for g in groups for x in g["loci"]
+                          for e in x["variants"]})
         parts = [{"winner": g["text"], "grade": g["grade"],
                   "loci": g["loci"],
                   "variants": {engine: spans.joined(g["loci"], engine)

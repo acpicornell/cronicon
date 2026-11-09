@@ -178,8 +178,10 @@ def main() -> None:
         raise SystemExit(f"{source} missing -- run scripts/consensus.py first")
 
     pages = targets.resolve(args.pages)
-    # The editorial rules, applied here and nowhere else, and reported.
-    repairs, applied, _ambiguous = editorial.long_s_repairs(
+    # The editorial rules, asked of the shared cache so that `parse_entries.py`
+    # -- the notices and the documents -- applies exactly the same set.
+    repairs = editorial.repairs_for(source)
+    _long_s, applied, _ambiguous = editorial.long_s_repairs(
         source, editorial.long_s_leaves(source))
     # Words the line break split and the vote never put back together. Asked of
     # the shared cache so that `parse_entries.py` applies exactly the same set.
@@ -220,7 +222,7 @@ def main() -> None:
     print(f"  words rejoined   {len(joins):,}  "
           f"({join_tiers['panel']} an engine read whole, "
           f"{join_tiers['attested']} by attestation)")
-    print(f"  long s repaired  {len(repairs):,}  "
+    print(f"  long s repaired  {len(_long_s):,}  "
           f"({applied['panel']:,} from the panel, {applied['attested']:,} by "
           f"attestation; {applied['ambiguous']:,} ambiguous left as printed)")
     for tier in ("unanimous", "one-dissent", "two-dissent", "contested",

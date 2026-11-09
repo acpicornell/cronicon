@@ -857,6 +857,30 @@ lost `dive rsos`, and the audit went on reporting it because it reads the entrie
 `editorial.joins_for()`, which caches because the lexicon costs a pass over 614
 leaves.
 
+**And then it was paid again, for the long s.** `build_text.py` computed the long
+s repairs for itself and `parse_entries.page_lines` — which assembles the notices
+*and the documents* — passed `None` for them. So the 1 481 repaired tokens of the
+1541 reprint were in `data/text/` and in no page a reader opens: the document
+carried **10 `ſ` where the published text had 1 681**. Every per-slot repair now
+comes from `editorial.repairs_for()`, asked by both. **When adding any rule, grep
+for `spans.layout` and check every caller gets it.**
+
+A third tier came with it: **the hyphen the panel read.** `Tarrago. na`,
+`pú. blicos`, `compa-, ñías` — the winner made the break hyphen a stop, and three
+or more engines (or two, with the joined word attested) read it as a hyphen.
+`editorial.hyphen_breaks` restores `Tarrago-` and the ordinary stitch joins it:
+15 tokens, `glued` 31 → **25**. Measured in `docs/EDITORIAL.md` §Rule 2.
+
+**The assembly was not deterministic.** `page_lines` collected the engines in a
+`set`, whose order follows Python's per-process string hashing, and
+`build_documents.year_heading` broke ties by first-seen — so leaf 375's heading
+came out `1543.` on one run and `1543•` on the next, and leaf 374's `1525-` won
+on some runs and glued the year to the paragraph after it (`1525«A 30 de…`).
+Engines are sorted, the tie-break ends on the string, and a reading ending in a
+hyphen can no longer be a year heading. **Verified by running the chain under
+two `PYTHONHASHSEED`s and diffing: identical.** Do that again after touching
+anything that iterates a set.
+
 ## Reading page by page does not scale; the sweep does
 
 `scripts/audit_entries.py` runs every symptom we have ever found over all 3 445
