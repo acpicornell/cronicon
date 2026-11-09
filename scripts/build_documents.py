@@ -638,6 +638,26 @@ def main() -> None:
                 first = start[1] if pdf_page == start[0] else 0
                 last = end[1] if pdf_page == end[0] else len(body)
                 chosen = body[first:last]
+                # **A section boundary is a point on the page, not a point in
+                # the reading order**, and on a two-column leaf the two are not
+                # the same thing. Section V opens in column 0 of leaf 159, so
+                # everything after it in reading order was taken -- including
+                # the top of column 1, which is where section IV finishes. The
+                # edition published `Suma 3 » 2 » com les altres fossen ja
+                # arribades, exceptades alcunes…`, a household account of 1307
+                # run into a fleet's storm damage.
+                #
+                # Nothing printed *above* a section's first line belongs to it.
+                # The test is only applied on the leaf the section starts on,
+                # and only to lines in a later column, so the ordinary case --
+                # a section that opens at the top of column 0 and runs down
+                # column 1 -- is untouched.
+                if pdf_page == start[0] and chosen:
+                    top = chosen[0]["bbox"][1]
+                    column = chosen[0].get("column", 0)
+                    chosen = [line for line in chosen
+                              if line.get("column", 0) <= column
+                              or line["bbox"][1] >= top]
                 if chosen:
                     lines.extend(chosen)
                     notes.extend(page_notes)

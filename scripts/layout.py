@@ -175,19 +175,47 @@ def drop_folio(loci: list[dict]) -> list[dict]:
 # the words that were printed on one line are on one line again. That is also
 # what lets `tables.py` see these at all -- it asks each printed line whether it
 # is a row, and here the row had been cut in half.
-LEDGER_FIGURE = re.compile(
-    r"^[\s.,·•]*\d[\d.,\s]*\d?[\s.,]*"
-    r"(?:»|\"|ls\.?|ss\.?|ds\.?|libs?\.?|lbs?\.?|id\.?|cuarteras?)?[\s.,»]*$",
+# A ledger's right-hand cell is not one figure but a **row of cells** -- libras,
+# sueldos and dineros, with a ditto mark wherever a column repeats: `2.594 » 7 »
+# IO »`, `3.705 libs. 12 ss. » ds.`, `8.435 » 16 » 11 »`. Matching one figure
+# and one unit read `2.594 »` and stopped, so the whole account of 1318 on leaf
+# 160 stayed in pieces. The test is therefore *every token is a figure, a ditto
+# or a unit, and at least one carries a real digit* -- the digit is what keeps
+# a line of ditto marks alone from opening a row.
+#
+# Digit lookalikes are translated first, because the figures are set in the same
+# old-style face as everything else and `IO` for 10 is constant in this column.
+LEDGER_UNIT = re.compile(
+    r"^(?:»|\"|\*|·|•|ls|ss|ds|lb|lbs|lib|libs|id|cuartera|cuarteras)$",
     re.IGNORECASE)
-LEDGER_YEAR = re.compile(r"\s*1[2-8]\d\d\s*[.,]?\s*")
+LEDGER_LOOKALIKE = str.maketrans({"I": "1", "i": "1", "l": "1",
+                                  "O": "0", "o": "0", "S": "5"})
+LEDGER_YEAR = re.compile(r"1[2-8]\d\d")
 LEDGER_OVERLAP = 0.6      # of the shorter box's height
 
 
 def only_a_figure(text: str) -> bool:
-    """Is this line a figure and nothing else -- a ledger's right-hand cell?"""
+    """Is this line a ledger's figures and nothing else?"""
     text = text.strip()
-    return (bool(text) and bool(LEDGER_FIGURE.match(text))
-            and not LEDGER_YEAR.fullmatch(text))
+    if not text:
+        return False
+    seen_digit = False
+    for token in re.split(r"\s+", re.sub(r"[.,]+$", "", text)):
+        bare = token.strip(".,·•")
+        if not bare or LEDGER_UNIT.match(bare.rstrip(".")):
+            continue
+        core = (bare.translate(LEDGER_LOOKALIKE)
+                .replace(".", "").replace(",", "").strip("»*\"·•"))
+        if not core:
+            continue          # a ditto mark the engines glued to another
+        if not core.isdigit():
+            return False
+        # A bare year is a heading, not a cell -- `ISI4.` for 1514 included,
+        # which is why the year is tested after the lookalikes are folded.
+        if LEDGER_YEAR.fullmatch(core) and len(text.split()) == 1:
+            return False
+        seen_digit |= any(c.isdigit() for c in bare)
+    return seen_digit
 
 
 def join_leaders(loci: list[dict]) -> list[dict]:

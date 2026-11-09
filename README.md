@@ -7,11 +7,13 @@ running text, mostly in two columns.
 Intended as a member of the [Corpus Balear](https://corpusbalear.org) family of
 digital editions of public-domain Balearic sources.
 
-**Status.** The OCR has been run over the whole book and measured, and the book has
-been parsed into its own structure: 521 dated years, 244 footnotes separated from
-the text they interrupt, 1 949 Jurats over 356 years, 29 numbered document
-sections, and a glossary resolving 90% of the source attributions. Not yet built:
-the human review pass over the 23 647 contested words, and the site.
+**Status.** The OCR has been run over the whole book and measured; the book has been
+parsed into its own structure — **527 dated years, 3 458 notices, 368 footnotes,
+1 984 Jurats over 362 years, 23 documents assembled from the appendix blocks with
+their 39 numbered pieces, 34 tables and a glossary resolving 93% of the source
+attributions** — and the site renders all of it from a 4.7 MB parquet the browser
+queries directly. What is not done is the human review pass over the 20 325
+contested words.
 
 **This is two books, and they are not equally reliable.** 870 positions have now
 been adjudicated against the facsimile — 550 on the chronicle, 320 on the leaves
@@ -132,7 +134,7 @@ disagreement rate falls to 25%.
 queue is a segmentation artefact rather than a disagreement about characters:
 measured over the queue as it then stood, 46.6% of contested positions have some
 engine returning an empty string and 27.8% have a multi-word variant; only 34.8%
-are a genuine disagreement about characters. On **25 leaves the engines do not
+are a genuine disagreement about characters. On **23 leaves the engines do not
 agree how many columns there are** (`scripts/layout_health.py`), and there the
 contested rate is 21.96% against 4.70% everywhere else — the tables, the annotated
 Jurats lists, anything where a merged line hides the very boundary that would have
@@ -143,12 +145,14 @@ text that overlaps it on the page, so the reading order stops mattering. It is
 dramatically better where the layout is contested (leaf 453 36.1% → 6.4%, leaf 312
 38.7% → 11.1%) and **worse on ordinary prose**, where the page-wide match already
 works and this one costs unanimity (leaf 200: 86.1% → 7.4% unanimous). So it is
-applied per leaf, to those 25 and no others.
+applied per leaf, to those 23 and no others — with one exception that is a rule in
+itself: **a leaf carrying adjudications is held page-aligned**, because aligning it
+by line renumbers it. Leaf 642 is the only one.
 
 **It does not come with the accept rule attached.** The 550 adjudications say what
 unanimity is worth under the page-wide alignment, and not one of them falls on a
 leaf aligned this way. Those leaves are marked `accept_unanimous: false`, and
-their 11 114 non-contested positions are held back from the "accept unread" 78% —
+their **9 000** non-contested positions are held back from the accepted share —
 not because they are doubtful, but because nothing has measured them. A stratified
 round on those leaves discharges the whole block, or condemns it; that is the
 difference between a bound and an assumption.
@@ -160,14 +164,21 @@ word. Each position lands in one of four tiers:
 
 | tier | tokens | share |
 |---|---:|---:|
-| all six agree | 367 923 | 77.7% |
-| one dissenter | 58 322 | 12.3% |
-| two dissenters | 23 531 | 5.0% |
-| **contested** (three or more, or tied) | **23 647** | **5.0%** |
-| **total** | **473 423** | |
+| all six agree | 369 561 | 79.1% |
+| one dissenter | 55 966 | 12.0% |
+| two dissenters | 21 131 | 4.5% |
+| **contested** (three or more, or tied) | **20 325** | **4.3%** |
+| adjudicated against the facsimile | 377 | 0.1% |
+| **total** | **467 360** | |
 
-The winner is always a string some engine actually produced. The pipeline can be
-wrong, but only in ways some recogniser was wrong first.
+Those are the counts in `web/data/word.parquet`, which is what the site queries;
+they move whenever the layout improves, and every figure below is the one that
+matches them.
+
+The winner is always a string some engine actually produced — **except** for the
+positions in the last row, where a person read the facsimile and typed what is
+printed. That tier exists so the share of the edition resting on no engine's
+reading can be counted instead of assumed. It is 377 words in 467 360.
 
 ### 5. Measurement against human ground truth
 
@@ -175,6 +186,13 @@ Agreement is not accuracy. To turn one into the other, 550 token positions were
 adjudicated one by one against the facsimile — **stratified** by tier, so the rare
 and costly cases are represented, with every reported figure re-weighted by each
 tier's true share of the corpus.
+
+A third round of 320 has since been adjudicated on the document leaves and is kept
+as a **separate sample**, not merged into these. The two populations have different
+strata shares — 78.7% unanimous on the document leaves against 70.4% on the pilot
+ones — so merging them would weight medieval Catalan by the chronicle's proportions
+and quietly corrupt every figure resting on them. The numbers in this section are
+the chronicle's; the documents' are at the top of this file.
 
 | | accuracy |
 |---|---:|
@@ -198,7 +216,7 @@ Per tier, for the production panel:
 | contested | 85.2% | 27 |
 
 **The load-bearing row is the first.** In every adjudicated position where all six
-engines agreed they were right, which is what makes it defensible to accept 78% of
+engines agreed they were right, which is what makes it defensible to accept 79% of
 the book without a human looking at it.
 
 That claim has a stated limit: zero failures in 348 trials bounds the shared-error
@@ -212,8 +230,8 @@ top.
 | policy | words reviewed | residual error |
 |---|---:|---:|
 | accept the vote everywhere | 0 | ~0.96% — 1 wrong word in 105 |
-| **review the contested 5.0%** | **23 647** | no residual measured; ≤0.65% at 95% |
-| review contested + two-dissent | 48 004 | — |
+| **review the contested 4.3%** | **20 325** | no residual measured; ≤0.65% at 95% |
+| review contested + two-dissent | 41 456 | — |
 
 The middle row does not say "zero". The production panel was right at all 461
 adjudicated positions outside the contested tier, which makes the point estimate
@@ -242,6 +260,10 @@ beforehand.
 | **Fitting a vertical scale between the scans** | 10× worse than doing nothing | The two differ by *where the page was cropped*, not by how much it was stretched. Fitting a slope turns a constant offset into an error that grows down the leaf. A plain shift, grid-searched, works. |
 | **Swapping the geometry engine on the blurred leaves** | no gain | The word boxes were never the problem there; the image was. Fixed by swapping the *scan* instead. |
 | **A layout detector (PP-DocLayout) for the columns** | 12/12 on the control, useless on the 25 | It is competent and genuinely independent of what the engines read — and it answers a different question. On the annotated Jurats leaves it returns a single `content` region spanning the width, which is *correct*: a table is one region, and decomposing it belongs to a different model. `TableCellsDetection` is that model and ships the **wired** detector, trained on tables drawn with rules; Campaner's are set typographically with none, so it finds one cell on leaf 631. Kept as `scripts/layout_paddle.py`, consumed by nothing. |
+| **Finding a table by "the figure comes first"** | 9 detections, 4 real | `24,294 hombres útiles para tomar las armas.` really is a table row, and so is nothing else that begins with a number: prose opens with a date or a price often enough (`19 de Febrero, por haber llovido…`, `15 ss. la barcilla`) that the family cannot carry a rule. Its mirror image, the figure **last**, is 16 detections and 16 real, and is kept. |
+| **Repairing a doubled heading across a gap** | fires 95 times, nearly all false | `dedupe` drops a word the alignment gave two slots, and it is safe because the two copies are adjacent: `month_of` tolerates two wrong letters, so over a gap it turns `moro`, `cuyo` and `judío` into months. Adjacency is what makes the tolerance safe. |
+| **Scanning up from a column's foot for a note continuing from the one before** | reads correctly, cost 3 years | It is right about leaf 105 and it swallowed the year headings of 1289, 1339 and 1730, because `1339.` alone on a line has no ascender or descender and measures like note type. Nine lines of apparatus are not worth a year of the chronicle, and the loss is silent where the gain is not. |
+| **78-pixel contact sheets as the adjudication surface** | one wrong adjudication | See the trap below. Sheets are now opt-in and exist only so the frozen sample stays reproducible. |
 | **LLM post-correction** | not adopted | The evidence is genuinely mixed: Gemini 2.0 Flash reached 0.84% CER post-correcting historical German directories, but [ICDAR 2026 runs a competition](https://arxiv.org/pdf/2607.08143) on the hallucination and over-correction this causes. The lexicon experiment above is the same mechanism in a far weaker form and it already lost when unconstrained. If revisited, the defensible form is a vote **restricted to the candidates the engines produced**, never free text, measured before being trusted. |
 
 ### The lexicon that is kept
@@ -284,7 +306,10 @@ profile looked ideal for the job — 73% on the *contested* tier where the best 
 engine manages 48% — did the same thing at +22%. A panel is not improved by adding
 accuracy to it. Both engines earn their seats only by **replacing** the two weakest
 readings, which keeps six voters and takes the contested queue from 26 298 to
-24 607 — and to 23 647 once the scan and the alignment are chosen per leaf.
+24 607 — and to 23 647 once the scan and the alignment are chosen per leaf. (The
+queue has since fallen further, to 20 325, but on layout work rather than on
+anything to do with the panel; those are the figures the engine choice was made
+on.)
 
 The methodological risk that motivated the test was real and is worth stating: the
 model is trained on consensus output, so it may have learned the panel's biases,
@@ -322,6 +347,33 @@ Every one of these was hit during development.
   returns them *empty*, because a page-wide token alignment drops them into the
   notes column's slots. The whole 13th-century series was missing for this reason
   and for no other.
+- **The empty string was winning votes.** The vote runs one geometric slot at a
+  time, which works while the engines agree where a word ends and fails completely
+  where they do not: `cuartos.—J. V.—30.—Mataron` is one printed stretch and every
+  engine cuts it somewhere else, so at three of five slots more engines returned
+  `''` than returned any one word and `—30.—Mataron` lost 3–2 and vanished.
+  **5 476 positions, up to 9 668 words.** An empty reading is not a recogniser
+  saying the paper is blank; it is its tokens having landed in the neighbouring
+  slot, and counting it as a vote is treating absence of evidence as evidence of
+  absence. `scripts/spans.py` votes on the whole run at once, so the comparison is
+  between readings of the same ink. The guard that keeps it honest: **a span may
+  only recover text, never remove it**, because three engines skipping a display
+  heading is the identical error one level up.
+- **A rule wired into one assembly is wired into neither.** Three scripts turn the
+  consensus into prose — the readable text, the notices, the documents — and every
+  repair has at some point landed in one and been missing from the others. The
+  joined words went into the published text and not the notices; the adjudicated
+  cells of leaf 159 appeared in the text and vanished from the document the moment
+  it was rebuilt. Nothing fails when this happens; the output is merely older.
+  Repairs belong in the shared layer, and the invariants are re-checked across all
+  three afterwards.
+- **A section boundary is a point on the page, not a point in the reading order**,
+  and on a two-column leaf those are not the same thing. Section V of the
+  14th-century block opens in the *first* column of leaf 159, so everything after
+  it in reading order was taken — including the top of the second column, where
+  section IV is still finishing. The edition published a household account of 1307
+  running straight into a fleet's storm damage. Nothing printed *above* a section's
+  first line belongs to it.
 - **Two scripts that know different things and do not talk.** `parse_documents.py`
   had the letters, edicts and reprinted booklets correctly delimited while
   `parse_entries.py` emitted 96 leaves of them as dated chronicle entries — 60 303
@@ -402,7 +454,9 @@ scripts/
   layout.py                the shared column split and reading order
   build_ordered.py         applies it, producing comparable readings
   scan_health.py           which of the two scans is legible on each leaf
+  layout_health.py         the leaves where the engines disagree how many columns
   consensus.py             token-level vote + the conflict queue
+  spans.py                 votes on a whole run where the engines tokenise differently
   sample_loci.py           stratified sample + facsimile review sheets
   benchmark.py             scoring any panel, ablations, census
   arbitrate.py             deterministic arbitration rules, measured
@@ -414,18 +468,31 @@ scripts/
   parse_jurats.py          the six Jurats series -> (year, seat, name)
   parse_documents.py       the appendix blocks and their numbered sections
   build_documents.py       each of those sections assembled as one document
+  tables.py                the tables Campaner prints inside the prose
   review.py                the review tool: crops at native resolution, keyboard
   parse_sigla.py           the glossary the introduction prints
+  audit_entries.py         every symptom ever found, swept over all 3 458 notices
+  audit_documents.py       the same sweep over the 23 documents
+  build_db.py              the parsed book -> DuckDB -> parquet
+  build_site.py            the static site
 
 data/inventory.json        the 671-leaf survey (committed)
 data/scan_health.json      the leaves where the two scans disagree (committed)
 data/adjudication/         the drawn sample — data, never regenerate (committed)
 data/ground_truth/         550 adjudicated readings (committed — the slow part)
-data/{entries,jurats,documents,sigla,text}/   the parsed book (committed)
+data/review/decisions.jsonl  review decisions, each with the source of its reading
+data/audit/findings.json   what the sweep says is left, ranked
+data/{entries,jurats,documents,sigla,tables,text}/  the parsed book (committed)
 data/{raw,ia,pages,ocr}/   facsimiles and engine output (git-ignored, regenerable)
+web/data/*.parquet         the published tables — the only committed copy of the
+                           per-word certainty and the leaf index (4.7 MB)
 docs/OCR_BENCHMARK.md      the full measurement report
 docs/EDITORIAL.md          what this edition changes, and what it refuses to
 ```
+
+**If `build_site.py` writes it, it does not belong in git.** Thirteen files are
+tracked under `web/` — the parquet, and the hand-written `style.css`, `app.js`,
+`_headers`, `robots.txt`.
 
 ## Reproducing it
 
@@ -459,11 +526,24 @@ version, so each rebuild added about 10 MB that could never be reclaimed.
 
 | | |
 |---|---|
-| `data/entries/` | the chronicle: 521 of 572 years found, **2 503 entries** as `Mes día.—texto—SIGLA`, with **244 footnotes** separated from the text they interrupt |
-| `data/jurats/` | **1 949 names over 356 years**, one row per (year, seat, name) with its certainty tier |
-| `data/documents/` | the 6 appendix blocks Campaner prints between the centuries, 29 numbered sections over 187 leaves — and **23 of them assembled as documents**, 97 595 words, each with its certainty carried through |
-| `data/sigla/` | the glossary of manuscript sigla, resolving **1 632 of 1 804** attributions |
+| `data/entries/` | the chronicle: **527 of 572 years**, **3 458 notices** as `Mes día.—texto—SIGLA`, and **368 footnotes** separated from the text they interrupt |
+| `data/jurats/` | **1 984 names over 362 years**, one row per (year, seat, name) with its certainty tier |
+| `data/documents/` | the 6 appendix blocks Campaner prints between the centuries, 29 numbered sections over 187 leaves — **23 assembled as documents**, 94 245 words, cut into their **39 numbered pieces**, with the certainty carried through |
+| `data/tables/` | **34 tables, 142 rows** — the harvests, the plagues, the census of 1784, the household accounts of 1307 |
+| `data/sigla/` | the glossary, resolving **3 147 of 3 400** attributions (93%), plus a hand-entered dossier on 26 of the sources |
 | `data/text/` | the readable transcription, with every editorially repaired word keeping the panel's reading under `printed` |
+
+Three of those rows exist only because a rule was measured before it was believed.
+**The footnotes** are found by the union of two tests — where they sit and how big
+the type is — because leaf 86 is eleven lines of chronicle over 122 of a quoted
+letter and the band alone published all 122 as chronicle. **The tables** recover
+structure and not text: no character is added, removed or changed, only the record
+of which words make up which row, and the signal is that leaf 569's figures end at
+x 0.793, 0.796, 0.797 and 0.796 while prose does not do that. And **the pieces**
+were declared unfindable in an earlier draft of this file — "20 salutations against
+only 3 numbered pieces" — which turned out to be a measurement of our reading order
+rather than of the book. All twenty-one numbers are on the page, set alone and
+centred over the letter they open; it took the centred-line rule to see them.
 
 Two things found along the way that are worth stating as results rather than
 process. **Leaf 39 prints the year heading `1449.` above an entry that reads «año
@@ -475,21 +555,27 @@ importantly, the veto that stops it corrupting 47 tokens of perfectly good Catal
 
 ## What remains
 
-1. **Do the review.** `scripts/review.py` is built and waiting: 34 761 positions,
-   of which 8 986 carry a figure and 10 474 are capitalised, which is the order it
-   serves them in. It is the same tool for the 23 647 contested words and for the
-   adjudication round below.
-2. **Measure the 159 document leaves.** The medieval Catalan and Latin have never
-   been adjudicated. Their conflict rate is *lower* than the chronicle's (3.77%
-   against 5.59%), which is not reassurance — it is exactly what correlated
-   failure looks like. No reliability figure should be published for the edition
-   until a round of adjudication covers them.
-3. **Split the documents into their individual pieces.** The sections are
-   assembled; the letters inside them are not separated. The Centellas section
-   holds 20 salutations against 3 numbered pieces, so this needs a measured rule,
-   not a guess.
-4. **The site** — static SPA, Catalan UI, Cloudflare Worker, and a card on the
-   Corpus Balear portal.
+1. **Do the review.** `scripts/review.py` is built and waiting: the contested
+   positions plus the block held back on the line-aligned leaves, served figures
+   first and capitalised words second, because that is where a chronicle's value
+   is concentrated. This is the one item that stands between the edition and the
+   accuracy it could have, and it is the one no script can do.
+2. **Discharge the held-back block.** The leaves aligned line by line are marked
+   `accept_unanimous: false` and their non-contested positions are excluded from
+   the "accept unread" share — not because they are doubtful, but because none of
+   the adjudications falls on a leaf aligned that way. A stratified round on those
+   leaves settles it in either direction; that is the difference between a bound
+   and an assumption.
+3. **Two structural jobs, both measured and neither applied.** Leaves 335–367 are
+   a 1541 booklet reprinted in facsimile and are currently filed inside section VI
+   of the 16th-century block, which is 45 leaves of which most are not the section;
+   the boundary needs no new evidence, only the courage to renumber a catalogue.
+   And on leaves 161 and 163 the account's figure column is regular enough that the
+   column finder takes it for a column of the page, so the edition prints every
+   label and then every figure — 15 of 16 lines and 25 of 25, and no other leaf in
+   the book.
+4. **Deploy** — Cloudflare Worker at `cronicon.corpusbalear.org`, and a card on the
+   Corpus Balear portal. The site itself is built.
 
 ## Conventions
 

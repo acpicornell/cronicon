@@ -45,6 +45,7 @@ import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
 
+import build_text
 import editorial
 import layout
 import spans
@@ -659,10 +660,22 @@ def page_lines(path: Path) -> list[dict]:
     # whole -- the same order `build_text.py` uses, and necessary because a
     # doubled display heading straddles the line break as often as not.
     joins = editorial.joins_for(path.parent)
-    per_line = {key: spans.layout(layout.line_order(grouped[key]),
-                                  leaf["panel"], [None] * len(grouped[key]),
-                                  None, joins)
-                for key in order}
+    # The adjudications, applied here as `build_text.py` applies them. They were
+    # not, and that is the same drift this function was written to end: a
+    # position settled against the facsimile reached the published text and
+    # neither the notices nor the documents, so the 53 cells of the household
+    # accounts of 1307 came back as prose the moment `build_documents` ran.
+    decisions = build_text.read_decisions()
+
+    def settled_for(row: list[dict]) -> list[str | None]:
+        return [decisions.get(build_text.decision_key(x["pdf_page"], x["bbox"]))
+                for x in row]
+
+    per_line = {}
+    for key in order:
+        row = layout.line_order(grouped[key])
+        per_line[key] = spans.layout(row, leaf["panel"], settled_for(row),
+                                     None, joins)
     spans.months(spans.dedupe([g for key in order for g in per_line[key]],
                               leaf["panel"]), leaf["panel"])
 

@@ -1172,6 +1172,116 @@ stretches of prose that merely count money. A rejoined line is *proof* of the
 typography: the engines cut it at a gap wide enough to be leader dots, and what
 stood to the right of that gap was nothing but a figure.
 
+**A table aligns two things and the panel loses one or the other**, so a run
+continues if *either* the end of the row or the end of its first figure aligns.
+Taking only the row's end cost leaves 566, 571 and 612, where `Cebada. . . . •
+37.663 »` and `Avena. . . . . 23,038` end 0.05 apart because one keeps its ditto
+mark and the other does not; taking only the figure's cost leaf 161, where
+`Ingresos… 6 ds.` aligned on the `6` and `Gastos… 11 »` on the `11`, which are
+two different columns of the page.
+
+**Leader dots are not a cell**, and treating them as one was worth five leaves:
+`Cebada. . . . . 179,000 »` arrives as four records, the walk back swallowed the
+dots, and the figure's edge came out as the dots' — 0.226 instead of 0.420.
+
+**And a table puts more than a word space between the label and the figure.**
+That is the one guard the two-edge union needed: it let in leaf 241's `com dura
+lo divinal offici a raho de 2 ss. 6 ds.`, a sentence in medieval Catalan that
+happens to end in money. Measured over every table found, leaf 241's median gap
+is **0.0075** — a word space in this book is 0.0066 — and the smallest of the
+real ones is 0.0146, so the threshold sits in a gap that is not delicate.
+
+**A row of ditto marks may continue a table but never open one.** Campaner's
+household accounts set most cells as `»` — `Una galina. . . . . . . 2 » » » »` —
+and the panel keeps the dittos and drops the figure, so a row with no digit in
+it is common inside a real table and is also what a closing guillemet looks like
+when the panel gives it a record of its own. So such a row joins a run that
+figures have already opened, and a run may not end on one either.
+
+**16 tables → 30, 78 rows → 124, 13 leaves → 18**, and leaf 92's list of who
+lent what for the armada of 1343 comes out as seven blocks of 32 names.
+
+### The one table the panel could not read, and what it took
+
+The daily household accounts of 1307 on leaf 159, which open `0114-V-05`, are
+the worst case in the book for the empty-string problem and no rule reaches
+them. The page prints `Una galina. . . . . . . 2 » » » »` and the panel returned
+`Una galina. . . . »`: **the vote emptied three to nine cells on every row of
+the table.** Leader dots and ditto marks set far apart scatter the tokenisation
+completely — on that one row five of eight engines return nothing where the `2`
+is, and at the last slot four read `» »`, `» t) »`, `» » »` and `» " "`, no two
+alike, so `spans.revote` has no class with two votes and refuses.
+
+There is nothing to recover and nothing to detect. **So it was adjudicated**,
+which is what the facsimile is for and the only sanctioned use of reading the
+page: **53 positions on leaf 159**, 27 confirming a reading some engine gave and
+**26 typed**, recorded in `data/review/decisions.jsonl` with `source` as the
+project has always required so that the share of the edition resting on no
+engine's reading stays countable — 4 positions before this, 30 now. The cells
+were assigned to the boxes by the five money columns the printer set, at x
+0.751, 0.772, 0.790, 0.816 and 0.847, and every one of the 15 rows reconstructs
+exactly what the page prints.
+
+**A section boundary is a point on the page, not a point in the reading order**,
+and on a two-column leaf the two are not the same thing. Section V opens in
+column 0 of leaf 159, so everything after it in reading order was taken --
+including the top of column 1, which is where section IV finishes. The edition
+published `Suma 3 » 2 » com les altres fossen ja arribades, exceptades
+alcunes…`: a household account of 1307 run straight into a fleet's storm
+damage. Nothing printed *above* a section's first line belongs to it, and the
+test is applied only on the leaf the section starts on and only to lines in a
+later column, so the ordinary case is untouched.
+
+**A row needs two letters, not three.** `It. vi.`, `It. farina.`, `It. figues y
+cogombres.` — the first has no word of three letters, so the block was never a
+table. Over the whole book the looser guard admits exactly **two further
+tables**, that one and leaf 607's table of coin values, and both are real.
+**34 tables, 142 rows, 20 leaves.**
+
+### The two leaves where a table's column is read as the page's
+
+`find_columns` clusters left edges, and on **leaves 161 and 163 the account's
+figure column is wide enough and regular enough to look like a column of the
+page**. So the leaf reads as three columns, the reading order takes every label
+first and every figure after, and the edition published `Dada de dons 65 » » 389
+» 451 » 8 » 1 » 1.687 1.913 » 9 » 10» 582» 3» 3» 395 » » I» 17.069 » I5 » 6 »` —
+a whole account's figures in one run, with its labels a paragraph away.
+
+`join_leaders` cannot reach them, because it requires the two boxes to be in the
+same column and here they are not. The test that finds them is clean and the
+population is tiny: **a column whose lines are all figures is not a page
+column** — over 614 leaves that is 15 of 16 lines on leaf 161 and 25 of 25 on
+leaf 163, and **no other leaf in the book**.
+
+Fixing it means rebuilding the consensus for those two leaves with the column
+merged, which renumbers them, so it wants the adjudication check run first.
+That is the next thing on this document.
+
+**What is still not right on leaf 159 and is honest to say so:**
+`Disapte 1.er de Juliol` runs `It. vi.`, `It. farina.`, `It. peix y ous` — and
+`rows_of` requires a row to carry three consecutive letters somewhere, so that a
+bare figure at the foot of a column cannot open a table. `It. vi. 1 s. 2 ds.`
+has no such word. The guard is right in general and wrong here, and loosening it
+is a measurement to make deliberately rather than in passing.
+
+**And it exposed the drift this repository keeps paying for.** An adjudicated
+position reached `build_text.py` and neither `parse_entries.py` nor
+`build_documents.py`, because only the first read `decisions.jsonl` — so the 53
+cells appeared in the published text and the document came back as prose the
+moment it was rebuilt. `page_lines` now applies them too. Leaf 159 is a table:
+32 tables, 135 rows, and four of them set on `0114-V-05`.
+
+**A ledger's right-hand cell is a row of cells, not one figure.** The account of
+1318 on leaf 160 reads `2.594 » 7 » IO »` — libras, sueldos and dineros with a
+ditto mark wherever a column repeats — and matching one figure and one unit read
+`2.594 »` and stopped, so the whole account stayed in pieces. The test is now
+*every token is a figure, a ditto or a unit, and at least one carries a real
+digit*: the digit is what stops a line of ditto marks alone from opening a row,
+and the digit lookalikes are folded first because `IO` for 10 is constant in this
+column. **28 joins → 38, tables 20 → 22, rows 92 → 101**, and the same cut had
+to be made again in `build_db.split_row`, which was cutting `28 » 16` into a
+label of `ga doble.. 28 »` and a figure of `16`.
+
 Leaf 374's ledger is **declined and that is right**: its figures end at 0.398,
 0.436, 0.465 and 0.364, because the number of trailing ditto marks varies and
 the panel drops some. The geometry says no, so those rows stay in the prose.

@@ -8,15 +8,15 @@ Algunas noticias é indicaciones curiosas extraídas de las que coleccionó el P
 
 «A fin de que se vea el valor de la moneda por el precio de los frutos, se continuan los gastos de algunos días de los de más y ménos consumo.»
 
-Disapte j.er de Juliol. Costá pa It. vi. i I s. 2 ds. It. ......... » » 4 » It. figues y cogombres. . . » » 2 » It. peix y ous 1 » 6 »
+Disapte j.er de Juliol. Costá pa It. vi. i 1 s. 2 ds. It. farina. » » 4 » It. figues y cogombres. . . » » 2 » It. peix y ous 1 » 6 »
 
-Suma....... 3»2 » com les altres fossen ja arribades, exceptades alcunes. E per so cor havien sostenguda gran fortuna apres lo departiment de Giger, anaren a la Seu en camises e bragues al vespre; e toren pessades cent persones. Per la fortuna la qual lo dit stol ha sofferta partint de Giger se diu que un rampi de xiij banchs de Eyvissa es stat perdut e menyscabat, e una barcha, la qual havian armada alscuns cap de guaytes axi mateix se diu que es perduda.»
+Suma 3 » 2 »
 
-Dimecres á s Juriol. Vi. . s. + ds. Carn y porch.. . . . .
+Dimecres á s Juriol. Vi. . s. + ds. Carn y porch.. . . . . 2 » 5 »
 
-Dilluns á 25 Desembre. Carn y tocino . . .. 4 » Una galina. . . . » Ous y salsa . » » 5 » » Cols y sebas. . . . .. Sardina. . » Arros. . » » 2 » Figues y melles. . . . . » Juyevert y raves. . » )) » » 1 •> Cendra. ... » 3 » Un cadaf. . » » » •> Salsa. . Vinagre.. . »
+Dilluns á 25 Desembre. Carn y tocino . . .. 2 » 4 » » Una galina. . . . . . . .. 2 » » » » Ous y Salsa. . . . . .. .. » » 5 » » Cols y sebas. . . . .. » » 3 » » Sardina. . . . . . . .. .. » » 4 » » Arros. . » » 2 » » Figues y melles. . . . . » » 4 » » Juyevert y raves. . . ... » » » » 1 » Cendra. ... » » 3 » » Un cadaf. . » » 5 » » Salsa. . » » 4 » » Vinagre.. . . . . . . . .. » » 3 » »
 
-Suma.. . . . . . 8 » 7 » 1 » Pestanagues.. » » I ds. » Un liberti y un anet. . . . 2 s. 5 » »
+Suma.. . . . .. 8 » 7 » 1 » Pestanagues.. » » 1 ds. » Un liberti y un anet. . . . 2 s. 5 » »
 
 Suma.. . . » 5 1 »
 
@@ -58,31 +58,7 @@ Resúmen general de las rentas y gastos del reino de Mallorca en este año.
 
 Ingresos.
 
-«Primo, de la rebuda de la ciutat, en diner» (valor de 504 cuarteras 3 almudes de trigo y 486 cuarteras 3 almudes de cebada de los diezmos de
-
-3.705 libs. 12 ss. » ds. esta comarca.) . .
-
-«Id. de la rebuda
-
-fora la ciutat, en diner. . . . . . . .
-
-2.594 » 7 » IO »
-
-Id. de la rebuda
-
-del preu de tot lo blat.. 3.521
-
-» » » 9 »
-
-Id. de la rebuda
-
-de justicias de tota laisla»(multas » 9 » 8 » la isla «(multas etc.)
-
-«Id. de la rebuda
-
-de les rendes que foren del Noble Gaston de Bearne.
-
-1.113 *» 5 »
+«Primo, de la rebuda de la ciutat, en diner» (valor de 504 cuarteras 3 almudes de trigo y 486 cuarteras 3 almudes de cebada de los diezmos de esta comarca.) . . 3.705 libs. 12 ss. » ds. «Id. de la rebuda fora la ciutat, en diner 2.594 » 7 » IO » Id. de la rebuda del preu de tot lo blat.. 3.521 » » » 9 » Id. de la rebuda de justicias de tota laisla»(multas » 9 » 8 » la isla «(multas etc.) «Id. de la rebuda de les rendes que foren del Noble Gaston de Bearne. 1.113 *» 5 »
 
 De les rendes de Biniaraix quefo den Arnaldo TorId. de la rebuda de les rendes que foren haudes de lo del Temple.. . . . Id. de la rebuda de les rendes qne foren haudes per lo Pariatge, del señor Bisbe.. . Id. de la rebuda de les rendes que foren haudes de la tenda e del dret dels sarrasins e jueus estranys. . . . Id. de la rebuda de les rendes de Menorca. . . . . . Id. de les de EbiId. de la rebuda extraordinaria.» . «Dadaper violaris» (pensiones vitalicias.) . . ... «Dada de la almoyna den Guillem Sa Coma e den Jaume Espinach e de lo ques dona per los Procuradors. . . . . . Dada de provisions dordes e desQuitacio de Lochtinent e dalQuitacio de 25 libs. per cavayl
 
@@ -184,9 +160,7 @@ A Cassanimigo Salvatge, etc. etc. 238 libs., 8 ss. 10 ds.»
 
 En las kalendas de Julio (I.° de dicho mes,) dispuso el Rey Pedro que se adelantaran las obras de las poblaciones de Andraitx, Santa Ponsa, Prat den Catí (ahora de Son Jordi,) La Palomera, Cala Porrassa y Coll den Rabassa.
 
-«Libre de comptes quen Bertran Roig e an Bernat Sa Morera an donat de la Procuracio Reyal del Reyne de Malorques, es asseber del primer dia del mes de Juny del any 1343 quel Sr. Rey en Pere entra en la ciutat de Mayorques, la qual ha pres a sa ma per execucio de justicia que feu contra en Jaume de Malorcas.» «Rendes que prenen los Procuradors. Censal de diners, de farina, de blat, del pes dels estrangers e Juheus, lo pes de la quartera, lo pes de la paya, lo mesuratge del oli, lo mesuratge del blat, delme del blat, de la ortoliça, del oli, del bestiar, capitol de Malorques per les 4 canongies, botiga del carrer de la mar, la leuda, los guardias del port, lo taulatge del Cayl, rendes que foren den Gilabert de Cruelles, de novells establiments, estade de serrahins, la carceleria de la ciutat, la escrivania de la cort del Batle, la del Veguer de la ciutat, los escrivans del Vaguer de fora, la escrivania de appellacions, la de cartes: En aquest any munten totes les
-
-3.489 libs. 16 ss. 1 ds. dites rendes. . . . Munta tota la moneda rebuda de fora la ciutat, exceptat lo preu del blat......... 4.850 » 5 » 11 » Condennacions fetas axi per lo señor Rey com per son Governador.. 104 libs. 1 ss. 8 ds. Monedatje de tota la isla. 4.512 » 15 » 1 » Rebudes extraordinaries . . » 19 » 3 » Rebuda de Menorca 312 » 11 » 2 » De Evissa. . . . 50 » » » Deutes vells qui eren deguts an Jacme de Montpeller. 402 » 14 » 5 ».
+«Libre de comptes quen Bertran Roig e an Bernat Sa Morera an donat de la Procuracio Reyal del Reyne de Malorques, es asseber del primer dia del mes de Juny del any 1343 quel Sr. Rey en Pere entra en la ciutat de Mayorques, la qual ha pres a sa ma per execucio de justicia que feu contra en Jaume de Malorcas.» «Rendes que prenen los Procuradors. Censal de diners, de farina, de blat, del pes dels estrangers e Juheus, lo pes de la quartera, lo pes de la paya, lo mesuratge del oli, lo mesuratge del blat, delme del blat, de la ortoliça, del oli, del bestiar, capitol de Malorques per les 4 canongies, botiga del carrer de la mar, la leuda, los guardias del port, lo taulatge del Cayl, rendes que foren den Gilabert de Cruelles, de novells establiments, estade de serrahins, la carceleria de la ciutat, la escrivania de la cort del Batle, la del Veguer de la ciutat, los escrivans del Vaguer de fora, la escrivania de appellacions, la de cartes: En aquest any munten totes les dites rendes. . . . 3.489 libs. 16 ss. 1 ds. Munta tota la moneda rebuda de fora la ciutat, exceptat lo preu del blat......... 4.850 » 5 » 11 » Condennacions fetas axi per lo señor Rey com per son Governador.. 104 libs. 1 ss. 8 ds. Monedatje de tota la isla. 4.512 » 15 » 1 » Rebudes extraordinaries . . » 19 » 3 » Rebuda de Menorca 312 » 11 » 2 » De Evissa. . . . 50 » » » Deutes vells qui eren deguts an Jacme de Montpeller. 402 » 14 » 5 ».
 
 Blat del terme 1.014 quarteres, munta en diners. 460 » 16 » 2 » Ordi de id. 911 quarteres 3 bars. . De llegums en Oli rebut 8.329 cortans en mitx Suma total. . . 18.219 libs.
 
@@ -196,7 +170,7 @@ Compte de dades. Dade de violaris Dade de prebeDade de cavayls armats.. . . . Da
 
 » Pera de Crexell. .
 
-Dades extraordinaries.. . . . . . 10.379 » 7 » II» Dades dels cavalers soldats de Malorcas.. 4-175 » 3 » XX Nolits dels cavalers estipendia- ris. 155 » 13 » 3 X> » Dades de estimas de cavayls... 649 » 13 » »» Suma total dades. 20.533 libs. 17 ss. » ds. Suma total rebudes 18.219 » 7» XX
+Dades extraordinaries.. . . . . . 10.379 » 7 » II» Dades dels cavalers soldats de Malorcas.. 4-175 » 3 » XX Nolits dels cavalers estipendia- ris. 155 » 13 » 3 » Dades de estimas de cavayls... 649 » 13 » »» Suma total dades. 20.533 libs. 17 ss. » ds. Suma total rebudes 18.219 » 7» XX
 
 Deficit. . . » 9 » 4»
 

@@ -42,7 +42,10 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import statistics
 from pathlib import Path
+
+import layout
 
 PROJECT = Path(__file__).resolve().parent.parent
 TEXT = PROJECT / "data" / "text"
@@ -56,12 +59,35 @@ UNIT = re.compile(r"^[»\"'\s.,]*(cuarteras?|id|ls|ss|ds|libs?|»)?[\s.,»]*$",
                   re.IGNORECASE)
 # How far apart two right edges may be and still count as one column.
 ALIGN = 0.012
-# A row needs a label: three letters or more somewhere in it, so that a bare
-# figure at the foot of a column cannot open a table.
-LABELLED = re.compile(r"[A-Za-zÀ-ÿ]{3,}")
+# A row needs a label -- two letters or more somewhere in it -- so that a bare
+# figure at the foot of a column cannot open a table. Three was too many: leaf
+# 159's household account of 1307 runs `It. vi.`, `It. farina.`, `It. figues y
+# cogombres.` and the first of those has no word of three letters, so the block
+# was never a table. Over the whole book, dropping to two admits exactly **two
+# further tables** -- that one, and leaf 607's table of coin values (`Dobla de
+# 20 pesos ú onza . . 24 lbs. 3 ss. 8 ds.`) -- and both are real.
+LABELLED = re.compile(r"[A-Za-zÀ-ÿ]{2,}")
 # A table is at least this many rows. Two aligned figures happen by accident in
 # ordinary prose; three do not.
 MIN_ROWS = 3
+# A table puts white space between the label and the figure -- leader dots, or
+# the blank the printer leaves. Prose puts a word space, which in this book is
+# 0.0066 of the page. That is the whole difference between `Cebada. . . . .
+# 179,000 »` and leaf 241's `com dura lo divinal offici a raho de 2 ss. 6 ds.`,
+# which is a sentence in medieval Catalan that happens to end in money and was
+# the one false detection among 29. Measured over every table found: leaf 241's
+# median gap is 0.0075 and the smallest of the real ones is 0.0146, so 0.010
+# sits in the gap and above a word space.
+MIN_GUTTER = 0.010
+# A record that is nothing but a ditto mark or a unit: the tail of a row's
+# figures often arrives as several records, and `»` alone carries no digit.
+# **Leader dots are not a cell.** `Cebada. . . . . 179,000 »` arrives as four
+# records and the run of dots matched a pattern that allowed only punctuation,
+# so the walk back swallowed it and the figure's edge came out as the dots' --
+# 0.226 instead of 0.420, which is why leaves 566, 571, 609, 612 and 625 lost
+# their harvests. A cell has to carry a ditto mark or a unit.
+CELL_ONLY = re.compile(r"^[\s.,·•]*(?:[»\"'*]+|(?:cuarteras?|id|ls|ss|ds|lbs?"
+                       r"|libs?)\.?)[\s.,»]*$", re.IGNORECASE)
 
 
 def cell_edge(row: list[dict]) -> tuple[str, float] | None:
@@ -83,20 +109,51 @@ def cell_edge(row: list[dict]) -> tuple[str, float] | None:
     a date or a price often enough, and 9 detections of which 4 or 5 are real is
     not a rule. Those leaves stay prose until something separates them.
 
-    Within a span record the figure's own box is not recorded, so the record's
-    right edge stands in for it, which is right exactly when the figure ends the
-    record -- which the test has just established.
+    **The edge returned is the row's, not the figure's**, and that was wrong
+    before: where the last record is a unit the figure's own edge is the
+    *penultimate* record's, so `Ingresos. . . . . 17.069 libs. 15 ss. 6 ds.`
+    aligned on the `6` and `Gastos.. . . . . 8.435 » 16 » 11 »` on the `11`,
+    which are two different columns of the page. The three closing rows of the
+    account of 1318 therefore never formed a table. What the printer aligns is
+    the end of the row.
     """
-    last = row[-1]
-    found = list(FIGURE.finditer(last["text"]))
-    if found and UNIT.match(last["text"][found[-1].end():]):
-        return "right", last["bbox"][2]
-    # …and the unit may be a record of its own: `176,780` then `»`.
-    if len(row) > 1 and UNIT.match(last["text"]):
-        found = list(FIGURE.finditer(row[-2]["text"]))
-        if found and UNIT.match(row[-2]["text"][found[-1].end():]):
-            return "right", row[-2]["bbox"][2]
-    return None
+    at = len(row)
+    while at and (layout.only_a_figure(row[at - 1]["text"])
+                  or CELL_ONLY.match(row[at - 1]["text"].strip())):
+        at -= 1
+    if at == len(row):
+        return None
+    if at == 0:
+        # The whole row arrived as one record, which happens where the panel
+        # disagreed about the leader dots: leaf 159's `It. peix y ous 1 » 6 »`
+        # is a single span. Then the split is made inside its text, and the
+        # edge is the record's own, which is what the alignment uses anyway.
+        tokens = row[0]["text"].split()
+        cut = len(tokens)
+        while cut and (layout.only_a_figure(tokens[cut - 1])
+                       or CELL_ONLY.match(tokens[cut - 1])):
+            cut -= 1
+        if not cut or cut == len(tokens):
+            return None
+        if not any(c.isdigit() for c in " ".join(tokens[cut:])):
+            return None
+        return "right", (row[0]["bbox"][2], row[0]["bbox"][2])
+    tail = " ".join(w["text"] for w in row[at:])
+    if not any(c.isdigit() for c in tail):
+        # A row whose cells are all ditto marks. On the household accounts of
+        # 1307 (leaf 159) most of them are: `Una galina. . . . . . . 2 » » » »`
+        # is four ditto marks and one figure, set far apart, and the panel keeps
+        # the dittos and drops the figure. Such a row may *continue* a table but
+        # never open one, so it is returned marked and `tables_on` decides.
+        return "ditto", (max(w["bbox"][2] for w in row), row[at]["bbox"][2])
+    # Two edges, because the printer aligns two things and the panel loses one
+    # or the other: the end of the row, and the end of the figure that opens the
+    # cell run. Taking only the row's end cost leaves 566, 571 and 612, where
+    # `Cebada. . . . • 37.663 »` and `Avena. . . . . 23,038` end 0.05 apart
+    # because one keeps its ditto mark and the other does not; taking only the
+    # figure's cost leaf 161, where `Ingresos… 6 ds.` aligned on the `6` and
+    # `Gastos… 11 »` on the `11`. A run continues if **either** holds.
+    return "right", (max(w["bbox"][2] for w in row), row[at]["bbox"][2])
 
 
 def rows_of(leaf: dict) -> list[tuple[float | None, list[dict]]]:
@@ -122,24 +179,44 @@ def figures(row: list[dict]) -> str:
     return " ".join(m.group(0) for w in row for m in FIGURE.finditer(w["text"]))
 
 
+def gutter(block: list[list[dict]]) -> float:
+    """The median white space between a row's label and its figures."""
+    gaps = []
+    for row in block:
+        at = len(row)
+        while at and (layout.only_a_figure(row[at - 1]["text"])
+                      or CELL_ONLY.match(row[at - 1]["text"].strip())):
+            at -= 1
+        if 0 < at < len(row):
+            gaps.append(row[at]["bbox"][0] - row[at - 1]["bbox"][2])
+    return statistics.median(gaps) if gaps else 0.0
+
+
 def tables_on(leaf: dict) -> list[list[list[dict]]]:
     """Runs of consecutive lines whose figures line up on the right."""
     rows = rows_of(leaf)
     found = []
     n = 0
     while n < len(rows):
-        if rows[n][0] is None:
+        if rows[n][0] is None or rows[n][0][0] == "ditto":
             n += 1
             continue
         side, edge = rows[n][0]
         m = n
         while (m + 1 < len(rows) and rows[m + 1][0] is not None
-               and rows[m + 1][0][0] == side
-               and abs(rows[m + 1][0][1] - edge) < ALIGN):
+               and rows[m + 1][0][0] in (side, "ditto")
+               and any(abs(a - b) < ALIGN
+                       for a, b in zip(rows[m + 1][0][1], edge))):
             m += 1
+        # A run may not *end* on a ditto row either: what closes a table is a
+        # figure, and trailing dittos are as likely to be a closing guillemet
+        # the panel gave a record of its own.
+        while m > n and rows[m][0][0] == "ditto":
+            m -= 1
         block = [row for _cell, row in rows[n:m + 1]]
         # Every row reading the same figure is a label repeated, not a table.
-        if len(block) >= MIN_ROWS and len({figures(r) for r in block}) > 1:
+        if (len(block) >= MIN_ROWS and len({figures(r) for r in block}) > 1
+                and gutter(block) > MIN_GUTTER):
             found.append((side, block))
         n = m + 1
     return found

@@ -148,8 +148,29 @@ def load_centuries(con: duckdb.DuckDBPyConnection) -> None:
     print(f"  century       {len(rows):>8,}")
 
 
-TABLE_FIGURE = re.compile(r"([\d][\d.,\s]*[\d]|\d)\s*([»\"'\s.,]*"
-                          r"(?:cuarteras?|id|ls|ss|ds|libs?)?[\s.,»]*)$")
+# The figure at the end of a row, which in the ledgers is not one figure but a
+# **run of cells** -- `3.705 libs. 12 ss. » ds.`, `2.594 » 7 » IO »`, `28 » 16`.
+# Matching one number and one unit cut `28 » 16` into a label of `ga doble.. 28
+# »` and a figure of `16`, and left `esta comarca.) . . 3.705 libs. 12 ss. » ds.`
+# with no figure at all, since the row does not *end* in a bare number. So the
+# run is taken whole: every trailing token that is a figure, a ditto mark or a
+# unit, back to the first of them.
+TABLE_CELL = re.compile(r"^(?:[\dIiOol][\d.,IiOol]*|[»\"'*·•]+"
+                        r"|(?:cuarteras?|id|ls|ss|ds|lbs?|libs?)\.?)$",
+                        re.IGNORECASE)
+
+
+def split_row(text: str) -> tuple[str, str | None]:
+    """A row's label and the run of cells that closes it."""
+    tokens = text.split()
+    at = len(tokens)
+    while at and TABLE_CELL.match(tokens[at - 1].strip(".,")):
+        at -= 1
+    # The run has to carry a real digit: a row ending in `. . . .` is a label
+    # whose figure the panel lost, not a row with an empty figure.
+    if at == len(tokens) or not any(c.isdigit() for c in " ".join(tokens[at:])):
+        return text, None
+    return " ".join(tokens[:at]).strip(" .·•"), " ".join(tokens[at:])
 
 
 def load_tables(con: duckdb.DuckDBPyConnection) -> None:
@@ -167,12 +188,7 @@ def load_tables(con: duckdb.DuckDBPyConnection) -> None:
     for n, table in enumerate(json.loads(path.read_text()), 1):
         for seq, (cells, tier) in enumerate(zip(table["rows"], table["tiers"])):
             text = " ".join(cells).strip()
-            match = TABLE_FIGURE.search(text)
-            if match:
-                label = text[:match.start()].strip(" .·•")
-                figure = (match.group(1) + " " + match.group(2).strip()).strip()
-            else:
-                label, figure = text, None
+            label, figure = split_row(text)
             rows.append((n, seq, table["pdf_page"], text, label, figure, tier))
     con.executemany("INSERT INTO table_row VALUES (?,?,?,?,?,?,?)", rows)
     print(f"  table_row     {len(rows):>8,}")
