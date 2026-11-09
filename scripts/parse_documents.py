@@ -34,6 +34,8 @@ import json
 import re
 from pathlib import Path
 
+import layout
+import statistics
 import targets
 from parse_entries import OCR, page_lines, year_of_line
 
@@ -161,6 +163,22 @@ def title_after(lines: list[dict], texts: list[str], i: int
     return " ".join(parts).strip(), (used[0] if used else i)
 
 
+# A section numeral is set centred -- over its column, or over the page as on
+# leaf 123 -- and never where the column's text starts. Asking the panel for a
+# numeral on any short line is generous, and on leaf 159 it took `Vi. . . . . .
+# 1 s. 6 ds.` -- wine, in the household accounts of 1307 -- for section VI, whose
+# title became `Carn y tocino . . 2 » 4 » »`. `Vi` starts 0.001 from the
+# column's usual left edge; every catalogued numeral starts well clear of it,
+# to the right when centred on its column and 0.04 to the left on leaf 123.
+# The first attempt measured the indent from the column's *leftmost* line, and
+# leaf 123's numeral, centred over the gutter, is its own column's leftmost.
+def at_text_edge(lines: list[dict], i: int) -> bool:
+    """Does line `i` start where the ordinary lines of its column start?"""
+    column = [ln["bbox"][0] for ln in lines if ln["column"] == lines[i]["column"]]
+    edge = statistics.median(column)
+    return abs(lines[i]["bbox"][0] - edge) <= layout.COLUMN_EDGE_TOLERANCE
+
+
 def sections(leaves: dict[int, list[dict]], first: int, last: int,
              jurats_until: int) -> list[dict]:
     """The numbered sections inside one block, in order.
@@ -191,7 +209,8 @@ def sections(leaves: dict[int, list[dict]], first: int, last: int,
                 title = match.group(2)
                 opens_at = i
                 readings.add(match.group(1))
-            elif len(text) <= 10 and len(lines[i]["row"]) <= 2:
+            elif (len(text) <= 10 and len(lines[i]["row"]) <= 2
+                    and not at_text_edge(lines, i)):
                 # The winner may be no numeral at all -- leaf 482 prints `II.`
                 # and the vote returned `XX.` -- so a short line is put to the
                 # panel before it is dismissed. The evidence is weaker here, so

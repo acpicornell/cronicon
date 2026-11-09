@@ -74,7 +74,11 @@
   },
   {
    "check": "wall",
-   "detail": "¶99: 1697 chars"
+   "detail": "¶99: 1661 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶101: '«De part del Governador de Mallorc.'"
   },
   {
    "check": "piece-gap",
@@ -220,11 +224,19 @@
   },
   {
    "check": "short-para",
+   "detail": "¶96: '17 (Libs. de Cart. Real. de 1327.)'"
+  },
+  {
+   "check": "short-para",
    "detail": "¶98: 'Se halla notado en las letras Reales de dicho año.'"
   },
   {
    "check": "short-para",
-   "detail": "¶100: 'Se llamaba Pagano de Mallorca, casó con Blanca de '"
+   "detail": "¶99: 'Se llamaba Pagano de Mallorca, casó'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶100: '19 con Blanca de Salellas.'"
   },
   {
    "check": "short-para",
@@ -232,7 +244,7 @@
   },
   {
    "check": "short-para",
-   "detail": "¶104: 'Casó con Juan, marqués de Montferrato.—En 1403 aún'"
+   "detail": "¶103: 'Casó con Juan, marqués de Montferrato.—En 1403 aún'"
   },
   {
    "check": "short-para",
@@ -279,84 +291,68 @@
    "detail": "¶6: 'Suma 3 » 2 »'"
   },
   {
-   "check": "runt",
-   "detail": "¶10: 'Suma.. . . » 5 1 »'"
-  },
-  {
    "check": "short-para",
-   "detail": "¶10: 'Suma.. . . » 5 1 »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶11: '«Se ignora lo que son el Libertí y Anet.» (1)'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶21: '* * * Entrelos gastos Reales de este año 1311 figu'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶24: 'En 4 de Agosto per menjar del mes de Agost...... ('"
+   "detail": "¶8: 'Dilluns á 25 Desembre. Pa'"
   },
   {
    "check": "runt",
-   "detail": "¶29: 'Ingresos.'"
+   "detail": "¶11: 'Suma.. . . » 5 1 »'"
   },
   {
    "check": "short-para",
-   "detail": "¶29: 'Ingresos.'"
+   "detail": "¶11: 'Suma.. . . » 5 1 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶12: '«Se ignora lo que son el Libertí y Anet.» (1)'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶22: '* * * Entrelos gastos Reales de este año 1311 figu'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶25: 'En 4 de Agosto per menjar del mes de Agost...... ('"
   },
   {
    "check": "runt",
-   "detail": "¶32: '17.069 » I5 » 6 »'"
+   "detail": "¶30: 'Ingresos.'"
   },
   {
    "check": "short-para",
-   "detail": "¶32: '17.069 » I5 » 6 »'"
+   "detail": "¶30: 'Ingresos.'"
   },
   {
    "check": "runt",
-   "detail": "¶33: 'Gastos.'"
+   "detail": "¶33: '17.069 » I5 » 6 »'"
   },
   {
    "check": "short-para",
-   "detail": "¶33: 'Gastos.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶35: 'Quitacio de Lochtinent e dal439 » 9 » 7 »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶36: 'Quitacio de 25 libs. per cavayl'"
+   "detail": "¶33: '17.069 » I5 » 6 »'"
   },
   {
    "check": "runt",
-   "detail": "¶37: '403 » 15 » »»'"
+   "detail": "¶34: 'Gastos.'"
   },
   {
    "check": "short-para",
-   "detail": "¶37: '403 » 15 » »»'"
-  },
-  {
-   "check": "bare-dash",
-   "detail": "¶37: '403 » 15 » »»'"
+   "detail": "¶34: 'Gastos.'"
   },
   {
    "check": "short-para",
-   "detail": "¶38: 'Quitacio de 1 5 libs. per civade. 45 » » » » »'"
+   "detail": "¶37: 'Quitacio de Lochtinent e daltre 439 » 9 » 7 »'"
   },
   {
    "check": "short-para",
-   "detail": "¶39: 'Quitacio de sirvents dels casteyls. 661 » » » 5 »'"
+   "detail": "¶38: 'Quitacio de 25 libs. per cavayl armat 403 » 15 » »'"
   },
   {
    "check": "short-para",
-   "detail": "¶40: 'Dada de dons fets de manament del Sr. Rey.. . . .'"
+   "detail": "¶39: 'Quitacio de 1 5 libs. per civade. 45 » » » » »'"
   },
   {
    "check": "short-para",
-   "detail": "¶41: 'Dada de dons secrets. . . . . . . 268 » »» »»'"
+   "detail": "¶40: 'Quitacio de sirvents dels casteyls. 661 » » » 5 »'"
   },
   {
    "check": "short-para",
@@ -432,43 +428,55 @@
   },
   {
    "check": "short-para",
-   "detail": "¶92: 'II » I2 » IO Oli rebut 8.329 cortans en mitx'"
+   "detail": "¶91: 'Compte de dades.'"
   },
   {
    "check": "short-para",
-   "detail": "¶93: '961 » 19 » 2 » Suma total. . . 18.219 libs. 7 ss. '"
+   "detail": "¶95: 'Dades de quarts de luismes . 10 » 9 » 10 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶96: 'Dade del censal quel Sr. Rey fa. . 108 » 2 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶98: 'Dade de obres. 87 » 10 » II »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶99: 'Dade de messions dels sellers. 160 » 17 » 10 »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶100: 'Dade de dons fets per lo Sr. Rey. 125 » » » »'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶102: 'Dade de messions dels blats. . 129 » 17 » IO *'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶103: 'Messions fetas en los blats per en Pera de Crexell'"
   },
   {
    "check": "runt",
-   "detail": "¶95: '195 » 11 » » »'"
+   "detail": "¶104: '333 » X)'"
   },
   {
    "check": "short-para",
-   "detail": "¶95: '195 » 11 » » »'"
-  },
-  {
-   "check": "bare-dash",
-   "detail": "¶95: '195 » 11 » » »'"
+   "detail": "¶104: '333 » X)'"
   },
   {
    "check": "runt",
-   "detail": "¶97: '333 » X)'"
+   "detail": "¶106: 'Deficit.... 2.314 » 9» 4»'"
   },
   {
    "check": "short-para",
-   "detail": "¶97: '333 » X)'"
-  },
-  {
-   "check": "runt",
-   "detail": "¶99: 'Deficit.... 2.314 » 9» 4»'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶99: 'Deficit.... 2.314 » 9» 4»'"
+   "detail": "¶106: 'Deficit.... 2.314 » 9» 4»'"
   },
   {
    "check": "contested",
-   "detail": "9.3% of its words"
+   "detail": "10.0% of its words"
   }
  ],
  "0225-II-02": [
@@ -516,7 +524,7 @@
  "0225-V-05": [
   {
    "check": "wall",
-   "detail": "¶29: 1384 chars"
+   "detail": "¶29: 1395 chars"
   },
   {
    "check": "wall",
@@ -602,662 +610,659 @@
    "detail": "¶2: 1476 chars"
   }
  ],
- "0311-VI-06": [
+ "0311-VI-06": [],
+ "0311-VII-07": [
   {
    "check": "short-para",
-   "detail": "¶10: 'por el Pavorde D. A. Jaume.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶13: '«Lo Lochtinent general.'"
+   "detail": "¶5: '«Lo Lochtinent general.'"
   },
   {
    "check": "runt",
-   "detail": "¶16: '18 »'"
+   "detail": "¶10: '18 »'"
   },
   {
    "check": "short-para",
-   "detail": "¶16: '18 »'"
+   "detail": "¶10: '18 »'"
   },
   {
    "check": "bare-dash",
-   "detail": "¶16: '18 »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶19: 'A Francesch Torres per 3 mesos. 27 » 18 »'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶20: 'A Juliá Valera, altre dels sargents majors. 41 »'"
+   "detail": "¶10: '18 »'"
   },
   {
    "check": "runt",
-   "detail": "¶22: '. 1218'"
+   "detail": "¶15: 'mesos. 27 » 18 »'"
   },
   {
    "check": "short-para",
-   "detail": "¶22: '. 1218'"
+   "detail": "¶15: 'mesos. 27 » 18 »'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶19: '. 1218'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶19: '. 1218'"
   },
   {
    "check": "bare-dash",
-   "detail": "¶22: '. 1218'"
+   "detail": "¶19: '. 1218'"
   },
   {
    "check": "short-para",
-   "detail": "¶27: 'A Pedro de Mora, capitá de'"
+   "detail": "¶24: 'A Pedro de Mora, capitá de'"
   },
   {
    "check": "short-para",
-   "detail": "¶28: '48 ls. 12 s. 6 ds. Ballesters.'"
+   "detail": "¶25: '48 ls. 12 s. 6 ds. Ballesters.'"
   },
   {
    "check": "short-para",
-   "detail": "¶32: 'Al mateix Torres per id. . .462 15 » »'"
+   "detail": "¶29: 'Al mateix Torres per id. . .462 15 » »'"
   },
   {
    "check": "short-para",
-   "detail": "¶37: 'Lo Lochtinent general.'"
+   "detail": "¶34: 'Lo Lochtinent general.'"
   },
   {
    "check": "wall",
-   "detail": "¶38: 1329 chars"
+   "detail": "¶35: 1329 chars"
   },
   {
    "check": "short-para",
-   "detail": "¶44: 'INCA. Blay Ferrer.'"
+   "detail": "¶41: 'INCA. Blay Ferrer.'"
   },
   {
    "check": "short-para",
-   "detail": "¶45: 'MONTUIRI. Sebastia Vey.'"
+   "detail": "¶42: 'MONTUIRI. Sebastia Vey.'"
   },
   {
    "check": "short-para",
-   "detail": "¶46: 'MURO. Marti Palau.'"
+   "detail": "¶43: 'MURO. Marti Palau.'"
   },
   {
    "check": "short-para",
-   "detail": "¶47: 'La POBLA. Joan Serra. Onofre Reura. Simon Massana.'"
+   "detail": "¶44: 'La POBLA. Joan Serra. Onofre Reura. Simon Massana.'"
   },
   {
    "check": "short-para",
-   "detail": "¶51: 'ANDRAIX. Gabriel Cadafell,'"
+   "detail": "¶48: 'ANDRAIX. Gabriel Cadafell,'"
   },
   {
    "check": "short-para",
-   "detail": "¶52: 'ALARÓ. Jaume Simó.'"
+   "detail": "¶49: 'ALARÓ. Jaume Simó.'"
   },
   {
    "check": "short-para",
-   "detail": "¶54: 'ALGAIDA. Michel Trias Gabriel Company.'"
+   "detail": "¶51: 'ALGAIDA. Michel Trias Gabriel Company.'"
   },
   {
    "check": "short-para",
-   "detail": "¶55: 'BUNYOLA. Lorens Muntaner. Matheu Parets. Gabriel A'"
+   "detail": "¶52: 'BUNYOLA. Lorens Muntaner. Matheu Parets. Gabriel A'"
   },
   {
    "check": "short-para",
-   "detail": "¶56: 'ARTÀ. Anthoni Nicholauet. Bernat Mir. March Brech.'"
+   "detail": "¶53: 'ARTÀ. Anthoni Nicholauet. Bernat Mir. March Brech.'"
   },
   {
    "check": "short-para",
-   "detail": "¶57: 'SANTANY. Johan Pou. Arnau Albert.'"
+   "detail": "¶54: 'SANTANY. Johan Pou. Arnau Albert.'"
   },
   {
    "check": "short-para",
-   "detail": "¶59: 'SOLLER. Barthomeu Bonosa. Barthomeu Ripoll. Nadal '"
+   "detail": "¶56: 'SOLLER. Barthomeu Bonosa. Barthomeu Ripoll. Nadal '"
   },
   {
    "check": "short-para",
-   "detail": "¶63: 'SAN JOAN. Joan Reus. Pere Verger.'"
+   "detail": "¶60: 'SAN JOAN. Joan Reus. Pere Verger.'"
   },
   {
    "check": "short-para",
-   "detail": "¶65: 'SINEU. Jaume Ferragut.'"
+   "detail": "¶62: 'SINEU. Jaume Ferragut.'"
   },
   {
    "check": "short-para",
-   "detail": "¶66: 'COHANEGRE. Onofre Jaume.'"
+   "detail": "¶63: 'COHANEGRE. Onofre Jaume.'"
   },
   {
    "check": "short-para",
-   "detail": "¶67: 'SANTA MARGALIDA. Bernat Nadal.'"
+   "detail": "¶64: 'SANTA MARGALIDA. Bernat Nadal.'"
   },
   {
    "check": "short-para",
-   "detail": "¶68: 'SCORCHA. Lorens de Scorcha.'"
+   "detail": "¶65: 'SCORCHA. Lorens de Scorcha.'"
   },
   {
    "check": "short-para",
-   "detail": "¶69: 'PUIGPUNYENT Michel Fuixá.'"
+   "detail": "¶66: 'PUIGPUNYENT Michel Fuixá.'"
   },
   {
    "check": "wall",
-   "detail": "¶70: 1947 chars"
+   "detail": "¶67: 1947 chars"
   },
   {
    "check": "runt",
-   "detail": "¶113: 'LECTOREM.'"
+   "detail": "¶111: 'LECTOREM.'"
   },
   {
    "check": "short-para",
-   "detail": "¶113: 'LECTOREM.'"
+   "detail": "¶111: 'LECTOREM.'"
   },
   {
    "check": "short-para",
-   "detail": "¶114: 'TSI apparatus noſtri quam pro tanti'"
+   "detail": "¶112: 'TSI apparatus noſtri quam pro tanti'"
   },
   {
    "check": "short-para",
-   "detail": "¶116: 'regi fuo gens Maiorica tantopere'"
+   "detail": "¶114: 'regi fuo gens Maiorica tantopere'"
   },
   {
    "check": "short-para",
-   "detail": "¶119: 'Vale optime lector, lege et fruere.'"
+   "detail": "¶117: 'Vale optime lector, lege et fruere.'"
   },
   {
    "check": "short-para",
-   "detail": "¶120: 'AUTHOR AD LECTOREM.'"
+   "detail": "¶118: 'AUTHOR AD LECTOREM.'"
   },
   {
    "check": "short-para",
-   "detail": "¶121: 'Quidquid habet codex patienter perlege, lector,'"
+   "detail": "¶119: 'Quidquid habet codex patienter perlege, lector,'"
   },
   {
    "check": "short-para",
-   "detail": "¶122: 'Inclita fi patrie gloria forte iuuat.'"
+   "detail": "¶120: 'Inclita fi patrie gloria forte iuuat.'"
   },
   {
    "check": "short-para",
-   "detail": "¶123: 'Perlege, ſit quamuis humili compoſta cothurno,'"
+   "detail": "¶121: 'Perlege, ſit quamuis humili compoſta cothurno,'"
   },
   {
    "check": "short-para",
-   "detail": "¶124: 'Nam noua cum veris continet hifteria.'"
+   "detail": "¶122: 'Nam noua cum veris continet hifteria.'"
   },
   {
    "check": "short-para",
-   "detail": "¶125: 'LA FELICISSIMA VINGU'"
+   "detail": "¶123: 'LA FELICISSIMA VINGU'"
   },
   {
    "check": "short-para",
-   "detail": "¶126: 'da de Don Carlos cinque Emperador de'"
+   "detail": "¶124: 'da de Don Carlos cinque Emperador de'"
   },
   {
    "check": "short-para",
-   "detail": "¶127: 'Romans Rey e ſenyor noſtre en la ſua'"
+   "detail": "¶125: 'Romans Rey e ſenyor noſtre en la ſua'"
   },
   {
    "check": "short-para",
-   "detail": "¶128: 'ciutat de Mallorques, fonch á tretze'"
+   "detail": "¶126: 'ciutat de Mallorques, fonch á tretze'"
   },
   {
    "check": "short-para",
-   "detail": "¶129: 'del mes de Octubre del any Mil'"
+   "detail": "¶127: 'del mes de Octubre del any Mil'"
   },
   {
    "check": "short-para",
-   "detail": "¶130: 'cincents quaranta hu. Preſidint'"
+   "detail": "¶128: 'cincents quaranta hu. Preſidint'"
   },
   {
    "check": "short-para",
-   "detail": "¶131: 'en aquella y eſſent Jurats los'"
+   "detail": "¶129: 'en aquella y eſſent Jurats los'"
   },
   {
    "check": "short-para",
-   "detail": "¶132: 'ſeguents. Com appar mes'"
+   "detail": "¶130: 'ſeguents. Com appar mes'"
   },
   {
    "check": "short-para",
-   "detail": "¶133: 'llarch en la hiftoria.'"
-  },
-  {
-   "check": "runt",
-   "detail": "¶134: 'V1REY.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶134: 'V1REY.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶135: 'VIREY. Lo Spectable y noble ſenyor don Phelip de'"
+   "detail": "¶131: 'llarch en la hiftoria.'"
   },
   {
    "check": "runt",
-   "detail": "¶136: 'Ceruello.'"
+   "detail": "¶132: 'V1REY.'"
   },
   {
    "check": "short-para",
-   "detail": "¶136: 'Ceruello.'"
+   "detail": "¶132: 'V1REY.'"
   },
   {
    "check": "short-para",
-   "detail": "¶137: 'JURATS. Lo Magnifich moſſen Joanot de Caulelles'"
+   "detail": "¶133: 'VIREY. Lo Spectable y noble ſenyor don Phelip de'"
   },
   {
    "check": "runt",
-   "detail": "¶138: 'Caualler.'"
+   "detail": "¶134: 'Ceruello.'"
   },
   {
    "check": "short-para",
-   "detail": "¶138: 'Caualler.'"
+   "detail": "¶134: 'Ceruello.'"
   },
   {
    "check": "short-para",
-   "detail": "¶141: 'ATURAL coſa es a tots los homens (legons diu Plato'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶142: 'deſitjar ſaber les nouitats ſeguides, o que de caſ'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶143: 'dia fe ſegueixen: y ja mes en fas propias patrias.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶144: 'ço que la ſalut de cada hu particular es viſta ten'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶145: 'certa dependencia, o conexitat ab la ſalut de aque'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶146: 'Y aço es tant cert que no es inconuenient algu, di'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶147: 'creure, que de açi aja agut principi aquell delito'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶148: 'menys neceffari que vtil genero, o manera de ſcriu'"
-  },
-  {
-   "check": "wall",
-   "detail": "¶149: 2530 chars"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶151: 'AUENT de fcriure, e narrar vna tant mareuellosa no'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶152: 'que tinch per cert que als suceſſors ha de portar'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶154: 'fem, per la gran marauella de la coſa, que quaſi n'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶155: 'appar eſſer eſtat un somni; sera be començar la'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶156: 'preſent hiſtoria, ab ouo, com fe diu en lo Adagi'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶157: 'vulgar, é inſertar en aquella totas las particular'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶159: 'Al illuſtre ſeñor el Viſorey de Mallorca.'"
-  },
-  {
-   "check": "wall",
-   "detail": "¶161: 1452 chars"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶162: '*Cierto feruidor de vra. feñoria.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶163: 'Andrea Doria.'"
-  },
-  {
-   "check": "wall",
-   "detail": "¶164: 2943 chars"
-  },
-  {
-   "check": "wall",
-   "detail": "¶165: 3363 chars"
-  },
-  {
-   "check": "wall",
-   "detail": "¶166: 1829 chars"
-  },
-  {
-   "check": "wall",
-   "detail": "¶167: 1629 chars"
-  },
-  {
-   "check": "wall",
-   "detail": "¶168: 6223 chars"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶169: 'Ceſarea producte tribu Rex maxime regum,'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶171: 'Si neſcis, ego ſum Praxedis ſanguine ab alto'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶173: 'De magno Carolo Quinto Imperatore'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶175: 'Petrus Antich Notarius.'"
-  },
-  {
-   "check": "wall",
-   "detail": "¶177: 4045 chars"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶179: 'Dum fortuna dabat, titulis que pingerer auri,'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶180: 'Inuidiſſe mihi plurima regna putes.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶181: 'Non eram ab infrenis numidis direpta: ſed illi'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶182: 'Nomine pallebant candidiore meo.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶184: 'Mercibus et variis Carole diues eram.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶185: 'Nunc jaceo infælix vix ſinu miſerabilis vlli,'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶186: 'Vixque meo poſſum tutior eſſe ſinu.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶187: 'Quare mafta precor, priſco me redde nitori,'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶188: 'Ponendo Numidis dura lupata feris'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶189: 'Reſpice ſollicitam, Caeſar, mitiſſime Princeps:'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶190: 'Principis eſt miſeros eripuiffe malis.'"
-  },
-  {
-   "check": "wall",
-   "detail": "¶191: 2831 chars"
-  },
-  {
-   "check": "wall",
-   "detail": "¶195: 2536 chars"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶198: 'Tanta tuo aduentu contingit gloria Cæsar,'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶199: 'Ut certem cernens an mea vana fides.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶200: 'Dumque tuos, alij, numen terreftre, triumphos'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶202: 'Imperium fortuna, licet, regnumque negaffet,'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶203: 'Hoc virtute tibi Bellica preda foret.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶204: 'Laudibus eſt igitur merito digniſſima, namque,'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶205: 'Quod rapturus eras, obtulit illa tibi.'"
-  },
-  {
-   "check": "wall",
-   "detail": "¶206: 1880 chars"
-  },
-  {
-   "check": "wall",
-   "detail": "¶208: 2765 chars"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶209: 'Læthale hereſeos virus fi pellis ab orbe,'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶210: 'Ceſar, ne inficiat cætera membra lues;'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶211: 'Profternis valido fi hoſtes, fortiffime, cornu;'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶212: '¿Nonne ego ſum titulis dignus adelſe tuis?'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶214: 'Lux orbis, jam digne polo, fortiffime Cæfar,'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶215: 'Perge opus. En reſtant grandia geſta tibi.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶216: 'Te Solymas expectant arces, dauidica regna;'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶217: 'Hec ſunt, hec manibus digna trophea tuis.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶218: 'Initium tanti primum dabit Africa belli:'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶219: 'Ipfa adero, et ceptis proſpera vela dabo.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶223: 'Victor in Europa, libyes ſitientia regna'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶225: 'Ductorem hic Chriſtus cui dedit eſſe fuum.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶227: 'AD EUNDEM. Dum Carolum in pænos Mauors jam bella m'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶229: 'Gesta, inquit: libya hoc fulmine tota cadet.'"
-  },
-  {
-   "check": "wall",
-   "detail": "¶233: 2286 chars"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶248: 'Si te conſpiciet manibus poſt terga reuinctis,'"
-  },
-  {
-   "check": "wall",
-   "detail": "¶249: 2685 chars"
-  },
-  {
-   "check": "wall",
-   "detail": "¶250: 1343 chars"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶251: 'POETA AD AQUILAM.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶252: 'Dic mihi quem portas, volucrum regina, monarcham;'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶254: 'R. AQUILA POETE.'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶255: 'Captus amore pio, gelido volitauit ab Axe,'"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶256: 'Et geminis alis punica regna petit.'"
+   "detail": "¶135: 'JURATS. Lo Magnifich moſſen Joanot de Caulelles'"
   },
   {
    "check": "runt",
-   "detail": "¶257: 'QUE CAUSA.'"
+   "detail": "¶136: 'Caualler.'"
   },
   {
    "check": "short-para",
-   "detail": "¶257: 'QUE CAUSA.'"
+   "detail": "¶136: 'Caualler.'"
   },
   {
    "check": "short-para",
-   "detail": "¶258: 'Vulpeculas agitat roſtro pedibuſque ſubactas,'"
+   "detail": "¶139: 'ATURAL coſa es a tots los homens (legons diu Plato'"
   },
   {
    "check": "short-para",
-   "detail": "¶259: 'Poſt boream libye prælia magna parat.'"
+   "detail": "¶140: 'deſitjar ſaber les nouitats ſeguides, o que de caſ'"
   },
   {
    "check": "short-para",
-   "detail": "¶260: 'C.LO V. I.RI Aug.to Thom. MARCER NOTAR.S'"
+   "detail": "¶141: 'dia fe ſegueixen: y ja mes en fas propias patrias.'"
   },
   {
    "check": "short-para",
-   "detail": "¶261: 'Belliger armipotens, Cæfar, Baleare supinum'"
+   "detail": "¶142: 'ço que la ſalut de cada hu particular es viſta ten'"
   },
   {
    "check": "short-para",
-   "detail": "¶262: 'Viſiſti regnum: ni tua dextra fauet?'"
+   "detail": "¶143: 'certa dependencia, o conexitat ab la ſalut de aque'"
   },
   {
    "check": "short-para",
-   "detail": "¶263: 'Oppreſſos releuans, renouando catera priſca,'"
+   "detail": "¶144: 'Y aço es tant cert que no es inconuenient algu, di'"
   },
   {
    "check": "short-para",
-   "detail": "¶264: 'Reſtitues Palme nomen, et orbis opes.'"
+   "detail": "¶145: 'creure, que de açi aja agut principi aquell delito'"
   },
   {
    "check": "short-para",
-   "detail": "¶265: 'Auſpicio celi fuperas faſtigia Regum;'"
+   "detail": "¶146: 'menys neceffari que vtil genero, o manera de ſcriu'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶147: 2530 chars"
   },
   {
    "check": "short-para",
-   "detail": "¶267: 'Rumpe moras peragens qua ex te deſcripta leguntur:'"
+   "detail": "¶149: 'AUENT de fcriure, e narrar vna tant mareuellosa no'"
   },
   {
    "check": "short-para",
-   "detail": "¶268: 'Telluris fancte, Carole, carpe viam.'"
+   "detail": "¶150: 'que tinch per cert que als suceſſors ha de portar'"
   },
   {
    "check": "short-para",
-   "detail": "¶269: 'Barbara gens dabitur, veniet, tua ſubiuga, parthus'"
+   "detail": "¶152: 'fem, per la gran marauella de la coſa, que quaſi n'"
   },
   {
    "check": "short-para",
-   "detail": "¶270: 'Quemque crucis ſignum concelebrare jube.'"
+   "detail": "¶153: 'appar eſſer eſtat un somni; sera be començar la'"
   },
   {
    "check": "short-para",
-   "detail": "¶271: 'Ecce ſalutiferum præcedens omnia fignum,'"
+   "detail": "¶154: 'preſent hiſtoria, ab ouo, com fe diu en lo Adagi'"
   },
   {
    "check": "short-para",
-   "detail": "¶272: 'Hoc tibi concedet parthica regna dari.'"
+   "detail": "¶155: 'vulgar, é inſertar en aquella totas las particular'"
   },
   {
    "check": "short-para",
-   "detail": "¶273: 'Hinc genibus flexis, animam reddendo tomanti,'"
+   "detail": "¶157: 'Al illuſtre ſeñor el Viſorey de Mallorca.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶159: 1452 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶160: '*Cierto feruidor de vra. feñoria.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶161: 'Andrea Doria.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶162: 2943 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶163: 3363 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶164: 1829 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶165: 1629 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶166: 6223 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶167: 'Ceſarea producte tribu Rex maxime regum,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶169: 'Si neſcis, ego ſum Praxedis ſanguine ab alto'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶171: 'De magno Carolo Quinto Imperatore'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶173: 'Petrus Antich Notarius.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶175: 4045 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶177: 'Dum fortuna dabat, titulis que pingerer auri,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶178: 'Inuidiſſe mihi plurima regna putes.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶179: 'Non eram ab infrenis numidis direpta: ſed illi'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶180: 'Nomine pallebant candidiore meo.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶182: 'Mercibus et variis Carole diues eram.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶183: 'Nunc jaceo infælix vix ſinu miſerabilis vlli,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶184: 'Vixque meo poſſum tutior eſſe ſinu.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶185: 'Quare mafta precor, priſco me redde nitori,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶186: 'Ponendo Numidis dura lupata feris'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶187: 'Reſpice ſollicitam, Caeſar, mitiſſime Princeps:'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶188: 'Principis eſt miſeros eripuiffe malis.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶189: 2831 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶193: 2536 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶196: 'Tanta tuo aduentu contingit gloria Cæsar,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶197: 'Ut certem cernens an mea vana fides.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶198: 'Dumque tuos, alij, numen terreftre, triumphos'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶200: 'Imperium fortuna, licet, regnumque negaffet,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶201: 'Hoc virtute tibi Bellica preda foret.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶202: 'Laudibus eſt igitur merito digniſſima, namque,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶203: 'Quod rapturus eras, obtulit illa tibi.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶204: 1880 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶206: 2765 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶207: 'Læthale hereſeos virus fi pellis ab orbe,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶208: 'Ceſar, ne inficiat cætera membra lues;'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶209: 'Profternis valido fi hoſtes, fortiffime, cornu;'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶210: '¿Nonne ego ſum titulis dignus adelſe tuis?'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶212: 'Lux orbis, jam digne polo, fortiffime Cæfar,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶213: 'Perge opus. En reſtant grandia geſta tibi.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶214: 'Te Solymas expectant arces, dauidica regna;'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶215: 'Hec ſunt, hec manibus digna trophea tuis.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶216: 'Initium tanti primum dabit Africa belli:'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶217: 'Ipfa adero, et ceptis proſpera vela dabo.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶221: 'Victor in Europa, libyes ſitientia regna'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶223: 'Ductorem hic Chriſtus cui dedit eſſe fuum.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶225: 'AD EUNDEM. Dum Carolum in pænos Mauors jam bella m'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶227: 'Gesta, inquit: libya hoc fulmine tota cadet.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶231: 2286 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶246: 'Si te conſpiciet manibus poſt terga reuinctis,'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶247: 2685 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶248: 1343 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶249: 'POETA AD AQUILAM.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶250: 'Dic mihi quem portas, volucrum regina, monarcham;'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶252: 'R. AQUILA POETE.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶253: 'Captus amore pio, gelido volitauit ab Axe,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶254: 'Et geminis alis punica regna petit.'"
   },
   {
    "check": "runt",
-   "detail": "¶276: 'x'"
+   "detail": "¶255: 'QUE CAUSA.'"
   },
   {
    "check": "short-para",
-   "detail": "¶276: 'x'"
-  },
-  {
-   "check": "wall",
-   "detail": "¶277: 3516 chars"
-  },
-  {
-   "check": "wall",
-   "detail": "¶278: 1862 chars"
-  },
-  {
-   "check": "wall",
-   "detail": "¶279: 4233 chars"
-  },
-  {
-   "check": "wall",
-   "detail": "¶280: 3205 chars"
+   "detail": "¶255: 'QUE CAUSA.'"
   },
   {
    "check": "short-para",
-   "detail": "¶290: 'Urries Secretarius.'"
-  },
-  {
-   "check": "wall",
-   "detail": "¶291: 6865 chars"
+   "detail": "¶256: 'Vulpeculas agitat roſtro pedibuſque ſubactas,'"
   },
   {
    "check": "short-para",
-   "detail": "¶297: 'anomenada) per Meſtre Ferrando'"
+   "detail": "¶257: 'Poſt boream libye prælia magna parat.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶258: 'C.LO V. I.RI Aug.to Thom. MARCER NOTAR.S'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶259: 'Belliger armipotens, Cæfar, Baleare supinum'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶260: 'Viſiſti regnum: ni tua dextra fauet?'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶261: 'Oppreſſos releuans, renouando catera priſca,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶262: 'Reſtitues Palme nomen, et orbis opes.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶263: 'Auſpicio celi fuperas faſtigia Regum;'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶265: 'Rumpe moras peragens qua ex te deſcripta leguntur:'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶266: 'Telluris fancte, Carole, carpe viam.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶267: 'Barbara gens dabitur, veniet, tua ſubiuga, parthus'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶268: 'Quemque crucis ſignum concelebrare jube.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶269: 'Ecce ſalutiferum præcedens omnia fignum,'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶270: 'Hoc tibi concedet parthica regna dari.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶271: 'Hinc genibus flexis, animam reddendo tomanti,'"
   },
   {
    "check": "runt",
-   "detail": "¶302: 'del any M. D.'"
+   "detail": "¶274: 'x'"
   },
   {
    "check": "short-para",
-   "detail": "¶302: 'del any M. D.'"
+   "detail": "¶274: 'x'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶275: 3516 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶276: 1862 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶277: 4233 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶278: 3205 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶288: 'Urries Secretarius.'"
+  },
+  {
+   "check": "wall",
+   "detail": "¶289: 6865 chars"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶295: 'anomenada) per Meſtre Ferrando'"
   },
   {
    "check": "runt",
-   "detail": "¶303: 'XXXXII.'"
+   "detail": "¶300: 'del any M. D.'"
   },
   {
    "check": "short-para",
-   "detail": "¶303: 'XXXXII.'"
+   "detail": "¶300: 'del any M. D.'"
+  },
+  {
+   "check": "runt",
+   "detail": "¶301: 'XXXXII.'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶301: 'XXXXII.'"
   },
   {
    "check": "piece-gap",
@@ -1511,11 +1516,11 @@
   },
   {
    "check": "wall",
-   "detail": "¶96: 1216 chars"
+   "detail": "¶97: 1216 chars"
   },
   {
    "check": "contested",
-   "detail": "10.3% of its words"
+   "detail": "10.5% of its words"
   }
  ],
  "0631-II-02": [

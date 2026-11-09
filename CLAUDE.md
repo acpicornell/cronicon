@@ -462,19 +462,23 @@ inside an apparent join and that test splits them 7 and 7 with nothing between:
 `sat`, `rario`, `rato`, `nio`, `bores`, `manats`, `gents` against `«Los`,
 `Hasta`, `«Part`, `Fragmentos`, `FEBRERO`, `Agosto`, `I.`
 
-**Section VI of the 16th-century block is 45 leaves and most of it is not the
-section.** It runs 324–368 and 17 806 words, and leaves 335–367 are the 1541
-reprint — a different work, reading as part of the executions of 1523. The
-boundary needs no new evidence: `editorial.long_s_leaves` already derives
-335–367 from the consensus with two independent signals, leaves 333–334 are
-blank, and leaf 332 is Campaner introducing it. Measured and not yet applied,
-because splitting it touches the catalogue, the ids and the site.
+**Section VI of the 16th-century block was 45 leaves and almost none of it was
+the section.** It ran 324–368, and the explanation written here — that VII was
+the 1541 reprint, so its numeral was never printed — was wrong. **Leaf 325
+prints `VII. Documentos y notas relativas á la Germanía, extraidas de los libros
+de la Procuracion Real por el Pavorde D. A. Jaume.`**, centred, and Tesseract
+never boxed the line, so no engine was asked about it. The line recovery found
+it (§"Lines the geometry never boxed"); checked against the facsimile. VI is now
+the one leaf of `Nota de varias ejecuciones` and VII runs 325–367, ids
+`0311-VI-06` and `0311-VII-07`.
 
-Three numerals in the 16th-century block are still not found (VII, VIII, X).
-Leaves 333–334 are blank and leaf 332 ends *«haber reducido el tamaño de las tres
-primeras páginas á las dimensiones del original»*: section VII is a **facsimile
-reprint of a 1541 booklet**, leaves 335–367, carrying its own title page in its
-own typography. The gap is explained, not mysterious.
+**VII still contains the 1541 reprint**, leaves 335–367: a different work,
+reading as part of Jaume's Germanía documents. The boundary needs no new
+evidence: `editorial.long_s_leaves` derives 335–367 from the consensus with two
+independent signals, leaves 333–334 are blank, and leaf 332 is Campaner
+introducing it (*«haber reducido el tamaño de las tres primeras páginas á las
+dimensiones del original»*). Measured and not yet applied. VIII and X are still
+not found; check for unboxed lines before assuming they are not printed.
 
 ## The non-Spanish material — measured at last
 
@@ -1334,6 +1338,47 @@ visible rather than buried in a run of figures:
   label first, the engines' leader dots fill the figure's slots. The document
   shows it as a paragraph of its own. Six new `runt`s in `0114-V-05` are rows of
   this kind plus the account's total and its `Gastos.` heading.
+
+### Lines the geometry never boxed
+
+The first of those residues was not a stitching problem. **Kraken and PaddleOCR
+do not segment the page: they are handed Tesseract's line boxes and recognise
+inside them.** So a line Tesseract did not find is a line three of the six
+engines were never asked about, and the alignment, which projects every engine
+onto the geometry's slots, dropped the text the other three did read. Only two
+engines segment the IA scan for themselves, ABBYY and Apple Vision.
+
+`consensus.uncovered_lines` takes every line **both** of them read that no
+geometry box covers and that is not furniture (running head, folio, the Google
+watermark), and `insert_lines` puts ABBYY's word boxes into the reading order
+after the last line of their column that starts above them — inserted, never
+re-sorted, so nothing that was right moves. **43 lines on 26 leaves**, and they
+are not trivia: the account labels of 161 and 163 (`Torrella 65 » »`,
+`despitals.... 122`, `preberes 296`, `Alaro`, `Santueri`), `Pa` and `Vi` in the
+accounts of 1307, `B. J. (1)` on 218 and 220 and `J. P. (1)` on 401 — a source
+and its note's call — the year heading `1538.` on 312, and **the numeral of a
+section nobody knew was missing** (above, §The appendix blocks).
+
+On a recovered slot the three line-bound engines vote `None`, not `''`: their
+silence is not a reading. With three of six possible votes a recovered word can
+never be better than `contested`, so every one of them is published *and* goes
+to review — the same ceiling `spans.py` puts on what it recovers.
+
+Measured on the 26 leaves: every existing word box kept, every round-3
+position and review decision still found, 8 existing winners changed (most of
+them a siglum that had been squeezed into a neighbour's slot and now has its
+own). Years with a heading 524 → 525, tables 39 → 41, rows 165 → 176. Line-
+aligned leaves reshuffle grades when a reference line is added — leaf 159
+moved 50 positions up a tier and 37 down — because the vertical offset to the
+BNE scan is fitted on the reference lines; those leaves are held for review
+anyway.
+
+**And the generous rule it fed had to be tightened.** `parse_documents` asks the
+panel for a section numeral on any short line, and the recovered `Vi` (wine) of
+leaf 159 became section VI. A numeral is centred and never starts at the
+column's text edge; measuring the indent from the column's *leftmost* line was
+tried first and rejected leaf 123's numeral, which is centred over the gutter
+and is its own column's leftmost line.
 
 **What is still not right on leaf 159 and is honest to say so:**
 `Disapte 1.er de Juliol` runs `It. vi.`, `It. farina.`, `It. peix y ous` — and

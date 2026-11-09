@@ -174,7 +174,7 @@
      1502,
      1598
     ],
-    "years_stated": 80
+    "years_stated": 81
    },
    {
     "number": 2,
@@ -219,6 +219,15 @@
     "pdf_page": 324,
     "line": 2,
     "read_as": "VI.",
+    "until": 324
+   },
+   {
+    "number": 7,
+    "numeral": "VII",
+    "title": "Documentos y notas relativas á la Germanía, extraidas de los libros de la Procuracion Real",
+    "pdf_page": 325,
+    "line": 0,
+    "read_as": "VII.",
     "until": 367,
     "years": [
      1630,
@@ -251,7 +260,6 @@
    }
   ],
   "numerals_not_found": [
-   7,
    8,
    10
   ]

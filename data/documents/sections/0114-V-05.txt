@@ -12,9 +12,11 @@ Disapte j.er de Juliol. Costá pa It. vi. i 1 s. 2 ds. It. farina. » » 4 » It
 
 Suma 3 » 2 »
 
-Dimecres á s Juriol. Vi. . s. + ds. Carn y porch.. . . . . 2 » 5 »
+Dimecres á s Juriol. Pa Vi. I s. + ds. Carn y porch.. . . . . 2 » 5 »
 
-Dilluns á 25 Desembre. Carn y tocino . . .. 2 » 4 » » Una galina. . . . . . . .. 2 » » » » Ous y Salsa. . . . . .. .. » » 5 » » Cols y sebas. . . . .. » » 3 » » Sardina. . . . . . . .. .. » » 4 » » Arros. . » » 2 » » Figues y melles. . . . . » » 4 » » Juyevert y raves. . . ... » » » » 1 » Cendra. ... » » 3 » » Un cadaf. . » » 5 » » Salsa. . » » 4 » » Vinagre.. . . . . . . . .. » » 3 » »
+Dilluns á 25 Desembre. Pa
+
+ds. Vi Carn y tocino . . .. 2 » 4 » » Una galina. . . . . . . .. 2 » » » » Ous y Salsa. . . . . .. .. » » 5 » » Cols y sebas. . . . .. » » 3 » » Sardina. . . . . . . .. .. » » 4 » » Arros. . » » 2 » » Figues y melles. . . . . » » 4 » » Juyevert y raves. . . ... » » » » 1 » Cendra. ... » » 3 » » Un cadaf. . » » 5 » » Salsa. . » » 4 » » Vinagre.. . . . . . . . .. » » 3 » »
 
 Suma.. . . . .. 8 » 7 » 1 » Pestanagues.. » » 1 ds. » Un liberti y un anet. . . . 2 s. 5 » »
 
@@ -60,27 +62,25 @@ Ingresos.
 
 «Primo, de la rebuda de la ciutat, en diner» (valor de 504 cuarteras 3 almudes de trigo y 486 cuarteras 3 almudes de cebada de los diezmos de esta comarca.) .. 3.705 libs. 12 ss. » ds. «Id. de la rebuda fora la ciutat, en diner 2.594 » 7 » IO » Id. de la rebuda del preu de tot lo blat.. 3.521 » » » 9 » Id. de la rebuda de justicias de tota laisla»(multas isla «(multas etc.) 651 » 9 » 8 » «Id. de la rebuda de les rendes que foren del Noble Gaston de Bearne. 1.113 *» 5 »
 
-De les rendes de Biniaraix quefo den Arnaldo Tor65 » » Id. de la rebuda de les rendes que foren haudes de lo del Temple.. 389 » Id. de la rebuda de les rendes qne foren haudes per lo Pariatge, del señor Bisbe.. . 451 » 8 » 1 » Id. de la rebuda de les rendes que foren haudes de la tenda e del dret dels sarrasins e jueus estranys. . . . 1.687 » 11 » Id. de la rebuda de les rendes de Menorca. . 1.913 » 9 » 10» Id. de les de Ebi582» 3» 3» Id. de la rebuda extraordinaria.» . 395 » » I»
+De les rendes de Biniaraix quefo den Arnaldo Torrella 65 » » Id. de la rebuda de les rendes que foren haudes de lo del Temple.. 389 » Id. de la rebuda de les rendes qne foren haudes per lo Pariatge, del señor Bisbe.. . 451 » 8 » 1 » Id. de la rebuda de les rendes que foren haudes de la tenda e del dret dels sarrasins e jueus estranys. . . . 1.687 » 11 » Id. de la rebuda de les rendes de Menorca. . 1.913 » 9 » 10» Id. de les de Ebi582» 3» 3» Id. de la rebuda extraordinaria.» . 395 » » I»
 
 17.069 » I5 » 6 »
 
 Gastos.
 
-«Dadaper violaris» (pensiones vitalicias.) . . ... 473 libs. 18 ss. 8 ds. «Dada de la almoyna den Guillem Sa Coma e den Jaume Espinach e de lo ques dona per los Procuradors. . . . . . 525 » » » »» Dada de provisions dordes e des122 » 10 » 8»
+«Dadaper violaris» (pensiones vitalicias.) . . ... 473 libs. 18 ss. 8 ds. «Dada de la almoyna den Guillem Sa Coma e den Jaume Espinach e de lo ques
 
-Quitacio de Lochtinent e dal439 » 9 » 7 »
+?■* dona per los Procuradors. . . . . . 525 » » » »» Dada de provisions dordes e despitals.... 122 » 10 » 8»
 
-Quitacio de 25 libs. per cavayl
+Quitacio de Lochtinent e daltre 439 » 9 » 7 »
 
-403 » 15 » »»
+Quitacio de 25 libs. per cavayl armat 403 » 15 » »»
 
 Quitacio de 1 5 libs. per civade. 45 » » » » »
 
 Quitacio de sirvents dels casteyls. 661 » » » 5 »
 
-Dada de dons fets de manament del Sr. Rey.. . . .
-
-Dada de dons secrets. . . . . . . 268 » »» »»
+Dada de dons fets de manament del Sr. Rey.. 81 » 13 » 4 Dada de dons secrets. . . . . . . 268 » »» »»
 
 Dada de agres de falcons. .... 36 » 18 » 7 »
 
@@ -178,19 +178,33 @@ En las kalendas de Julio (I.° de dicho mes,) dispuso el Rey Pedro que se adelan
 
 En aquest any munten totes les dites rendes. . . . 3.489 libs. 16 ss. 1 ds. Munta tota la moneda rebuda de fora la ciutat, exceptat lo preu del blat......... 4.850 » 5 » 11 » Condennacions fetas axi per lo señor Rey com per son Governador.. 104 libs. 1 ss. 8 ds. Monedatje de tota la isla. 4.512 » 15 » 1 » Rebudes extraordinaries . . » 19 » 3 » Rebuda de Menorca 312 » 11 » 2 » De Evissa. . . . 50 » » » Deutes vells qui eren deguts an Jacme de Montpeller. 402 » 14 » 5 ».
 
-Blat del terme 1.014 quarteres, munta en diners. 460 » 16 » 2 »
+Blat del terme 1.014 quarteres, munta en diners. 460 » 16 » 2 » Id. 169 quarteres id 92 » I » » Ordi de id. 911 quarteres 3 bars. . 231 » 14 » II » De llegums en diner II » I2 » IO Oli rebut 8.329 cortans en mitx valen 961 » 19 » Suma total. . . 18.219 libs. 7 ss. 8 ds.
 
-92 » I » » Ordi de id. 911 quarteres 3 bars. . 231 » 14 » II » De llegums en
+Compte de dades.
 
-II » I2 » IO Oli rebut 8.329 cortans en mitx
+Dade de violaris 484 libs. 19 ss. 8 ds. Dade de preberes 296 » 17 » 7 » Dade de cavayls armats.. . . . 259 » 11 » 8 » Dade de dons secrets. 116 » 18 » 4 » Dade de salaris de oficials. 632 » 18 » Quitacions de familias.. 1.026 » 1 » 1 » Dades de salaris. 118 » 17 » 1 » Dades per la carceleria. . . . . . . 84 » 4 »»
 
-961 » 19 » 2 » Suma total. . . 18.219 libs. 7 ss. 8 ds.
+Salaris dels procuradors e de lurs escrivans.. 254 » 19 » 2 »
 
-Compte de dades. Dade de violaris 484 libs. 19 ss. 8 ds. Dade de prebe296 » 17 » 7 » Dade de cavayls armats.. . . . 259 » 11 » 8 » Dade de dons secrets. 116 » 18 » 4 » Dade de salaris de oficials. 632 » 18 » Quitacions de familias.. 1.026 » 1 » 1 » Dades de salaris. 118 » 17 » 1 » Dades per la carceleria. . . . . . . 84 » 4 »» Salaris dels procuradors e de lurs escrivans.. 254 » 19 » 2 » Dade de salaris de casteylans; Bellver. . . . . . . 266 » 6 » 2 »
+Dade de salaris de casteylans; Bellver. . . . . . . 266 » 6 » 2 » Alaro 195 » 11 » » » Santueri 228 » 4 » 8 »
 
-195 » 11 » » »
+Dades de quarts de luismes . 10 » 9 » 10 »
 
-228 » 4 » 8 » Dades de quarts de luismes . 10 » 9 » 10 » Dade del censal quel Sr. Rey fa. . 108 » 2 » Salaris daquells que levaren lo monedatje. . . . . . . 197 » 9 » 4 » Dade de obres. 87 » 10 » II » Dade de messions dels sellers. 160 » 17 » 10 » Dade de dons fets per lo Sr. Rey. 125 » » » » Dade de messions per lofici de la Procuracio.. . . 55 » 7 » 1 » Dade de messions dels blats. . 129 » 17 » IO * Messions fetas en los blats per en Pera de Crexell. .
+Dade del censal quel Sr. Rey fa. . 108 » 2 »
+
+Salaris daquells que levaren lo monedatje. . . . . . . 197 » 9 » 4 »
+
+Dade de obres. 87 » 10 » II »
+
+Dade de messions dels sellers. 160 » 17 » 10 »
+
+Dade de dons fets per lo Sr. Rey. 125 » » » »
+
+Dade de messions per lofici de la Procuracio.. . . 55 » 7 » 1 »
+
+Dade de messions dels blats. . 129 » 17 » IO *
+
+Messions fetas en los blats per en Pera de Crexell. .
 
 333 » X)
 

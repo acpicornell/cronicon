@@ -442,6 +442,97 @@ def grade(stratum: str, panel_size: int) -> str:
     return "contested"
 
 
+# Engines that never segment the page themselves. Kraken and PaddleOCR are
+# handed the geometry engine's line boxes and only recognise inside them, so a
+# line Tesseract did not find is a line all three were never asked about: their
+# silence there is not a reading, and counted as an empty one it would outvote
+# the engines that did read it -- the empty-string error `spans.py` exists for.
+LINE_BOUND = {GEOMETRY_ENGINE, KRAKEN_ENGINE, PADDLE_ENGINE, "paddle-latin"}
+# The two engines that segment the IA scan for themselves.
+SEGMENTERS = ("abbyy-ia", "vision-ia-300dpi-corr")
+# A recovered line must not be page furniture, which the pipeline drops on
+# purpose: the running head, the folio, the watermark Google stamped on the scan.
+FURNITURE = re.compile(r"CRONICON|MAYORI[CS]|INTRODUCC|by\s*Goo|Goog|"
+                       r"^\W*[0-9IOSl]{1,3}\W*$", re.IGNORECASE)
+COVER_SLACK = 0.004
+
+
+def uncovered_lines(words: list[dict], pdf_page: int) -> list[list[dict]]:
+    """Printed lines both IA-scan segmenters read and the geometry never boxed.
+
+    Leaf 161 prints `den Arnaldo Tor-` / `rella. . . . . . . 65 » 5 » 1 »` and
+    Tesseract found the figure and not the label, so `rella` was in no slot and
+    the edition read `Tor65 » »`. Over the book there are 34 such lines on 23
+    leaves once the furniture is set aside, and they are not trivia: `B. J. (1)`
+    on leaves 218 and 220 and `J. P. (1)` on 401 -- a source and the call of its
+    note -- a year heading on 312, a section numeral on 325.
+
+    Returned as ABBYY's word boxes, one list per line. Both segmenters must have
+    the line: one engine alone is how a smear or a show-through becomes text.
+    """
+    def centre(b):
+        return (b[1] + b[3]) / 2
+
+    def overlaps(b, g):
+        return (g[1] - COVER_SLACK <= centre(b) <= g[3] + COVER_SLACK
+                and min(b[2], g[2]) > max(b[0], g[0]))
+
+    geometry = {tuple(w["line_bbox"]) for w in words}
+    vision = engine_lines(pdf_page, SEGMENTERS[1]) or []
+    lines: dict[tuple, list[dict]] = {}
+    for word in abbyy_ia_words(pdf_page):
+        lines.setdefault(tuple(word["line_bbox"]), []).append(word)
+    out = []
+    for box, line in lines.items():
+        text = " ".join(w["text"] for w in line)
+        if (len(text.replace(" ", "")) < 2 or FURNITURE.search(text)
+                or not layout.HEADER_BAND < centre(box) < layout.FOOTER_BAND - 0.015
+                or any(overlaps(box, g) for g in geometry)
+                or not any(overlaps(box, v[0]) for v in vision)):
+            continue
+        out.append([dict(w, recovered=True) for w in line])
+    return out
+
+
+def insert_lines(words: list[dict], extra: list[list[dict]]) -> list[dict]:
+    """`words` with each recovered line placed where its column reads it.
+
+    Inserted, not re-sorted: re-ordering the leaf with the new lines in it would
+    let `find_columns` see a different page and move lines that were already
+    right. Each goes after the last line of its column that starts above it.
+    """
+    if not extra:
+        return words
+    boxes: list[tuple] = []
+    for w in words:
+        if not boxes or tuple(w["line_bbox"]) != boxes[-1]:
+            boxes.append(tuple(w["line_bbox"]))
+    lefts = layout.find_columns([layout.Line(
+        " ".join(w["text"] for w in words if tuple(w["line_bbox"]) == b), *b)
+        for b in boxes])
+
+    def column(b) -> int:
+        return max((n for n, left in enumerate(lefts)
+                    if b[0] >= left - layout.COLUMN_EDGE_TOLERANCE), default=0)
+
+    out = list(words)
+    for line in sorted(extra, key=lambda ln: ln[0]["line_bbox"][1]):
+        box = tuple(line[0]["line_bbox"])
+        at, first = None, None
+        for i, w in enumerate(out):
+            b = tuple(w["line_bbox"])
+            if column(b) != column(box):
+                continue
+            if first is None:
+                first = i
+            if b[1] <= box[1]:
+                at = i + 1
+        position = at if at is not None else (first if first is not None
+                                              else len(out))
+        out[position:position] = line
+    return out
+
+
 def collect(pdf_page: int, panel: list[str] = None, gutter: float = 0.0,
             geometry: str = "tesseract", align: str = "page") -> list[dict]:
     """Every token position on the leaf, with what each engine read there."""
@@ -450,6 +541,8 @@ def collect(pdf_page: int, panel: list[str] = None, gutter: float = 0.0,
     words = source(pdf_page, gutter=gutter)
     if not words:
         return []
+    if geometry == "tesseract":
+        words = insert_lines(words, uncovered_lines(words, pdf_page))
     reference = [w["text"] for w in words]
     readings = available_readings(pdf_page)
     projected: dict[str, list[str | None]] = {}
@@ -467,6 +560,9 @@ def collect(pdf_page: int, panel: list[str] = None, gutter: float = 0.0,
         if is_running_head(word.get("line_text", ""), word["line_bbox"]):
             continue
         variants = {k: projected[k][i] for k in projected}
+        if word.get("recovered"):
+            for k in LINE_BOUND & set(variants):
+                variants[k] = None
         votes = Counter(variants[k] for k in panel
                         if variants.get(k) is not None)
         if not votes:
@@ -484,6 +580,7 @@ def collect(pdf_page: int, panel: list[str] = None, gutter: float = 0.0,
             "context": " ".join(reference[max(0, i - CONTEXT_TOKENS):
                                           i + CONTEXT_TOKENS + 1]),
             "variants": variants,
+            **({"recovered": True} if word.get("recovered") else {}),
         })
     return loci
 

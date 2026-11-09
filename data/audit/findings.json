@@ -146,7 +146,7 @@
  {
   "check": "doubled",
   "year": 1488,
-  "month": 11,
+  "month": 1,
   "day": null,
   "pdf_page": 219,
   "detail": "año año",
@@ -937,21 +937,30 @@
  },
  {
   "check": "orphan-note",
+  "year": 1487,
+  "month": null,
+  "day": null,
+  "pdf_page": 218,
+  "detail": "(1) col1 called by nothing",
+  "excerpt": "NOVIEMBRE 21.—Falleció en Valladolid el Obispo de Mallorca D. Diego de Avellaneda. —G. T."
+ },
+ {
+  "check": "orphan-note",
+  "year": 1487,
+  "month": null,
+  "day": null,
+  "pdf_page": 218,
+  "detail": "(1) col1 called by nothing",
+  "excerpt": "REGALO DE 31 MORE SCLAVES A LA REINA DE NAPOLS. A 13 de Janer de 1488, paguí Marti Dies de"
+ },
+ {
+  "check": "orphan-note",
   "year": 1488,
   "month": null,
   "day": null,
   "pdf_page": 219,
   "detail": "(1) col0 called by nothing",
   "excerpt": "fiscals de la ciutat de Mallorques, 3 ls. 18 ss. 4 ds. les de manament general espeses en "
- },
- {
-  "check": "orphan-note",
-  "year": 1490,
-  "month": null,
-  "day": null,
-  "pdf_page": 220,
-  "detail": "(1) col0 called by nothing",
-  "excerpt": "Item d 15 de Dezembre de 1490, pagui yo dit Procurador Reyal, an Nofre Canct notari, un de"
  },
  {
   "check": "orphan-note",
@@ -1195,15 +1204,6 @@
   "pdf_page": 538,
   "detail": "(1) col0 called by nothing",
   "excerpt": "Esta noticia así como las que más tarde se ponen en 1721 y 1729, las hallé en el tomo I de"
- },
- {
-  "check": "orphan-note",
-  "year": 1726,
-  "month": null,
-  "day": null,
-  "pdf_page": 547,
-  "detail": "(2) col1 called by nothing",
-  "excerpt": "Véase la nota de la pág. 511. El noticiario M. S. de Vidal no lleva esta noticia, ni ningu"
  },
  {
   "check": "orphan-note",
@@ -1806,7 +1806,7 @@
   "day": 30,
   "pdf_page": 457,
   "detail": "agosto then julio",
-  "excerpt": "Llegaron 5 galeras de Nápoles, —Con motivo de la sublevacion de la isla de Sicilia escribi"
+  "excerpt": "Llegaron 5 galeras de Nápoles, s de Sicilia y dos de Cerdeña al mando del príncipe de ?..«"
  },
  {
   "check": "long-undated",
