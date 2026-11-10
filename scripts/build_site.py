@@ -1884,7 +1884,11 @@ def index_page(con, counts: dict, routes: dict) -> str:
         for t in themes.THEMES)
     years = sorted(counts)
 
+    # The frontispiece behind the title, softened under a veil of paper, as
+    # the sibling map editions open with their engraving. The image is set in
+    # style.css, not here: a `style` attribute is what the CSP forbids.
     body = f"""<section class="hero">
+ <div class="hero__panel">
   <p class="kicker">Edició digital · Corpus Balear</p>
   <h1>Cinc segles de notícies de Mallorca, dia a dia</h1>
   <p class="lede">L'any 1881 Àlvar Campaner va buidar els noticiaris,
@@ -1901,6 +1905,10 @@ def index_page(con, counts: dict, routes: dict) -> str:
   </form>
   <p class="cta"><a class="button" href="anys/">Entra per un any</a>
      <a href="temes/">o per un tema</a></p>
+ </div>
+ <p class="hero__credit">Frontispici del llibre: <span lang="es"
+    translate="no">«Ventana de una casa en la calle de Zavellá, dibujada por
+    B. Ferrá»</span>. {facsimile(10, "full 10")}</p>
 </section>
 
 {shape_of_the_book(counts, years[0], years[-1])}

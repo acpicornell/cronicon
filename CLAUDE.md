@@ -1759,7 +1759,10 @@ renders every page byte for byte identical.
 So the rule for anything new under `web/`: **if `build_site.py` writes it, it
 does not belong in git.** What is tracked there is the parquet and what a
 person wrote: `style.css`, `app.js`, `search.js`, `home.js`, `theme.js`,
-`favicon.svg`, `_headers`, `robots.txt` and `vendor/` (the fonts) — the
+`favicon.svg`, `_headers`, `robots.txt`, `vendor/` (the fonts) and
+`hero/frontispici.jpg` (the frontispiece behind the home page's title, cut by
+`scripts/build_hero.py` from leaf 10, as the map editions do with their
+engraving; committed because its source pages are not) — the
 convention the sibling projects already follow. `web/jurats/` was tracked by
 mistake for months, seven generated pages, and is out.
 
