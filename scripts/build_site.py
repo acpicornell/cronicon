@@ -1523,7 +1523,10 @@ def jurats_index(con) -> str:
     """The six series, and who sat in them.
 
     The Jurats governed the Ciutat i Regne, six of them at a time, replaced
-    every year at Christmas by Real privilege of 7 July 1240. Campaner prints
+    every year at Christmas under a privilege of Jaume I given on 7 July.
+    Campaner's source dates it 1240 and the historiography 1249; the page says
+    both rather than choose, since the edition does not correct the book and
+    must not repeat its errors as fact either. Campaner prints
     the lists as appendices inside the body and they are the hardest leaves in
     the book: only a quarter of these names are read the same way by all six
     engines, which the page has to say rather than imply.
@@ -1579,17 +1582,82 @@ def jurats_index(con) -> str:
     body = f"""<header class="page-head">
   <p class="kicker">Els qui governaven</p>
   <h1>{num(total)} jurats, de 1240 a 1715</h1>
-  <p class="lede">Per privilegi reial de Jaume I, del 7 de juliol de 1240,
-     Mallorca es governava per sis jurats que es renovaven cada any per Nadal
-     i que elegien els seus successors. Campaner en llista els noms segle a
-     segle, com a apèndix dins del cos del llibre.</p>
+  <p class="lede">Durant gairebé cinc segles, la Ciutat i Regne de Mallorca
+     el governaren sis jurats que es renovaven cada any per Nadal. Campaner
+     en dona els noms segle a segle, en sis llistes que imprimeix com a
+     apèndix dins el cos del llibre.</p>
 </header>
 <div class="cards">{blocks}</div>
 
 <section class="matter">
+  <h2>Què eren els jurats</h2>
+  <p>La Universitat de la Ciutat i Regne de Mallorca —l'illa sencera com a
+     comunitat, no només Palma— tenia al capdavant sis magistrats d'un any. El
+     càrrec era obligatori i gratuït: qui sortia elegit no el podia refusar ni
+     en treia cap sou. Cada seient corresponia a un estament, i la presidència
+     anava sempre al primer: <strong>un cavaller</strong>; després,
+     <strong>dos ciutadans</strong>, <strong>dos mercaders</strong> i, en el
+     sisè lloc, <strong>un menestral</strong>. Campaner ho resumeix així:
+     <q lang="es" translate="no">desde entonces acostumbraron ser un
+     caballero, dos ciudadanos, dos mercaderes y un artista</q>.</p>
+  <p>Qui llegeixi la crònica els trobarà a cada pàgina: hi surten al costat dels
+     morbers quan hi ha por de contagi, fent venir blat en els anys de
+     carestia, armant galeres, anant a la Seo darrere les banderes dels
+     gremis per cantar un Te-Deum, o sortint amb les maces alçades a
+     reunir el consell de guerra. Es reunien a la Casa de la Juraria,
+     a Cort, el mateix lloc on avui hi ha l'Ajuntament de Palma.</p>
+
+  <h3>Quan comencen</h3>
+  <p>Els creà Jaume I amb un privilegi donat a València el 7 de juliol. La
+     font que Campaner copia el data <strong>el 1240</strong>
+     (<a href="../anys/1240/">notícia de 1240</a>); la historiografia el
+     situa <strong>el 1249</strong>. El mateix Campaner hi dona motius de
+     dubte: a la seva llista, els noms de 1240 i de 1245 només els dona algun
+     catàleg antic i Bonet no en posa cap, i els set de 1248, diu, el seu informant els anomena
+     <q lang="es" translate="no">Cónsules de Mallorca</q>,
+     <q lang="es" translate="no">pues en este año todavía no se habían
+     instituido los Jurados</q>.</p>
+  <p>Ell mateix avisa que la llista és insegura fins al darrer terç del
+     segle XIV: no va anar als arxius, sinó que confronta la llista del
+     P. Villafranca, que recull les de catàlegs anteriors, amb les notes de
+     l'arxiver de l'Audiència Miguel Bonet, de qui es fia més. Per això les
+     llistes dels segles XIII i XIV porten anys buits, anys amb noms de més i
+     comentaris com <q lang="es" translate="no">Villafranca no pone
+     ninguno</q>.</p>
+
+  <h3>Com s'elegien</h3>
+  <p>El sistema va canviar més d'un cop. Durant el primer segle i mig, els
+     sis que plegaven per Nadal triaven ells mateixos els sis que entraven:
+     és el que s'anomena <em>franquesa</em>. Cap al tombant del 1400 s'hi
+     barrejà l'atzar amb els vots del Gran i General Consell, amb diverses
+     fórmules que es feien i es desfeien; el 1444, breument, es recuperà la
+     cooptació. La solució que va quedar, des de 1447 i fins al final, fou la
+     <em>insaculació</em> o <em>sac i sort</em>: cada estament tenia la seva
+     bossa amb els noms dels qui podien ser jurats, i cada any se'n treia un
+     a l'atzar. La llista en guarda el rastre: Campaner imprimeix dues eleccions
+     el 1401 —la segona encapçalada <q lang="es" translate="no">1401 (en 7 de
+     julio.)</q>— i dues el 1444, l'any del canvi de règim —la segona,
+     <q lang="es" translate="no">1444 en 23 junio.</q></p>
+
+  <h3>Quan acaben</h3>
+  <p>La derrota austriacista va portar la Nova Planta, signada el 28 de
+     novembre de 1715, i amb ella el model castellà de regidors designats per
+     la corona. Els darrers noms que Campaner copia són els de 1715. La
+     institució, però, no es va extingir de cop: va sobreviure tres anys més,
+     provisionalment, i no es va abolir formalment fins al 22 de juliol de
+     1718.</p>
+  <p class="aside">Fonts d'aquest apartat, a més del mateix Campaner:
+     <a href="https://ca.wikipedia.org/wiki/Jurats_de_la_Ciutat_i_Regne_de_Mallorca"
+        rel="noopener">«Jurats de la Ciutat i Regne de Mallorca»</a>, Viquipèdia,
+     i Antonio Planas Rosselló, <cite>Los jurados de la Ciudad y Reino de
+     Mallorca (1249-1718)</cite>, 2005.</p>
+</section>
+
+<section class="matter">
   <h2>El sisè jurat: l'ofici del menestral</h2>
-  <p>Dels sis jurats, el primer era cavaller o donzell, el segon i el tercer
-     ciutadans —molts, doctors en lleis— i <strong>el sisè, un menestral</strong>.
+  <p>A la llista de Campaner el primer seient és el del cavaller o donzell,
+     el segon i el tercer els dels ciutadans —molts, doctors en lleis— i
+     <strong>el sisè, el del menestral</strong>.
      Campaner n'escriu l'ofici darrere una coma, i a la llista només en porta
      aquest seient: cap ofici no surt en cap dels altres cinc.</p>
   {trades_chart(con)}
