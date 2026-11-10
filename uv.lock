@@ -11,8 +11,8 @@ dependencies = [
     { name = "lxml" },
     { name = "pillow" },
     { name = "pymupdf" },
-    { name = "pyobjc-framework-quartz" },
-    { name = "pyobjc-framework-vision" },
+    { name = "pyobjc-framework-quartz", marker = "sys_platform == 'darwin'" },
+    { name = "pyobjc-framework-vision", marker = "sys_platform == 'darwin'" },
     { name = "rapidfuzz" },
 ]
 
@@ -22,8 +22,8 @@ requires-dist = [
     { name = "lxml", specifier = ">=5.0" },
     { name = "pillow", specifier = ">=10.0" },
     { name = "pymupdf", specifier = ">=1.24" },
-    { name = "pyobjc-framework-quartz", specifier = ">=10.0" },
-    { name = "pyobjc-framework-vision", specifier = ">=10.0" },
+    { name = "pyobjc-framework-quartz", marker = "sys_platform == 'darwin'", specifier = ">=10.0" },
+    { name = "pyobjc-framework-vision", marker = "sys_platform == 'darwin'", specifier = ">=10.0" },
     { name = "rapidfuzz", specifier = ">=3.0" },
 ]
 

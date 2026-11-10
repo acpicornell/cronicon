@@ -65,3 +65,6 @@ web/cerca/
 web/search/
 web/dies/
 web/404.html
+
+# Wrangler state
+.wrangler/

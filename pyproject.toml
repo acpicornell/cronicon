@@ -8,8 +8,11 @@ dependencies = [
     "rapidfuzz>=3.0",
     "lxml>=5.0",
     "pillow>=10.0",
-    "pyobjc-framework-Vision>=10.0",
-    "pyobjc-framework-Quartz>=10.0",
+    # Apple Vision is one of the six engines and only runs on macOS. The
+    # markers let the site be rebuilt on Linux (the deploy workflow), which
+    # needs none of the recognisers.
+    "pyobjc-framework-Vision>=10.0; sys_platform == 'darwin'",
+    "pyobjc-framework-Quartz>=10.0; sys_platform == 'darwin'",
     "duckdb>=1.5.0",
 ]
 

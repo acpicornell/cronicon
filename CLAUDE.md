@@ -1917,5 +1917,13 @@ page differing between runs.
       One rule so far (the long s), plus the two typographic transforms that were
       already happening (hyphen stitching, running heads).
 - [ ] Parse into the chronicle structure; sigla glossary from the introduction.
-- [ ] Static SPA on Cloudflare Workers, Catalan UI, `cronicon.corpusbalear.org`,
-      plus a card in `../portal/web/index.html` and its JSON-LD `hasPart`.
+- [ ] Static site on Cloudflare Workers at `cronicon.corpusbalear.org`.
+      `.github/workflows/deploy.yml` rebuilds `web/` from the committed parquet
+      and hand-written inputs (a clean clone reproduces a local build byte for
+      byte), runs `check_site.py`, and deploys with wrangler; inert until the
+      `CLOUDFLARE_API_TOKEN` secret is set (`../set-cf-token.sh` lists this
+      repo). The custom domain is attached in the dashboard. The Apple Vision
+      dependencies carry a `sys_platform == 'darwin'` marker so the build runs
+      on Linux. The portal card, JSON-LD and README row are prepared in
+      `../portal` and go in only once the domain answers, as the link check
+      there expects; then add the sitemap to `sitemap-index.xml`.

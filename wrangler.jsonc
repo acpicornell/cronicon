@@ -4,6 +4,13 @@
   "workers_dev": false,
   "compatibility_date": "2026-07-28",
   "observability": { "enabled": true },
-  "assets": { "directory": "web" },
+  // Assets only, no Worker code. `web/` is what build_site.py writes; the
+  // custom domain cronicon.corpusbalear.org is attached in the dashboard, as
+  // for every other site of the family.
+  "assets": {
+    "directory": "web",
+    // A missing page gets web/404.html with a real 404 status.
+    "not_found_handling": "404-page"
+  },
   "compatibility_flags": ["nodejs_compat"]
 }

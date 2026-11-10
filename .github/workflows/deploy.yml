@@ -1,0 +1,54 @@
+name: Deploy
+
+# Rebuild the site and deploy it to Cloudflare Workers on push to main.
+# Requires a CLOUDFLARE_API_TOKEN repository secret. The guard step keeps the
+# run green while the secret is missing, so this workflow can be committed first.
+#
+# The rendered site is not in git (it was 73% of the history), so CI builds it.
+# Everything it needs is versioned: `web/data/*.parquet` is the edition, and the
+# hand-written inputs the pages read (decisions, sigla dossiers, Jurats files)
+# are under `data/`. A clean clone rebuilds `web/` byte for byte identical to a
+# local build; `check_site.py` then refuses to deploy a page that would break
+# the Content-Security-Policy or carry a dead link.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for Cloudflare token
+        id: guard
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "No CLOUDFLARE_API_TOKEN secret set yet — skipping deploy."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v7
+        if: steps.guard.outputs.skip != 'true'
+      - uses: astral-sh/setup-uv@v7
+        if: steps.guard.outputs.skip != 'true'
+      - name: Build and check the site
+        if: steps.guard.outputs.skip != 'true'
+        run: |
+          uv sync --frozen
+          uv run python scripts/build_db.py --from-parquet web/data
+          uv run python scripts/build_site.py
+          uv run python scripts/check_site.py
+      - uses: actions/setup-node@v7
+        if: steps.guard.outputs.skip != 'true'
+        with:
+          # Wrangler v4 requires Node >= 22.
+          node-version: 22
+      - name: Deploy to Cloudflare Workers
+        if: steps.guard.outputs.skip != 'true'
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # Static-assets-only Workers (no `main` entry-point) need Wrangler v4.
+          wranglerVersion: "4.118.0"
