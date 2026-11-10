@@ -307,8 +307,9 @@ def foot(up: str, scripts: tuple[str, ...] = ()) -> str:
   <div class="wrap">
     <p>Edició digital del <em>Cronicón Mayoricense</em> d'Álvaro Campaner
        (Palma, 1881), elaborada a partir del facsímil dipositat a Internet
-       Archive pel consens de sis reconeixedors independents. Cap model
-       generatiu n'ha escrit el text.</p>
+       Archive pel consens de sis reconeixedors independents. Les poques
+       lectures fetes directament sobre el facsímil hi van comptades: vegeu
+       <a href="{up}metode.html#facsimil">el mètode</a>.</p>
     <p>© 2026 Antoni C. Picornell Company ·
        <a href="https://creativecommons.org/licenses/by-nc/4.0/"
           rel="noopener">CC BY-NC 4.0</a>
@@ -1392,7 +1393,7 @@ def source_page(con, siglum: str, expansion: str) -> str:
                 f"Les {num(total)} notícies que Campaner atribueix a "
                 f"{named} al Cronicón Mayoricense.",
                 f"abreviatures/{slug(siglum)}/", "abreviatures/", body,
-                main="wrap narrow",
+                main="wrap column",
                 trail=crumbs(("Inici", "../../"), ("Les fonts", "../"),
                              (siglum, None)))
 
@@ -2016,6 +2017,12 @@ def index_page(con, counts: dict, routes: dict) -> str:
 
 
 def method_page(con) -> str:
+    """How the transcription was made, what was measured, and what is left.
+
+    Every figure on this page is computed from the database or the decision
+    log at build time, so the page cannot drift from the edition it describes.
+    """
+    q = lambda sql: con.execute(sql).fetchone()
     tiers = dict(con.execute("SELECT tier, count(*) FROM word GROUP BY 1").fetchall())
     total = sum(tiers.values())
     adj = con.execute("""
@@ -2023,12 +2030,40 @@ def method_page(con) -> str:
                round(100.0*count(*) FILTER (WHERE chose = winner)/count(*), 1)
         FROM adjudication WHERE winner IS NOT NULL
         GROUP BY 1,2 ORDER BY 1, 3 DESC""").fetchall()
+    adj_n = dict(con.execute(
+        "SELECT family, count(*) FROM adjudication GROUP BY 1").fetchall())
+    leaves, line_aligned, bne = q(
+        "SELECT count(*), count(*) FILTER (WHERE align = 'line'), "
+        "count(*) FILTER (WHERE scan = 'bne') FROM leaf")
+    kept = q("SELECT count(*) FROM word WHERE printed IS NOT NULL")[0]
+    entries, sourced_, years_ = q(
+        "SELECT count(*), count(*) FILTER (WHERE len(sources) > 0), "
+        "count(DISTINCT year) FROM entry")
+    docs, doc_words = q("SELECT count(*), sum(words) FROM document")
+    notes, loose = q("SELECT count(*), count(*) FILTER (WHERE entry_id IS NULL "
+                     "AND document_id IS NULL) FROM footnote")
+    tables_, rows_ = q("SELECT count(DISTINCT table_id), count(*) FROM table_row")
+    sigla_, glossed = q("SELECT count(*), count(*) FILTER (WHERE role IS NOT NULL) "
+                        "FROM siglum")
+    jurats_, jurats_typed = q(
+        "SELECT count(*) FILTER (WHERE tier <> 'remark'), "
+        "count(*) FILTER (WHERE source = 'typed') FROM jurat")
+    # The decision log: what a reader with the facsimile on screen settled,
+    # and how many of those positions no engine had read at all.
+    decided: dict[str, dict] = {}
+    path = PROJECT / "data" / "review" / "decisions.jsonl"
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            row = json.loads(line)
+            decided[row["key"]] = row
+    typed = sum(1 for r in decided.values()
+                if r.get("source") == "typed" and r.get("chose"))
+
     order = {"adjudicated": -1, "unanimous": 0, "one-dissent": 1,
              "two-dissent": 2, "contested": 3}
     label = {"adjudicated": "resolt contra el facsímil",
              "unanimous": "els sis coincideixen", "one-dissent": "un discrepa",
              "two-dissent": "en discrepen dos", "contested": "en discrepen tres o més"}
-
     tier_rows = "".join(
         f"<tr><td>{label[t]}</td><td class='num'>{num(tiers.get(t, 0))}</td>"
         f"<td class='num'>{pct(100*tiers.get(t,0)/total)}%</td></tr>"
@@ -2037,9 +2072,8 @@ def method_page(con) -> str:
         f"<tr><td>{'la crònica' if f=='sample' else 'els documents'}</td>"
         f"<td>{label.get(t, t)}</td><td class='num'>{n}</td>"
         f"<td class='num'>{pct(p)}%</td></tr>"
-        for f, t, n, p in sorted(adj, key=lambda r: (r[0], order.get(r[1], 9))))
-    # The corpus itself, file by file. This replaces a link to `data/`, which is
-    # a directory with no index and went nowhere.
+        for f, t, n, p in sorted(adj, key=lambda r: (r[0] == 'documents', order.get(r[1], 9))))
+    # The corpus itself, file by file.
     what = {"word": "cada paraula, amb el grau de certesa i la caixa al facsímil",
             "entry": "les notícies datades", "document": "els documents sencers",
             "footnote": "les notes de Campaner", "jurat": "els jurats, nom a nom",
@@ -2048,7 +2082,7 @@ def method_page(con) -> str:
             "century": "l'obertura de cada segle",
             "piece": "les peces numerades dins els documents",
             "table_row": "les taules que Campaner imprimeix dins la prosa",
-            "adjudication": "les 870 lectures verificades contra el facsímil"}
+            "adjudication": "les lectures verificades contra el facsímil"}
     files = sorted((WEB / "data").glob("*.parquet"),
                    key=lambda p: -p.stat().st_size)
     data_rows = "".join(
@@ -2057,40 +2091,167 @@ def method_page(con) -> str:
         f"<td class='num'>{pct(p.stat().st_size / 1024)} KB</td></tr>"
         for p in files)
     size = pct(sum(p.stat().st_size for p in files) / 1048576)
+    contested = tiers.get("contested", 0) + tiers.get("two-dissent", 0)
+
+    sections = (("fonts", "D'on surt el text"), ("motors", "Els sis reconeixedors"),
+                ("vot", "Com es vota"), ("acord", "Quant d'acord es posen"),
+                ("encerts", "I quan encerten"), ("regles", "Què s'hi ha tocat"),
+                ("facsimil", "Allò que s'ha llegit del facsímil"),
+                ("estructura", "De text a llibre"), ("limits", "Què queda per fer"),
+                ("dades", "Consultar-ho tot"))
+    toc = " ".join(f'<li><a href="#{a}">{esc(t)}</a></li>' for a, t in sections)
 
     body = f"""<header class="page-head">
   <h1>El mètode i les xifres</h1>
-  <p class="lede">Com s'ha obtingut aquesta transcripció, quant se'n pot
-     refiar i com consultar-la sencera.</p>
+  <p class="lede">Com s'ha obtingut aquesta transcripció, què se n'ha mesurat,
+     on se'n pot refiar menys i com consultar-la sencera. Totes les xifres
+     d'aquesta pàgina es calculen de les dades publicades cada vegada que es
+     construeix l'edició.</p>
 </header>
+<nav class="jump method-toc" aria-label="Apartats"><ol>{toc}</ol></nav>
 <div class="prose">
-  <h2>Com s'ha fet</h2>
-  <p>Sis reconeixedors independents llegeixen cada full de <strong>dos
-     escanejos diferents</strong> del mateix exemplar, i cada posició s'adjudica
-     per majoria. La paraula publicada és sempre una que algun motor va llegir
-     de veritat: <strong>cap model generatiu ha escrit ni un caràcter</strong>.
-     El text pot equivocar-se, però només allà on algun reconeixedor s'equivocà
-     abans.</p>
-  <p>Res no es modernitza. <em>formacion</em>, <em>dia</em>, <em>Setiembre</em>,
-     <em>mallorquin</em> i les errades del mateix Campaner es queden com són.</p>
+  <h2 id="fonts">D'on surt el text</h2>
+  <p>De l'edició de 1881 se'n coneixen dos escanejos independents: el de la
+     <strong>Biblioteca Nacional d'Espanya</strong>, un PDF a 200 punts per
+     polzada, i el que <strong>Google</strong> va fer per a l'Internet Archive,
+     de molta més resolució. Tots dos tenen defectes en llocs diferents —el de
+     l'Archive té quatre fulls borrosos (93, 94, 97 i 98), i en el de la BNE la
+     pàgina del davant es transparenta en algun full—, i per això es llegeixen
+     tots dos. Els {num(leaves)} fulls amb text són els que es transcriuen; els
+     altres són portades, làmines i pàgines en blanc.</p>
 
-  <h2>Quant d'acord es posen</h2>
+  <h2 id="motors">Els sis reconeixedors</h2>
+  <p>Cada full el llegeixen sis programes de reconeixement de text (OCR), triats
+     perquè s'equivoquin de maneres diferents:</p>
+  <ul>
+    <li><strong>ABBYY FineReader</strong>, la capa de text que l'Internet Archive
+        ja publica amb el seu escaneig;</li>
+    <li><strong>Tesseract</strong> amb els models de castellà antic, català i
+        llatí alhora —el llibre cita documents en català medieval i en llatí, i
+        els cognoms mallorquins duen ce trencada—;</li>
+    <li><strong>Apple Vision</strong>, una vegada sobre cada escaneig;</li>
+    <li><strong>PaddleOCR</strong>;</li>
+    <li><strong>Kraken</strong>, amb un model entrenat expressament sobre
+        aquest llibre a partir de les línies en què els altres ja coincidien.</li>
+  </ul>
+  <p>Que siguin sis i no més és una decisió mesurada. Afegir un setè motor es va
+     provar dues vegades i les dues va empitjorar el resultat, encara que el
+     motor nou fos més precís que alguns dels que ja hi eren: el que compta no
+     és que un motor encerti molt, sinó que no s'equivoqui igual que els altres.
+     Per la mateixa raó, mai no voten dues variants del mateix programa sobre la
+     mateixa imatge.</p>
+
+  <h2 id="vot">Com es vota</h2>
+  <p>Abans de comparar res, totes les lectures s'ordenen igual: es detecten les
+     columnes de cada full i s'imposa a tots els motors el mateix ordre de
+     lectura. Després s'alineen paraula per paraula i cada posició es decideix
+     per majoria. <strong>La paraula publicada és sempre una que algun motor va
+     llegir</strong>: el vot tria, no escriu.</p>
+  <p>Hi ha tres casos en què això no basta, i cadascun té la seva regla:</p>
+  <ul>
+    <li>en <strong>{line_aligned} fulls</strong> —taules, llistes en columnes—
+        els motors no es posen d'acord ni en quantes columnes té la pàgina; allà
+        s'alinea línia per línia, de manera que una línia impresa només es
+        compara amb el text que hi cau a sobre;</li>
+    <li>quan els motors tallen les paraules en llocs diferents
+        (<em>cuartos.—J. V.—30.—Mataron</em>), es vota el tram sencer i no
+        casella per casella; una lectura buida no compta com a vot en contra;</li>
+    <li>els encapçalaments d'any i de mes són lletra gran, la que pitjor llegeixen
+        tots: s'hi compta el que diuen els vuit motors disponibles, no només el
+        guanyador, i s'exigeix que la crònica avanci en el temps.</li>
+  </ul>
+
+  <h2 id="acord">Quant d'acord es posen</h2>
   <div class="scroll"><table><thead><tr><th>grau</th><th class="num">paraules</th>
     <th class="num">%</th></tr></thead><tbody>{tier_rows}</tbody></table></div>
-  <p>Al text es marquen les lectures en què discrepen dos reconeixedors o més.
-     Quan només en discrepa un, la majoria encerta el 99% de les vegades a la
-     crònica, i marcar-ho ompliria la pàgina per no res.</p>
+  <p>Cada paraula de l'edició porta el seu grau. Al text es marquen, amb un
+     subratllat puntejat, les lectures en què discrepen dos reconeixedors o
+     més; tocant-les es veu què més s'hi va llegir. Quan només en discrepa un,
+     la majoria encerta gairebé sempre, i marcar-ho ompliria
+     la pàgina per no res.</p>
 
-  <h2>I quan encerten</h2>
-  <p>870 posicions s'han resolt mirant el facsímil, una a una. Aquestes són
-     dues mesures separades i no s'han de barrejar: el llibre no és igual de
-     fiable pertot.</p>
+  <h2 id="encerts">I quan encerten</h2>
+  <p>El grau d'acord no és encara la mesura de l'error. Per saber-ho s'han
+     triat a l'atzar {num(sum(adj_n.values()))} posicions, estratificades per
+     grau, i s'han resolt una a una mirant el facsímil a resolució completa:
+     {num(adj_n.get('sample', 0))} a la crònica i
+     {num(adj_n.get('documents', 0))} als documents. Són dues mesures separades
+     i no s'han de barrejar, perquè el llibre no és igual de fiable pertot.</p>
   <div class="scroll"><table><thead><tr><th>part</th><th>grau</th><th class="num">n</th>
     <th class="num">encerts</th></tr></thead><tbody>{adj_rows}</tbody></table></div>
   <p>D'aquí surt que la crònica en castellà va per <strong>1 paraula errada de
      cada 113</strong> i els documents en català medieval i llatí per
-     <strong>1 de cada 39</strong>. Per això les paraules discutides van
-     marcades: una xifra sola descriuria malament totes dues meitats.</p>
+     <strong>1 de cada 39</strong>. Allà on els sis coincideixen, les 360
+     posicions comprovades de la crònica eren totes correctes, cosa que fita
+     l'error compartit per sota del 0,83% amb un 95% de confiança.</p>
+
+  <h2 id="regles">Què s'hi ha tocat</h2>
+  <p><strong>Res no es modernitza.</strong> <em>formacion</em>, <em>dia</em>,
+     <em>Setiembre</em>, <em>mallorquin</em> i les errades del mateix Campaner i
+     del seu impressor es queden com són. Les úniques intervencions són
+     tipogràfiques o es fonamenten en el que van llegir els motors, i
+     {num(kept)} paraules conserven al costat la lectura original del vot:</p>
+  <ul>
+    <li><strong>La essa llarga</strong> (<em>ſ</em>) de la reimpressió d'un
+        opuscle de 1541 que Campaner inclou: cinc dels sis motors la llegeixen
+        <em>f</em>, i es restitueix quan algun la va llegir i la forma amb
+        <em>f</em> no és una paraula que el llibre faci servir.</li>
+    <li><strong>Els guions de final de línia</strong> es cusen, i es tornen a
+        unir les paraules que el salt de línia havia partit i el vot no havia
+        refet (<em>Tarrago. na</em> → <em>Tarragona</em>), només quan els motors
+        hi havien llegit el guió o el llibre fa servir la paraula sencera.</li>
+    <li><strong>El que no és text</strong> se suprimeix: la capçalera i el número
+        de cada pàgina i les signatures de plec del peu.</li>
+  </ul>
+  <p>Totes les regles estan escrites, amb el que s'ha mesurat de cadascuna, a
+     <a href="{GITHUB}/blob/main/docs/EDITORIAL.md" rel="noopener">les normes
+     editorials</a>.</p>
+
+  <h2 id="facsimil">Allò que s'ha llegit del facsímil</h2>
+  <p>En alguns llocs els motors llegeixen bé les paraules però no es posen
+     d'acord en l'ordre de la pàgina, i el text que en surt és inservible
+     encara que cada paraula sigui correcta. Allà el text s'ha llegit
+     directament del facsímil, a resolució completa, amb ajuda d'un model de
+     visió, i <strong>cada lectura s'ha comparat amb la dels motors</strong>:</p>
+  <ul>
+    <li><strong>Les sis sèries de jurats</strong>: {num(jurats_)} noms. Tots
+        menys {jurats_typed} coincideixen lletra per lletra amb la lectura
+        d'algun motor; els {jurats_typed} que no, porten una lletra volada
+        (<em>B.ª</em>) que cap motor no reprodueix. La comparació va detectar
+        dues normalitzacions del model —un accent posat per analogia i una
+        <em>J</em> que la impremta no va entintar— i s'han desfet.</li>
+    <li><strong>Les taules de comptes de 1307 a 1343</strong> (fulls 159–164),
+        on el vot buidava les caselles de xifres.</li>
+    <li><strong>Quatre caplletres</strong> que queien fora de les línies que
+        els motors van llegir.</li>
+  </ul>
+  <p>Cada una d'aquestes decisions queda registrada amb la seva font. En total,
+     <strong>{num(typed)} posicions</strong> del text publicat no les va llegir
+     cap motor i descansen només en aquesta lectura del facsímil.</p>
+
+  <h2 id="estructura">De text a llibre</h2>
+  <p>Del text llegit se'n reconstrueix l'estructura que el llibre imprimeix:
+     <strong>{num(entries)} notícies</strong> datades en {num(years_)} anys,
+     {num(sourced_)} amb la sigla del manuscrit d'on surten; {num(docs)}
+     documents reproduïts sencers ({num(doc_words)} mots); {num(notes)} notes
+     de Campaner; {num(tables_)} taules ({num(rows_)} files) recuperades com a
+     taules; i les sèries de jurats. L'ordre de les notícies és el del llibre,
+     no el de les dates: on Campaner les desordena, l'edició ho manté.</p>
+  <p>La introducció del llibre no es publica com a text, però d'ella s'ha tret
+     a mà el glossari de les {num(sigla_)} sigles i, per a {num(glossed)} fonts,
+     qui era l'autor i què és el seu manuscrit, cada dada amb el full d'on surt.</p>
+
+  <h2 id="limits">Què queda per fer</h2>
+  <ul>
+    <li>Les <strong>{num(contested)} posicions</strong> en què discrepen dos
+        motors o més no s'han revisat totes contra el facsímil. Van marcades.</li>
+    <li>Els fulls alineats línia per línia no estan coberts per cap mostra de
+        verificació, i el que s'hi publica com a unànime no s'ha comprovat.</li>
+    <li>{num(loose)} notes de Campaner no es poden lligar a cap notícia, perquè
+        la crida que hi remetia no es va llegir; es publiquen al peu de l'any.</li>
+    <li>La columna de notes de les llistes de jurats dels segles XIII i XIV —quin
+        manuscrit dona cada nom— encara no s'ha llegit.</li>
+  </ul>
 
   <h2 id="dades">Consultar-ho tot</h2>
   <p>Tota l'edició és consultable en SQL sense descarregar res, perquè DuckDB
@@ -2099,11 +2260,13 @@ def method_page(con) -> str:
 GROUP BY 1 ORDER BY 2 DESC LIMIT 10;</pre>
   <div class="scroll"><table><thead><tr><th>taula</th><th>què hi ha</th>
     <th class="num">mida</th></tr></thead><tbody>{data_rows}</tbody></table></div>
-  <p>Són {size} MB en total.</p>
+  <p>Són {size} MB en total. El codi que ho fa tot és al
+     <a href="{GITHUB}" rel="noopener">repositori</a>.</p>
 </div>"""
     return page("El mètode · Cronicón Mayoricense",
-                "Com s'ha obtingut aquesta transcripció i què se n'ha mesurat.",
-                "metode.html", "metode.html", body, main="wrap narrow",
+                "Com s'ha obtingut aquesta transcripció, què se n'ha mesurat i "
+                "què queda per fer.",
+                "metode.html", "metode.html", body, main="wrap column",
                 trail=crumbs(("Inici", "./"), ("El mètode", None)))
 
 
@@ -2335,7 +2498,7 @@ def not_found() -> str:
    <a href="/cerca/">o cerca un mot</a></p>"""
     return page("No s'ha trobat · Cronicón Mayoricense",
                 "Aquesta adreça no correspon a cap pàgina del Cronicón "
-                "Mayoricense.", "404.html", "", body, main="wrap narrow",
+                "Mayoricense.", "404.html", "", body, main="wrap column",
                 noindex=True, root="/")
 
 

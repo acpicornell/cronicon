@@ -128,7 +128,7 @@ main.wrap { padding-top: 1.2rem; padding-bottom: 4rem; }
    only its width is limited, so the left edge does not move between tabs. */
 .wrap.column > * { max-width: 56rem; }
 .column p, .column .lede, .column figcaption, .column .hint,
-.column .matter > p { max-width: 56rem; }
+.column .matter > p, .column .prose > p { max-width: 56rem; }
 .column .cards { grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); }
 .column .ranked { width: 100%; }
 main > p, .prose > p, .matter > p { max-width: var(--measure); }
@@ -220,6 +220,9 @@ thead th { font-family: var(--display); font-size: .8rem; letter-spacing: .1em;
 .decade [aria-current] { background: var(--accent); color: var(--on-accent); }
 .decade .void { color: var(--muted); opacity: .6; }
 .jump { justify-content: flex-start; }
+.method-toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .2rem 1.2rem; }
+.prose ul { padding-left: 1.2rem; }
+.prose li { margin-bottom: .45rem; }
 
 /* -------------------------------------------------------- reading layout */
 
