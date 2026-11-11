@@ -689,9 +689,9 @@ def year_page(con, year: int, counts: dict, sigla: dict[str, str],
         # stopping to date itself.
         near = " i ".join(
             f'<a href="../{y}/">{y}</a>' for y in (prev_y, next_y) if y)
-        parts.append('<p class="empty">El cronista no dóna cap notícia datada '
-                     "d'aquest any. Pot ser que no en tingués, o que l'any caigui "
-                     "dins d'un relat seguit que no s'atura a datar-se —com els "
+        parts.append('<p class="empty">Campaner no dona cap notícia datada '
+                     "d'aquest any. Potser no en tenia, o l'any queda dins d'un "
+                     "relat seguit que no s'atura a posar dates, com els "
                      "vint-i-vuit fulls de la Germania, entre 1520 i 1525.</p>"
                      f'<p class="empty">Els anys amb notícies més propers són '
                      f"{near}.</p>")
@@ -752,9 +752,10 @@ def year_page(con, year: int, counts: dict, sigla: dict[str, str],
         where = {t: p for _n, t, p in unplaced}
         parts.append(
             '<section class="unplaced"><h2>Notes sense crida</h2>'
-            '<p class="hint">Campaner imprimeix aquestes notes en aquests fulls '
-            "i la crida que hi remetia —un <em>(1)</em> volat de dos caràcters— "
-            "no s'ha pogut llegir, així que no sabem a quina notícia van.</p>"
+            '<p class="hint">Campaner imprimeix aquestes notes en aquests fulls, '
+            "però no s'ha pogut llegir la marca que les crida dins el text "
+            "—un petit <em>(1)</em> elevat—, així que no sabem a quina notícia "
+            "corresponen.</p>"
             + notemarks([(n, t) for n, t, _p in unplaced],
                         lambda t: doubt.mark(t, where[t], where[t]).html())
             + "</section>")
@@ -830,6 +831,16 @@ DOC_LANG = {
 BLOCKS = {114: "XIV", 225: "XV", 311: "XVI", 478: "XVII", 631: "XVIII"}
 
 
+def bare_title(title: str) -> str:
+    """A document title without the trailing note call Campaner prints on it.
+
+    `…para recobrar su reino. (1)` calls a note that is set under the
+    document itself; in a list, a tab title or a link to the next document
+    the call points nowhere, so it is dropped there and kept on the page.
+    """
+    return re.sub(r"\s*\(\d+\)\s*$", "", title)
+
+
 def document_page(con, doc, sigla: dict[str, str], doubt: Doubt,
                   before, after) -> str:
     """One of the pieces Campaner reprints in full.
@@ -837,7 +848,7 @@ def document_page(con, doc, sigla: dict[str, str], doubt: Doubt,
     These are 21% of the edition and had nowhere to live: the index listed them
     in a table of dead rows, so a search hit inside the Centellas letters could
     only be reported, never opened. They are also the part measured worst --
-    1 wrong word in 96 against the chronicle's 1 in 706 -- so the page says so
+    1 wrong word in 39 against the chronicle's 1 in 113 -- so the page says so
     at the top rather than leaving the reader to assume the two are alike.
     """
     _id, numeral, title, genre, first, last, words, contested, text, block = doc
@@ -1027,11 +1038,16 @@ def document_page(con, doc, sigla: dict[str, str], doubt: Doubt,
         got = sorted(pieces.values())
         gaps = [n for n in range(1, got[-1] + 1) if n not in set(got)]
         if gaps:
-            gap_note = (f'<p class="note">Campaner numera {got[-1]} peces; '
-                        f"{'el número' if len(gaps) == 1 else 'els números'} "
-                        + ", ".join(str(n) for n in gaps)
-                        + " no s'ha pogut llegir en cap dels vuit motors, així "
-                        "que la peça comença on ho fa el text.</p>")
+            listed = (str(gaps[0]) if len(gaps) == 1 else
+                      ", ".join(str(n) for n in gaps[:-1]) + f" i {gaps[-1]}")
+            gap_note = (f'<p class="note">Campaner numera {got[-1]} peces. '
+                        + (f"El número {listed} no s'ha pogut llegir, així que "
+                           "aquesta peça no apareix a l'índex i comença on "
+                           "comença el seu text.</p>"
+                           if len(gaps) == 1 else
+                           f"Els números {listed} no s'han pogut llegir, així "
+                           "que aquestes peces no apareixen a l'índex i "
+                           "comencen on comença el seu text.</p>"))
     toc = ""
     if len(contents) >= 3:
         toc = ('<nav class="toc" aria-label="Contingut del document">'
@@ -1057,7 +1073,8 @@ def document_page(con, doc, sigla: dict[str, str], doubt: Doubt,
     def step(row, rel: str, arrow: str) -> str:
         if not row:
             return '<span class="step"></span>'
-        label = esc(row[2][:60] + ("…" if len(row[2]) > 60 else ""))
+        name = bare_title(row[2])
+        label = esc(name[:60] + ("…" if len(name) > 60 else ""))
         inner = (f'<span aria-hidden="true">←</span> {label}' if rel == "prev"
                  else f'{label} <span aria-hidden="true">→</span>')
         return f'<a class="step" rel="{rel}" href="../{esc(row[0])}/">{inner}</a>'
@@ -1070,10 +1087,10 @@ def document_page(con, doc, sigla: dict[str, str], doubt: Doubt,
   {untitled}<p class="year-sub">{num(words)} mots · {share}% discutits ·
      {facsimile(first, f"{span} del facsímil")}</p>
 </header>
-<p class="caveat">Els documents són la part del llibre pitjor mesurada:
-   <strong>un mot errat de cada 96</strong>, contra un de cada 706 a la
-   crònica. Molts són en català medieval i en llatí, i els reconeixedors hi
-   van pitjor. <a href="../../metode.html">Com se sap?</a></p>
+<p class="caveat">Els documents són la part del llibre amb més errors de
+   lectura: <strong>un mot errat de cada 39</strong>, contra un de cada 113 a
+   la crònica. Molts són en català medieval i en llatí, que els reconeixedors
+   llegeixen pitjor. <a href="../../metode.html">Com se sap?</a></p>
 <div class="reading">
   <aside class="rail">{toc}{DOUBT_CONTROL.format(up="../../")}</aside>
   <div class="text">
@@ -1084,7 +1101,7 @@ def document_page(con, doc, sigla: dict[str, str], doubt: Doubt,
     </nav>
   </div>
 </div>"""
-    return page(f"{numeral}. {title} · Cronicón Mayoricense",
+    return page(f"{numeral}. {bare_title(title)} · Cronicón Mayoricense",
                 f"{title} — {genre or 'document'} reproduït sencer al Cronicón "
                 f"Mayoricense de Campaner (1881), fulls {first}–{last}.",
                 f"documents/{_id}/", "documents/", body, main="wrap page",
@@ -1211,7 +1228,7 @@ def documents_page(con) -> str:
         cards = "".join(
             f'<a class="card doc-card" href="{esc(i)}/">'
             f'<span class="tag">secció {esc(n)}</span> '
-            f'<strong lang="{DOC_LANG.get(i, "es")}" translate="no">{esc(t)}</strong> '
+            f'<strong lang="{DOC_LANG.get(i, "es")}" translate="no">{esc(bare_title(t))}</strong> '
             f'<span class="meta">fulls {a}–{b} · {num(w)} mots · '
             f"{pct(100 * c / w if w else 0)}% discutits</span></a>"
             for i, n, t, _g, a, b, w, c, bl in docs if bl == block)
@@ -1222,11 +1239,11 @@ def documents_page(con) -> str:
   <h1>Els documents</h1>
   <p class="lede">Al final de cada segle la crònica s'atura i Campaner
      reprodueix documents sencers: cartes, sentències, relacions i dietaris.
-     Són {len(docs)} peces i {total} mots, una cinquena part del llibre.</p>
+     Són {len(docs)} documents i {total} mots, una cinquena part del llibre.</p>
 </header>
-<p class="hint">Són en castellà, català medieval i llatí, i és la part pitjor
-   mesurada — <a href="../metode.html">un mot errat de cada 96</a>, contra un
-   de cada 706 a la crònica.</p>
+<p class="hint">Són en castellà, català medieval i llatí, i és la part del
+   llibre amb més errors de lectura: <a href="../metode.html">un mot errat de
+   cada 39</a>, contra un de cada 113 a la crònica.</p>
 {"".join(sections)}"""
     return page("Els documents · Cronicón Mayoricense",
                 f"Els {len(docs)} documents que Campaner reprodueix sencers dins "
