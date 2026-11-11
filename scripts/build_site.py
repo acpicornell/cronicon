@@ -1178,15 +1178,18 @@ def years_page(con, counts: dict) -> str:
      és un any i l'alçada diu quantes notícies en dona Campaner.</p>
 </header>
 <nav class="jump" aria-label="Segles">{jump}</nav>
-<p class="hint">L'escala és d'arrel quadrada: 1715 té {num(peak)} notícies i la
-   majoria d'anys en tenen quatre, i amb escala lineal mig llibre semblaria
-   buit. Els anys sense cap notícia queden com un traç, perquè també són una
-   dada; a les files de sota surten en gris.</p>
+<p class="hint">Les barres no creixen en proporció exacta al nombre de notícies.
+   Si ho fessin, 1715, que en té {num(peak)}, ompliria tota l'alçada, i els anys
+   de quatre notícies, que són la majoria, gairebé no es veurien. Per això les
+   diferències grans s'hi veuen més petites del que són: una barra més alta vol
+   dir més notícies, però el nombre exacte és el que hi ha al costat de cada any,
+   a les files de sota. Els anys sense cap notícia queden com un traç, perquè
+   també són una dada, i a les files surten en gris.</p>
 {"".join(blocks)}"""
     return page("Els anys · Cronicón Mayoricense",
                 "Els 572 anys del Cronicón Mayoricense, segle a segle, amb "
                 "quantes notícies dona Campaner de cadascun.",
-                "anys/", "anys/", body,
+                "anys/", "anys/", body, main="wrap wide",
                 trail=crumbs(("Inici", "../"), ("Els anys", None)))
 
 

@@ -139,6 +139,9 @@ main > p, .prose > p, .matter > p { max-width: var(--measure); }
 .hint, .note, .aside { color: var(--muted); font-size: 1rem; }
 .hint { max-width: var(--measure); }
 .block > .hint { max-width: none; }
+/* A page laid out across the full width (the years index, whose charts run
+   margin to margin): its introduction runs the same width as the charts. */
+.wide .page-head .lede, .wide > .hint { max-width: none; }
 .note { font-size: .92rem; margin: .6rem 0 0; }
 .aside { font-style: italic; }
 .caveat { border-left: 3px solid var(--doubt); background: var(--paper-2);
