@@ -20,7 +20,7 @@ errors stand.
 The one exception is stated and counted: the Jurats lists and the account tables
 of leaves 159–164, where the engines could not agree on the reading order, were
 read off the facsimile with the help of a vision model and checked against every
-engine. 167 positions of the text rest on no engine's reading.
+engine. 168 positions of the text rest on no engine's reading.
 
 The book has been parsed into its own structure: **528 years, 3 459 dated
 notices, 369 footnotes, 2 436 Jurats, 26 documents, 45 tables** and the sources

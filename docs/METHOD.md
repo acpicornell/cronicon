@@ -37,9 +37,9 @@ that do not carry a superior letter (`B.ª`) no engine renders. The comparison c
 the model normalising twice — an accent added by analogy, a `J` the press never
 inked — and both were undone. Every such decision is recorded in
 `data/review/decisions.jsonl` with its source, so the share of the edition that
-rests on no engine's reading is counted, not assumed: **167 positions** of the
-text, most of them ledger cells on leaves 159–164, plus four drop caps and a few
-words of the 1542 booklet — and the five Jurats above. The site's method page
+rests on no engine's reading is counted, not assumed: **168 positions** of the
+text, most of them ledger cells on leaves 159–164, plus four drop caps, one
+line-initial syllable on leaf 487 and a few words of the 1542 booklet — and the five Jurats above. The site's method page
 says the same.
 
 ## The method
@@ -158,11 +158,11 @@ word. Each position lands in one of four tiers:
 
 | tier | tokens | share |
 |---|---:|---:|
-| all six agree | 369 273 | 79.0% |
+| all six agree | 369 272 | 79.0% |
 | one dissenter | 55 686 | 11.9% |
 | two dissenters | 21 002 | 4.5% |
 | **contested** (three or more, or tied) | **20 137** | **4.3%** |
-| adjudicated against the facsimile | 1 386 | 0.3% |
+| adjudicated against the facsimile | 1 387 | 0.3% |
 | **total** | **467 484** | |
 
 Those are the counts in `web/data/word.parquet`, which is what the site queries;
@@ -172,8 +172,8 @@ matches them.
 The winner is always a string some engine actually produced — **except** for the
 positions in the last row, where a person read the facsimile and typed what is
 printed. That tier exists so the share of the edition resting on no engine's
-reading can be counted instead of assumed. It is 1 386 words in 467 484, of
-which 167 no engine read at all.
+reading can be counted instead of assumed. It is 1 387 words in 467 484, of
+which 168 no engine read at all.
 
 ### 5. Measurement against human ground truth
 

@@ -11,9 +11,10 @@ The other exception is not editorial and is not here: a reading settled against
 the facsimile. Those are decisions about what the page prints, not rules about
 how to change it, and they live in `data/review/decisions.jsonl` (and, for the
 Jurats, `data/adjudication/jurats/`), each with its source. Most confirm a reading
-some engine gave; **167 positions of the text rest on no engine's reading** — the
-ledger cells of leaves 159–164, four drop caps that sit outside every engine's
-line box, and a few words of the 1542 booklet — and the count is kept so that it
+some engine gave; **168 positions of the text rest on no engine's reading** — the
+ledger cells of leaves 159–164, four drop caps and one line-initial `ñor`
+(leaf 487) that sit outside every engine's word box, and a few words of the
+1542 booklet — and the count is kept so that it
 can be stated rather than assumed.
 
 Every rule here must satisfy three conditions:
