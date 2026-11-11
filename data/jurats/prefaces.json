@@ -1,0 +1,32 @@
+[
+ {
+  "century": 13,
+  "before_year": null,
+  "pdf_page": 58,
+  "paragraphs": [
+   "Dificilísimo, si no imposible, es averiguar quienes administraron con aquel nombre los negocios públicos de esta capital y de la isla, desde su institucion hasta el último tercio del siglo XIV. Se han escrito varias listas de personas que se supone ejercieron aquella magistratura anual, pero su misma diversidad demuestra hasta la evidencia las vacilaciones, las dudas, los errores en fin, de que están plagadas. Yo no intento cubrir este hueco con una nómina verdad de los Jurados del país, por que como ya sabe el lector, no es mi objeto practicar investigaciones en los archivos, donde tal vez se pudiera obtener el todo ó parte de tan interesante catálogo, pero sí conceptuó conveniente dar en este apéndice un resúmen de las notas que he podido encontrar sobre la materia; á saber, una lista que puso el P. Villafranca en el tomo X de sus Misceláneas, y los apuntes que ha tenido la amabilidad de facilitarme el ilustrado archivero de esta Audiencia, mi amigo D. Miguel Bonet. Anticipo que, en mi sentir, los datos de Bonet infunden mucha más confianza que los del P. Villafranca: éste, al parecer, se limitó á reproducir los nombres que halló escritos en las listas de D. B. Serra, D. J. Alemany, el P. Cayetano de Mallorca, y el libro llamado «de Torrella:» tambien citó algunas veces al pavorde Jaume y varios códices de nuestros archivos donde se encuentran nombres de los que nos interesan.",
+   "A continuacion, pues, van los nombres del P. Villafranca y los de Bonet, con un resúmen de las indicaciones que puso el 1.° en su lista comparativa.\n"
+  ],
+  "certainty": {
+   "two-dissent": 4,
+   "unanimous": 222,
+   "one-dissent": 41,
+   "adjudicated": 1
+  }
+ },
+ {
+  "century": 14,
+  "before_year": 1371,
+  "pdf_page": 121,
+  "paragraphs": [
+   "Hasta este año ofrece todavia algun interés la investigacion de los nombres de nuestros antiguos Jurados: desde 1371 inclusive queda ya el trabajo hecho, sin dudas ni notables interrupciones. Publicolo el Sr. D. Tomás Aguiló en los Almanaques del Diario de Palma de 1869, 1870 y 1872, compulsándolo con los libros de Extracciones que se conservan en el Archivo Histórico General del antiguo reino de Mallorca. Siendo los citados Almanaques bastante raros, por no hallarse á la venta, creo que se presta un servicio al lector poniendo por Apéndice á cada siglo, los nombres de las personas que, durante él, desempeñaron aquel cargo. Así, por otra parte, se le indemniza en cierta manera de la supresion de las listas que escribió Terrassa y de que ya se habló á su tiempo.",
+   "Hé aquí, pues, los que pertenecen al siglo XIV, desde 1371 hasta 1400, ambos inclusive.\n"
+  ],
+  "certainty": {
+   "one-dissent": 53,
+   "two-dissent": 13,
+   "contested": 2,
+   "unanimous": 78
+  }
+ }
+]

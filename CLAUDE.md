@@ -1628,9 +1628,24 @@ everywhere: `Villafrauca`, `aplina` (leaf 59, seven engines of eight).
 (`Benei` 3, `Benel` 2), and writing it would be the normalisation the check
 exists to stop, so it stands as `Benei`.
 
-Still unpublished on these leaves: Campaner's preface to the 13th-century
-list on leaf 58 (*«Dificilísimo, si no imposible, es averiguar…»*), which
-says whose lists the notes compare.
+**And Campaner's own prose on these leaves is published**, from the panel and
+not from the facsimile, because the panel reads it well (it is ordinary
+prose, mostly unanimous). `parse_jurats.PREFACES` delimits two pieces by the
+band of the page and refuses to build if the first line no longer opens with
+the expected words; `build_documents.stitch` assembles them; they go to
+`data/jurats/prefaces.json` and carry the doubt marks like any text:
+
+- leaf 58, the preface to the 13th-century list (*«Dificilísimo, si no
+  imposible, es averiguar…»*): the notes compare Villafranca's list in tome X
+  of his Misceláneas with the notes of the archivist Miguel Bonet, and
+  Campaner trusts Bonet more. One decision against the facsimile, `i.°` →
+  `1.°`, which Apple Vision on the IA scan had read.
+- leaf 121, where the annotated list ends: from 1371 the names are Tomás
+  Aguiló's list in the Almanaques del Diario de Palma of 1869, 1870 and 1872,
+  checked against the books of Extracciones -- the source of every compact
+  list after it. Set in the grid before 1371.
+
+`conceptuó` and `Publicolo` are what the page prints and stand.
 
 **The trades are the sixth seat, and only the sixth.** With every name read,
 what follows the comma sorts by seat with no exception: `caballero`, `doncel`,

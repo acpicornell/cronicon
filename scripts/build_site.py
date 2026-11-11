@@ -1699,7 +1699,7 @@ def jurats_index(con) -> str:
                 trail=crumbs(("Inici", "../"), ("Els jurats", None)))
 
 
-def jurats_century(con, century: int) -> str:
+def jurats_century(con, century: int, doubt: Doubt | None = None) -> str:
     """One century's series, year by year, six seats to the card.
 
     Two grades of doubt here and only here. Everywhere else a single dissenting
@@ -1717,6 +1717,26 @@ def jurats_century(con, century: int) -> str:
         by_year.setdefault(year, []).append((seat, name, tier, leaf))
     # Campaner's note beside the year on the annotated lists, folded: it can
     # run to a hundred words and the card holds six names.
+    # Campaner's own prose on these leaves: the preface at the head of the
+    # 13th-century list and, in the 14th, the paragraph where the annotated
+    # list ends and the compact one begins. The panel's text, with its doubt.
+    path = PROJECT / "data" / "jurats" / "prefaces.json"
+    prose = [p for p in (json.loads(path.read_text()) if path.exists() else [])
+             if p["century"] == century]
+
+    def prose_html(p: dict) -> str:
+        leaf = p["pdf_page"]
+        paras = "".join(
+            f'<p lang="es" translate="no">'
+            f'{doubt.mark(t, leaf, leaf).html() if doubt else esc(t)}</p>'
+            for t in p["paragraphs"])
+        label = ("Pròleg de Campaner" if p["before_year"] is None
+                 else f"Campaner, abans de la llista de {p['before_year']}")
+        return (f'<section class="jpreface"><h2>{label}</h2>{paras}'
+                f'<p class="leafmark">{facsimile(leaf)}</p></section>')
+
+    head_prose = "".join(prose_html(p) for p in prose if p["before_year"] is None)
+    before = {p["before_year"]: prose_html(p) for p in prose if p["before_year"]}
     year_notes: dict[int, list[str]] = {}
     for year, text in con.execute(
             "SELECT year, text FROM jurat_note WHERE century = ? ORDER BY id",
@@ -1767,6 +1787,8 @@ def jurats_century(con, century: int) -> str:
                              for t in year_notes[year]) + "</details>")
         leaves = sorted({p for _s, _n, _t, p in seats})
         marks = " · ".join(facsimile(p) for p in leaves)
+        if year in before:
+            out.append(before.pop(year))
         out.append(f'<article class="serie-year" id="y{year}"><h2>{link}</h2>'
                    + "".join(parts)
                    + f'<p class="leafmark">{marks}</p></article>')
@@ -1797,7 +1819,7 @@ def jurats_century(con, century: int) -> str:
    {("Sota cada any, la nota de Campaner diu quins manuscrits i autors donen aquests noms i on no coincideixen; és llegida del facsímil, com els noms." if year_notes else "")}
    {("Tots aquests noms s'han llegit directament del facsímil i comparat amb el que n'havien llegit els reconeixedors." if read == names else "")}
    {("" if read == names else "Un nom <span class='d'>puntejat</span> és una lectura en què dos o més reconeixedors discrepen; un de <span class='d1'>subratllat fi</span>, una en què en discrepa un de sol. Cap dels dos vol dir que sigui erroni." + (" Els que no duen marca en els anys llegits del facsímil s'han comprovat contra la pàgina." if read else ""))}</p>
-<div class="serie-grid">{"".join(out)}</div>"""
+{head_prose}<div class="serie-grid">{"".join(out)}</div>"""
     return page(f"Jurats del segle {roman} · Cronicón Mayoricense",
                 f"Els jurats de Mallorca del segle {roman} segons el Cronicón "
                 "Mayoricense de Campaner.",
@@ -2813,7 +2835,7 @@ def main() -> None:
     write(WEB / "jurats" / "index.html", jurats_index(con))
     for century in centuries:
         write(WEB / "jurats" / str(century) / "index.html",
-              jurats_century(con, century))
+              jurats_century(con, century, doubt))
 
     write(WEB / "index.html", index_page(con, counts, routes))
     write(WEB / "metode.html", method_page(con))

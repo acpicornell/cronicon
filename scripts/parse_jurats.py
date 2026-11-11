@@ -68,6 +68,45 @@ from parse_entries import (OCR, monotone_subsequence, page_lines,
 PROJECT = Path(__file__).resolve().parent.parent
 OUT = PROJECT / "data" / "jurats"
 
+# Campaner's own prose on the Jurats leaves, which is neither a name nor a note:
+# the preface to the 13th-century list on leaf 58 (whose lists the notes
+# compare, and why Bonet is to be trusted over Villafranca), and the paragraph
+# on leaf 121 where the annotated list ends at 1370 and the compact one begins
+# (from 1371 he copies Tomás Aguiló's list in the Almanaques del Diario de
+# Palma). Delimited by the band of the page they occupy, and each must open
+# with the words given, or the build stops rather than publish the wrong lines.
+# The text is the panel's, assembled as the documents are; nothing is typed.
+PREFACES = (
+    {"century": 13, "before_year": None, "pdf_page": 58,
+     "band": (0.26, 0.565), "opens": "Dificil"},
+    {"century": 14, "before_year": 1371, "pdf_page": 121,
+     "band": (0.655, 0.81), "opens": "Hasta este a"},
+)
+
+
+def prefaces(source: Path) -> list[dict]:
+    from build_documents import stitch
+    out = []
+    for spec in PREFACES:
+        page = spec["pdf_page"]
+        lines = page_lines(source / f"p{page:04d}.json")
+        for line in lines:
+            line["leaf"] = page
+        top, bottom = spec["band"]
+        chosen = [ln for ln in lines if top <= ln["bbox"][1] < bottom]
+        if not chosen or not chosen[0]["text"].startswith(spec["opens"]):
+            raise SystemExit(f"leaf {page}: the preface no longer opens with "
+                             f"{spec['opens']!r} -- check its band")
+        text, *_ = stitch(chosen)
+        tiers = Counter()
+        for line in chosen:
+            tiers += line["tiers"]
+        out.append({k: spec[k] for k in ("century", "before_year", "pdf_page")}
+                   | {"paragraphs": [p for p in text.split("\n\n") if p.strip()],
+                      "certainty": dict(tiers)})
+    return out
+
+
 # Every series opens with its own title. `silgo` is not a typo of mine: it is
 # what leaf 311 prints, and it stays.
 SERIES = re.compile(
@@ -324,6 +363,8 @@ def main() -> None:
     with (OUT / "notes.jsonl").open("w", encoding="utf-8") as fh:
         for note in notes:
             fh.write(json.dumps(note, ensure_ascii=False) + "\n")
+    (OUT / "prefaces.json").write_text(json.dumps(
+        prefaces(source), ensure_ascii=False, indent=1), encoding="utf-8")
     (OUT / "series.json").write_text(json.dumps(
         {"parsed": summary, "annotated_not_parsed": sorted(set(annotated))},
         ensure_ascii=False, indent=1), encoding="utf-8")

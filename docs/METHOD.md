@@ -161,8 +161,8 @@ word. Each position lands in one of four tiers:
 | all six agree | 369 272 | 79.0% |
 | one dissenter | 55 686 | 11.9% |
 | two dissenters | 21 002 | 4.5% |
-| **contested** (three or more, or tied) | **20 137** | **4.3%** |
-| adjudicated against the facsimile | 1 387 | 0.3% |
+| **contested** (three or more, or tied) | **20 136** | **4.3%** |
+| adjudicated against the facsimile | 1 388 | 0.3% |
 | **total** | **467 484** | |
 
 Those are the counts in `web/data/word.parquet`, which is what the site queries;
@@ -172,7 +172,7 @@ matches them.
 The winner is always a string some engine actually produced — **except** for the
 positions in the last row, where a person read the facsimile and typed what is
 printed. That tier exists so the share of the edition resting on no engine's
-reading can be counted instead of assumed. It is 1 387 words in 467 484, of
+reading can be counted instead of assumed. It is 1 388 words in 467 484, of
 which 168 no engine read at all.
 
 ### 5. Measurement against human ground truth

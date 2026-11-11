@@ -524,6 +524,11 @@ a.key:hover { color: var(--accent); }
 .seats li::marker { color: var(--muted); font-size: .85em; font-variant-numeric: lining-nums; }
 .serie-year .leafmark { margin: .3rem 0 0; }
 .serie-year .remark { font-style: italic; color: var(--ink-soft); font-size: 1rem; margin: .2rem 0; }
+.jpreface { max-width: 66ch; margin: 0 0 1.4rem; }
+.jpreface h2 { font-family: var(--display); font-size: .8rem; letter-spacing: .12em;
+               text-transform: uppercase; color: var(--muted); margin: 0 0 .3rem; }
+.jpreface p { margin: 0 0 .6rem; hyphens: manual; }
+.serie-grid > .jpreface { grid-column: 1 / -1; margin: .4rem 0 .2rem; }
 .jnote { margin: .35rem 0 0; font-size: .95rem; color: var(--ink-soft); }
 .jnote summary { cursor: pointer; color: var(--muted); font-size: .9rem; }
 .jnote p { margin: .3rem 0 0; hyphens: manual; }

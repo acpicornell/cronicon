@@ -66,7 +66,6 @@ python scripts/dev_server.py    # http://127.0.0.1:8788
 1. The human review of the contested words (`scripts/review.py`).
 2. A stratified round on the leaves aligned line by line, whose positions are
    held back from the accepted share until measured.
-3. Campaner's preface to the 13th-century Jurats list (leaf 58).
 
 ## Conventions and licence
 
