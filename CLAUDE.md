@@ -10,7 +10,7 @@ Balear family; same conventions as the sibling projects in `../`.
 - **No generative model in the transcription path.** Ever. Not to read a page, not
   to "clean up" OCR, not to break a tie. The consensus of independent recognisers
   is the entire guarantee; an LLM writing text into the transcription voids it.
-  `../nomenclators/madoz/README.md` §Difficulties documents what happens
+  `../nomenclators/madoz/docs/METHOD.md` §Difficulties documents what happens
   otherwise. LLMs may read facsimile crops to *adjudicate* between engine
   readings — verification with the evidence on screen — and nothing more.
 - **Never modernise.** `formacion`, `dia`, `Setiembre`, `mallorquin`, `á`, `ó`
