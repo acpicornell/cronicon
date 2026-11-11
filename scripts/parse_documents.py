@@ -194,6 +194,24 @@ UNTITLED = {
     332: "Libre de la benaventurada vinguda del Emperador y Rey Don Cárlos",
 }
 
+# Section numerals no engine read at all, read off the facsimile: leaf -> (the
+# numeral, the top of its line box). Leaf 369 prints `X.` centred over `Funerales
+# de Felipe II. (1)`; the geometry boxed the line and all eight readings are
+# empty, so there is nothing for the panel to recover -- the same case as the
+# drop caps. Keyed by the box rather than the line index, which renumbers, and
+# still subject to the rule that a section is the next number of its block.
+FACSIMILE_NUMERALS = {
+    369: ("X", 0.619),
+}
+
+
+def facsimile_numeral(page: int, line: dict) -> str | None:
+    """The numeral read off the facsimile for this line, if any."""
+    known = FACSIMILE_NUMERALS.get(page)
+    if known and abs(line["bbox"][1] - known[1]) < 0.005:
+        return known[0]
+    return None
+
 
 def at_text_edge(lines: list[dict], i: int) -> bool:
     """Does line `i` start where the ordinary lines of its column start?"""
@@ -224,7 +242,11 @@ def sections(leaves: dict[int, list[dict]], first: int, last: int,
         for i, text in enumerate(texts):
             readings: set[str] = set()
             match = BARE_NUMERAL.match(text)
-            if match:
+            typed = facsimile_numeral(page, lines[i])
+            if typed:
+                title, opens_at = title_after(lines, texts, i)
+                readings.add(typed)
+            elif match:
                 title, opens_at = title_after(lines, texts, i)
                 readings.add(match.group(1))
             elif NUMERAL_TITLE.match(text):
@@ -271,6 +293,8 @@ def sections(leaves: dict[int, list[dict]], first: int, last: int,
                     "line": min(i, opens_at), "read_as": text}
             if untitled:
                 item["title_printed"] = False
+            if typed:
+                item["numeral_source"] = "facsimile"
             found.append(item)
     return found
 

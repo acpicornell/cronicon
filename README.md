@@ -23,7 +23,7 @@ read off the facsimile with the help of a vision model and checked against every
 engine. 167 positions of the text rest on no engine's reading.
 
 The book has been parsed into its own structure: **528 years, 3 459 dated
-notices, 382 footnotes, 2 436 Jurats, 25 documents, 45 tables** and the sources
+notices, 369 footnotes, 2 436 Jurats, 26 documents, 45 tables** and the sources
 Campaner cites, all in a 6.5 MB parquet the site queries in the browser.
 
 ## How reliable
@@ -65,8 +65,7 @@ python scripts/dev_server.py    # http://127.0.0.1:8788
 1. The human review of the contested words (`scripts/review.py`).
 2. A stratified round on the leaves aligned line by line, whose positions are
    held back from the accepted share until measured.
-3. Section X of the 16th-century appendix block, which is still not found.
-4. The notes column of the annotated Jurats leaves (58–60, 114–121).
+3. The notes column of the annotated Jurats leaves (58–60, 114–121).
 
 ## Conventions and licence
 

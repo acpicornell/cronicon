@@ -492,8 +492,33 @@ now 325–331, `0311-VIII-08` the booklet, 94 327 words in all as before.
 The colophon on leaf 367: *«Fonch estampada la present hystoria en la insigne
 ciutat de Mallorques (Palma anomenada) per Mestre Ferrando de Cansoles…
 Acabas a trenta dies del mes de Jener del any M. D. XXXXII.»* 1541 is the visit
-it relates. Section X of the block is still not found; check for unboxed lines
-before assuming it is not printed.
+it relates.
+
+**And section X was printed, boxed, and read by no engine.** Leaf 369 closes IX
+in the top half of both columns, sets `X.` and `Funerales de Felipe II. (1)`
+across the measure, and opens X below. The geometry has the numeral's box and
+all eight readings of it are empty, so there is nothing for the panel to
+recover -- the drop caps' case. It is read off the facsimile and recorded in
+`parse_documents.FACSIMILE_NUMERALS`, keyed by leaf and box top, still subject
+to the next-number rule (`numeral_source: "facsimile"` in the catalogue). No
+appendix block has a numeral missing any more.
+
+**Finding it exposed a loss in every document that ends mid-leaf: 2 287 words
+in no document at all.** `build_documents` already knew that nothing printed
+*above* a section's first line in a later column belongs to it, and dropped
+those lines -- but they are the end of the *previous* section, which stopped at
+the next one's first line in reading order and so never reached them. Twelve
+documents were losing the top of column 1 on their last leaf: `0478-V-05`
+stopped at `orde a el se` and was 402 words of 715, IX of the 16th century lost
+271. The end leaf now takes them, the exact complement of the start rule; no
+twelve-word run appears in two documents. Total 94 327 → **96 614**.
+
+**And on a leaf two sections share, a note goes to the one that calls it.**
+Each section took every note of every leaf it touched, so a title's `(1)` was
+also carried by the section before it: 62 notes of which **49 are distinct**.
+A note is given away only if the other section's text calls it and this one's
+does not -- the call is often misread, and one nobody's call was read for stays.
+None of the 49 is lost.
 
 ## The non-Spanish material — measured at last
 

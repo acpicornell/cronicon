@@ -43,7 +43,7 @@ scripts/
   jurats_facsimile.py      the Jurats lists read off the facsimile, checked against every engine
   parse_sigla.py           the glossary the introduction prints
   audit_entries.py         every symptom ever found, swept over all 3 459 notices
-  audit_documents.py       the same sweep over the 25 documents
+  audit_documents.py       the same sweep over the 26 documents
   build_db.py              the parsed book -> DuckDB -> parquet
   build_site.py            the static site
   build_hero.py            the home page's frontispiece, cut from leaf 10

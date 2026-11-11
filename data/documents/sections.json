@@ -437,7 +437,7 @@
   "first_leaf": 153,
   "last_leaf": 159,
   "leaves": 7,
-  "words": 4892,
+  "words": 4976,
   "paragraph_leaves": [
    153,
    153,
@@ -518,7 +518,7 @@
    35,
    44
   ],
-  "footnotes": 7,
+  "footnotes": 5,
   "notes": [
    {
     "number": 1,
@@ -544,25 +544,15 @@
     "number": 1,
     "text": "Tal fué, segun dice el notario Salcet, el origen y motivo de la poderosa Armada á que se dió el calificativo de Santa. — T. i .",
     "pdf_page": 156
-   },
-   {
-    "number": 1,
-    "text": "Aunque pensé en un principio publicar juntas en el texto cuantas noticias útiles ó curiosas descubriera en los originales de que me he servido, me pareció luégo más conveniente formar algunos apéndices con aquellas que, careciendo por completo del carácter de sucesos históricos ó de incidencias que con ellos tuviesen alguna relacion, son sin embargo apreciables muy particularmente para las personas que buscan con mi nuciosos detalles; el comercio, la produccion é industria del país, etc. Así lo hago ahora con el presente apéndice V al siglo XIV, insertando varias de las notas más importantes de aquel género, de entre las recojidas por D. B. Jaume. Y ya que vuelvo á nombrar á este diligentísimo compilador, cúmpleme enmendar una equivocacion cometida en la pág. XII, lin. 33 al hablar por vez de sus apreciables trabajos. El Pavorde Jaume no fué archivero de la Bailía del Real Patrimonio, como allí dije, sino amigo íntimo de la persona que en aquella época desempeñaba la mencionada Bailía. La equivocacion se deslizó por haber confundido algunas cuartillas de los primeros apuntes de esta obra.",
-    "pdf_page": 159
-   },
-   {
-    "number": 1,
-    "text": "¿Sería lebreti por lebrato ó liebre pequeña v anech ó pato comun?",
-    "pdf_page": 159
    }
   ],
   "certainty": {
-   "unanimous": 4306,
-   "one-dissent": 402,
-   "two-dissent": 76,
-   "contested": 96
+   "unanimous": 4379,
+   "one-dissent": 408,
+   "two-dissent": 79,
+   "contested": 98
   },
-  "contested_share": 0.0196
+  "contested_share": 0.0197
  },
  {
   "id": "0114-V-05",
@@ -769,7 +759,7 @@
   "first_leaf": 229,
   "last_leaf": 233,
   "leaves": 5,
-  "words": 3295,
+  "words": 3331,
   "paragraph_leaves": [
    229,
    229,
@@ -801,6 +791,7 @@
    232,
    232,
    232,
+   233,
    233
   ],
   "pieces": [],
@@ -816,19 +807,13 @@
    24,
    28
   ],
-  "footnotes": 1,
-  "notes": [
-   {
-    "number": 1,
-    "text": "Como se había ignorado hasta ahora el paradero de Simon Ballester en los tiempos inmediatos á su captura, me ha parecido oportuno publicar el documento que lo aclara, y que debo ála amabilidad de mi buen amigo el Sr. Bonet.",
-    "pdf_page": 233
-   }
-  ],
+  "footnotes": 0,
+  "notes": [],
   "certainty": {
-   "unanimous": 2417,
-   "one-dissent": 679,
-   "two-dissent": 111,
-   "contested": 81
+   "unanimous": 2442,
+   "one-dissent": 688,
+   "two-dissent": 112,
+   "contested": 82
   },
   "contested_share": 0.0246
  },
@@ -886,7 +871,7 @@
   "first_leaf": 235,
   "last_leaf": 236,
   "leaves": 2,
-  "words": 1017,
+  "words": 1241,
   "paragraph_leaves": [
    235,
    235,
@@ -896,6 +881,8 @@
    235,
    235,
    235,
+   236,
+   236,
    236
   ],
   "pieces": [],
@@ -903,26 +890,15 @@
    0,
    1
   ],
-  "footnotes": 2,
-  "notes": [
-   {
-    "number": 1,
-    "text": "Ya desde este año, se encuentran en las notas del Pavorde Jaume numerosos apuntes de las remesas de cera que, sin duda anualmente, se hacían al monarca para la fiesta citada en el texto: entre los varios años allí indicados todavía en 1500 se le compraron y remitieron 251 ls. de aquel producto A 5 es. la libra.",
-    "pdf_page": 236
-   },
-   {
-    "number": 1,
-    "text": "Aunque no con la frecuencia que la cera, hallo entre las notas de Jaume remesas de queso verificadas á la Córte. En 1458 todavía se mandaron al Rey (que estaba en Nápoles) 3 quintales de quesos redondos de Mallorca á 4 ls. y 10 ss. el quintal.",
-    "pdf_page": 236
-   }
-  ],
+  "footnotes": 0,
+  "notes": [],
   "certainty": {
-   "unanimous": 820,
-   "one-dissent": 170,
+   "unanimous": 1032,
+   "one-dissent": 181,
    "two-dissent": 16,
-   "contested": 7
+   "contested": 8
   },
-  "contested_share": 0.0069
+  "contested_share": 0.0064
  },
  {
   "id": "0225-V-05",
@@ -1107,7 +1083,7 @@
   "first_leaf": 315,
   "last_leaf": 316,
   "leaves": 2,
-  "words": 784,
+  "words": 967,
   "paragraph_leaves": [
    315,
    315,
@@ -1125,7 +1101,7 @@
    0,
    1
   ],
-  "footnotes": 3,
+  "footnotes": 2,
   "notes": [
    {
     "number": 1,
@@ -1136,20 +1112,15 @@
     "number": 2,
     "text": "Considero necesario llamar la atencion del lector sobre el hecho importante de citarse en este relato los nombres de los siete presos de órden del Virey en 6 de Febiero de 1521. Fueron ellos Juan Crespí, Pedro Bagur, Pascual Rosselló, Guillermo Vich, Rafael Ripoll, Francisco y Juan Colom: hasta ahora solo se conocían os de los cinco primeros.",
     "pdf_page": 315
-   },
-   {
-    "number": 1,
-    "text": "Esta relacion anónima figura en la Miscelánea Histórica del P. L. de Villafranca, (tomo VI, fol. 97 á 109) con la sigulente nota «y por hallarse muy gastada dicha copia del expresado P. Ventayol por defecto de la tinta y del transcurso de tantos años, para que no se perdiese dicha Memoria la he copiado fielmente hoy dia 11 de Abril de 1810 yo Fr. Luis de Villafranca, capuchino.» No tiene gran importancia histórica en razon á comprender un solo y breve episodio de la Germanía, pero es interesanté para el estudio de las costumbres de época, y por este motivo he creido conveniente continuarla integra en los Apéndices.",
-    "pdf_page": 316
    }
   ],
   "certainty": {
-   "unanimous": 641,
-   "one-dissent": 84,
-   "two-dissent": 29,
-   "contested": 27
+   "unanimous": 735,
+   "one-dissent": 161,
+   "two-dissent": 37,
+   "contested": 31
   },
-  "contested_share": 0.0344
+  "contested_share": 0.0321
  },
  {
   "id": "0311-III-03",
@@ -1161,7 +1132,7 @@
   "first_leaf": 316,
   "last_leaf": 321,
   "leaves": 6,
-  "words": 4261,
+  "words": 4523,
   "paragraph_leaves": [
    316,
    316,
@@ -1194,6 +1165,10 @@
    320,
    320,
    320,
+   321,
+   321,
+   321,
+   321,
    321,
    321,
    321,
@@ -1206,26 +1181,21 @@
    19,
    34
   ],
-  "footnotes": 2,
+  "footnotes": 1,
   "notes": [
    {
     "number": 1,
     "text": "Esta relacion anónima figura en la Miscelánea Histórica del P. L. de Villafranca, (tomo VI, fol. 97 á 109) con la sigulente nota «y por hallarse muy gastada dicha copia del expresado P. Ventayol por defecto de la tinta y del transcurso de tantos años, para que no se perdiese dicha Memoria la he copiado fielmente hoy dia 11 de Abril de 1810 yo Fr. Luis de Villafranca, capuchino.» No tiene gran importancia histórica en razon á comprender un solo y breve episodio de la Germanía, pero es interesanté para el estudio de las costumbres de época, y por este motivo he creido conveniente continuarla integra en los Apéndices.",
     "pdf_page": 316
-   },
-   {
-    "number": 1,
-    "text": "Fragmento colocó el P. Villafranca en sus Misceláneas, tomo VI, pág. 110 á 114.",
-    "pdf_page": 321
    }
   ],
   "certainty": {
-   "unanimous": 3547,
-   "one-dissent": 509,
-   "two-dissent": 127,
-   "contested": 72
+   "unanimous": 3741,
+   "one-dissent": 573,
+   "two-dissent": 129,
+   "contested": 73
   },
-  "contested_share": 0.0169
+  "contested_share": 0.0161
  },
  {
   "id": "0311-IV-04",
@@ -1237,7 +1207,7 @@
   "first_leaf": 321,
   "last_leaf": 323,
   "leaves": 3,
-  "words": 1265,
+  "words": 1412,
   "paragraph_leaves": [
    321,
    321,
@@ -1251,26 +1221,21 @@
    0,
    1
   ],
-  "footnotes": 2,
+  "footnotes": 1,
   "notes": [
    {
     "number": 1,
     "text": "Fragmento colocó el P. Villafranca en sus Misceláneas, tomo VI, pág. 110 á 114.",
     "pdf_page": 321
-   },
-   {
-    "number": 1,
-    "text": "Esta sentencia se halla continuada al fol. 162 del tomo de Misceláneas de D. Miguel Moragues, ántes Cañellas, quien dice haberla copiado del entre los libros legados por el Doctor Bassa, en la librería del Colegio de PP. Jesuitas de Montesion.",
-    "pdf_page": 323
    }
   ],
   "certainty": {
-   "unanimous": 1103,
-   "one-dissent": 111,
-   "two-dissent": 34,
-   "contested": 15
+   "unanimous": 1231,
+   "one-dissent": 128,
+   "two-dissent": 35,
+   "contested": 16
   },
-  "contested_share": 0.0119
+  "contested_share": 0.0113
  },
  {
   "id": "0311-V-05",
@@ -1282,7 +1247,7 @@
   "first_leaf": 323,
   "last_leaf": 324,
   "leaves": 2,
-  "words": 458,
+  "words": 463,
   "paragraph_leaves": [
    323,
    323,
@@ -1294,26 +1259,21 @@
    0,
    1
   ],
-  "footnotes": 2,
+  "footnotes": 1,
   "notes": [
    {
     "number": 1,
     "text": "Esta sentencia se halla continuada al fol. 162 del tomo de Misceláneas de D. Miguel Moragues, ántes Cañellas, quien dice haberla copiado del entre los libros legados por el Doctor Bassa, en la librería del Colegio de PP. Jesuitas de Montesion.",
     "pdf_page": 323
-   },
-   {
-    "number": 1,
-    "text": "Este curioso apunte se halla continuado en la última hoja de un cabreo de la familia Valenti, existente en el archivo de D. Juan Burgues Zaforteza.",
-    "pdf_page": 324
    }
   ],
   "certainty": {
    "unanimous": 378,
    "one-dissent": 54,
-   "two-dissent": 16,
+   "two-dissent": 21,
    "contested": 7
   },
-  "contested_share": 0.0153
+  "contested_share": 0.0151
  },
  {
   "id": "0311-VI-06",
@@ -1873,21 +1833,57 @@
   "title_printed": true,
   "genre": "Relacion",
   "first_leaf": 368,
-  "last_leaf": 373,
-  "leaves": 6,
-  "words": 4047,
+  "last_leaf": 369,
+  "leaves": 2,
+  "words": 1153,
   "paragraph_leaves": [
    368,
    368,
    368,
    368,
    368,
-   368,
+   368
+  ],
+  "pieces": [],
+  "headings": [
+   0,
+   1
+  ],
+  "footnotes": 1,
+  "notes": [
+   {
+    "number": 1,
+    "text": "Ignoro cual sea el autor de esta interesante relacion, que he tomado de uno de los tomos de la Miscelánea M. S. de Ferrer y Cassá.",
+    "pdf_page": 368
+   }
+  ],
+  "certainty": {
+   "unanimous": 944,
+   "one-dissent": 158,
+   "two-dissent": 36,
+   "contested": 11
+  },
+  "contested_share": 0.0095
+ },
+ {
+  "id": "0311-X-10",
+  "block_leaf": 311,
+  "numeral": "X",
+  "title": "Funerales de Felipe II. (1)",
+  "title_printed": true,
+  "genre": "Funerales",
+  "first_leaf": 369,
+  "last_leaf": 373,
+  "leaves": 5,
+  "words": 3076,
+  "paragraph_leaves": [
    369,
    369,
    369,
    369,
    369,
+   369,
+   369,
    370,
    370,
    370,
@@ -1930,6 +1926,13 @@
    372,
    372,
    372,
+   373,
+   373,
+   373,
+   373,
+   373,
+   373,
+   373,
    373,
    373,
    373,
@@ -1941,34 +1944,33 @@
   "headings": [
    0,
    1,
+   3,
+   5,
    7,
-   9,
-   11,
-   23,
-   25,
-   26,
-   28,
-   33,
-   35,
-   38,
-   41,
+   19,
+   21,
+   22,
+   24,
+   29,
+   31,
+   34,
+   37,
+   39,
+   40,
+   42,
    43,
-   44,
    46,
-   47,
-   50,
+   49,
+   51,
+   52,
    53,
-   55,
    56,
-   57
+   57,
+   59,
+   60
   ],
-  "footnotes": 2,
+  "footnotes": 1,
   "notes": [
-   {
-    "number": 1,
-    "text": "Ignoro cual sea el autor de esta interesante relacion, que he tomado de uno de los tomos de la Miscelánea M. S. de Ferrer y Cassá.",
-    "pdf_page": 368
-   },
    {
     "number": 1,
     "text": "Considero curiosísima la relacion original de todos los incidentes, funciones y ceremonias á que dieron lugar las honras fúnebres que se tributaron á Felipe II, la continuo íníegra en este apéndice, tomándola del libro titulado «Noticias de Mallorca» existente en el Archivo de esta Sta. Iglesia.",
@@ -1976,12 +1978,12 @@
    }
   ],
   "certainty": {
-   "unanimous": 3375,
-   "one-dissent": 497,
-   "two-dissent": 109,
-   "contested": 53
+   "unanimous": 2555,
+   "one-dissent": 390,
+   "two-dissent": 78,
+   "contested": 43
   },
-  "contested_share": 0.0131
+  "contested_share": 0.014
  },
  {
   "id": "0311-XI-11",
@@ -2100,13 +2102,14 @@
   "first_leaf": 482,
   "last_leaf": 483,
   "leaves": 2,
-  "words": 786,
+  "words": 859,
   "paragraph_leaves": [
    482,
    482,
    482,
    482,
-   482
+   482,
+   483
   ],
   "pieces": [],
   "headings": [
@@ -2114,26 +2117,21 @@
    1,
    2
   ],
-  "footnotes": 2,
+  "footnotes": 1,
   "notes": [
    {
     "number": 1,
     "text": "Ignoro el paradero del orginal de esta relacion, de la que existen algunas copias cuyo texto difiere en ligeras variantes. Ferrer y Cassá la continuó en uno de los tomos de sus «Misceláneas.»",
     "pdf_page": 482
-   },
-   {
-    "number": 1,
-    "text": "El proceso original sobre este notable delito se ha perdido: existen únicamente algunas piezas separadas de una de las cuales se han tomado como muesrra las declaraciones del texto.",
-    "pdf_page": 483
    }
   ],
   "certainty": {
-   "unanimous": 649,
-   "one-dissent": 93,
-   "two-dissent": 29,
-   "contested": 15
+   "unanimous": 710,
+   "one-dissent": 100,
+   "two-dissent": 31,
+   "contested": 18
   },
-  "contested_share": 0.0191
+  "contested_share": 0.021
  },
  {
   "id": "0478-III-03",
@@ -2145,7 +2143,7 @@
   "first_leaf": 483,
   "last_leaf": 485,
   "leaves": 3,
-  "words": 1834,
+  "words": 2085,
   "paragraph_leaves": [
    483,
    483,
@@ -2164,26 +2162,21 @@
    3,
    5
   ],
-  "footnotes": 2,
+  "footnotes": 1,
   "notes": [
    {
     "number": 1,
     "text": "El proceso original sobre este notable delito se ha perdido: existen únicamente algunas piezas separadas de una de las cuales se han tomado como muesrra las declaraciones del texto.",
     "pdf_page": 483
-   },
-   {
-    "number": 1,
-    "text": "Véase la nota al Apéndice 2.°",
-    "pdf_page": 485
    }
   ],
   "certainty": {
-   "unanimous": 1605,
-   "one-dissent": 156,
-   "two-dissent": 45,
-   "contested": 20
+   "unanimous": 1831,
+   "one-dissent": 172,
+   "two-dissent": 48,
+   "contested": 26
   },
-  "contested_share": 0.0109
+  "contested_share": 0.0125
  },
  {
   "id": "0478-IV-04",
@@ -2195,11 +2188,12 @@
   "first_leaf": 485,
   "last_leaf": 486,
   "leaves": 2,
-  "words": 691,
+  "words": 1039,
   "paragraph_leaves": [
    485,
    485,
    485,
+   486,
    486,
    486
   ],
@@ -2208,26 +2202,21 @@
    0,
    1
   ],
-  "footnotes": 2,
+  "footnotes": 1,
   "notes": [
    {
     "number": 1,
     "text": "Véase la nota al Apéndice 2.°",
     "pdf_page": 485
-   },
-   {
-    "number": 1,
-    "text": "Véase la nota al Apéndice a.°",
-    "pdf_page": 486
    }
   ],
   "certainty": {
-   "unanimous": 598,
-   "one-dissent": 61,
-   "two-dissent": 22,
-   "contested": 10
+   "unanimous": 875,
+   "one-dissent": 118,
+   "two-dissent": 29,
+   "contested": 16
   },
-  "contested_share": 0.0145
+  "contested_share": 0.0154
  },
  {
   "id": "0478-V-05",
@@ -2239,11 +2228,12 @@
   "first_leaf": 486,
   "last_leaf": 487,
   "leaves": 2,
-  "words": 402,
+  "words": 715,
   "paragraph_leaves": [
    486,
    486,
    486,
+   487,
    487
   ],
   "pieces": [],
@@ -2251,26 +2241,21 @@
    0,
    1
   ],
-  "footnotes": 2,
+  "footnotes": 1,
   "notes": [
    {
     "number": 1,
     "text": "Véase la nota al Apéndice a.°",
     "pdf_page": 486
-   },
-   {
-    "number": 1,
-    "text": "Creo que los lectores verán con gusto el original de las noticias mas interesantes que continuó en su cuaderno el pro. Viquet. Aparte de la forma de su redaccion mallorquina (en la que alguna vez se ingieren palabras castellanas y á menudo frases latinas) tiene el aliciente especial de la novedad, pues hasta ahora se conocían muy pocos detalles de los deplorables sucesos á que dieron lugar las banderías en gue se hallaba dividida de la isla. El no dice de los partidos pertenecía personalmente, pero el lector lo inferirá sin gran dificultad.",
-    "pdf_page": 487
    }
   ],
   "certainty": {
-   "unanimous": 344,
-   "one-dissent": 32,
-   "two-dissent": 18,
-   "contested": 7
+   "unanimous": 624,
+   "one-dissent": 53,
+   "two-dissent": 26,
+   "contested": 11
   },
-  "contested_share": 0.0174
+  "contested_share": 0.0154
  },
  {
   "id": "0478-VI-06",
@@ -2438,7 +2423,7 @@
   "first_leaf": 495,
   "last_leaf": 499,
   "leaves": 5,
-  "words": 3512,
+  "words": 3691,
   "paragraph_leaves": [
    495,
    495,
@@ -2472,6 +2457,8 @@
    499,
    499,
    499,
+   499,
+   499,
    499
   ],
   "pieces": [],
@@ -2498,12 +2485,12 @@
    }
   ],
   "certainty": {
-   "unanimous": 2858,
-   "one-dissent": 464,
-   "two-dissent": 115,
-   "contested": 68
+   "unanimous": 3002,
+   "one-dissent": 492,
+   "two-dissent": 119,
+   "contested": 71
   },
-  "contested_share": 0.0194
+  "contested_share": 0.0192
  },
  {
   "id": "0478-VIII-08",

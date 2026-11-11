@@ -56,6 +56,10 @@ SECTIONS = OUT / "sections"
 NUMERAL_HEAD = re.compile(r"[IVXLC]{1,6}\.\s+")
 ROMAN = re.compile(r"[IVXLCivxlc0-9 .,]{1,10}")
 GENRE = re.compile(r"^[«\"'\s]*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)")
+# A note's call in the text, `(1)`, with the letter shapes of 1 the call is
+# misread as (the same licence `parse_entries` gives it).
+CALL = re.compile(r"\(([0-9]{1,2}|[IilJ])\)")
+CALL_DIGITS = str.maketrans({"I": "1", "i": "1", "l": "1", "J": "1"})
 
 
 def span_of(block: dict, index: int) -> tuple[tuple[int, int], tuple[int, int]]:
@@ -665,8 +669,42 @@ def main() -> None:
                     chosen = [line for line in chosen
                               if line.get("column", 0) <= column
                               or line["bbox"][1] >= top]
+                # …and the same point seen from the other side: what a later
+                # column prints above the next section's first line is the end
+                # of *this* one, though it comes after that line in reading
+                # order. Leaf 369 closes IX at the top of both columns, sets
+                # `X.` and its title across the measure, and opens X below; the
+                # top of column 1 was excluded from X by the rule above and
+                # never reached IX either -- 271 words in no document at all.
+                shared_end = pdf_page == end[0] and 0 < end[1] < len(body)
+                if shared_end:
+                    top = body[end[1]]["bbox"][1]
+                    column = body[end[1]].get("column", 0)
+                    chosen = chosen + [line for line in body[end[1]:]
+                                       if line.get("column", 0) > column
+                                       and line["bbox"][1] < top]
                 if chosen:
                     lines.extend(chosen)
+                    # On a leaf two sections share, a note belongs to the one
+                    # whose text calls it: leaf 369's `(1)` is the note on
+                    # `Funerales de Felipe II. (1)` and IX was carrying it too.
+                    shared = shared_end or (pdf_page == start[0] and start[1] > 0)
+                    if shared:
+                        def calls(lines_: list[dict]) -> set[int]:
+                            return {int(m.translate(CALL_DIGITS))
+                                    for line in lines_
+                                    for m in CALL.findall(line["text"])}
+                        ours = calls(chosen)
+                        mine = {id(line) for line in chosen}
+                        theirs = calls([line for line in body
+                                        if id(line) not in mine])
+                        # Only a note the other section calls and this one
+                        # does not is given away: the call is the smallest
+                        # thing on the leaf and often misread, and a note
+                        # nobody's call was read for stays where it was.
+                        page_notes = [n for n in page_notes
+                                      if n["number"] in ours
+                                      or n["number"] not in theirs]
                     notes.extend(page_notes)
 
             if not lines:

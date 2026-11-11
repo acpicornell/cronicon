@@ -438,7 +438,7 @@ Every one of these was hit during development.
 |---|---|
 | `data/entries/` | the chronicle: **528 of 572 years**, **3 459 notices** as `Mes día.—texto—SIGLA`, and **320 footnotes** separated from the text they interrupt |
 | `data/jurats/` | **2 436 names over 423 years**, all six series read off the facsimile and checked against every engine (`data/adjudication/jurats/`), one row per (year, seat, name) in the order the leaf prints them, plus 12 remarks where Campaner prints a sentence instead of names |
-| `data/documents/` | the 6 appendix blocks Campaner prints between the centuries, 31 numbered sections over 187 leaves — **25 assembled as documents**, 94 327 words, cut into their **39 numbered pieces**, with Campaner's 62 notes and the certainty carried through |
+| `data/documents/` | the 6 appendix blocks Campaner prints between the centuries, 32 numbered sections over 187 leaves, every numeral found — **26 assembled as documents**, 96 614 words, cut into their **39 numbered pieces**, with Campaner's 49 notes and the certainty carried through |
 | `data/tables/` | **45 tables, 229 rows** on 23 leaves — the harvests, the plagues, the census of 1784, the household accounts of 1307 |
 | `data/sigla/` | the glossary, resolving **3 147 of 3 400** attributions (93%), plus a hand-entered dossier on 26 of the sources |
 | `data/text/` | the readable transcription, with every editorially repaired word keeping the panel's reading under `printed` |

@@ -252,6 +252,16 @@
     "pdf_page": 368,
     "line": 0,
     "read_as": "IX.",
+    "until": 368
+   },
+   {
+    "number": 10,
+    "numeral": "X",
+    "title": "Funerales de Felipe II. (1)",
+    "pdf_page": 369,
+    "line": 31,
+    "read_as": "",
+    "numeral_source": "facsimile",
     "until": 372
    },
    {
@@ -269,9 +279,7 @@
     "years_stated": 14
    }
   ],
-  "numerals_not_found": [
-   10
-  ]
+  "numerals_not_found": []
  },
  {
   "first_leaf": 478,

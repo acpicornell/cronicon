@@ -479,10 +479,6 @@
   {
    "check": "wall",
    "detail": "¶8: 1222 chars"
-  },
-  {
-   "check": "orphan-note",
-   "detail": "note (1) is called by nothing"
   }
  ],
  "0225-III-03": [
@@ -507,10 +503,6 @@
   {
    "check": "wall",
    "detail": "¶7: 1858 chars"
-  },
-  {
-   "check": "orphan-note",
-   "detail": "note (1) is called by nothing"
   }
  ],
  "0225-V-05": [
@@ -584,6 +576,14 @@
   {
    "check": "wall",
    "detail": "¶22: 2101 chars"
+  },
+  {
+   "check": "runt",
+   "detail": "¶39: 'Novembre 1645.)'"
+  },
+  {
+   "check": "short-para",
+   "detail": "¶39: 'Novembre 1645.)'"
   }
  ],
  "0311-IV-04": [
@@ -1270,63 +1270,61 @@
   },
   {
    "check": "wall",
-   "detail": "¶5: 1418 chars"
-  },
+   "detail": "¶5: 2801 chars"
+  }
+ ],
+ "0311-X-10": [
   {
    "check": "wall",
-   "detail": "¶8: 1729 chars"
-  },
-  {
-   "check": "wall",
-   "detail": "¶10: 1966 chars"
+   "detail": "¶6: 1966 chars"
   },
   {
    "check": "short-para",
-   "detail": "¶12: 'Cortixs Secretarius.'"
+   "detail": "¶8: 'Cortixs Secretarius.'"
   },
   {
    "check": "short-para",
-   "detail": "¶13: 'Vt. Frigola Vice.'"
+   "detail": "¶9: 'Vt. Frigola Vice.'"
   },
   {
    "check": "runt",
-   "detail": "¶14: 'Vt. G. S. The.'"
+   "detail": "¶10: 'Vt. G. S. The.'"
   },
   {
    "check": "short-para",
-   "detail": "¶14: 'Vt. G. S. The.'"
+   "detail": "¶10: 'Vt. G. S. The.'"
   },
   {
    "check": "short-para",
-   "detail": "¶15: 'Vt. Covarruvias.'"
+   "detail": "¶11: 'Vt. Covarruvias.'"
   },
   {
    "check": "short-para",
-   "detail": "¶16: 'Vt. Guardiola. Rs.'"
+   "detail": "¶12: 'Vt. Guardiola. Rs.'"
   },
   {
    "check": "short-para",
-   "detail": "¶17: 'Vt. V. P. S. Fisci Advocatus.'"
+   "detail": "¶13: 'Vt. V. P. S. Fisci Advocatus.'"
   },
   {
    "check": "short-para",
-   "detail": "¶18: 'Vt. Baptista. R.'"
+   "detail": "¶14: 'Vt. Baptista. R.'"
   },
   {
    "check": "runt",
-   "detail": "¶19: 'Vt. Claver.'"
+   "detail": "¶15: 'Vt. Claver.'"
   },
   {
    "check": "short-para",
-   "detail": "¶19: 'Vt. Claver.'"
+   "detail": "¶15: 'Vt. Claver.'"
   },
   {
    "check": "wall",
-   "detail": "¶31: 1431 chars"
+   "detail": "¶27: 1431 chars"
   },
   {
    "check": "wall",
-   "detail": "¶37: 1513 chars"
+   "detail": "¶33: 1513 chars"
   }
  ],
  "0311-XI-11": [
@@ -1424,19 +1422,27 @@
   },
   {
    "check": "wall",
-   "detail": "¶8: 2733 chars"
+   "detail": "¶8: 3938 chars"
   }
  ],
  "0478-IV-04": [
   {
    "check": "wall",
    "detail": "¶2: 2009 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶4: 1817 chars"
   }
  ],
  "0478-V-05": [
   {
    "check": "wall",
    "detail": "¶2: 1216 chars"
+  },
+  {
+   "check": "wall",
+   "detail": "¶3: 1235 chars"
   }
  ],
  "0478-VI-06": [
@@ -1489,10 +1495,6 @@
   {
    "check": "wall",
    "detail": "¶25: 1824 chars"
-  },
-  {
-   "check": "short-para",
-   "detail": "¶32: 'A 30 Abril, diumenge, se feu altre auto, se'"
   }
  ],
  "0478-VIII-08": [
