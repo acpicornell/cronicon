@@ -227,6 +227,9 @@ thead th { font-family: var(--display); font-size: .8rem; letter-spacing: .1em;
 .method-toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .2rem 1.2rem; }
 .prose ul { padding-left: 1.2rem; }
 .prose li { margin-bottom: .45rem; }
+.refs { list-style: none; padding-left: 0; }
+.refs li { padding-left: 1.6rem; text-indent: -1.6rem; font-size: 1rem; }
+.refs li:target { background: var(--target); }
 
 /* -------------------------------------------------------- reading layout */
 

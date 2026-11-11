@@ -2174,7 +2174,7 @@ def method_page(con) -> str:
                 ("encerts", "I quan encerten"), ("regles", "Què s'hi ha tocat"),
                 ("facsimil", "Allò que s'ha llegit del facsímil"),
                 ("estructura", "De text a llibre"), ("limits", "Què queda per fer"),
-                ("dades", "Consultar-ho tot"))
+                ("dades", "Consultar-ho tot"), ("referencies", "Referències"))
     toc = " ".join(f'<li><a href="#{a}">{esc(t)}</a></li>' for a, t in sections)
 
     body = f"""<header class="page-head">
@@ -2187,10 +2187,13 @@ def method_page(con) -> str:
 <nav class="jump method-toc" aria-label="Apartats"><ol>{toc}</ol></nav>
 <div class="prose">
   <h2 id="fonts">D'on surt el text</h2>
-  <p>De l'edició de 1881 se'n coneixen dos escanejos independents: el de la
-     <strong>Biblioteca Nacional d'Espanya</strong>, un PDF a 200 punts per
-     polzada, i el que <strong>Google</strong> va fer per a l'Internet Archive,
-     de molta més resolució. Tots dos tenen defectes en llocs diferents —el de
+  <p>L'obra és el <cite>Cronicón Mayoricense</cite> d'Álvaro Campaner y Fuertes
+     (<a href="#r-campaner">Campaner 1881</a>). De l'edició de 1881 se'n
+     coneixen dos escanejos independents: el de la <strong>Biblioteca Nacional
+     d'Espanya</strong>, un PDF a 200 punts per polzada, i el que
+     <strong>Google</strong> va fer per a l'<a
+     href="https://archive.org/details/CroniconMayoricenseCampaner"
+     rel="noopener">Internet Archive</a>, de molta més resolució. Tots dos tenen defectes en llocs diferents —el de
      l'Archive té quatre fulls borrosos (93, 94, 97 i 98), i en el de la BNE la
      pàgina del davant es transparenta en algun full—, i per això es llegeixen
      tots dos. Els {num(leaves)} fulls amb text són els que es transcriuen; els
@@ -2200,15 +2203,25 @@ def method_page(con) -> str:
   <p>Cada full el llegeixen sis programes de reconeixement de text (OCR), triats
      perquè s'equivoquin de maneres diferents:</p>
   <ul>
-    <li><strong>ABBYY FineReader</strong>, la capa de text que l'Internet Archive
-        ja publica amb el seu escaneig;</li>
-    <li><strong>Tesseract</strong> amb els models de castellà antic, català i
-        llatí alhora —el llibre cita documents en català medieval i en llatí, i
-        els cognoms mallorquins duen ce trencada—;</li>
-    <li><strong>Apple Vision</strong>, una vegada sobre cada escaneig;</li>
-    <li><strong>PaddleOCR</strong>;</li>
-    <li><strong>Kraken</strong>, amb un model entrenat expressament sobre
-        aquest llibre a partir de les línies en què els altres ja coincidien.</li>
+    <li><strong><a href="#r-abbyy">ABBYY FineReader</a></strong>, la capa de
+        text que l'Internet Archive ja publica amb el seu escaneig;</li>
+    <li><strong><a href="#r-tesseract">Tesseract</a></strong> 5.5
+        (<a href="#r-smith">Smith 2007</a>), amb els models de castellà antic
+        (<code>spa_old</code>), català i llatí alhora —el llibre cita documents
+        en català medieval i en llatí, i els cognoms mallorquins duen ce
+        trencada—, sobre l'escaneig de l'Archive a 300 punts per polzada;</li>
+    <li><strong><a href="#r-vision">Apple Vision</a></strong>, el reconeixedor
+        del sistema operatiu d'Apple al nivell de precisió màxim, una vegada
+        sobre cada escaneig;</li>
+    <li><strong><a href="#r-paddle">PaddleOCR</a></strong>, amb el model de
+        reconeixement <code>PP-OCRv6_medium_rec</code>
+        (<a href="#r-du">Du et al. 2020</a>);</li>
+    <li><strong><a href="#r-kraken">Kraken</a></strong> 7.0
+        (<a href="#r-kiessling">Kiessling 2019</a>), amb un model propi: el
+        model genèric d'impresos <a href="#r-catmus">CATMuS-Print</a> refinat
+        sobre les 8.849 línies d'aquest llibre en què els reconeixedors
+        ja coincidien paraula per paraula. Els dotze fulls on es va mesurar
+        l'encert en van quedar fora, perquè l'avaluació no fos circular.</li>
   </ul>
   <p>Que siguin sis i no més és una decisió mesurada. Afegir un setè motor es va
      provar dues vegades i les dues va empitjorar el resultat, encara que el
@@ -2223,6 +2236,12 @@ def method_page(con) -> str:
      lectura. Després s'alineen paraula per paraula i cada posició es decideix
      per majoria. <strong>La paraula publicada és sempre una que algun motor va
      llegir</strong>: el vot tria, no escriu.</p>
+  <p>La idea de combinar diversos reconeixedors alineant-ne les sortides i
+     votant cada posició ve del reconeixement de la parla
+     (<a href="#r-fiscus">Fiscus 1997</a>) i s'ha aplicat també a l'OCR
+     (<a href="#r-lund">Lund i Ringger 2009</a>). El que és propi
+     d'aquesta edició és fer servir l'acord com a mesura: on els sis
+     coincideixen el text s'accepta, i on no, la paraula queda marcada.</p>
   <p>Hi ha tres casos en què això no basta, i cadascun té la seva regla:</p>
   <ul>
     <li>en <strong>{line_aligned} fulls</strong> —taules, llistes en columnes—
@@ -2259,7 +2278,9 @@ def method_page(con) -> str:
      cada 113</strong> i els documents en català medieval i llatí per
      <strong>1 de cada 39</strong>. Allà on els sis coincideixen, les 360
      posicions comprovades de la crònica eren totes correctes, cosa que fita
-     l'error compartit per sota del 0,83% amb un 95% de confiança.</p>
+     l'error compartit per sota del 0,83% amb un 95% de confiança (interval
+     binomial exacte d'una cua, <a href="#r-clopper">Clopper i Pearson
+     1934</a>).</p>
 
   <h2 id="regles">Què s'hi ha tocat</h2>
   <p><strong>Res no es modernitza.</strong> <em>formacion</em>, <em>dia</em>,
@@ -2338,6 +2359,72 @@ GROUP BY 1 ORDER BY 2 DESC LIMIT 10;</pre>
     <th class="num">mida</th></tr></thead><tbody>{data_rows}</tbody></table></div>
   <p>Són {size} MB en total. El codi que ho fa tot és al
      <a href="{GITHUB}" rel="noopener">repositori</a>.</p>
+
+  <h2 id="referencies">Referències</h2>
+  <h3>La font</h3>
+  <ol class="refs">
+    <li id="r-campaner">Campaner y Fuertes, Álvaro (1881). <cite lang="es">Cronicón
+        Mayoricense. Noticias y relaciones históricas de Mallorca desde 1229 á
+        1800</cite>. Palma de Mallorca: Establecimiento tipográfico de Juan
+        Colomar y Salas. Facsímils: Biblioteca Nacional d'Espanya i <a
+        href="https://archive.org/details/CroniconMayoricenseCampaner"
+        rel="noopener">Internet Archive</a>.</li>
+  </ol>
+  <h3>Els reconeixedors</h3>
+  <ol class="refs">
+    <li id="r-abbyy">ABBYY FineReader. Capa de text de l'Internet Archive.
+        <a href="https://www.abbyy.com/" rel="noopener">abbyy.com</a>.</li>
+    <li id="r-tesseract">Tesseract OCR, versió 5.5.
+        <a href="https://github.com/tesseract-ocr/tesseract"
+        rel="noopener">github.com/tesseract-ocr/tesseract</a>.</li>
+    <li id="r-smith">Smith, Ray (2007). «An Overview of the Tesseract OCR
+        Engine». <cite>Ninth International Conference on Document Analysis and
+        Recognition (ICDAR 2007)</cite>, vol. 2, p. 629–633.</li>
+    <li id="r-vision">Apple. Vision framework,
+        <code>VNRecognizeTextRequest</code>.
+        <a href="https://developer.apple.com/documentation/vision/vnrecognizetextrequest"
+        rel="noopener">developer.apple.com</a>.</li>
+    <li id="r-paddle">PaddleOCR.
+        <a href="https://github.com/PaddlePaddle/PaddleOCR"
+        rel="noopener">github.com/PaddlePaddle/PaddleOCR</a>.</li>
+    <li id="r-du">Du, Yuning et al. (2020). «PP-OCR: A Practical Ultra
+        Lightweight OCR System». <a href="https://arxiv.org/abs/2009.09941"
+        rel="noopener">arXiv:2009.09941</a>.</li>
+    <li id="r-kraken">Kraken, versió 7.0.
+        <a href="https://github.com/mittagessen/kraken"
+        rel="noopener">github.com/mittagessen/kraken</a>.</li>
+    <li id="r-kiessling">Kiessling, Benjamin (2019). «Kraken – an Universal
+        Text Recognizer for the Humanities». <cite>Digital Humanities 2019</cite>,
+        Utrecht.</li>
+    <li id="r-catmus">CATMuS-Print, model de reconeixement d'impresos en
+        alfabet llatí. <a href="https://readcoop.eu/model/"
+        rel="noopener">readcoop.eu</a>.</li>
+  </ol>
+  <h3>El mètode</h3>
+  <ol class="refs">
+    <li id="r-fiscus">Fiscus, Jonathan G. (1997). «A post-processing system to
+        yield reduced word error rates: Recognizer Output Voting Error
+        Reduction (ROVER)». <cite>IEEE Workshop on Automatic Speech Recognition
+        and Understanding</cite>, p. 347–354.</li>
+    <li id="r-lund">Lund, William B.; Ringger, Eric K. (2009). «Improving
+        optical character recognition through efficient multiple system
+        alignment». <cite>Proceedings of the 9th ACM/IEEE-CS Joint Conference on
+        Digital Libraries (JCDL '09)</cite>, p. 231–240.</li>
+    <li id="r-clopper">Clopper, C. J.; Pearson, E. S. (1934). «The use of
+        confidence or fiducial limits illustrated in the case of the binomial».
+        <cite>Biometrika</cite> 26 (4), p. 404–413.</li>
+  </ol>
+  <h3>Documentació del projecte</h3>
+  <ol class="refs">
+    <li><a href="{GITHUB}/blob/main/docs/OCR_BENCHMARK.md" rel="noopener">Banc
+        de proves de l'OCR</a>: cada motor i cada combinació mesurats contra les
+        posicions verificades (en anglès).</li>
+    <li><a href="{GITHUB}/blob/main/docs/EDITORIAL.md" rel="noopener">Normes
+        editorials</a>: cada regla aplicada al text, amb el que s'ha mesurat de
+        cadascuna (en anglès).</li>
+    <li><a href="{GITHUB}" rel="noopener">Repositori</a> amb tot el codi i les
+        dades.</li>
+  </ol>
 </div>"""
     return page("El mètode · Cronicón Mayoricense",
                 "Com s'ha obtingut aquesta transcripció, què se n'ha mesurat i "
