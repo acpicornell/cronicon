@@ -20,9 +20,10 @@
   Cache-Control: public, max-age=0, must-revalidate
 
 # The parquet files are the corpus, and they are meant to be queried from
-# elsewhere: DuckDB reads them over HTTP with range requests. CORS is what makes
-# that work from another origin, and Accept-Ranges is what keeps it from
-# downloading 4.7 MB to answer a question about one year.
+# elsewhere: DuckDB reads them over HTTP, and CORS is what makes that work from
+# another origin. Workers static assets answer a range request with the whole
+# file (measured on deploy), so a query fetches the file once; the expose list
+# costs nothing and is right if that ever changes.
 /data/*
   Cache-Control: public, max-age=3600, must-revalidate
   Access-Control-Allow-Origin: *

@@ -32,12 +32,15 @@ Three surfaces, deliberately:
                  only reason this is possible at all.
 
   the corpus     `data/*.parquet`, queryable *remotely*: DuckDB reads parquet
-                 over HTTP with range requests, so
+                 over HTTP, so
 
                      SELECT * FROM 'https://cronicon.corpusbalear.org/data/entry.parquet'
                      WHERE year = 1521;
 
-                 works without downloading anything.
+                 works with nothing installed but DuckDB. Workers static
+                 assets answer a range request with the whole file (measured
+                 on deploy), so DuckDB fetches the file once rather than the
+                 bytes it needs; at 0.6 MB for the notices that is fine.
 
 **The pages must run under the site's own Content-Security-Policy**, which is
 `script-src 'self'; style-src 'self'` with no `'unsafe-inline'` and one foreign
@@ -2322,8 +2325,8 @@ def method_page(con) -> str:
   </ul>
 
   <h2 id="dades">Consultar-ho tot</h2>
-  <p>Tota l'edició és consultable en SQL sense descarregar res, perquè DuckDB
-     llegeix parquet per HTTP demanant només els bytes que necessita:</p>
+  <p>Tota l'edició és consultable en SQL directament des d'aquí, sense
+     instal·lar res més que DuckDB, que llegeix els fitxers parquet per HTTP:</p>
   <pre>SELECT year, count(*) FROM '{SITE}/data/entry.parquet'
 GROUP BY 1 ORDER BY 2 DESC LIMIT 10;</pre>
   <div class="scroll"><table><thead><tr><th>taula</th><th>què hi ha</th>
