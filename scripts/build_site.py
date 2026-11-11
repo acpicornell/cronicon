@@ -1994,8 +1994,10 @@ def index_page(con, counts: dict, routes: dict) -> str:
     <button type="button" class="button ghost" id="atzar" hidden>Una altra
        notícia, a l'atzar</button>
     <span class="note">Les dates són les que dona el llibre; abans de 1582,
-       del calendari julià. La sigla s'obre i diu de quin manuscrit surt la
-       notícia.</span>
+       del calendari julià. Les inicials al peu de cada notícia
+       (<span translate="no">G. T.</span>, <span translate="no">J. F.</span>…)
+       són les de l'autor del manuscrit d'on Campaner la va treure; toca-les
+       per veure'n el nom.</span>
   </p>
 </section>
 
