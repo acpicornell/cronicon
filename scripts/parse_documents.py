@@ -172,6 +172,29 @@ def title_after(lines: list[dict], texts: list[str], i: int
 # to the right when centred on its column and 0.04 to the left on leaf 123.
 # The first attempt measured the indent from the column's *leftmost* line, and
 # leaf 123's numeral, centred over the gutter, is its own column's leftmost.
+def stands_alone(lines: list[dict], i: int) -> bool:
+    """Is line `i` set alone, with nothing under it as far as a title reaches?
+
+    A numeral normally sits over its title. One section prints none: leaf 332
+    sets `VIII.` alone at the head of the page and, a good way below it,
+    Campaner's note introducing the 1542 *Libre de la benaventurada vinguda*
+    reproduced after it. Without this the section was dropped for having no
+    title and VII ran on for forty leaves over a different work.
+    """
+    box = lines[i]["bbox"]
+    return not any(ln["text"].strip() and n != i
+                   and box[3] <= ln["bbox"][1] < box[3] + TITLE_REACH
+                   for n, ln in enumerate(lines))
+
+
+# Sections Campaner numbers and does not title. The name is the one his own note
+# under the numeral gives the work, in italics; `title_printed: false` in the
+# catalogue says it is not a heading of the book's.
+UNTITLED = {
+    332: "Libre de la benaventurada vinguda del Emperador y Rey Don Cárlos",
+}
+
+
 def at_text_edge(lines: list[dict], i: int) -> bool:
     """Does line `i` start where the ordinary lines of its column start?"""
     column = [ln["bbox"][0] for ln in lines if ln["column"] == lines[i]["column"]]
@@ -222,7 +245,15 @@ def sections(leaves: dict[int, list[dict]], first: int, last: int,
                                                  if found else 1)}
             else:
                 continue
-            if not readings or CLAUSE.match(title) or len(title) < 8:
+            untitled = (readings and not title and not at_text_edge(lines, i)
+                        and stands_alone(lines, i))
+            if untitled:
+                if page not in UNTITLED:
+                    raise SystemExit(
+                        f"leaf {page}: section {sorted(readings)} prints no "
+                        "title -- read the leaf and add it to UNTITLED")
+                title = UNTITLED[page]
+            elif not readings or CLAUSE.match(title) or len(title) < 8:
                 continue
             # Section numbers rise through a block. Anything else is a clause of
             # a document, or the `I.` heading a column of the Jurats table. Among
@@ -235,10 +266,12 @@ def sections(leaves: dict[int, list[dict]], first: int, last: int,
             if not forward:
                 continue
             number, numeral = forward[0]
-            found.append({"number": number, "numeral": numeral,
-                          "title": title, "pdf_page": page,
-                          "line": min(i, opens_at),
-                          "read_as": text})
+            item = {"number": number, "numeral": numeral,
+                    "title": title, "pdf_page": page,
+                    "line": min(i, opens_at), "read_as": text}
+            if untitled:
+                item["title_printed"] = False
+            found.append(item)
     return found
 
 

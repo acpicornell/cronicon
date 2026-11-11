@@ -228,12 +228,22 @@
     "pdf_page": 325,
     "line": 0,
     "read_as": "VII.",
-    "until": 367,
+    "until": 331,
     "years": [
      1630,
      1630
     ],
     "years_stated": 1
+   },
+   {
+    "number": 8,
+    "numeral": "VIII",
+    "title": "Libre de la benaventurada vinguda del Emperador y Rey Don Cárlos",
+    "pdf_page": 332,
+    "line": 0,
+    "read_as": "vm",
+    "title_printed": false,
+    "until": 367
    },
    {
     "number": 9,
@@ -260,7 +270,6 @@
    }
   ],
   "numerals_not_found": [
-   8,
    10
   ]
  },

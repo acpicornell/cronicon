@@ -39,7 +39,7 @@ inked — and both were undone. Every such decision is recorded in
 `data/review/decisions.jsonl` with its source, so the share of the edition that
 rests on no engine's reading is counted, not assumed: **167 positions** of the
 text, most of them ledger cells on leaves 159–164, plus four drop caps and a few
-words of the 1541 reprint — and the five Jurats above. The site's method page
+words of the 1542 booklet — and the five Jurats above. The site's method page
 says the same.
 
 ## The method
@@ -438,7 +438,7 @@ Every one of these was hit during development.
 |---|---|
 | `data/entries/` | the chronicle: **528 of 572 years**, **3 459 notices** as `Mes día.—texto—SIGLA`, and **320 footnotes** separated from the text they interrupt |
 | `data/jurats/` | **2 436 names over 423 years**, all six series read off the facsimile and checked against every engine (`data/adjudication/jurats/`), one row per (year, seat, name) in the order the leaf prints them, plus 12 remarks where Campaner prints a sentence instead of names |
-| `data/documents/` | the 6 appendix blocks Campaner prints between the centuries, 30 numbered sections over 187 leaves — **24 assembled as documents**, 94 327 words, cut into their **39 numbered pieces**, with Campaner's 62 notes and the certainty carried through |
+| `data/documents/` | the 6 appendix blocks Campaner prints between the centuries, 31 numbered sections over 187 leaves — **25 assembled as documents**, 94 327 words, cut into their **39 numbered pieces**, with Campaner's 62 notes and the certainty carried through |
 | `data/tables/` | **45 tables, 229 rows** on 23 leaves — the harvests, the plagues, the census of 1784, the household accounts of 1307 |
 | `data/sigla/` | the glossary, resolving **3 147 of 3 400** attributions (93%), plus a hand-entered dossier on 26 of the sources |
 | `data/text/` | the readable transcription, with every editorially repaired word keeping the panel's reading under `printed` |
@@ -459,6 +459,6 @@ Two things found along the way that are worth stating as results rather than
 process. **Leaf 39 prints the year heading `1449.` above an entry that reads «año
 de 1249…»** — Campaner's own error, and by this edition's rules it stays; it is
 the only chronological anomaly in the whole book. And **leaves 335–367 are a
-facsimile reprint of a 1541 booklet** in its own typography, which uses the long s;
+facsimile reprint of a 1542 booklet** in its own typography, which uses the long s;
 `docs/EDITORIAL.md` documents the rule that repairs 1 481 tokens of it and, more
 importantly, the veto that stops it corrupting 47 tokens of perfectly good Catalan.

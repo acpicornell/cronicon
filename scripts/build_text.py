@@ -11,7 +11,7 @@ words and offer the facsimile crop.
 
 What this deliberately does *not* do: tidy the book. 1881 orthography stands as
 printed, and so do Campaner's own errors. The one thing it does change is the
-long s of the 1541 facsimile on leaves 335-367, which five of the six engines
+long s of the 1542 booklet on leaves 335-367, which five of the six engines
 read as `f`; the rule lives in `editorial.py`, is documented in
 `docs/EDITORIAL.md`, and every word it touches keeps what the panel voted for
 under `printed`.

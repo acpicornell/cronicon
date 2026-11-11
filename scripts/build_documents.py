@@ -23,7 +23,7 @@ Three things need care and none of them is transcription:
                  contested must say so on its face rather than read like the rest.
 
 Nothing here corrects, translates or normalises. The medieval Catalan and Latin
-stay as printed, including the long s of the 1541 reprint, which `editorial.py`
+stay as printed, including the long s of the 1542 booklet, which `editorial.py`
 handles under its own documented rule.
 
 Usage:
@@ -265,7 +265,7 @@ CENTRED = 0.010      # how unequal the two margins may be
 # 0.95 rather than 0.90, and the threshold is not delicate: over the 187
 # document leaves, moving it from 0.90 to 0.95 admits **six** further lines --
 # `Declaració de Mn. Juan Miquel Pre. sobre lo matex.`, `LO REY DARAGO E DE LES
-# DOS`, two lines of the 1541 Latin verse, a ledger row and one line of a
+# DOS`, two lines of the 1542 booklet's Latin verse, a ledger row and one line of a
 # three-line heading -- and moving it on to 0.97 admits none at all.
 NOT_FULL = 0.95      # …and how much narrower than the measure it must be
 OFF_MARGIN = 0.015   # …and how far off its column's edge, more than an indent
@@ -355,7 +355,7 @@ DAY_MARK = re.compile(r"^((?:{})\s+[0-9]{{1,2}}\s*[.,]?)\s*[-—–]\s*"
 # which must be the *next* number and not merely a later one. Measured over all
 # 23 documents, that separates completely: two documents have a series (19 and
 # 20 members) and no other reaches five candidates in a row. Without the step
-# cap, leaf 356's `42` -- a figure inside the 1541 reprint, 25 leaves past the
+# cap, leaf 356's `42` -- a figure inside the 1542 booklet, 25 leaves past the
 # last execution -- joined the run; without excluding `hanging_numbers`, leaf
 # 152's ten marginal node numbers looked like a series of their own.
 PIECE_MARK = re.compile(r"^\s*([0-9]{1,2})\s*[.,]?\s*[*°º'’‘]?\s*$")
@@ -545,7 +545,7 @@ def stitch(lines: list[dict]) -> tuple[str, list[int], list[int | None],
     # A paragraph that opens on a centred line is a heading, and the book has
     # many more of them than the section titles: `D.a VIOLANTE / REINA VIUDA DE
     # MALLORCA.` over a chapter of the `Historia`, `LECTOREM.`, `PROHEMI.` and
-    # `LAUS DEO.` in the 1541 reprint, `EL REY.` and `Vt. Claver.` under a royal
+    # `LAUS DEO.` in the 1542 booklet, `EL REY.` and `Vt. Claver.` under a royal
     # cédula, `La Prosesó.` and `Autos de Fè.` over a stretch of a diary. They
     # were being set as ordinary paragraphs, which is why `audit_documents.py`
     # reported them as wreckage: 30 of its 47 runts are one of these.
@@ -738,7 +738,12 @@ def main() -> None:
                 para_heads[i:j + 1] = [h for _x, h in pieces_of]
 
             head = paras[0] if paras else ""
-            if ROMAN.fullmatch(head.strip()) and head.strip(". ") != section["numeral"]:
+            # The line `parse_documents.py` took for the numeral is the numeral
+            # whatever the winner made of it: leaf 332 prints `VIII.` and the
+            # vote returned `vm`, which no Roman-numeral pattern would accept.
+            is_numeral_line = (ROMAN.fullmatch(head.strip())
+                               or head.strip() == section.get("read_as", "").strip())
+            if is_numeral_line and head.strip(". ") != section["numeral"]:
                 paras[0] = f"{section['numeral']}."
             elif " ".join(head.split()) == " ".join(section["title"].split()):
                 # The section opens on its title because its numeral sorted
@@ -776,6 +781,9 @@ def main() -> None:
                 "block_leaf": block["first_leaf"],
                 "numeral": section["numeral"],
                 "title": section["title"],
+                # False where the book prints a numeral and no title, and the
+                # name is the one Campaner's note gives the work (leaf 332).
+                "title_printed": section.get("title_printed", True),
                 "genre": genre.group(1) if genre else None,
                 # A leaf carrying the end of one section and the start of the
                 # next belongs to both, so these counts overlap by design.

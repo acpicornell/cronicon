@@ -449,7 +449,7 @@ candidates in a row.** Centellas 19 of 21, the `Nota de varias ejecuciones` of
 leaf 134's number is printed and no engine returned it at all.
 
 Two guards, each a wrong answer first: without the step cap, leaf 356's `42` (a
-figure inside the 1541 reprint, 25 leaves past the last execution) joined the
+figure inside the 1542 booklet, 25 leaves past the last execution) joined the
 run; without excluding `hanging_numbers`, leaf 152's ten marginal node numbers
 looked like a series of their own.
 
@@ -467,7 +467,7 @@ inside an apparent join and that test splits them 7 and 7 with nothing between:
 
 **Section VI of the 16th-century block was 45 leaves and almost none of it was
 the section.** It ran 324–368, and the explanation written here — that VII was
-the 1541 reprint, so its numeral was never printed — was wrong. **Leaf 325
+the 1542 booklet, so its numeral was never printed — was wrong. **Leaf 325
 prints `VII. Documentos y notas relativas á la Germanía, extraidas de los libros
 de la Procuracion Real por el Pavorde D. A. Jaume.`**, centred, and Tesseract
 never boxed the line, so no engine was asked about it. The line recovery found
@@ -475,13 +475,25 @@ it (§"Lines the geometry never boxed"); checked against the facsimile. VI is no
 the one leaf of `Nota de varias ejecuciones` and VII runs 325–367, ids
 `0311-VI-06` and `0311-VII-07`.
 
-**VII still contains the 1541 reprint**, leaves 335–367: a different work,
-reading as part of Jaume's Germanía documents. The boundary needs no new
-evidence: `editorial.long_s_leaves` derives 335–367 from the consensus with two
-independent signals, leaves 333–334 are blank, and leaf 332 is Campaner
-introducing it (*«haber reducido el tamaño de las tres primeras páginas á las
-dimensiones del original»*). Measured and not yet applied. VIII and X are still
-not found; check for unboxed lines before assuming they are not printed.
+**And the 1542 booklet is section VIII, which Campaner numbers and does not
+title.** VII used to run on to leaf 367 over a different work: the *Libre de la
+benaventurada vinguda del Emperador y Rey Don Cárlos*, Charles V's visit of
+October 1541, reproduced on leaves 335–367 in its own typography. Leaf 332
+prints `VIII.` centred and alone, then Campaner's note introducing the book;
+333–334 are blank. Only Apple Vision on the IA scan read the numeral, on a line
+the geometry never boxed, and `parse_documents` then dropped it for having no
+title. `stands_alone` admits a numeral with nothing under it as far as a title
+reaches, and **over the whole book it fires once, on 332**; the name comes from
+`UNTITLED`, the italic title in Campaner's own note, and the catalogue and the
+page both say it is not printed as a heading (`title_printed: false`). VII is
+now 325–331, `0311-VIII-08` the booklet, 94 327 words in all as before.
+
+**The booklet is of 1542, not 1541, and was printed in Palma, not Barcelona.**
+The colophon on leaf 367: *«Fonch estampada la present hystoria en la insigne
+ciutat de Mallorques (Palma anomenada) per Mestre Ferrando de Cansoles…
+Acabas a trenta dies del mes de Jener del any M. D. XXXXII.»* 1541 is the visit
+it relates. Section X of the block is still not found; check for unboxed lines
+before assuming it is not printed.
 
 ## The non-Spanish material — measured at last
 
@@ -530,7 +542,7 @@ things are true and must not be confused:
 
 ## The long s — fixed, and the shape of the fix
 
-Leaves 335–367 reproduce a 1541 booklet in its own typography, which uses `ſ`.
+Leaves 335–367 reproduce a 1542 booklet in its own typography, which uses `ſ`.
 Five of six engines read it as `f`. `scripts/editorial.py` repairs **1 481
 tokens**; the rule is written up in `docs/EDITORIAL.md` and applied in
 `build_text.py`, and every word it touches keeps the panel's reading under
@@ -793,7 +805,7 @@ accepted a lowercase `l`.
 **And the second run said the same thing about `runt`.** Once the centred lines
 were being recorded, 20 of the 47 that remained turned out to be headings the
 book prints and the edition was setting as prose: `LECTOREM.` and `PROHEMI.` in
-the 1541 reprint, `EL REY.` and `Vt. Claver.` under a royal cédula, `Autos de
+the 1542 booklet, `EL REY.` and `Vt. Claver.` under a royal cédula, `Autos de
 Fè.` and `La Prosesó.` over a stretch of a diary, `D. FERNANDO` over a chapter
 of the `Historia`. `build_documents` now carries them out as `headings` -- **304
 paragraphs, 96 of them set as headings on the page** -- and the sweep stops
@@ -809,7 +821,7 @@ What it says is left, over 1 508 paragraphs:
 |---|---:|---|
 | `short-para` | 228 | informational: the diaries' notices really are short |
 | `wall` | 113 | informational: a deposition really is 3 000 characters |
-| `runt` | 27 | 14 stranded ledger figures, 11 display lines of the 1541 reprint |
+| `runt` | 27 | 14 stranded ledger figures, 11 display lines of the 1542 booklet |
 | `bare-dash` | 7 | the same ledger figures |
 | `piece-gap` | 3 | numbers Campaner prints and no engine read; stated on the page |
 | `bad-month` | 2 | `MájYO 23.`, `Manzo 6` — no engine read the month |
@@ -817,10 +829,10 @@ What it says is left, over 1 508 paragraphs:
 | `broken-year` | 1 | leaf 152's `16`, 2 of 8 readings |
 | `unlifted-siglum` | 1 | `— G. M.—T. A.`, and `G. M.` is not in the glossary |
 
-**Eleven of the 27 runts are the 1541 reprint's own display lines** and are not
+**Eleven of the 27 runts are the 1542 booklet's own display lines** and are not
 this rule's business: `LECTOREM.` is centred on a measure narrower than the
 column's, `Ceruello.` and `Caualler.` are set flush left, `XXXXII.` misses the
-centring tolerance by two thousandths. Reading a 1541 booklet's typography with
+centring tolerance by two thousandths. Reading a 1542 booklet's typography with
 thresholds calibrated on Campaner's 1881 text is the confusion **task #47**
 exists to end, and it is the right place to stop rather than loosen a threshold
 that was measured.
@@ -867,7 +879,7 @@ leaves.
 **And then it was paid again, for the long s.** `build_text.py` computed the long
 s repairs for itself and `parse_entries.page_lines` — which assembles the notices
 *and the documents* — passed `None` for them. So the 1 481 repaired tokens of the
-1541 reprint were in `data/text/` and in no page a reader opens: the document
+1542 booklet were in `data/text/` and in no page a reader opens: the document
 carried **10 `ſ` where the published text had 1 681**. Every per-slot repair now
 comes from `editorial.repairs_for()`, asked by both. **When adding any rule, grep
 for `spans.layout` and check every caller gets it.**
@@ -1148,7 +1160,7 @@ were cut from the facsimile and looked at:
 
 **Eleven of the fifteen are not drop caps at all**, and the crops are the only
 thing that could have said so. Nine are verse indented for scansion — the Latin
-of the 1541 reprint on leaves 345–358, Catalan on 280, and a Mallorcan goig on
+of the 1542 booklet on leaves 345–358, Catalan on 280, and a Mallorcan goig on
 578 («y del Pare general, / Maria es concebuda / sens pecat original») — and two
 are the brace `)` of the notes column on the annotated Jurats leaves 114 and 118.
 
@@ -1694,7 +1706,7 @@ python scripts/consensus.py --pages all --swap-paddle --swap-kraken \
   (200 unanimous, 50 one-dissent, 30 two-dissent, 40 contested) over 127 of the
   164 document leaves, ids 551–870, drawn from the **production** consensus
   because there is no legacy adjudication there to protect. 44 of them fall on
-  the 1541 long-s reprint. Adjudicate with
+  the 1542 long-s booklet. Adjudicate with
   `python scripts/review.py --sample documents.json`, then
   `--export-truth` to get `id<TAB>text`.
 

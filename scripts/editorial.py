@@ -7,7 +7,7 @@ auditable, and impossible to apply by accident somewhere else.
 There is exactly one rule so far, and it repairs an error rather than tidying the
 book: **the long s**.
 
-Leaves 335-367 reproduce a booklet printed in 1541 -- `LA FELICISSIMA VINGUda de
+Leaves 335-367 reproduce a booklet printed in Palma in 1542 -- `LA FELICISSIMA VINGUda de
 Don Carlos cinque Emperador de Romans` -- in its own typography, which uses the
 long s, `ſ`. Five of the six engines read that letter as `f`, and the vote
 therefore returns `cofa`, `moffen`, `eftat`, `boffer` where the page says `coſa`,
@@ -363,7 +363,7 @@ def repairs_for(source: Path) -> dict:
     The long s and the misread break hyphen. `build_text.py` used to compute the
     long s for itself and `parse_entries.page_lines` -- which assembles the
     notices *and* the documents -- passed no repairs at all, so the 1 481 tokens
-    of the 1541 reprint the rule repairs were repaired in `data/text/` and
+    of the 1542 booklet the rule repairs were repaired in `data/text/` and
     nowhere a reader could see them: the document showed 10 `ſ` where the
     published text had 1 681. The same lesson as `joins_for`, paid again.
     """

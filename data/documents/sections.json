@@ -4,6 +4,7 @@
   "block_leaf": 114,
   "numeral": "II",
   "title": "Cartas del gobernador Gilaberto de Centellas á Pedro IV acerca de la última empresa de Jaime III para recobrar su reino. (1)",
+  "title_printed": true,
   "genre": "Cartas",
   "first_leaf": 123,
   "last_leaf": 137,
@@ -249,6 +250,7 @@
   "block_leaf": 114,
   "numeral": "III",
   "title": "Historia de los Reyes de Mallorca, que fueron Señores de Montpeller.",
+  "title_printed": true,
   "genre": "Historia",
   "first_leaf": 137,
   "last_leaf": 153,
@@ -430,6 +432,7 @@
   "block_leaf": 114,
   "numeral": "IV",
   "title": "Fragmentos de las Apuntaciones del Notario",
+  "title_printed": true,
   "genre": "Fragmentos",
   "first_leaf": 153,
   "last_leaf": 159,
@@ -566,6 +569,7 @@
   "block_leaf": 114,
   "numeral": "V",
   "title": "Algunas noticias é indicaciones curiosas extraídas de las que coleccionó el Pavorde Jaume. (1)",
+  "title_printed": true,
   "genre": "Algunas",
   "first_leaf": 159,
   "last_leaf": 168,
@@ -760,6 +764,7 @@
   "block_leaf": 225,
   "numeral": "II",
   "title": "Fragmentos de las Apuntaciones del Notario Mateo Salcet.",
+  "title_printed": true,
   "genre": "Fragmentos",
   "first_leaf": 229,
   "last_leaf": 233,
@@ -832,6 +837,7 @@
   "block_leaf": 225,
   "numeral": "III",
   "title": "Documento inédito acerca de la conduccion á esta isla, desde la de Menorca, de Simon Tort Ballester. (1)",
+  "title_printed": true,
   "genre": "Documento",
   "first_leaf": 233,
   "last_leaf": 235,
@@ -875,6 +881,7 @@
   "block_leaf": 225,
   "numeral": "IV",
   "title": "Relacion (anónima) del tumulto ocurrido en la Iglesia de San Francisco de Asis de esta ciudad, el dia 2 de Noviembre",
+  "title_printed": true,
   "genre": "Relacion",
   "first_leaf": 235,
   "last_leaf": 236,
@@ -922,6 +929,7 @@
   "block_leaf": 225,
   "numeral": "V",
   "title": "Noticias é indicaciones curiosas extraidas de las que coleccionó el Pavorde Jaume.",
+  "title_printed": true,
   "genre": "Noticias",
   "first_leaf": 236,
   "last_leaf": 246,
@@ -1094,6 +1102,7 @@
   "block_leaf": 311,
   "numeral": "II",
   "title": "Memorial fet per mi Antoni Johan Lambías, Frare del convent de Sant Domingo, Procurador de dit convent, lo añy present, quen contam 1522. (1)",
+  "title_printed": true,
   "genre": "Memorial",
   "first_leaf": 315,
   "last_leaf": 316,
@@ -1147,6 +1156,7 @@
   "block_leaf": 311,
   "numeral": "III",
   "title": "«Part de lo ques segui en la Germania.» (1)",
+  "title_printed": true,
   "genre": "Part",
   "first_leaf": 316,
   "last_leaf": 321,
@@ -1222,6 +1232,7 @@
   "block_leaf": 311,
   "numeral": "IV",
   "title": "Noticia de lo que sucedió al ejército Real en la rendicion de (Mallorca en tiempo de la Germanía, sacada de un papel antiguo mutilado al principio, faltándole algunas hojas, y solo contiene lo que sigue:» (1)",
+  "title_printed": true,
   "genre": "Noticia",
   "first_leaf": 321,
   "last_leaf": 323,
@@ -1266,6 +1277,7 @@
   "block_leaf": 311,
   "numeral": "V",
   "title": "Sentencia contra Juanot Colom y otros tres compafieros. (1)",
+  "title_printed": true,
   "genre": "Sentencia",
   "first_leaf": 323,
   "last_leaf": 324,
@@ -1308,6 +1320,7 @@
   "block_leaf": 311,
   "numeral": "VI",
   "title": "Nota de varias ejecuciones verificadas en Junio de 1523, redactada por Guillermo Valentí. (1)",
+  "title_printed": true,
   "genre": "Nota",
   "first_leaf": 324,
   "last_leaf": 325,
@@ -1350,11 +1363,12 @@
   "block_leaf": 311,
   "numeral": "VII",
   "title": "Documentos y notas relativas á la Germanía, extraidas de los libros de la Procuracion Real",
+  "title_printed": true,
   "genre": "Documentos",
   "first_leaf": 325,
-  "last_leaf": 368,
-  "leaves": 44,
-  "words": 17138,
+  "last_leaf": 332,
+  "leaves": 8,
+  "words": 3134,
   "paragraph_leaves": [
    325,
    325,
@@ -1462,7 +1476,159 @@
    331,
    331,
    331,
-   331,
+   331
+  ],
+  "pieces": [
+   {
+    "number": 1,
+    "paragraph": 3,
+    "pdf_page": 325
+   },
+   {
+    "number": 2,
+    "paragraph": 32,
+    "pdf_page": 326
+   },
+   {
+    "number": 3,
+    "paragraph": 36,
+    "pdf_page": 326
+   },
+   {
+    "number": 5,
+    "paragraph": 68,
+    "pdf_page": 329
+   },
+   {
+    "number": 6,
+    "paragraph": 70,
+    "pdf_page": 329
+   },
+   {
+    "number": 7,
+    "paragraph": 72,
+    "pdf_page": 329
+   },
+   {
+    "number": 8,
+    "paragraph": 74,
+    "pdf_page": 329
+   },
+   {
+    "number": 9,
+    "paragraph": 76,
+    "pdf_page": 330
+   },
+   {
+    "number": 10,
+    "paragraph": 78,
+    "pdf_page": 330
+   },
+   {
+    "number": 11,
+    "paragraph": 80,
+    "pdf_page": 330
+   },
+   {
+    "number": 12,
+    "paragraph": 82,
+    "pdf_page": 330
+   },
+   {
+    "number": 13,
+    "paragraph": 84,
+    "pdf_page": 330
+   },
+   {
+    "number": 14,
+    "paragraph": 86,
+    "pdf_page": 330
+   },
+   {
+    "number": 15,
+    "paragraph": 88,
+    "pdf_page": 330
+   },
+   {
+    "number": 16,
+    "paragraph": 90,
+    "pdf_page": 330
+   },
+   {
+    "number": 17,
+    "paragraph": 92,
+    "pdf_page": 330
+   },
+   {
+    "number": 18,
+    "paragraph": 94,
+    "pdf_page": 330
+   },
+   {
+    "number": 19,
+    "paragraph": 98,
+    "pdf_page": 331
+   },
+   {
+    "number": 20,
+    "paragraph": 101,
+    "pdf_page": 331
+   },
+   {
+    "number": 21,
+    "paragraph": 104,
+    "pdf_page": 331
+   }
+  ],
+  "headings": [
+   0,
+   1,
+   6,
+   8,
+   11,
+   12,
+   14,
+   16,
+   17,
+   33,
+   37,
+   95,
+   102,
+   105
+  ],
+  "footnotes": 2,
+  "notes": [
+   {
+    "number": 1,
+    "text": "Ya no cabe la menor duda de que cuatro agermanados fueron conducidos á la presencia del Monarca y devueltos á Mallorca por órden de éste para que se les aplicase el castigo procedente: estos corifeos de la insurreccion fueron N. Gili, notario, Miguel Torrent, Antonio Bestard y Bernardo Morey. Por consecuencia es evidente que entre los susodichos desgraciados mensageros no se hallaba el célebre Johanot Colom, el cual continuó preso en las cárceles de la capital hasta que lué extraido en compañía de otros para ser ajusticiado.",
+    "pdf_page": 330
+   },
+   {
+    "number": 1,
+    "text": "Terminada la Germanía en 7 de Marzo de 1523 y ajusticiado Colom en 3 de Junio del mismo año es claro que habiendo permanecido recluso dos meses y medio, no pudo formar parte de expedicion del notario Gili y sus compañeros llevados á la Corte por Nicolas Panadés y Francisco Pons, pues no quedaba tiempo para aquel viaje redondo, á la sazon muy largo.",
+    "pdf_page": 331
+   }
+  ],
+  "certainty": {
+   "unanimous": 2348,
+   "one-dissent": 507,
+   "two-dissent": 140,
+   "contested": 125
+  },
+  "contested_share": 0.0399
+ },
+ {
+  "id": "0311-VIII-08",
+  "block_leaf": 311,
+  "numeral": "VIII",
+  "title": "Libre de la benaventurada vinguda del Emperador y Rey Don Cárlos",
+  "title_printed": false,
+  "genre": "Libre",
+  "first_leaf": 332,
+  "last_leaf": 368,
+  "leaves": 37,
+  "words": 14004,
+  "paragraph_leaves": [
    332,
    332,
    332,
@@ -1659,177 +1825,52 @@
    367,
    367
   ],
-  "pieces": [
-   {
-    "number": 1,
-    "paragraph": 3,
-    "pdf_page": 325
-   },
-   {
-    "number": 2,
-    "paragraph": 32,
-    "pdf_page": 326
-   },
-   {
-    "number": 3,
-    "paragraph": 36,
-    "pdf_page": 326
-   },
-   {
-    "number": 5,
-    "paragraph": 68,
-    "pdf_page": 329
-   },
-   {
-    "number": 6,
-    "paragraph": 70,
-    "pdf_page": 329
-   },
-   {
-    "number": 7,
-    "paragraph": 72,
-    "pdf_page": 329
-   },
-   {
-    "number": 8,
-    "paragraph": 74,
-    "pdf_page": 329
-   },
-   {
-    "number": 9,
-    "paragraph": 76,
-    "pdf_page": 330
-   },
-   {
-    "number": 10,
-    "paragraph": 78,
-    "pdf_page": 330
-   },
-   {
-    "number": 11,
-    "paragraph": 80,
-    "pdf_page": 330
-   },
-   {
-    "number": 12,
-    "paragraph": 82,
-    "pdf_page": 330
-   },
-   {
-    "number": 13,
-    "paragraph": 84,
-    "pdf_page": 330
-   },
-   {
-    "number": 14,
-    "paragraph": 86,
-    "pdf_page": 330
-   },
-   {
-    "number": 15,
-    "paragraph": 88,
-    "pdf_page": 330
-   },
-   {
-    "number": 16,
-    "paragraph": 90,
-    "pdf_page": 330
-   },
-   {
-    "number": 17,
-    "paragraph": 92,
-    "pdf_page": 330
-   },
-   {
-    "number": 18,
-    "paragraph": 94,
-    "pdf_page": 330
-   },
-   {
-    "number": 19,
-    "paragraph": 98,
-    "pdf_page": 331
-   },
-   {
-    "number": 20,
-    "paragraph": 101,
-    "pdf_page": 331
-   },
-   {
-    "number": 21,
-    "paragraph": 104,
-    "pdf_page": 331
-   }
-  ],
+  "pieces": [],
   "headings": [
    0,
-   1,
-   6,
-   8,
-   11,
-   12,
-   14,
-   16,
-   17,
-   33,
-   37,
-   95,
-   102,
-   105,
-   107,
+   31,
+   41,
+   51,
+   61,
+   69,
+   74,
+   88,
+   92,
+   98,
+   113,
+   128,
    138,
-   148,
-   158,
-   168,
-   176,
-   181,
-   195,
-   199,
-   205,
-   220,
-   235,
-   245,
-   251,
-   264,
-   272,
-   279,
-   285,
-   290,
-   291,
-   292,
-   293,
-   294,
-   296,
-   297,
-   298,
-   299
+   144,
+   157,
+   165,
+   172,
+   178,
+   183,
+   184,
+   185,
+   186,
+   187,
+   189,
+   190,
+   191,
+   192
   ],
-  "footnotes": 2,
-  "notes": [
-   {
-    "number": 1,
-    "text": "Ya no cabe la menor duda de que cuatro agermanados fueron conducidos á la presencia del Monarca y devueltos á Mallorca por órden de éste para que se les aplicase el castigo procedente: estos corifeos de la insurreccion fueron N. Gili, notario, Miguel Torrent, Antonio Bestard y Bernardo Morey. Por consecuencia es evidente que entre los susodichos desgraciados mensageros no se hallaba el célebre Johanot Colom, el cual continuó preso en las cárceles de la capital hasta que lué extraido en compañía de otros para ser ajusticiado.",
-    "pdf_page": 330
-   },
-   {
-    "number": 1,
-    "text": "Terminada la Germanía en 7 de Marzo de 1523 y ajusticiado Colom en 3 de Junio del mismo año es claro que habiendo permanecido recluso dos meses y medio, no pudo formar parte de expedicion del notario Gili y sus compañeros llevados á la Corte por Nicolas Panadés y Francisco Pons, pues no quedaba tiempo para aquel viaje redondo, á la sazon muy largo.",
-    "pdf_page": 331
-   }
-  ],
+  "footnotes": 0,
+  "notes": [],
   "certainty": {
-   "unanimous": 13540,
-   "one-dissent": 2346,
-   "two-dissent": 672,
-   "contested": 520
+   "unanimous": 11192,
+   "one-dissent": 1839,
+   "two-dissent": 532,
+   "contested": 395
   },
-  "contested_share": 0.0303
+  "contested_share": 0.0282
  },
  {
   "id": "0311-IX-09",
   "block_leaf": 311,
   "numeral": "IX",
   "title": "Relacion (anónima) de la muerte de Jorge San Juan",
+  "title_printed": true,
   "genre": "Relacion",
   "first_leaf": 368,
   "last_leaf": 373,
@@ -1947,6 +1988,7 @@
   "block_leaf": 311,
   "numeral": "XI",
   "title": "Algunas noticias é indicaciones curiosas extraidas de las que coleccionó el Pavorde Jaume.",
+  "title_printed": true,
   "genre": "Algunas",
   "first_leaf": 373,
   "last_leaf": 380,
@@ -2053,6 +2095,7 @@
   "block_leaf": 478,
   "numeral": "II",
   "title": "Relacion de la muerte de Pedro Juan Quint. (1)",
+  "title_printed": true,
   "genre": "Relacion",
   "first_leaf": 482,
   "last_leaf": 483,
@@ -2097,6 +2140,7 @@
   "block_leaf": 478,
   "numeral": "III",
   "title": "Declaraciones en la causa criminal sobre asesinato de D. Jaime Juan de Berga. (1)",
+  "title_printed": true,
   "genre": "Declaraciones",
   "first_leaf": 483,
   "last_leaf": 485,
@@ -2146,6 +2190,7 @@
   "block_leaf": 478,
   "numeral": "IV",
   "title": "Toma de posesion del Reino de Mallorca á nombre del Rey Don Felipe IV. (1)",
+  "title_printed": true,
   "genre": "Toma",
   "first_leaf": 485,
   "last_leaf": 486,
@@ -2189,6 +2234,7 @@
   "block_leaf": 478,
   "numeral": "V",
   "title": "Cas nunca vist succeit en Mallorca á II Juny MDCXXIV. (1)",
+  "title_printed": true,
   "genre": "Cas",
   "first_leaf": 486,
   "last_leaf": 487,
@@ -2231,6 +2277,7 @@
   "block_leaf": 478,
   "numeral": "VI",
   "title": "Fragmentos extraidos del Cuaderno de noticias ó cronicon de Mos. Jaume Viquet, pbro. (1)",
+  "title_printed": true,
   "genre": "Fragmentos",
   "first_leaf": 487,
   "last_leaf": 495,
@@ -2386,6 +2433,7 @@
   "block_leaf": 478,
   "numeral": "VII",
   "title": "Fragmentos del «Llibre de memorias de cesas notables &.» del Dr. Cristobal Fiol.",
+  "title_printed": true,
   "genre": "Fragmentos",
   "first_leaf": 495,
   "last_leaf": 499,
@@ -2462,6 +2510,7 @@
   "block_leaf": 478,
   "numeral": "VIII",
   "title": "Noticias é indicaciones curiosas extraidas de los MSS. y obras citadas en el texto del siglo XVII.",
+  "title_printed": true,
   "genre": "Noticias",
   "first_leaf": 499,
   "last_leaf": 507,
@@ -2641,6 +2690,7 @@
   "block_leaf": 631,
   "numeral": "II",
   "title": "Noticias é indicaciones curiosas extraidas de los MSS. y obras citadas en el texto del siglo XVIII.",
+  "title_printed": true,
   "genre": "Noticias",
   "first_leaf": 632,
   "last_leaf": 639,

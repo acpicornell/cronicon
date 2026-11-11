@@ -13,7 +13,7 @@ how to change it, and they live in `data/review/decisions.jsonl` (and, for the
 Jurats, `data/adjudication/jurats/`), each with its source. Most confirm a reading
 some engine gave; **167 positions of the text rest on no engine's reading** — the
 ledger cells of leaves 159–164, four drop caps that sit outside every engine's
-line box, and a few words of the 1541 reprint — and the count is kept so that it
+line box, and a few words of the 1542 booklet — and the count is kept so that it
 can be stated rather than assumed.
 
 Every rule here must satisfy three conditions:
@@ -54,7 +54,7 @@ Both signals are read from the consensus, never from `data/text/`, which is this
 rule's own output. Taking one from the assembled text made the detection vanish
 the moment the repair had been applied once.
 
-**Why.** Those leaves reproduce a booklet printed in Barcelona in 1541 — *LA
+**Why.** Those leaves reproduce a booklet printed in Palma in 1542 — *LA
 FELICISSIMA VINGUda de Don Carlos cinque Emperador de Romans* — in its own
 typography, which uses the long s. Five of the six engines read that letter as
 `f`, so the vote returns `cofa`, `moffen`, `eftat`, `boffer` where the page says

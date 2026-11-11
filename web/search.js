@@ -32,7 +32,7 @@
 
   /* Fold case and accents **one character for one**, so an offset in the
      folded string is an offset in the text and the snippet can be cut around
-     the hit. The long s of the 1541 reprint folds to s: `senyor` finds
+     the hit. The long s of the 1542 booklet folds to s: `senyor` finds
      `ſenyor`. `scripts/themes.py` folds the same way for the thematic routes. */
   var folded = {};
   function foldChar(c) {

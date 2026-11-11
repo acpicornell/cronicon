@@ -159,7 +159,8 @@ def prose_checks(doc: dict, paras: list[str], vocab: Counter
         for n in range(1, max(numbers) + 1):
             if n not in set(numbers):
                 found.append(("piece-gap", f"piece {n} was not read"))
-    if paras and " ".join(doc["title"].split()) not in [
+    # A section the book prints with no title has none to cut (leaf 332).
+    if paras and doc.get("title_printed", True) and " ".join(doc["title"].split()) not in [
             " ".join(p.split()) for p in paras[:3]]:
         found.append(("title-cut", f"head is {paras[1][:48]!r}"
                       if len(paras) > 1 else "no head"))

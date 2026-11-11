@@ -680,7 +680,7 @@ def page_lines(path: Path) -> list[dict]:
     # doubled display heading straddles the line break as often as not.
     joins = editorial.joins_for(path.parent)
     # The per-slot repairs too -- the long s and the misread break hyphen. This
-    # function passed none, so the 1541 reprint's 1 481 repaired tokens reached
+    # function passed none, so the 1542 booklet's 1 481 repaired tokens reached
     # `data/text/` and never the document a reader opens.
     repairs = editorial.repairs_for(path.parent)
 
@@ -1520,7 +1520,7 @@ def main() -> None:
         raise SystemExit(f"{source} missing -- run scripts/consensus.py first")
 
     # Without this list the chronicle silently swallows 160 leaves of letters,
-    # edicts and the 1541 reprint -- 60 303 words, one in six of the text, dated
+    # edicts and the 1542 booklet -- 60 303 words, one in six of the text, dated
     # to whatever year heading happened to precede them. It went unnoticed for a
     # long time precisely because it is silent, so a missing file is a hard stop
     # rather than a fallback.

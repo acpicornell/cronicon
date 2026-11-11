@@ -360,7 +360,7 @@ by someone who did not produce the ground truth.
 
 Every figure above describes Spanish chronicle prose. Not one of the 550
 adjudications falls on a leaf where Campaner prints a letter, an edict or the
-1541 booklet, and those are **159 leaves, 21% of the book's words**. Their
+1542 booklet, and those are **159 leaves, 21% of the book's words**. Their
 conflict rate being *lower* than the chronicle's (3.77% against 5.59%) was never
 reassurance: it is what correlated failure looks like.
 

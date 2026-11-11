@@ -21,7 +21,7 @@ redistributed here under their own licence, whose full text sits beside them.
   the year numerals, which are Catalan interface text, so `latin-ext` is not
   needed.
 
-`latin-ext` is what carries the **long s** (`ſ`, U+017F) the 1541 reprint is
+`latin-ext` is what carries the **long s** (`ſ`, U+017F) the 1542 booklet is
 set in; its presence in both Garamond files was checked with fontTools before
 the family was adopted. The browser fetches that subset only on a page that
 uses a glyph in its `unicode-range`.

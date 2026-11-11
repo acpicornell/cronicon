@@ -43,7 +43,7 @@ scripts/
   jurats_facsimile.py      the Jurats lists read off the facsimile, checked against every engine
   parse_sigla.py           the glossary the introduction prints
   audit_entries.py         every symptom ever found, swept over all 3 459 notices
-  audit_documents.py       the same sweep over the 24 documents
+  audit_documents.py       the same sweep over the 25 documents
   build_db.py              the parsed book -> DuckDB -> parquet
   build_site.py            the static site
   build_hero.py            the home page's frontispiece, cut from leaf 10
@@ -61,7 +61,7 @@ data/audit/findings.json   what the sweep says is left, ranked
 data/{entries,jurats,documents,sigla,tables,text}/  the parsed book (committed)
 data/{raw,ia,pages,ocr}/   facsimiles and engine output (git-ignored, regenerable)
 web/data/*.parquet         the published tables — the only committed copy of the
-                           per-word certainty and the leaf index (4.7 MB)
+                           per-word certainty and the leaf index (6.5 MB)
 docs/OCR_BENCHMARK.md      the full measurement report
 docs/EDITORIAL.md          what this edition changes, and what it refuses to
 wrangler.jsonc             the Cloudflare Worker: static assets from web/, the custom domain
@@ -124,7 +124,7 @@ The entries and documents take about fifteen minutes; the rest is seconds.
 
 The OCR itself is not in the repository and cannot be: the consensus is ten
 thousand files and the per-word certainty is 100 MB of JSON. Its compact form
-is — `web/data/*.parquet`, 4.7 MB of zstd holding all 467 318 words with their
+is — `web/data/*.parquet`, 6.5 MB of zstd holding all 467 484 words with their
 tiers and boxes, which is what the site queries in the browser anyway. So the
 whole site rebuilds from a clone without any of that:
 

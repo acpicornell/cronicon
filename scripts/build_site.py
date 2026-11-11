@@ -819,13 +819,13 @@ def sourced(paragraph: str, sigla: dict[str, str], marked) -> str:
 # every page of this site used to claim to be Catalan throughout. The chronicle
 # is Spanish; these are the documents that are not. Several are mixed --
 # Campaner introduces a Catalan text in Spanish, and section VII carries a
-# Latin and Catalan booklet of 1541 inside Spanish notes -- and take the
+# Latin and Catalan booklet of 1542 inside Spanish notes -- and take the
 # language of the bulk of their text.
 DOC_LANG = {
     "0114-II-02": "ca", "0114-IV-04": "ca", "0225-II-02": "ca",
     "0311-II-02": "ca", "0311-III-03": "ca", "0311-VI-06": "ca",
     "0478-III-03": "ca", "0478-V-05": "ca", "0478-VI-06": "ca",
-    "0478-VII-07": "ca",
+    "0478-VII-07": "ca", "0311-VIII-08": "ca",
 }
 BLOCKS = {114: "XIV", 225: "XV", 311: "XVI", 478: "XVII", 631: "XVIII"}
 
@@ -854,9 +854,16 @@ def document_page(con, doc, sigla: dict[str, str], doubt: Doubt,
     at = json.loads((PROJECT / "data" / "documents" / "sections.json").read_text())
     per_para = next((d.get("paragraph_leaves") or [] for d in at
                      if d["id"] == _id), [])
+    # Section VIII of the 16th century prints its numeral and no title; the
+    # name shown is the one Campaner's note gives the work, and the page says so.
+    title_printed = next((d.get("title_printed", True) for d in at
+                          if d["id"] == _id), True)
+    untitled = ("" if title_printed else
+                '<p class="year-sub">El llibre no hi posa títol: el nom és '
+                "el que li dona la nota de Campaner.</p>")
     # The paragraphs Campaner sets centred, which are headings and were being
     # published as prose: the chapter openings of the `Historia de los Reyes`,
-    # `LECTOREM.` and `PROHEMI.` in the 1541 reprint, `EL REY.` and `Vt.
+    # `LECTOREM.` and `PROHEMI.` in the 1542 booklet, `EL REY.` and `Vt.
     # Claver.` under a royal cédula, `Declaració de Amet, cochero de Berga.`
     # over each deposition.
     heads = set(next((d.get("headings") or [] for d in at
@@ -1060,7 +1067,7 @@ def document_page(con, doc, sigla: dict[str, str], doubt: Doubt,
     body = f"""<header class="doc-head">
   <p class="kicker">Segle {BLOCKS.get(block, '')} · secció {esc(numeral)}</p>
   <h1 lang="{lang}" translate="no">{esc(title)}</h1>
-  <p class="year-sub">{num(words)} mots · {share}% discutits ·
+  {untitled}<p class="year-sub">{num(words)} mots · {share}% discutits ·
      {facsimile(first, f"{span} del facsímil")}</p>
 </header>
 <p class="caveat">Els documents són la part del llibre pitjor mesurada:
@@ -2290,7 +2297,7 @@ def method_page(con) -> str:
      {num(kept)} paraules conserven al costat la lectura original del vot:</p>
   <ul>
     <li><strong>La essa llarga</strong> (<em>ſ</em>) de la reimpressió d'un
-        opuscle de 1541 que Campaner inclou: cinc dels sis motors la llegeixen
+        opuscle de 1542 que Campaner inclou: cinc dels sis motors la llegeixen
         <em>f</em>, i es restitueix quan algun la va llegir i la forma amb
         <em>f</em> no és una paraula que el llibre faci servir.</li>
     <li><strong>Els guions de final de línia</strong> es cusen, i es tornen a
