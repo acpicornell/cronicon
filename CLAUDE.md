@@ -1922,7 +1922,8 @@ page differing between runs.
       and hand-written inputs (a clean clone reproduces a local build byte for
       byte), runs `check_site.py`, and deploys with wrangler; inert until the
       `CLOUDFLARE_API_TOKEN` secret is set (`../set-cf-token.sh` lists this
-      repo). The custom domain is attached in the dashboard. The Apple Vision
+      repo). The custom domain is declared in `wrangler.jsonc` (the dashboard
+      could not find the zone), unlike the siblings. The Apple Vision
       dependencies carry a `sys_platform == 'darwin'` marker so the build runs
       on Linux. The portal card, JSON-LD and README row are prepared in
       `../portal` and go in only once the domain answers, as the link check

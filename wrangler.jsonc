@@ -4,9 +4,15 @@
   "workers_dev": false,
   "compatibility_date": "2026-07-28",
   "observability": { "enabled": true },
-  // Assets only, no Worker code. `web/` is what build_site.py writes; the
-  // custom domain cronicon.corpusbalear.org is attached in the dashboard, as
-  // for every other site of the family.
+  // Assets only, no Worker code. `web/` is what build_site.py writes.
+  //
+  // The sibling sites bind their domain in the dashboard. Here the dashboard's
+  // "Add Domain" dialog answered "No zones match" for a zone the same account
+  // already serves eleven Workers from, so the domain is declared and wrangler
+  // binds it on deploy. The result is the same kind of Custom Domain.
+  "routes": [
+    { "pattern": "cronicon.corpusbalear.org", "custom_domain": true }
+  ],
   "assets": {
     "directory": "web",
     // A missing page gets web/404.html with a real 404 status.
