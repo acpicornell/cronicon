@@ -237,8 +237,10 @@ chronology, and neither is an OCR error:
 Six series, one per century, printed as appendices inside the body:
 XIII at leaf 58, XIV at 114, XV at 225, XVI at 311, XVII at 478, XVIII at 631.
 `scripts/parse_jurats.py` finds them by their own title line and gives
-`data/jurats/jurats.jsonl` — **1 670 names over 282 years**, one row per
-(year, seat, name) with its certainty tier.
+`data/jurats/jurats.jsonl` — **2 436 names over 423 years** (seven of them
+carry only a remark), one row per (year, seat, name) with its certainty tier.
+All six series now come from the facsimile reading — §The Jurats, read off the
+facsimile.
 
 Two typographies, and **neither difficulty is in the parser**. What the six
 engines share is a reading order, and it comes from Tesseract's line
@@ -338,8 +340,8 @@ into `footnote` with a `document_id`, and set under the document at the smaller
 size the book gives them, each with a link to its own leaf.
 
 `scripts/build_documents.py` then assembles each one as a text →
-`data/documents/sections/*.txt` and `sections.json`: **23 documents, 97 595
-words, 3.3% contested**, footnotes separated as in the chronicle and the
+`data/documents/sections/*.txt` and `sections.json`: **26 documents, 96 614
+words, 2.6% contested**, footnotes separated as in the chronicle and the
 certainty tiers carried through, because these are the leaves nothing has
 measured and a mostly-contested document must say so on its face.
 
@@ -472,8 +474,8 @@ prints `VII. Documentos y notas relativas á la Germanía, extraidas de los libr
 de la Procuracion Real por el Pavorde D. A. Jaume.`**, centred, and Tesseract
 never boxed the line, so no engine was asked about it. The line recovery found
 it (§"Lines the geometry never boxed"); checked against the facsimile. VI is now
-the one leaf of `Nota de varias ejecuciones` and VII runs 325–367, ids
-`0311-VI-06` and `0311-VII-07`.
+the one leaf of `Nota de varias ejecuciones` and VII runs 325–331, ids
+`0311-VI-06` and `0311-VII-07`; VIII is the 1542 booklet (below).
 
 **And the 1542 booklet is section VIII, which Campaner numbers and does not
 title.** VII used to run on to leaf 367 over a different work: the *Libre de la
@@ -1480,13 +1482,6 @@ column's text edge; measuring the indent from the column's *leftmost* line was
 tried first and rejected leaf 123's numeral, which is centred over the gutter
 and is its own column's leftmost line.
 
-**What is still not right on leaf 159 and is honest to say so:**
-`Disapte 1.er de Juliol` runs `It. vi.`, `It. farina.`, `It. peix y ous` — and
-`rows_of` requires a row to carry three consecutive letters somewhere, so that a
-bare figure at the foot of a column cannot open a table. `It. vi. 1 s. 2 ds.`
-has no such word. The guard is right in general and wrong here, and loosening it
-is a measurement to make deliberately rather than in passing.
-
 **And it exposed the drift this repository keeps paying for.** An adjudicated
 position reached `build_text.py` and neither `parse_entries.py` nor
 `build_documents.py`, because only the first read `decisions.jsonl` — so the 53
@@ -1534,9 +1529,10 @@ Two things it turned up that are worth keeping:
   out first, which is why there isn't one yet.
 - **The page has to say how weak this is.** Only **516 of 1 979 names (26%)** are
   read the same way by all six engines, against 79% for the book. Every doubtful
-  name is marked and the index says the figure in words. Some names still carry
+  name is marked and the index says the figure in words. Some names then carried
   the notes column bleeding into them — `Bernardo Villafranca se encuentran en
-  el privi-`, `Jaime de Montsó I mismos` — on the annotated leaves.
+  el privi-`, `Jaime de Montsó I mismos` — on the annotated leaves; superseded
+  by the facsimile reading below, which replaced every row of the parse.
 
 ## The Jurats, read off the facsimile — and what that showed
 

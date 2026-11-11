@@ -32,7 +32,6 @@ PAGES = PROJECT / "data" / "pages"
 OUT = OCR / "ordered"
 
 IA_OFFSET = -2
-MIN_WORD_CONF = 0  # keep everything; the consensus stage weighs confidence later
 
 
 def from_abbyy_bne(pdf_page: int) -> tuple[list[dict], float, float, str] | None:

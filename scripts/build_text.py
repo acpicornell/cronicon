@@ -44,10 +44,6 @@ SOFT_HYPHEN = "­"
 # destroy the chronicle's own punctuation.
 BREAK_HYPHEN = re.compile(rf"[-‐‑{SOFT_HYPHEN}]$")
 
-TIER_MARK = {"unanimous": " ", "one-dissent": "·", "two-dissent": ":",
-             "contested": "?"}
-
-
 BOX_PLACES = 5
 DECISIONS = PROJECT / "data" / "review" / "decisions.jsonl"
 

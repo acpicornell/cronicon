@@ -101,11 +101,3 @@ def align_to_reference(reference: list[str], other: list[str]) -> list[str | Non
             out[i1 - 1] = f"{out[i1 - 1]} {extra}" if out[i1 - 1] else extra
     return out
 
-
-def alignment_table(readings: dict[str, list[str]], reference_key: str
-                    ) -> tuple[list[str], dict[str, list[str | None]]]:
-    reference = readings[reference_key]
-    table = {key: (list(reference) if key == reference_key
-                   else align_to_reference(reference, toks))
-             for key, toks in readings.items()}
-    return reference, table

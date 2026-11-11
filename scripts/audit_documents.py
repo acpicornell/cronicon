@@ -1,4 +1,4 @@
-"""Sweep the 23 documents for the symptoms of every defect we have found there.
+"""Sweep the assembled documents for the symptoms of every defect we have found there.
 
 `audit_entries.py` did this for the chronicle and the lesson transfers exactly:
 reading one document end to end works and does not scale. Section II of the

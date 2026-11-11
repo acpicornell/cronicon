@@ -542,14 +542,6 @@ def side_by_side(body: list[Line]) -> list[Line]:
     return out
 
 
-def ordered_text(lines: list[dict], page_width: float, page_height: float,
-                 origin: str = "top-left") -> tuple[str, int]:
-    """Convenience wrapper: engine-native lines in, ordered text + column count."""
-    body, _ = order(normalise_boxes(lines, page_width, page_height, origin))
-    ncols = len({ln.column for ln in body}) if body else 0
-    return "\n".join(ln.text for ln in body), ncols
-
-
 # --- Regions adjudicated against the facsimile -------------------------------
 #
 # Where a ledger defeats the panel, someone reads the facsimile and writes down

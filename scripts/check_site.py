@@ -34,8 +34,6 @@ WEB = PROJECT / "web"
 
 IMG_ORIGINS = ("https://iiif.archive.org/",)
 MAX_PAGE_KB = 700
-VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link",
-        "meta", "source", "track", "wbr"}
 
 
 class Page(HTMLParser):

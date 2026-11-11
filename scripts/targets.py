@@ -35,10 +35,6 @@ PANEL = [
     ("vision-ia-300dpi-corr", "ia", 300, True),
 ]
 
-# Resolutions each scan has to be rendered at to serve the panel.
-BNE_DPI = sorted({dpi for _, scan, dpi, _ in PANEL if scan == "bne" and dpi})
-IA_DPI = sorted({dpi for _, scan, dpi, _ in PANEL if scan == "ia" and dpi})
-
 
 def inventory() -> list[dict]:
     if not INVENTORY.exists():

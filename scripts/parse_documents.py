@@ -25,7 +25,7 @@ Nothing is transcribed or corrected here; this only says where each document
 begins, what it is called, and which leaves it occupies.
 
 Usage:
-  python scripts/parse_documents.py --report
+  python scripts/parse_documents.py
 """
 from __future__ import annotations
 
@@ -302,7 +302,6 @@ def sections(leaves: dict[int, list[dict]], first: int, last: int,
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--consensus", default="consensus6_swap_swapk")
-    ap.add_argument("--report", action="store_true")
     args = ap.parse_args()
 
     source = OCR / args.consensus

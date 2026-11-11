@@ -28,4 +28,3 @@ PILOT = [
 
 PAGES = [p for p, _, _, _ in PILOT]
 CLASS_OF = {p: c for p, _, c, _ in PILOT}
-PRINTED_OF = {p: pr for p, pr, _, _ in PILOT}

@@ -290,10 +290,6 @@ UNGLOSSED = ("L. V.", "N. F.", "T. A.", "Jn. Bs.",
 SIGLUM_GLYPH = str.maketrans({"l": "I", "1": "I", "|": "I", "/": "J", ",": "."})
 
 
-def fold_siglum(text: str) -> str:
-    return re.sub(r"\s+", "", text).translate(SIGLUM_GLYPH).upper()
-
-
 # A footnote opens with its own number on a fresh line: `(1)`, `(2)`, `[3]`.
 # `(1)`, and once `(1.)` -- leaf 429, where missing it cost more than a note:
 # the line above ends `…y el 24 falle-`, so the hyphen stitch joined the word to
@@ -409,13 +405,6 @@ OPENING_LINES = 8
 # earlier attempt compared them globally -- 0.0097 against 0.0127 -- and the
 # distributions overlap because the leaves differ.
 NOTE_TYPE = 0.90
-# A continuation is at least this many lines. Leaf 92 ends `desembar-` / `có en
-# las riberas de Morviedro.»-G. T.`, and one short last line is not a note.
-MIN_CONTINUATION = 2
-# `1339.` alone on a line is a year heading, and a four-digit line has no
-# ascender or descender in it, so its box measures like note type and the scan
-# walked straight through it. Leaves 74 and 547 lost their year that way.
-BARE_YEAR = re.compile(r"^\s*1[2-8]\d\d\s*[.,]?\s*$")
 
 
 def height(line: dict) -> float:
@@ -1307,27 +1296,6 @@ def split_entries(text: str, year: int | None,
             "text": body,
         })
     return entries
-
-
-def collapse_repeat(siglum: str) -> str:
-    """`G. G. T.` is `G. T.` counted twice, not a siglum of three initials.
-
-    The engines disagree about where the token after the dash ends: some read
-    `reos.»—G.` and `T.`, others `reos.»—` and `G.` and `T.`. The alignment keeps
-    both, so the `G.` appears at two positions and the vote accepts it at each.
-    Leaf 65 prints `—G. T.`, checked against the facsimile, and the same doubling
-    produced `B. B. J.`, `M. M. M.`, `Cl. Fl. Fl.` and `J. J. F.` elsewhere.
-
-    Only a three-part siglum is collapsed, and only where two neighbours are
-    equal: `M. M.` is Matías Mut and must survive intact.
-    """
-    parts = siglum.split()
-    if len(parts) != 3:
-        return siglum
-    for n in (0, 1):
-        if parts[n] == parts[n + 1]:
-            return " ".join(parts[:n] + parts[n + 1:])
-    return siglum
 
 
 def siglum_key(text: str) -> tuple[str, ...]:

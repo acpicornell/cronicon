@@ -1411,10 +1411,6 @@ def source_page(con, siglum: str, expansion: str) -> str:
                              (siglum, None)))
 
 
-# Campaner writes a Jurat's trade after a comma -- `Juan Sala, perayre` -- for
-# 341 of the 1 979 names. It is the most interesting column in the table and the
-# easiest to mistake for a surname: taking the last word of the name makes
-# `perayre` the commonest family in Mallorca, with 70 seats.
 CENTURY_NAMES = {13: "XIII", 14: "XIV", 15: "XV", 16: "XVI", 17: "XVII",
                  18: "XVIII"}
 

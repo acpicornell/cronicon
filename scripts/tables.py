@@ -53,10 +53,6 @@ OUT = PROJECT / "data" / "tables"
 
 # A figure as this book writes them: `237,863`, `126.588`, `4 894`, `38`.
 FIGURE = re.compile(r"\d[\d.,\s]*\d|\d")
-# What may follow the figure and still leave it the end of its cell: the ditto
-# mark, the unit, the currency words.
-UNIT = re.compile(r"^[»\"'\s.,]*(cuarteras?|id|ls|ss|ds|libs?|»)?[\s.,»]*$",
-                  re.IGNORECASE)
 # How far apart two right edges may be and still count as one column.
 ALIGN = 0.012
 # A row needs a label -- two letters or more somewhere in it -- so that a bare
@@ -244,11 +240,6 @@ def tables_on(leaf: dict) -> list[list[list[dict]]]:
 # How many printed lines of label a row may carry before the two figures stop
 # being one ledger. The longest real one in the book is five.
 LEDGER_GAP = 6
-
-
-def ends_in_a_figure(row: list[dict]) -> bool:
-    """Does this printed line close with a figure, as a ledger's row does?"""
-    return cell_edge(row) is not None
 
 
 def ledgers_on(leaf: dict) -> list[list[list[dict]]]:
