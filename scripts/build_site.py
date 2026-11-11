@@ -541,8 +541,8 @@ def read_sigla(con) -> dict[str, str]:
 # `L. V.`, `N. F.` and `T. A.`, which the chronicle cites constantly and the
 # introduction's glossary does not list; the other 23 are single initials, the
 # first half of a two-part siglum whose second half no engine placed.
-NOT_IN_GLOSSARY = "No consta al glossari de la introducció."
-TRUNCATED = "Sigla incompleta: només se n'ha llegit la primera inicial."
+NOT_IN_GLOSSARY = "La introducció no diu de qui són aquestes inicials."
+TRUNCATED = "Inicials incompletes: només se n'ha pogut llegir la primera."
 
 
 def cite(siglum: str, sigla: dict[str, str]) -> str:
@@ -1376,7 +1376,7 @@ def source_page(con, siglum: str, expansion: str) -> str:
         "WHERE siglum = ?", [siglum]).fetchone()
     fields = ("name", "life", "role", "span", "work", "note", "leaf")
     record = dict(zip(fields, who)) if who else {}
-    named = expansion or record.get("name") or "font no glossada a la introducció"
+    named = expansion or record.get("name") or "font que la introducció no explica"
     rows = con.execute(
         "SELECT year, count(*) n FROM entry WHERE year IS NOT NULL "
         "AND list_contains(sources, ?) GROUP BY 1 ORDER BY 1", [siglum]).fetchall()
@@ -1586,12 +1586,11 @@ def jurats_index(con) -> str:
     early = [c for c in stated if stated[c][1] < stated[c][0]]
 
     body = f"""<header class="page-head">
-  <p class="kicker">Els qui governaven</p>
-  <h1>{num(total)} jurats, de 1240 a 1715</h1>
-  <p class="lede">Durant gairebé cinc segles, la Ciutat i Regne de Mallorca
-     el governaren sis jurats que es renovaven cada any per Nadal. Campaner
-     en dona els noms segle a segle, en sis llistes que imprimeix com a
-     apèndix dins el cos del llibre.</p>
+  <h1>Els jurats</h1>
+  <p class="lede">{num(total)} jurats, de 1240 a 1715. Durant gairebé cinc
+     segles, la Ciutat i Regne de Mallorca el governaren sis jurats que es
+     renovaven cada any per Nadal. Campaner en dona els noms segle a segle, en
+     sis llistes que imprimeix com a apèndix dins el cos del llibre.</p>
 </header>
 <div class="cards">{blocks}</div>
 
@@ -1795,8 +1794,9 @@ def abbreviations_page(con) -> str:
         "SELECT siglum, expansion FROM siglum ORDER BY siglum").fetchall()
     # Each source as a card rather than a table row: the table could hold a name
     # and a count, and Campaner gives a trade, a manuscript, a span of years and
-    # usually a date of death. Only the twelve in the chart have a page of
-    # their own; the rest are cards that say what the introduction says.
+    # usually a date of death. Every source the chronicle cites has a page of
+    # its own and every card links to it: only the twelve in the chart used to,
+    # and a reader who opened the thirteenth card found it led nowhere.
     people = con.execute("""
         SELECT siglum, expansion, life, role, span, work, attributions
         FROM siglum WHERE attributions > 0
@@ -1809,8 +1809,7 @@ def abbreviations_page(con) -> str:
                  + (f'<span class="meta">{esc(sp)}</span>' if sp else "")
                  + (f'<em lang="es" translate="no">{esc(w)}</em>' if w else "")
                  + f'<span class="n">{num(a or 0)} notícies</span>')
-        return (f'<a class="card" href="{slug(g)}/">{inner}</a>' if g in BANDS
-                else f'<div class="card">{inner}</div>')
+        return f'<a class="card" href="{slug(g)}/">{inner}</a>'
 
     cards = "".join(card(g, x, r, sp, w, a) for g, x, _l, r, sp, w, a in people)
     bare = sorted(((g, n) for g, n in used.items()
@@ -1820,13 +1819,14 @@ def abbreviations_page(con) -> str:
     chart = sources_chart(con, dict(glossed))
     body = f"""<header class="page-head">
   <h1>Les fonts</h1>
-  <p class="lede">Campaner atribueix cada notícia al manuscrit d'on la treu,
-     amb una sigla, i les glossa a la introducció — la part del llibre que
-     aquesta edició no publica. Sense això les sigles del cos no volen dir
-     res.</p>
+  <p class="lede">Al peu de cada notícia Campaner hi posa les inicials de
+     l'autor del manuscrit d'on la treu (<span translate="no">G. T.</span>,
+     <span translate="no">J. F.</span>…), i a la introducció explica de qui
+     són — la part del llibre que aquesta edició no publica. Sense això les
+     inicials no volen dir res.</p>
 </header>
-<p class="hint">A les pàgines d'any es pot tocar qualsevol sigla per veure'n
-   el nom.</p>
+<p class="hint">A les pàgines d'any, toca les inicials d'una notícia per
+   veure'n el nom.</p>
 
 <h2>Qui ho explica, segle a segle</h2>
 <p class="hint">La crònica no descansa sempre sobre els mateixos testimonis.
@@ -1842,12 +1842,12 @@ def abbreviations_page(con) -> str:
    crònica es pugui fer servir: diu qui eren, què és el manuscrit, quins anys
    abraça i on parava el 1881.</p>
 <div class="cards">{cards}</div>
-<p class="hint">La crònica en cita {len(bare)} més que la introducció no
-   glossa: {missing}. Les d'una sola inicial són sigles de dues que el
-   facsímil no deixa llegir senceres.</p>"""
+<p class="hint">La crònica en fa servir {len(bare)} més que la introducció no
+   explica: {missing}. Les que tenen una sola inicial en devien tenir dues,
+   però el facsímil no deixa llegir la segona.</p>"""
     return page("Les fonts · Cronicón Mayoricense",
-                "Les sigles amb què Campaner atribueix cada notícia al "
-                "manuscrit d'on la treu, amb el nom que en dona la introducció.",
+                "Les inicials amb què Campaner atribueix cada notícia a l'autor "
+                "del manuscrit d'on la treu, amb el nom que en dona la introducció.",
                 "abreviatures/", "abreviatures/", body, main="wrap column",
                 trail=crumbs(("Inici", "../"), ("Les fonts", None)))
 
@@ -2308,13 +2308,13 @@ def method_page(con) -> str:
   <h2 id="estructura">De text a llibre</h2>
   <p>Del text llegit se'n reconstrueix l'estructura que el llibre imprimeix:
      <strong>{num(entries)} notícies</strong> datades en {num(years_)} anys,
-     {num(sourced_)} amb la sigla del manuscrit d'on surten; {num(docs)}
+     {num(sourced_)} amb les inicials de l'autor del manuscrit d'on surten; {num(docs)}
      documents reproduïts sencers ({num(doc_words)} mots); {num(notes)} notes
      de Campaner; {num(tables_)} taules ({num(rows_)} files) recuperades com a
      taules; i les sèries de jurats. L'ordre de les notícies és el del llibre,
      no el de les dates: on Campaner les desordena, l'edició ho manté.</p>
   <p>La introducció del llibre no es publica com a text, però d'ella s'ha tret
-     a mà el glossari de les {num(sigla_)} sigles i, per a {num(glossed)} fonts,
+     a mà la llista de les {num(sigla_)} inicials i, per a {num(glossed)} fonts,
      qui era l'autor i què és el seu manuscrit, cada dada amb el full d'on surt.</p>
 
   <h2 id="limits">Què queda per fer</h2>
@@ -2545,13 +2545,14 @@ def themes_index(routes: dict) -> str:
         for t in themes.THEMES)
     body = f"""<header class="page-head">
   <h1>Els temes</h1>
-  <p class="lede">Una crònica s'entra per la data, i qui no en té cap no sap
-     per on començar. Aquests són deu camins per assumpte: pestes, corsaris,
-     execucions, festes.</p>
+  <p class="lede">La crònica va per ordre de dates, i per trobar-hi una cosa
+     cal saber de quin any és. Aquests deu temes la deixen llegir per
+     assumptes —pestes, corsaris, execucions, festes…— sense saber cap data.</p>
 </header>
-<p class="hint">Cada tema és una cerca ja feta sobre el text de les notícies,
-   amb els mots a la vista, i no una selecció: ningú no ha triat aquestes
-   notícies ni n'ha escrit res. Per buscar qualsevol altra cosa hi ha
+<p class="hint">Cada tema és una cerca automàtica d'unes quantes paraules, que
+   surten escrites a la pàgina del tema. No és una tria feta a mà: hi pot
+   sortir alguna notícia que no hi toca, i en pot faltar alguna que en parla
+   amb altres paraules. Per buscar qualsevol altra cosa, fes servir
    <a href="../cerca/">la cerca</a>.</p>
 <div class="cards">{cards}</div>"""
     return page("Els temes · Cronicón Mayoricense",
@@ -2714,13 +2715,14 @@ def main() -> None:
     write(WEB / "documents" / "index.html", documents_page(con))
     write(WEB / "cerca" / "index.html", search_page(con))
     write(WEB / "abreviatures" / "index.html", abbreviations_page(con))
-    # One page per source in the chart: where that manuscript is cited, year by
-    # year. Years and counts only -- the notices themselves are a search away.
-    for band in BANDS:
-        row = con.execute("SELECT expansion FROM siglum WHERE siglum = ?",
-                          [band]).fetchone()
-        write(WEB / "abreviatures" / slug(band) / "index.html",
-              source_page(con, band, row[0] if row else ""))
+    # One page per source the chronicle cites: who wrote it and where that
+    # manuscript is cited, year by year.
+    cited = con.execute("SELECT siglum, expansion FROM siglum "
+                        "WHERE attributions > 0 ORDER BY siglum").fetchall()
+    assert len({slug(g) for g, _ in cited}) == len(cited), "source slugs collide"
+    for siglum, expansion in cited:
+        write(WEB / "abreviatures" / slug(siglum) / "index.html",
+              source_page(con, siglum, expansion or ""))
     write(WEB / "temes" / "index.html", themes_index(routes))
     for theme in themes.THEMES:
         write(WEB / "temes" / theme.slug / "index.html",
@@ -2733,7 +2735,7 @@ def main() -> None:
              + [f"jurats/{c}/" for c in centuries]
              + [f"temes/{t.slug}/" for t in themes.THEMES]
              + [f"anys/{y}/" for y in years if counts.get(y)]
-             + [f"abreviatures/{slug(b)}/" for b in BANDS]
+             + [f"abreviatures/{slug(g)}/" for g, _ in cited]
              + [f"documents/{d[0]}/" for d in documents])
     write(WEB / "sitemap.xml", "\n".join(
         ['<?xml version="1.0" encoding="UTF-8"?>',

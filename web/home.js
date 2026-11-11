@@ -52,7 +52,7 @@
   // The same chip the build writes: a button that gives up the source's name.
   // `app.js` handles the click for these as for any other.
   function chip(siglum, sigla) {
-    var name = sigla[siglum] || "No consta al glossari de la introducció.";
+    var name = sigla[siglum] || "La introducció no diu de qui són aquestes inicials.";
     return '<span class="cite"><button class="sig' + (sigla[siglum] ? "" : " unglossed") +
       '" type="button" aria-expanded="false">' + escapeHtml(siglum) +
       '</button><span class="sig-name">' + escapeHtml(name) + "</span></span>";
