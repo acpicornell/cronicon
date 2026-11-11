@@ -3,10 +3,18 @@
 What this edition changes, and what it refuses to change.
 
 The transcription is produced by six independent recognisers voting token by
-token. Every word in `data/text/` is a string some engine actually read off the
-page; nothing is generated. These rules are the only exceptions to *the vote
-stands*, and each one is applied by `scripts/editorial.py` — never by hand, never
-by eye, and never anywhere else in the pipeline.
+token. These rules are the only *editorial* exceptions to *the vote stands*, and
+each one is applied by `scripts/editorial.py` — never by hand, never by eye, and
+never anywhere else in the pipeline.
+
+The other exception is not editorial and is not here: a reading settled against
+the facsimile. Those are decisions about what the page prints, not rules about
+how to change it, and they live in `data/review/decisions.jsonl` (and, for the
+Jurats, `data/adjudication/jurats/`), each with its source. Most confirm a reading
+some engine gave; **167 positions of the text rest on no engine's reading** — the
+ledger cells of leaves 159–164, four drop caps that sit outside every engine's
+line box, and a few words of the 1541 reprint — and the count is kept so that it
+can be stated rather than assumed.
 
 Every rule here must satisfy three conditions:
 

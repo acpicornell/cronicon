@@ -8,6 +8,18 @@ The panel has since been run over the whole book: 473 423 token positions across
 614 leaves, of which 23 647 need a human once the scan and the alignment are
 chosen per leaf. See §4.
 
+> **This is the pilot report, written in July 2026, and its figures are those of
+> their day.** The panel that builds the edition is not the one §8 recommends
+> (see §3b), the queue has moved with the layout work, and the edition's current
+> figures are in the [README](../README.md). Two things below no longer hold as
+> written: the claim that no generative model came near the transcription, and
+> §7 as a recipe for the whole book. On the first, the six Jurats lists and the
+> accounts of leaves 159–164 were later read off the facsimile with the help of a
+> vision model, on the maintainer's decision, and checked against every engine —
+> [METHOD.md](METHOD.md) §"The problem, and the constraint" says how, and how many
+> positions rest on no engine's reading. On the second, §7 reproduces the pilot;
+> the full-book chain is in [PIPELINE.md](PIPELINE.md).
+
 Measured on twelve pages chosen to cover every page class in the book, against
 **550 word positions** adjudicated one by one against the facsimile, in two
 rounds: 300 stratified across all agreement levels, then 250 more concentrated on
@@ -35,9 +47,11 @@ Tesseract 5.5.2 configurations (both scans × 200/300/400/600 dpi × `spa_old` /
 (`VNRecognizeTextRequest`, accurate, `es-ES`, both scans, language correction on
 and off).
 
-**No generative model was used to produce or repair any transcription.** The only
-LLM involvement was reading facsimile crops to settle disagreements — a
-verification task with the evidence on screen, not free-form transcription.
+**No generative model was used to produce or repair any transcription in this
+pilot.** The only LLM involvement was reading facsimile crops to settle
+disagreements — a verification task with the evidence on screen, not free-form
+transcription. (The edition later went further on two kinds of leaf; see the note
+at the head of this report.)
 
 ### Reading order is imposed, not inherited
 
@@ -480,6 +494,10 @@ so they neither flatter nor damn any engine. Their effect turns out to be small
   rows are indicative only.
 
 ## 7. Reproducing this
+
+This is the pilot's run over its twelve leaves. The full-book chain — the
+six-engine panel, the per-leaf consensus and the parse into the book's structure —
+is in [PIPELINE.md](PIPELINE.md).
 
 ```sh
 nix develop                                   # tesseract with spa_old spa cat lat + uv
