@@ -147,6 +147,22 @@ CREATE TABLE IF NOT EXISTS jurat (
     engines   SMALLINT
 );
 CREATE INDEX IF NOT EXISTS idx_jurat_year ON jurat(year);
+
+-- Campaner's note beside each year of the annotated lists (13th and 14th
+-- centuries): which codex or chronicler gives those names and where they
+-- disagree. One row per printed paragraph, in the leaf's order. Read off the
+-- facsimile; `in_order` is the largest share of its words one engine read in
+-- the same order, and `unread` the words no engine read at all.
+CREATE TABLE IF NOT EXISTS jurat_note (
+    id        INTEGER PRIMARY KEY,
+    century   SMALLINT NOT NULL,
+    year      SMALLINT NOT NULL,
+    text      VARCHAR NOT NULL,
+    pdf_page  SMALLINT NOT NULL,
+    words     SMALLINT,
+    in_order  REAL,
+    unread    VARCHAR[]
+);
 CREATE INDEX IF NOT EXISTS idx_jurat_name ON jurat(name);
 
 -- The documents ----------------------------------------------------------

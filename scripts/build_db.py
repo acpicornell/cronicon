@@ -206,6 +206,11 @@ def load_jurats(con: duckdb.DuckDBPyConnection) -> None:
             for n, j in enumerate(rows_of(DATA / "jurats" / "jurats.jsonl"), 1)]
     con.executemany("INSERT INTO jurat VALUES (?,?,?,?,?,?,?,?,?)", rows)
     print(f"  jurat         {len(rows):>8,}")
+    notes = [(n, j["century"], j["year"], j["text"], j["pdf_page"], j["words"],
+              j["in_order"], j["unread"])
+             for n, j in enumerate(rows_of(DATA / "jurats" / "notes.jsonl"), 1)]
+    con.executemany("INSERT INTO jurat_note VALUES (?,?,?,?,?,?,?,?)", notes)
+    print(f"  jurat_note    {len(notes):>8,}")
 
 
 def load_documents(con: duckdb.DuckDBPyConnection) -> None:

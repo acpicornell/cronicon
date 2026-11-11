@@ -524,6 +524,9 @@ a.key:hover { color: var(--accent); }
 .seats li::marker { color: var(--muted); font-size: .85em; font-variant-numeric: lining-nums; }
 .serie-year .leafmark { margin: .3rem 0 0; }
 .serie-year .remark { font-style: italic; color: var(--ink-soft); font-size: 1rem; margin: .2rem 0; }
+.jnote { margin: .35rem 0 0; font-size: .95rem; color: var(--ink-soft); }
+.jnote summary { cursor: pointer; color: var(--muted); font-size: .9rem; }
+.jnote p { margin: .3rem 0 0; hyphens: manual; }
 [hidden] { display: none !important; }
 
 /* ---------------------------------------------------------------- search */

@@ -1715,6 +1715,13 @@ def jurats_century(con, century: int) -> str:
     by_year: dict[int, list] = {}
     for year, seat, name, tier, leaf in rows:
         by_year.setdefault(year, []).append((seat, name, tier, leaf))
+    # Campaner's note beside the year on the annotated lists, folded: it can
+    # run to a hundred words and the card holds six names.
+    year_notes: dict[int, list[str]] = {}
+    for year, text in con.execute(
+            "SELECT year, text FROM jurat_note WHERE century = ? ORDER BY id",
+            [century]).fetchall():
+        year_notes.setdefault(year, []).append(text)
 
     dated = {r[0] for r in con.execute(
         "SELECT DISTINCT year FROM entry WHERE year IS NOT NULL").fetchall()}
@@ -1753,6 +1760,11 @@ def jurats_century(con, century: int) -> str:
             else:
                 run.append(f'<li value="{seat}"{grade(tier)}>{esc(name)}</li>')
         flush()
+        if year in year_notes:
+            parts.append('<details class="jnote"><summary>Nota de Campaner'
+                         '</summary>' + "".join(
+                             f'<p lang="es" translate="no">{esc(t)}</p>'
+                             for t in year_notes[year]) + "</details>")
         leaves = sorted({p for _s, _n, _t, p in seats})
         marks = " · ".join(facsimile(p) for p in leaves)
         out.append(f'<article class="serie-year" id="y{year}"><h2>{link}</h2>'
@@ -1782,6 +1794,7 @@ def jurats_century(con, century: int) -> str:
   <span id="jf-n" class="tally" role="status"></span>
 </div>
 <p class="hint">L'any enllaça amb les seves notícies quan en té.
+   {("Sota cada any, la nota de Campaner diu quins manuscrits i autors donen aquests noms i on no coincideixen; és llegida del facsímil, com els noms." if year_notes else "")}
    {("Tots aquests noms s'han llegit directament del facsímil i comparat amb el que n'havien llegit els reconeixedors." if read == names else "")}
    {("" if read == names else "Un nom <span class='d'>puntejat</span> és una lectura en què dos o més reconeixedors discrepen; un de <span class='d1'>subratllat fi</span>, una en què en discrepa un de sol. Cap dels dos vol dir que sigui erroni." + (" Els que no duen marca en els anys llegits del facsímil s'han comprovat contra la pàgina." if read else ""))}</p>
 <div class="serie-grid">{"".join(out)}</div>"""

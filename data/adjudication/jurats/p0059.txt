@@ -3,6 +3,8 @@ by: claude (facsímil, resolució nativa)
 ---
 1249
 1 | Bernardo Español
+> El P. Villafranca sólo pone éste y escrito así, en vez de Spanyol.
+> En este año, por privilegio de 7 de Julio, se instituyeron los Jurados: al principio con un caballero y cinco vecinos más sin distincion de clases.—Así lo dice Bonet, y no pone ninguno en este año.
 1253
 1 | Aries Ivanyes, caballero
 2 | Guillermo Delfi
@@ -10,12 +12,14 @@ by: claude (facsímil, resolució nativa)
 4 | Renovardo de Malbosch
 5 | Arnaldo de Olives
 6 | Ramon de Codines
+> De Bonet.—Villafranca no pone ninguno en este año.
 1254
 1 | Miguel Nuñez
 3 | Bernardo de Font
 4 | Valentin Sas Torres
 5 | Berenguer de Vilafranca
 6 | Guillermo Brunet
+> Alemany llama al 5.° Vilafraser.—El libro de Torrella omite á Brunet.—En la lista comparativa de Villafranca el 5.° es Bernardo.—Bonet los pone como aquí, sin numeracion ni el claro del número 2.°
 1270
 1 | Pedro de Torrella, caballero
 2 | Bernardo Valentí
@@ -23,6 +27,7 @@ by: claude (facsímil, resolució nativa)
 4 | Renovart de Malbosch
 5 | Ramon de Güells
 6 | Berenguer de Guardiola
+> Bonet no pone ninguno en este año.—Los continúan Alemany, el P. Mallorca y el libro de Torrella: en éste el número 4.° es Bernardo.
 1276
 1 | Pedro Zavardera
 2 | Bernardo de Zaragoza
@@ -30,6 +35,8 @@ by: claude (facsímil, resolució nativa)
 4 | Guillermo Valentí
 5 | Bernardo de Vich
 6 | Martin de Mayol
+> Bonet no pone ninguno.
+> Los pusieron el P. Mallorca y el libro de Torrella; en Alemany aparecen borrados.
 1279
 1 | Pedro Sa Torre
 2 | Bernardo Valentí
@@ -37,8 +44,10 @@ by: claude (facsímil, resolució nativa)
 4 | Berenguer de Guardiola
 5 | Ramon des Güells
 6 | Bernardo Guillem
+> Así los escribe Bonet.—El P. Villafranca sólo pone al 5.° de procedencia de D. B. Serra.
 1280
 * | (Por abril los mismos del año anterior.)
+> Así lo dice Bonet.—El P. Villafrauca pone los mismos del año 1270, refiriéndose á Torrella y el P. Mallorca, y añade que Alemany los aplina á 1279.—En la lista de Villafranca Torrella es Sa Torre y Guardiola es Sa Guardiola.
 1281
 1 | Pedro Sa Verdera, miles
 2 | Bernardo de Zaragoza
@@ -46,3 +55,4 @@ by: claude (facsímil, resolució nativa)
 4 | Guillermo Valentí
 5 | Bernardo de Vich
 6 | Martin de Mayols
+> Libro de Privilegios de 1281, formado por Pedro de Torrella siendo Veguer.—Así los pone Villafranca con referencia al libro de Torrella y al P. Cayetano: tambien los continúa Bonet.

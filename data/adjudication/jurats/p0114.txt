@@ -8,6 +8,7 @@ by: claude (facsímil, resolució nativa)
 4 | Bernardo Garau
 5 | Ferrer Sa Serra
 6 | Guillermo de Llagostera
+> El P. Villafranca dice que constan en los Códices de Sant Pere, fol. 14, pág. 2.ª, columna 2.ª Rosselló vell, fol. 87, pág. 2.ª, y Roselló nou fol. 14, pág. 2.ª, columna 2.ª, del archivo de la Ciudad, hoy Histórico General.—D. M. Bonet pone los mismos.
 1303
 1 | Aries Ivañez, caballero
 2 | Guillermo Dalfi
@@ -15,12 +16,14 @@ by: claude (facsímil, resolució nativa)
 4 | Renovard de Malbosch
 5 | Arnaldo de Olives
 6 | Guillermo de Codines
+> Cita el P. Villafranca los cód. Rosselló nou, fol. 92, y Sant Pere, fol. 16: dice que el P. Cayetano de Mallorca y Torrella llaman al 5.° Ses Olives.—B. no los continúa en su lista.
 1304
 2 | Pedro de Cardona
 3 | Ramon de Costa
 4 | Pedro de Sentmenat
 5 | Bernardo de Curvins
 6 | Simon de Puigmalver
+> Segun el P. Villafranca se hallan en el cod. Sant Pere, fol. 14, pág. 2.ª—D. M. B. los pone tambien, pero sin órden numérico.
 1309
 1 | Bernardo de Torrella, caballero
 2 | Guillermo de Buadella
@@ -28,8 +31,10 @@ by: claude (facsímil, resolució nativa)
 4 | Pedro de Quintana
 5 | Jaime Savall
 6 | Pedro de Sarriá
+> Segun Villafranca se encuentran en el privilegio de la posesion de Sta. Eulalia, y en el cod. de Sant Pere. Torrella y el P. Mallorca llaman al 5, de Valls.—B. no los consigna.
 1310
 * | Los del año anterior.
+> Los pone el P. Mallorca con referencia á cierto privilegio de 10 de las kalendas de Enero de este año.—B. escribe los mismos, áunque invirtiendo el órden del 4.° y 5.°
 1311
 1 | Gil Garcés, miles
 2 | Guillermo Arnaldo Ses Esgleyes
@@ -37,3 +42,4 @@ by: claude (facsímil, resolució nativa)
 4 | Francisco Renovard
 5 | Simon Virgili
 6 | Bernardo Ses Comes
+> Escritura ante Bernardino Roca, notario á 16 de las kalendas de Mayo de 1311, y cod. de Sant Pere.—B., los mismos.

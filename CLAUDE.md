@@ -1604,9 +1604,33 @@ read three columns in order; the check is what makes that safe.
   `engines`. `Pedro AndrésRossinyolde Defla` (leaf 481, set squeezed) is
   matched ignoring spaces only.
 
-Still not published: the notes column of the annotated leaves (which codex
-gives which name). And `jurats_facsimile.py --check` should be run whenever a
-file under `data/adjudication/jurats/` is touched.
+`jurats_facsimile.py --check` should be run whenever a file under
+`data/adjudication/jurats/` is touched.
+
+**The notes column is read too**: Campaner's note beside each year of the
+annotated lists, behind the brace -- which codex or chronicler gives the names
+(Villafranca, Torrella, the P. Cayetano de Mallorca, Alemany, Serra, Mir, and
+`B.`, Miguel Bonet), and where they disagree. A line `> …` under the year in
+the same facsimile files, one per printed paragraph: **87 paragraphs over 80
+years**, 2 575 words, to `data/jurats/notes.jsonl` and the table `jurat_note`,
+folded under each year's card on `/jurats/13/` and `/jurats/14/`.
+
+Checked two ways, because presence alone is weak (`de` is on every leaf):
+2 572 of the 2 575 words occur in some engine's text of the leaf -- the three
+that do not are the superior `to` of `v.to`, which no engine renders -- and
+for every note some engine reads at least 84% of its words **in the same
+order** (median 97%). Every word below that line was looked at: all are a
+word the line break split (`mencio-`/`na`, `Fernan-`/`des`) whose halves the
+engine has with the names column between them. Printer's errors stand as
+everywhere: `Villafrauca`, `aplina` (leaf 59, seven engines of eight).
+**One reading is the panel's, not the page's**: leaf 116, 1331, prints
+`Bene` and a broken sort that is probably a `t`; no engine reads `Benet`
+(`Benei` 3, `Benel` 2), and writing it would be the normalisation the check
+exists to stop, so it stands as `Benei`.
+
+Still unpublished on these leaves: Campaner's preface to the 13th-century
+list on leaf 58 (*«Dificilísimo, si no imposible, es averiguar…»*), which
+says whose lists the notes compare.
 
 **The trades are the sixth seat, and only the sixth.** With every name read,
 what follows the comma sorts by seat with no exception: `caballero`, `doncel`,

@@ -3,6 +3,7 @@ by: claude (facsímil, resolució nativa)
 ---
 1240
 6 | Pedro Ferrer
+> Del catálogo de D. B. Serra y Ferragut. Bonet no pone ninguno.
 1245
 1 | Arnaldo de Torrella
 2 | Bernardo de Zaragoza
@@ -10,6 +11,7 @@ by: claude (facsímil, resolució nativa)
 4 | Arnaldo de Castelló
 5 | Pedro Ferrer
 6 | Ramon Sala
+> Del P. Cayetano de Mallorca. Bonet no los menciona.
 1248
 1 | Roberto de Bellvehi
 2 | Guillermo de Torrella
@@ -18,3 +20,5 @@ by: claude (facsímil, resolució nativa)
 5 | Bernardo Spanyol
 6 | Bernardo Granada
 7 | Aries Ivanyes
+> El P. Villafranca escribe los apellidos del 7.° Suañez y del 5.° Español.
+> Bonet les llama á todos «Cónsules de Mallorca,» y así debe ser, pues en este año todavía no se habían instituido los Jurados.

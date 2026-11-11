@@ -4,6 +4,7 @@ by: claude (facsímil, resolució nativa)
 1339
 2 | Juan Sacosta
 3 | Pedro de Arbucies
+> El P. Mallorca y Torrella; Alemany no pone ninguno.—B. con referencia al Códice Rosselló vell, fol. 176, y al Libro de Reales Ordenes de 1337 á 1339, fol. 18, Archivo de la Lugartenencia, pone en 1339 los de 1338 de la lista de Villafranca, llamando al 5.° Torsa y no Costa, y alterando el órden del 2.°, 3.° y 4.° así, Valentí, Sitges, Umbert; no se mencionan sus estamentos.
 1340
 1 | Berenguer de Holms
 2 | Ponce Guillermo Soriu
@@ -11,18 +12,21 @@ by: claude (facsímil, resolució nativa)
 4 | Ramon de Salellas
 5 | Julian de Estany
 6 | Berenguer de Oltsina, zapatero
+> Dice Villafranca que están en un libro de la Contaduría de la ciudad que contiene varias cartas, fol. 1.—Alemany llama al 2.° Soria.—B. pone sólo tres sin numeracion ni estamento, son ellos, Juan Sacosta, Hugo Serra, Pedro de Arbucies.
 1341
 1 | Umberto des Fonollar
 2 | Bernardo sa Font
 3 | Pedro Roig
 4 | Guillermo Fullana
 5 | Francisco Umbert
+> Cita el P. Villafranca los códices Rosselló vell, fol. 331, y de Sant Pere, fol. 116, pág. 2.ª—Los llevan el P. Mallorca y Torrella,—B. pone aquí, con otro órden, los de 1340. (Desportell 2.° Soriu 3.° Sestany 4.° y Salellas 5.°)
 1342
 1 | Aries Fernandez
 2 | Pedro de Puigdorfila
 3 | Benito Blancas
 5 | Pedro de Sitges
 6 | Guillermo Burguera
+> Alemany no conoce el 6 ° y pone el 4 ° en el lugar del 3.°—El P. Mallorca los pone asi.—B. coloca en 1342 los que en esta lista figuran en 1341, sin distincion de números.
 1343
 1 | Arnaldo de Santacilia, caballero
 2 | Ponce Guillermo Soriu
@@ -30,12 +34,14 @@ by: claude (facsímil, resolució nativa)
 4 | Ramon de Salellas
 5 | Pedro de Arbucies
 6 | Guillermo Descals
+> Alemany llama al último de Escals —B. reproduce los mismos nombres.
 1344
 1 | Pedro Torrella, caballero
 2 | Bernardo Valentí
 3 | Juan Sacosta
 4 | Antonio Mora
 6 | Bernardo Tauler
+> Códice Sant Pere, fol. 73, y en el de Letras Reales de 1343 á 1344. Dice Villafranca que en este libro consta que Sacosta y Tauler obtuvieron el mismo año de 1344 el privilegio de próceres.—En cierto privilegio Real de este año se nombra primero á Valentí que á Torrella.—Alemany lleva el nombre del 4.°, pero no Torrella ni el P. Mallorca.—B. pone sólo los de estos dos últimos.
 1345
 1 | Umberto Desfonollar
 2 | Bernardo de Font
@@ -43,6 +49,7 @@ by: claude (facsímil, resolució nativa)
 4 | Julian de Estany
 5 | Guillermo de Pachs
 6 | Bernardo Sasilio
+> Libro de Letras Reales de 1343 á 1345, Real Archivo: sumaria contra el gobernador Eril, fol 90.—El P. Mallorca llama al 6.° Saulig.—B. pone los mismos que Villafranca llamando al 2.° sa Font, al 4.° de Stany y al 6.° Castelló.
 1346
 1 | Pedro Dalmau, caballero
 2 | Arnaldo Burgués
@@ -50,3 +57,4 @@ by: claude (facsímil, resolució nativa)
 4 | Pedro Rossinyol
 5 | Guillermo Borrasa
 6 | Francisco Cardona
+> Sumaria contra Eril, fol. 94, 97 v.to y 101 v.to—Torrella, Alemany y Mallorca están conformes.—B. los lleva iguales, citando el Códice Rosselló vell, fol. 301 v.to

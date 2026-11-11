@@ -317,6 +317,13 @@ def main() -> None:
     with (OUT / "jurats.jsonl").open("w", encoding="utf-8") as fh:
         for row in rows:
             fh.write(json.dumps(row, ensure_ascii=False) + "\n")
+    # Campaner's note beside each year of the annotated lists (leaves 58-60,
+    # 114-121): which codex or chronicler gives the names and where they
+    # disagree. Read off the facsimile with the lists; see jurats_facsimile.
+    notes = jurats_facsimile.notes()
+    with (OUT / "notes.jsonl").open("w", encoding="utf-8") as fh:
+        for note in notes:
+            fh.write(json.dumps(note, ensure_ascii=False) + "\n")
     (OUT / "series.json").write_text(json.dumps(
         {"parsed": summary, "annotated_not_parsed": sorted(set(annotated))},
         ensure_ascii=False, indent=1), encoding="utf-8")
